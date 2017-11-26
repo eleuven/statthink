@@ -1,0 +1,1821 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Introduction to Statistical Thinking</title>
+  <meta name="description" content="Introduction to Statistical Thinking">
+  <meta name="generator" content="bookdown 0.5.10 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Introduction to Statistical Thinking" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  <meta name="github-repo" content="eleuven/statthink" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Introduction to Statistical Thinking" />
+  
+  
+  
+
+<meta name="author" content="Benjamin Yakir">
+
+
+<meta name="date" content="2017-11-26">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="ChapCaseStudies.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Introduction to Statistical Thinking</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="ChapIntroR.html"><a href="ChapIntroR.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="ChapIntroR.html"><a href="ChapIntroR.html#student-learning-objectives"><i class="fa fa-check"></i><b>1.1</b> Student Learning Objectives</a></li>
+<li class="chapter" data-level="1.2" data-path="ChapIntroR.html"><a href="ChapIntroR.html#why-learn-statistics"><i class="fa fa-check"></i><b>1.2</b> Why Learn Statistics?</a></li>
+<li class="chapter" data-level="1.3" data-path="ChapIntroR.html"><a href="ChapIntroR.html#statistics"><i class="fa fa-check"></i><b>1.3</b> Statistics</a></li>
+<li class="chapter" data-level="1.4" data-path="ChapIntroR.html"><a href="ChapIntroR.html#probability"><i class="fa fa-check"></i><b>1.4</b> Probability</a></li>
+<li class="chapter" data-level="1.5" data-path="ChapIntroR.html"><a href="ChapIntroR.html#key-terms"><i class="fa fa-check"></i><b>1.5</b> Key Terms</a></li>
+<li class="chapter" data-level="1.6" data-path="ChapIntroR.html"><a href="ChapIntroR.html#the-r-programming-environment"><i class="fa fa-check"></i><b>1.6</b> The <code>R</code> Programming Environment</a><ul>
+<li class="chapter" data-level="1.6.1" data-path="ChapIntroR.html"><a href="ChapIntroR.html#some-basic-r-commands"><i class="fa fa-check"></i><b>1.6.1</b> Some Basic <code>R</code> Commands</a></li>
+</ul></li>
+<li class="chapter" data-level="1.7" data-path="ChapIntroR.html"><a href="ChapIntroR.html#exercises"><i class="fa fa-check"></i><b>1.7</b> Exercises</a></li>
+<li class="chapter" data-level="1.8" data-path="ChapIntroR.html"><a href="ChapIntroR.html#summary"><i class="fa fa-check"></i><b>1.8</b> Summary</a><ul>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#discuss-in-the-forum"><i class="fa fa-check"></i>Discuss in the forum</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="ChapData.html"><a href="ChapData.html"><i class="fa fa-check"></i><b>2</b> Sampling and Data Structures</a><ul>
+<li class="chapter" data-level="2.1" data-path="ChapData.html"><a href="ChapData.html#student-learning-objectives-1"><i class="fa fa-check"></i><b>2.1</b> Student Learning Objectives</a></li>
+<li class="chapter" data-level="2.2" data-path="ChapData.html"><a href="ChapData.html#the-sampled-data"><i class="fa fa-check"></i><b>2.2</b> The Sampled Data</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="ChapData.html"><a href="ChapData.html#variation-in-data"><i class="fa fa-check"></i><b>2.2.1</b> Variation in Data</a></li>
+<li class="chapter" data-level="2.2.2" data-path="ChapData.html"><a href="ChapData.html#variation-in-samples"><i class="fa fa-check"></i><b>2.2.2</b> Variation in Samples</a></li>
+<li class="chapter" data-level="2.2.3" data-path="ChapData.html"><a href="ChapData.html#frequency"><i class="fa fa-check"></i><b>2.2.3</b> Frequency</a></li>
+<li class="chapter" data-level="2.2.4" data-path="ChapData.html"><a href="ChapData.html#critical-evaluation"><i class="fa fa-check"></i><b>2.2.4</b> Critical Evaluation</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="ChapData.html"><a href="ChapData.html#readingdata"><i class="fa fa-check"></i><b>2.3</b> Reading Data into <code>R</code></a><ul>
+<li class="chapter" data-level="2.3.1" data-path="ChapData.html"><a href="ChapData.html#saving-the-file-and-setting-the-working-directory"><i class="fa fa-check"></i><b>2.3.1</b> Saving the File and Setting the Working Directory</a></li>
+<li class="chapter" data-level="2.3.2" data-path="ChapData.html"><a href="ChapData.html#Data_3"><i class="fa fa-check"></i><b>2.3.2</b> Reading a CSV File into <code>R</code></a></li>
+<li class="chapter" data-level="2.3.3" data-path="ChapData.html"><a href="ChapData.html#data-types"><i class="fa fa-check"></i><b>2.3.3</b> Data Types</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="ChapData.html"><a href="ChapData.html#exercises-1"><i class="fa fa-check"></i><b>2.4</b> Exercises</a></li>
+<li class="chapter" data-level="2.5" data-path="ChapData.html"><a href="ChapData.html#summary-1"><i class="fa fa-check"></i><b>2.5</b> Summary</a><ul>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#discuss-in-the-forum"><i class="fa fa-check"></i>Discuss in the forum</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="ChapDescriptiveStat.html"><a href="ChapDescriptiveStat.html"><i class="fa fa-check"></i><b>3</b> Descriptive Statistics</a><ul>
+<li class="chapter" data-level="3.1" data-path="ChapDescriptiveStat.html"><a href="ChapDescriptiveStat.html#student-learning-objectives-2"><i class="fa fa-check"></i><b>3.1</b> Student Learning Objectives</a></li>
+<li class="chapter" data-level="3.2" data-path="ChapDescriptiveStat.html"><a href="ChapDescriptiveStat.html#displaying-data"><i class="fa fa-check"></i><b>3.2</b> Displaying Data</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="ChapDescriptiveStat.html"><a href="ChapDescriptiveStat.html#histograms"><i class="fa fa-check"></i><b>3.2.1</b> Histograms</a></li>
+<li class="chapter" data-level="3.2.2" data-path="ChapDescriptiveStat.html"><a href="ChapDescriptiveStat.html#box-plots"><i class="fa fa-check"></i><b>3.2.2</b> Box Plots</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="ChapDescriptiveStat.html"><a href="ChapDescriptiveStat.html#measures-of-the-center-of-data"><i class="fa fa-check"></i><b>3.3</b> Measures of the Center of Data</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="ChapDescriptiveStat.html"><a href="ChapDescriptiveStat.html#skewness-the-mean-and-the-median"><i class="fa fa-check"></i><b>3.3.1</b> Skewness, the Mean and the Median</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="ChapDescriptiveStat.html"><a href="ChapDescriptiveStat.html#measures-of-the-spread-of-data"><i class="fa fa-check"></i><b>3.4</b> Measures of the Spread of Data</a></li>
+<li class="chapter" data-level="3.5" data-path="ChapDescriptiveStat.html"><a href="ChapDescriptiveStat.html#exercises-2"><i class="fa fa-check"></i><b>3.5</b> Exercises</a></li>
+<li class="chapter" data-level="3.6" data-path="ChapDescriptiveStat.html"><a href="ChapDescriptiveStat.html#summary-2"><i class="fa fa-check"></i><b>3.6</b> Summary</a><ul>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#discuss-in-the-forum"><i class="fa fa-check"></i>Discuss in the forum</a></li>
+<li class="chapter" data-level="" data-path="ChapDescriptiveStat.html"><a href="ChapDescriptiveStat.html#commonly-used-symbols"><i class="fa fa-check"></i>Commonly Used Symbols</a></li>
+<li class="chapter" data-level="" data-path="ChapDescriptiveStat.html"><a href="ChapDescriptiveStat.html#commonly-used-expressions"><i class="fa fa-check"></i>Commonly Used Expressions</a></li>
+<li class="chapter" data-level="" data-path="ChapDescriptiveStat.html"><a href="ChapDescriptiveStat.html#formulas"><i class="fa fa-check"></i>Formulas:</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="ChapProbability.html"><a href="ChapProbability.html"><i class="fa fa-check"></i><b>4</b> Probability</a><ul>
+<li class="chapter" data-level="4.1" data-path="ChapProbability.html"><a href="ChapProbability.html#student-learning-objective"><i class="fa fa-check"></i><b>4.1</b> Student Learning Objective</a></li>
+<li class="chapter" data-level="4.2" data-path="ChapProbability.html"><a href="ChapProbability.html#different-forms-of-variability"><i class="fa fa-check"></i><b>4.2</b> Different Forms of Variability</a></li>
+<li class="chapter" data-level="4.3" data-path="ChapProbability.html"><a href="ChapProbability.html#a-population"><i class="fa fa-check"></i><b>4.3</b> A Population</a></li>
+<li class="chapter" data-level="4.4" data-path="ChapProbability.html"><a href="ChapProbability.html#random-variables"><i class="fa fa-check"></i><b>4.4</b> Random Variables</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="ChapProbability.html"><a href="ChapProbability.html#sample-space-and-distribution"><i class="fa fa-check"></i><b>4.4.1</b> Sample Space and Distribution</a></li>
+<li class="chapter" data-level="4.4.2" data-path="ChapProbability.html"><a href="ChapProbability.html#expectation-and-standard-deviation"><i class="fa fa-check"></i><b>4.4.2</b> Expectation and Standard Deviation</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="ChapProbability.html"><a href="ChapProbability.html#probability-and-statistics"><i class="fa fa-check"></i><b>4.5</b> Probability and Statistics</a></li>
+<li class="chapter" data-level="4.6" data-path="ChapProbability.html"><a href="ChapProbability.html#exercises-3"><i class="fa fa-check"></i><b>4.6</b> Exercises</a></li>
+<li class="chapter" data-level="4.7" data-path="ChapProbability.html"><a href="ChapProbability.html#summary-3"><i class="fa fa-check"></i><b>4.7</b> Summary</a><ul>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li class="chapter" data-level="" data-path="ChapProbability.html"><a href="ChapProbability.html#discussion-in-the-forum"><i class="fa fa-check"></i>Discussion in the Forum</a></li>
+<li class="chapter" data-level="" data-path="ChapProbability.html"><a href="ChapProbability.html#summary-of-formulas"><i class="fa fa-check"></i>Summary of Formulas</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="ChapRandomVar.html"><a href="ChapRandomVar.html"><i class="fa fa-check"></i><b>5</b> Random Variables</a><ul>
+<li class="chapter" data-level="5.1" data-path="ChapRandomVar.html"><a href="ChapRandomVar.html#student-learning-objective-1"><i class="fa fa-check"></i><b>5.1</b> Student Learning Objective</a></li>
+<li class="chapter" data-level="5.2" data-path="ChapRandomVar.html"><a href="ChapRandomVar.html#discrete-random-variables"><i class="fa fa-check"></i><b>5.2</b> Discrete Random Variables</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="ChapRandomVar.html"><a href="ChapRandomVar.html#the-binomial-random-variable"><i class="fa fa-check"></i><b>5.2.1</b> The Binomial Random Variable</a></li>
+<li class="chapter" data-level="5.2.2" data-path="ChapRandomVar.html"><a href="ChapRandomVar.html#the-poisson-random-variable"><i class="fa fa-check"></i><b>5.2.2</b> The Poisson Random Variable</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="ChapRandomVar.html"><a href="ChapRandomVar.html#RandomVar_5"><i class="fa fa-check"></i><b>5.3</b> Continuous Random Variable</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="ChapRandomVar.html"><a href="ChapRandomVar.html#the-uniform-random-variable"><i class="fa fa-check"></i><b>5.3.1</b> The Uniform Random Variable</a></li>
+<li class="chapter" data-level="5.3.2" data-path="ChapRandomVar.html"><a href="ChapRandomVar.html#the-exponential-random-variable"><i class="fa fa-check"></i><b>5.3.2</b> The Exponential Random Variable</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="ChapRandomVar.html"><a href="ChapRandomVar.html#sec:RVarExercises"><i class="fa fa-check"></i><b>5.4</b> Exercises</a></li>
+<li class="chapter" data-level="5.5" data-path="ChapRandomVar.html"><a href="ChapRandomVar.html#summary-4"><i class="fa fa-check"></i><b>5.5</b> Summary</a><ul>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#discuss-in-the-forum"><i class="fa fa-check"></i>Discuss in the Forum</a></li>
+<li class="chapter" data-level="" data-path="ChapProbability.html"><a href="ChapProbability.html#summary-of-formulas"><i class="fa fa-check"></i>Summary of Formulas</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="ChapNormal.html"><a href="ChapNormal.html"><i class="fa fa-check"></i><b>6</b> The Normal Random Variable</a><ul>
+<li class="chapter" data-level="6.1" data-path="ChapNormal.html"><a href="ChapNormal.html#student-learning-objective-2"><i class="fa fa-check"></i><b>6.1</b> Student Learning Objective</a></li>
+<li class="chapter" data-level="6.2" data-path="ChapNormal.html"><a href="ChapNormal.html#the-normal-random-variable"><i class="fa fa-check"></i><b>6.2</b> The Normal Random Variable</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="ChapNormal.html"><a href="ChapNormal.html#the-normal-distribution"><i class="fa fa-check"></i><b>6.2.1</b> The Normal Distribution</a></li>
+<li class="chapter" data-level="6.2.2" data-path="ChapNormal.html"><a href="ChapNormal.html#the-standard-normal-distribution"><i class="fa fa-check"></i><b>6.2.2</b> The Standard Normal Distribution</a></li>
+<li class="chapter" data-level="6.2.3" data-path="ChapNormal.html"><a href="ChapNormal.html#computing-percentiles"><i class="fa fa-check"></i><b>6.2.3</b> Computing Percentiles</a></li>
+<li class="chapter" data-level="6.2.4" data-path="ChapNormal.html"><a href="ChapNormal.html#outliers-and-the-normal-distribution"><i class="fa fa-check"></i><b>6.2.4</b> Outliers and the Normal Distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="ChapNormal.html"><a href="ChapNormal.html#approximation-of-the-binomial-distribution"><i class="fa fa-check"></i><b>6.3</b> Approximation of the Binomial Distribution</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="ChapNormal.html"><a href="ChapNormal.html#approximate-binomial-probabilities-and-percentiles"><i class="fa fa-check"></i><b>6.3.1</b> Approximate Binomial Probabilities and Percentiles</a></li>
+<li class="chapter" data-level="6.3.2" data-path="ChapNormal.html"><a href="ChapNormal.html#continuity-corrections"><i class="fa fa-check"></i><b>6.3.2</b> Continuity Corrections</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="ChapNormal.html"><a href="ChapNormal.html#Normal4"><i class="fa fa-check"></i><b>6.4</b> Exercises</a></li>
+<li class="chapter" data-level="6.5" data-path="ChapNormal.html"><a href="ChapNormal.html#summary-5"><i class="fa fa-check"></i><b>6.5</b> Summary</a><ul>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#discuss-in-the-forum"><i class="fa fa-check"></i>Discuss in the Forum</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="ChapSampDist.html"><a href="ChapSampDist.html"><i class="fa fa-check"></i><b>7</b> The Sampling Distribution</a><ul>
+<li class="chapter" data-level="7.1" data-path="ChapSampDist.html"><a href="ChapSampDist.html#student-learning-objective-3"><i class="fa fa-check"></i><b>7.1</b> Student Learning Objective</a></li>
+<li class="chapter" data-level="7.2" data-path="ChapSampDist.html"><a href="ChapSampDist.html#the-sampling-distribution"><i class="fa fa-check"></i><b>7.2</b> The Sampling Distribution</a><ul>
+<li class="chapter" data-level="7.2.1" data-path="ChapSampDist.html"><a href="ChapSampDist.html#a-random-sample"><i class="fa fa-check"></i><b>7.2.1</b> A Random Sample</a></li>
+<li class="chapter" data-level="7.2.2" data-path="ChapSampDist.html"><a href="ChapSampDist.html#sampling-from-a-population"><i class="fa fa-check"></i><b>7.2.2</b> Sampling From a Population</a></li>
+<li class="chapter" data-level="7.2.3" data-path="ChapSampDist.html"><a href="ChapSampDist.html#subsec:theoreticalmdls"><i class="fa fa-check"></i><b>7.2.3</b> Theoretical Models</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="ChapSampDist.html"><a href="ChapSampDist.html#law-of-large-numbers-and-central-limit-theorem"><i class="fa fa-check"></i><b>7.3</b> Law of Large Numbers and Central Limit Theorem</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="ChapSampDist.html"><a href="ChapSampDist.html#the-law-of-large-numbers"><i class="fa fa-check"></i><b>7.3.1</b> The Law of Large Numbers</a></li>
+<li class="chapter" data-level="7.3.2" data-path="ChapSampDist.html"><a href="ChapSampDist.html#the-central-limit-theorem-clt"><i class="fa fa-check"></i><b>7.3.2</b> The Central Limit Theorem (CLT)</a></li>
+<li class="chapter" data-level="7.3.3" data-path="ChapSampDist.html"><a href="ChapSampDist.html#applying-the-central-limit-theorem"><i class="fa fa-check"></i><b>7.3.3</b> Applying the Central Limit Theorem</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="ChapSampDist.html"><a href="ChapSampDist.html#SampDistEx"><i class="fa fa-check"></i><b>7.4</b> Exercises</a></li>
+<li class="chapter" data-level="7.5" data-path="ChapSampDist.html"><a href="ChapSampDist.html#summary-6"><i class="fa fa-check"></i><b>7.5</b> Summary</a><ul>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li class="chapter" data-level="" data-path="ChapProbability.html"><a href="ChapProbability.html#discussion-in-the-forum"><i class="fa fa-check"></i>Discussion in the Forum</a></li>
+<li class="chapter" data-level="" data-path="ChapProbability.html"><a href="ChapProbability.html#summary-of-formulas"><i class="fa fa-check"></i>Summary of Formulas</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="overview-and-integration.html"><a href="overview-and-integration.html"><i class="fa fa-check"></i><b>8</b> Overview and Integration</a><ul>
+<li class="chapter" data-level="8.1" data-path="overview-and-integration.html"><a href="overview-and-integration.html#student-learning-objective-4"><i class="fa fa-check"></i><b>8.1</b> Student Learning Objective</a></li>
+<li class="chapter" data-level="8.2" data-path="overview-and-integration.html"><a href="overview-and-integration.html#an-overview"><i class="fa fa-check"></i><b>8.2</b> An Overview</a></li>
+<li class="chapter" data-level="8.3" data-path="overview-and-integration.html"><a href="overview-and-integration.html#integrated-applications"><i class="fa fa-check"></i><b>8.3</b> Integrated Applications</a><ul>
+<li class="chapter" data-level="8.3.1" data-path="overview-and-integration.html"><a href="overview-and-integration.html#example-1"><i class="fa fa-check"></i><b>8.3.1</b> Example 1</a></li>
+<li class="chapter" data-level="" data-path="overview-and-integration.html"><a href="overview-and-integration.html#solution"><i class="fa fa-check"></i>Solution:</a></li>
+<li class="chapter" data-level="8.3.2" data-path="overview-and-integration.html"><a href="overview-and-integration.html#example-2"><i class="fa fa-check"></i><b>8.3.2</b> Example 2</a></li>
+<li class="chapter" data-level="" data-path="overview-and-integration.html"><a href="overview-and-integration.html#solution-1"><i class="fa fa-check"></i>Solution:</a></li>
+<li class="chapter" data-level="8.3.3" data-path="overview-and-integration.html"><a href="overview-and-integration.html#example-3"><i class="fa fa-check"></i><b>8.3.3</b> Example 3</a></li>
+<li class="chapter" data-level="" data-path="overview-and-integration.html"><a href="overview-and-integration.html#solution-2"><i class="fa fa-check"></i>Solution:</a></li>
+<li class="chapter" data-level="8.3.4" data-path="overview-and-integration.html"><a href="overview-and-integration.html#example-4"><i class="fa fa-check"></i><b>8.3.4</b> Example 4</a></li>
+<li class="chapter" data-level="" data-path="overview-and-integration.html"><a href="overview-and-integration.html#solution-3"><i class="fa fa-check"></i>Solution</a></li>
+<li class="chapter" data-level="8.3.5" data-path="overview-and-integration.html"><a href="overview-and-integration.html#example-5"><i class="fa fa-check"></i><b>8.3.5</b> Example 5</a></li>
+<li class="chapter" data-level="" data-path="overview-and-integration.html"><a href="overview-and-integration.html#solution-4"><i class="fa fa-check"></i>Solution</a></li>
+<li class="chapter" data-level="" data-path="ChapProbability.html"><a href="ChapProbability.html#discussion-in-the-forum"><i class="fa fa-check"></i>Discussion in the Forum</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="ChapInference.html"><a href="ChapInference.html"><i class="fa fa-check"></i><b>9</b> Introduction to Statistical Inference</a><ul>
+<li class="chapter" data-level="9.1" data-path="ChapInference.html"><a href="ChapInference.html#student-learning-objectives-3"><i class="fa fa-check"></i><b>9.1</b> Student Learning Objectives</a></li>
+<li class="chapter" data-level="9.2" data-path="ChapInference.html"><a href="ChapInference.html#key-terms-1"><i class="fa fa-check"></i><b>9.2</b> Key Terms</a></li>
+<li class="chapter" data-level="9.3" data-path="ChapInference.html"><a href="ChapInference.html#the-cars-data-set"><i class="fa fa-check"></i><b>9.3</b> The Cars Data Set</a></li>
+<li class="chapter" data-level="9.4" data-path="ChapSampDist.html"><a href="ChapSampDist.html#the-sampling-distribution"><i class="fa fa-check"></i><b>9.4</b> The Sampling Distribution</a><ul>
+<li class="chapter" data-level="9.4.1" data-path="ChapInference.html"><a href="ChapInference.html#statistics-1"><i class="fa fa-check"></i><b>9.4.1</b> Statistics</a></li>
+<li class="chapter" data-level="9.4.2" data-path="ChapInference.html"><a href="ChapInference.html#the-sampling-distribution-1"><i class="fa fa-check"></i><b>9.4.2</b> The Sampling Distribution</a></li>
+<li class="chapter" data-level="9.4.3" data-path="ChapInference.html"><a href="ChapInference.html#theoretical-distributions-of-observations"><i class="fa fa-check"></i><b>9.4.3</b> Theoretical Distributions of Observations</a></li>
+<li class="chapter" data-level="9.4.4" data-path="ChapInference.html"><a href="ChapInference.html#sampling-distribution-of-statistics"><i class="fa fa-check"></i><b>9.4.4</b> Sampling Distribution of Statistics</a></li>
+<li class="chapter" data-level="9.4.5" data-path="ChapInference.html"><a href="ChapInference.html#the-normal-approximation"><i class="fa fa-check"></i><b>9.4.5</b> The Normal Approximation</a></li>
+<li class="chapter" data-level="9.4.6" data-path="ChapInference.html"><a href="ChapInference.html#simulations"><i class="fa fa-check"></i><b>9.4.6</b> Simulations</a></li>
+</ul></li>
+<li class="chapter" data-level="9.5" data-path="ChapInference.html"><a href="ChapInference.html#exercises-4"><i class="fa fa-check"></i><b>9.5</b> Exercises</a></li>
+<li class="chapter" data-level="9.6" data-path="ChapInference.html"><a href="ChapInference.html#summary-7"><i class="fa fa-check"></i><b>9.6</b> Summary</a><ul>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#discuss-in-the-forum"><i class="fa fa-check"></i>Discuss in the forum</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="ChapEstimation.html"><a href="ChapEstimation.html"><i class="fa fa-check"></i><b>10</b> Point Estimation</a><ul>
+<li class="chapter" data-level="10.1" data-path="ChapEstimation.html"><a href="ChapEstimation.html#student-learning-objectives-4"><i class="fa fa-check"></i><b>10.1</b> Student Learning Objectives</a></li>
+<li class="chapter" data-level="10.2" data-path="ChapEstimation.html"><a href="ChapEstimation.html#estimating-parameters"><i class="fa fa-check"></i><b>10.2</b> Estimating Parameters</a></li>
+<li class="chapter" data-level="10.3" data-path="ChapEstimation.html"><a href="ChapEstimation.html#EstimationExp"><i class="fa fa-check"></i><b>10.3</b> Estimation of the Expectation</a><ul>
+<li class="chapter" data-level="10.3.1" data-path="ChapEstimation.html"><a href="ChapEstimation.html#the-accuracy-of-the-sample-average"><i class="fa fa-check"></i><b>10.3.1</b> The Accuracy of the Sample Average</a></li>
+<li class="chapter" data-level="10.3.2" data-path="ChapEstimation.html"><a href="ChapEstimation.html#ComparingEstimators"><i class="fa fa-check"></i><b>10.3.2</b> Comparing Estimators</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="ChapEstimation.html"><a href="ChapEstimation.html#estimation-of-the-variance-and-standard-deviation"><i class="fa fa-check"></i><b>10.4</b> Estimation of the Variance and Standard Deviation</a></li>
+<li class="chapter" data-level="10.5" data-path="ChapEstimation.html"><a href="ChapEstimation.html#EstimationOtherPars"><i class="fa fa-check"></i><b>10.5</b> Estimation of Other Parameters</a></li>
+<li class="chapter" data-level="10.6" data-path="ChapEstimation.html"><a href="ChapEstimation.html#exercises-5"><i class="fa fa-check"></i><b>10.6</b> Exercises</a></li>
+<li class="chapter" data-level="10.7" data-path="ChapEstimation.html"><a href="ChapEstimation.html#summary-8"><i class="fa fa-check"></i><b>10.7</b> Summary</a><ul>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#discuss-in-the-forum"><i class="fa fa-check"></i>Discuss in the forum</a></li>
+<li class="chapter" data-level="" data-path="ChapDescriptiveStat.html"><a href="ChapDescriptiveStat.html#formulas"><i class="fa fa-check"></i>Formulas:</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="ChapConfidence.html"><a href="ChapConfidence.html"><i class="fa fa-check"></i><b>11</b> Confidence Intervals</a><ul>
+<li class="chapter" data-level="11.1" data-path="ChapConfidence.html"><a href="ChapConfidence.html#student-learning-objectives-5"><i class="fa fa-check"></i><b>11.1</b> Student Learning Objectives</a></li>
+<li class="chapter" data-level="11.2" data-path="ChapConfidence.html"><a href="ChapConfidence.html#intervals-for-mean-and-proportion"><i class="fa fa-check"></i><b>11.2</b> Intervals for Mean and Proportion</a><ul>
+<li class="chapter" data-level="11.2.1" data-path="ChapConfidence.html"><a href="ChapConfidence.html#ConfidenceExamples"><i class="fa fa-check"></i><b>11.2.1</b> Examples of Confidence Intervals</a></li>
+<li class="chapter" data-level="11.2.2" data-path="ChapConfidence.html"><a href="ChapConfidence.html#subsec:CImean"><i class="fa fa-check"></i><b>11.2.2</b> Confidence Intervals for the Mean</a></li>
+<li class="chapter" data-level="11.2.3" data-path="ChapConfidence.html"><a href="ChapConfidence.html#subsec:CIfrac"><i class="fa fa-check"></i><b>11.2.3</b> Confidence Intervals for a Proportion</a></li>
+</ul></li>
+<li class="chapter" data-level="11.3" data-path="ChapConfidence.html"><a href="ChapConfidence.html#CInormal"><i class="fa fa-check"></i><b>11.3</b> Intervals for Normal Measurements</a><ul>
+<li class="chapter" data-level="11.3.1" data-path="ChapConfidence.html"><a href="ChapConfidence.html#confidence-intervals-for-a-normal-mean"><i class="fa fa-check"></i><b>11.3.1</b> Confidence Intervals for a Normal Mean</a></li>
+<li class="chapter" data-level="11.3.2" data-path="ChapConfidence.html"><a href="ChapConfidence.html#confidence-intervals-for-a-normal-variance"><i class="fa fa-check"></i><b>11.3.2</b> Confidence Intervals for a Normal Variance</a></li>
+</ul></li>
+<li class="chapter" data-level="11.4" data-path="ChapConfidence.html"><a href="ChapConfidence.html#choosing-the-sample-size"><i class="fa fa-check"></i><b>11.4</b> Choosing the Sample Size</a></li>
+<li class="chapter" data-level="11.5" data-path="ChapConfidence.html"><a href="ChapConfidence.html#exercises-6"><i class="fa fa-check"></i><b>11.5</b> Exercises</a></li>
+<li class="chapter" data-level="11.6" data-path="ChapConfidence.html"><a href="ChapConfidence.html#summary-9"><i class="fa fa-check"></i><b>11.6</b> Summary</a><ul>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#discuss-in-the-forum"><i class="fa fa-check"></i>Discuss in the forum</a></li>
+<li class="chapter" data-level="" data-path="ChapConfidence.html"><a href="ChapConfidence.html#formulas-for-confidence-intervals-95-confidence-level"><i class="fa fa-check"></i>Formulas for Confidence Intervals, 95% Confidence Level:</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="ChapTesting.html"><a href="ChapTesting.html"><i class="fa fa-check"></i><b>12</b> Testing Hypothesis</a><ul>
+<li class="chapter" data-level="12.1" data-path="ChapTesting.html"><a href="ChapTesting.html#student-learning-objectives-6"><i class="fa fa-check"></i><b>12.1</b> Student Learning Objectives</a></li>
+<li class="chapter" data-level="12.2" data-path="ChapTesting.html"><a href="ChapTesting.html#the-theory-of-hypothesis-testing"><i class="fa fa-check"></i><b>12.2</b> The Theory of Hypothesis Testing</a><ul>
+<li class="chapter" data-level="12.2.1" data-path="ChapTesting.html"><a href="ChapTesting.html#an-example-of-hypothesis-testing"><i class="fa fa-check"></i><b>12.2.1</b> An Example of Hypothesis Testing</a></li>
+<li class="chapter" data-level="12.2.2" data-path="ChapTesting.html"><a href="ChapTesting.html#the-structure-of-a-statistical-test-of-hypotheses"><i class="fa fa-check"></i><b>12.2.2</b> The Structure of a Statistical Test of Hypotheses</a></li>
+<li class="chapter" data-level="12.2.3" data-path="ChapTesting.html"><a href="ChapTesting.html#error-types-and-error-probabilities"><i class="fa fa-check"></i><b>12.2.3</b> Error Types and Error Probabilities</a></li>
+<li class="chapter" data-level="12.2.4" data-path="ChapTesting.html"><a href="ChapTesting.html#p-values"><i class="fa fa-check"></i><b>12.2.4</b> <span class="math inline">\(p\)</span>-Values</a></li>
+</ul></li>
+<li class="chapter" data-level="12.3" data-path="ChapTesting.html"><a href="ChapTesting.html#testing-hypothesis-on-expectation"><i class="fa fa-check"></i><b>12.3</b> Testing Hypothesis on Expectation</a></li>
+<li class="chapter" data-level="12.4" data-path="ChapTesting.html"><a href="ChapTesting.html#TestFrac"><i class="fa fa-check"></i><b>12.4</b> Testing Hypothesis on Proportion</a></li>
+<li class="chapter" data-level="12.5" data-path="ChapTesting.html"><a href="ChapTesting.html#exercises-7"><i class="fa fa-check"></i><b>12.5</b> Exercises</a></li>
+<li class="chapter" data-level="12.6" data-path="ChapTesting.html"><a href="ChapTesting.html#summary-10"><i class="fa fa-check"></i><b>12.6</b> Summary</a><ul>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#discuss-in-the-forum"><i class="fa fa-check"></i>Discuss in the forum</a></li>
+<li class="chapter" data-level="" data-path="ChapDescriptiveStat.html"><a href="ChapDescriptiveStat.html#formulas"><i class="fa fa-check"></i>Formulas:</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="ChapTwoSamp.html"><a href="ChapTwoSamp.html"><i class="fa fa-check"></i><b>13</b> Comparing Two Samples</a><ul>
+<li class="chapter" data-level="13.1" data-path="ChapTwoSamp.html"><a href="ChapTwoSamp.html#student-learning-objectives-7"><i class="fa fa-check"></i><b>13.1</b> Student Learning Objectives</a></li>
+<li class="chapter" data-level="13.2" data-path="ChapTwoSamp.html"><a href="ChapTwoSamp.html#comparing-two-distributions"><i class="fa fa-check"></i><b>13.2</b> Comparing Two Distributions</a></li>
+<li class="chapter" data-level="13.3" data-path="ChapTwoSamp.html"><a href="ChapTwoSamp.html#sec:ComparingMeans"><i class="fa fa-check"></i><b>13.3</b> Comparing the Sample Means</a><ul>
+<li class="chapter" data-level="13.3.1" data-path="ChapTwoSamp.html"><a href="ChapTwoSamp.html#an-example-of-a-comparison-of-means"><i class="fa fa-check"></i><b>13.3.1</b> An Example of a Comparison of Means</a></li>
+<li class="chapter" data-level="13.3.2" data-path="ChapTwoSamp.html"><a href="ChapTwoSamp.html#confidence-interval-for-the-difference"><i class="fa fa-check"></i><b>13.3.2</b> Confidence Interval for the Difference</a></li>
+<li class="chapter" data-level="13.3.3" data-path="ChapTwoSamp.html"><a href="ChapTwoSamp.html#the-t-test-for-two-means"><i class="fa fa-check"></i><b>13.3.3</b> The t-Test for Two Means</a></li>
+</ul></li>
+<li class="chapter" data-level="13.4" data-path="ChapTwoSamp.html"><a href="ChapTwoSamp.html#comparing-sample-variances"><i class="fa fa-check"></i><b>13.4</b> Comparing Sample Variances</a></li>
+<li class="chapter" data-level="13.5" data-path="ChapTwoSamp.html"><a href="ChapTwoSamp.html#exercises-8"><i class="fa fa-check"></i><b>13.5</b> Exercises</a></li>
+<li class="chapter" data-level="13.6" data-path="ChapTwoSamp.html"><a href="ChapTwoSamp.html#summary-11"><i class="fa fa-check"></i><b>13.6</b> Summary</a><ul>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#discuss-in-the-forum"><i class="fa fa-check"></i>Discuss in the forum</a></li>
+<li class="chapter" data-level="" data-path="ChapDescriptiveStat.html"><a href="ChapDescriptiveStat.html#formulas"><i class="fa fa-check"></i>Formulas:</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="ChapRegression.html"><a href="ChapRegression.html"><i class="fa fa-check"></i><b>14</b> Linear Regression</a><ul>
+<li class="chapter" data-level="14.1" data-path="ChapRegression.html"><a href="ChapRegression.html#student-learning-objectives-8"><i class="fa fa-check"></i><b>14.1</b> Student Learning Objectives</a></li>
+<li class="chapter" data-level="14.2" data-path="ChapRegression.html"><a href="ChapRegression.html#points-and-lines"><i class="fa fa-check"></i><b>14.2</b> Points and Lines</a><ul>
+<li class="chapter" data-level="14.2.1" data-path="ChapRegression.html"><a href="ChapRegression.html#the-scatter-plot"><i class="fa fa-check"></i><b>14.2.1</b> The Scatter Plot</a></li>
+<li class="chapter" data-level="14.2.2" data-path="ChapRegression.html"><a href="ChapRegression.html#linear-equation"><i class="fa fa-check"></i><b>14.2.2</b> Linear Equation</a></li>
+</ul></li>
+<li class="chapter" data-level="14.3" data-path="ChapRegression.html"><a href="ChapRegression.html#linear-regression"><i class="fa fa-check"></i><b>14.3</b> Linear Regression</a><ul>
+<li class="chapter" data-level="14.3.1" data-path="ChapRegression.html"><a href="ChapRegression.html#fitting-the-regression-line"><i class="fa fa-check"></i><b>14.3.1</b> Fitting the Regression Line</a></li>
+<li class="chapter" data-level="14.3.2" data-path="ChapRegression.html"><a href="ChapRegression.html#subsec:Inference"><i class="fa fa-check"></i><b>14.3.2</b> Inference</a></li>
+</ul></li>
+<li class="chapter" data-level="14.4" data-path="ChapRegression.html"><a href="ChapRegression.html#r-squared-and-the-variance-of-residuals"><i class="fa fa-check"></i><b>14.4</b> R-squared and the Variance of Residuals</a></li>
+<li class="chapter" data-level="14.5" data-path="ChapRegression.html"><a href="ChapRegression.html#exercises-9"><i class="fa fa-check"></i><b>14.5</b> Exercises</a></li>
+<li class="chapter" data-level="14.6" data-path="ChapRegression.html"><a href="ChapRegression.html#summary-12"><i class="fa fa-check"></i><b>14.6</b> Summary</a><ul>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#discuss-in-the-forum"><i class="fa fa-check"></i>Discuss in the Forum</a></li>
+<li class="chapter" data-level="" data-path="ChapDescriptiveStat.html"><a href="ChapDescriptiveStat.html#formulas"><i class="fa fa-check"></i>Formulas:</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="ChapLogistic.html"><a href="ChapLogistic.html"><i class="fa fa-check"></i><b>15</b> A Bernoulli Response</a><ul>
+<li class="chapter" data-level="15.1" data-path="ChapLogistic.html"><a href="ChapLogistic.html#student-learning-objectives-9"><i class="fa fa-check"></i><b>15.1</b> Student Learning Objectives</a></li>
+<li class="chapter" data-level="15.2" data-path="ChapLogistic.html"><a href="ChapLogistic.html#comparing-sample-proportions"><i class="fa fa-check"></i><b>15.2</b> Comparing Sample Proportions</a></li>
+<li class="chapter" data-level="15.3" data-path="ChapLogistic.html"><a href="ChapLogistic.html#logistic-regression"><i class="fa fa-check"></i><b>15.3</b> Logistic Regression</a></li>
+<li class="chapter" data-level="15.4" data-path="ChapLogistic.html"><a href="ChapLogistic.html#exercises-10"><i class="fa fa-check"></i><b>15.4</b> Exercises</a><ul>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#discuss-in-the-forum"><i class="fa fa-check"></i>Discuss in the forum</a></li>
+<li class="chapter" data-level="" data-path="ChapDescriptiveStat.html"><a href="ChapDescriptiveStat.html#formulas"><i class="fa fa-check"></i>Formulas:</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="ChapCaseStudies.html"><a href="ChapCaseStudies.html"><i class="fa fa-check"></i><b>16</b> Case Studies</a><ul>
+<li class="chapter" data-level="16.1" data-path="ChapCaseStudies.html"><a href="ChapCaseStudies.html#student-learning-objective-5"><i class="fa fa-check"></i><b>16.1</b> Student Learning Objective</a></li>
+<li class="chapter" data-level="16.2" data-path="ChapCaseStudies.html"><a href="ChapCaseStudies.html#a-review"><i class="fa fa-check"></i><b>16.2</b> A Review</a></li>
+<li class="chapter" data-level="16.3" data-path="ChapCaseStudies.html"><a href="ChapCaseStudies.html#case-studies"><i class="fa fa-check"></i><b>16.3</b> Case Studies</a><ul>
+<li class="chapter" data-level="16.3.1" data-path="ChapCaseStudies.html"><a href="ChapCaseStudies.html#physicians-reactions-to-the-size-of-a-patient"><i class="fa fa-check"></i><b>16.3.1</b> Physicians’ Reactions to the Size of a Patient</a></li>
+<li class="chapter" data-level="16.3.2" data-path="ChapCaseStudies.html"><a href="ChapCaseStudies.html#physical-strength-and-job-performance"><i class="fa fa-check"></i><b>16.3.2</b> Physical Strength and Job Performance</a></li>
+</ul></li>
+<li class="chapter" data-level="16.4" data-path="ChapCaseStudies.html"><a href="ChapCaseStudies.html#summary-13"><i class="fa fa-check"></i><b>16.4</b> Summary</a><ul>
+<li class="chapter" data-level="16.4.1" data-path="ChapCaseStudies.html"><a href="ChapCaseStudies.html#concluding-remarks"><i class="fa fa-check"></i><b>16.4.1</b> Concluding Remarks</a></li>
+<li class="chapter" data-level="16.4.2" data-path="ChapProbability.html"><a href="ChapProbability.html#discussion-in-the-forum"><i class="fa fa-check"></i><b>16.4.2</b> Discussion in the Forum</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html"><i class="fa fa-check"></i>Exercise Solutions</a><ul>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-1"><i class="fa fa-check"></i>Chapter 1</a><ul>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-1.1"><i class="fa fa-check"></i>Exercise 1.1</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-1.2"><i class="fa fa-check"></i>Exercise 1.2</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-2"><i class="fa fa-check"></i>Chapter 2</a><ul>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-2.1"><i class="fa fa-check"></i>Exercise 2.1</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-2.2"><i class="fa fa-check"></i>Exercise 2.2</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-3"><i class="fa fa-check"></i>Chapter 3</a><ul>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-3.1"><i class="fa fa-check"></i>Exercise 3.1</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-3.2"><i class="fa fa-check"></i>Exercise 3.2</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-4"><i class="fa fa-check"></i>Chapter 4</a><ul>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-4.1"><i class="fa fa-check"></i>Exercise 4.1</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-4.2"><i class="fa fa-check"></i>Exercise 4.2</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-5"><i class="fa fa-check"></i>Chapter 5</a><ul>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-5.1"><i class="fa fa-check"></i>Exercise 5.1</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-5.2"><i class="fa fa-check"></i>Exercise 5.2</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-6"><i class="fa fa-check"></i>Chapter 6</a><ul>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-6.1"><i class="fa fa-check"></i>Exercise 6.1</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-6.2"><i class="fa fa-check"></i>Exercise 6.2</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-7"><i class="fa fa-check"></i>Chapter 7</a><ul>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-7.1"><i class="fa fa-check"></i>Exercise 7.1</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-7.2"><i class="fa fa-check"></i>Exercise 7.2</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-9"><i class="fa fa-check"></i>Chapter 9</a><ul>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-9.1"><i class="fa fa-check"></i>Exercise 9.1</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-9.2"><i class="fa fa-check"></i>Exercise 9.2</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-10"><i class="fa fa-check"></i>Chapter 10</a><ul>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-10.1"><i class="fa fa-check"></i>Exercise 10.1</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-10.2"><i class="fa fa-check"></i>Exercise 10.2</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-11"><i class="fa fa-check"></i>Chapter 11</a><ul>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-11.1"><i class="fa fa-check"></i>Exercise 11.1</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-11.2"><i class="fa fa-check"></i>Exercise 11.2</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-11.3"><i class="fa fa-check"></i>Exercise 11.3</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-12"><i class="fa fa-check"></i>Chapter 12</a><ul>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-12.1"><i class="fa fa-check"></i>Exercise 12.1</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-12.2"><i class="fa fa-check"></i>Exercise 12.2</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-12.3"><i class="fa fa-check"></i>Exercise 12.3</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-13"><i class="fa fa-check"></i>Chapter 13</a><ul>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-13.1"><i class="fa fa-check"></i>Exercise 13.1</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-13.2"><i class="fa fa-check"></i>Exercise 13.2</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-13.3"><i class="fa fa-check"></i>Exercise 13.3</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-14"><i class="fa fa-check"></i>Chapter 14</a><ul>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-14.1"><i class="fa fa-check"></i>Exercise 14.1</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-14.2"><i class="fa fa-check"></i>Exercise 14.2</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-14.3"><i class="fa fa-check"></i>Exercise 14.3</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-14.4"><i class="fa fa-check"></i>Exercise 14.4</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-14.5"><i class="fa fa-check"></i>Exercise 14.5</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-14.6"><i class="fa fa-check"></i>Exercise 14.6</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-15"><i class="fa fa-check"></i>Chapter 15</a><ul>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-15.1"><i class="fa fa-check"></i>Exercise 15.1</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-15.2"><i class="fa fa-check"></i>Exercise 15.2</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://bookdown.org" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Introduction to Statistical Thinking</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="exercise-solutions" class="section level1 unnumbered">
+<h1>Exercise Solutions</h1>
+<div id="chapter-1" class="section level2 unnumbered">
+<h2>Chapter 1</h2>
+<div id="exercise-1.1" class="section level3 unnumbered">
+<h3>Exercise 1.1</h3>
+<ol style="list-style-type: decimal">
+<li><p>According to the information in the question the polling was conducted among 500 registered voters. The 500 registered voters corresponds to the sample.</p></li>
+<li><p>The percentage, among all registered voters of the given party, of those that prefer a male candidate is a parameter. This quantity is a characteristic of the population.</p></li>
+<li><p>It is given that 42% of the sample prefer a female candidate. This quantity is a numerical characteristic of the data, of the sample. Hence, it is a statistic.</p></li>
+<li><p>The voters in the state that are registered to the given party is the target population.</p></li>
+</ol>
+</div>
+<div id="exercise-1.2" class="section level3 unnumbered">
+<h3>Exercise 1.2</h3>
+<p>One may read the data into <code>R</code> and create a table using the code:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">    n.cost &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">3</span>,<span class="dv">1</span>,<span class="dv">5</span>,<span class="dv">1</span>,<span class="dv">5</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">3</span>)
+    <span class="kw">table</span>(n.cost)</code></pre></div>
+<pre><code>## n.cost
+## 0 1 2 3 4 5 
+## 1 8 6 3 4 3</code></pre>
+<p>For convenience, one may also create the bar plot of the data using the code:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="kw">table</span>(n.cost))</code></pre></div>
+<ol style="list-style-type: decimal">
+<li><p>The number of days in which 5 costumers where waiting is 3, since the frequency of the value “5” in the data is 3. That can be seen from the table by noticing the number below value “5” is 3. It can also be seen from the bar plot by observing that the hight of the bar above the value “5” is equal to 3.</p></li>
+<li><p>The number of waiting costumers that occurred the largest number of times is 1. The value “1” occurred 8 times, more than any other value. Notice that the bar above this value is the highest.</p></li>
+<li><p>The value “0”, which occurred only once, occurred the least number of times.</p></li>
+</ol>
+</div>
+</div>
+<div id="chapter-2" class="section level2 unnumbered">
+<h2>Chapter 2</h2>
+<div id="exercise-2.1" class="section level3 unnumbered">
+<h3>Exercise 2.1</h3>
+<ol style="list-style-type: decimal">
+<li><p>The relative frequency of direct hits of category 1 is 0.3993. Notice that the cumulative relative frequency of category 1 and 2 hits, the sum of the relative frequency of both categories, is 0.6630. The relative frequency of category 2 hits is 0.2637. Consequently, the relative frequency of direct hits of category 1 is 0.6630 - 0.2637 = 0.3993.</p></li>
+<li><p>The relative frequency of direct hits of category 4 or more is 0.0769. Observe that the cumulative relative of the value “3” is 0.6630 + 0.2601 = 0.9231. This follows from the fact that the cumulative relative frequency of the value “2” is 0.6630 and the relative frequency of the value “3” is 0.2601. The total cumulative relative frequency is 1.0000. The relative frequency of direct hits of category 4 or more is the difference between the total cumulative relative frequency and cumulative relative frequency of 3 hits: 1.0000 - 0.9231 = 0.0769.</p></li>
+</ol>
+</div>
+<div id="exercise-2.2" class="section level3 unnumbered">
+<h3>Exercise 2.2</h3>
+<ol style="list-style-type: decimal">
+<li><p>The total number of cows that were involved in this study is 45. The object “<code>freq</code>” contain the table of frequency of the cows, divided according to the number of calves that they had. The cumulative frequency of all the cows that had 7 calves or less, which includes all cows in the study, is reported under the number “7” in the output of the expression “<code>cumsum(freq)</code>”. This number is 45.</p></li>
+<li><p>The number of cows that gave birth to a total of 4 calves is 10. Indeed, the cumulative frequency of cows that gave birth to 4 calves or less is 28. The cumulative frequency of cows that gave birth to 3 calves or less is 18. The frequency of cows that gave birth to exactly 4 calves is the difference between these two numbers: 28 - 18 = 10.</p></li>
+<li><p>The relative frequency of cows that gave birth to at least 4 calves is <span class="math inline">\(27/45 = 0.6\)</span>. Notice that the cumulative frequency of cows that gave at most 3 calves is 18. The total number of cows is 45. Hence, the number of cows with 4 or more calves is the difference between these two numbers: 45 - 18 = 27. The relative frequency of such cows is the ratio between this number and the total number of cows: <span class="math inline">\(27/45 = 0.6\)</span>.</p></li>
+</ol>
+</div>
+</div>
+<div id="chapter-3" class="section level2 unnumbered">
+<h2>Chapter 3</h2>
+<div id="exercise-3.1" class="section level3 unnumbered">
+<h3>Exercise 3.1</h3>
+<ol style="list-style-type: decimal">
+<li><p>Consider the data “<code>x1</code>”. From the summary we see that it is distributed in the range between 0 and slightly below 5. The central 50% of the distribution are located between 2.5 and 3.8. The mean and median are approximately equal to each other, which suggests an approximately symmetric distribution. Consider the histograms in Figure <a href="ChapDescriptiveStat.html#fig:DStat9">3.3</a>. Histograms 1 and 3 correspond to a distributions in the appropriate range. However, the distribution in Histogram 3 is concentrated in lower values than suggested by the given first and third quartiles. Consequently, we match the summary of “<code>x1</code>” with Histogram 1.</p>
+<p>Consider the data “<code>x2</code>”. Again, the distribution is in the range between 0 and slightly below 5. The central 50% of the distribution are located between 0.6 and 1.8. The mean is larger than the median, which suggests a distribution skewed to the right. Therefore, we match the summary of “<code>x2</code>” with Histogram 3.</p>
+<p>For the data in “<code>x3</code>” we may note that the distribution is in the range between 2 and 6. The histogram that fits this description is Histograms 2.</p>
+<p>The box plot is essentially a graphical representation of the information presented by the function “<code>summary</code>”. Following the rational of matching the summary with the histograms we may obtain that Histogram 1 should be matched with Box-plot 2 in Figure <a href="ChapDescriptiveStat.html#fig:DStat10">3.4</a>, Histogram 2 matches Box-plot 3, and Histogram 3 matches Box-plot 1. Indeed, it is easier to match the box plots with the summaries. However, it is a good idea to practice the direct matching of histograms with box plots.</p></li>
+<li><p>The data in “<code>x1</code>” fits Box-plot 2 in Figure <a href="ChapDescriptiveStat.html#fig:DStat10">3.4</a>. The value 0.000 is the smallest value in the data and it corresponds to the smallest point in the box plot. Since this point is below the bottom whisker it follows that it is an outlier. More directly, we may note that the inter-quartile range is equal to <span class="math inline">\(IQR = 3.840 - 2.498 = 1.342\)</span>. The lower threshold is equal to <span class="math inline">\(2.498 - 1.5 \times 1.342 = 0.485\)</span>, which is larger that the given value. Consequently, the given value 0.000 is an outlier.</p></li>
+<li><p>Observe that the data in “<code>x3</code>” fits Box-plot 3 in Figure <a href="ChapDescriptiveStat.html#fig:DStat10">3.4</a>. The vale 6.414 is the largest value in the data and it corresponds to the endpoint of the upper whisker in the box plot and is not an outlier. Alternatively, we may note that the inter-quartile range is equal to <span class="math inline">\(IQR = 4.690 - 3.391 = 1.299\)</span>. The upper threshold is equal to <span class="math inline">\(4.690 + 1.5 \times 1.299 = 6.6385\)</span>, which is larger that the given value. Consequently, the given value 6.414 is not an outlier.</p></li>
+</ol>
+</div>
+<div id="exercise-3.2" class="section level3 unnumbered">
+<h3>Exercise 3.2</h3>
+<ol style="list-style-type: decimal">
+<li><p>In order to compute the mean of the data we may write the following simple <code>R</code> code:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x.val &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">6</span>,<span class="dv">8</span>,<span class="dv">10</span>)
+freq &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">10</span>,<span class="dv">6</span>,<span class="dv">10</span>,<span class="dv">2</span>,<span class="dv">2</span>)
+rel.freq &lt;-<span class="st"> </span>freq<span class="op">/</span><span class="kw">sum</span>(freq)
+x.bar &lt;-<span class="st"> </span><span class="kw">sum</span>(x.val<span class="op">*</span>rel.freq)
+x.bar</code></pre></div>
+<pre><code>## [1] 4.6666667</code></pre>
+<p>We created an object “<code>x.val</code>” that contains the unique values of the data and an object “<code>freq</code>” that contains the frequencies of the values. The object “<code>rel.freq</code>” contains the relative frequencies, the ratios between the frequencies and the number of observations. The average is computed as the sum of the products of the values with their relative frequencies. It is stored in the objects “<code>x.bar</code>” and obtains the value 4.666667.</p>
+<p>An alternative approach is to reconstruct the original data from the frequency table. A simple trick that will do the job is to use the function “<code>rep</code>”. The first argument to this function is a sequence of values. If the second argument is a sequence of the same length that contains integers then the output will be composed of a sequence that contains the values of the first sequence, each repeated a number of times indicated by the second argument. Specifically, if we enter to this function the unique value “<code>x.val</code>” and the frequency of the values “<code>freq</code>” then the output will be the sequence of values of the original sequence “<code>x</code>”:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="kw">rep</span>(x.val,freq)
+x</code></pre></div>
+<pre><code>##  [1]  2  2  2  2  2  2  2  2  2  2  4  4  4  4  4  4  6  6  6  6  6  6  6
+## [24]  6  6  6  8  8 10 10</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(x)</code></pre></div>
+<pre><code>## [1] 4.6666667</code></pre>
+<p>Observe that when we apply the function “<code>mean</code>” to “<code>x</code>” we get again the value 4.666667.</p></li>
+<li><p>In order to compute the sample standard deviation we may compute first the sample variance and then take the square root of the result:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">var.x &lt;-<span class="st"> </span><span class="kw">sum</span>((x.val<span class="op">-</span>x.bar)<span class="op">^</span><span class="dv">2</span><span class="op">*</span>freq)<span class="op">/</span>(<span class="kw">sum</span>(freq)<span class="op">-</span><span class="dv">1</span>)
+<span class="kw">sqrt</span>(var.x)</code></pre></div>
+<pre><code>## [1] 2.4259137</code></pre>
+<p>Notice that the expression “<code>sum((x.val-x.bar)^2*freq)</code>” compute the sum of square deviations. The expression “<code>(sum(freq)-1)</code>” produces the number of observations minus 1 (<span class="math inline">\(n-1\)</span>). The ratio of the two gives the sample variance.</p>
+<p>Alternatively, had we produced the object “<code>x</code>” that contains the data, we may apply the function “<code>sd</code>” to get the sample standard deviation:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sd</span>(x)</code></pre></div>
+<pre><code>## [1] 2.4259137</code></pre>
+<p>Observe that in both forms of computation we obtain the same result: 2.425914.</p></li>
+<li><p>In order to compute the median one may produce the table of cumulative relative frequencies of “<code>x</code>”:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data.frame</span>(x.val,<span class="kw">cumsum</span>(rel.freq))</code></pre></div>
+<pre><code>##   x.val cumsum.rel.freq.
+## 1     2       0.33333333
+## 2     4       0.53333333
+## 3     6       0.86666667
+## 4     8       0.93333333
+## 5    10       1.00000000</code></pre>
+<p>Recall that the object “<code>x.val</code>” contains the unique values of the data. The expression “<code>cumsum(rel.freq)</code>” produces the cumulative relative frequencies. The function “<code>data.frame</code>” puts these two variables into a single data frame and provides a clearer representation of the results.</p>
+<p>Notice that more that 50% of the observations have value 4 or less. However, strictly less than 50% of the observations have value 2 or less. Consequently, the median is 4. (If the value of the cumulative relative frequency at 4 would have been exactly 50% then the median would have been the average between 4 and the value larger than 4.)</p>
+<p>In the case that we produce the values of the data “<code>x</code>” then we may apply the function “<code>summary</code>” to it and obtain the median this way</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(x)</code></pre></div>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##  2.0000  2.0000  4.0000  4.6667  6.0000 10.0000</code></pre></li>
+<li><p>As for the inter-quartile range (IQR) notice that the first quartile is 2 and the third quartile is 6. Hence, the inter-quartile range is equal to 6 - 2 = 4. The quartiles can be read directly from the output of the function “<code>summary</code>” or can be obtained from the data frame of the cumulative relative frequencies. For the later observe that more than 25% of the data are less or equal to 2 and more 75% of the data are less or equal to 6 (with strictly less than 75% less or equal to 4).</p></li>
+<li><p>In order to answer the last question we conduct the computation: <span class="math inline">\((10 - 4.666667)/2.425914 = 2.198484\)</span>. We conclude that the value 10 is approximately 2.1985 standard deviations above the mean.</p></li>
+</ol>
+</div>
+</div>
+<div id="chapter-4" class="section level2 unnumbered">
+<h2>Chapter 4</h2>
+<div id="exercise-4.1" class="section level3 unnumbered">
+<h3>Exercise 4.1</h3>
+<ol style="list-style-type: decimal">
+<li>Consult Table <a href="ChapProbability.html#tab:tab4">4.4</a>. The probabilities of the different values of <span class="math inline">\(Y\)</span> are <span class="math inline">\(\{p, 2p, \ldots, 6p\}\)</span>. These probabilities sum to 1, consequently</li>
+</ol>
+<p><span class="math display">\[p + 2p + 3 p + 4 p + 5 p + 6p = (1+2+3+4+5+6)p = 21 p = 1 \Longrightarrow p = 1/21\;.\]</span></p>
+<ol start="2" style="list-style-type: decimal">
+<li>The event <span class="math inline">\(\{Y &lt; 3\}\)</span> contains the values 0, 1 and 2. Therefore,</li>
+</ol>
+<p><span class="math display">\[\Prob(Y &lt; 3) = \Prob(Y=0) + \Prob(Y=1) + \Prob(Y=2) = \frac{1}{21} + \frac{2}{21} + \frac{3}{21} = \frac{6}{21}= 0.2857\;.\]</span></p>
+<ol start="3" style="list-style-type: decimal">
+<li>The event <span class="math inline">\(\{Y = \mbox{odd}\}\)</span> contains the values 1, 3 and 5. Therefore,</li>
+</ol>
+<p><span class="math display">\[\Prob(Y = \mbox{odd}) = \Prob(Y=1) + \Prob(Y=3) + \Prob(Y=5) = \frac{2}{21} + \frac{4}{21} + \frac{6}{21} = \frac{12}{21}= 0.5714\;.\]</span></p>
+<ol start="4" style="list-style-type: decimal">
+<li>The event <span class="math inline">\(\{1 \leq Y &lt; 4\}\)</span> contains the values 1, 2 and 3. Therefore,</li>
+</ol>
+<p><span class="math display">\[\Prob(1 \leq Y &lt; 4) = \Prob(Y=1) + \Prob(Y=2) + \Prob(Y=3) = \frac{2}{21} + \frac{3}{21} + \frac{4}{21} = \frac{9}{21}= 0.4286\;.\]</span></p>
+<ol start="5" style="list-style-type: decimal">
+<li>The event <span class="math inline">\(\{|Y -3| &lt; 1.5\}\)</span> contains the values 2, 3 and 4. Therefore,</li>
+</ol>
+<p><span class="math display">\[\Prob(|Y -3| &lt; 1.5) = \Prob(Y=2) + \Prob(Y=3) + \Prob(Y=4) = \frac{3}{21} + \frac{4}{21} + \frac{5}{21} = \frac{12}{21}= 0.5714\;.\]</span></p>
+<ol start="6" style="list-style-type: decimal">
+<li><p>The values that the random variable <span class="math inline">\(Y\)</span> obtains are the numbers 0, 1, 2, …, 5, with probabilities <span class="math inline">\(\{1/21, 2/21, \ldots, 6/21\}\)</span>, respectively. The expectation is obtained by the multiplication of the values by their respective probabilities and the summation of the products. Let us carry out the computation in <code>R</code>:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">Y.val &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>)
+P.val &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>)<span class="op">/</span><span class="dv">21</span>
+E &lt;-<span class="st"> </span><span class="kw">sum</span>(Y.val<span class="op">*</span>P.val)
+E</code></pre></div>
+<pre><code>## [1] 3.3333333</code></pre>
+<p>We obtain an expectation <span class="math inline">\(\Expec(Y) = 3.3333\)</span>.</p></li>
+<li><p>The values that the random variable <span class="math inline">\(Y\)</span> obtains are the numbers 0, 1, 2, …, 5, with probabilities <span class="math inline">\(\{1/21, 2/21, \ldots, 6/21\}\)</span>, respectively. The expectation is equal to <span class="math inline">\(\Expec(Y) = 3.333333\)</span>. The variance is obtained by the multiplication of the squared deviation from the expectation of the values by their respective probabilities and the summation of the products. Let us carry out the computation in <code>R</code>:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">Var &lt;-<span class="st"> </span><span class="kw">sum</span>((Y.val<span class="op">-</span>E)<span class="op">^</span><span class="dv">2</span><span class="op">*</span>P.val)</code></pre></div>
+<p>We obtain a variance <span class="math inline">\(\Var(Y) = 2.2222\)</span>.</p></li>
+<li><p>The standard deviation is the square root of the variance: <span class="math inline">\(\sqrt{\Var(Y)} = \sqrt{2.2222} = 1.4907\)</span>.</p></li>
+</ol>
+</div>
+<div id="exercise-4.2" class="section level3 unnumbered">
+<h3>Exercise 4.2</h3>
+<ol style="list-style-type: decimal">
+<li><p>An outcome of the game of chance may be represented by a sequence of length three composed of the letters “H” and “T”. For example, the sequence “THH“ corresponds to the case where the first toss produced a”Tail“, the second a “Head” and the third a “Head”.</p>
+<p>With this notation we obtain that the possible outcomes of the game are <span class="math inline">\(\{\mbox{HHH}, \mbox{THH},\mbox{HTH}, \mbox{TTH},\mbox{HHT}, \mbox{THT},\mbox{HTT}, \mbox{TTT}\}\)</span>. All outcomes are equally likely. There are 8 possible outcomes and only one of which corresponds to winning. Consequently, the probability of winning is 1/8.</p></li>
+<li><p>Consider the previous solution. One looses if any other of the outcomes occurs. Hence, the probability of loosing is 7/8.</p></li>
+<li><p>Denote the gain of the player by <span class="math inline">\(X\)</span>. The random variable <span class="math inline">\(X\)</span> may obtain two values: 10-2 = 8 if the player wins and -2 if the player looses. The probabilities of these values are {1/8, 7/8}, respectively. Therefore, the expected gain, the expectation of <span class="math inline">\(X\)</span> is:</p></li>
+</ol>
+<p><span class="math display">\[\Expec(X) = 8 \times \frac{1}{8} + (-2) \times \frac{7}{8} =-0.75\;.\]</span></p>
+</div>
+</div>
+<div id="chapter-5" class="section level2 unnumbered">
+<h2>Chapter 5</h2>
+<div id="exercise-5.1" class="section level3 unnumbered">
+<h3>Exercise 5.1</h3>
+<ol style="list-style-type: decimal">
+<li>The Binomial distribution is a reasonable model for the number of people that develop high fever as result of the vaccination. Let <span class="math inline">\(X\)</span> be the number of people that do so in a give day. Hence, <span class="math inline">\(X \sim \mbox{Binomial}(500,0.09)\)</span>. According to the formula for the expectation in the Binomial distribution, since <span class="math inline">\(n=500\)</span> and <span class="math inline">\(p=0.09\)</span>, we get that:</li>
+</ol>
+<p><span class="math display">\[\Expec(X) = n p = 500 \times 0.09 = 45\;.\]</span></p>
+<ol start="2" style="list-style-type: decimal">
+<li>Let <span class="math inline">\(X \sim \mbox{Binomial}(500,0.09)\)</span>. Using the formula for the variance for the Binomial distribution we get that:</li>
+</ol>
+<p><span class="math display">\[\Var(X) = n p(1-p) = 500 \times 0.09\times 0.91 = 40.95\;.\]</span> Hence, since <span class="math inline">\(\sqrt{Var(X)} = \sqrt{40.95} = 6.3992\)</span>, the standard deviation is 6.3992.</p>
+<ol start="3" style="list-style-type: decimal">
+<li>Let <span class="math inline">\(X \sim \mbox{Binomial}(500,0.09)\)</span>. The probability that more than 40 people will develop a reaction may be computed as the difference between 1 and the probability that 40 people or less will develop a reaction:</li>
+</ol>
+<p><span class="math display">\[\Prob(X &gt; 40) = 1- \Prob(X \leq 40)\;.\]</span> The probability can be computes with the aid of the function “<code>pbinom</code>” that produces the cumulative probability of the Binomial distribution:</p>
+<pre><code>```r
+1 - pbinom(40,500,0.09)
+```
+
+```
+## [1] 0.75564737
+```</code></pre>
+<ol start="4" style="list-style-type: decimal">
+<li><p>The probability that the number of people that will develop a reaction is between 50 and 45 (inclusive) is the difference between <span class="math inline">\(\Prob(X\leq 50)\)</span> and <span class="math inline">\(\Prob(X &lt; 45) = \Prob(X \leq 44)\)</span>. Apply the function “<code>pbinom</code>” to get:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pbinom</span>(<span class="dv">50</span>,<span class="dv">500</span>,<span class="fl">0.09</span>) <span class="op">-</span><span class="st"> </span><span class="kw">pbinom</span>(<span class="dv">44</span>,<span class="dv">500</span>,<span class="fl">0.09</span>)</code></pre></div>
+<pre><code>## [1] 0.32923206</code></pre></li>
+</ol>
+</div>
+<div id="exercise-5.2" class="section level3 unnumbered">
+<h3>Exercise 5.2</h3>
+<ol style="list-style-type: decimal">
+<li><p>The plots can be produced with the following code, which should be run one line at a time:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="dv">0</span><span class="op">:</span><span class="dv">15</span>
+<span class="kw">plot</span>(x,<span class="kw">dnbinom</span>(x,<span class="dv">2</span>,<span class="fl">0.5</span>),<span class="dt">type=</span><span class="st">&quot;h&quot;</span>)</code></pre></div>
+<p><img src="thinkstat_files/figure-html/unnamed-chunk-258-1.png" width="60%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(x,<span class="kw">dnbinom</span>(x,<span class="dv">4</span>,<span class="fl">0.5</span>),<span class="dt">type=</span><span class="st">&quot;h&quot;</span>)</code></pre></div>
+<p><img src="thinkstat_files/figure-html/unnamed-chunk-258-2.png" width="60%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(x,<span class="kw">dnbinom</span>(x,<span class="dv">8</span>,<span class="fl">0.8</span>),<span class="dt">type=</span><span class="st">&quot;h&quot;</span>)</code></pre></div>
+<p><img src="thinkstat_files/figure-html/unnamed-chunk-258-3.png" width="60%" style="display: block; margin: auto;" /></p>
+<p>The first plot, that corresponds to <span class="math inline">\(X_1 \sim \mbox{Negative-Binomial}(2,0.5)\)</span>, fits Barplot 3. Notice that the distribution tends to obtain smaller values and that the probability of the value “0” is equal to the probability of the value “1”.</p>
+<p>The second plot, the one that corresponds to <span class="math inline">\(X_2 \sim \mbox{Negative-Binomial}(4,0.5)\)</span>, is associated with Barplot 1. Notice that the distribution tends to obtain larger values. For example, the probability of the value “10” is substantially larger than zero, where for the other two plots this is not the case.</p>
+<p>The third plot, the one that corresponds to <span class="math inline">\(X_3 \sim \mbox{Negative-Binomial}(8,0.8)\)</span>, matches Barplot 2. Observe that this distribution tends to produce smaller probabilities for the small values as well as for the larger values. Overall, it is more concentrated than the other two.</p></li>
+<li><p>Barplot 1 corresponds to a distribution that tends to obtain larger values than the other two distributions. Consequently, the expectation of this distribution should be larger. The conclusion is that the pair <span class="math inline">\(\Expec(X) = 4\)</span>, <span class="math inline">\(\Var(X) = 8\)</span> should be associated with this distribution.</p>
+<p>Barplot 2 describes a distribution that produce smaller probabilities for the small values as well as for the larger values and is more concentrated than the other two. The expectations of the two remaining distributions are equal to each other and the variance of the pair <span class="math inline">\(\Expec(X) = 2\)</span>, <span class="math inline">\(\Var(X) = 2.5\)</span> is smaller. Consequently, this is the pair that should be matched with this box plot.</p>
+<p>This leaves only Barplot 3, that should be matched with the pair <span class="math inline">\(\Expec(X) = 2\)</span>, <span class="math inline">\(\Var(X) = 4\)</span>.</p></li>
+</ol>
+</div>
+</div>
+<div id="chapter-6" class="section level2 unnumbered">
+<h2>Chapter 6</h2>
+<div id="exercise-6.1" class="section level3 unnumbered">
+<h3>Exercise 6.1</h3>
+<ol style="list-style-type: decimal">
+<li><p>Let <span class="math inline">\(X\)</span> be the total weight of 8 people. By the assumption, <span class="math inline">\(X \sim \mbox{Normal}(560, 57^2)\)</span>. We are interested in the probability <span class="math inline">\(\Prob(X &gt; 650)\)</span>. This probability is equal to the difference between 1 and the probability <span class="math inline">\(\Prob(X \leq 650)\)</span>. We use the function “<code>pnorm</code>” in order to carry out the computation:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">1</span> <span class="op">-</span><span class="st"> </span><span class="kw">pnorm</span>(<span class="dv">650</span>,<span class="dv">560</span>,<span class="dv">57</span>)</code></pre></div>
+<pre><code>## [1] 0.057174065</code></pre>
+<p>We get that the probability that the total weight of 8 people exceeds 650kg is equal to 0.05717406.</p></li>
+<li><p>Let <span class="math inline">\(Y\)</span> be the total weight of 9 people. By the assumption, <span class="math inline">\(Y \sim \mbox{Normal}(630, 61^2)\)</span>. We are interested in the probability <span class="math inline">\(\Prob(Y &gt; 650)\)</span>. This probability is equal to the difference between 1 and the probability <span class="math inline">\(\Prob(Y \leq 650)\)</span>. We use again the function “<code>pnorm</code>” in order to carry out the computation:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">1</span> <span class="op">-</span><span class="st"> </span><span class="kw">pnorm</span>(<span class="dv">650</span>,<span class="dv">630</span>,<span class="dv">61</span>)</code></pre></div>
+<pre><code>## [1] 0.37150541</code></pre>
+<p>We get that the probability that the total weight of 9 people exceeds 650kg is much higher and is equal to 0.3715054.</p></li>
+<li><p>Again, <span class="math inline">\(X \sim \mbox{Normal}(560, 57^2)\)</span>, where <span class="math inline">\(X\)</span> is the total weight of 8 people. In order to find the central region that contains 80% of the distribution we need to identify the 10%-percentile and the 90%-percentile of <span class="math inline">\(X\)</span>. We use the function “<code>qnorm</code>” in the code:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">qnorm</span>(<span class="fl">0.1</span>,<span class="dv">560</span>,<span class="dv">57</span>)</code></pre></div>
+<pre><code>## [1] 486.95156</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">qnorm</span>(<span class="fl">0.9</span>,<span class="dv">560</span>,<span class="dv">57</span>)</code></pre></div>
+<pre><code>## [1] 633.04844</code></pre>
+<p>The requested region is the interval <span class="math display">\[486.9516, 633.0484\]</span>.</p></li>
+<li><p>As before, <span class="math inline">\(Y \sim \mbox{Normal}(630, 61^2)\)</span>, where <span class="math inline">\(Y\)</span> is the total weight of 9 people. In order to find the central region that contains 80% of the distribution we need to identify the 10%-percentile and the 90%-percentile of <span class="math inline">\(Y\)</span>. The computation this time produces:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">qnorm</span>(<span class="fl">0.1</span>,<span class="dv">630</span>,<span class="dv">61</span>)</code></pre></div>
+<pre><code>## [1] 551.82535</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">qnorm</span>(<span class="fl">0.9</span>,<span class="dv">630</span>,<span class="dv">61</span>)</code></pre></div>
+<pre><code>## [1] 708.17465</code></pre>
+<p>and the region is <span class="math display">\[551.8254, 708.1746\]</span>.</p></li>
+</ol>
+</div>
+<div id="exercise-6.2" class="section level3 unnumbered">
+<h3>Exercise 6.2</h3>
+<ol style="list-style-type: decimal">
+<li><p>The probability <span class="math inline">\(\Prob(X &gt; 11)\)</span> can be computed as the difference between 1 and the probability <span class="math inline">\(\Prob(X \leq 11)\)</span>. The latter probability can be computed with the function “<code>pbinom</code>”:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">1</span> <span class="op">-</span><span class="st"> </span><span class="kw">pbinom</span>(<span class="dv">11</span>,<span class="dv">27</span>,<span class="fl">0.32</span>)</code></pre></div>
+<pre><code>## [1] 0.12039255</code></pre>
+<p>Therefore, <span class="math inline">\(\Prob(X &gt; 11) = 0.1203926\)</span>.</p></li>
+<li><p>Refer again to the probability <span class="math inline">\(\Prob(X &gt; 11)\)</span>. A formal application of the Normal approximation replaces in the computation the Binomial distribution by the Normal distribution with the same mean and variance. Since <span class="math inline">\(\Expec(X) = n \cdot p = 27 \cdot 0.32 = 8.64\)</span> and <span class="math inline">\(\Var(X) = n \cdot p \cdot (1-p) = 27 \cdot 0.32 \cdot 0.68 = 5.8752\)</span>. If we take <span class="math inline">\(X \sim \mbox{Normal}(8.64,5.8752)\)</span> and use the function “<code>pnorm</code>” we get:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">1</span> <span class="op">-</span><span class="st"> </span><span class="kw">pnorm</span>(<span class="dv">11</span>,<span class="dv">27</span><span class="op">*</span><span class="fl">0.32</span>,<span class="kw">sqrt</span>(<span class="dv">27</span><span class="op">*</span><span class="fl">0.32</span><span class="op">*</span><span class="fl">0.68</span>))</code></pre></div>
+<pre><code>## [1] 0.1651164</code></pre>
+<p>Therefore, the current Normal approximation proposes <span class="math inline">\(\Prob(X &gt; 11) \approx 0.1651164\)</span>.</p></li>
+<li><p>The continuity correction, that consider interval of range 0.5 about each value, replace <span class="math inline">\(\Prob(X &gt; 11)\)</span>, that involves the values <span class="math inline">\(\{12, 13, \ldots, 27\}\)</span>, by the event <span class="math inline">\(\Prob(X &gt; 11.5)\)</span>. The Normal approximation uses the Normal distribution with the same mean and variance. Since <span class="math inline">\(\Expec(X) = 8.64\)</span> and <span class="math inline">\(\Var(X) = 5.8752\)</span>. If we take <span class="math inline">\(X \sim \mbox{Normal}(8.64,5.8752)\)</span> and use the function “<code>pnorm</code>” we get:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">1</span> <span class="op">-</span><span class="st"> </span><span class="kw">pnorm</span>(<span class="fl">11.5</span>,<span class="dv">27</span><span class="op">*</span><span class="fl">0.32</span>,<span class="kw">sqrt</span>(<span class="dv">27</span><span class="op">*</span><span class="fl">0.32</span><span class="op">*</span><span class="fl">0.68</span>))</code></pre></div>
+<pre><code>## [1] 0.11901486</code></pre>
+<p>The Normal approximation with continuity correction proposes <span class="math inline">\(\Prob(X &gt; 11) \approx 0.1190149\)</span>.</p></li>
+<li><p>The Poisson approximation replaces the Binomial distribution by the Poisson distribution with the same expectation. The expectation is <span class="math inline">\(\Expec(X) = n \cdot p = 27 \cdot 0.32 = 8.64\)</span>. If we take <span class="math inline">\(X \sim \mbox{Poisson}(8.64)\)</span> and use the function “<code>ppois</code>” we get:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">1</span> <span class="op">-</span><span class="st"> </span><span class="kw">ppois</span>(<span class="dv">11</span>,<span class="dv">27</span><span class="op">*</span><span class="fl">0.32</span>)</code></pre></div>
+<pre><code>## [1] 0.16352317</code></pre></li>
+</ol>
+<p>Therefore, the Poisson approximation proposes <span class="math inline">\(\Prob(X &gt; 11) \approx 0.1651164\)</span>.</p>
+</div>
+</div>
+<div id="chapter-7" class="section level2 unnumbered">
+<h2>Chapter 7</h2>
+<div id="exercise-7.1" class="section level3 unnumbered">
+<h3>Exercise 7.1</h3>
+<ol style="list-style-type: decimal">
+<li><p>After placing the file “<code>pop2.csv</code>” in the working directory one may produce a data frame with the content of the file and compute the average of the variable “<code>bmi</code>” using the code:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">pop.<span class="dv">2</span> &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="dt">file=</span><span class="st">&quot;_data/pop2.csv&quot;</span>)
+<span class="kw">mean</span>(pop.<span class="dv">2</span><span class="op">$</span>bmi)</code></pre></div>
+<pre><code>## [1] 24.984457</code></pre>
+<p>We obtain that the population average of the variable is equal to 24.98446.</p></li>
+<li><p>Applying the function “<code>sd</code>” to the sequence of population values produces the population standard deviation:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sd</span>(pop.<span class="dv">2</span><span class="op">$</span>bmi)</code></pre></div>
+<pre><code>## [1] 4.188511</code></pre>
+<p>In turns out that the standard deviation of the measurement is 4.188511.</p></li>
+<li><p>In order to compute the expectation under the sampling distribution of the sample average we conduct a simulation. The simulation produces (an approximation) of the sampling distribution of the sample average. The sampling distribution is represented by the content of the sequence “<code>X.bar</code>”:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">X.bar &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="dv">0</span>,<span class="dv">10</span><span class="op">^</span><span class="dv">5</span>)
+<span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">10</span><span class="op">^</span><span class="dv">5</span>) {
+  X.samp &lt;-<span class="st"> </span><span class="kw">sample</span>(pop.<span class="dv">2</span><span class="op">$</span>bmi,<span class="dv">150</span>)
+  X.bar[i] &lt;-<span class="st"> </span><span class="kw">mean</span>(X.samp)
+}
+<span class="kw">mean</span>(X.bar)</code></pre></div>
+<pre><code>## [1] 24.986574</code></pre>
+<p>Initially, we produce a vector of zeros of the given lenght (100,000). In each iteration of the “<code>for</code>” loop a random sample of size 150 is selected from the population. The sample average is computed and stored in the sequence “<code>X.bar</code>”. At the end of all the iterations all the zeros are replaced by evaluations of the sample average.</p>
+<p>The expectation of the sampling distribution of the sample average is computed by the application of the function “<code>mean</code>” to the sequence that represents the sampling distribution of the sample average. The result for the current is 24.98681, which is vary similar<a href="#fn95" class="footnoteRef" id="fnref95"><sup>95</sup></a> to the population average 24.98446.</p></li>
+<li><p>The standard deviation of the sample average under the sampling distribution is computed using the function “<code>sd</code>”:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sd</span>(X.bar)</code></pre></div>
+<pre><code>## [1] 0.34220721</code></pre>
+<p>The resulting standard deviation is 0.3422717. Recall that the standard deviation of a single measurement is equal to 4.188511 and that the sample size is <span class="math inline">\(n=150\)</span>. The ratio between the standard deviation of the measurement and the square root of 150 is <span class="math inline">\(4.188511/\sqrt{150} =0.3419905\)</span>, which is similar in value to the standard deviation of the sample average[^4].</p></li>
+<li><p>The central region that contains 80% of the sampling distribution of the sample average can be identified with the aid of the function “<code>quantile</code>”:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">quantile</span>(X.bar,<span class="kw">c</span>(<span class="fl">0.1</span>,<span class="fl">0.9</span>))</code></pre></div>
+<pre><code>##       10%       90% 
+## 24.548109 25.425443</code></pre>
+<p>The value 24.54972 is the 10%-percentile of the sampling distribution. To the left of this value are 10% of the distribution. The value 25.42629 is the 90%-percentile of the sampling distribution. To the right of this value are 10% of the distribution. Between these two values are 80% of the sampling distribution.</p></li>
+<li><p>The Normal approximation, which is the conclusion of the Central Limit Theorem substitutes the sampling distribution of the sample average by the Normal distribution with the same expectation and standard deviation. The percentiles are computed with the function “<code>qnorm</code>”:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">qnorm</span>(<span class="kw">c</span>(<span class="fl">0.1</span>,<span class="fl">0.9</span>),<span class="kw">mean</span>(X.bar),<span class="kw">sd</span>(X.bar))</code></pre></div>
+<pre><code>## [1] 24.548018 25.425130</code></pre>
+<p>Observe that we used the expectation and the standard deviation of the sample average in the function. The resulting interval is <span class="math inline">\([24.54817, 25.42545]\)</span>, which is similar to the interval <span class="math inline">\([24.54972, 25.42629]\)</span> which was obtained via simulations.</p></li>
+</ol>
+</div>
+<div id="exercise-7.2" class="section level3 unnumbered">
+<h3>Exercise 7.2</h3>
+<ol style="list-style-type: decimal">
+<li><p>Denote by <span class="math inline">\(X\)</span> the distance from the specified endpoint of a random hit. Observe that <span class="math inline">\(X \sim \mbox{Uniform}(0,10)\)</span>. The 25 hits form a sample <span class="math inline">\(X_1, X_2, \ldots, X_{25}\)</span> from this distribution and the sample average <span class="math inline">\(\bar X\)</span> is the average of these random locations. The expectation of the average is equal to the expectation of a single measurement. Since <span class="math inline">\(\Expec(X) = (a + b)/2 = (0 + 10)/2 = 5\)</span> we get that <span class="math inline">\(\Expec(\bar X) = 5\)</span>.</p></li>
+<li><p>The variance of the sample average is equal to the variance of a single measurement, divided by the sample size. The variance of the Uniform distribution is <span class="math inline">\(\Var(X) = (a + b)^2/12 = (10-0)^2/12 = 8.333333\)</span>. The standard deviation of the sample average is equal to the standard deviation of the sample average is equal to the standard deviation of a single measurement, divided by the square root of the sample size. The sample size is <span class="math inline">\(n=25\)</span>. Consequently, the standard deviation of the average is <span class="math inline">\(\sqrt{8.333333/25}=0.5773503\)</span>.</p></li>
+<li><p>The left-most third of the detector is the interval to the left of 10/3. The distribution of the sample average, according to the Central Limit Theorem, is Normal. The probability of being less than 10/3 for the Normal distribution may be computed with the function “<code>pnorm</code>”:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mu &lt;-<span class="st"> </span><span class="dv">5</span>
+sig &lt;-<span class="st"> </span><span class="kw">sqrt</span>(<span class="dv">10</span><span class="op">^</span><span class="dv">2</span><span class="op">/</span>(<span class="dv">12</span><span class="op">*</span><span class="dv">25</span>))
+<span class="kw">pnorm</span>(<span class="dv">10</span><span class="op">/</span><span class="dv">3</span>,mu,sig)</code></pre></div>
+<pre><code>## [1] 0.0019462086</code></pre>
+<p>The expectation and the standard deviation of the sample average are used in computation of the probability. The probability is 0.001946209, about 0.2%.</p></li>
+<li><p>The central region in the <span class="math inline">\(\mbox{Normal}(\mu,\sigma^2)\)</span> distribution that contains 99% of the distribution is of the form <span class="math inline">\(\mu \pm \mbox{\texttt{qnorm(0.995)}}\cdot \sigma\)</span>, where “<code>qnorm(0.995)</code>” is the 99.5%-percentile of the Standard Normal distribution. Therefore, <span class="math inline">\(c =\mbox{\texttt{qnorm(0.995)}}\cdot \sigma\)</span>:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">qnorm</span>(<span class="fl">0.995</span>)<span class="op">*</span>sig</code></pre></div>
+<pre><code>## [1] 1.4871557</code></pre>
+<p>We get that <span class="math inline">\(c=1.487156\)</span>.</p></li>
+</ol>
+</div>
+</div>
+<div id="chapter-9" class="section level2 unnumbered">
+<h2>Chapter 9</h2>
+<div id="exercise-9.1" class="section level3 unnumbered">
+<h3>Exercise 9.1</h3>
+<ol style="list-style-type: decimal">
+<li><p>Let us read the data into a data frame by the name “<code>magnets</code>” and apply the function “<code>summary</code>” to the data frame:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">magnets &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;_data/magnets.csv&quot;</span>)
+<span class="kw">summary</span>(magnets)</code></pre></div>
+<pre><code>##      score1          score2          change     active  
+##  Min.   : 7.00   Min.   : 0.00   Min.   : 0.0   &quot;1&quot;:29  
+##  1st Qu.: 9.25   1st Qu.: 4.00   1st Qu.: 0.0   &quot;2&quot;:21  
+##  Median :10.00   Median : 6.00   Median : 3.5           
+##  Mean   : 9.58   Mean   : 6.08   Mean   : 3.5           
+##  3rd Qu.:10.00   3rd Qu.: 9.75   3rd Qu.: 6.0           
+##  Max.   :10.00   Max.   :10.00   Max.   :10.0</code></pre>
+<p>The variable “<code>change</code>” contains the difference between the patient’s rating before the application of the device and the rating after the application. The sample average of this variable is reported as the “<code>Mean</code>” for this variable and is equal to 3.5.</p></li>
+<li><p>The variable “<code>active</code>” is a factor. Observe that the summary of this variable lists the two levels of the variable and the frequency of each level. Indeed, the levels are coded with numbers but, nonetheless, the variable is a factor[^12].</p></li>
+<li><p>Based on the hint we know that the expressions “<code>change[1:29]</code>” and “<code>change[30:50]</code>” produce the values of the variable “<code>change</code>” for the patients that were treated with active magnets and by inactive placebo, respectively. We apply the function “<code>mean</code>” to these sub-sequences:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(magnets<span class="op">$</span>change[<span class="dv">1</span><span class="op">:</span><span class="dv">29</span>])</code></pre></div>
+<pre><code>## [1] 5.2413793</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(magnets<span class="op">$</span>change[<span class="dv">30</span><span class="op">:</span><span class="dv">50</span>])</code></pre></div>
+<pre><code>## [1] 1.0952381</code></pre>
+<p>The sample average for the patients that were treated with active magnets is 5.241379 and sample average for the patients that were treated with inactive placebo is 1.095238.</p></li>
+<li><p>We apply the function “<code>sd</code>” to these sub-sequences:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sd</span>(magnets<span class="op">$</span>change[<span class="dv">1</span><span class="op">:</span><span class="dv">29</span>])</code></pre></div>
+<pre><code>## [1] 3.2365675</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sd</span>(magnets<span class="op">$</span>change[<span class="dv">30</span><span class="op">:</span><span class="dv">50</span>])</code></pre></div>
+<pre><code>## [1] 1.5781243</code></pre>
+<p>The sample standard deviation for the patients that were treated with active magnets is 3.236568 and sample standard deviation for the patients that were treated with inactive placebo is 1.578124.</p></li>
+<li><p>We apply the function “<code>boxplot</code>” to each sub-sequences:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">boxplot</span>(magnets<span class="op">$</span>change[<span class="dv">1</span><span class="op">:</span><span class="dv">29</span>])</code></pre></div>
+<p><img src="thinkstat_files/figure-html/unnamed-chunk-278-1.png" width="60%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">boxplot</span>(magnets<span class="op">$</span>change[<span class="dv">30</span><span class="op">:</span><span class="dv">50</span>])</code></pre></div>
+<p><img src="thinkstat_files/figure-html/unnamed-chunk-278-2.png" width="60%" style="display: block; margin: auto;" /></p>
+<p>The first box-plot corresponds to the sub-sequence of the patients that received an active magnet. There are no outliers in this plot. The second box-plot corresponds to the sub-sequence of the patients that received an inactive placebo. Three values, the values “3”, “4”, and “5” are associated with outliers. Let us see what is the total number of observations that receive these values:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">table</span>(magnets<span class="op">$</span>change[<span class="dv">30</span><span class="op">:</span><span class="dv">50</span>])</code></pre></div>
+<pre><code>## 
+##  0  1  2  3  4  5 
+## 11  5  1  1  2  1</code></pre>
+<p>One may see that a single observation obtained the value “3”, another one obtained the value “5” and 2 observations obtained the value “4”, a total of 4 outliers[^13]. Notice that the single point that is associated with the value “4” actually represents 2 observations and not one.</p></li>
+</ol>
+</div>
+<div id="exercise-9.2" class="section level3 unnumbered">
+<h3>Exercise 9.2</h3>
+<ol style="list-style-type: decimal">
+<li><p>Let us run the following simulation:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mu1 &lt;-<span class="st"> </span><span class="fl">3.5</span>
+sig1 &lt;-<span class="st"> </span><span class="dv">3</span>
+mu2 &lt;-<span class="st"> </span><span class="fl">3.5</span>
+sig2 &lt;-<span class="st"> </span><span class="fl">1.5</span>
+test.stat &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="dv">0</span>,<span class="dv">10</span><span class="op">^</span><span class="dv">5</span>)
+<span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">10</span><span class="op">^</span><span class="dv">5</span>) {
+  X1 &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">29</span>,mu1,sig1)
+  X2 &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">21</span>,mu2,sig2)
+  X1.bar &lt;-<span class="st"> </span><span class="kw">mean</span>(X1)
+  X2.bar &lt;-<span class="st"> </span><span class="kw">mean</span>(X2)
+  X1.var &lt;-<span class="st"> </span><span class="kw">var</span>(X1)
+  X2.var &lt;-<span class="st"> </span><span class="kw">var</span>(X2)
+  test.stat[i] &lt;-<span class="st"> </span>(X1.bar<span class="op">-</span>X2.bar)<span class="op">/</span><span class="kw">sqrt</span>(X1.var<span class="op">/</span><span class="dv">29</span> <span class="op">+</span><span class="st"> </span>X2.var<span class="op">/</span><span class="dv">21</span>)
+}
+<span class="kw">quantile</span>(test.stat,<span class="kw">c</span>(<span class="fl">0.025</span>,<span class="fl">0.975</span>))</code></pre></div>
+<pre><code>##       2.5%      97.5% 
+## -2.0220796  2.0109741</code></pre>
+<p>Observe that each iteration of the simulation involves the generation of two samples. One sample is of size 29 and it is generated from the <span class="math inline">\(\mathrm{Normal}(3.5,3^2)\)</span> distribution and the other sample is of size 21 and it is generated from the <span class="math inline">\(\mathrm{Normal}(3.5,1.5^2)\)</span> distribution. The sample average and the sample variance are computed for each sample. The test statistic is computed based on these averages and variances and it is stored in the appropriate position of the sequence “<code>test.stat</code>”.</p>
+<p>The values of the sequence “<code>test.stat</code>” at the end of all the iterations represent the sampling distribution of the static. The application of the function “<code>quantile</code>” to the sequence gives the 0.025-percentiles and the 0.975-percentiles of the sampling distribution, which are -2.014838 and 2.018435. It follows that the interval <span class="math inline">\([-2.014838, 2.018435]\)</span> contains about 95% of the sampling distribution of the statistic.</p></li>
+<li><p>In order to evaluate the statistic for the given data set we apply the same steps that were used in the simulation for the computation of the statistic:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x1.bar &lt;-<span class="st"> </span><span class="kw">mean</span>(magnets<span class="op">$</span>change[<span class="dv">1</span><span class="op">:</span><span class="dv">29</span>])
+x2.bar &lt;-<span class="st"> </span><span class="kw">mean</span>(magnets<span class="op">$</span>change[<span class="dv">30</span><span class="op">:</span><span class="dv">50</span>])
+x1.var &lt;-<span class="st"> </span><span class="kw">var</span>(magnets<span class="op">$</span>change[<span class="dv">1</span><span class="op">:</span><span class="dv">29</span>])
+x2.var &lt;-<span class="st"> </span><span class="kw">var</span>(magnets<span class="op">$</span>change[<span class="dv">30</span><span class="op">:</span><span class="dv">50</span>])
+(x1.bar<span class="op">-</span>x2.bar)<span class="op">/</span><span class="kw">sqrt</span>(x1.var<span class="op">/</span><span class="dv">29</span> <span class="op">+</span><span class="st"> </span>x2.var<span class="op">/</span><span class="dv">21</span>)</code></pre></div>
+<pre><code>## [1] 5.9856008</code></pre>
+<p>In the first line we compute the sample average for the first 29 patients and in the second line we compute it for the last 21 patients. In the third and fourth lines we do the same for the sample variances of the two types of patients. Finally, in the fifth line we evaluate the statistic. The computed value of the statistic turns out to be 5.985601, a value that does not belong to the interval <span class="math inline">\([-2.014838, 2.018435]\)</span>.</p></li>
+</ol>
+</div>
+</div>
+<div id="chapter-10" class="section level2 unnumbered">
+<h2>Chapter 10</h2>
+<div id="exercise-10.1" class="section level3 unnumbered">
+<h3>Exercise 10.1</h3>
+<ol style="list-style-type: decimal">
+<li><p>We simulate the sampling distribution of the average and the median in a sample generated from the Normal distribution. In order to do so we copy the code that was used in Subsection <a href="ChapEstimation.html#ComparingEstimators">10.3.2</a>, replacing the object “<code>mid.range</code>” by the object “<code>X.med</code>” and using the function “<code>median</code>” in order to compute the sample median instead of the computation of the mid-range statistic:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mu &lt;-<span class="st"> </span><span class="dv">3</span>
+sig &lt;-<span class="st"> </span><span class="kw">sqrt</span>(<span class="dv">2</span>)
+X.bar &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="dv">0</span>,<span class="dv">10</span><span class="op">^</span><span class="dv">5</span>)
+X.med &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="dv">0</span>,<span class="dv">10</span><span class="op">^</span><span class="dv">5</span>)
+<span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">10</span><span class="op">^</span><span class="dv">5</span>) {
+  X &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">100</span>,mu,sig)
+  X.bar[i] &lt;-<span class="st"> </span><span class="kw">mean</span>(X)
+  X.med[i] &lt;-<span class="st"> </span><span class="kw">median</span>(X)
+}</code></pre></div>
+<p>The sequence “<code>X.bar</code>” represents the sampling distribution of the sample average and the sequence “<code>X.med</code>” represents the sampling distribution of the sample median. We apply the function “<code>mean</code>” to these sequences in order to obtain the expectations of the estimators:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(X.bar)</code></pre></div>
+<pre><code>## [1] 2.9998173</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(X.med)</code></pre></div>
+<pre><code>## [1] 2.9995462</code></pre>
+<p>The expectation of the measurement, the parameter of interest is equal to 3. Observe that expectations of the estimators are essentially equal to the expectation[^13]. Consequently, both estimators are unbiased estimators of the expectation of the measurement.</p>
+<p>In order to obtain the variances of the estimators we apply the function “<code>var</code>” to the sequences that represent their sampling distributions:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">var</span>(X.bar)</code></pre></div>
+<pre><code>## [1] 0.019953446</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">var</span>(X.med)</code></pre></div>
+<pre><code>## [1] 0.030815186</code></pre>
+<p>Observe that the variance of the sample average is essentially equal to <span class="math inline">\(0.020\)</span> and the variance of the sample median is essentially equal to <span class="math inline">\(0.0312\)</span>. The mean square error of an unbiased estimator is equal to its variance. Hence, these numbers represent the mean square errors of the estimators. It follows that the mean square error of the sample average is less than the mean square error of the sample median in the estimation of the expectation of a Normal measurement.</p></li>
+<li><p>We repeat the same steps as before for the Uniform distribution. Notice that we use the parameters <span class="math inline">\(a=0.5\)</span> and <span class="math inline">\(b=5.5\)</span> the same way we did in Subsection <a href="ChapEstimation.html#ComparingEstimators">10.3.2</a>. These parameters produce an expectation <span class="math inline">\(\Expec(X) = 3\)</span> and a variance <span class="math inline">\(\Var(X) = 2.083333\)</span>:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">a &lt;-<span class="st"> </span><span class="fl">0.5</span>
+b &lt;-<span class="st"> </span><span class="fl">5.5</span>
+X.bar &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="dv">0</span>,<span class="dv">10</span><span class="op">^</span><span class="dv">5</span>)
+X.med &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="dv">0</span>,<span class="dv">10</span><span class="op">^</span><span class="dv">5</span>)
+<span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">10</span><span class="op">^</span><span class="dv">5</span>) {
+  X &lt;-<span class="st"> </span><span class="kw">runif</span>(<span class="dv">100</span>,a,b)
+  X.bar[i] &lt;-<span class="st"> </span><span class="kw">mean</span>(X)
+  X.med[i] &lt;-<span class="st"> </span><span class="kw">median</span>(X)
+}</code></pre></div>
+<p>Applying the function “<code>mean</code>” to the sequences that represent the sampling distribution of the estimators we obtain that both estimators are essentially unbiased[^14]:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(X.bar)</code></pre></div>
+<pre><code>## [1] 2.9996772</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(X.med)</code></pre></div>
+<pre><code>## [1] 2.9995151</code></pre>
+<p>Compute the variances:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">var</span>(X.bar)</code></pre></div>
+<pre><code>## [1] 0.020819047</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">var</span>(X.med)</code></pre></div>
+<pre><code>## [1] 0.06058218</code></pre>
+<p>Observe <span class="math inline">\(0.021\)</span> is, essentially, the value of the variance of the sample average[^15]. The variance of the sample median is essentially equal to 0.061. The variance of each of the estimators is equal to it’s mean square error. This is the case since the estimators are unbiased. Consequently, we again obtain that the mean square error of the sample average is less than that of the sample median.</p></li>
+</ol>
+</div>
+<div id="exercise-10.2" class="section level3 unnumbered">
+<h3>Exercise 10.2</h3>
+<ol style="list-style-type: decimal">
+<li><p>Assuming that the file “<code>ex2.csv</code>” is saved in the working directory, one may read the content of the file into a data frame and produce a summary of the content of the data frame using the code:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">ex2 &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;_data/ex2.csv&quot;</span>)
+<span class="kw">summary</span>(ex2)</code></pre></div>
+<pre><code>##        id              sex          age              bmi        
+##  Min.   :1024982   FEMALE:74   Min.   :26.000   Min.   :15.121  
+##  1st Qu.:3172782   MALE  :76   1st Qu.:32.000   1st Qu.:22.023  
+##  Median :5200484               Median :35.000   Median :25.157  
+##  Mean   :5463304               Mean   :35.087   Mean   :24.759  
+##  3rd Qu.:7982902               3rd Qu.:37.000   3rd Qu.:27.486  
+##  Max.   :9934175               Max.   :45.000   Max.   :35.239  
+##     systolic        diastolic          group    
+##  Min.   :100.79   Min.   : 51.976   HIGH  : 37  
+##  1st Qu.:118.05   1st Qu.: 75.015   LOW   :  3  
+##  Median :124.25   Median : 83.193   NORMAL:110  
+##  Mean   :125.29   Mean   : 82.436               
+##  3rd Qu.:132.59   3rd Qu.: 88.829               
+##  Max.   :154.45   Max.   :112.709</code></pre>
+<p>Examine the variable “<code>group</code>”. Observe that the sample contains 37 subjects with high levels of blood pressure. Dividing 37 by the sample size we get:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">37</span><span class="op">/</span><span class="dv">150</span></code></pre></div>
+<pre><code>## [1] 0.24666667</code></pre>
+<p>Consequently, the sample proportion is <span class="math inline">\(0.2466667\)</span>.</p>
+<p>Alternatively, we compute the sample proportion using the code:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(ex2<span class="op">$</span>group <span class="op">==</span><span class="st"> &quot;HIGH&quot;</span>)</code></pre></div>
+<pre><code>## [1] 0.24666667</code></pre>
+<p>Notice that the expression “<code>ex2$group == HIGH</code>” produces a sequence of length 150 with logical entries. The entry is equal to “<code>TRUE</code>” if the equality holds and it is equal to “<code>FALSE</code>” if it dos not[^17]. When the function “<code>mean</code>” is applied to a sequence with logical entries it produces the relative frequeny of the <code>TRUE</code>s in the sequence. This corresponds, in the corrent context, to the sample proportion of the level “<code>HIGH</code>” in the variable “<code>ex2$group</code>”.</p></li>
+<li><p>Make sure that the file “<code>pop2.csv</code>” is saved in the working directory. In order to compute the proportion in the population we read the content of the file into a data frame and compute the relative frequency of the level “<code>HIGH</code>” in the variable “<code>group</code>”:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">pop2 &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;_data/pop2.csv&quot;</span>)
+<span class="kw">mean</span>(pop2<span class="op">$</span>group <span class="op">==</span><span class="st"> &quot;HIGH&quot;</span>)</code></pre></div>
+<pre><code>## [1] 0.28126</code></pre>
+<p>We get that the proporion in the population is <span class="math inline">\(p = 0.28126\)</span>.</p></li>
+<li><p>The simulation of the sampling distribution involves a selection of a random sample of size 150 from the population and the computation of the proportion of the level “<code>HIGH</code>” in that sample. This procedure is iterated 100,000 times in order to produce an approximation of the distribution:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">P.hat &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="dv">0</span>,<span class="dv">10</span><span class="op">^</span><span class="dv">5</span>)
+<span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">10</span><span class="op">^</span><span class="dv">5</span>) {
+  X &lt;-<span class="st"> </span><span class="kw">sample</span>(pop2<span class="op">$</span>group,<span class="dv">150</span>)
+  P.hat[i] &lt;-<span class="st"> </span><span class="kw">mean</span>(X <span class="op">==</span><span class="st"> &quot;HIGH&quot;</span>)
+}
+<span class="kw">mean</span>(P.hat)</code></pre></div>
+<pre><code>## [1] 0.28134707</code></pre>
+<p>Observe that the sampling distribution is stored in the object “<code>P.hat</code>”. The function “<code>sample</code>” is used in order to sample 150 observation from the sequence “<code>pop2$group</code>”. The sample is stored in the object “<code>X</code>”. The expression “<code>mean(X == HIGH)</code>” computes the relative frequency of the level “<code>HIGH</code>” in the sequence “<code>X</code>”.</p>
+<p>At the last line, after the production of the sequence “<code>P.hat</code>” is completed, the function “<code>mean</code>” is applied to the sequence. The result is the expected value of estimator <span class="math inline">\(\hat P\)</span>, which is equal to <span class="math inline">\(0.2812307\)</span>. This expectation is essentially equal to the probability of the event <span class="math inline">\(p = 0.28126\)</span>.[^18]</p></li>
+<li><p>The application of the function “<code>var</code>” to the sequence “<code>P.hat</code>” produces:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">var</span>(P.hat)</code></pre></div>
+<pre><code>## [1] 0.0013400859</code></pre>
+<p>Hence, the variance of the estimator is (approximately) equal to <span class="math inline">\(0.00135\)</span>.</p></li>
+<li><p>Compute the variance according to the formula that is proposed in Section:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">p &lt;-<span class="st"> </span><span class="kw">mean</span>(pop2<span class="op">$</span>group <span class="op">==</span><span class="st"> &quot;HIGH&quot;</span>)
+p<span class="op">*</span>(<span class="dv">1</span><span class="op">-</span>p)<span class="op">/</span><span class="dv">150</span></code></pre></div>
+<pre><code>## [1] 0.0013476854</code></pre>
+<p>We get that the proposed variance in Section <span class="math display">\[sec::Estimation\_5\]</span> is <span class="math inline">\(0.0013476850\)</span>, which is in good agreement with the value <span class="math inline">\(0.00135\)</span> that was obtained in the simulation[^19].</p></li>
+</ol>
+</div>
+</div>
+<div id="chapter-11" class="section level2 unnumbered">
+<h2>Chapter 11</h2>
+<div id="exercise-11.1" class="section level3 unnumbered">
+<h3>Exercise 11.1</h3>
+<ol style="list-style-type: decimal">
+<li><p>We read the content of the file “<code>teacher.csv</code>” into a data frame by the name “<code>teacher</code>” and produce a summary of the content of the data frame:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">teacher &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;_data/teacher.csv&quot;</span>)
+<span class="kw">summary</span>(teacher)</code></pre></div>
+<pre><code>##  condition     rating      
+##  C:25      Min.   :1.3333  
+##  P:24      1st Qu.:2.0000  
+##            Median :2.3333  
+##            Mean   :2.4286  
+##            3rd Qu.:2.6667  
+##            Max.   :4.0000</code></pre>
+<p>There are two variables: The variable “<code>condition</code>” is a factor with two levels, “<code>C</code>” that codes the Charismatic condition and “<code>P</code>” that codes the Punitive condition. The second variable is “<code>rating</code>”, which is a numeric variable.</p></li>
+<li><p>The sample average for the variable “<code>rating</code>” can be obtained from the summary or from the application of the function “<code>mean</code>” to the variable. The standard deviation is obtained from the application of the function “<code>sd</code>” to the variable:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(teacher<span class="op">$</span>rating)</code></pre></div>
+<pre><code>## [1] 2.4285673</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sd</span>(teacher<span class="op">$</span>rating)</code></pre></div>
+<pre><code>## [1] 0.56519487</code></pre>
+<p>Observe that the sample average is equal to <span class="math inline">\(2.428567\)</span> and the sample standard deviation is equal to <span class="math inline">\(0.5651949\)</span>.</p></li>
+<li><p>The sample average and standard deviation for each sub-sample may be produced with the aid of the function “<code>tapply</code>”. We apply the function in the third argument, first “<code>mean</code>” and then “<code>sd</code>” to the variable rating, in the first argument, over each level of the factor “<code>condition</code>” in the second argument:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">tapply</span>(teacher<span class="op">$</span>rating,teacher<span class="op">$</span>condition,mean)</code></pre></div>
+<pre><code>##         C         P 
+## 2.6133320 2.2361042</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">tapply</span>(teacher<span class="op">$</span>rating,teacher<span class="op">$</span>condition,sd)</code></pre></div>
+<pre><code>##          C          P 
+## 0.53298325 0.54266671</code></pre>
+<p>Obtain that average for the condition “<code>C</code>” is <span class="math inline">\(2.613332\)</span> and the standard deviation is <span class="math inline">\(0.5329833\)</span>.</p>
+<p>You may note that the rating given by students that were exposed to the description of the lecturer as charismatic is higher on the average than the rating given by students that were exposed to a less favorable description. The box plots of the ratings for the two conditions are presented in Figure <a href="exercise-solutions.html#fig:Confidence2">16.2</a>.</p>
+<div class="figure" style="text-align: center"><span id="fig:Confidence2"></span>
+<img src="thinkstat_files/figure-html/Confidence2-1.png" alt="Box Plots of Ratings" width="60%" />
+<p class="caption">
+FIGURE 16.2: Box Plots of Ratings
+</p>
+</div></li>
+<li><p>The 99% confidence interval for the expectation is computed by the formula <span class="math inline">\(\bar x \pm \mbox{\texttt{qt(0.995,n-1)}} \cdot s/\sqrt{n}\)</span>. Only 0.5% of the <span class="math inline">\(t\)</span>-distribution on <span class="math inline">\((n-1)\)</span> degrees of freedom resides above the percentile “<code>qt(0.995,n-1)</code>”. Using this percentile leaves out a total of 1% in both tails and keeps 99% of the distribution inside the central interval.</p>
+<p>For the students that were exposed to Condition “<code>C</code>”, <span class="math inline">\(\bar x = 2.613332\)</span>, <span class="math inline">\(s = 0.5329833\)</span>, and <span class="math inline">\(n = 25\)</span>:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="fl">2.613332</span> <span class="op">-</span><span class="st"> </span><span class="kw">qt</span>(<span class="fl">0.995</span>,<span class="dv">24</span>)<span class="op">*</span><span class="fl">0.5329833</span><span class="op">/</span><span class="kw">sqrt</span>(<span class="dv">25</span>)</code></pre></div>
+<pre><code>## [1] 2.3151876</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="fl">2.613332</span> <span class="op">+</span><span class="st"> </span><span class="kw">qt</span>(<span class="fl">0.995</span>,<span class="dv">24</span>)<span class="op">*</span><span class="fl">0.5329833</span><span class="op">/</span><span class="kw">sqrt</span>(<span class="dv">25</span>)</code></pre></div>
+<pre><code>## [1] 2.9114764</code></pre>
+<p>The confidence interval for the expectation is <span class="math inline">\([2.315188, 2.911476]\)</span>.</p></li>
+<li><p>The 90% confidence interval for the variance is computed by the formula <span class="math inline">\(\big[\frac{n-1}{\mbox{\texttt{qchisq(0.95,n-1)}}} s^2 ,\;\frac{n-1}{\mbox{\texttt{qchisq(0.05,n-1)}}} s^2\big]\)</span>. Observe that 5% of the chi-square distribution on <span class="math inline">\((n-1)\)</span> degrees of freedom is above the percentile “<code>qchisq(0.95,n-1)</code>” and 5% are below the percentile “<code>qchisq(0.05,n-1)</code>”.</p>
+<p>For the students that were exposed to Condition “<code>C</code>”, <span class="math inline">\(s = 0.5329833\)</span>, and <span class="math inline">\(n = 25\)</span>:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(<span class="dv">24</span><span class="op">/</span><span class="kw">qchisq</span>(<span class="fl">0.95</span>,<span class="dv">24</span>))<span class="op">*</span><span class="fl">0.5329833</span><span class="op">^</span><span class="dv">2</span></code></pre></div>
+<pre><code>## [1] 0.18722239</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(<span class="dv">24</span><span class="op">/</span><span class="kw">qchisq</span>(<span class="fl">0.05</span>,<span class="dv">24</span>))<span class="op">*</span><span class="fl">0.5329833</span><span class="op">^</span><span class="dv">2</span></code></pre></div>
+<pre><code>## [1] 0.49230932</code></pre>
+<p>The point estimate of the variance is <span class="math inline">\(s^2 = 0.5329833^2 = 0.2840712\)</span>. The confidence interval for the variance is <span class="math inline">\([0.18722243, 0.4923093]\)</span>.</p></li>
+</ol>
+</div>
+<div id="exercise-11.2" class="section level3 unnumbered">
+<h3>Exercise 11.2</h3>
+<ol style="list-style-type: decimal">
+<li><p>Let us produce the sampling distribution of the sample average and the sample standard deviation for 20 observations from the <span class="math inline">\(\mathrm{Exponential}(1/4)\)</span> distribution:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">lam &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">/</span><span class="dv">4</span>
+n &lt;-<span class="st"> </span><span class="dv">20</span>
+X.bar &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="dv">0</span>,<span class="dv">10</span><span class="op">^</span><span class="dv">5</span>)
+S &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="dv">0</span>,<span class="dv">10</span><span class="op">^</span><span class="dv">5</span>)
+<span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">10</span><span class="op">^</span><span class="dv">5</span>) {
+  X &lt;-<span class="st"> </span><span class="kw">rexp</span>(n,lam)
+  X.bar[i] &lt;-<span class="st"> </span><span class="kw">mean</span>(X)
+  S[i] &lt;-<span class="st"> </span><span class="kw">sd</span>(X)
+}</code></pre></div>
+<p>We compute the confidence level for a confidence interval with a nominal confidence level of 95%. Observe that using the Normal approximation of the sample average corresponds to the application of the Normal percentile in the construction of the confidence interval.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">norm.LCL &lt;-<span class="st"> </span>X.bar <span class="op">-</span><span class="st"> </span><span class="kw">qnorm</span>(<span class="fl">0.975</span>)<span class="op">*</span>S<span class="op">/</span><span class="kw">sqrt</span>(n)
+norm.UCL &lt;-<span class="st"> </span>X.bar <span class="op">+</span><span class="st"> </span><span class="kw">qnorm</span>(<span class="fl">0.975</span>)<span class="op">*</span>S<span class="op">/</span><span class="kw">sqrt</span>(n)
+<span class="kw">mean</span>((<span class="dv">4</span> <span class="op">&gt;=</span><span class="st"> </span>norm.LCL) <span class="op">&amp;</span><span class="st"> </span>(<span class="dv">4</span> <span class="op">&lt;=</span><span class="st"> </span>norm.UCL))</code></pre></div>
+<pre><code>## [1] 0.90363</code></pre>
+<p>The expectation of the measurement is equal to 4. This number belongs to the confidence interval 90.47% of the times. Consequently, the actual confidence level is 90.47%.</p></li>
+<li><p>Using the same sampling distribution that was produced in the solution to Question 1 we now compute the actual confidence level of a confidence interval that is constructed under the assumption that the measurement has a Normal distribution:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">t.LCL &lt;-<span class="st"> </span>X.bar <span class="op">-</span><span class="st"> </span><span class="kw">qt</span>(<span class="fl">0.975</span>,n<span class="op">-</span><span class="dv">1</span>)<span class="op">*</span>S<span class="op">/</span><span class="kw">sqrt</span>(n)
+t.UCL &lt;-<span class="st"> </span>X.bar <span class="op">+</span><span class="st"> </span><span class="kw">qt</span>(<span class="fl">0.975</span>,n<span class="op">-</span><span class="dv">1</span>)<span class="op">*</span>S<span class="op">/</span><span class="kw">sqrt</span>(n)
+<span class="kw">mean</span>((<span class="dv">4</span> <span class="op">&gt;=</span><span class="st"> </span>t.LCL) <span class="op">&amp;</span><span class="st"> </span>(<span class="dv">4</span> <span class="op">&lt;=</span><span class="st"> </span>t.UCL))</code></pre></div>
+<pre><code>## [1] 0.91846</code></pre>
+<p>Based on the assumption we used the percentiles of the <span class="math inline">\(t\)</span>-distribution. The actual significance level is 91.953% <span class="math inline">\(\approx\)</span> 92%, still short of the nominal 95% confidence level.</p></li>
+<li><p>It would be preferable to use the (incorrect) assumption that the observations have a Normal distribution than to apply the Normal approximation to such a small sample. In the current setting the former produced a confidence level that is closer to the nominal one. In general, using the percentiles of the <span class="math inline">\(t\)</span>-distribution will produce wider and more conservative confidence intervals than those produces under the Normal approximation of the average. To be on the safer size, one typically prefers the more conservative confidence intervals.</p></li>
+</ol>
+</div>
+<div id="exercise-11.3" class="section level3 unnumbered">
+<h3>Exercise 11.3</h3>
+<ol style="list-style-type: decimal">
+<li>The range of the confidence interval with 99% confidence interval is bounded by</li>
+</ol>
+<p><span class="math display">\[\mbox{\texttt{qnorm(0.995)}}\cdot \{\hat P (1-\hat P)/n\}^{1/2} \leq 2.575829 \cdot \sqrt{0.25/n} = 1.287915/\sqrt{n}\;,\]</span> since <code>qnorm(0.995)</code> = 2.575829 and <span class="math inline">\(\hat P (1-\hat P) \leq 0.25\)</span>. Consequently, the sample size <span class="math inline">\(n\)</span> should satisfy the inequality:</p>
+<p><span class="math display">\[\begin{aligned}
+1.287915/\sqrt{n} \leq 0.03\quad  &amp;\Longrightarrow  \quad \sqrt{n} \geq 1.287915/0.03 = 42.9305\\
+&amp;\Longrightarrow \quad  n \geq (42.9305)^2 = 1843.028\;.\end{aligned}\]</span> The smallest integer larger than the lower bound is <span class="math inline">\(n=1844\)</span>.</p>
+<pre><code>The 80% confidence interval for the probability is computed by the formula
+$\hat p \pm \mbox{\texttt{qnorm(0.90)}} \cdot \sqrt{\hat p(1-\hat p)/n}$:
+
+
+```r
+n &lt;- 400
+p.hat &lt;- 320/400
+p.hat - qnorm(0.90)*sqrt(p.hat*(1-p.hat)/n)
+```
+
+```
+## [1] 0.77436897
+```
+
+```r
+p.hat + qnorm(0.90)*sqrt(p.hat*(1-p.hat)/n)
+```
+
+```
+## [1] 0.82563103
+```
+
+We obtain a confidence interval of the form $[0.774369, 0.825631]$.</code></pre>
+</div>
+</div>
+<div id="chapter-12" class="section level2 unnumbered">
+<h2>Chapter 12</h2>
+<div id="exercise-12.1" class="section level3 unnumbered">
+<h3>Exercise 12.1</h3>
+<ol style="list-style-type: decimal">
+<li><p>The null hypothesis of no placebo effect corresponds to the expectation of the change equal to 0 (<span class="math inline">\(H_0: \Expec(X) = 0\)</span>). The alternative hypothesis may be formulated as the expectation not being equal to 0 (<span class="math inline">\(H_1: \Expec(X) \not = 0\)</span>). This corresponds to a two sided alternative. Observe that a negative expectation of the change still corresponds to the placebo having an effect.</p></li>
+<li><p>The observations that can be used in order to test the hypothesis are those associated with patients that were treated with the inactive placebo, i.e. the last 21 observations. We extracts these values from the data frame using the expression “<code>magnets$change[30:50]</code>”.</p></li>
+<li><p>In order to carry out the test we read the data from the file “<code>magnets.csv</code>” into the data frame “<code>magnets</code>”. The function “<code>t.test</code>” is applied to the observations extracted from the data frame. Note that the default expectation value of tested by the function is “<code>mu = 0</code>”:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">magnets &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;_data/magnets.csv&quot;</span>)
+<span class="kw">t.test</span>(magnets<span class="op">$</span>change[<span class="dv">30</span><span class="op">:</span><span class="dv">50</span>])</code></pre></div>
+<pre><code>## 
+##  One Sample t-test
+## 
+## data:  magnets$change[30:50]
+## t = 3.18037, df = 20, p-value = 0.0047022
+## alternative hypothesis: true mean is not equal to 0
+## 95 percent confidence interval:
+##  0.37688454 1.81359165
+## sample estimates:
+## mean of x 
+## 1.0952381</code></pre>
+<p>The computed <span class="math inline">\(p\)</span>-value is 0.004702, which is below 0.05. Consequently, we reject the null hypothesis and conclude that a placebo effect seems to be present.</p></li>
+</ol>
+</div>
+<div id="exercise-12.2" class="section level3 unnumbered">
+<h3>Exercise 12.2</h3>
+<ol style="list-style-type: decimal">
+<li><p>We simulate the sampling distribution of the sample average and standard deviation. The sample is composed of <span class="math inline">\(n=20\)</span> observations from the given Exponential distribution:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">lam &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">/</span><span class="dv">4</span>
+n &lt;-<span class="st"> </span><span class="dv">20</span>
+X.bar &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="dv">0</span>,<span class="dv">10</span><span class="op">^</span><span class="dv">5</span>)
+S &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="dv">0</span>,<span class="dv">10</span><span class="op">^</span><span class="dv">5</span>)
+<span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">10</span><span class="op">^</span><span class="dv">5</span>) {
+  X &lt;-<span class="st"> </span><span class="kw">rexp</span>(n,lam)
+  X.bar[i] &lt;-<span class="st"> </span><span class="kw">mean</span>(X)
+  S[i] &lt;-<span class="st"> </span><span class="kw">sd</span>(X)
+}
+T &lt;-<span class="st"> </span>(X.bar <span class="op">-</span><span class="st"> </span><span class="dv">4</span>)<span class="op">/</span>(S<span class="op">/</span><span class="kw">sqrt</span>(n))
+<span class="kw">mean</span>(<span class="kw">abs</span>(T) <span class="op">&gt;</span><span class="st"> </span><span class="kw">qt</span>(<span class="fl">0.975</span>,n<span class="op">-</span><span class="dv">1</span>))</code></pre></div>
+<pre><code>## [1] 0.08131</code></pre>
+<p>We compute the test statistic “<code>T</code>” from the sample average “<code>X.bar</code>” and the sample standard deviation “<code>S</code>”. In the last expression we compute the probability that the absolute value of the test statistic is larger than “<code>qt(0.975,19)</code>”, which is the threshold that should be used in order to obtain a significance level of 5% for Normal measurements.</p>
+<p>We obtain that the actual significance level of the test is <span class="math inline">\(0.08047\)</span>, which is substantially larger than the nominal significance level.</p></li>
+<li><p>We repeat essentially the same simulations as before. We only change the distribution of the sample from the Exponential to the Uniform distribution:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">a &lt;-<span class="st"> </span><span class="dv">0</span>
+b &lt;-<span class="st"> </span><span class="dv">8</span>
+n &lt;-<span class="st"> </span><span class="dv">20</span>
+X.bar &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="dv">0</span>,<span class="dv">10</span><span class="op">^</span><span class="dv">5</span>)
+S &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="dv">0</span>,<span class="dv">10</span><span class="op">^</span><span class="dv">5</span>)
+<span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">10</span><span class="op">^</span><span class="dv">5</span>) {
+  X &lt;-<span class="st"> </span><span class="kw">runif</span>(n,a,b)
+  X.bar[i] &lt;-<span class="st"> </span><span class="kw">mean</span>(X)
+  S[i] &lt;-<span class="st"> </span><span class="kw">sd</span>(X)
+}
+T &lt;-<span class="st"> </span>(X.bar <span class="op">-</span><span class="st"> </span><span class="dv">4</span>)<span class="op">/</span>(S<span class="op">/</span><span class="kw">sqrt</span>(n))
+<span class="kw">mean</span>(<span class="kw">abs</span>(T) <span class="op">&gt;</span><span class="st"> </span><span class="kw">qt</span>(<span class="fl">0.975</span>,n<span class="op">-</span><span class="dv">1</span>))</code></pre></div>
+<pre><code>## [1] 0.05149</code></pre>
+<p>The actual significance level of the test is <span class="math inline">\(0.05163\)</span>, much closer to the nominal significance level of 5%.</p>
+<p>A possible explanation for the difference between the two cases is that the Uniform distribution is symmetric like the Normal distribution, whereas the Exponential is skewed. In any case, for larger sample sizes one may expect the Central Limit Theorem to kick in and produce more satisfactory results, even for the Exponential case.</p></li>
+</ol>
+</div>
+<div id="exercise-12.3" class="section level3 unnumbered">
+<h3>Exercise 12.3</h3>
+<ol style="list-style-type: decimal">
+<li><p>We input the data to <code>R</code> and then compute the test statistic and the appropriate percentile of the <span class="math inline">\(t\)</span>-distribution:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">n &lt;-<span class="st"> </span><span class="dv">55</span>
+x.bar &lt;-<span class="st"> </span><span class="fl">22.7</span>
+s &lt;-<span class="st"> </span><span class="fl">5.4</span>
+t &lt;-<span class="st"> </span>(x.bar <span class="op">-</span><span class="st"> </span><span class="dv">20</span>)<span class="op">/</span>(s<span class="op">/</span><span class="kw">sqrt</span>(n))
+<span class="kw">abs</span>(t)</code></pre></div>
+<pre><code>## [1] 3.7080992</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">qt</span>(<span class="fl">0.975</span>,n<span class="op">-</span><span class="dv">1</span>)</code></pre></div>
+<pre><code>## [1] 2.0048793</code></pre>
+<p>Observe that the absolute value of the statistic (3.708099) is larger than the threshold for rejection (2.004879). Consequently, we reject the null hypothesis.</p></li>
+<li><p>We recompute the percentile of the <span class="math inline">\(t\)</span>-distribution:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">qt</span>(<span class="fl">0.995</span>,n<span class="op">-</span><span class="dv">1</span>)</code></pre></div>
+<pre><code>## [1] 2.6699848</code></pre>
+<p>Again, the absolute value of the statistic (3.708099) is larger than the threshold for rejection (2.669985). Consequently, we reject the null hypothesis.</p></li>
+<li><p>In this question we should recompute the test statistic:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">t &lt;-<span class="st"> </span>(x.bar <span class="op">-</span><span class="st"> </span><span class="dv">24</span>)<span class="op">/</span>(s<span class="op">/</span><span class="kw">sqrt</span>(n))
+<span class="kw">abs</span>(t)</code></pre></div>
+<pre><code>## [1] 1.7853811</code></pre>
+<p>The absolute value of the new statistic (1.785381) is smaller than the threshold for rejection (2.004879). Consequently, we do not reject the null hypothesis.</p></li>
+</ol>
+</div>
+</div>
+<div id="chapter-13" class="section level2 unnumbered">
+<h2>Chapter 13</h2>
+<div id="exercise-13.1" class="section level3 unnumbered">
+<h3>Exercise 13.1</h3>
+<ol style="list-style-type: decimal">
+<li><p>The score of pain before the application of the device is measured in the variable “<code>score1</code>”. This variable is used as the response. We apply the function “<code>t.test</code>” in order to test the equality of the expectation of the response in the two groups. First we read in the data from the file into a data frame and then we apply the test:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">magnets &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;_data/magnets.csv&quot;</span>)
+<span class="kw">t.test</span>(magnets<span class="op">$</span>score1 <span class="op">~</span><span class="st"> </span>magnets<span class="op">$</span>active)</code></pre></div>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  magnets$score1 by magnets$active
+## t = 0.41483, df = 38.2734, p-value = 0.68058
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  -0.37578956  0.56954982
+## sample estimates:
+## mean in group &quot;1&quot; mean in group &quot;2&quot; 
+##         9.6206897         9.5238095</code></pre>
+<p>The computed <span class="math inline">\(p\)</span>-value is 0.6806, which is above 0.05. Consequently, we do not reject the null hypothesis that the expectations in the two groups are equal. This should not come as a surprise, since patients were assigned to the groups randomly and without knowledge to which group they belong. Prior to the application of the device, the two groups should look alike.</p></li>
+<li><p>Again, we use the variable “<code>score1</code>” as the response. Now apply the function “<code>var.test</code>” in order to test the equality of the variances of the response in the two groups:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">var.test</span>(magnets<span class="op">$</span>score1 <span class="op">~</span><span class="st"> </span>magnets<span class="op">$</span>active)</code></pre></div>
+<pre><code>## 
+##  F test to compare two variances
+## 
+## data:  magnets$score1 by magnets$active
+## F = 0.695043, num df = 28, denom df = 20, p-value = 0.36865
+## alternative hypothesis: true ratio of variances is not equal to 1
+## 95 percent confidence interval:
+##  0.29380378 1.55162176
+## sample estimates:
+## ratio of variances 
+##          0.6950431</code></pre>
+<p>The computed <span class="math inline">\(p\)</span>-value is 0.3687, which is once more above 0.05. Consequently, we do not reject the null hypothesis that the variances in the two groups are equal. This fact is reassuring. Indeed, prior to the application of the device, the two groups have the same characteristics. Therefore, any subsequent difference between the two groups can be attributed to the difference in the treatment.</p></li>
+<li><p>The difference in score between the treatment and the control groups is measured in the variable “<code>change</code>”. This variable is used as the response for the current analysis. We apply the function “<code>t.test</code>” in order to test the equality of the expectation of the response in the two groups:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">t.test</span>(magnets<span class="op">$</span>change <span class="op">~</span><span class="st"> </span>magnets<span class="op">$</span>active)</code></pre></div>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  magnets$change by magnets$active
+## t = 5.9856, df = 42.926, p-value = 3.8601e-07
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  2.7491373 5.5431451
+## sample estimates:
+## mean in group &quot;1&quot; mean in group &quot;2&quot; 
+##         5.2413793         1.0952381</code></pre>
+<p>The computed <span class="math inline">\(p\)</span>-value is <span class="math inline">\(3.86\times 10^{-7}\)</span>, which is much below 0.05. Consequently, we reject the null hypothesis that the expectations in the two groups are equal. The conclusion is that, according to this trial, magnets do have an effect on the expectation of the response[^9].</p></li>
+<li><p>Once more we consider the variable “<code>change</code>” as the response. We apply the function “<code>var.test</code>” in order to test the equality of the variances of the response in the two groups:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">var.test</span>(magnets<span class="op">$</span>change <span class="op">~</span><span class="st"> </span>magnets<span class="op">$</span>active)</code></pre></div>
+<pre><code>## 
+##  F test to compare two variances
+## 
+## data:  magnets$change by magnets$active
+## F = 4.20617, num df = 28, denom df = 20, p-value = 0.0015351
+## alternative hypothesis: true ratio of variances is not equal to 1
+## 95 percent confidence interval:
+##  1.7780034 9.3899024
+## sample estimates:
+## ratio of variances 
+##          4.2061713</code></pre>
+<p>The computed <span class="math inline">\(p\)</span>-value is 0.001535, which is much below 0.05. Consequently, we reject the null hypothesis that the variances in the two groups are equal. Hence, magnets also affect the variance of the response.</p></li>
+</ol>
+</div>
+<div id="exercise-13.2" class="section level3 unnumbered">
+<h3>Exercise 13.2</h3>
+<ol style="list-style-type: decimal">
+<li><p>We simulate the sampling distribution of the sample standard deviation for two samples, one sample of size <span class="math inline">\(n_a = 29\)</span> and the other of size <span class="math inline">\(n_b=21\)</span>. Both samples are simulated from the given Normal distribution:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mu &lt;-<span class="st"> </span><span class="dv">4</span>
+sig &lt;-<span class="st"> </span><span class="dv">4</span>
+n.a &lt;-<span class="st"> </span><span class="dv">29</span>
+n.b &lt;-<span class="st"> </span><span class="dv">21</span>
+S.a &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="dv">0</span>,<span class="dv">10</span><span class="op">^</span><span class="dv">5</span>)
+S.b &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="dv">0</span>,<span class="dv">10</span><span class="op">^</span><span class="dv">5</span>)
+<span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">10</span><span class="op">^</span><span class="dv">5</span>) {
+  X.a &lt;-<span class="st"> </span><span class="kw">rnorm</span>(n.a,mu,sig)
+  X.b &lt;-<span class="st"> </span><span class="kw">rnorm</span>(n.b,mu,sig)
+  S.a[i] &lt;-<span class="st"> </span><span class="kw">sd</span>(X.a)
+  S.b[i] &lt;-<span class="st"> </span><span class="kw">sd</span>(X.b)
+}
+F &lt;-<span class="st"> </span>S.a<span class="op">^</span><span class="dv">2</span><span class="op">/</span>S.b<span class="op">^</span><span class="dv">2</span>
+<span class="kw">mean</span>((F <span class="op">&lt;</span><span class="st"> </span><span class="kw">qf</span>(<span class="fl">0.025</span>,n.a<span class="op">-</span><span class="dv">1</span>,n.b<span class="op">-</span><span class="dv">1</span>))<span class="op">|</span>(F <span class="op">&gt;</span><span class="st"> </span><span class="kw">qf</span>(<span class="fl">0.975</span>,n.a<span class="op">-</span><span class="dv">1</span>,n.b<span class="op">-</span><span class="dv">1</span>)))</code></pre></div>
+<pre><code>## [1] 0.0501</code></pre>
+<p>We compute the test statistic “<code>F</code>” as the ratio of the two sample standard deviations “<code>S.a</code>” and “<code>S.b</code>”. The last expression computes the probability that the test statistic is either less than “<code>qt(0.025,n.a-1,n.b-1)</code>”, or it is larger than “<code>qt(0.975,n.a-1,n.b-1)</code>”. The term “<code>qt(0.025,n.a-1,n.b-1)</code>” is the 0.025-percentile of the <span class="math inline">\(F\)</span>-distribution on 28 and 20 degrees of freedom and the term “<code>qt(0.975,n.a-1,n.b-1)</code>” is the 0.975-percentile of the same <span class="math inline">\(F\)</span>-distribution. The result of the last expression is the actual significance level of the test.</p>
+<p>We obtain that the actual significance level of the test when the measurements are Normally distributed is 0.05074, which in agreement with the nominal significance level of 5%. Indeed, the nominal significance level is computed under the assumption that the distribution of the measurement is Normal.</p></li>
+<li><p>We repeat essentially the same simulations as before. We only change the distribution of the samples from the Normal to the Exponential distribution:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">lam &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">/</span><span class="dv">4</span>
+n.a &lt;-<span class="st"> </span><span class="dv">29</span>
+n.b &lt;-<span class="st"> </span><span class="dv">21</span>
+S.a &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="dv">0</span>,<span class="dv">10</span><span class="op">^</span><span class="dv">5</span>)
+S.b &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="dv">0</span>,<span class="dv">10</span><span class="op">^</span><span class="dv">5</span>)
+<span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">10</span><span class="op">^</span><span class="dv">5</span>) {
+  X.a &lt;-<span class="st"> </span><span class="kw">rexp</span>(n.a,lam)
+  X.b &lt;-<span class="st"> </span><span class="kw">rexp</span>(n.b,lam)
+  S.a[i] &lt;-<span class="st"> </span><span class="kw">sd</span>(X.a)
+  S.b[i] &lt;-<span class="st"> </span><span class="kw">sd</span>(X.b)
+}
+F &lt;-<span class="st"> </span>S.a<span class="op">^</span><span class="dv">2</span><span class="op">/</span>S.b<span class="op">^</span><span class="dv">2</span>
+<span class="kw">mean</span>((F <span class="op">&lt;</span><span class="st"> </span><span class="kw">qf</span>(<span class="fl">0.025</span>,n.a<span class="op">-</span><span class="dv">1</span>,n.b<span class="op">-</span><span class="dv">1</span>))<span class="op">|</span>(F <span class="op">&gt;</span><span class="st"> </span><span class="kw">qf</span>(<span class="fl">0.975</span>,n.a<span class="op">-</span><span class="dv">1</span>,n.b<span class="op">-</span><span class="dv">1</span>)))</code></pre></div>
+<pre><code>## [1] 0.27538</code></pre>
+<p>The actual significance level of the test is <span class="math inline">\(0.27596\)</span>, which is much higher than the nominal significance level of 5%.</p>
+<p>Through this experiment we may see that the <span class="math inline">\(F\)</span>-test is not robust to the divergence from the assumed Normal distribution of the measurement. If the distribution of the measurement is skewed (the Exponential distribution is an example of such skewed distribution) then the application of the test to the data may produce unreliable conclusions.</p></li>
+</ol>
+</div>
+<div id="exercise-13.3" class="section level3 unnumbered">
+<h3>Exercise 13.3</h3>
+<ol style="list-style-type: decimal">
+<li><p>We input the data to <code>R</code> and then compute the estimate:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">s.a &lt;-<span class="st"> </span><span class="fl">13.4</span>
+s.b &lt;-<span class="st"> </span><span class="fl">16.7</span>
+s.a<span class="op">^</span><span class="dv">2</span><span class="op">/</span>s.b<span class="op">^</span><span class="dv">2</span></code></pre></div>
+<pre><code>## [1] 0.64383807</code></pre>
+<p>The estimate is equal to the ratio of the sample variances <span class="math inline">\(s_a^2/s_b^2\)</span>. It obtains the value <span class="math inline">\(0.6438381\)</span>. Notice that the information regarding the sample averages and the sizes of the sub-samples is not relevant for the point estimation of the parameter.</p></li>
+<li><p>We use the formula:</p></li>
+</ol>
+<p><span class="math display">\[\big[(s_a^2/s_b^2)/\mbox{\texttt{qf(0.975,14,14)}} , (s_a^2/s_b^2)/\mbox{\texttt{qf(0.025,14,14)}}\big]\]</span> in order to compute the confidence interval:</p>
+<pre><code>```r
+n.a &lt;- 15
+n.b &lt;- 15
+(s.a^2/s.b^2)/qf(0.975,n.a-1,n.b-1)
+```
+
+```
+## [1] 0.2161555
+```
+
+```r
+(s.a^2/s.b^2)/qf(0.025,n.a-1,n.b-1)
+```
+
+```
+## [1] 1.917728
+```
+
+The confidence interval we obtain is $[0.2161555, 1.917728]$.</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li>The estimate of the parameter is not affected by the change in the sample sizes and it is still equal to <span class="math inline">\(0.6438381\)</span>. For the confidence interval we use now the formula:</li>
+</ol>
+<p><span class="math display">\[\big[(s_a^2/s_b^2)/\mbox{\texttt{qf(0.975,149,149)}} , (s_a^2/s_b^2)/\mbox{\texttt{qf(0.025,149,149)}}\big]\,:\]</span></p>
+<pre><code>```r
+n.a &lt;- 150
+n.b &lt;- 150
+(s.a^2/s.b^2)/qf(0.975,n.a-1,n.b-1)
+```
+
+```
+## [1] 0.46641803
+```
+
+```r
+(s.a^2/s.b^2)/qf(0.025,n.a-1,n.b-1)
+```
+
+```
+## [1] 0.88874666
+```
+
+The corrected confidence interval is $[0.466418, 0.8887467]$.</code></pre>
+</div>
+</div>
+<div id="chapter-14" class="section level2 unnumbered">
+<h2>Chapter 14</h2>
+<div id="exercise-14.1" class="section level3 unnumbered">
+<h3>Exercise 14.1</h3>
+<ol style="list-style-type: decimal">
+<li><p>The line marked in <em>red</em> is increasing and at <span class="math inline">\(x=0\)</span> it seems to obtain the value <span class="math inline">\(y=0\)</span>. An increasing line is associated with a linear equation with a positive slope coefficient (<span class="math inline">\(b &gt; 0\)</span>). The only equation with that property is Equation 3, for which <span class="math inline">\(b=1\)</span>. Notice that the intercept of this equation is <span class="math inline">\(a = 0\)</span>, which agrees with the fact that the line passes through the origin <span class="math inline">\((x,y) = (0,0)\)</span>. If the <span class="math inline">\(x\)</span>-axis and the <span class="math inline">\(y\)</span>-axis were on the same scale then one would expect the line to be tilted in the 45 degrees angle. However, here the axes are not on the same scale, so the tilting is different.</p></li>
+<li><p>The <span class="math inline">\(x\)</span>-value of the line marked with a <em>red triangle</em> is <span class="math inline">\(x=-1\)</span>. The <span class="math inline">\(y\)</span>-value is below 5. The observation that has an <span class="math inline">\(x\)</span>-value of -1 is Observation 6. The <span class="math inline">\(y\)</span>-value of this observation is <span class="math inline">\(y=4.3\)</span>. Notice that there is another observation with the same <span class="math inline">\(y\)</span>-value, Observation 3. However, the <span class="math inline">\(x\)</span>-value of that observation is <span class="math inline">\(x=1.6\)</span>. Hence it is the point that is on the same level as the marked point, but it is placed to the right of it.</p></li>
+</ol>
+</div>
+<div id="exercise-14.2" class="section level3 unnumbered">
+<h3>Exercise 14.2</h3>
+<ol style="list-style-type: decimal">
+<li><p>The intercept is equal to <span class="math inline">\(a = -3.60\)</span> and the slope is equal to <span class="math inline">\(b = 2.13\)</span>. Notice that the lope is the coefficient that multiplies the explanatory variable and the intercept is the coefficient that does not multiply the explanatory variable.</p></li>
+<li><p>The value of the explanatory variable for the 3rd observation is <span class="math inline">\(x_3 = 4.2\)</span>. When we use this value in the regression formula we obtain that:</p></li>
+</ol>
+<p><span class="math display">\[\Expec(Y_3) = 2.13 \cdot x_3 - 3.60 = 2.13 \cdot 4.2 - 3.60 = 5.346\;.\]</span> In words, the expectation of the response of the 3rd observation is equal to <span class="math inline">\(5.346\)</span></p>
+</div>
+<div id="exercise-14.3" class="section level3 unnumbered">
+<h3>Exercise 14.3</h3>
+<ol start="2" style="list-style-type: decimal">
+<li><p>After saving the file “<code>aids.csv</code>” in the working directory of <code>R</code> we read it’s content into a data frame by the name “<code>aids</code>”. We then produce a summary of the fit of the linear regression model of “<code>deaths</code>” as a response and “<code>diagnosed</code>” as the explanatory variable:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">aids &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;_data/aids.csv&quot;</span>)
+fit.deaths &lt;-<span class="st"> </span><span class="kw">lm</span>(deaths<span class="op">~</span>diagnosed,<span class="dt">data=</span>aids)
+<span class="kw">summary</span>(fit.deaths)</code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = deaths ~ diagnosed, data = aids)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -7988.73  -680.86    23.94  1731.32  7760.67 
+## 
+## Coefficients:
+##                Estimate  Std. Error t value  Pr(&gt;|t|)    
+## (Intercept)   88.716099 1370.719126  0.0647     0.949    
+## diagnosed      0.607351    0.031197 19.4683 1.805e-14 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 3588.7 on 20 degrees of freedom
+## Multiple R-squared:  0.94988,    Adjusted R-squared:  0.94737 
+## F-statistic: 379.02 on 1 and 20 DF,  p-value: 1.8052e-14</code></pre>
+<p>The estimated value of the slope 0.6073. The computed <span class="math inline">\(p\)</span>-value associated with this slope is <span class="math inline">\(1.81 \times 10^{-14}\)</span>, which is much smaller than the 5% threshold. Consequently, the slope is statistically significant.</p>
+<p>For confidence intervals apply the function “<code>confint</code>” to the fitted model:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">confint</span>(fit.deaths)</code></pre></div>
+<pre><code>##                     2.5 %        97.5 %
+## (Intercept) -2770.5538947 2947.98609228
+## diagnosed       0.5422759    0.67242696</code></pre>
+<p>We get that the confidence interval for the slope is <span class="math inline">\([0.5422759 , 0.672427]\)</span>.</p></li>
+<li><p>A scatter plot of the two variables is produced by the application of the function “<code>plot</code>” to the formula that involves these two variables. The regression line is added to the plot using the function “<code>abline</code>” with the fitted model as an input:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(deaths<span class="op">~</span>diagnosed,<span class="dt">data=</span>aids)
+<span class="kw">abline</span>(fit.deaths)</code></pre></div>
+<p><img src="thinkstat_files/figure-html/unnamed-chunk-321-1.png" width="60%" style="display: block; margin: auto;" /></p>
+<p>Observe that the points are nicely placed very to a line that characterizes the linear trend of the regression.</p></li>
+<li><p>We fit a linear regression model of “<code>diagnosed</code>” as a response and “<code>year</code>” as the explanatory variable and save the fit in the object “<code>fit.diagnosed</code>”. A summary of the model is produced by the application of the function “<code>summary</code>” to the fit:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">fit.diagnosed &lt;-<span class="st"> </span><span class="kw">lm</span>(diagnosed<span class="op">~</span>year,<span class="dt">data=</span>aids)
+<span class="kw">summary</span>(fit.diagnosed)</code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = diagnosed ~ year, data = aids)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -28364.4 -18321.0  -3908.9  14963.6  41199.3 
+## 
+## Coefficients:
+##                Estimate  Std. Error t value Pr(&gt;|t|)  
+## (Intercept) -3448225.05  1535037.26 -2.2463  0.03613 *
+## year            1749.78      770.79  2.2701  0.03441 *
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 22937 on 20 degrees of freedom
+## Multiple R-squared:  0.20488,    Adjusted R-squared:  0.16512 
+## F-statistic: 5.1534 on 1 and 20 DF,  p-value: 0.03441</code></pre>
+<p>The estimated value of the slope 1749.8. The computed <span class="math inline">\(p\)</span>-value associated with this slope is <span class="math inline">\(0.0344\)</span>, which is less than the 0.05. Consequently, one may declare the slope to be statistically significant. Confidence intervals are produced using the function “<code>confint</code>”:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">confint</span>(fit.diagnosed)</code></pre></div>
+<pre><code>##                      2.5 %      97.5 %
+## (Intercept) -6650256.66540 -246193.429
+## year             141.93595    3357.618</code></pre>
+<p>We get that the 95% confidence interval for the slope is <span class="math inline">\([141.9360, 3357.618]\)</span>.</p></li>
+<li><p>A scatter plot of the two variables is produced by the application of the function “<code>plot</code>” and the regression line is added with function “<code>abline</code>”:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(diagnosed<span class="op">~</span>year,<span class="dt">data=</span>aids)
+<span class="kw">abline</span>(fit.diagnosed)</code></pre></div>
+<p><img src="thinkstat_files/figure-html/unnamed-chunk-324-1.png" width="60%" style="display: block; margin: auto;" /></p>
+<p>Observe that the points do not follow a linear trend. It seems that the number of diagnosed cases increased in an exponential rate during the first years after Aids was discovered. The trend changed in the mid 90’s with a big drop in the number of diagnosed Aids patients. This drop may be associated with the administration of therapies such as AZT to HIV infected subjects that reduced the number of such subjects that developed Aids. In the late 90’s there seams to be yet again a change in the trend and the possible increase in numbers. The line of linear regression misses all these changes and is a poor representation of the historical development.</p>
+<p>The take home message from this exercise is to not use models blindly. A good advise is to plot the data. An examination of the plot provides a warning that the linear model is probably not a good model for the given problem.</p></li>
+</ol>
+</div>
+<div id="exercise-14.4" class="section level3 unnumbered">
+<h3>Exercise 14.4</h3>
+<ol style="list-style-type: decimal">
+<li><p>We read the data in the table into <code>R</code>. The variable “<code>year</code>” is the explanatory variable and the variable “<code>percent</code>” is the response. The scatter plot is produced using the function “<code>plot</code>” and the regression line, fitted to the data with the function “<code>lm</code>”, is added to the plot using the function “<code>abline</code>”:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">year &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1945</span>,<span class="dv">1950</span>,<span class="dv">1960</span>,<span class="dv">1970</span>,<span class="dv">1980</span>,<span class="dv">1986</span>,<span class="dv">1993</span>)
+percent &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="fl">35.5</span>,<span class="fl">31.5</span>,<span class="fl">31.4</span>,<span class="fl">27.3</span>,<span class="fl">21.9</span>,<span class="fl">17.5</span>,<span class="fl">15.8</span>)
+<span class="kw">plot</span>(percent<span class="op">~</span>year)
+<span class="kw">abline</span>(<span class="kw">lm</span>(percent<span class="op">~</span>year))</code></pre></div>
+<p><img src="thinkstat_files/figure-html/unnamed-chunk-325-1.png" width="60%" style="display: block; margin: auto;" /></p>
+<p>Observe that a linear trend is a reasonable description of the reduction in the percentage of workers that belong to labor unions in the post World War II period.</p></li>
+<li><p>We compute the averages, standard deviations and the covariance:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mean.x &lt;-<span class="st"> </span><span class="kw">mean</span>(year)
+mean.y &lt;-<span class="st"> </span><span class="kw">mean</span>(percent)
+sd.x &lt;-<span class="st"> </span><span class="kw">sd</span>(year)
+sd.y &lt;-<span class="st"> </span><span class="kw">sd</span>(percent)
+cov.x.y &lt;-<span class="st"> </span><span class="kw">cov</span>(year,percent)
+mean.x</code></pre></div>
+<pre><code>## [1] 1969.1429</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mean.y</code></pre></div>
+<pre><code>## [1] 25.842857</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">sd.x</code></pre></div>
+<pre><code>## [1] 18.279575</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">sd.y</code></pre></div>
+<pre><code>## [1] 7.5749273</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">cov.x.y</code></pre></div>
+<pre><code>## [1] -135.67381</code></pre>
+<p>The average of the variable “<code>year</code>” is <span class="math inline">\(1969.143\)</span> and the standard deviation is <span class="math inline">\(18.27957\)</span>. The average of the variable “<code>percent</code>” is <span class="math inline">\(25.84286\)</span> and the standard deviation is <span class="math inline">\(7.574927\)</span>. The covariance between the two variables is <span class="math inline">\(-135.6738\)</span>.</p></li>
+<li><p>The slope of the regression line is the ratio between the covariance and the variance of the explanatory variable. The intercept is the solution of the equation that states that the value of regression line at the average of the explanatory variable is the average of the response:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">b &lt;-<span class="st"> </span>cov.x.y<span class="op">/</span>sd.x<span class="op">^</span><span class="dv">2</span>
+a &lt;-<span class="st"> </span>mean.y <span class="op">-</span><span class="st"> </span>b<span class="op">*</span>mean.x
+a</code></pre></div>
+<pre><code>## [1] 825.38445</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">b</code></pre></div>
+<pre><code>## [1] -0.40603534</code></pre>
+<p>We get that the intercept is equal to <span class="math inline">\(825.3845\)</span> and the slope is equal to <span class="math inline">\(-0.4060353\)</span>.</p>
+<p>In order to validate these figures, let us apply the function “<code>lm</code>” to the data:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">lm</span>(percent<span class="op">~</span>year)</code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = percent ~ year)
+## 
+## Coefficients:
+## (Intercept)         year  
+##   825.38445     -0.40604</code></pre>
+<p>Indeed, we get the same numbers that we got from the manual computation.</p></li>
+</ol>
+</div>
+<div id="exercise-14.5" class="section level3 unnumbered">
+<h3>Exercise 14.5</h3>
+<ol style="list-style-type: decimal">
+<li>The estimate for the expected value for the <span class="math inline">\(i\)</span>th observation is obtained by the evaluation of the expression <span class="math inline">\(a + b\cdot x_i\)</span>, where <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> are the coefficients of the fitted regression model and <span class="math inline">\(x_i\)</span> is the value of the explanatory variable for the <span class="math inline">\(i\)</span>th observation. In our case <span class="math inline">\(i=4\)</span> and <span class="math inline">\(x_4 = 6.7\)</span>:</li>
+</ol>
+<p><span class="math display">\[a + b\cdot x_4 = 2.5-1.13\cdot x_4 = 2.5-1.13\cdot 6.7 =  -5.071\;.\]</span> Therefore, the estimate expectation of the response is <span class="math inline">\(-5.071\)</span>.</p>
+<ol start="2" style="list-style-type: decimal">
+<li>The residual from the regression line is the difference between the observed value of the response and the estimated expectation of the response. For the 4th observation we have that the observed value of the response is <span class="math inline">\(y_4 = 0.17\)</span>. The estimated expectation was computed in the previous question. Therefore, the residual from the regression line for the 4th observation is:</li>
+</ol>
+<p><span class="math display">\[y_4 - (a + b\cdot x_4) = 0.17 - (-5.071) = 5.241\;.\]</span></p>
+</div>
+<div id="exercise-14.6" class="section level3 unnumbered">
+<h3>Exercise 14.6</h3>
+<ol style="list-style-type: decimal">
+<li><p>We create the response and then fit a model and apply the summarizing function to the model:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dif.mpg &lt;-<span class="st"> </span>cars<span class="op">$</span>highway.mpg <span class="op">-</span><span class="st"> </span>cars<span class="op">$</span>city.mpg
+<span class="kw">summary</span>(<span class="kw">lm</span>(dif.mpg <span class="op">~</span><span class="st"> </span>cars<span class="op">$</span>curb.weight))</code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = dif.mpg ~ cars$curb.weight)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -5.43439 -0.77550  0.16333  0.88442  6.30349 
+## 
+## Coefficients:
+##                    Estimate Std. Error t value  Pr(&gt;|t|)    
+## (Intercept)       8.1653491  0.5460856 14.9525 &lt; 2.2e-16 ***
+## cars$curb.weight -0.0010306  0.0002094 -4.9214 1.775e-06 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 1.5573 on 203 degrees of freedom
+## Multiple R-squared:  0.10659,    Adjusted R-squared:  0.10219 
+## F-statistic:  24.22 on 1 and 203 DF,  p-value: 1.7746e-06</code></pre>
+<p>The <span class="math inline">\(p\)</span>-value associated with the slope, <span class="math inline">\(1.77\times 10^{-6}\)</span>, is much smaller than the 5% threshold proposing a significant (negative) trend. The value of R-squared, the fraction of the variability of the response that is explained by a regression model, is <span class="math inline">\(0.1066\)</span>.</p>
+<p>The standard deviation is the square root of the variance. It follows that the fraction of the standard deviation of the response that is explained by the regression is <span class="math inline">\(\sqrt{0.1066}= 0.3265\)</span>.</p>
+<p>Following our own advice, we plot the data and the regression model:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(dif.mpg <span class="op">~</span><span class="st"> </span>cars<span class="op">$</span>curb.weight)
+<span class="kw">abline</span>(<span class="kw">lm</span>(dif.mpg <span class="op">~</span><span class="st"> </span>cars<span class="op">$</span>curb.weight))</code></pre></div>
+<p><img src="thinkstat_files/figure-html/unnamed-chunk-330-1.png" width="60%" style="display: block; margin: auto;" /></p>
+<p>One may observe that although there seems to be an overall downward trend, there is still allot of variability about the line of regression.</p></li>
+<li><p>We now fit and summarize the regression model with the size of engine as the explanatory variable:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(<span class="kw">lm</span>(dif.mpg <span class="op">~</span><span class="st"> </span>cars<span class="op">$</span>engine.size))</code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = dif.mpg ~ cars$engine.size)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -5.70834 -0.70834  0.18889  1.12350  6.17917 
+## 
+## Coefficients:
+##                    Estimate Std. Error t value  Pr(&gt;|t|)    
+## (Intercept)       6.7173037  0.3593847 18.6911 &lt; 2.2e-16 ***
+## cars$engine.size -0.0093422  0.0026914 -3.4712 0.0006329 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 1.6008 on 203 degrees of freedom
+## Multiple R-squared:  0.05603,    Adjusted R-squared:  0.05138 
+## F-statistic: 12.049 on 1 and 203 DF,  p-value: 0.00063293</code></pre>
+<p>The regression slope is negative. The <span class="math inline">\(p\)</span>-value is <span class="math inline">\(0.000633\)</span>, which is statistically significant. The value of R-squared is <span class="math inline">\(0.05603\)</span>. Consequently, the fraction of the standard deviation of the response that is explained by the current regression model is <span class="math inline">\(\sqrt{0.05603}= 0.2367\)</span>.</p>
+<p>Produce the scatter plot with the line of regression:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(dif.mpg <span class="op">~</span><span class="st"> </span>cars<span class="op">$</span>engine.size)
+<span class="kw">abline</span>(<span class="kw">lm</span>(dif.mpg <span class="op">~</span><span class="st"> </span>cars<span class="op">$</span>engine.size))</code></pre></div>
+<p><img src="thinkstat_files/figure-html/unnamed-chunk-332-1.png" width="60%" style="display: block; margin: auto;" /></p>
+<p>Again, there is variability about the line of regression.</p></li>
+<li><p>Of the two models, the model that uses the curb weigh as the explanatory variable explains a larger portion of the variability in the response. Hence, unless other criteria tells us otherwise, we will prefer this model over the model that uses the size of engine as an explanatory variable.</p></li>
+</ol>
+</div>
+</div>
+<div id="chapter-15" class="section level2 unnumbered">
+<h2>Chapter 15</h2>
+<div id="exercise-15.1" class="section level3 unnumbered">
+<h3>Exercise 15.1</h3>
+<ol style="list-style-type: decimal">
+<li><p>First we save the file “<code>diet.csv</code>” in the working directory of <code>R</code> and read it’s content. Then we apply the function “<code>table</code>” to the two variables in the file in order to obtain the requested frequency table:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">diet &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;_data/diet.csv&quot;</span>)
+<span class="kw">table</span>(diet<span class="op">$</span>health,diet<span class="op">$</span>type)</code></pre></div>
+<pre><code>##          
+##           aha med
+##   cancer   15   7
+##   death    24  14
+##   healthy 239 273
+##   illness  25   8</code></pre>
+<p>The resulting table has two columns and 4 rows. The third row corresponds to healthy subjects. Of these, 239 subjects used the AHA recommended diet and 273 used the Mediterranean diet. We may also plot this data using a mosaic plot:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(health<span class="op">~</span>type,<span class="dt">data=</span>diet)</code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:Logistic4"></span>
+<img src="thinkstat_files/figure-html/Logistic4-1.png" alt="Health Condition Versus Type of Diet" width="60%" />
+<p class="caption">
+FIGURE 16.3: Health Condition Versus Type of Diet
+</p>
+</div>
+<p>Examining this plot one may appreciate the fact that the vast majority of the subjects were healthy and the relative proportion of healthy subjects among users of the Mediterranean diet is higher than the relative proportion among users of the AHA recommended diet.</p></li>
+<li><p>In order to test the hypothesis that the probability of keeping healthy following an heart attack is the same for those that use the Mediterranean diet and for those that use the diet recommended by the AHA we create a <span class="math inline">\(2\times 2\)</span>. This table compares the response of being healthy or not to the type of diet as an explanatory variable. A sequence with logical components, “<code>TRUE</code>” for healthy and “<code>FALSE</code>” for not, is used as the response. Such a sequence is produced via the expression “<code>diet$health==healthy</code>”. The table may serve as input to the function “<code>prop.test</code>”:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">table</span>(diet<span class="op">$</span>health<span class="op">==</span><span class="st">&quot;healthy&quot;</span>,diet<span class="op">$</span>type)</code></pre></div>
+<pre><code>##        
+##         aha med
+##   FALSE  64  29
+##   TRUE  239 273</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">prop.test</span>(<span class="kw">table</span>(diet<span class="op">$</span>health<span class="op">==</span><span class="st">&quot;healthy&quot;</span>,diet<span class="op">$</span>type))</code></pre></div>
+<pre><code>## 
+##  2-sample test for equality of proportions with continuity
+##  correction
+## 
+## data:  table(diet$health == &quot;healthy&quot;, diet$type)
+## X-squared = 14.5554, df = 1, p-value = 0.00013609
+## alternative hypothesis: two.sided
+## 95 percent confidence interval:
+##  0.11143003 0.33132031
+## sample estimates:
+##     prop 1     prop 2 
+## 0.68817204 0.46679688</code></pre>
+<p>The function “<code>prop.test</code>” conducts the test that compares between the probabilities of keeping healthy. In particular, the computed <span class="math inline">\(p\)</span>-value for the test is <span class="math inline">\(0.0001361\)</span>, which is less than 0.05. Therefore, we reject the null hypothesis that both diets have the same effect on the chances of remaining healthy following an heart attack.</p></li>
+<li><p>The confidence interval for the difference in probabilities is equal to <span class="math inline">\([0.1114300, 0.3313203]\)</span>. The point estimation of the difference between the probabilities is <span class="math inline">\(\hat p_a - \hat p_b = 0.6881720- 0.4667969 \approx 0.22\)</span> in favor of a Mediterranean diet. The confidence interval proposes that a difference as low as 0.11 or as high as 0.33 are not excluded by the data.</p></li>
+</ol>
+</div>
+<div id="exercise-15.2" class="section level3 unnumbered">
+<h3>Exercise 15.2</h3>
+<ol style="list-style-type: decimal">
+<li><p>We save the data of the file in a data frame by the name “<code>cushings</code>”, produce a mosaic plot with the function “<code>plot</code>” and an histogram with the function “<code>hist</code>”:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">cushings &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;_data/cushings.csv&quot;</span>)
+<span class="kw">plot</span>(type<span class="op">~</span>tetra,<span class="dt">data=</span>cushings)</code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:Logistic5"></span>
+<img src="thinkstat_files/figure-html/Logistic5-1.png" alt="Health Condition Versus Type of Diet" width="60%" />
+<p class="caption">
+FIGURE 16.4: Health Condition Versus Type of Diet
+</p>
+</div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">hist</span>(cushings<span class="op">$</span>tetra)</code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:Logistic5"></span>
+<img src="thinkstat_files/figure-html/Logistic5-2.png" alt="Health Condition Versus Type of Diet" width="60%" />
+<p class="caption">
+FIGURE 16.4: Health Condition Versus Type of Diet
+</p>
+</div>
+<p>The mosaic plot describes the distribution of the 4 levels of the response within the different intervals of values of the explanatory variable. The intervals coincide with the intervals that are used in the construction of the histogram. In particular, the third vertical rectangle from the left in the mosaic is associated with the third interval from the left in the histogram[^6]. This interval is associated with the range of values between 20 and 30. The height of the given interval in the histogram is 2, which is the number of patients with “<code>terta</code>” levels that belong to the interval.</p>
+<p>There are 4 shades of <em>grey</em> in the first vertical rectangle from the left. Each shade is associated with a different level of the response. The lightest shade of grey, the upmost one, is associated with the level “<code>u</code>”. Notice that this is also the shade of grey of the entire third vertical rectangle from the left. The conclusion is that the 2 patients that are associated with this rectangle have Tetrahydrocortisone levels between 2 and 30 and have an unknown type of syndrome.</p></li>
+<li><p>We fit the logistic regression to the entire data in the data frame “<code>cushings</code>” using the function “<code>glm</code>”, with the “<code>family=binomial</code>” argument. The response is the indicator that the type is equal to “<code>b</code>”. The fitted model is saved in an object called “<code>cushings.fit.all</code>”. The application of the function “<code>summary</code>” to the fitted model produces a report that includes the test of the hypothesis of interest:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">cushings.fit.all &lt;-<span class="st"> </span><span class="kw">glm</span>((type<span class="op">==</span><span class="st">&quot;b&quot;</span>)<span class="op">~</span>tetra,<span class="dt">family=</span>binomial, <span class="dt">data=</span>cushings)
+<span class="kw">summary</span>(cushings.fit.all)</code></pre></div>
+<pre><code>## 
+## Call:
+## glm(formula = (type == &quot;b&quot;) ~ tetra, family = binomial, data = cushings)
+## 
+## Deviance Residuals: 
+##      Min        1Q    Median        3Q       Max  
+## -1.09242  -1.04605  -0.86521   1.34265   1.51819  
+## 
+## Coefficients:
+##              Estimate Std. Error z value Pr(&gt;|z|)
+## (Intercept) -0.123040   0.613296 -0.2006   0.8410
+## tetra       -0.042196   0.052134 -0.8094   0.4183
+## 
+## (Dispersion parameter for binomial family taken to be 1)
+## 
+##     Null deviance: 35.5942  on 26  degrees of freedom
+## Residual deviance: 34.7386  on 25  degrees of freedom
+## AIC: 38.7386
+## 
+## Number of Fisher Scoring iterations: 4</code></pre>
+<p>The test of interest examines the coefficient that is associated wit the explanatory variable “<code>tetra</code>”. The estimated value of this parameter is <span class="math inline">\(-0.04220\)</span>. The <span class="math inline">\(p\)</span>-value for testing that the coefficient is 0 is equal to <span class="math inline">\(0.418\)</span>. Consequently, since the <span class="math inline">\(p\)</span>-value is larger than 0.05, we do not reject the null hypothesis that states that the response and the explanatory variable are statistically unrelated.</p>
+<p>Confidence intervals may be computed by applying the function “<code>confint</code>” to the fitted model:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">confint</span>(cushings.fit.all)</code></pre></div>
+<pre><code>## Waiting for profiling to be done...</code></pre>
+<pre><code>##                   2.5 %      97.5 %
+## (Intercept) -1.29556239 1.181182563
+## tetra       -0.17761125 0.040167716</code></pre>
+<p>Specifically, the confidence interval for the coefficient that is associated with the explanatory variable is equal to <span class="math inline">\([-0.1776113, 0.04016772]\)</span></p></li>
+<li><p>If we want to fit the logistic model to a partial subset of the data, say all the observations with values of the response other that “<code>u</code>”, we may apply the argument “<code>subset</code>”[^7]. Specifically, adding the expression “<code>subset=(type!=u)</code>” would do the job[^8]. We repeat the same analysis as before. The only difference is the addition of the given expression to the function that fits the model to the data. The fitted model is saved in an object we call “<code>cushings.fit.known</code>”:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">cushings.fit.known &lt;-<span class="st"> </span><span class="kw">glm</span>((type<span class="op">==</span><span class="st">&quot;b&quot;</span>)<span class="op">~</span>tetra,<span class="dt">family=</span>binomial, <span class="dt">data=</span>cushings,<span class="dt">subset=</span>(type<span class="op">!=</span><span class="st">&quot;u&quot;</span>))
+<span class="kw">summary</span>(cushings.fit.known)</code></pre></div>
+<pre><code>## 
+## Call:
+## glm(formula = (type == &quot;b&quot;) ~ tetra, family = binomial, data = cushings, 
+##     subset = (type != &quot;u&quot;))
+## 
+## Deviance Residuals: 
+##      Min        1Q    Median        3Q       Max  
+## -1.20785  -1.18645  -0.75484   1.20328   1.27910  
+## 
+## Coefficients:
+##              Estimate Std. Error z value Pr(&gt;|z|)
+## (Intercept)  0.114572   0.599468  0.1911   0.8484
+## tetra       -0.022758   0.045864 -0.4962   0.6197
+## 
+## (Dispersion parameter for binomial family taken to be 1)
+## 
+##     Null deviance: 29.0645  on 20  degrees of freedom
+## Residual deviance: 28.7894  on 19  degrees of freedom
+## AIC: 32.7894
+## 
+## Number of Fisher Scoring iterations: 4</code></pre>
+<p>The estimated value of the coefficient when considering only subject with a known type of the syndrome is slightly changed to <span class="math inline">\(-0.02276\)</span>. The new <span class="math inline">\(p\)</span>-value, which is equal to <span class="math inline">\(0.620\)</span>, is larger than 0.05. Hence, yet again, we do not reject the null hypothesis.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">confint</span>(cushings.fit.known)</code></pre></div>
+<pre><code>## Waiting for profiling to be done...</code></pre>
+<pre><code>##                   2.5 %      97.5 %
+## (Intercept) -1.05191353 1.405154728
+## tetra       -0.15376169 0.062799231</code></pre>
+<p>For the modified confidence interval we apply the function “<code>confint</code>”. We get now <span class="math inline">\([-0.1537617, 0.06279923]\)</span> as a confidence interval for the coefficient of the explanatory variable.</p>
+<p>We started with the fitting the model to all the observations. Here we use only the observations for which the type of the syndrome is known. The practical implication of using all observations in the fit is equivalent to announcing that the type of the syndrome for observations of an unknown type is not type “<code>b</code>”. This is not appropriate and may introduce bias, since the type may well be “<code>b</code>”. It is more appropriate to treat the observations associated with the level “<code>u</code>” as missing observations and to delete them from the analysis. This approach is the approach that was used in the second analysis.</p></li>
+</ol>
+
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="footnotes">
+<hr />
+<ol start="95">
+<li id="fn95"><p>As a matter of fact, it can be proved that the statistic proposed by Statistician B has a smaller mean square error than the statistic proposed by Statistician A, for <em>any</em> value of <span class="math inline">\(b\)</span><a href="exercise-solutions.html#fnref95">↩</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="ChapCaseStudies.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/yihui/bookdown-crc/edit/master/17-Solutions.Rmd",
+"text": "Edit"
+},
+"download": ["thinkstat.pdf", "thinkstat.epub"],
+"toc": {
+"collapse": "none"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

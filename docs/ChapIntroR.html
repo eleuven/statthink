@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Introduction to Statistical Thinking</title>
+  <meta name="description" content="Introduction to Statistical Thinking">
+  <meta name="generator" content="bookdown 0.5.10 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Introduction to Statistical Thinking" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  <meta name="github-repo" content="eleuven/statthink" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Introduction to Statistical Thinking" />
+  
+  
+  
+
+<meta name="author" content="Benjamin Yakir">
+
+
+<meta name="date" content="2017-11-26">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="index.html">
+<link rel="next" href="ChapData.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Introduction to Statistical Thinking</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="ChapIntroR.html"><a href="ChapIntroR.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="ChapIntroR.html"><a href="ChapIntroR.html#student-learning-objectives"><i class="fa fa-check"></i><b>1.1</b> Student Learning Objectives</a></li>
+<li class="chapter" data-level="1.2" data-path="ChapIntroR.html"><a href="ChapIntroR.html#why-learn-statistics"><i class="fa fa-check"></i><b>1.2</b> Why Learn Statistics?</a></li>
+<li class="chapter" data-level="1.3" data-path="ChapIntroR.html"><a href="ChapIntroR.html#statistics"><i class="fa fa-check"></i><b>1.3</b> Statistics</a></li>
+<li class="chapter" data-level="1.4" data-path="ChapIntroR.html"><a href="ChapIntroR.html#probability"><i class="fa fa-check"></i><b>1.4</b> Probability</a></li>
+<li class="chapter" data-level="1.5" data-path="ChapIntroR.html"><a href="ChapIntroR.html#key-terms"><i class="fa fa-check"></i><b>1.5</b> Key Terms</a></li>
+<li class="chapter" data-level="1.6" data-path="ChapIntroR.html"><a href="ChapIntroR.html#the-r-programming-environment"><i class="fa fa-check"></i><b>1.6</b> The <code>R</code> Programming Environment</a><ul>
+<li class="chapter" data-level="1.6.1" data-path="ChapIntroR.html"><a href="ChapIntroR.html#some-basic-r-commands"><i class="fa fa-check"></i><b>1.6.1</b> Some Basic <code>R</code> Commands</a></li>
+</ul></li>
+<li class="chapter" data-level="1.7" data-path="ChapIntroR.html"><a href="ChapIntroR.html#exercises"><i class="fa fa-check"></i><b>1.7</b> Exercises</a></li>
+<li class="chapter" data-level="1.8" data-path="ChapIntroR.html"><a href="ChapIntroR.html#summary"><i class="fa fa-check"></i><b>1.8</b> Summary</a><ul>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#discuss-in-the-forum"><i class="fa fa-check"></i>Discuss in the forum</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="ChapData.html"><a href="ChapData.html"><i class="fa fa-check"></i><b>2</b> Sampling and Data Structures</a><ul>
+<li class="chapter" data-level="2.1" data-path="ChapData.html"><a href="ChapData.html#student-learning-objectives-1"><i class="fa fa-check"></i><b>2.1</b> Student Learning Objectives</a></li>
+<li class="chapter" data-level="2.2" data-path="ChapData.html"><a href="ChapData.html#the-sampled-data"><i class="fa fa-check"></i><b>2.2</b> The Sampled Data</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="ChapData.html"><a href="ChapData.html#variation-in-data"><i class="fa fa-check"></i><b>2.2.1</b> Variation in Data</a></li>
+<li class="chapter" data-level="2.2.2" data-path="ChapData.html"><a href="ChapData.html#variation-in-samples"><i class="fa fa-check"></i><b>2.2.2</b> Variation in Samples</a></li>
+<li class="chapter" data-level="2.2.3" data-path="ChapData.html"><a href="ChapData.html#frequency"><i class="fa fa-check"></i><b>2.2.3</b> Frequency</a></li>
+<li class="chapter" data-level="2.2.4" data-path="ChapData.html"><a href="ChapData.html#critical-evaluation"><i class="fa fa-check"></i><b>2.2.4</b> Critical Evaluation</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="ChapData.html"><a href="ChapData.html#readingdata"><i class="fa fa-check"></i><b>2.3</b> Reading Data into <code>R</code></a><ul>
+<li class="chapter" data-level="2.3.1" data-path="ChapData.html"><a href="ChapData.html#saving-the-file-and-setting-the-working-directory"><i class="fa fa-check"></i><b>2.3.1</b> Saving the File and Setting the Working Directory</a></li>
+<li class="chapter" data-level="2.3.2" data-path="ChapData.html"><a href="ChapData.html#Data_3"><i class="fa fa-check"></i><b>2.3.2</b> Reading a CSV File into <code>R</code></a></li>
+<li class="chapter" data-level="2.3.3" data-path="ChapData.html"><a href="ChapData.html#data-types"><i class="fa fa-check"></i><b>2.3.3</b> Data Types</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="ChapData.html"><a href="ChapData.html#exercises-1"><i class="fa fa-check"></i><b>2.4</b> Exercises</a></li>
+<li class="chapter" data-level="2.5" data-path="ChapData.html"><a href="ChapData.html#summary-1"><i class="fa fa-check"></i><b>2.5</b> Summary</a><ul>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#discuss-in-the-forum"><i class="fa fa-check"></i>Discuss in the forum</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="ChapDescriptiveStat.html"><a href="ChapDescriptiveStat.html"><i class="fa fa-check"></i><b>3</b> Descriptive Statistics</a><ul>
+<li class="chapter" data-level="3.1" data-path="ChapDescriptiveStat.html"><a href="ChapDescriptiveStat.html#student-learning-objectives-2"><i class="fa fa-check"></i><b>3.1</b> Student Learning Objectives</a></li>
+<li class="chapter" data-level="3.2" data-path="ChapDescriptiveStat.html"><a href="ChapDescriptiveStat.html#displaying-data"><i class="fa fa-check"></i><b>3.2</b> Displaying Data</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="ChapDescriptiveStat.html"><a href="ChapDescriptiveStat.html#histograms"><i class="fa fa-check"></i><b>3.2.1</b> Histograms</a></li>
+<li class="chapter" data-level="3.2.2" data-path="ChapDescriptiveStat.html"><a href="ChapDescriptiveStat.html#box-plots"><i class="fa fa-check"></i><b>3.2.2</b> Box Plots</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="ChapDescriptiveStat.html"><a href="ChapDescriptiveStat.html#measures-of-the-center-of-data"><i class="fa fa-check"></i><b>3.3</b> Measures of the Center of Data</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="ChapDescriptiveStat.html"><a href="ChapDescriptiveStat.html#skewness-the-mean-and-the-median"><i class="fa fa-check"></i><b>3.3.1</b> Skewness, the Mean and the Median</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="ChapDescriptiveStat.html"><a href="ChapDescriptiveStat.html#measures-of-the-spread-of-data"><i class="fa fa-check"></i><b>3.4</b> Measures of the Spread of Data</a></li>
+<li class="chapter" data-level="3.5" data-path="ChapDescriptiveStat.html"><a href="ChapDescriptiveStat.html#exercises-2"><i class="fa fa-check"></i><b>3.5</b> Exercises</a></li>
+<li class="chapter" data-level="3.6" data-path="ChapDescriptiveStat.html"><a href="ChapDescriptiveStat.html#summary-2"><i class="fa fa-check"></i><b>3.6</b> Summary</a><ul>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#discuss-in-the-forum"><i class="fa fa-check"></i>Discuss in the forum</a></li>
+<li class="chapter" data-level="" data-path="ChapDescriptiveStat.html"><a href="ChapDescriptiveStat.html#commonly-used-symbols"><i class="fa fa-check"></i>Commonly Used Symbols</a></li>
+<li class="chapter" data-level="" data-path="ChapDescriptiveStat.html"><a href="ChapDescriptiveStat.html#commonly-used-expressions"><i class="fa fa-check"></i>Commonly Used Expressions</a></li>
+<li class="chapter" data-level="" data-path="ChapDescriptiveStat.html"><a href="ChapDescriptiveStat.html#formulas"><i class="fa fa-check"></i>Formulas:</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="ChapProbability.html"><a href="ChapProbability.html"><i class="fa fa-check"></i><b>4</b> Probability</a><ul>
+<li class="chapter" data-level="4.1" data-path="ChapProbability.html"><a href="ChapProbability.html#student-learning-objective"><i class="fa fa-check"></i><b>4.1</b> Student Learning Objective</a></li>
+<li class="chapter" data-level="4.2" data-path="ChapProbability.html"><a href="ChapProbability.html#different-forms-of-variability"><i class="fa fa-check"></i><b>4.2</b> Different Forms of Variability</a></li>
+<li class="chapter" data-level="4.3" data-path="ChapProbability.html"><a href="ChapProbability.html#a-population"><i class="fa fa-check"></i><b>4.3</b> A Population</a></li>
+<li class="chapter" data-level="4.4" data-path="ChapProbability.html"><a href="ChapProbability.html#random-variables"><i class="fa fa-check"></i><b>4.4</b> Random Variables</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="ChapProbability.html"><a href="ChapProbability.html#sample-space-and-distribution"><i class="fa fa-check"></i><b>4.4.1</b> Sample Space and Distribution</a></li>
+<li class="chapter" data-level="4.4.2" data-path="ChapProbability.html"><a href="ChapProbability.html#expectation-and-standard-deviation"><i class="fa fa-check"></i><b>4.4.2</b> Expectation and Standard Deviation</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="ChapProbability.html"><a href="ChapProbability.html#probability-and-statistics"><i class="fa fa-check"></i><b>4.5</b> Probability and Statistics</a></li>
+<li class="chapter" data-level="4.6" data-path="ChapProbability.html"><a href="ChapProbability.html#exercises-3"><i class="fa fa-check"></i><b>4.6</b> Exercises</a></li>
+<li class="chapter" data-level="4.7" data-path="ChapProbability.html"><a href="ChapProbability.html#summary-3"><i class="fa fa-check"></i><b>4.7</b> Summary</a><ul>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li class="chapter" data-level="" data-path="ChapProbability.html"><a href="ChapProbability.html#discussion-in-the-forum"><i class="fa fa-check"></i>Discussion in the Forum</a></li>
+<li class="chapter" data-level="" data-path="ChapProbability.html"><a href="ChapProbability.html#summary-of-formulas"><i class="fa fa-check"></i>Summary of Formulas</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="ChapRandomVar.html"><a href="ChapRandomVar.html"><i class="fa fa-check"></i><b>5</b> Random Variables</a><ul>
+<li class="chapter" data-level="5.1" data-path="ChapRandomVar.html"><a href="ChapRandomVar.html#student-learning-objective-1"><i class="fa fa-check"></i><b>5.1</b> Student Learning Objective</a></li>
+<li class="chapter" data-level="5.2" data-path="ChapRandomVar.html"><a href="ChapRandomVar.html#discrete-random-variables"><i class="fa fa-check"></i><b>5.2</b> Discrete Random Variables</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="ChapRandomVar.html"><a href="ChapRandomVar.html#the-binomial-random-variable"><i class="fa fa-check"></i><b>5.2.1</b> The Binomial Random Variable</a></li>
+<li class="chapter" data-level="5.2.2" data-path="ChapRandomVar.html"><a href="ChapRandomVar.html#the-poisson-random-variable"><i class="fa fa-check"></i><b>5.2.2</b> The Poisson Random Variable</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="ChapRandomVar.html"><a href="ChapRandomVar.html#RandomVar_5"><i class="fa fa-check"></i><b>5.3</b> Continuous Random Variable</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="ChapRandomVar.html"><a href="ChapRandomVar.html#the-uniform-random-variable"><i class="fa fa-check"></i><b>5.3.1</b> The Uniform Random Variable</a></li>
+<li class="chapter" data-level="5.3.2" data-path="ChapRandomVar.html"><a href="ChapRandomVar.html#the-exponential-random-variable"><i class="fa fa-check"></i><b>5.3.2</b> The Exponential Random Variable</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="ChapRandomVar.html"><a href="ChapRandomVar.html#sec:RVarExercises"><i class="fa fa-check"></i><b>5.4</b> Exercises</a></li>
+<li class="chapter" data-level="5.5" data-path="ChapRandomVar.html"><a href="ChapRandomVar.html#summary-4"><i class="fa fa-check"></i><b>5.5</b> Summary</a><ul>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#discuss-in-the-forum"><i class="fa fa-check"></i>Discuss in the Forum</a></li>
+<li class="chapter" data-level="" data-path="ChapProbability.html"><a href="ChapProbability.html#summary-of-formulas"><i class="fa fa-check"></i>Summary of Formulas</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="ChapNormal.html"><a href="ChapNormal.html"><i class="fa fa-check"></i><b>6</b> The Normal Random Variable</a><ul>
+<li class="chapter" data-level="6.1" data-path="ChapNormal.html"><a href="ChapNormal.html#student-learning-objective-2"><i class="fa fa-check"></i><b>6.1</b> Student Learning Objective</a></li>
+<li class="chapter" data-level="6.2" data-path="ChapNormal.html"><a href="ChapNormal.html#the-normal-random-variable"><i class="fa fa-check"></i><b>6.2</b> The Normal Random Variable</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="ChapNormal.html"><a href="ChapNormal.html#the-normal-distribution"><i class="fa fa-check"></i><b>6.2.1</b> The Normal Distribution</a></li>
+<li class="chapter" data-level="6.2.2" data-path="ChapNormal.html"><a href="ChapNormal.html#the-standard-normal-distribution"><i class="fa fa-check"></i><b>6.2.2</b> The Standard Normal Distribution</a></li>
+<li class="chapter" data-level="6.2.3" data-path="ChapNormal.html"><a href="ChapNormal.html#computing-percentiles"><i class="fa fa-check"></i><b>6.2.3</b> Computing Percentiles</a></li>
+<li class="chapter" data-level="6.2.4" data-path="ChapNormal.html"><a href="ChapNormal.html#outliers-and-the-normal-distribution"><i class="fa fa-check"></i><b>6.2.4</b> Outliers and the Normal Distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="ChapNormal.html"><a href="ChapNormal.html#approximation-of-the-binomial-distribution"><i class="fa fa-check"></i><b>6.3</b> Approximation of the Binomial Distribution</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="ChapNormal.html"><a href="ChapNormal.html#approximate-binomial-probabilities-and-percentiles"><i class="fa fa-check"></i><b>6.3.1</b> Approximate Binomial Probabilities and Percentiles</a></li>
+<li class="chapter" data-level="6.3.2" data-path="ChapNormal.html"><a href="ChapNormal.html#continuity-corrections"><i class="fa fa-check"></i><b>6.3.2</b> Continuity Corrections</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="ChapNormal.html"><a href="ChapNormal.html#Normal4"><i class="fa fa-check"></i><b>6.4</b> Exercises</a></li>
+<li class="chapter" data-level="6.5" data-path="ChapNormal.html"><a href="ChapNormal.html#summary-5"><i class="fa fa-check"></i><b>6.5</b> Summary</a><ul>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#discuss-in-the-forum"><i class="fa fa-check"></i>Discuss in the Forum</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="ChapSampDist.html"><a href="ChapSampDist.html"><i class="fa fa-check"></i><b>7</b> The Sampling Distribution</a><ul>
+<li class="chapter" data-level="7.1" data-path="ChapSampDist.html"><a href="ChapSampDist.html#student-learning-objective-3"><i class="fa fa-check"></i><b>7.1</b> Student Learning Objective</a></li>
+<li class="chapter" data-level="7.2" data-path="ChapSampDist.html"><a href="ChapSampDist.html#the-sampling-distribution"><i class="fa fa-check"></i><b>7.2</b> The Sampling Distribution</a><ul>
+<li class="chapter" data-level="7.2.1" data-path="ChapSampDist.html"><a href="ChapSampDist.html#a-random-sample"><i class="fa fa-check"></i><b>7.2.1</b> A Random Sample</a></li>
+<li class="chapter" data-level="7.2.2" data-path="ChapSampDist.html"><a href="ChapSampDist.html#sampling-from-a-population"><i class="fa fa-check"></i><b>7.2.2</b> Sampling From a Population</a></li>
+<li class="chapter" data-level="7.2.3" data-path="ChapSampDist.html"><a href="ChapSampDist.html#subsec:theoreticalmdls"><i class="fa fa-check"></i><b>7.2.3</b> Theoretical Models</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="ChapSampDist.html"><a href="ChapSampDist.html#law-of-large-numbers-and-central-limit-theorem"><i class="fa fa-check"></i><b>7.3</b> Law of Large Numbers and Central Limit Theorem</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="ChapSampDist.html"><a href="ChapSampDist.html#the-law-of-large-numbers"><i class="fa fa-check"></i><b>7.3.1</b> The Law of Large Numbers</a></li>
+<li class="chapter" data-level="7.3.2" data-path="ChapSampDist.html"><a href="ChapSampDist.html#the-central-limit-theorem-clt"><i class="fa fa-check"></i><b>7.3.2</b> The Central Limit Theorem (CLT)</a></li>
+<li class="chapter" data-level="7.3.3" data-path="ChapSampDist.html"><a href="ChapSampDist.html#applying-the-central-limit-theorem"><i class="fa fa-check"></i><b>7.3.3</b> Applying the Central Limit Theorem</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="ChapSampDist.html"><a href="ChapSampDist.html#SampDistEx"><i class="fa fa-check"></i><b>7.4</b> Exercises</a></li>
+<li class="chapter" data-level="7.5" data-path="ChapSampDist.html"><a href="ChapSampDist.html#summary-6"><i class="fa fa-check"></i><b>7.5</b> Summary</a><ul>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li class="chapter" data-level="" data-path="ChapProbability.html"><a href="ChapProbability.html#discussion-in-the-forum"><i class="fa fa-check"></i>Discussion in the Forum</a></li>
+<li class="chapter" data-level="" data-path="ChapProbability.html"><a href="ChapProbability.html#summary-of-formulas"><i class="fa fa-check"></i>Summary of Formulas</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="overview-and-integration.html"><a href="overview-and-integration.html"><i class="fa fa-check"></i><b>8</b> Overview and Integration</a><ul>
+<li class="chapter" data-level="8.1" data-path="overview-and-integration.html"><a href="overview-and-integration.html#student-learning-objective-4"><i class="fa fa-check"></i><b>8.1</b> Student Learning Objective</a></li>
+<li class="chapter" data-level="8.2" data-path="overview-and-integration.html"><a href="overview-and-integration.html#an-overview"><i class="fa fa-check"></i><b>8.2</b> An Overview</a></li>
+<li class="chapter" data-level="8.3" data-path="overview-and-integration.html"><a href="overview-and-integration.html#integrated-applications"><i class="fa fa-check"></i><b>8.3</b> Integrated Applications</a><ul>
+<li class="chapter" data-level="8.3.1" data-path="overview-and-integration.html"><a href="overview-and-integration.html#example-1"><i class="fa fa-check"></i><b>8.3.1</b> Example 1</a></li>
+<li class="chapter" data-level="" data-path="overview-and-integration.html"><a href="overview-and-integration.html#solution"><i class="fa fa-check"></i>Solution:</a></li>
+<li class="chapter" data-level="8.3.2" data-path="overview-and-integration.html"><a href="overview-and-integration.html#example-2"><i class="fa fa-check"></i><b>8.3.2</b> Example 2</a></li>
+<li class="chapter" data-level="" data-path="overview-and-integration.html"><a href="overview-and-integration.html#solution-1"><i class="fa fa-check"></i>Solution:</a></li>
+<li class="chapter" data-level="8.3.3" data-path="overview-and-integration.html"><a href="overview-and-integration.html#example-3"><i class="fa fa-check"></i><b>8.3.3</b> Example 3</a></li>
+<li class="chapter" data-level="" data-path="overview-and-integration.html"><a href="overview-and-integration.html#solution-2"><i class="fa fa-check"></i>Solution:</a></li>
+<li class="chapter" data-level="8.3.4" data-path="overview-and-integration.html"><a href="overview-and-integration.html#example-4"><i class="fa fa-check"></i><b>8.3.4</b> Example 4</a></li>
+<li class="chapter" data-level="" data-path="overview-and-integration.html"><a href="overview-and-integration.html#solution-3"><i class="fa fa-check"></i>Solution</a></li>
+<li class="chapter" data-level="8.3.5" data-path="overview-and-integration.html"><a href="overview-and-integration.html#example-5"><i class="fa fa-check"></i><b>8.3.5</b> Example 5</a></li>
+<li class="chapter" data-level="" data-path="overview-and-integration.html"><a href="overview-and-integration.html#solution-4"><i class="fa fa-check"></i>Solution</a></li>
+<li class="chapter" data-level="" data-path="ChapProbability.html"><a href="ChapProbability.html#discussion-in-the-forum"><i class="fa fa-check"></i>Discussion in the Forum</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="ChapInference.html"><a href="ChapInference.html"><i class="fa fa-check"></i><b>9</b> Introduction to Statistical Inference</a><ul>
+<li class="chapter" data-level="9.1" data-path="ChapInference.html"><a href="ChapInference.html#student-learning-objectives-3"><i class="fa fa-check"></i><b>9.1</b> Student Learning Objectives</a></li>
+<li class="chapter" data-level="9.2" data-path="ChapInference.html"><a href="ChapInference.html#key-terms-1"><i class="fa fa-check"></i><b>9.2</b> Key Terms</a></li>
+<li class="chapter" data-level="9.3" data-path="ChapInference.html"><a href="ChapInference.html#the-cars-data-set"><i class="fa fa-check"></i><b>9.3</b> The Cars Data Set</a></li>
+<li class="chapter" data-level="9.4" data-path="ChapSampDist.html"><a href="ChapSampDist.html#the-sampling-distribution"><i class="fa fa-check"></i><b>9.4</b> The Sampling Distribution</a><ul>
+<li class="chapter" data-level="9.4.1" data-path="ChapInference.html"><a href="ChapInference.html#statistics-1"><i class="fa fa-check"></i><b>9.4.1</b> Statistics</a></li>
+<li class="chapter" data-level="9.4.2" data-path="ChapInference.html"><a href="ChapInference.html#the-sampling-distribution-1"><i class="fa fa-check"></i><b>9.4.2</b> The Sampling Distribution</a></li>
+<li class="chapter" data-level="9.4.3" data-path="ChapInference.html"><a href="ChapInference.html#theoretical-distributions-of-observations"><i class="fa fa-check"></i><b>9.4.3</b> Theoretical Distributions of Observations</a></li>
+<li class="chapter" data-level="9.4.4" data-path="ChapInference.html"><a href="ChapInference.html#sampling-distribution-of-statistics"><i class="fa fa-check"></i><b>9.4.4</b> Sampling Distribution of Statistics</a></li>
+<li class="chapter" data-level="9.4.5" data-path="ChapInference.html"><a href="ChapInference.html#the-normal-approximation"><i class="fa fa-check"></i><b>9.4.5</b> The Normal Approximation</a></li>
+<li class="chapter" data-level="9.4.6" data-path="ChapInference.html"><a href="ChapInference.html#simulations"><i class="fa fa-check"></i><b>9.4.6</b> Simulations</a></li>
+</ul></li>
+<li class="chapter" data-level="9.5" data-path="ChapInference.html"><a href="ChapInference.html#exercises-4"><i class="fa fa-check"></i><b>9.5</b> Exercises</a></li>
+<li class="chapter" data-level="9.6" data-path="ChapInference.html"><a href="ChapInference.html#summary-7"><i class="fa fa-check"></i><b>9.6</b> Summary</a><ul>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#discuss-in-the-forum"><i class="fa fa-check"></i>Discuss in the forum</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="ChapEstimation.html"><a href="ChapEstimation.html"><i class="fa fa-check"></i><b>10</b> Point Estimation</a><ul>
+<li class="chapter" data-level="10.1" data-path="ChapEstimation.html"><a href="ChapEstimation.html#student-learning-objectives-4"><i class="fa fa-check"></i><b>10.1</b> Student Learning Objectives</a></li>
+<li class="chapter" data-level="10.2" data-path="ChapEstimation.html"><a href="ChapEstimation.html#estimating-parameters"><i class="fa fa-check"></i><b>10.2</b> Estimating Parameters</a></li>
+<li class="chapter" data-level="10.3" data-path="ChapEstimation.html"><a href="ChapEstimation.html#EstimationExp"><i class="fa fa-check"></i><b>10.3</b> Estimation of the Expectation</a><ul>
+<li class="chapter" data-level="10.3.1" data-path="ChapEstimation.html"><a href="ChapEstimation.html#the-accuracy-of-the-sample-average"><i class="fa fa-check"></i><b>10.3.1</b> The Accuracy of the Sample Average</a></li>
+<li class="chapter" data-level="10.3.2" data-path="ChapEstimation.html"><a href="ChapEstimation.html#ComparingEstimators"><i class="fa fa-check"></i><b>10.3.2</b> Comparing Estimators</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="ChapEstimation.html"><a href="ChapEstimation.html#estimation-of-the-variance-and-standard-deviation"><i class="fa fa-check"></i><b>10.4</b> Estimation of the Variance and Standard Deviation</a></li>
+<li class="chapter" data-level="10.5" data-path="ChapEstimation.html"><a href="ChapEstimation.html#EstimationOtherPars"><i class="fa fa-check"></i><b>10.5</b> Estimation of Other Parameters</a></li>
+<li class="chapter" data-level="10.6" data-path="ChapEstimation.html"><a href="ChapEstimation.html#exercises-5"><i class="fa fa-check"></i><b>10.6</b> Exercises</a></li>
+<li class="chapter" data-level="10.7" data-path="ChapEstimation.html"><a href="ChapEstimation.html#summary-8"><i class="fa fa-check"></i><b>10.7</b> Summary</a><ul>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#discuss-in-the-forum"><i class="fa fa-check"></i>Discuss in the forum</a></li>
+<li class="chapter" data-level="" data-path="ChapDescriptiveStat.html"><a href="ChapDescriptiveStat.html#formulas"><i class="fa fa-check"></i>Formulas:</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="ChapConfidence.html"><a href="ChapConfidence.html"><i class="fa fa-check"></i><b>11</b> Confidence Intervals</a><ul>
+<li class="chapter" data-level="11.1" data-path="ChapConfidence.html"><a href="ChapConfidence.html#student-learning-objectives-5"><i class="fa fa-check"></i><b>11.1</b> Student Learning Objectives</a></li>
+<li class="chapter" data-level="11.2" data-path="ChapConfidence.html"><a href="ChapConfidence.html#intervals-for-mean-and-proportion"><i class="fa fa-check"></i><b>11.2</b> Intervals for Mean and Proportion</a><ul>
+<li class="chapter" data-level="11.2.1" data-path="ChapConfidence.html"><a href="ChapConfidence.html#ConfidenceExamples"><i class="fa fa-check"></i><b>11.2.1</b> Examples of Confidence Intervals</a></li>
+<li class="chapter" data-level="11.2.2" data-path="ChapConfidence.html"><a href="ChapConfidence.html#subsec:CImean"><i class="fa fa-check"></i><b>11.2.2</b> Confidence Intervals for the Mean</a></li>
+<li class="chapter" data-level="11.2.3" data-path="ChapConfidence.html"><a href="ChapConfidence.html#subsec:CIfrac"><i class="fa fa-check"></i><b>11.2.3</b> Confidence Intervals for a Proportion</a></li>
+</ul></li>
+<li class="chapter" data-level="11.3" data-path="ChapConfidence.html"><a href="ChapConfidence.html#CInormal"><i class="fa fa-check"></i><b>11.3</b> Intervals for Normal Measurements</a><ul>
+<li class="chapter" data-level="11.3.1" data-path="ChapConfidence.html"><a href="ChapConfidence.html#confidence-intervals-for-a-normal-mean"><i class="fa fa-check"></i><b>11.3.1</b> Confidence Intervals for a Normal Mean</a></li>
+<li class="chapter" data-level="11.3.2" data-path="ChapConfidence.html"><a href="ChapConfidence.html#confidence-intervals-for-a-normal-variance"><i class="fa fa-check"></i><b>11.3.2</b> Confidence Intervals for a Normal Variance</a></li>
+</ul></li>
+<li class="chapter" data-level="11.4" data-path="ChapConfidence.html"><a href="ChapConfidence.html#choosing-the-sample-size"><i class="fa fa-check"></i><b>11.4</b> Choosing the Sample Size</a></li>
+<li class="chapter" data-level="11.5" data-path="ChapConfidence.html"><a href="ChapConfidence.html#exercises-6"><i class="fa fa-check"></i><b>11.5</b> Exercises</a></li>
+<li class="chapter" data-level="11.6" data-path="ChapConfidence.html"><a href="ChapConfidence.html#summary-9"><i class="fa fa-check"></i><b>11.6</b> Summary</a><ul>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#discuss-in-the-forum"><i class="fa fa-check"></i>Discuss in the forum</a></li>
+<li class="chapter" data-level="" data-path="ChapConfidence.html"><a href="ChapConfidence.html#formulas-for-confidence-intervals-95-confidence-level"><i class="fa fa-check"></i>Formulas for Confidence Intervals, 95% Confidence Level:</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="ChapTesting.html"><a href="ChapTesting.html"><i class="fa fa-check"></i><b>12</b> Testing Hypothesis</a><ul>
+<li class="chapter" data-level="12.1" data-path="ChapTesting.html"><a href="ChapTesting.html#student-learning-objectives-6"><i class="fa fa-check"></i><b>12.1</b> Student Learning Objectives</a></li>
+<li class="chapter" data-level="12.2" data-path="ChapTesting.html"><a href="ChapTesting.html#the-theory-of-hypothesis-testing"><i class="fa fa-check"></i><b>12.2</b> The Theory of Hypothesis Testing</a><ul>
+<li class="chapter" data-level="12.2.1" data-path="ChapTesting.html"><a href="ChapTesting.html#an-example-of-hypothesis-testing"><i class="fa fa-check"></i><b>12.2.1</b> An Example of Hypothesis Testing</a></li>
+<li class="chapter" data-level="12.2.2" data-path="ChapTesting.html"><a href="ChapTesting.html#the-structure-of-a-statistical-test-of-hypotheses"><i class="fa fa-check"></i><b>12.2.2</b> The Structure of a Statistical Test of Hypotheses</a></li>
+<li class="chapter" data-level="12.2.3" data-path="ChapTesting.html"><a href="ChapTesting.html#error-types-and-error-probabilities"><i class="fa fa-check"></i><b>12.2.3</b> Error Types and Error Probabilities</a></li>
+<li class="chapter" data-level="12.2.4" data-path="ChapTesting.html"><a href="ChapTesting.html#p-values"><i class="fa fa-check"></i><b>12.2.4</b> <span class="math inline">\(p\)</span>-Values</a></li>
+</ul></li>
+<li class="chapter" data-level="12.3" data-path="ChapTesting.html"><a href="ChapTesting.html#testing-hypothesis-on-expectation"><i class="fa fa-check"></i><b>12.3</b> Testing Hypothesis on Expectation</a></li>
+<li class="chapter" data-level="12.4" data-path="ChapTesting.html"><a href="ChapTesting.html#TestFrac"><i class="fa fa-check"></i><b>12.4</b> Testing Hypothesis on Proportion</a></li>
+<li class="chapter" data-level="12.5" data-path="ChapTesting.html"><a href="ChapTesting.html#exercises-7"><i class="fa fa-check"></i><b>12.5</b> Exercises</a></li>
+<li class="chapter" data-level="12.6" data-path="ChapTesting.html"><a href="ChapTesting.html#summary-10"><i class="fa fa-check"></i><b>12.6</b> Summary</a><ul>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#discuss-in-the-forum"><i class="fa fa-check"></i>Discuss in the forum</a></li>
+<li class="chapter" data-level="" data-path="ChapDescriptiveStat.html"><a href="ChapDescriptiveStat.html#formulas"><i class="fa fa-check"></i>Formulas:</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="ChapTwoSamp.html"><a href="ChapTwoSamp.html"><i class="fa fa-check"></i><b>13</b> Comparing Two Samples</a><ul>
+<li class="chapter" data-level="13.1" data-path="ChapTwoSamp.html"><a href="ChapTwoSamp.html#student-learning-objectives-7"><i class="fa fa-check"></i><b>13.1</b> Student Learning Objectives</a></li>
+<li class="chapter" data-level="13.2" data-path="ChapTwoSamp.html"><a href="ChapTwoSamp.html#comparing-two-distributions"><i class="fa fa-check"></i><b>13.2</b> Comparing Two Distributions</a></li>
+<li class="chapter" data-level="13.3" data-path="ChapTwoSamp.html"><a href="ChapTwoSamp.html#sec:ComparingMeans"><i class="fa fa-check"></i><b>13.3</b> Comparing the Sample Means</a><ul>
+<li class="chapter" data-level="13.3.1" data-path="ChapTwoSamp.html"><a href="ChapTwoSamp.html#an-example-of-a-comparison-of-means"><i class="fa fa-check"></i><b>13.3.1</b> An Example of a Comparison of Means</a></li>
+<li class="chapter" data-level="13.3.2" data-path="ChapTwoSamp.html"><a href="ChapTwoSamp.html#confidence-interval-for-the-difference"><i class="fa fa-check"></i><b>13.3.2</b> Confidence Interval for the Difference</a></li>
+<li class="chapter" data-level="13.3.3" data-path="ChapTwoSamp.html"><a href="ChapTwoSamp.html#the-t-test-for-two-means"><i class="fa fa-check"></i><b>13.3.3</b> The t-Test for Two Means</a></li>
+</ul></li>
+<li class="chapter" data-level="13.4" data-path="ChapTwoSamp.html"><a href="ChapTwoSamp.html#comparing-sample-variances"><i class="fa fa-check"></i><b>13.4</b> Comparing Sample Variances</a></li>
+<li class="chapter" data-level="13.5" data-path="ChapTwoSamp.html"><a href="ChapTwoSamp.html#exercises-8"><i class="fa fa-check"></i><b>13.5</b> Exercises</a></li>
+<li class="chapter" data-level="13.6" data-path="ChapTwoSamp.html"><a href="ChapTwoSamp.html#summary-11"><i class="fa fa-check"></i><b>13.6</b> Summary</a><ul>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#discuss-in-the-forum"><i class="fa fa-check"></i>Discuss in the forum</a></li>
+<li class="chapter" data-level="" data-path="ChapDescriptiveStat.html"><a href="ChapDescriptiveStat.html#formulas"><i class="fa fa-check"></i>Formulas:</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="ChapRegression.html"><a href="ChapRegression.html"><i class="fa fa-check"></i><b>14</b> Linear Regression</a><ul>
+<li class="chapter" data-level="14.1" data-path="ChapRegression.html"><a href="ChapRegression.html#student-learning-objectives-8"><i class="fa fa-check"></i><b>14.1</b> Student Learning Objectives</a></li>
+<li class="chapter" data-level="14.2" data-path="ChapRegression.html"><a href="ChapRegression.html#points-and-lines"><i class="fa fa-check"></i><b>14.2</b> Points and Lines</a><ul>
+<li class="chapter" data-level="14.2.1" data-path="ChapRegression.html"><a href="ChapRegression.html#the-scatter-plot"><i class="fa fa-check"></i><b>14.2.1</b> The Scatter Plot</a></li>
+<li class="chapter" data-level="14.2.2" data-path="ChapRegression.html"><a href="ChapRegression.html#linear-equation"><i class="fa fa-check"></i><b>14.2.2</b> Linear Equation</a></li>
+</ul></li>
+<li class="chapter" data-level="14.3" data-path="ChapRegression.html"><a href="ChapRegression.html#linear-regression"><i class="fa fa-check"></i><b>14.3</b> Linear Regression</a><ul>
+<li class="chapter" data-level="14.3.1" data-path="ChapRegression.html"><a href="ChapRegression.html#fitting-the-regression-line"><i class="fa fa-check"></i><b>14.3.1</b> Fitting the Regression Line</a></li>
+<li class="chapter" data-level="14.3.2" data-path="ChapRegression.html"><a href="ChapRegression.html#subsec:Inference"><i class="fa fa-check"></i><b>14.3.2</b> Inference</a></li>
+</ul></li>
+<li class="chapter" data-level="14.4" data-path="ChapRegression.html"><a href="ChapRegression.html#r-squared-and-the-variance-of-residuals"><i class="fa fa-check"></i><b>14.4</b> R-squared and the Variance of Residuals</a></li>
+<li class="chapter" data-level="14.5" data-path="ChapRegression.html"><a href="ChapRegression.html#exercises-9"><i class="fa fa-check"></i><b>14.5</b> Exercises</a></li>
+<li class="chapter" data-level="14.6" data-path="ChapRegression.html"><a href="ChapRegression.html#summary-12"><i class="fa fa-check"></i><b>14.6</b> Summary</a><ul>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#discuss-in-the-forum"><i class="fa fa-check"></i>Discuss in the Forum</a></li>
+<li class="chapter" data-level="" data-path="ChapDescriptiveStat.html"><a href="ChapDescriptiveStat.html#formulas"><i class="fa fa-check"></i>Formulas:</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="ChapLogistic.html"><a href="ChapLogistic.html"><i class="fa fa-check"></i><b>15</b> A Bernoulli Response</a><ul>
+<li class="chapter" data-level="15.1" data-path="ChapLogistic.html"><a href="ChapLogistic.html#student-learning-objectives-9"><i class="fa fa-check"></i><b>15.1</b> Student Learning Objectives</a></li>
+<li class="chapter" data-level="15.2" data-path="ChapLogistic.html"><a href="ChapLogistic.html#comparing-sample-proportions"><i class="fa fa-check"></i><b>15.2</b> Comparing Sample Proportions</a></li>
+<li class="chapter" data-level="15.3" data-path="ChapLogistic.html"><a href="ChapLogistic.html#logistic-regression"><i class="fa fa-check"></i><b>15.3</b> Logistic Regression</a></li>
+<li class="chapter" data-level="15.4" data-path="ChapLogistic.html"><a href="ChapLogistic.html#exercises-10"><i class="fa fa-check"></i><b>15.4</b> Exercises</a><ul>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#discuss-in-the-forum"><i class="fa fa-check"></i>Discuss in the forum</a></li>
+<li class="chapter" data-level="" data-path="ChapDescriptiveStat.html"><a href="ChapDescriptiveStat.html#formulas"><i class="fa fa-check"></i>Formulas:</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="ChapCaseStudies.html"><a href="ChapCaseStudies.html"><i class="fa fa-check"></i><b>16</b> Case Studies</a><ul>
+<li class="chapter" data-level="16.1" data-path="ChapCaseStudies.html"><a href="ChapCaseStudies.html#student-learning-objective-5"><i class="fa fa-check"></i><b>16.1</b> Student Learning Objective</a></li>
+<li class="chapter" data-level="16.2" data-path="ChapCaseStudies.html"><a href="ChapCaseStudies.html#a-review"><i class="fa fa-check"></i><b>16.2</b> A Review</a></li>
+<li class="chapter" data-level="16.3" data-path="ChapCaseStudies.html"><a href="ChapCaseStudies.html#case-studies"><i class="fa fa-check"></i><b>16.3</b> Case Studies</a><ul>
+<li class="chapter" data-level="16.3.1" data-path="ChapCaseStudies.html"><a href="ChapCaseStudies.html#physicians-reactions-to-the-size-of-a-patient"><i class="fa fa-check"></i><b>16.3.1</b> Physicians’ Reactions to the Size of a Patient</a></li>
+<li class="chapter" data-level="16.3.2" data-path="ChapCaseStudies.html"><a href="ChapCaseStudies.html#physical-strength-and-job-performance"><i class="fa fa-check"></i><b>16.3.2</b> Physical Strength and Job Performance</a></li>
+</ul></li>
+<li class="chapter" data-level="16.4" data-path="ChapCaseStudies.html"><a href="ChapCaseStudies.html#summary-13"><i class="fa fa-check"></i><b>16.4</b> Summary</a><ul>
+<li class="chapter" data-level="16.4.1" data-path="ChapCaseStudies.html"><a href="ChapCaseStudies.html#concluding-remarks"><i class="fa fa-check"></i><b>16.4.1</b> Concluding Remarks</a></li>
+<li class="chapter" data-level="16.4.2" data-path="ChapProbability.html"><a href="ChapProbability.html#discussion-in-the-forum"><i class="fa fa-check"></i><b>16.4.2</b> Discussion in the Forum</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html"><i class="fa fa-check"></i>Exercise Solutions</a><ul>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-1"><i class="fa fa-check"></i>Chapter 1</a><ul>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-1.1"><i class="fa fa-check"></i>Exercise 1.1</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-1.2"><i class="fa fa-check"></i>Exercise 1.2</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-2"><i class="fa fa-check"></i>Chapter 2</a><ul>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-2.1"><i class="fa fa-check"></i>Exercise 2.1</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-2.2"><i class="fa fa-check"></i>Exercise 2.2</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-3"><i class="fa fa-check"></i>Chapter 3</a><ul>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-3.1"><i class="fa fa-check"></i>Exercise 3.1</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-3.2"><i class="fa fa-check"></i>Exercise 3.2</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-4"><i class="fa fa-check"></i>Chapter 4</a><ul>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-4.1"><i class="fa fa-check"></i>Exercise 4.1</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-4.2"><i class="fa fa-check"></i>Exercise 4.2</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-5"><i class="fa fa-check"></i>Chapter 5</a><ul>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-5.1"><i class="fa fa-check"></i>Exercise 5.1</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-5.2"><i class="fa fa-check"></i>Exercise 5.2</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-6"><i class="fa fa-check"></i>Chapter 6</a><ul>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-6.1"><i class="fa fa-check"></i>Exercise 6.1</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-6.2"><i class="fa fa-check"></i>Exercise 6.2</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-7"><i class="fa fa-check"></i>Chapter 7</a><ul>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-7.1"><i class="fa fa-check"></i>Exercise 7.1</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-7.2"><i class="fa fa-check"></i>Exercise 7.2</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-9"><i class="fa fa-check"></i>Chapter 9</a><ul>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-9.1"><i class="fa fa-check"></i>Exercise 9.1</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-9.2"><i class="fa fa-check"></i>Exercise 9.2</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-10"><i class="fa fa-check"></i>Chapter 10</a><ul>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-10.1"><i class="fa fa-check"></i>Exercise 10.1</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-10.2"><i class="fa fa-check"></i>Exercise 10.2</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-11"><i class="fa fa-check"></i>Chapter 11</a><ul>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-11.1"><i class="fa fa-check"></i>Exercise 11.1</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-11.2"><i class="fa fa-check"></i>Exercise 11.2</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-11.3"><i class="fa fa-check"></i>Exercise 11.3</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-12"><i class="fa fa-check"></i>Chapter 12</a><ul>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-12.1"><i class="fa fa-check"></i>Exercise 12.1</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-12.2"><i class="fa fa-check"></i>Exercise 12.2</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-12.3"><i class="fa fa-check"></i>Exercise 12.3</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-13"><i class="fa fa-check"></i>Chapter 13</a><ul>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-13.1"><i class="fa fa-check"></i>Exercise 13.1</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-13.2"><i class="fa fa-check"></i>Exercise 13.2</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-13.3"><i class="fa fa-check"></i>Exercise 13.3</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-14"><i class="fa fa-check"></i>Chapter 14</a><ul>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-14.1"><i class="fa fa-check"></i>Exercise 14.1</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-14.2"><i class="fa fa-check"></i>Exercise 14.2</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-14.3"><i class="fa fa-check"></i>Exercise 14.3</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-14.4"><i class="fa fa-check"></i>Exercise 14.4</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-14.5"><i class="fa fa-check"></i>Exercise 14.5</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-14.6"><i class="fa fa-check"></i>Exercise 14.6</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-15"><i class="fa fa-check"></i>Chapter 15</a><ul>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-15.1"><i class="fa fa-check"></i>Exercise 15.1</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-15.2"><i class="fa fa-check"></i>Exercise 15.2</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://bookdown.org" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Introduction to Statistical Thinking</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="ChapIntroR" class="section level1">
+<h1><span class="header-section-number">Chapter 1</span> Introduction</h1>
+<div id="student-learning-objectives" class="section level2">
+<h2><span class="header-section-number">1.1</span> Student Learning Objectives</h2>
+<p>This chapter introduces the basic concepts of statistics. Special attention is given to concepts that are used in the first part of this book, the part that deals with graphical and numeric statistical ways to describe data (descriptive statistics) as well as mathematical theory of probability that enables statisticians to draw conclusions from data.</p>
+<p>The course applies the widely used freeware programming environment for statistical analysis, known as <code>R</code>. In this chapter we will discuss the installation of the program and present very basic features of that system.</p>
+<p>By the end of this chapter, the student should be able to:</p>
+<ul>
+<li>Recognize key terms in statistics and probability.</li>
+<li>Install the <code>R</code> program on an accessible computer.</li>
+<li>Learn and apply a few basic operations of the computational system <code>R</code>.</li>
+</ul>
+</div>
+<div id="why-learn-statistics" class="section level2">
+<h2><span class="header-section-number">1.2</span> Why Learn Statistics?</h2>
+<p>You are probably asking yourself the question, “When and where will I use statistics?”. If you read any newspaper or watch television, or use the Internet, you will see statistical information. There are statistics about crime, sports, education, politics, and real estate. Typically, when you read a newspaper article or watch a news program on television, you are given sample information. With this information, you may make a decision about the correctness of a statement, claim, or “fact”. Statistical methods can help you make the “best educated guess”.</p>
+<p>Since you will undoubtedly be given statistical information at some point in your life, you need to know some techniques to analyze the information thoughtfully. Think about buying a house or managing a budget. Think about your chosen profession. The fields of economics, business, psychology, education, biology, law, computer science, police science, and early childhood development require at least one course in statistics.</p>
+<p>Included in this chapter are the basic ideas and words of probability and statistics. In the process of learning the first part of the book, and more so in the second part of the book, you will understand that statistics and probability work together.</p>
+</div>
+<div id="statistics" class="section level2">
+<h2><span class="header-section-number">1.3</span> Statistics</h2>
+<p>The science of statistics deals with the collection, analysis, interpretation, and presentation of data. We see and use data in our everyday lives. To be able to use data correctly is essential to many professions and is in your own best self-interest.</p>
+<div class="figure" style="text-align: center"><span id="fig:intror1"></span>
+<img src="thinkstat_files/figure-html/intror1-1.png" alt="Frequency of Average Time (in Hours) Spent Sleeping per Night" width="60%" />
+<p class="caption">
+FIGURE 1.1: Frequency of Average Time (in Hours) Spent Sleeping per Night
+</p>
+</div>
+<p>For example, assume the average time (in hours, to the nearest half-hour) a group of people sleep per night has been recorded. Consider the following data:</p>
+<p><span class="math display">\[5,\; 5.5,\; 6,\; 6,\; 6,\; 6.5,\; 6.5,\; 6.5,\; 6.5,\; 7,\; 7,\; 8,\; 8,\; 9\;.\]</span></p>
+<p>In Figure <a href="ChapIntroR.html#fig:intror1">1.1</a> this data is presented in a graphical form (called a bar plot). A bar plot consists of a number axis (the <span class="math inline">\(x\)</span>-axis) and bars (vertical lines) positioned above the number axis. The length of each bar corresponds to the number of data points that obtain the given numerical value. In the given plot the frequency of average time (in hours) spent sleeping per night is presented with hours of sleep on the horizontal <span class="math inline">\(x\)</span>-axis and frequency on vertical <span class="math inline">\(y\)</span>-axis.</p>
+<p>Think of the following questions:</p>
+<ul>
+<li><p>Would the bar plot constructed from data collected from a different group of people look the same as or different from the example? Why?</p></li>
+<li><p>If one would have carried the same example in a different group with the same size and age as the one used for the example, do you think the results would be the same? Why or why not?</p></li>
+<li><p>Where does the data appear to cluster? How could you interpret the clustering?</p></li>
+</ul>
+<p>The questions above ask you to analyze and interpret your data. With this example, you have begun your study of statistics.</p>
+<p>In this course, you will learn how to organize and summarize data. Organizing and summarizing data is called descriptive statistics. Two ways to summarize data are by graphing and by numbers (for example, finding an average). In the second part of the book you will also learn how to use formal methods for drawing conclusions from “good” data. The formal methods are called inferential statistics. Statistical inference uses probabilistic concepts to determine if conclusions drawn are reliable or not.</p>
+<p>Effective interpretation of data is based on good procedures for producing data and thoughtful examination of the data. In the process of learning how to interpret data you will probably encounter what may seem to be too many mathematical formulae that describe these procedures. However, you should always remember that the goal of statistics is not to perform numerous calculations using the formulae, but to gain an understanding of your data. The calculations can be done using a calculator or a computer. The understanding must come from you. If you can thoroughly grasp the basics of statistics, you can be more confident in the decisions you make in life.</p>
+</div>
+<div id="probability" class="section level2">
+<h2><span class="header-section-number">1.4</span> Probability</h2>
+<p>Probability is the mathematical theory used to study uncertainty. It provides tools for the formalization and quantification of the notion of uncertainty. In particular, it deals with the chance of an event occurring. For example, if the different potential outcomes of an experiment are equally likely to occur then the probability of each outcome is taken to be the reciprocal of the number of potential outcomes. As an illustration, consider tossing a fair coin. There are two possible outcomes – a head or a tail – and the probability of each outcome is <span class="math inline">\(1/2\)</span>.</p>
+<p>If you toss a fair coin 4 times, the outcomes may not necessarily be 2 heads and 2 tails. However, if you toss the same coin 4,000 times, the outcomes will be close to 2,000 heads and 2,000 tails. It is very unlikely to obtain more than 2,060 tails and it is similarly unlikely to obtain less than 1,940 tails. This is consistent with the expected theoretical probability of heads in any one toss. Even though the outcomes of a few repetitions are uncertain, there is a regular pattern of outcomes when the number of repetitions is large. Statistics exploits this pattern regularity in order to make extrapolations from the observed sample to the entire population.</p>
+<p>The theory of probability began with the study of games of chance such as poker. Today, probability is used to predict the likelihood of an earthquake, of rain, or whether you will get an “A” in this course. Doctors use probability to determine the chance of a vaccination causing the disease the vaccination is supposed to prevent. A stockbroker uses probability to determine the rate of return on a client’s investments. You might use probability to decide to buy a lottery ticket or not.</p>
+<p>Although probability is instrumental for the development of the theory of statistics, in this introductory course we will not develop the mathematical theory of probability. Instead, we will concentrate on the philosophical aspects of the theory and use computerized simulations in order to demonstrate probabilistic computations that are applied in statistical inference.</p>
+</div>
+<div id="key-terms" class="section level2">
+<h2><span class="header-section-number">1.5</span> Key Terms</h2>
+<p>In statistics, we generally want to study a population. You can think of a population as an entire collection of persons, things, or objects under study. To study the larger population, we select a sample. The idea of sampling is to select a portion (or subset) of the larger population and study that portion (the sample) to gain information about the population. Data are the result of sampling from a population.</p>
+<p>Because it takes a lot of time and money to examine an entire population, sampling is a very practical technique. If you wished to compute the overall grade point average at your school, it would make sense to select a sample of students who attend the school. The data collected from the sample would be the students’ grade point averages. In presidential elections, opinion poll samples of 1,000 to 2,000 people are taken. The opinion poll is supposed to represent the views of the people in the entire country. Manufacturers of canned carbonated drinks take samples to determine if the manufactured 16 ounce containers does indeed contain 16 ounces of the drink.</p>
+<p>From the sample data, we can calculate a <em>statistic</em>. A statistic is a number that is a property of the sample. For example, if we consider one math class to be a sample of the population of all math classes, then the average number of points earned by students in that one math class at the end of the term is an example of a statistic. The statistic can be used as an estimate of a population <em>parameter</em>. A parameter is a number that is a property of the population. Since we considered all math classes to be the population, then the average number of points earned per student over all the math classes is an example of a parameter.</p>
+<p>One of the main concerns in the field of statistics is how accurately a statistic estimates a parameter. The accuracy really depends on how well the sample represents the population. The sample must contain the characteristics of the population in order to be a representative sample.</p>
+<p>Two words that come up often in statistics are <em>average</em> and <em>proportion</em>. If you were to take three exams in your math classes and obtained scores of 86, 75, and 92, you calculate your average score by adding the three exam scores and dividing by three (your average score would be 84.3 to one decimal place). If, in your math class, there are 40 students and 22 are men and 18 are women, then the proportion of men students is <span class="math inline">\(22/40\)</span> and the proportion of women students is <span class="math inline">\(18/40\)</span>. Average and proportion are discussed in more detail in later chapters.</p>
+</div>
+<div id="the-r-programming-environment" class="section level2">
+<h2><span class="header-section-number">1.6</span> The <code>R</code> Programming Environment</h2>
+<p>The <code>R</code> Programming Environment is a widely used open source system for statistical analysis and statistical programming. It includes thousands of functions for the implementation of both standard and exotic statistical methods and it is probably the most popular system in the academic world for the development of new statistical tools. We will use <code>R</code> in order to apply the statistical methods that will be discussed in the book to some example data sets and in order to demonstrate, via simulations, concepts associated with probability and its application in statistics.</p>
+<p>The demonstrations in the book involve very basic <code>R</code> programming skills and the applications are implemented using, in most cases, simple and natural code. A detailed explanation will accompany the code that is used.</p>
+<p>Learning <code>R</code>, like the learning of any other programming language, can be achieved only through practice. Hence, we strongly recommend that you not only read the code presented in the book but also run it yourself, in parallel to the reading of the provided explanations. Moreover, you are encouraged to play with the code: introduce changes in the code and in the data and see how the output changes as a result. One should not be afraid to experiment. At worst, the computer may crash or freeze. In both cases, restarting the computer will solve the problem …</p>
+<p>You may download <code>R</code> from the <code>R</code> project home page <a href="http://www.r-project.org" class="uri">http://www.r-project.org</a> and install it on the computer that you are using<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>.</p>
+<div id="some-basic-r-commands" class="section level3">
+<h3><span class="header-section-number">1.6.1</span> Some Basic <code>R</code> Commands</h3>
+<p><code>R</code> is an object-oriented programming system. During the session you may create and manipulate objects by the use of functions that are part of the basic installation. You may also use the <code>R</code> programming language. Most of the functions that are part of the system are themselves written in the <code>R</code> language and one may easily write new functions or modify existing functions to suit specific needs.</p>
+<p>Let us start by opening the <code>R Console</code> window by double-clicking on the <code>R</code> icon. Type in the <code>R Console</code> window, immediately after the “<code>&gt;</code>” prompt, the expression “<code>1+2</code>” and then hit the Return key. (Do not include the double quotation in the expression that you type!):</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">1</span> <span class="op">+</span><span class="st"> </span><span class="dv">2</span></code></pre></div>
+<pre><code>## [1] 3</code></pre>
+<p>The prompt “<code>&gt;</code>” indicates that the system is ready to receive commands. Writing an expression, such as “<code>1+2</code>”, and hitting the Return key sends the expression to be executed. The execution of the expression may produce an object, in this case an object that is composed of a single number, the number “3”.</p>
+<p>Whenever required, the <code>R</code> system takes an action. If no other specifications are given regarding the required action then the system will apply the pre-programmed action. This action is called the <em>default</em> action. In the case of hitting the Return key after the expression that we wrote the default is to display the produced object on the screen.</p>
+<p>Next, let us demonstrate <code>R</code> in a more meaningful way by using it in order to produce the bar-plot of Figure <a href="ChapIntroR.html#fig:intror1">1.1</a>. First we have to input the data. We will produce a sequence of numbers that form the data<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a>. For that we will use the function “<code>c</code>” that combines its arguments and produces a sequence with the arguments as the components of the sequence. Write the expression:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">c</span>(<span class="dv">5</span>,<span class="fl">5.5</span>,<span class="dv">6</span>,<span class="dv">6</span>,<span class="dv">6</span>,<span class="fl">6.5</span>,<span class="fl">6.5</span>,<span class="fl">6.5</span>,<span class="fl">6.5</span>,<span class="dv">7</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">8</span>,<span class="dv">9</span>)</code></pre></div>
+<p>at the prompt and hit return. The result should look like this:</p>
+<pre><code>##  [1] 5.0 5.5 6.0 6.0 6.0 6.5 6.5 6.5 6.5 7.0 7.0 8.0 8.0 9.0</code></pre>
+<p>The function “<code>c</code>” is an example of an <code>R</code> function. A function has a name, “<code>c</code>” in this case, that is followed by brackets that include the input to the function. We call the components of the input the <em>arguments</em> of the function. Arguments are separated by commas. A function produces an output, which is typically an <code>R</code> object. In the current example an object of the form of a sequence was created and, according to the default application of the system, was sent to the screen and not saved.</p>
+<p>If we want to create an object for further manipulation then we should save it and give it a name. For example, it we want to save the vector of data under the name “<code>X</code>” we may write the following expression at the prompt (and then hit return):</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">X &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">5</span>,<span class="fl">5.5</span>,<span class="dv">6</span>,<span class="dv">6</span>,<span class="dv">6</span>,<span class="fl">6.5</span>,<span class="fl">6.5</span>,<span class="fl">6.5</span>,<span class="fl">6.5</span>,<span class="dv">7</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">8</span>,<span class="dv">9</span>)</code></pre></div>
+<p>The arrow that appears after the “<code>X</code>” is produced by typing the less than key “<code>&lt;</code>” followed by the minus key “<code>-</code>”. This arrow is the assignment operator.</p>
+<p>Observe that you may save typing by calling and editing lines of code that were processes in an earlier part of the session. One may browse through the lines using the up and down arrows on the right-hand side of the keyboard and use the right and left arrows to move along the line presented at the prompt. For example, the last expression may be produced by finding first the line that used the function “<code>c</code>” with the up and down arrow and then moving to the beginning of the line with the left arrow. At the beginning of the line all one has to do is type “<code>X &lt;-</code>” and hit the Return key.</p>
+<p>Notice that no output was sent to the screen. Instead, the output from the “<code>c</code>” function was assigned to an object that has the name “<code>X</code>”. A new object by the given name was formed and it is now available for further analysis. In order to verify this you may write “<code>X</code>” at the prompt and hit return:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">X</code></pre></div>
+<pre><code>##  [1] 5.0 5.5 6.0 6.0 6.0 6.5 6.5 6.5 6.5 7.0 7.0 8.0 8.0 9.0</code></pre>
+<p>The content of the object “<code>X</code>” is sent to the screen, which is the default output. Notice that we have not changed the given object, which is still in the memory.</p>
+<div class="figure" style="text-align: center"><span id="fig:fig2"></span>
+<img src="_figures/8-R-Close.png" alt="Save Workspace Dialog" width="60%" />
+<p class="caption">
+FIGURE 1.2: Save Workspace Dialog
+</p>
+</div>
+<p>The object “<code>X</code>” is in the memory, but it is not saved on the hard disk. With the end of the session the objects created in the session are erased unless specifically saved. The saving of all the objects that were created during the session can be done when the session is finished. Hence, when you close the <code>R Console</code> window a dialog box will open (See the screenshot in Figure <a href="ChapIntroR.html#fig:fig2">1.2</a>. Via this dialog box you can choose to save the objects that were created in the session by selecting “<code>Yes</code>”, not to save by selecting the option “<code>No</code>”, or you may decide to abort the process of shutting down the session by selecting “<code>Cancel</code>”. If you save the objects then they will be uploaded to the memory the next time that the <code>R Console</code> is opened.</p>
+<p>We used a capital letter to name the object. We could have used a small letter just as well or practically any combination of letters. However, you should note that <code>R</code> distinguishes between capital and small letter. Hence, typing “<code>x</code>” in the console window and hitting return will produce an error message:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x</code></pre></div>
+<pre><code>## Error in eval(expr, envir, enclos): object &#39;x&#39; not found</code></pre>
+<p>An object named “<code>x</code>” does not exist in the <code>R</code> system and we have not created such object. The object “<code>X</code>”, on the other hand, does exist.</p>
+<p>Names of functions that are part of the system are fixed but you are free to choose a name to objects that you create. For example, if one wants to create an object by the name “<code>my.vector</code>” that contains the numbers 3, 7, 3, 3, and -5 then one may write the expression “<code>my.vector &lt;- c(3,7,3,3,-5)</code>” at the prompt and hit the Return key.</p>
+<p>If we want to produce a table that contains a count of the frequency of the different values in our data we can apply the function “<code>table</code>” to the object “<code>X</code>” (which is the object that contains our data):</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">table</span>(X)</code></pre></div>
+<pre><code>## X
+##   5 5.5   6 6.5   7   8   9 
+##   1   1   3   4   2   2   1</code></pre>
+<p>Notice that the output of the function “<code>table</code>” is a table of the different levels of the input vector and the frequency of each level. This output is yet another type of an object.</p>
+<p>The bar-plot of Figure <a href="ChapIntroR.html#fig:intror1">1.1</a> can be produced by the application of the function “<code>plot</code>” to the object that is produced as an output of the function “<code>table</code>”:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="kw">table</span>(X))</code></pre></div>
+<p><img src="thinkstat_files/figure-html/unnamed-chunk-8-1.png" width="60%" style="display: block; margin: auto;" /></p>
+<p>This plot is practically identical to the plot in Figure <a href="ChapIntroR.html#fig:intror1">1.1</a>. The only difference is in the names given to the access. These names were changed in Figure <a href="ChapIntroR.html#fig:intror1">1.1</a> for clarity.</p>
+<p>Clearly, if one wants to produce a bar-plot to other numerical data all one has to do is replace in the expression <code>plot(table(X))</code> the object <code>X</code> by an object that contains the other data. For example, to plot the data in <code>my.vector</code> you may use <code>plot(table(my.vector))</code>.</p>
+</div>
+</div>
+<div id="exercises" class="section level2">
+<h2><span class="header-section-number">1.7</span> Exercises</h2>
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-9" class="exercise"><strong>Exercise 1.1  </strong></span>A potential candidate for a political position in some state is interested to know what are her chances to win the primaries of her party and be selected as parties candidate for the position. In order to examine the opinions of her party voters she hires the services of a polling agency. The polling is conducted among 500 registered voters of the party. One of the questions that the pollsters refers to the willingness of the voters to vote for a female candidate for the job. Forty two percent of the people asked said that they prefer to have a women running for the job. Thirty eight percent said that the candidate’s gender is irrelevant. The rest prefers a male candidate. Which of the following is (i) a population (ii) a sample (iii) a parameter and (iv) a statistic:</p>
+<ol style="list-style-type: decimal">
+<li><p>The 500 registered voters.</p></li>
+<li><p>The percentage, among all registered voters of the given party, of those that prefer a male candidate.</p></li>
+<li><p>The number 42% that corresponds to the percentage of those that prefer a female candidate.</p></li>
+<li>The voters in the state that are registered to the given party.</li>
+</ol>
+</div>
+
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-10" class="exercise"><strong>Exercise 1.2  </strong></span>The number of customers that wait in front of a coffee shop at the opening was reported during 25 days. The results were:</p>
+<p><span class="math display">\[4,2,1,1,0,2,1,2,4,2,5,3,1,5,1,5,1,2,1,1,3,4,2,4,3\]</span></p>
+<ol style="list-style-type: decimal">
+<li><p>Identify the number of days in which 5 costumers where waiting.</p></li>
+<li><p>The number of waiting costumers that occurred the largest number of times.</p></li>
+<li>The number of waiting costumers that occurred the least number of times.</li>
+</ol>
+</div>
+
+</div>
+<div id="summary" class="section level2">
+<h2><span class="header-section-number">1.8</span> Summary</h2>
+<div id="glossary" class="section level3 unnumbered">
+<h3>Glossary</h3>
+<dl>
+<dt>Data:</dt>
+<dd><p>A set of observations taken on a sample from a population.</p>
+</dd>
+<dt>Statistic:</dt>
+<dd><p>A numerical characteristic of the data. A statistic estimates the corresponding population parameter. For example, the average number of contribution to the course’s forum for this term is an estimate for the average number of contributions in all future terms (parameter).</p>
+</dd>
+<dt>Statistics</dt>
+<dd><p>The science that deals with processing, presentation and inference from data.</p>
+</dd>
+<dt>Probability:</dt>
+<dd><p>A mathematical field that models and investigates the notion of randomness.</p>
+</dd>
+</dl>
+</div>
+<div id="discuss-in-the-forum" class="section level3 unnumbered">
+<h3>Discuss in the forum</h3>
+<p>A sample is a subgroup of the population that is supposed to represent the entire population. In your opinion, is it appropriate to attempt to represent the entire population only by a sample?</p>
+<p>When you formulate your answer to this question it may be useful to come up with an example of a question from you own field of interest one may want to investigate. In the context of this example you may identify a target population which you think is suited for the investigation of the given question. The appropriateness of using a sample can be discussed in the context of the example question and the population you have identified.</p>
+
+</div>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>Detailed explanation of how to install the system on an XP Windows Operating System may be found here: <a href="http://pluto.huji.ac.il/~msby/StatThink/install_R_WinXP.html" class="uri">http://pluto.huji.ac.il/~msby/StatThink/install_R_WinXP.html</a>.<a href="ChapIntroR.html#fnref1">↩</a></p></li>
+<li id="fn2"><p>In <code>R</code>, a sequence of numbers is called a <em>vector</em>. However, we will use the term <em>sequence</em> to refer to vectors.<a href="ChapIntroR.html#fnref2">↩</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="ChapData.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/yihui/bookdown-crc/edit/master/01-IntroR.Rmd",
+"text": "Edit"
+},
+"download": ["thinkstat.pdf", "thinkstat.epub"],
+"toc": {
+"collapse": "none"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Introduction to Statistical Thinking</title>
+  <meta name="description" content="Introduction to Statistical Thinking">
+  <meta name="generator" content="bookdown 0.5.10 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Introduction to Statistical Thinking" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  <meta name="github-repo" content="eleuven/statthink" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Introduction to Statistical Thinking" />
+  
+  
+  
+
+<meta name="author" content="Benjamin Yakir">
+
+
+<meta name="date" content="2017-11-26">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="ChapLogistic.html">
+<link rel="next" href="exercise-solutions.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Introduction to Statistical Thinking</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="ChapIntroR.html"><a href="ChapIntroR.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="ChapIntroR.html"><a href="ChapIntroR.html#student-learning-objectives"><i class="fa fa-check"></i><b>1.1</b> Student Learning Objectives</a></li>
+<li class="chapter" data-level="1.2" data-path="ChapIntroR.html"><a href="ChapIntroR.html#why-learn-statistics"><i class="fa fa-check"></i><b>1.2</b> Why Learn Statistics?</a></li>
+<li class="chapter" data-level="1.3" data-path="ChapIntroR.html"><a href="ChapIntroR.html#statistics"><i class="fa fa-check"></i><b>1.3</b> Statistics</a></li>
+<li class="chapter" data-level="1.4" data-path="ChapIntroR.html"><a href="ChapIntroR.html#probability"><i class="fa fa-check"></i><b>1.4</b> Probability</a></li>
+<li class="chapter" data-level="1.5" data-path="ChapIntroR.html"><a href="ChapIntroR.html#key-terms"><i class="fa fa-check"></i><b>1.5</b> Key Terms</a></li>
+<li class="chapter" data-level="1.6" data-path="ChapIntroR.html"><a href="ChapIntroR.html#the-r-programming-environment"><i class="fa fa-check"></i><b>1.6</b> The <code>R</code> Programming Environment</a><ul>
+<li class="chapter" data-level="1.6.1" data-path="ChapIntroR.html"><a href="ChapIntroR.html#some-basic-r-commands"><i class="fa fa-check"></i><b>1.6.1</b> Some Basic <code>R</code> Commands</a></li>
+</ul></li>
+<li class="chapter" data-level="1.7" data-path="ChapIntroR.html"><a href="ChapIntroR.html#exercises"><i class="fa fa-check"></i><b>1.7</b> Exercises</a></li>
+<li class="chapter" data-level="1.8" data-path="ChapIntroR.html"><a href="ChapIntroR.html#summary"><i class="fa fa-check"></i><b>1.8</b> Summary</a><ul>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#discuss-in-the-forum"><i class="fa fa-check"></i>Discuss in the forum</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="ChapData.html"><a href="ChapData.html"><i class="fa fa-check"></i><b>2</b> Sampling and Data Structures</a><ul>
+<li class="chapter" data-level="2.1" data-path="ChapData.html"><a href="ChapData.html#student-learning-objectives-1"><i class="fa fa-check"></i><b>2.1</b> Student Learning Objectives</a></li>
+<li class="chapter" data-level="2.2" data-path="ChapData.html"><a href="ChapData.html#the-sampled-data"><i class="fa fa-check"></i><b>2.2</b> The Sampled Data</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="ChapData.html"><a href="ChapData.html#variation-in-data"><i class="fa fa-check"></i><b>2.2.1</b> Variation in Data</a></li>
+<li class="chapter" data-level="2.2.2" data-path="ChapData.html"><a href="ChapData.html#variation-in-samples"><i class="fa fa-check"></i><b>2.2.2</b> Variation in Samples</a></li>
+<li class="chapter" data-level="2.2.3" data-path="ChapData.html"><a href="ChapData.html#frequency"><i class="fa fa-check"></i><b>2.2.3</b> Frequency</a></li>
+<li class="chapter" data-level="2.2.4" data-path="ChapData.html"><a href="ChapData.html#critical-evaluation"><i class="fa fa-check"></i><b>2.2.4</b> Critical Evaluation</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="ChapData.html"><a href="ChapData.html#readingdata"><i class="fa fa-check"></i><b>2.3</b> Reading Data into <code>R</code></a><ul>
+<li class="chapter" data-level="2.3.1" data-path="ChapData.html"><a href="ChapData.html#saving-the-file-and-setting-the-working-directory"><i class="fa fa-check"></i><b>2.3.1</b> Saving the File and Setting the Working Directory</a></li>
+<li class="chapter" data-level="2.3.2" data-path="ChapData.html"><a href="ChapData.html#Data_3"><i class="fa fa-check"></i><b>2.3.2</b> Reading a CSV File into <code>R</code></a></li>
+<li class="chapter" data-level="2.3.3" data-path="ChapData.html"><a href="ChapData.html#data-types"><i class="fa fa-check"></i><b>2.3.3</b> Data Types</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="ChapData.html"><a href="ChapData.html#exercises-1"><i class="fa fa-check"></i><b>2.4</b> Exercises</a></li>
+<li class="chapter" data-level="2.5" data-path="ChapData.html"><a href="ChapData.html#summary-1"><i class="fa fa-check"></i><b>2.5</b> Summary</a><ul>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#discuss-in-the-forum"><i class="fa fa-check"></i>Discuss in the forum</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="ChapDescriptiveStat.html"><a href="ChapDescriptiveStat.html"><i class="fa fa-check"></i><b>3</b> Descriptive Statistics</a><ul>
+<li class="chapter" data-level="3.1" data-path="ChapDescriptiveStat.html"><a href="ChapDescriptiveStat.html#student-learning-objectives-2"><i class="fa fa-check"></i><b>3.1</b> Student Learning Objectives</a></li>
+<li class="chapter" data-level="3.2" data-path="ChapDescriptiveStat.html"><a href="ChapDescriptiveStat.html#displaying-data"><i class="fa fa-check"></i><b>3.2</b> Displaying Data</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="ChapDescriptiveStat.html"><a href="ChapDescriptiveStat.html#histograms"><i class="fa fa-check"></i><b>3.2.1</b> Histograms</a></li>
+<li class="chapter" data-level="3.2.2" data-path="ChapDescriptiveStat.html"><a href="ChapDescriptiveStat.html#box-plots"><i class="fa fa-check"></i><b>3.2.2</b> Box Plots</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="ChapDescriptiveStat.html"><a href="ChapDescriptiveStat.html#measures-of-the-center-of-data"><i class="fa fa-check"></i><b>3.3</b> Measures of the Center of Data</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="ChapDescriptiveStat.html"><a href="ChapDescriptiveStat.html#skewness-the-mean-and-the-median"><i class="fa fa-check"></i><b>3.3.1</b> Skewness, the Mean and the Median</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="ChapDescriptiveStat.html"><a href="ChapDescriptiveStat.html#measures-of-the-spread-of-data"><i class="fa fa-check"></i><b>3.4</b> Measures of the Spread of Data</a></li>
+<li class="chapter" data-level="3.5" data-path="ChapDescriptiveStat.html"><a href="ChapDescriptiveStat.html#exercises-2"><i class="fa fa-check"></i><b>3.5</b> Exercises</a></li>
+<li class="chapter" data-level="3.6" data-path="ChapDescriptiveStat.html"><a href="ChapDescriptiveStat.html#summary-2"><i class="fa fa-check"></i><b>3.6</b> Summary</a><ul>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#discuss-in-the-forum"><i class="fa fa-check"></i>Discuss in the forum</a></li>
+<li class="chapter" data-level="" data-path="ChapDescriptiveStat.html"><a href="ChapDescriptiveStat.html#commonly-used-symbols"><i class="fa fa-check"></i>Commonly Used Symbols</a></li>
+<li class="chapter" data-level="" data-path="ChapDescriptiveStat.html"><a href="ChapDescriptiveStat.html#commonly-used-expressions"><i class="fa fa-check"></i>Commonly Used Expressions</a></li>
+<li class="chapter" data-level="" data-path="ChapDescriptiveStat.html"><a href="ChapDescriptiveStat.html#formulas"><i class="fa fa-check"></i>Formulas:</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="ChapProbability.html"><a href="ChapProbability.html"><i class="fa fa-check"></i><b>4</b> Probability</a><ul>
+<li class="chapter" data-level="4.1" data-path="ChapProbability.html"><a href="ChapProbability.html#student-learning-objective"><i class="fa fa-check"></i><b>4.1</b> Student Learning Objective</a></li>
+<li class="chapter" data-level="4.2" data-path="ChapProbability.html"><a href="ChapProbability.html#different-forms-of-variability"><i class="fa fa-check"></i><b>4.2</b> Different Forms of Variability</a></li>
+<li class="chapter" data-level="4.3" data-path="ChapProbability.html"><a href="ChapProbability.html#a-population"><i class="fa fa-check"></i><b>4.3</b> A Population</a></li>
+<li class="chapter" data-level="4.4" data-path="ChapProbability.html"><a href="ChapProbability.html#random-variables"><i class="fa fa-check"></i><b>4.4</b> Random Variables</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="ChapProbability.html"><a href="ChapProbability.html#sample-space-and-distribution"><i class="fa fa-check"></i><b>4.4.1</b> Sample Space and Distribution</a></li>
+<li class="chapter" data-level="4.4.2" data-path="ChapProbability.html"><a href="ChapProbability.html#expectation-and-standard-deviation"><i class="fa fa-check"></i><b>4.4.2</b> Expectation and Standard Deviation</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="ChapProbability.html"><a href="ChapProbability.html#probability-and-statistics"><i class="fa fa-check"></i><b>4.5</b> Probability and Statistics</a></li>
+<li class="chapter" data-level="4.6" data-path="ChapProbability.html"><a href="ChapProbability.html#exercises-3"><i class="fa fa-check"></i><b>4.6</b> Exercises</a></li>
+<li class="chapter" data-level="4.7" data-path="ChapProbability.html"><a href="ChapProbability.html#summary-3"><i class="fa fa-check"></i><b>4.7</b> Summary</a><ul>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li class="chapter" data-level="" data-path="ChapProbability.html"><a href="ChapProbability.html#discussion-in-the-forum"><i class="fa fa-check"></i>Discussion in the Forum</a></li>
+<li class="chapter" data-level="" data-path="ChapProbability.html"><a href="ChapProbability.html#summary-of-formulas"><i class="fa fa-check"></i>Summary of Formulas</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="ChapRandomVar.html"><a href="ChapRandomVar.html"><i class="fa fa-check"></i><b>5</b> Random Variables</a><ul>
+<li class="chapter" data-level="5.1" data-path="ChapRandomVar.html"><a href="ChapRandomVar.html#student-learning-objective-1"><i class="fa fa-check"></i><b>5.1</b> Student Learning Objective</a></li>
+<li class="chapter" data-level="5.2" data-path="ChapRandomVar.html"><a href="ChapRandomVar.html#discrete-random-variables"><i class="fa fa-check"></i><b>5.2</b> Discrete Random Variables</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="ChapRandomVar.html"><a href="ChapRandomVar.html#the-binomial-random-variable"><i class="fa fa-check"></i><b>5.2.1</b> The Binomial Random Variable</a></li>
+<li class="chapter" data-level="5.2.2" data-path="ChapRandomVar.html"><a href="ChapRandomVar.html#the-poisson-random-variable"><i class="fa fa-check"></i><b>5.2.2</b> The Poisson Random Variable</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="ChapRandomVar.html"><a href="ChapRandomVar.html#RandomVar_5"><i class="fa fa-check"></i><b>5.3</b> Continuous Random Variable</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="ChapRandomVar.html"><a href="ChapRandomVar.html#the-uniform-random-variable"><i class="fa fa-check"></i><b>5.3.1</b> The Uniform Random Variable</a></li>
+<li class="chapter" data-level="5.3.2" data-path="ChapRandomVar.html"><a href="ChapRandomVar.html#the-exponential-random-variable"><i class="fa fa-check"></i><b>5.3.2</b> The Exponential Random Variable</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="ChapRandomVar.html"><a href="ChapRandomVar.html#sec:RVarExercises"><i class="fa fa-check"></i><b>5.4</b> Exercises</a></li>
+<li class="chapter" data-level="5.5" data-path="ChapRandomVar.html"><a href="ChapRandomVar.html#summary-4"><i class="fa fa-check"></i><b>5.5</b> Summary</a><ul>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#discuss-in-the-forum"><i class="fa fa-check"></i>Discuss in the Forum</a></li>
+<li class="chapter" data-level="" data-path="ChapProbability.html"><a href="ChapProbability.html#summary-of-formulas"><i class="fa fa-check"></i>Summary of Formulas</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="ChapNormal.html"><a href="ChapNormal.html"><i class="fa fa-check"></i><b>6</b> The Normal Random Variable</a><ul>
+<li class="chapter" data-level="6.1" data-path="ChapNormal.html"><a href="ChapNormal.html#student-learning-objective-2"><i class="fa fa-check"></i><b>6.1</b> Student Learning Objective</a></li>
+<li class="chapter" data-level="6.2" data-path="ChapNormal.html"><a href="ChapNormal.html#the-normal-random-variable"><i class="fa fa-check"></i><b>6.2</b> The Normal Random Variable</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="ChapNormal.html"><a href="ChapNormal.html#the-normal-distribution"><i class="fa fa-check"></i><b>6.2.1</b> The Normal Distribution</a></li>
+<li class="chapter" data-level="6.2.2" data-path="ChapNormal.html"><a href="ChapNormal.html#the-standard-normal-distribution"><i class="fa fa-check"></i><b>6.2.2</b> The Standard Normal Distribution</a></li>
+<li class="chapter" data-level="6.2.3" data-path="ChapNormal.html"><a href="ChapNormal.html#computing-percentiles"><i class="fa fa-check"></i><b>6.2.3</b> Computing Percentiles</a></li>
+<li class="chapter" data-level="6.2.4" data-path="ChapNormal.html"><a href="ChapNormal.html#outliers-and-the-normal-distribution"><i class="fa fa-check"></i><b>6.2.4</b> Outliers and the Normal Distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="ChapNormal.html"><a href="ChapNormal.html#approximation-of-the-binomial-distribution"><i class="fa fa-check"></i><b>6.3</b> Approximation of the Binomial Distribution</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="ChapNormal.html"><a href="ChapNormal.html#approximate-binomial-probabilities-and-percentiles"><i class="fa fa-check"></i><b>6.3.1</b> Approximate Binomial Probabilities and Percentiles</a></li>
+<li class="chapter" data-level="6.3.2" data-path="ChapNormal.html"><a href="ChapNormal.html#continuity-corrections"><i class="fa fa-check"></i><b>6.3.2</b> Continuity Corrections</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="ChapNormal.html"><a href="ChapNormal.html#Normal4"><i class="fa fa-check"></i><b>6.4</b> Exercises</a></li>
+<li class="chapter" data-level="6.5" data-path="ChapNormal.html"><a href="ChapNormal.html#summary-5"><i class="fa fa-check"></i><b>6.5</b> Summary</a><ul>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#discuss-in-the-forum"><i class="fa fa-check"></i>Discuss in the Forum</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="ChapSampDist.html"><a href="ChapSampDist.html"><i class="fa fa-check"></i><b>7</b> The Sampling Distribution</a><ul>
+<li class="chapter" data-level="7.1" data-path="ChapSampDist.html"><a href="ChapSampDist.html#student-learning-objective-3"><i class="fa fa-check"></i><b>7.1</b> Student Learning Objective</a></li>
+<li class="chapter" data-level="7.2" data-path="ChapSampDist.html"><a href="ChapSampDist.html#the-sampling-distribution"><i class="fa fa-check"></i><b>7.2</b> The Sampling Distribution</a><ul>
+<li class="chapter" data-level="7.2.1" data-path="ChapSampDist.html"><a href="ChapSampDist.html#a-random-sample"><i class="fa fa-check"></i><b>7.2.1</b> A Random Sample</a></li>
+<li class="chapter" data-level="7.2.2" data-path="ChapSampDist.html"><a href="ChapSampDist.html#sampling-from-a-population"><i class="fa fa-check"></i><b>7.2.2</b> Sampling From a Population</a></li>
+<li class="chapter" data-level="7.2.3" data-path="ChapSampDist.html"><a href="ChapSampDist.html#subsec:theoreticalmdls"><i class="fa fa-check"></i><b>7.2.3</b> Theoretical Models</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="ChapSampDist.html"><a href="ChapSampDist.html#law-of-large-numbers-and-central-limit-theorem"><i class="fa fa-check"></i><b>7.3</b> Law of Large Numbers and Central Limit Theorem</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="ChapSampDist.html"><a href="ChapSampDist.html#the-law-of-large-numbers"><i class="fa fa-check"></i><b>7.3.1</b> The Law of Large Numbers</a></li>
+<li class="chapter" data-level="7.3.2" data-path="ChapSampDist.html"><a href="ChapSampDist.html#the-central-limit-theorem-clt"><i class="fa fa-check"></i><b>7.3.2</b> The Central Limit Theorem (CLT)</a></li>
+<li class="chapter" data-level="7.3.3" data-path="ChapSampDist.html"><a href="ChapSampDist.html#applying-the-central-limit-theorem"><i class="fa fa-check"></i><b>7.3.3</b> Applying the Central Limit Theorem</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="ChapSampDist.html"><a href="ChapSampDist.html#SampDistEx"><i class="fa fa-check"></i><b>7.4</b> Exercises</a></li>
+<li class="chapter" data-level="7.5" data-path="ChapSampDist.html"><a href="ChapSampDist.html#summary-6"><i class="fa fa-check"></i><b>7.5</b> Summary</a><ul>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li class="chapter" data-level="" data-path="ChapProbability.html"><a href="ChapProbability.html#discussion-in-the-forum"><i class="fa fa-check"></i>Discussion in the Forum</a></li>
+<li class="chapter" data-level="" data-path="ChapProbability.html"><a href="ChapProbability.html#summary-of-formulas"><i class="fa fa-check"></i>Summary of Formulas</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="overview-and-integration.html"><a href="overview-and-integration.html"><i class="fa fa-check"></i><b>8</b> Overview and Integration</a><ul>
+<li class="chapter" data-level="8.1" data-path="overview-and-integration.html"><a href="overview-and-integration.html#student-learning-objective-4"><i class="fa fa-check"></i><b>8.1</b> Student Learning Objective</a></li>
+<li class="chapter" data-level="8.2" data-path="overview-and-integration.html"><a href="overview-and-integration.html#an-overview"><i class="fa fa-check"></i><b>8.2</b> An Overview</a></li>
+<li class="chapter" data-level="8.3" data-path="overview-and-integration.html"><a href="overview-and-integration.html#integrated-applications"><i class="fa fa-check"></i><b>8.3</b> Integrated Applications</a><ul>
+<li class="chapter" data-level="8.3.1" data-path="overview-and-integration.html"><a href="overview-and-integration.html#example-1"><i class="fa fa-check"></i><b>8.3.1</b> Example 1</a></li>
+<li class="chapter" data-level="" data-path="overview-and-integration.html"><a href="overview-and-integration.html#solution"><i class="fa fa-check"></i>Solution:</a></li>
+<li class="chapter" data-level="8.3.2" data-path="overview-and-integration.html"><a href="overview-and-integration.html#example-2"><i class="fa fa-check"></i><b>8.3.2</b> Example 2</a></li>
+<li class="chapter" data-level="" data-path="overview-and-integration.html"><a href="overview-and-integration.html#solution-1"><i class="fa fa-check"></i>Solution:</a></li>
+<li class="chapter" data-level="8.3.3" data-path="overview-and-integration.html"><a href="overview-and-integration.html#example-3"><i class="fa fa-check"></i><b>8.3.3</b> Example 3</a></li>
+<li class="chapter" data-level="" data-path="overview-and-integration.html"><a href="overview-and-integration.html#solution-2"><i class="fa fa-check"></i>Solution:</a></li>
+<li class="chapter" data-level="8.3.4" data-path="overview-and-integration.html"><a href="overview-and-integration.html#example-4"><i class="fa fa-check"></i><b>8.3.4</b> Example 4</a></li>
+<li class="chapter" data-level="" data-path="overview-and-integration.html"><a href="overview-and-integration.html#solution-3"><i class="fa fa-check"></i>Solution</a></li>
+<li class="chapter" data-level="8.3.5" data-path="overview-and-integration.html"><a href="overview-and-integration.html#example-5"><i class="fa fa-check"></i><b>8.3.5</b> Example 5</a></li>
+<li class="chapter" data-level="" data-path="overview-and-integration.html"><a href="overview-and-integration.html#solution-4"><i class="fa fa-check"></i>Solution</a></li>
+<li class="chapter" data-level="" data-path="ChapProbability.html"><a href="ChapProbability.html#discussion-in-the-forum"><i class="fa fa-check"></i>Discussion in the Forum</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="ChapInference.html"><a href="ChapInference.html"><i class="fa fa-check"></i><b>9</b> Introduction to Statistical Inference</a><ul>
+<li class="chapter" data-level="9.1" data-path="ChapInference.html"><a href="ChapInference.html#student-learning-objectives-3"><i class="fa fa-check"></i><b>9.1</b> Student Learning Objectives</a></li>
+<li class="chapter" data-level="9.2" data-path="ChapInference.html"><a href="ChapInference.html#key-terms-1"><i class="fa fa-check"></i><b>9.2</b> Key Terms</a></li>
+<li class="chapter" data-level="9.3" data-path="ChapInference.html"><a href="ChapInference.html#the-cars-data-set"><i class="fa fa-check"></i><b>9.3</b> The Cars Data Set</a></li>
+<li class="chapter" data-level="9.4" data-path="ChapSampDist.html"><a href="ChapSampDist.html#the-sampling-distribution"><i class="fa fa-check"></i><b>9.4</b> The Sampling Distribution</a><ul>
+<li class="chapter" data-level="9.4.1" data-path="ChapInference.html"><a href="ChapInference.html#statistics-1"><i class="fa fa-check"></i><b>9.4.1</b> Statistics</a></li>
+<li class="chapter" data-level="9.4.2" data-path="ChapInference.html"><a href="ChapInference.html#the-sampling-distribution-1"><i class="fa fa-check"></i><b>9.4.2</b> The Sampling Distribution</a></li>
+<li class="chapter" data-level="9.4.3" data-path="ChapInference.html"><a href="ChapInference.html#theoretical-distributions-of-observations"><i class="fa fa-check"></i><b>9.4.3</b> Theoretical Distributions of Observations</a></li>
+<li class="chapter" data-level="9.4.4" data-path="ChapInference.html"><a href="ChapInference.html#sampling-distribution-of-statistics"><i class="fa fa-check"></i><b>9.4.4</b> Sampling Distribution of Statistics</a></li>
+<li class="chapter" data-level="9.4.5" data-path="ChapInference.html"><a href="ChapInference.html#the-normal-approximation"><i class="fa fa-check"></i><b>9.4.5</b> The Normal Approximation</a></li>
+<li class="chapter" data-level="9.4.6" data-path="ChapInference.html"><a href="ChapInference.html#simulations"><i class="fa fa-check"></i><b>9.4.6</b> Simulations</a></li>
+</ul></li>
+<li class="chapter" data-level="9.5" data-path="ChapInference.html"><a href="ChapInference.html#exercises-4"><i class="fa fa-check"></i><b>9.5</b> Exercises</a></li>
+<li class="chapter" data-level="9.6" data-path="ChapInference.html"><a href="ChapInference.html#summary-7"><i class="fa fa-check"></i><b>9.6</b> Summary</a><ul>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#discuss-in-the-forum"><i class="fa fa-check"></i>Discuss in the forum</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="ChapEstimation.html"><a href="ChapEstimation.html"><i class="fa fa-check"></i><b>10</b> Point Estimation</a><ul>
+<li class="chapter" data-level="10.1" data-path="ChapEstimation.html"><a href="ChapEstimation.html#student-learning-objectives-4"><i class="fa fa-check"></i><b>10.1</b> Student Learning Objectives</a></li>
+<li class="chapter" data-level="10.2" data-path="ChapEstimation.html"><a href="ChapEstimation.html#estimating-parameters"><i class="fa fa-check"></i><b>10.2</b> Estimating Parameters</a></li>
+<li class="chapter" data-level="10.3" data-path="ChapEstimation.html"><a href="ChapEstimation.html#EstimationExp"><i class="fa fa-check"></i><b>10.3</b> Estimation of the Expectation</a><ul>
+<li class="chapter" data-level="10.3.1" data-path="ChapEstimation.html"><a href="ChapEstimation.html#the-accuracy-of-the-sample-average"><i class="fa fa-check"></i><b>10.3.1</b> The Accuracy of the Sample Average</a></li>
+<li class="chapter" data-level="10.3.2" data-path="ChapEstimation.html"><a href="ChapEstimation.html#ComparingEstimators"><i class="fa fa-check"></i><b>10.3.2</b> Comparing Estimators</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="ChapEstimation.html"><a href="ChapEstimation.html#estimation-of-the-variance-and-standard-deviation"><i class="fa fa-check"></i><b>10.4</b> Estimation of the Variance and Standard Deviation</a></li>
+<li class="chapter" data-level="10.5" data-path="ChapEstimation.html"><a href="ChapEstimation.html#EstimationOtherPars"><i class="fa fa-check"></i><b>10.5</b> Estimation of Other Parameters</a></li>
+<li class="chapter" data-level="10.6" data-path="ChapEstimation.html"><a href="ChapEstimation.html#exercises-5"><i class="fa fa-check"></i><b>10.6</b> Exercises</a></li>
+<li class="chapter" data-level="10.7" data-path="ChapEstimation.html"><a href="ChapEstimation.html#summary-8"><i class="fa fa-check"></i><b>10.7</b> Summary</a><ul>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#discuss-in-the-forum"><i class="fa fa-check"></i>Discuss in the forum</a></li>
+<li class="chapter" data-level="" data-path="ChapDescriptiveStat.html"><a href="ChapDescriptiveStat.html#formulas"><i class="fa fa-check"></i>Formulas:</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="ChapConfidence.html"><a href="ChapConfidence.html"><i class="fa fa-check"></i><b>11</b> Confidence Intervals</a><ul>
+<li class="chapter" data-level="11.1" data-path="ChapConfidence.html"><a href="ChapConfidence.html#student-learning-objectives-5"><i class="fa fa-check"></i><b>11.1</b> Student Learning Objectives</a></li>
+<li class="chapter" data-level="11.2" data-path="ChapConfidence.html"><a href="ChapConfidence.html#intervals-for-mean-and-proportion"><i class="fa fa-check"></i><b>11.2</b> Intervals for Mean and Proportion</a><ul>
+<li class="chapter" data-level="11.2.1" data-path="ChapConfidence.html"><a href="ChapConfidence.html#ConfidenceExamples"><i class="fa fa-check"></i><b>11.2.1</b> Examples of Confidence Intervals</a></li>
+<li class="chapter" data-level="11.2.2" data-path="ChapConfidence.html"><a href="ChapConfidence.html#subsec:CImean"><i class="fa fa-check"></i><b>11.2.2</b> Confidence Intervals for the Mean</a></li>
+<li class="chapter" data-level="11.2.3" data-path="ChapConfidence.html"><a href="ChapConfidence.html#subsec:CIfrac"><i class="fa fa-check"></i><b>11.2.3</b> Confidence Intervals for a Proportion</a></li>
+</ul></li>
+<li class="chapter" data-level="11.3" data-path="ChapConfidence.html"><a href="ChapConfidence.html#CInormal"><i class="fa fa-check"></i><b>11.3</b> Intervals for Normal Measurements</a><ul>
+<li class="chapter" data-level="11.3.1" data-path="ChapConfidence.html"><a href="ChapConfidence.html#confidence-intervals-for-a-normal-mean"><i class="fa fa-check"></i><b>11.3.1</b> Confidence Intervals for a Normal Mean</a></li>
+<li class="chapter" data-level="11.3.2" data-path="ChapConfidence.html"><a href="ChapConfidence.html#confidence-intervals-for-a-normal-variance"><i class="fa fa-check"></i><b>11.3.2</b> Confidence Intervals for a Normal Variance</a></li>
+</ul></li>
+<li class="chapter" data-level="11.4" data-path="ChapConfidence.html"><a href="ChapConfidence.html#choosing-the-sample-size"><i class="fa fa-check"></i><b>11.4</b> Choosing the Sample Size</a></li>
+<li class="chapter" data-level="11.5" data-path="ChapConfidence.html"><a href="ChapConfidence.html#exercises-6"><i class="fa fa-check"></i><b>11.5</b> Exercises</a></li>
+<li class="chapter" data-level="11.6" data-path="ChapConfidence.html"><a href="ChapConfidence.html#summary-9"><i class="fa fa-check"></i><b>11.6</b> Summary</a><ul>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#discuss-in-the-forum"><i class="fa fa-check"></i>Discuss in the forum</a></li>
+<li class="chapter" data-level="" data-path="ChapConfidence.html"><a href="ChapConfidence.html#formulas-for-confidence-intervals-95-confidence-level"><i class="fa fa-check"></i>Formulas for Confidence Intervals, 95% Confidence Level:</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="ChapTesting.html"><a href="ChapTesting.html"><i class="fa fa-check"></i><b>12</b> Testing Hypothesis</a><ul>
+<li class="chapter" data-level="12.1" data-path="ChapTesting.html"><a href="ChapTesting.html#student-learning-objectives-6"><i class="fa fa-check"></i><b>12.1</b> Student Learning Objectives</a></li>
+<li class="chapter" data-level="12.2" data-path="ChapTesting.html"><a href="ChapTesting.html#the-theory-of-hypothesis-testing"><i class="fa fa-check"></i><b>12.2</b> The Theory of Hypothesis Testing</a><ul>
+<li class="chapter" data-level="12.2.1" data-path="ChapTesting.html"><a href="ChapTesting.html#an-example-of-hypothesis-testing"><i class="fa fa-check"></i><b>12.2.1</b> An Example of Hypothesis Testing</a></li>
+<li class="chapter" data-level="12.2.2" data-path="ChapTesting.html"><a href="ChapTesting.html#the-structure-of-a-statistical-test-of-hypotheses"><i class="fa fa-check"></i><b>12.2.2</b> The Structure of a Statistical Test of Hypotheses</a></li>
+<li class="chapter" data-level="12.2.3" data-path="ChapTesting.html"><a href="ChapTesting.html#error-types-and-error-probabilities"><i class="fa fa-check"></i><b>12.2.3</b> Error Types and Error Probabilities</a></li>
+<li class="chapter" data-level="12.2.4" data-path="ChapTesting.html"><a href="ChapTesting.html#p-values"><i class="fa fa-check"></i><b>12.2.4</b> <span class="math inline">\(p\)</span>-Values</a></li>
+</ul></li>
+<li class="chapter" data-level="12.3" data-path="ChapTesting.html"><a href="ChapTesting.html#testing-hypothesis-on-expectation"><i class="fa fa-check"></i><b>12.3</b> Testing Hypothesis on Expectation</a></li>
+<li class="chapter" data-level="12.4" data-path="ChapTesting.html"><a href="ChapTesting.html#TestFrac"><i class="fa fa-check"></i><b>12.4</b> Testing Hypothesis on Proportion</a></li>
+<li class="chapter" data-level="12.5" data-path="ChapTesting.html"><a href="ChapTesting.html#exercises-7"><i class="fa fa-check"></i><b>12.5</b> Exercises</a></li>
+<li class="chapter" data-level="12.6" data-path="ChapTesting.html"><a href="ChapTesting.html#summary-10"><i class="fa fa-check"></i><b>12.6</b> Summary</a><ul>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#discuss-in-the-forum"><i class="fa fa-check"></i>Discuss in the forum</a></li>
+<li class="chapter" data-level="" data-path="ChapDescriptiveStat.html"><a href="ChapDescriptiveStat.html#formulas"><i class="fa fa-check"></i>Formulas:</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="ChapTwoSamp.html"><a href="ChapTwoSamp.html"><i class="fa fa-check"></i><b>13</b> Comparing Two Samples</a><ul>
+<li class="chapter" data-level="13.1" data-path="ChapTwoSamp.html"><a href="ChapTwoSamp.html#student-learning-objectives-7"><i class="fa fa-check"></i><b>13.1</b> Student Learning Objectives</a></li>
+<li class="chapter" data-level="13.2" data-path="ChapTwoSamp.html"><a href="ChapTwoSamp.html#comparing-two-distributions"><i class="fa fa-check"></i><b>13.2</b> Comparing Two Distributions</a></li>
+<li class="chapter" data-level="13.3" data-path="ChapTwoSamp.html"><a href="ChapTwoSamp.html#sec:ComparingMeans"><i class="fa fa-check"></i><b>13.3</b> Comparing the Sample Means</a><ul>
+<li class="chapter" data-level="13.3.1" data-path="ChapTwoSamp.html"><a href="ChapTwoSamp.html#an-example-of-a-comparison-of-means"><i class="fa fa-check"></i><b>13.3.1</b> An Example of a Comparison of Means</a></li>
+<li class="chapter" data-level="13.3.2" data-path="ChapTwoSamp.html"><a href="ChapTwoSamp.html#confidence-interval-for-the-difference"><i class="fa fa-check"></i><b>13.3.2</b> Confidence Interval for the Difference</a></li>
+<li class="chapter" data-level="13.3.3" data-path="ChapTwoSamp.html"><a href="ChapTwoSamp.html#the-t-test-for-two-means"><i class="fa fa-check"></i><b>13.3.3</b> The t-Test for Two Means</a></li>
+</ul></li>
+<li class="chapter" data-level="13.4" data-path="ChapTwoSamp.html"><a href="ChapTwoSamp.html#comparing-sample-variances"><i class="fa fa-check"></i><b>13.4</b> Comparing Sample Variances</a></li>
+<li class="chapter" data-level="13.5" data-path="ChapTwoSamp.html"><a href="ChapTwoSamp.html#exercises-8"><i class="fa fa-check"></i><b>13.5</b> Exercises</a></li>
+<li class="chapter" data-level="13.6" data-path="ChapTwoSamp.html"><a href="ChapTwoSamp.html#summary-11"><i class="fa fa-check"></i><b>13.6</b> Summary</a><ul>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#discuss-in-the-forum"><i class="fa fa-check"></i>Discuss in the forum</a></li>
+<li class="chapter" data-level="" data-path="ChapDescriptiveStat.html"><a href="ChapDescriptiveStat.html#formulas"><i class="fa fa-check"></i>Formulas:</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="ChapRegression.html"><a href="ChapRegression.html"><i class="fa fa-check"></i><b>14</b> Linear Regression</a><ul>
+<li class="chapter" data-level="14.1" data-path="ChapRegression.html"><a href="ChapRegression.html#student-learning-objectives-8"><i class="fa fa-check"></i><b>14.1</b> Student Learning Objectives</a></li>
+<li class="chapter" data-level="14.2" data-path="ChapRegression.html"><a href="ChapRegression.html#points-and-lines"><i class="fa fa-check"></i><b>14.2</b> Points and Lines</a><ul>
+<li class="chapter" data-level="14.2.1" data-path="ChapRegression.html"><a href="ChapRegression.html#the-scatter-plot"><i class="fa fa-check"></i><b>14.2.1</b> The Scatter Plot</a></li>
+<li class="chapter" data-level="14.2.2" data-path="ChapRegression.html"><a href="ChapRegression.html#linear-equation"><i class="fa fa-check"></i><b>14.2.2</b> Linear Equation</a></li>
+</ul></li>
+<li class="chapter" data-level="14.3" data-path="ChapRegression.html"><a href="ChapRegression.html#linear-regression"><i class="fa fa-check"></i><b>14.3</b> Linear Regression</a><ul>
+<li class="chapter" data-level="14.3.1" data-path="ChapRegression.html"><a href="ChapRegression.html#fitting-the-regression-line"><i class="fa fa-check"></i><b>14.3.1</b> Fitting the Regression Line</a></li>
+<li class="chapter" data-level="14.3.2" data-path="ChapRegression.html"><a href="ChapRegression.html#subsec:Inference"><i class="fa fa-check"></i><b>14.3.2</b> Inference</a></li>
+</ul></li>
+<li class="chapter" data-level="14.4" data-path="ChapRegression.html"><a href="ChapRegression.html#r-squared-and-the-variance-of-residuals"><i class="fa fa-check"></i><b>14.4</b> R-squared and the Variance of Residuals</a></li>
+<li class="chapter" data-level="14.5" data-path="ChapRegression.html"><a href="ChapRegression.html#exercises-9"><i class="fa fa-check"></i><b>14.5</b> Exercises</a></li>
+<li class="chapter" data-level="14.6" data-path="ChapRegression.html"><a href="ChapRegression.html#summary-12"><i class="fa fa-check"></i><b>14.6</b> Summary</a><ul>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#discuss-in-the-forum"><i class="fa fa-check"></i>Discuss in the Forum</a></li>
+<li class="chapter" data-level="" data-path="ChapDescriptiveStat.html"><a href="ChapDescriptiveStat.html#formulas"><i class="fa fa-check"></i>Formulas:</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="ChapLogistic.html"><a href="ChapLogistic.html"><i class="fa fa-check"></i><b>15</b> A Bernoulli Response</a><ul>
+<li class="chapter" data-level="15.1" data-path="ChapLogistic.html"><a href="ChapLogistic.html#student-learning-objectives-9"><i class="fa fa-check"></i><b>15.1</b> Student Learning Objectives</a></li>
+<li class="chapter" data-level="15.2" data-path="ChapLogistic.html"><a href="ChapLogistic.html#comparing-sample-proportions"><i class="fa fa-check"></i><b>15.2</b> Comparing Sample Proportions</a></li>
+<li class="chapter" data-level="15.3" data-path="ChapLogistic.html"><a href="ChapLogistic.html#logistic-regression"><i class="fa fa-check"></i><b>15.3</b> Logistic Regression</a></li>
+<li class="chapter" data-level="15.4" data-path="ChapLogistic.html"><a href="ChapLogistic.html#exercises-10"><i class="fa fa-check"></i><b>15.4</b> Exercises</a><ul>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#discuss-in-the-forum"><i class="fa fa-check"></i>Discuss in the forum</a></li>
+<li class="chapter" data-level="" data-path="ChapDescriptiveStat.html"><a href="ChapDescriptiveStat.html#formulas"><i class="fa fa-check"></i>Formulas:</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="ChapCaseStudies.html"><a href="ChapCaseStudies.html"><i class="fa fa-check"></i><b>16</b> Case Studies</a><ul>
+<li class="chapter" data-level="16.1" data-path="ChapCaseStudies.html"><a href="ChapCaseStudies.html#student-learning-objective-5"><i class="fa fa-check"></i><b>16.1</b> Student Learning Objective</a></li>
+<li class="chapter" data-level="16.2" data-path="ChapCaseStudies.html"><a href="ChapCaseStudies.html#a-review"><i class="fa fa-check"></i><b>16.2</b> A Review</a></li>
+<li class="chapter" data-level="16.3" data-path="ChapCaseStudies.html"><a href="ChapCaseStudies.html#case-studies"><i class="fa fa-check"></i><b>16.3</b> Case Studies</a><ul>
+<li class="chapter" data-level="16.3.1" data-path="ChapCaseStudies.html"><a href="ChapCaseStudies.html#physicians-reactions-to-the-size-of-a-patient"><i class="fa fa-check"></i><b>16.3.1</b> Physicians’ Reactions to the Size of a Patient</a></li>
+<li class="chapter" data-level="16.3.2" data-path="ChapCaseStudies.html"><a href="ChapCaseStudies.html#physical-strength-and-job-performance"><i class="fa fa-check"></i><b>16.3.2</b> Physical Strength and Job Performance</a></li>
+</ul></li>
+<li class="chapter" data-level="16.4" data-path="ChapCaseStudies.html"><a href="ChapCaseStudies.html#summary-13"><i class="fa fa-check"></i><b>16.4</b> Summary</a><ul>
+<li class="chapter" data-level="16.4.1" data-path="ChapCaseStudies.html"><a href="ChapCaseStudies.html#concluding-remarks"><i class="fa fa-check"></i><b>16.4.1</b> Concluding Remarks</a></li>
+<li class="chapter" data-level="16.4.2" data-path="ChapProbability.html"><a href="ChapProbability.html#discussion-in-the-forum"><i class="fa fa-check"></i><b>16.4.2</b> Discussion in the Forum</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html"><i class="fa fa-check"></i>Exercise Solutions</a><ul>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-1"><i class="fa fa-check"></i>Chapter 1</a><ul>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-1.1"><i class="fa fa-check"></i>Exercise 1.1</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-1.2"><i class="fa fa-check"></i>Exercise 1.2</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-2"><i class="fa fa-check"></i>Chapter 2</a><ul>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-2.1"><i class="fa fa-check"></i>Exercise 2.1</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-2.2"><i class="fa fa-check"></i>Exercise 2.2</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-3"><i class="fa fa-check"></i>Chapter 3</a><ul>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-3.1"><i class="fa fa-check"></i>Exercise 3.1</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-3.2"><i class="fa fa-check"></i>Exercise 3.2</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-4"><i class="fa fa-check"></i>Chapter 4</a><ul>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-4.1"><i class="fa fa-check"></i>Exercise 4.1</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-4.2"><i class="fa fa-check"></i>Exercise 4.2</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-5"><i class="fa fa-check"></i>Chapter 5</a><ul>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-5.1"><i class="fa fa-check"></i>Exercise 5.1</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-5.2"><i class="fa fa-check"></i>Exercise 5.2</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-6"><i class="fa fa-check"></i>Chapter 6</a><ul>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-6.1"><i class="fa fa-check"></i>Exercise 6.1</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-6.2"><i class="fa fa-check"></i>Exercise 6.2</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-7"><i class="fa fa-check"></i>Chapter 7</a><ul>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-7.1"><i class="fa fa-check"></i>Exercise 7.1</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-7.2"><i class="fa fa-check"></i>Exercise 7.2</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-9"><i class="fa fa-check"></i>Chapter 9</a><ul>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-9.1"><i class="fa fa-check"></i>Exercise 9.1</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-9.2"><i class="fa fa-check"></i>Exercise 9.2</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-10"><i class="fa fa-check"></i>Chapter 10</a><ul>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-10.1"><i class="fa fa-check"></i>Exercise 10.1</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-10.2"><i class="fa fa-check"></i>Exercise 10.2</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-11"><i class="fa fa-check"></i>Chapter 11</a><ul>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-11.1"><i class="fa fa-check"></i>Exercise 11.1</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-11.2"><i class="fa fa-check"></i>Exercise 11.2</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-11.3"><i class="fa fa-check"></i>Exercise 11.3</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-12"><i class="fa fa-check"></i>Chapter 12</a><ul>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-12.1"><i class="fa fa-check"></i>Exercise 12.1</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-12.2"><i class="fa fa-check"></i>Exercise 12.2</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-12.3"><i class="fa fa-check"></i>Exercise 12.3</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-13"><i class="fa fa-check"></i>Chapter 13</a><ul>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-13.1"><i class="fa fa-check"></i>Exercise 13.1</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-13.2"><i class="fa fa-check"></i>Exercise 13.2</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-13.3"><i class="fa fa-check"></i>Exercise 13.3</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-14"><i class="fa fa-check"></i>Chapter 14</a><ul>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-14.1"><i class="fa fa-check"></i>Exercise 14.1</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-14.2"><i class="fa fa-check"></i>Exercise 14.2</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-14.3"><i class="fa fa-check"></i>Exercise 14.3</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-14.4"><i class="fa fa-check"></i>Exercise 14.4</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-14.5"><i class="fa fa-check"></i>Exercise 14.5</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-14.6"><i class="fa fa-check"></i>Exercise 14.6</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-15"><i class="fa fa-check"></i>Chapter 15</a><ul>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-15.1"><i class="fa fa-check"></i>Exercise 15.1</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-15.2"><i class="fa fa-check"></i>Exercise 15.2</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://bookdown.org" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Introduction to Statistical Thinking</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="ChapCaseStudies" class="section level1">
+<h1><span class="header-section-number">Chapter 16</span> Case Studies</h1>
+<div id="student-learning-objective-5" class="section level2">
+<h2><span class="header-section-number">16.1</span> Student Learning Objective</h2>
+<p>This chapter concludes this book. We start with a short review of the topics that were discussed in the second part of the book, the part that dealt with statistical inference. The main part of the chapter involves the statistical analysis of 2 case studies. The tools that will be used for the analysis are those that were discussed in the book. We close this chapter and this book with some concluding remarks. By the end of this chapter, the student should be able to:</p>
+<ul>
+<li><p>Review the concepts and methods for statistical inference that were presented in the second part of the book.</p></li>
+<li><p>Apply these methods to requirements of the analysis of real data.</p></li>
+<li><p>Develop a resolve to learn more statistics.</p></li>
+</ul>
+</div>
+<div id="a-review" class="section level2">
+<h2><span class="header-section-number">16.2</span> A Review</h2>
+<p>The second part of the book dealt with statistical inference; the science of making general statement on an entire population on the basis of data from a sample. The basis for the statements are theoretical models that produce the sampling distribution. Procedures for making the inference are evaluated based on their properties in the context of this sampling distribution. Procedures with desirable properties are applied to the data. One may attach to the output of this application summaries that describe these theoretical properties.</p>
+<p>In particular, we dealt with two forms of making inference. One form was estimation and the other was hypothesis testing. The goal in estimation is to determine the value of a parameter in the population. Point estimates or confidence intervals may be used in order to fulfill this goal. The properties of point estimators may be assessed using the mean square error (MSE) and the properties of the confidence interval may be assessed using the confidence level.</p>
+<p>The target in hypotheses testing is to decide between two competing hypothesis. These hypotheses are formulated in terms of population parameters. The decision rule is called a statistical test and is constructed with the aid of a test statistic and a rejection region. The default hypothesis among the two, is rejected if the test statistic falls in the rejection region. The major property a test must possess is a bound on the probability of a Type I error, the probability of erroneously rejecting the null hypothesis. This restriction is called the significance level of the test. A test may also be assessed in terms of it’s statistical power, the probability of rightfully rejecting the null hypothesis.</p>
+<p>Estimation and testing were applied in the context of single measurements and for the investigation of the relations between a pair of measurements. For single measurements we considered both numeric variables and factors. For numeric variables one may attempt to conduct inference on the expectation and/or the variance. For factors we considered the estimation of the probability of obtaining a level, or, more generally, the probability of the occurrence of an event.</p>
+<p>We introduced statistical models that may be used to describe the relations between variables. One of the variables was designated as the response. The other variable, the explanatory variable, is identified as a variable which may affect the distribution of the response. Specifically, we considered numeric variables and factors that have two levels. If the explanatory variable is a factor with two levels then the analysis reduces to the comparison of two sub-populations, each one associated with a level. If the explanatory variable is numeric then a regression model may be applied, either linear or logistic regression, depending on the type of the response.</p>
+<p>The foundations of statistical inference are the assumption that we make in the form of statistical models. These models attempt to reflect reality. However, one is advised to apply healthy skepticism when using the models. First, one should be aware what the assumptions are. Then one should ask oneself how reasonable are these assumption in the context of the specific analysis. Finally, one should check as much as one can the validity of the assumptions in light of the information at hand. It is useful to plot the data and compare the plot to the assumptions of the model.</p>
+</div>
+<div id="case-studies" class="section level2">
+<h2><span class="header-section-number">16.3</span> Case Studies</h2>
+<p>Let us apply the methods that were introduced throughout the book to two examples of data analysis. Both examples are taken from the case studies of the <a href="http://onlinestatbook.com/rvls.html">Rice Virtual Lab in Statistics</a> can be found in their <a href="http://onlinestatbook.com/case_studies_rvls/">Case Studies</a> section. The analysis of these case studies may involve any of the tools that were described in the second part of the book (and some from the first part). It may be useful to read again Chapters <a href="ChapInference.html#ChapInference">9</a>–<a href="ChapLogistic.html#ChapLogistic">15</a> before reading the case studies.</p>
+<div id="physicians-reactions-to-the-size-of-a-patient" class="section level3">
+<h3><span class="header-section-number">16.3.1</span> Physicians’ Reactions to the Size of a Patient</h3>
+<p>Overweight and obesity is common in many of the developed contrives. In some cultures, obese individuals face discrimination in employment, education, and relationship contexts. The current research, conducted by Mikki Hebl and Jingping Xu<a href="#fn88" class="footnoteRef" id="fnref88"><sup>88</sup></a>, examines physicians’ attitude toward overweight and obese patients in comparison to their attitude toward patients who are not overweight.</p>
+<p>The experiment included a total of 122 primary care physicians affiliated with one of three major hospitals in the Texas Medical Center of Houston. These physicians were sent a packet containing a medical chart similar to the one they view upon seeing a patient. This chart portrayed a patient who was displaying symptoms of a migraine headache but was otherwise healthy. Two variables (the gender and the weight of the patient) were manipulated across six different versions of the medical charts. The weight of the patient, described in terms of Body Mass Index (BMI), was average (BMI = 23), overweight (BMI = 30), or obese (BMI = 36). Physicians were randomly assigned to receive one of the six charts, and were asked to look over the chart carefully and complete two medical forms. The first form asked physicians which of 42 tests they would recommend giving to the patient. The second form asked physicians to indicate how much time they believed they would spend with the patient, and to describe the reactions that they would have toward this patient.</p>
+<p>In this presentation, only the question on how much time the physicians believed they would spend with the patient is analyzed. Although three patient weight conditions were used in the study (average, overweight, and obese) only the average and overweight conditions will be analyzed. Therefore, there are two levels of patient weight (average and overweight) and one dependent variable (time spent).</p>
+<p>The data for the given collection of responses from 72 primary care physicians is stored in the file “<code>discriminate.csv</code>”<a href="#fn89" class="footnoteRef" id="fnref89"><sup>89</sup></a>. We start by reading the content of the file into a data frame by the name “<code>patient</code>” and presenting the summary of the variables:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">patient &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;_data/discriminate.csv&quot;</span>)
+<span class="kw">summary</span>(patient)</code></pre></div>
+<pre><code>##     weight        time       
+##  BMI=23:33   Min.   : 5.000  
+##  BMI=30:38   1st Qu.:20.000  
+##              Median :30.000  
+##              Mean   :27.817  
+##              3rd Qu.:30.000  
+##              Max.   :60.000</code></pre>
+<p>Observe that of the 72 “patients”, 38 are overweight and 33 have an average weight. The time spend with the patient, as predicted by physicians, is distributed between 5 minutes and 1 hour, with a average of 27.82 minutes and a median of 30 minutes.</p>
+<p>It is a good practice to have a look at the data before doing the analysis. In this examination on should see that the numbers make sense and one should identify special features of the data. Even in this very simple example we may want to have a look at the histogram of the variable “<code>time</code>”:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">hist</span>(patient<span class="op">$</span>time)</code></pre></div>
+<p><img src="thinkstat_files/figure-html/unnamed-chunk-231-1.png" width="60%" style="display: block; margin: auto;" /></p>
+<p>A feature in this plot that catches attention is the fact that there is a high concventration of values in the interval between 25 and 30. Together with the fact that the median is equal to 30, one may suspect that, as a matter of fact, a large numeber of the values are actually equal to 30. Indeed, let us produce a table of the response:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">table</span>(patient<span class="op">$</span>time)</code></pre></div>
+<pre><code>## 
+##  5 15 20 25 30 40 45 50 60 
+##  1 10 15  3 30  4  5  2  1</code></pre>
+<p>Notice that 30 of the 72 physicians marked “<code>30</code>” as the time they expect to spend with the patient. This is the middle value in the range, and may just be the default value one marks if one just needs to complete a form and do not really place much importance to the question that was asked.</p>
+<p>The goal of the analysis is to examine the relation between overweigh and the Doctor’s response. The explanatory variable is a factor with two levels. The response is numeric. A natural tool to use in order to test this hypothesis is the <span class="math inline">\(t\)</span>-test, which is implemented with the function “<code>t.test</code>”.</p>
+<p>First we plot the relation between the response and the explanatory variable and then we apply the test:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">boxplot</span>(time<span class="op">~</span>weight,<span class="dt">data=</span>patient)</code></pre></div>
+<p><img src="thinkstat_files/figure-html/unnamed-chunk-233-1.png" width="60%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">t.test</span>(time<span class="op">~</span>weight,<span class="dt">data=</span>patient)</code></pre></div>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  time by weight
+## t = 2.85161, df = 67.1743, p-value = 0.0057739
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##   1.9885321 11.2650564
+## sample estimates:
+## mean in group BMI=23 mean in group BMI=30 
+##            31.363636            24.736842</code></pre>
+<p>Nothing seems problematic in the box plot. The two distributions, as they are reflected in the box plots, look fairly symmetric.</p>
+<p>When we consider the report that produced by the function “<code>t.test</code>” we may observe that the <span class="math inline">\(p\)</span>-value is equal to 0.005774. This <span class="math inline">\(p\)</span>-value is computed in testing the null hypothesis that the expectation of the response for both types of patients are equal against the two sided alternative. Since the <span class="math inline">\(p\)</span>-value is less than 0.05 we do reject the null hypothesis.</p>
+<p>The estimated value of the difference between the expectation of the response for a patient with BMI=23 and a patient with BMI=30 is <span class="math inline">\(31.36364 -24.73684 \approx 6.63\)</span> minutes. The confidence interval is (approximately) equal to <span class="math inline">\([1.99, 11.27]\)</span>. Hence, it looks as if the physicians expect to spend more time with the average weight patients.</p>
+<p>After analyzing the effect of the explanatory variable on the expectation of the response one may want to examine the presence, or lack thereof, of such effect on the variance of the response. Towards that end, one may use the function “<code>var.test</code>”:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">var.test</span>(time<span class="op">~</span>weight,<span class="dt">data=</span>patient)</code></pre></div>
+<pre><code>## 
+##  F test to compare two variances
+## 
+## data:  time by weight
+## F = 1.04432, num df = 32, denom df = 37, p-value = 0.89306
+## alternative hypothesis: true ratio of variances is not equal to 1
+## 95 percent confidence interval:
+##  0.53334055 2.07972695
+## sample estimates:
+## ratio of variances 
+##           1.044316</code></pre>
+<p>In this test we do not reject the null hypothesis that the two variances of the response are equal since the <span class="math inline">\(p\)</span>-value is larger than <span class="math inline">\(0.05\)</span>. The sample variances are almost equal to each other (their ratio is <span class="math inline">\(1.044316\)</span>), with a confidence interval for the ration that essentially ranges between 1/2 and 2.</p>
+<p>The production of <span class="math inline">\(p\)</span>-values and confidence intervals is just one aspect in the analysis of data. Another aspect, which typically is much more time consuming and requires experience and healthy skepticism is the examination of the assumptions that are used in order to produce the <span class="math inline">\(p\)</span>-values and the confidence intervals. A clear violation of the assumptions may warn the statistician that perhaps the computed nominal quantities do not represent the actual statistical properties of the tools that were applied.</p>
+<p>In this case, we have noticed the high concentration of the response at the value “<code>30</code>”. What is the situation when we split the sample between the two levels of the explanatory variable? Let us apply the function “<code>table</code>” once more, this time with the explanatory variable included:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">table</span>(patient<span class="op">$</span>time,patient<span class="op">$</span>weight)</code></pre></div>
+<pre><code>##     
+##      BMI=23 BMI=30
+##   5       0      1
+##   15      2      8
+##   20      6      9
+##   25      1      2
+##   30     14     16
+##   40      4      0
+##   45      4      1
+##   50      2      0
+##   60      0      1</code></pre>
+<p>Not surprisingly, there is still high concentration at that level “<code>30</code>”. But one can see that only 2 of the responses of the “<code>BMI=30</code>” group are above that value in comparison to a much more symmetric distribution of responses for the other group.</p>
+<p>The simulations of the significance level of the one-sample <span class="math inline">\(t\)</span>-test for an Exponential response that were conducted in Question <span class="math display">\[ex:Testing.2\]</span> may cast some doubt on how trustworthy are nominal <span class="math inline">\(p\)</span>-values of the <span class="math inline">\(t\)</span>-test when the measurements are skewed. The skewness of the response for the group “<code>BMI=30</code>” is a reason to be worry.</p>
+<p>We may consider a different test, which is more robust, in order to validate the significance of our findings. For example, we may turn the response into a factor by setting a level for values larger or equal to “<code>30</code>” and a different level for values less than “<code>30</code>”. The relation between the new response and the explanatory variable can be examined with the function “<code>prop.test</code>”. We first plot and then test:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="kw">factor</span>(patient<span class="op">$</span>time<span class="op">&gt;=</span><span class="dv">30</span>)<span class="op">~</span>weight,<span class="dt">data=</span>patient)</code></pre></div>
+<p><img src="thinkstat_files/figure-html/unnamed-chunk-236-1.png" width="60%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">prop.test</span>(<span class="kw">table</span>(patient<span class="op">$</span>time<span class="op">&gt;=</span><span class="dv">30</span>,patient<span class="op">$</span>weight))</code></pre></div>
+<pre><code>## 
+##  2-sample test for equality of proportions with continuity
+##  correction
+## 
+## data:  table(patient$time &gt;= 30, patient$weight)
+## X-squared = 3.7098, df = 1, p-value = 0.054094
+## alternative hypothesis: two.sided
+## 95 percent confidence interval:
+##  -0.5155087984 -0.0066586892
+## sample estimates:
+##     prop 1     prop 2 
+## 0.31034483 0.57142857</code></pre>
+<p>The mosaic plot presents the relation between the explanatory variable and the new factor. The level “<code>TRUE</code>” is associated with a value of the predicted time spent with the patient being 30 minutes or more. The level “<code>FALSE</code>” is associated with a prediction of less than 30 minutes.</p>
+<p>The computed <span class="math inline">\(p\)</span>-value is equal to <span class="math inline">\(0.05409\)</span>, that almost reaches the significance level of 5%<a href="#fn90" class="footnoteRef" id="fnref90"><sup>90</sup></a>. Notice that the probabilities that are being estimated by the function are the probabilities of the level “<code>FALSE</code>”. Overall, one may see the outcome of this test as supporting evidence for the conclusion of the <span class="math inline">\(t\)</span>-test. However, the <span class="math inline">\(p\)</span>-value provided by the <span class="math inline">\(t\)</span>-test may over emphasize the evidence in the data for a significant difference in the physician attitude towards overweight patients.</p>
+</div>
+<div id="physical-strength-and-job-performance" class="section level3">
+<h3><span class="header-section-number">16.3.2</span> Physical Strength and Job Performance</h3>
+<p>The next case study involves an attempt to develop a measure of physical ability that is easy and quick to administer, does not risk injury, and is related to how well a person performs the actual job. The current example is based on study by Blakely et al. <a href="#fn91" class="footnoteRef" id="fnref91"><sup>91</sup></a>, published in the journal Personnel Psychology.</p>
+<p>There are a number of very important jobs that require, in addition to cognitive skills, a significant amount of strength to be able to perform at a high level. Construction worker, electrician and auto mechanic, all require strength in order to carry out critical components of their job. An interesting applied problem is how to select the best candidates from amongst a group of applicants for physically demanding jobs in a safe and a cost effective way.</p>
+<p>The data presented in this case study, and may be used for the development of a method for selection among candidates, were collected from 147 individuals working in physically demanding jobs. Two measures of strength were gathered from each participant. These included grip and arm strength. A piece of equipment known as the Jackson Evaluation System (JES) was used to collect the strength data. The JES can be configured to measure the strength of a number of muscle groups. In this study, grip strength and arm strength were measured. The outcomes of these measurements were summarized in two scores of physical strength called “<code>grip</code>” and “<code>arm</code>”.</p>
+<p>Two separate measures of job performance are presented in this case study. First, the supervisors for each of the participants were asked to rate how well their employee(s) perform on the physical aspects of their jobs. This measure is summarizes in the variable “<code>ratings</code>”. Second, simulations of physically demanding work tasks were developed. The summary score of these simulations are given in the variable “<code>sims</code>”. Higher values of either measures of performance indicates better performance.</p>
+<p>The data for the 4 variables and 147 observations is stored in “<code>job.csv</code>”<a href="#fn92" class="footnoteRef" id="fnref92"><sup>92</sup></a>. We start by reading the content of the file into a data frame by the name “<code>job</code>”, presenting a summary of the variables, and their histograms:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">job &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;_data/job.csv&quot;</span>)
+<span class="kw">summary</span>(job)</code></pre></div>
+<pre><code>##       grip             arm             ratings           sims         
+##  Min.   : 29.00   Min.   : 19.000   Min.   :21.60   Min.   :-4.17000  
+##  1st Qu.: 94.00   1st Qu.: 64.500   1st Qu.:34.80   1st Qu.:-0.96500  
+##  Median :111.00   Median : 81.500   Median :41.30   Median : 0.16000  
+##  Mean   :110.23   Mean   : 78.752   Mean   :41.01   Mean   : 0.20177  
+##  3rd Qu.:124.50   3rd Qu.: 94.000   3rd Qu.:47.70   3rd Qu.: 1.07000  
+##  Max.   :189.00   Max.   :132.000   Max.   :57.20   Max.   : 5.17000</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">2</span>)) <span class="co"># we&#39;ll plot a 2x2 grid</span>
+<span class="kw">hist</span>(job<span class="op">$</span>grip)
+<span class="kw">hist</span>(job<span class="op">$</span>arm)
+<span class="kw">hist</span>(job<span class="op">$</span>ratings)
+<span class="kw">hist</span>(job<span class="op">$</span>sims)</code></pre></div>
+<p><img src="thinkstat_files/figure-html/unnamed-chunk-237-1.png" width="60%" style="display: block; margin: auto;" /></p>
+<p>All variables are numeric. Examination of the 4 summaries and histograms does not produce interest findings. All variables are, more or less, symmetric with the distribution of the variable “<code>ratings</code>” tending perhaps to be more uniform then the other three.</p>
+<p>The main analyses of interest are attempts to relate the two measures of physical strength “<code>grip</code>” and “<code>arm</code>” with the two measures of job performance, “<code>ratings</code>” and “<code>sims</code>”. A natural tool to consider in this context is a linear regression analysis that relates a measure of physical strength as an explanatory variable to a measure of job performance as a response.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">2</span>)) <span class="co"># we&#39;ll plot a 2x2 grid</span>
+
+<span class="kw">plot</span>(sims<span class="op">~</span>grip,<span class="dt">data=</span>job)
+sims.grip &lt;-<span class="st"> </span><span class="kw">lm</span>(sims<span class="op">~</span>grip,<span class="dt">data=</span>job)
+<span class="kw">abline</span>(sims.grip)
+
+<span class="kw">plot</span>(sims<span class="op">~</span>arm,<span class="dt">data=</span>job)
+sims.arm &lt;-<span class="st"> </span><span class="kw">lm</span>(sims<span class="op">~</span>arm,<span class="dt">data=</span>job)
+<span class="kw">abline</span>(sims.arm)
+
+score &lt;-<span class="st"> </span><span class="op">-</span><span class="fl">5.434</span> <span class="op">+</span><span class="st"> </span><span class="fl">0.024</span><span class="op">*</span>job<span class="op">$</span>grip<span class="op">+</span><span class="st"> </span><span class="fl">0.037</span><span class="op">*</span>job<span class="op">$</span>arm
+<span class="kw">plot</span>(sims<span class="op">~</span>score,<span class="dt">data=</span>job)
+sims.score &lt;-<span class="st"> </span><span class="kw">lm</span>(sims<span class="op">~</span>score,<span class="dt">data=</span>job)
+<span class="kw">abline</span>(sims.score)
+
+<span class="kw">plot</span>(grip<span class="op">~</span>arm,<span class="dt">data=</span>job)</code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:CaseStudies5"></span>
+<img src="thinkstat_files/figure-html/CaseStudies5-1.png" alt="Scatter Plots and Regression Lines" width="60%" />
+<p class="caption">
+FIGURE 16.1: Scatter Plots and Regression Lines
+</p>
+</div>
+<p>Let us consider the variable “<code>sims</code>” as a response. The first step is to plot a scatter plot of the response and explanatory variable, for both explanatory variables. To the scatter plot we add the line of regression. In order to add the regression line we fit the regression model with the function “<code>lm</code>” and then apply the function “<code>abline</code>” to the fitted model. The plot for the relation between the response and the variable “<code>grip</code>” is produced by the code:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(sims<span class="op">~</span>grip,<span class="dt">data=</span>job)
+sims.grip &lt;-<span class="st"> </span><span class="kw">lm</span>(sims<span class="op">~</span>grip,<span class="dt">data=</span>job)
+<span class="kw">abline</span>(sims.grip)</code></pre></div>
+<p>The plot that is produced by this code is presented on the upper-left panel of Figure <a href="ChapCaseStudies.html#fig:CaseStudies5">16.1</a>.</p>
+<p>The plot for the relation between the response and the variable “<code>arm</code>” is produced by this code:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(sims<span class="op">~</span>arm,<span class="dt">data=</span>job)
+sims.arm &lt;-<span class="st"> </span><span class="kw">lm</span>(sims<span class="op">~</span>arm,<span class="dt">data=</span>job)
+<span class="kw">abline</span>(sims.arm)</code></pre></div>
+<p>The plot that is produced by the last code is presented on the upper-right panel of Figure <a href="ChapCaseStudies.html#fig:CaseStudies5">16.1</a>.</p>
+<p>Both plots show similar characteristics. There is an overall linear trend in the relation between the explanatory variable and the response. The value of the response increases with the increase in the value of the explanatory variable (a positive slope). The regression line seems to follow, more or less, the trend that is demonstrated by the scatter plot.</p>
+<p>A more detailed analysis of the regression model is possible by the application of the function “<code>summary</code>” to the fitted model. First the case where the explanatory variable is “<code>grip</code>”:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(sims.grip)</code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = sims ~ grip, data = job)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -2.92954 -0.87084 -0.12195  0.80391  3.34939 
+## 
+## Coefficients:
+##               Estimate Std. Error t value  Pr(&gt;|t|)    
+## (Intercept) -4.8096752  0.5111407 -9.4097 &lt; 2.2e-16 ***
+## grip         0.0454630  0.0045347 10.0257 &lt; 2.2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 1.2947 on 145 degrees of freedom
+## Multiple R-squared:  0.4094, Adjusted R-squared:  0.40533 
+## F-statistic: 100.51 on 1 and 145 DF,  p-value: &lt; 2.22e-16</code></pre>
+<p>Examination of the report reviles a clear statistical significance for the effect of the explanatory variable on the distribution of response. The value of R-squared, the ration of the variance of the response explained by the regression is <span class="math inline">\(0.4094\)</span>. The square root of this quantity, <span class="math inline">\(\sqrt{0.4094} \approx 0.64\)</span>, is the proportion of the standard deviation of the response that is explained by the explanatory variable. Hence, about 64% of the variability in the response can be attributed to the measure of the strength of the grip.</p>
+<p>For the variable “<code>arm</code>” we get:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(sims.arm)</code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = sims ~ arm, data = job)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -3.64667 -0.75022 -0.02852  0.68754  3.07702 
+## 
+## Coefficients:
+##               Estimate Std. Error t value  Pr(&gt;|t|)    
+## (Intercept) -4.0951600  0.3917446 -10.454 &lt; 2.2e-16 ***
+## arm          0.0545630  0.0048059  11.353 &lt; 2.2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 1.2258 on 145 degrees of freedom
+## Multiple R-squared:  0.47061,    Adjusted R-squared:  0.46696 
+## F-statistic:  128.9 on 1 and 145 DF,  p-value: &lt; 2.22e-16</code></pre>
+<p>This variable is also statistically significant. The value of R-squared is <span class="math inline">\(0.4706\)</span>. The proportion of the standard deviation that is explained by the strength of the are is <span class="math inline">\(\sqrt{0.4706} \approx 0.69\)</span>, which is slightly higher than the proportion explained by the grip.</p>
+<p>Overall, the explanatory variables do a fine job in the reduction of the variability of the response “<code>sims</code>” and may be used as substitutes of the response in order to select among candidates. A better prediction of the response based on the values of the explanatory variables can be obtained by combining the information in both variables. The production of such combination is not discussed in this book, though it is similar in principle to the methods of linear regression that are presented in Chapter <a href="ChapRegression.html#ChapRegression">14</a>. The produced score<a href="#fn93" class="footnoteRef" id="fnref93"><sup>93</sup></a> takes the form:</p>
+<p><span class="math display">\[\mbox{\texttt{score}} = -5.434 + 0.024\cdot \mbox{\texttt{grip}}+ 0.037\cdot \mbox{\texttt{arm}}\;.\]</span> We use this combined score as an explanatory variable. First we form the score and plot the relation between it and the response:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">score &lt;-<span class="st"> </span><span class="op">-</span><span class="fl">5.434</span> <span class="op">+</span><span class="st"> </span><span class="fl">0.024</span><span class="op">*</span>job<span class="op">$</span>grip<span class="op">+</span><span class="st"> </span><span class="fl">0.037</span><span class="op">*</span>job<span class="op">$</span>arm
+<span class="kw">plot</span>(sims<span class="op">~</span>score,<span class="dt">data=</span>job)
+sims.score &lt;-<span class="st"> </span><span class="kw">lm</span>(sims<span class="op">~</span>score,<span class="dt">data=</span>job)
+<span class="kw">abline</span>(sims.score)</code></pre></div>
+<p>The scatter plot that includes the regression line can be found at the lower-left panel of Figure <a href="ChapCaseStudies.html#fig:CaseStudies5">16.1</a>. Indeed, the linear trend is more pronounced for this scatter plot and the regression line a better description of the relation between the response and the explanatory variable. A summary of the regression model produces the report:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(sims.score)</code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = sims ~ score, data = job)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -3.18897 -0.73905 -0.06983  0.74114  2.86356 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) 0.074787   0.094521  0.7912   0.4301    
+## score       1.012907   0.077300 13.1036   &lt;2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 1.14 on 145 degrees of freedom
+## Multiple R-squared:  0.54216,    Adjusted R-squared:   0.539 
+## F-statistic:  171.7 on 1 and 145 DF,  p-value: &lt; 2.22e-16</code></pre>
+<p>Indeed, the score is highly significant. More important, the R-squared coefficient that is associated with the score is <span class="math inline">\(0.5422\)</span>, which corresponds to a ratio of the standard deviation that is explained by the model of <span class="math inline">\(\sqrt{0.5422} \approx 0.74\)</span>. Thus, almost 3/4 of the variability is accounted for by the score, so the score is a reasonable mean of guessing what the results of the simulations will be. This guess is based only on the results of the simple tests of strength that is conducted with the JES device.</p>
+<p>Before putting the final seal on the results let us examine the assumptions of the statistical model. First, with respect to the two explanatory variables. Does each of them really measure a different property or do they actually measure the same phenomena? In order to examine this question let us look at the scatter plot that describes the relation between the two explanatory variables. This plot is produced using the code:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(grip<span class="op">~</span>arm,<span class="dt">data=</span>job)</code></pre></div>
+<p>It is presented in the lower-right panel of Figure <a href="ChapCaseStudies.html#fig:CaseStudies5">16.1</a>. Indeed, one may see that the two measurements of strength are not independent of each other but tend to produce an increasing linear trend. Hence, it should not be surprising that the relation of each of them with the response produces essentially the same goodness of fit. The computed score gives a slightly improved fit, but still, it basically reflects either of the original explanatory variables.</p>
+<p>In light of this observation, one may want to consider other measures of strength that represents features of the strength not captures by these two variable. Namely, measures that show less joint trend than the two considered.</p>
+<p>Another element that should be examined are the probabilistic assumptions that underly the regression model. We described the regression model only in terms of the functional relation between the explanatory variable and the expectation of the response. In the case of linear regression, for example, this relation was given in terms of a linear equation. However, another part of the model corresponds to the distribution of the measurements about the line of regression. The assumption that led to the computation of the reported <span class="math inline">\(p\)</span>-values is that this distribution is Normal.</p>
+<p>A method that can be used in order to investigate the validity of the Normal assumption is to analyze the residuals from the regression line. Recall that these residuals are computed as the difference between the observed value of the response and its estimated expectation, namely the fitted regression line. The residuals can be computed via the application of the function “<code>residuals</code>” to the fitted regression model.</p>
+<p>Specifically, let us look at the residuals from the regression line that uses the score that is combined from the grip and arm measurements of strength. One may plot a histogram of the residuals:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">1</span>))
+
+<span class="kw">hist</span>(<span class="kw">residuals</span>(sims.score))
+
+<span class="kw">qqnorm</span>(<span class="kw">residuals</span>(sims.score))
+<span class="kw">qqline</span>(<span class="kw">residuals</span>(sims.score))</code></pre></div>
+<p><img src="thinkstat_files/figure-html/unnamed-chunk-245-1.png" width="60%" style="display: block; margin: auto;" /></p>
+<p>The produced histogram is represented on the upper panel. The histogram portrays a symmetric distribution that my result from Normally distributed observations. A better method to compare the distribution of the residuals to the Normal distribution is to use the <em>Quantile-Quantile plot</em>. This plot can be found on the lower panel. We do not discuss here the method by which this plot is produced<a href="#fn94" class="footnoteRef" id="fnref94"><sup>94</sup></a>. However, we do say that any deviation of the points from a straight line is indication of violation of the assumption of Normality. In the current case, the points seem to be on a single line, which is consistent with the assumptions of the regression model.</p>
+<p>The next task should be an analysis of the relations between the explanatory variables and the other response “<code>ratings</code>”. In principle one may use the same steps that were presented for the investigation of the relations between the explanatory variables and the response “<code>sims</code>”. But of course, the conclusion may differ. We leave this part of the investigation as an exercise to the students.</p>
+</div>
+</div>
+<div id="summary-13" class="section level2">
+<h2><span class="header-section-number">16.4</span> Summary</h2>
+<div id="concluding-remarks" class="section level3">
+<h3><span class="header-section-number">16.4.1</span> Concluding Remarks</h3>
+<p>The book included a description of some elements of statistics, element that we thought are simple enough to be explained as part of an introductory course to statistics and are the minimum that is required for any person that is involved in academic activities of any field in which the analysis of data is required. Now, as you finish the book, it is as good time as any to say some words regarding the elements of statistics that are missing from this book.</p>
+<p>One element is more of the same. The statistical models that were presented are as simple as a model can get. A typical application will required more complex models. Each of these models may require specific methods for estimation and testing. The characteristics of inference, e.g. significance or confidence levels, rely on assumptions that the models are assumed to possess. The user should be familiar with computational tools that can be used for the analysis of these more complex models. Familiarity with the probabilistic assumptions is required in order to be able to interpret the computer output, to diagnose possible divergence from the assumptions and to assess the severity of the possible effect of such divergence on the validity of the findings.</p>
+<p>Statistical tools can be used for tasks other than estimation and hypothesis testing. For example, one may use statistics for prediction. In many applications it is important to assess what the values of future observations may be and in what range of values are they likely to occur. Statistical tools such as regression are natural in this context. However, the required task is not testing or estimation the values of parameters, but the prediction of future values of the response.</p>
+<p>A different role of statistics in the design stage. We hinted in that direction when we talked about in Chapter <span class="math display">\[ch:Confidence\]</span> about the selection of a sample size in order to assure a confidence interval with a given accuracy. In most applications, the selection of the sample size emerges in the context of hypothesis testing and the criteria for selection is the minimal power of the test, a minimal probability to detect a true finding. Yet, statistical design is much more than the determination of the sample size. Statistics may have a crucial input in the decision of how to collect the data. With an eye on the requirements for the final analysis, an experienced statistician can make sure that data that is collected is indeed appropriate for that final analysis. Too often is the case where researcher steps into the statistician’s office with data that he or she collected and asks, when it is already too late, for help in the analysis of data that cannot provide a satisfactory answer to the research question the researcher tried to address. It may be said, with some exaggeration, that good statisticians are required for the final analysis only in the case where the initial planning was poor.</p>
+<p>Last, but not least, is the theoretical mathematical theory of statistics. We tried to introduce as little as possible of the relevant mathematics in this course. However, if one seriously intends to learn and understand statistics then one must become familiar with the relevant mathematical theory. Clearly, deep knowledge in the mathematical theory of probability is required. But apart from that, there is a rich and rapidly growing body of research that deals with the mathematical aspects of data analysis. One cannot be a good statistician unless one becomes familiar with the important aspects of this theory.</p>
+<p>I should have started the book with the famous quotation: “Lies, damned lies, and statistics”. Instead, I am using it to end the book. Statistics can be used and can be misused. Learning statistics can give you the tools to tell the difference between the two. My goal in writing the book is achieved if reading it will mark for you the beginning of the process of learning statistics and not the end of the process.</p>
+</div>
+<div id="discussion-in-the-forum" class="section level3">
+<h3><span class="header-section-number">16.4.2</span> Discussion in the Forum</h3>
+<p>In the second part of the book we have learned many subjects. Most of these subjects, especially for those that had no previous exposure to statistics, were unfamiliar. In this forum we would like to ask you to share with us the difficulties that you encountered.</p>
+<p>What was the topic that was most difficult for you to grasp? In your opinion, what was the source of the difficulty?</p>
+<p>When forming your answer to this question we will appreciate if you could elaborate and give details of what the problem was. Pointing to deficiencies in the learning material and confusing explanations will help us improve the presentation for the future editions of this book.</p>
+
+</div>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="88">
+<li id="fn88"><p>Hebl, M. and Xu, J. (2001). Weighing the care: Physicians’ reactions to the size of a patient. International Journal of Obesity, 25, 1246-1252.<a href="ChapCaseStudies.html#fnref88">↩</a></p></li>
+<li id="fn89"><p>The file can be found on the internet at <a href="http://pluto.huji.ac.il/~msby/StatThink/Datasets/discriminate.csv" class="uri">http://pluto.huji.ac.il/~msby/StatThink/Datasets/discriminate.csv</a>.<a href="ChapCaseStudies.html#fnref89">↩</a></p></li>
+<li id="fn90"><p>One may propose splinting the response into two groups, with one group being associated with values of “<code>time</code>” strictly <em>larger</em> than 30 minutes and the other with values less or equal to 30. The resulting <span class="math inline">\(p\)</span>-value from the expression “<code>prop.test(table(patient$time&gt;30,patient$weight))</code>” is <span class="math inline">\(0.01276\)</span>. However, the number of subjects in one of the cells of the table is equal only to 2, which is problematic in the context of the Normal approximation that is used by this test.<a href="ChapCaseStudies.html#fnref90">↩</a></p></li>
+<li id="fn91"><p>Blakley, B.A., Qui?ones, M.A., Crawford, M.S., and Jago, I.A. (1994). The validity of isometric strength tests. Personnel Psychology, 47, 247-274.<a href="ChapCaseStudies.html#fnref91">↩</a></p></li>
+<li id="fn92"><p>The file can be found on the internet at <a href="http://pluto.huji.ac.il/~msby/StatThink/Datasets/job.csv" class="uri">http://pluto.huji.ac.il/~msby/StatThink/Datasets/job.csv</a>.<a href="ChapCaseStudies.html#fnref92">↩</a></p></li>
+<li id="fn93"><p>The score is produced by the application of the function “<code>lm</code>” to <em>both</em> variables as explanatory variables. The code expression that can be used is “<code>lm(sims ~ grip + arm, data=job)</code>”.<a href="ChapCaseStudies.html#fnref93">↩</a></p></li>
+<li id="fn94"><p>Generally speaking, the plot is composed of the empirical percentiles of the residuals, plotted against the theoretical percentiles of the standard Normal distribution. The current plot is produced by the expression “<code>qqnorm(residuals(sims.score))</code>”.<a href="ChapCaseStudies.html#fnref94">↩</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="ChapLogistic.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="exercise-solutions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/yihui/bookdown-crc/edit/master/16-CaseStudies.Rmd",
+"text": "Edit"
+},
+"download": ["thinkstat.pdf", "thinkstat.epub"],
+"toc": {
+"collapse": "none"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

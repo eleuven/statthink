@@ -15,7 +15,7 @@ link-citations: yes
 colorlinks: yes
 lot: no
 lof: no
-#github-repo: rstudio/bookdown-demo
+github-repo: eleuven/statthink
 description: ""
 #cover-image: images/cover.jpg
 ---

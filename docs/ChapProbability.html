@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Introduction to Statistical Thinking</title>
+  <meta name="description" content="Introduction to Statistical Thinking">
+  <meta name="generator" content="bookdown 0.5.10 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Introduction to Statistical Thinking" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  <meta name="github-repo" content="eleuven/statthink" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Introduction to Statistical Thinking" />
+  
+  
+  
+
+<meta name="author" content="Benjamin Yakir">
+
+
+<meta name="date" content="2017-11-26">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="ChapDescriptiveStat.html">
+<link rel="next" href="ChapRandomVar.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Introduction to Statistical Thinking</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="ChapIntroR.html"><a href="ChapIntroR.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="ChapIntroR.html"><a href="ChapIntroR.html#student-learning-objectives"><i class="fa fa-check"></i><b>1.1</b> Student Learning Objectives</a></li>
+<li class="chapter" data-level="1.2" data-path="ChapIntroR.html"><a href="ChapIntroR.html#why-learn-statistics"><i class="fa fa-check"></i><b>1.2</b> Why Learn Statistics?</a></li>
+<li class="chapter" data-level="1.3" data-path="ChapIntroR.html"><a href="ChapIntroR.html#statistics"><i class="fa fa-check"></i><b>1.3</b> Statistics</a></li>
+<li class="chapter" data-level="1.4" data-path="ChapIntroR.html"><a href="ChapIntroR.html#probability"><i class="fa fa-check"></i><b>1.4</b> Probability</a></li>
+<li class="chapter" data-level="1.5" data-path="ChapIntroR.html"><a href="ChapIntroR.html#key-terms"><i class="fa fa-check"></i><b>1.5</b> Key Terms</a></li>
+<li class="chapter" data-level="1.6" data-path="ChapIntroR.html"><a href="ChapIntroR.html#the-r-programming-environment"><i class="fa fa-check"></i><b>1.6</b> The <code>R</code> Programming Environment</a><ul>
+<li class="chapter" data-level="1.6.1" data-path="ChapIntroR.html"><a href="ChapIntroR.html#some-basic-r-commands"><i class="fa fa-check"></i><b>1.6.1</b> Some Basic <code>R</code> Commands</a></li>
+</ul></li>
+<li class="chapter" data-level="1.7" data-path="ChapIntroR.html"><a href="ChapIntroR.html#exercises"><i class="fa fa-check"></i><b>1.7</b> Exercises</a></li>
+<li class="chapter" data-level="1.8" data-path="ChapIntroR.html"><a href="ChapIntroR.html#summary"><i class="fa fa-check"></i><b>1.8</b> Summary</a><ul>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#discuss-in-the-forum"><i class="fa fa-check"></i>Discuss in the forum</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="ChapData.html"><a href="ChapData.html"><i class="fa fa-check"></i><b>2</b> Sampling and Data Structures</a><ul>
+<li class="chapter" data-level="2.1" data-path="ChapData.html"><a href="ChapData.html#student-learning-objectives-1"><i class="fa fa-check"></i><b>2.1</b> Student Learning Objectives</a></li>
+<li class="chapter" data-level="2.2" data-path="ChapData.html"><a href="ChapData.html#the-sampled-data"><i class="fa fa-check"></i><b>2.2</b> The Sampled Data</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="ChapData.html"><a href="ChapData.html#variation-in-data"><i class="fa fa-check"></i><b>2.2.1</b> Variation in Data</a></li>
+<li class="chapter" data-level="2.2.2" data-path="ChapData.html"><a href="ChapData.html#variation-in-samples"><i class="fa fa-check"></i><b>2.2.2</b> Variation in Samples</a></li>
+<li class="chapter" data-level="2.2.3" data-path="ChapData.html"><a href="ChapData.html#frequency"><i class="fa fa-check"></i><b>2.2.3</b> Frequency</a></li>
+<li class="chapter" data-level="2.2.4" data-path="ChapData.html"><a href="ChapData.html#critical-evaluation"><i class="fa fa-check"></i><b>2.2.4</b> Critical Evaluation</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="ChapData.html"><a href="ChapData.html#readingdata"><i class="fa fa-check"></i><b>2.3</b> Reading Data into <code>R</code></a><ul>
+<li class="chapter" data-level="2.3.1" data-path="ChapData.html"><a href="ChapData.html#saving-the-file-and-setting-the-working-directory"><i class="fa fa-check"></i><b>2.3.1</b> Saving the File and Setting the Working Directory</a></li>
+<li class="chapter" data-level="2.3.2" data-path="ChapData.html"><a href="ChapData.html#Data_3"><i class="fa fa-check"></i><b>2.3.2</b> Reading a CSV File into <code>R</code></a></li>
+<li class="chapter" data-level="2.3.3" data-path="ChapData.html"><a href="ChapData.html#data-types"><i class="fa fa-check"></i><b>2.3.3</b> Data Types</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="ChapData.html"><a href="ChapData.html#exercises-1"><i class="fa fa-check"></i><b>2.4</b> Exercises</a></li>
+<li class="chapter" data-level="2.5" data-path="ChapData.html"><a href="ChapData.html#summary-1"><i class="fa fa-check"></i><b>2.5</b> Summary</a><ul>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#discuss-in-the-forum"><i class="fa fa-check"></i>Discuss in the forum</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="ChapDescriptiveStat.html"><a href="ChapDescriptiveStat.html"><i class="fa fa-check"></i><b>3</b> Descriptive Statistics</a><ul>
+<li class="chapter" data-level="3.1" data-path="ChapDescriptiveStat.html"><a href="ChapDescriptiveStat.html#student-learning-objectives-2"><i class="fa fa-check"></i><b>3.1</b> Student Learning Objectives</a></li>
+<li class="chapter" data-level="3.2" data-path="ChapDescriptiveStat.html"><a href="ChapDescriptiveStat.html#displaying-data"><i class="fa fa-check"></i><b>3.2</b> Displaying Data</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="ChapDescriptiveStat.html"><a href="ChapDescriptiveStat.html#histograms"><i class="fa fa-check"></i><b>3.2.1</b> Histograms</a></li>
+<li class="chapter" data-level="3.2.2" data-path="ChapDescriptiveStat.html"><a href="ChapDescriptiveStat.html#box-plots"><i class="fa fa-check"></i><b>3.2.2</b> Box Plots</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="ChapDescriptiveStat.html"><a href="ChapDescriptiveStat.html#measures-of-the-center-of-data"><i class="fa fa-check"></i><b>3.3</b> Measures of the Center of Data</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="ChapDescriptiveStat.html"><a href="ChapDescriptiveStat.html#skewness-the-mean-and-the-median"><i class="fa fa-check"></i><b>3.3.1</b> Skewness, the Mean and the Median</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="ChapDescriptiveStat.html"><a href="ChapDescriptiveStat.html#measures-of-the-spread-of-data"><i class="fa fa-check"></i><b>3.4</b> Measures of the Spread of Data</a></li>
+<li class="chapter" data-level="3.5" data-path="ChapDescriptiveStat.html"><a href="ChapDescriptiveStat.html#exercises-2"><i class="fa fa-check"></i><b>3.5</b> Exercises</a></li>
+<li class="chapter" data-level="3.6" data-path="ChapDescriptiveStat.html"><a href="ChapDescriptiveStat.html#summary-2"><i class="fa fa-check"></i><b>3.6</b> Summary</a><ul>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#discuss-in-the-forum"><i class="fa fa-check"></i>Discuss in the forum</a></li>
+<li class="chapter" data-level="" data-path="ChapDescriptiveStat.html"><a href="ChapDescriptiveStat.html#commonly-used-symbols"><i class="fa fa-check"></i>Commonly Used Symbols</a></li>
+<li class="chapter" data-level="" data-path="ChapDescriptiveStat.html"><a href="ChapDescriptiveStat.html#commonly-used-expressions"><i class="fa fa-check"></i>Commonly Used Expressions</a></li>
+<li class="chapter" data-level="" data-path="ChapDescriptiveStat.html"><a href="ChapDescriptiveStat.html#formulas"><i class="fa fa-check"></i>Formulas:</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="ChapProbability.html"><a href="ChapProbability.html"><i class="fa fa-check"></i><b>4</b> Probability</a><ul>
+<li class="chapter" data-level="4.1" data-path="ChapProbability.html"><a href="ChapProbability.html#student-learning-objective"><i class="fa fa-check"></i><b>4.1</b> Student Learning Objective</a></li>
+<li class="chapter" data-level="4.2" data-path="ChapProbability.html"><a href="ChapProbability.html#different-forms-of-variability"><i class="fa fa-check"></i><b>4.2</b> Different Forms of Variability</a></li>
+<li class="chapter" data-level="4.3" data-path="ChapProbability.html"><a href="ChapProbability.html#a-population"><i class="fa fa-check"></i><b>4.3</b> A Population</a></li>
+<li class="chapter" data-level="4.4" data-path="ChapProbability.html"><a href="ChapProbability.html#random-variables"><i class="fa fa-check"></i><b>4.4</b> Random Variables</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="ChapProbability.html"><a href="ChapProbability.html#sample-space-and-distribution"><i class="fa fa-check"></i><b>4.4.1</b> Sample Space and Distribution</a></li>
+<li class="chapter" data-level="4.4.2" data-path="ChapProbability.html"><a href="ChapProbability.html#expectation-and-standard-deviation"><i class="fa fa-check"></i><b>4.4.2</b> Expectation and Standard Deviation</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="ChapProbability.html"><a href="ChapProbability.html#probability-and-statistics"><i class="fa fa-check"></i><b>4.5</b> Probability and Statistics</a></li>
+<li class="chapter" data-level="4.6" data-path="ChapProbability.html"><a href="ChapProbability.html#exercises-3"><i class="fa fa-check"></i><b>4.6</b> Exercises</a></li>
+<li class="chapter" data-level="4.7" data-path="ChapProbability.html"><a href="ChapProbability.html#summary-3"><i class="fa fa-check"></i><b>4.7</b> Summary</a><ul>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li class="chapter" data-level="" data-path="ChapProbability.html"><a href="ChapProbability.html#discussion-in-the-forum"><i class="fa fa-check"></i>Discussion in the Forum</a></li>
+<li class="chapter" data-level="" data-path="ChapProbability.html"><a href="ChapProbability.html#summary-of-formulas"><i class="fa fa-check"></i>Summary of Formulas</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="ChapRandomVar.html"><a href="ChapRandomVar.html"><i class="fa fa-check"></i><b>5</b> Random Variables</a><ul>
+<li class="chapter" data-level="5.1" data-path="ChapRandomVar.html"><a href="ChapRandomVar.html#student-learning-objective-1"><i class="fa fa-check"></i><b>5.1</b> Student Learning Objective</a></li>
+<li class="chapter" data-level="5.2" data-path="ChapRandomVar.html"><a href="ChapRandomVar.html#discrete-random-variables"><i class="fa fa-check"></i><b>5.2</b> Discrete Random Variables</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="ChapRandomVar.html"><a href="ChapRandomVar.html#the-binomial-random-variable"><i class="fa fa-check"></i><b>5.2.1</b> The Binomial Random Variable</a></li>
+<li class="chapter" data-level="5.2.2" data-path="ChapRandomVar.html"><a href="ChapRandomVar.html#the-poisson-random-variable"><i class="fa fa-check"></i><b>5.2.2</b> The Poisson Random Variable</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="ChapRandomVar.html"><a href="ChapRandomVar.html#RandomVar_5"><i class="fa fa-check"></i><b>5.3</b> Continuous Random Variable</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="ChapRandomVar.html"><a href="ChapRandomVar.html#the-uniform-random-variable"><i class="fa fa-check"></i><b>5.3.1</b> The Uniform Random Variable</a></li>
+<li class="chapter" data-level="5.3.2" data-path="ChapRandomVar.html"><a href="ChapRandomVar.html#the-exponential-random-variable"><i class="fa fa-check"></i><b>5.3.2</b> The Exponential Random Variable</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="ChapRandomVar.html"><a href="ChapRandomVar.html#sec:RVarExercises"><i class="fa fa-check"></i><b>5.4</b> Exercises</a></li>
+<li class="chapter" data-level="5.5" data-path="ChapRandomVar.html"><a href="ChapRandomVar.html#summary-4"><i class="fa fa-check"></i><b>5.5</b> Summary</a><ul>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#discuss-in-the-forum"><i class="fa fa-check"></i>Discuss in the Forum</a></li>
+<li class="chapter" data-level="" data-path="ChapProbability.html"><a href="ChapProbability.html#summary-of-formulas"><i class="fa fa-check"></i>Summary of Formulas</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="ChapNormal.html"><a href="ChapNormal.html"><i class="fa fa-check"></i><b>6</b> The Normal Random Variable</a><ul>
+<li class="chapter" data-level="6.1" data-path="ChapNormal.html"><a href="ChapNormal.html#student-learning-objective-2"><i class="fa fa-check"></i><b>6.1</b> Student Learning Objective</a></li>
+<li class="chapter" data-level="6.2" data-path="ChapNormal.html"><a href="ChapNormal.html#the-normal-random-variable"><i class="fa fa-check"></i><b>6.2</b> The Normal Random Variable</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="ChapNormal.html"><a href="ChapNormal.html#the-normal-distribution"><i class="fa fa-check"></i><b>6.2.1</b> The Normal Distribution</a></li>
+<li class="chapter" data-level="6.2.2" data-path="ChapNormal.html"><a href="ChapNormal.html#the-standard-normal-distribution"><i class="fa fa-check"></i><b>6.2.2</b> The Standard Normal Distribution</a></li>
+<li class="chapter" data-level="6.2.3" data-path="ChapNormal.html"><a href="ChapNormal.html#computing-percentiles"><i class="fa fa-check"></i><b>6.2.3</b> Computing Percentiles</a></li>
+<li class="chapter" data-level="6.2.4" data-path="ChapNormal.html"><a href="ChapNormal.html#outliers-and-the-normal-distribution"><i class="fa fa-check"></i><b>6.2.4</b> Outliers and the Normal Distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="ChapNormal.html"><a href="ChapNormal.html#approximation-of-the-binomial-distribution"><i class="fa fa-check"></i><b>6.3</b> Approximation of the Binomial Distribution</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="ChapNormal.html"><a href="ChapNormal.html#approximate-binomial-probabilities-and-percentiles"><i class="fa fa-check"></i><b>6.3.1</b> Approximate Binomial Probabilities and Percentiles</a></li>
+<li class="chapter" data-level="6.3.2" data-path="ChapNormal.html"><a href="ChapNormal.html#continuity-corrections"><i class="fa fa-check"></i><b>6.3.2</b> Continuity Corrections</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="ChapNormal.html"><a href="ChapNormal.html#Normal4"><i class="fa fa-check"></i><b>6.4</b> Exercises</a></li>
+<li class="chapter" data-level="6.5" data-path="ChapNormal.html"><a href="ChapNormal.html#summary-5"><i class="fa fa-check"></i><b>6.5</b> Summary</a><ul>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#discuss-in-the-forum"><i class="fa fa-check"></i>Discuss in the Forum</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="ChapSampDist.html"><a href="ChapSampDist.html"><i class="fa fa-check"></i><b>7</b> The Sampling Distribution</a><ul>
+<li class="chapter" data-level="7.1" data-path="ChapSampDist.html"><a href="ChapSampDist.html#student-learning-objective-3"><i class="fa fa-check"></i><b>7.1</b> Student Learning Objective</a></li>
+<li class="chapter" data-level="7.2" data-path="ChapSampDist.html"><a href="ChapSampDist.html#the-sampling-distribution"><i class="fa fa-check"></i><b>7.2</b> The Sampling Distribution</a><ul>
+<li class="chapter" data-level="7.2.1" data-path="ChapSampDist.html"><a href="ChapSampDist.html#a-random-sample"><i class="fa fa-check"></i><b>7.2.1</b> A Random Sample</a></li>
+<li class="chapter" data-level="7.2.2" data-path="ChapSampDist.html"><a href="ChapSampDist.html#sampling-from-a-population"><i class="fa fa-check"></i><b>7.2.2</b> Sampling From a Population</a></li>
+<li class="chapter" data-level="7.2.3" data-path="ChapSampDist.html"><a href="ChapSampDist.html#subsec:theoreticalmdls"><i class="fa fa-check"></i><b>7.2.3</b> Theoretical Models</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="ChapSampDist.html"><a href="ChapSampDist.html#law-of-large-numbers-and-central-limit-theorem"><i class="fa fa-check"></i><b>7.3</b> Law of Large Numbers and Central Limit Theorem</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="ChapSampDist.html"><a href="ChapSampDist.html#the-law-of-large-numbers"><i class="fa fa-check"></i><b>7.3.1</b> The Law of Large Numbers</a></li>
+<li class="chapter" data-level="7.3.2" data-path="ChapSampDist.html"><a href="ChapSampDist.html#the-central-limit-theorem-clt"><i class="fa fa-check"></i><b>7.3.2</b> The Central Limit Theorem (CLT)</a></li>
+<li class="chapter" data-level="7.3.3" data-path="ChapSampDist.html"><a href="ChapSampDist.html#applying-the-central-limit-theorem"><i class="fa fa-check"></i><b>7.3.3</b> Applying the Central Limit Theorem</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="ChapSampDist.html"><a href="ChapSampDist.html#SampDistEx"><i class="fa fa-check"></i><b>7.4</b> Exercises</a></li>
+<li class="chapter" data-level="7.5" data-path="ChapSampDist.html"><a href="ChapSampDist.html#summary-6"><i class="fa fa-check"></i><b>7.5</b> Summary</a><ul>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li class="chapter" data-level="" data-path="ChapProbability.html"><a href="ChapProbability.html#discussion-in-the-forum"><i class="fa fa-check"></i>Discussion in the Forum</a></li>
+<li class="chapter" data-level="" data-path="ChapProbability.html"><a href="ChapProbability.html#summary-of-formulas"><i class="fa fa-check"></i>Summary of Formulas</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="overview-and-integration.html"><a href="overview-and-integration.html"><i class="fa fa-check"></i><b>8</b> Overview and Integration</a><ul>
+<li class="chapter" data-level="8.1" data-path="overview-and-integration.html"><a href="overview-and-integration.html#student-learning-objective-4"><i class="fa fa-check"></i><b>8.1</b> Student Learning Objective</a></li>
+<li class="chapter" data-level="8.2" data-path="overview-and-integration.html"><a href="overview-and-integration.html#an-overview"><i class="fa fa-check"></i><b>8.2</b> An Overview</a></li>
+<li class="chapter" data-level="8.3" data-path="overview-and-integration.html"><a href="overview-and-integration.html#integrated-applications"><i class="fa fa-check"></i><b>8.3</b> Integrated Applications</a><ul>
+<li class="chapter" data-level="8.3.1" data-path="overview-and-integration.html"><a href="overview-and-integration.html#example-1"><i class="fa fa-check"></i><b>8.3.1</b> Example 1</a></li>
+<li class="chapter" data-level="" data-path="overview-and-integration.html"><a href="overview-and-integration.html#solution"><i class="fa fa-check"></i>Solution:</a></li>
+<li class="chapter" data-level="8.3.2" data-path="overview-and-integration.html"><a href="overview-and-integration.html#example-2"><i class="fa fa-check"></i><b>8.3.2</b> Example 2</a></li>
+<li class="chapter" data-level="" data-path="overview-and-integration.html"><a href="overview-and-integration.html#solution-1"><i class="fa fa-check"></i>Solution:</a></li>
+<li class="chapter" data-level="8.3.3" data-path="overview-and-integration.html"><a href="overview-and-integration.html#example-3"><i class="fa fa-check"></i><b>8.3.3</b> Example 3</a></li>
+<li class="chapter" data-level="" data-path="overview-and-integration.html"><a href="overview-and-integration.html#solution-2"><i class="fa fa-check"></i>Solution:</a></li>
+<li class="chapter" data-level="8.3.4" data-path="overview-and-integration.html"><a href="overview-and-integration.html#example-4"><i class="fa fa-check"></i><b>8.3.4</b> Example 4</a></li>
+<li class="chapter" data-level="" data-path="overview-and-integration.html"><a href="overview-and-integration.html#solution-3"><i class="fa fa-check"></i>Solution</a></li>
+<li class="chapter" data-level="8.3.5" data-path="overview-and-integration.html"><a href="overview-and-integration.html#example-5"><i class="fa fa-check"></i><b>8.3.5</b> Example 5</a></li>
+<li class="chapter" data-level="" data-path="overview-and-integration.html"><a href="overview-and-integration.html#solution-4"><i class="fa fa-check"></i>Solution</a></li>
+<li class="chapter" data-level="" data-path="ChapProbability.html"><a href="ChapProbability.html#discussion-in-the-forum"><i class="fa fa-check"></i>Discussion in the Forum</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="ChapInference.html"><a href="ChapInference.html"><i class="fa fa-check"></i><b>9</b> Introduction to Statistical Inference</a><ul>
+<li class="chapter" data-level="9.1" data-path="ChapInference.html"><a href="ChapInference.html#student-learning-objectives-3"><i class="fa fa-check"></i><b>9.1</b> Student Learning Objectives</a></li>
+<li class="chapter" data-level="9.2" data-path="ChapInference.html"><a href="ChapInference.html#key-terms-1"><i class="fa fa-check"></i><b>9.2</b> Key Terms</a></li>
+<li class="chapter" data-level="9.3" data-path="ChapInference.html"><a href="ChapInference.html#the-cars-data-set"><i class="fa fa-check"></i><b>9.3</b> The Cars Data Set</a></li>
+<li class="chapter" data-level="9.4" data-path="ChapSampDist.html"><a href="ChapSampDist.html#the-sampling-distribution"><i class="fa fa-check"></i><b>9.4</b> The Sampling Distribution</a><ul>
+<li class="chapter" data-level="9.4.1" data-path="ChapInference.html"><a href="ChapInference.html#statistics-1"><i class="fa fa-check"></i><b>9.4.1</b> Statistics</a></li>
+<li class="chapter" data-level="9.4.2" data-path="ChapInference.html"><a href="ChapInference.html#the-sampling-distribution-1"><i class="fa fa-check"></i><b>9.4.2</b> The Sampling Distribution</a></li>
+<li class="chapter" data-level="9.4.3" data-path="ChapInference.html"><a href="ChapInference.html#theoretical-distributions-of-observations"><i class="fa fa-check"></i><b>9.4.3</b> Theoretical Distributions of Observations</a></li>
+<li class="chapter" data-level="9.4.4" data-path="ChapInference.html"><a href="ChapInference.html#sampling-distribution-of-statistics"><i class="fa fa-check"></i><b>9.4.4</b> Sampling Distribution of Statistics</a></li>
+<li class="chapter" data-level="9.4.5" data-path="ChapInference.html"><a href="ChapInference.html#the-normal-approximation"><i class="fa fa-check"></i><b>9.4.5</b> The Normal Approximation</a></li>
+<li class="chapter" data-level="9.4.6" data-path="ChapInference.html"><a href="ChapInference.html#simulations"><i class="fa fa-check"></i><b>9.4.6</b> Simulations</a></li>
+</ul></li>
+<li class="chapter" data-level="9.5" data-path="ChapInference.html"><a href="ChapInference.html#exercises-4"><i class="fa fa-check"></i><b>9.5</b> Exercises</a></li>
+<li class="chapter" data-level="9.6" data-path="ChapInference.html"><a href="ChapInference.html#summary-7"><i class="fa fa-check"></i><b>9.6</b> Summary</a><ul>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#discuss-in-the-forum"><i class="fa fa-check"></i>Discuss in the forum</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="ChapEstimation.html"><a href="ChapEstimation.html"><i class="fa fa-check"></i><b>10</b> Point Estimation</a><ul>
+<li class="chapter" data-level="10.1" data-path="ChapEstimation.html"><a href="ChapEstimation.html#student-learning-objectives-4"><i class="fa fa-check"></i><b>10.1</b> Student Learning Objectives</a></li>
+<li class="chapter" data-level="10.2" data-path="ChapEstimation.html"><a href="ChapEstimation.html#estimating-parameters"><i class="fa fa-check"></i><b>10.2</b> Estimating Parameters</a></li>
+<li class="chapter" data-level="10.3" data-path="ChapEstimation.html"><a href="ChapEstimation.html#EstimationExp"><i class="fa fa-check"></i><b>10.3</b> Estimation of the Expectation</a><ul>
+<li class="chapter" data-level="10.3.1" data-path="ChapEstimation.html"><a href="ChapEstimation.html#the-accuracy-of-the-sample-average"><i class="fa fa-check"></i><b>10.3.1</b> The Accuracy of the Sample Average</a></li>
+<li class="chapter" data-level="10.3.2" data-path="ChapEstimation.html"><a href="ChapEstimation.html#ComparingEstimators"><i class="fa fa-check"></i><b>10.3.2</b> Comparing Estimators</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="ChapEstimation.html"><a href="ChapEstimation.html#estimation-of-the-variance-and-standard-deviation"><i class="fa fa-check"></i><b>10.4</b> Estimation of the Variance and Standard Deviation</a></li>
+<li class="chapter" data-level="10.5" data-path="ChapEstimation.html"><a href="ChapEstimation.html#EstimationOtherPars"><i class="fa fa-check"></i><b>10.5</b> Estimation of Other Parameters</a></li>
+<li class="chapter" data-level="10.6" data-path="ChapEstimation.html"><a href="ChapEstimation.html#exercises-5"><i class="fa fa-check"></i><b>10.6</b> Exercises</a></li>
+<li class="chapter" data-level="10.7" data-path="ChapEstimation.html"><a href="ChapEstimation.html#summary-8"><i class="fa fa-check"></i><b>10.7</b> Summary</a><ul>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#discuss-in-the-forum"><i class="fa fa-check"></i>Discuss in the forum</a></li>
+<li class="chapter" data-level="" data-path="ChapDescriptiveStat.html"><a href="ChapDescriptiveStat.html#formulas"><i class="fa fa-check"></i>Formulas:</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="ChapConfidence.html"><a href="ChapConfidence.html"><i class="fa fa-check"></i><b>11</b> Confidence Intervals</a><ul>
+<li class="chapter" data-level="11.1" data-path="ChapConfidence.html"><a href="ChapConfidence.html#student-learning-objectives-5"><i class="fa fa-check"></i><b>11.1</b> Student Learning Objectives</a></li>
+<li class="chapter" data-level="11.2" data-path="ChapConfidence.html"><a href="ChapConfidence.html#intervals-for-mean-and-proportion"><i class="fa fa-check"></i><b>11.2</b> Intervals for Mean and Proportion</a><ul>
+<li class="chapter" data-level="11.2.1" data-path="ChapConfidence.html"><a href="ChapConfidence.html#ConfidenceExamples"><i class="fa fa-check"></i><b>11.2.1</b> Examples of Confidence Intervals</a></li>
+<li class="chapter" data-level="11.2.2" data-path="ChapConfidence.html"><a href="ChapConfidence.html#subsec:CImean"><i class="fa fa-check"></i><b>11.2.2</b> Confidence Intervals for the Mean</a></li>
+<li class="chapter" data-level="11.2.3" data-path="ChapConfidence.html"><a href="ChapConfidence.html#subsec:CIfrac"><i class="fa fa-check"></i><b>11.2.3</b> Confidence Intervals for a Proportion</a></li>
+</ul></li>
+<li class="chapter" data-level="11.3" data-path="ChapConfidence.html"><a href="ChapConfidence.html#CInormal"><i class="fa fa-check"></i><b>11.3</b> Intervals for Normal Measurements</a><ul>
+<li class="chapter" data-level="11.3.1" data-path="ChapConfidence.html"><a href="ChapConfidence.html#confidence-intervals-for-a-normal-mean"><i class="fa fa-check"></i><b>11.3.1</b> Confidence Intervals for a Normal Mean</a></li>
+<li class="chapter" data-level="11.3.2" data-path="ChapConfidence.html"><a href="ChapConfidence.html#confidence-intervals-for-a-normal-variance"><i class="fa fa-check"></i><b>11.3.2</b> Confidence Intervals for a Normal Variance</a></li>
+</ul></li>
+<li class="chapter" data-level="11.4" data-path="ChapConfidence.html"><a href="ChapConfidence.html#choosing-the-sample-size"><i class="fa fa-check"></i><b>11.4</b> Choosing the Sample Size</a></li>
+<li class="chapter" data-level="11.5" data-path="ChapConfidence.html"><a href="ChapConfidence.html#exercises-6"><i class="fa fa-check"></i><b>11.5</b> Exercises</a></li>
+<li class="chapter" data-level="11.6" data-path="ChapConfidence.html"><a href="ChapConfidence.html#summary-9"><i class="fa fa-check"></i><b>11.6</b> Summary</a><ul>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#discuss-in-the-forum"><i class="fa fa-check"></i>Discuss in the forum</a></li>
+<li class="chapter" data-level="" data-path="ChapConfidence.html"><a href="ChapConfidence.html#formulas-for-confidence-intervals-95-confidence-level"><i class="fa fa-check"></i>Formulas for Confidence Intervals, 95% Confidence Level:</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="ChapTesting.html"><a href="ChapTesting.html"><i class="fa fa-check"></i><b>12</b> Testing Hypothesis</a><ul>
+<li class="chapter" data-level="12.1" data-path="ChapTesting.html"><a href="ChapTesting.html#student-learning-objectives-6"><i class="fa fa-check"></i><b>12.1</b> Student Learning Objectives</a></li>
+<li class="chapter" data-level="12.2" data-path="ChapTesting.html"><a href="ChapTesting.html#the-theory-of-hypothesis-testing"><i class="fa fa-check"></i><b>12.2</b> The Theory of Hypothesis Testing</a><ul>
+<li class="chapter" data-level="12.2.1" data-path="ChapTesting.html"><a href="ChapTesting.html#an-example-of-hypothesis-testing"><i class="fa fa-check"></i><b>12.2.1</b> An Example of Hypothesis Testing</a></li>
+<li class="chapter" data-level="12.2.2" data-path="ChapTesting.html"><a href="ChapTesting.html#the-structure-of-a-statistical-test-of-hypotheses"><i class="fa fa-check"></i><b>12.2.2</b> The Structure of a Statistical Test of Hypotheses</a></li>
+<li class="chapter" data-level="12.2.3" data-path="ChapTesting.html"><a href="ChapTesting.html#error-types-and-error-probabilities"><i class="fa fa-check"></i><b>12.2.3</b> Error Types and Error Probabilities</a></li>
+<li class="chapter" data-level="12.2.4" data-path="ChapTesting.html"><a href="ChapTesting.html#p-values"><i class="fa fa-check"></i><b>12.2.4</b> <span class="math inline">\(p\)</span>-Values</a></li>
+</ul></li>
+<li class="chapter" data-level="12.3" data-path="ChapTesting.html"><a href="ChapTesting.html#testing-hypothesis-on-expectation"><i class="fa fa-check"></i><b>12.3</b> Testing Hypothesis on Expectation</a></li>
+<li class="chapter" data-level="12.4" data-path="ChapTesting.html"><a href="ChapTesting.html#TestFrac"><i class="fa fa-check"></i><b>12.4</b> Testing Hypothesis on Proportion</a></li>
+<li class="chapter" data-level="12.5" data-path="ChapTesting.html"><a href="ChapTesting.html#exercises-7"><i class="fa fa-check"></i><b>12.5</b> Exercises</a></li>
+<li class="chapter" data-level="12.6" data-path="ChapTesting.html"><a href="ChapTesting.html#summary-10"><i class="fa fa-check"></i><b>12.6</b> Summary</a><ul>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#discuss-in-the-forum"><i class="fa fa-check"></i>Discuss in the forum</a></li>
+<li class="chapter" data-level="" data-path="ChapDescriptiveStat.html"><a href="ChapDescriptiveStat.html#formulas"><i class="fa fa-check"></i>Formulas:</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="ChapTwoSamp.html"><a href="ChapTwoSamp.html"><i class="fa fa-check"></i><b>13</b> Comparing Two Samples</a><ul>
+<li class="chapter" data-level="13.1" data-path="ChapTwoSamp.html"><a href="ChapTwoSamp.html#student-learning-objectives-7"><i class="fa fa-check"></i><b>13.1</b> Student Learning Objectives</a></li>
+<li class="chapter" data-level="13.2" data-path="ChapTwoSamp.html"><a href="ChapTwoSamp.html#comparing-two-distributions"><i class="fa fa-check"></i><b>13.2</b> Comparing Two Distributions</a></li>
+<li class="chapter" data-level="13.3" data-path="ChapTwoSamp.html"><a href="ChapTwoSamp.html#sec:ComparingMeans"><i class="fa fa-check"></i><b>13.3</b> Comparing the Sample Means</a><ul>
+<li class="chapter" data-level="13.3.1" data-path="ChapTwoSamp.html"><a href="ChapTwoSamp.html#an-example-of-a-comparison-of-means"><i class="fa fa-check"></i><b>13.3.1</b> An Example of a Comparison of Means</a></li>
+<li class="chapter" data-level="13.3.2" data-path="ChapTwoSamp.html"><a href="ChapTwoSamp.html#confidence-interval-for-the-difference"><i class="fa fa-check"></i><b>13.3.2</b> Confidence Interval for the Difference</a></li>
+<li class="chapter" data-level="13.3.3" data-path="ChapTwoSamp.html"><a href="ChapTwoSamp.html#the-t-test-for-two-means"><i class="fa fa-check"></i><b>13.3.3</b> The t-Test for Two Means</a></li>
+</ul></li>
+<li class="chapter" data-level="13.4" data-path="ChapTwoSamp.html"><a href="ChapTwoSamp.html#comparing-sample-variances"><i class="fa fa-check"></i><b>13.4</b> Comparing Sample Variances</a></li>
+<li class="chapter" data-level="13.5" data-path="ChapTwoSamp.html"><a href="ChapTwoSamp.html#exercises-8"><i class="fa fa-check"></i><b>13.5</b> Exercises</a></li>
+<li class="chapter" data-level="13.6" data-path="ChapTwoSamp.html"><a href="ChapTwoSamp.html#summary-11"><i class="fa fa-check"></i><b>13.6</b> Summary</a><ul>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#discuss-in-the-forum"><i class="fa fa-check"></i>Discuss in the forum</a></li>
+<li class="chapter" data-level="" data-path="ChapDescriptiveStat.html"><a href="ChapDescriptiveStat.html#formulas"><i class="fa fa-check"></i>Formulas:</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="ChapRegression.html"><a href="ChapRegression.html"><i class="fa fa-check"></i><b>14</b> Linear Regression</a><ul>
+<li class="chapter" data-level="14.1" data-path="ChapRegression.html"><a href="ChapRegression.html#student-learning-objectives-8"><i class="fa fa-check"></i><b>14.1</b> Student Learning Objectives</a></li>
+<li class="chapter" data-level="14.2" data-path="ChapRegression.html"><a href="ChapRegression.html#points-and-lines"><i class="fa fa-check"></i><b>14.2</b> Points and Lines</a><ul>
+<li class="chapter" data-level="14.2.1" data-path="ChapRegression.html"><a href="ChapRegression.html#the-scatter-plot"><i class="fa fa-check"></i><b>14.2.1</b> The Scatter Plot</a></li>
+<li class="chapter" data-level="14.2.2" data-path="ChapRegression.html"><a href="ChapRegression.html#linear-equation"><i class="fa fa-check"></i><b>14.2.2</b> Linear Equation</a></li>
+</ul></li>
+<li class="chapter" data-level="14.3" data-path="ChapRegression.html"><a href="ChapRegression.html#linear-regression"><i class="fa fa-check"></i><b>14.3</b> Linear Regression</a><ul>
+<li class="chapter" data-level="14.3.1" data-path="ChapRegression.html"><a href="ChapRegression.html#fitting-the-regression-line"><i class="fa fa-check"></i><b>14.3.1</b> Fitting the Regression Line</a></li>
+<li class="chapter" data-level="14.3.2" data-path="ChapRegression.html"><a href="ChapRegression.html#subsec:Inference"><i class="fa fa-check"></i><b>14.3.2</b> Inference</a></li>
+</ul></li>
+<li class="chapter" data-level="14.4" data-path="ChapRegression.html"><a href="ChapRegression.html#r-squared-and-the-variance-of-residuals"><i class="fa fa-check"></i><b>14.4</b> R-squared and the Variance of Residuals</a></li>
+<li class="chapter" data-level="14.5" data-path="ChapRegression.html"><a href="ChapRegression.html#exercises-9"><i class="fa fa-check"></i><b>14.5</b> Exercises</a></li>
+<li class="chapter" data-level="14.6" data-path="ChapRegression.html"><a href="ChapRegression.html#summary-12"><i class="fa fa-check"></i><b>14.6</b> Summary</a><ul>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#discuss-in-the-forum"><i class="fa fa-check"></i>Discuss in the Forum</a></li>
+<li class="chapter" data-level="" data-path="ChapDescriptiveStat.html"><a href="ChapDescriptiveStat.html#formulas"><i class="fa fa-check"></i>Formulas:</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="ChapLogistic.html"><a href="ChapLogistic.html"><i class="fa fa-check"></i><b>15</b> A Bernoulli Response</a><ul>
+<li class="chapter" data-level="15.1" data-path="ChapLogistic.html"><a href="ChapLogistic.html#student-learning-objectives-9"><i class="fa fa-check"></i><b>15.1</b> Student Learning Objectives</a></li>
+<li class="chapter" data-level="15.2" data-path="ChapLogistic.html"><a href="ChapLogistic.html#comparing-sample-proportions"><i class="fa fa-check"></i><b>15.2</b> Comparing Sample Proportions</a></li>
+<li class="chapter" data-level="15.3" data-path="ChapLogistic.html"><a href="ChapLogistic.html#logistic-regression"><i class="fa fa-check"></i><b>15.3</b> Logistic Regression</a></li>
+<li class="chapter" data-level="15.4" data-path="ChapLogistic.html"><a href="ChapLogistic.html#exercises-10"><i class="fa fa-check"></i><b>15.4</b> Exercises</a><ul>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#discuss-in-the-forum"><i class="fa fa-check"></i>Discuss in the forum</a></li>
+<li class="chapter" data-level="" data-path="ChapDescriptiveStat.html"><a href="ChapDescriptiveStat.html#formulas"><i class="fa fa-check"></i>Formulas:</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="ChapCaseStudies.html"><a href="ChapCaseStudies.html"><i class="fa fa-check"></i><b>16</b> Case Studies</a><ul>
+<li class="chapter" data-level="16.1" data-path="ChapCaseStudies.html"><a href="ChapCaseStudies.html#student-learning-objective-5"><i class="fa fa-check"></i><b>16.1</b> Student Learning Objective</a></li>
+<li class="chapter" data-level="16.2" data-path="ChapCaseStudies.html"><a href="ChapCaseStudies.html#a-review"><i class="fa fa-check"></i><b>16.2</b> A Review</a></li>
+<li class="chapter" data-level="16.3" data-path="ChapCaseStudies.html"><a href="ChapCaseStudies.html#case-studies"><i class="fa fa-check"></i><b>16.3</b> Case Studies</a><ul>
+<li class="chapter" data-level="16.3.1" data-path="ChapCaseStudies.html"><a href="ChapCaseStudies.html#physicians-reactions-to-the-size-of-a-patient"><i class="fa fa-check"></i><b>16.3.1</b> Physicians’ Reactions to the Size of a Patient</a></li>
+<li class="chapter" data-level="16.3.2" data-path="ChapCaseStudies.html"><a href="ChapCaseStudies.html#physical-strength-and-job-performance"><i class="fa fa-check"></i><b>16.3.2</b> Physical Strength and Job Performance</a></li>
+</ul></li>
+<li class="chapter" data-level="16.4" data-path="ChapCaseStudies.html"><a href="ChapCaseStudies.html#summary-13"><i class="fa fa-check"></i><b>16.4</b> Summary</a><ul>
+<li class="chapter" data-level="16.4.1" data-path="ChapCaseStudies.html"><a href="ChapCaseStudies.html#concluding-remarks"><i class="fa fa-check"></i><b>16.4.1</b> Concluding Remarks</a></li>
+<li class="chapter" data-level="16.4.2" data-path="ChapProbability.html"><a href="ChapProbability.html#discussion-in-the-forum"><i class="fa fa-check"></i><b>16.4.2</b> Discussion in the Forum</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html"><i class="fa fa-check"></i>Exercise Solutions</a><ul>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-1"><i class="fa fa-check"></i>Chapter 1</a><ul>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-1.1"><i class="fa fa-check"></i>Exercise 1.1</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-1.2"><i class="fa fa-check"></i>Exercise 1.2</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-2"><i class="fa fa-check"></i>Chapter 2</a><ul>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-2.1"><i class="fa fa-check"></i>Exercise 2.1</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-2.2"><i class="fa fa-check"></i>Exercise 2.2</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-3"><i class="fa fa-check"></i>Chapter 3</a><ul>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-3.1"><i class="fa fa-check"></i>Exercise 3.1</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-3.2"><i class="fa fa-check"></i>Exercise 3.2</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-4"><i class="fa fa-check"></i>Chapter 4</a><ul>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-4.1"><i class="fa fa-check"></i>Exercise 4.1</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-4.2"><i class="fa fa-check"></i>Exercise 4.2</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-5"><i class="fa fa-check"></i>Chapter 5</a><ul>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-5.1"><i class="fa fa-check"></i>Exercise 5.1</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-5.2"><i class="fa fa-check"></i>Exercise 5.2</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-6"><i class="fa fa-check"></i>Chapter 6</a><ul>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-6.1"><i class="fa fa-check"></i>Exercise 6.1</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-6.2"><i class="fa fa-check"></i>Exercise 6.2</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-7"><i class="fa fa-check"></i>Chapter 7</a><ul>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-7.1"><i class="fa fa-check"></i>Exercise 7.1</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-7.2"><i class="fa fa-check"></i>Exercise 7.2</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-9"><i class="fa fa-check"></i>Chapter 9</a><ul>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-9.1"><i class="fa fa-check"></i>Exercise 9.1</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-9.2"><i class="fa fa-check"></i>Exercise 9.2</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-10"><i class="fa fa-check"></i>Chapter 10</a><ul>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-10.1"><i class="fa fa-check"></i>Exercise 10.1</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-10.2"><i class="fa fa-check"></i>Exercise 10.2</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-11"><i class="fa fa-check"></i>Chapter 11</a><ul>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-11.1"><i class="fa fa-check"></i>Exercise 11.1</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-11.2"><i class="fa fa-check"></i>Exercise 11.2</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-11.3"><i class="fa fa-check"></i>Exercise 11.3</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-12"><i class="fa fa-check"></i>Chapter 12</a><ul>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-12.1"><i class="fa fa-check"></i>Exercise 12.1</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-12.2"><i class="fa fa-check"></i>Exercise 12.2</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-12.3"><i class="fa fa-check"></i>Exercise 12.3</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-13"><i class="fa fa-check"></i>Chapter 13</a><ul>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-13.1"><i class="fa fa-check"></i>Exercise 13.1</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-13.2"><i class="fa fa-check"></i>Exercise 13.2</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-13.3"><i class="fa fa-check"></i>Exercise 13.3</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-14"><i class="fa fa-check"></i>Chapter 14</a><ul>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-14.1"><i class="fa fa-check"></i>Exercise 14.1</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-14.2"><i class="fa fa-check"></i>Exercise 14.2</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-14.3"><i class="fa fa-check"></i>Exercise 14.3</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-14.4"><i class="fa fa-check"></i>Exercise 14.4</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-14.5"><i class="fa fa-check"></i>Exercise 14.5</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-14.6"><i class="fa fa-check"></i>Exercise 14.6</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-15"><i class="fa fa-check"></i>Chapter 15</a><ul>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-15.1"><i class="fa fa-check"></i>Exercise 15.1</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-15.2"><i class="fa fa-check"></i>Exercise 15.2</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://bookdown.org" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Introduction to Statistical Thinking</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="ChapProbability" class="section level1">
+<h1><span class="header-section-number">Chapter 4</span> Probability</h1>
+<div id="student-learning-objective" class="section level2">
+<h2><span class="header-section-number">4.1</span> Student Learning Objective</h2>
+<p>This section extends the notion of variability that was introduced in the context of data to other situations. The variability of the entire <em>population</em> and the concept of a <em>random variable</em> is discussed. These concepts are central for the development and interpretation of statistical inference. By the end of the chapter the student should:</p>
+<ul>
+<li><p>Consider the distribution of a variable in a population and compute parameters of this distribution, such as the mean and the standard deviation.</p></li>
+<li><p>Become familiar with the concept of a random variable.</p></li>
+<li><p>Understand the relation between the distribution of the population and the distribution of a random variable produced by sampling a random subject from the population.</p></li>
+<li><p>Identify the distribution of the random variable in simple settings and compute its expectation and variance.</p></li>
+</ul>
+</div>
+<div id="different-forms-of-variability" class="section level2">
+<h2><span class="header-section-number">4.2</span> Different Forms of Variability</h2>
+<p>In the previous chapters we examined the variability in data. In the statistical context, data is obtained by selecting a sample from the target population and measuring the quantities of interest for the subjects that belong to the sample. Different subjects in the sample may obtain different values for the measurement, leading to variability in the data.</p>
+<p>This variability may be summarized with the aid of a <em>frequency table</em>, a table of <em>relative frequency</em>, or via the <em>cumulative relative frequency</em>. A graphical display of the variability in the data may be obtained with the aid of the <em>bar plot</em>, the <em>histogram</em>, or the <em>box plot</em>.</p>
+<p>Numerical summaries may be computed in order to characterize the main features of the variability. We used the <em>mean</em> and the <em>median</em> in order to identify the location of the distribution. The <em>sample variance</em>, or better yet the <em>sample standard deviation</em>, as well as the <em>inter-quartile range</em> were all described as tools to quantify the overall spread of the data.</p>
+<p>The aim of all these graphical representations and numerical summaries is to investigate the variability of the data.</p>
+<p>The subject of this chapter is to introduce two other forms of variability, variability that is not associated, at least not directly, with the data that we observe. The first type of variability is the <em>population variability</em>. The other type of variability is the variability of a <em>random variable</em>.</p>
+<p>The notions of variability that will be presented are abstract, they are not given in terms of the data that we observe, and they have a mathematical-theoretical flavor to them. At first, these abstract notions may look to you as a waste of your time and may seem to be unrelated to the subject matter of the course. The opposite is true. The very core of statistical thinking is relating observed data to theoretical and abstract models of a phenomena. Via this comparison, and using the tools of statistical inference that are presented in the second half of the book, statisticians can extrapolate insights or make statements regarding the phenomena on the basis of the observed data. Thereby, the abstract notions of variability that are introduced in this chapter, and are extended in the subsequent chapters up to the end of this part of the book, are the essential foundations for the practice of statistics.</p>
+<p>The first notion of variability is the variability that is associated with the population. It is similar in its nature to the variability of the data. The difference between these two types of variability is that the former corresponds to the variability of the quantity of interest across all members of the population and not only for those that were selected to the sample.</p>
+<p>In Chapters <a href="ChapData.html#ChapData">2</a> and <a href="ChapDescriptiveStat.html#ChapDescriptiveStat">3</a> we examined the data set “<code>ex.1</code>” which contained data on the sex and height of a sample of 100 observations. In this chapter we will consider the sex and height of <em>all</em> the members of the population from which the sample was selected. The size of the relevant population is 100,000, including the 100 subjects that composed the sample. When we examine the values of the height across the entire population we can see that different people may have different heights. This variability of the heights is the population variability.</p>
+<p>The other abstract type of variability, the variability of a random variable, is a mathematical concept. The aim of this concept is to model the notion of randomness in measurements or the uncertainty regarding the outcome of a measurement. In particular we will initially consider the variability of a random variable in the context of selecting one subject at random from the population.</p>
+<p>Imagine we have a population of size 100,000 and we are about to select at random one subject from this population. We intend to measure the height of the subject that will be selected. Prior to the selection and measurement we are not certain what value of height will be obtained. One may associate the notion of variability with uncertainty — different subjects to be selected may obtain different evaluations of the measurement and we do not know before hand which subject will be selected. The resulting variability is the variability of a random variable.</p>
+<p>Random variables can be defined for more abstract settings. Their aim is to provide models for randomness and uncertainty in measurements. Simple examples of such abstract random variables will be provided in this chapter. More examples will be introduced in the subsequent chapters. The more abstract examples of random variables need not be associated with a specific population. Still, the same definitions that are used for the example of a random variable that emerges as a result of sampling a single subject from a population will apply to the more abstract constructions.</p>
+<p>All types of variability, the variability of the data we dealt with before as well as the other two types of variability, can be displayed using graphical tools and characterized with numerical summaries. Essentially the same type of plots and numerical summaries, possibly with some modifications, may and will be applied.</p>
+<p>A point to remember is that the variability of the data relates to a concrete list of data values that is presented to us. In contrary to the case of the variability of the data, the other types of variability are not associated with quantities we actually get to observe. The data for the sample we get to see but not the data for the rest of the population. Yet, we can still discuss the variability of a population that is out there, even though we do not observe the list of measurements for the entire population. (The example that we give in this chapter of a population was artificially constructed and serves for illustration only. In the actual statistical context one does not obtain measurements from the entire population, only from the subjects that went into the sample.) The discussion of the variability in this context is theoretical in its nature. Still, this theoretical discussion is instrumental for understanding statistics.</p>
+</div>
+<div id="a-population" class="section level2">
+<h2><span class="header-section-number">4.3</span> A Population</h2>
+<p>In this section we introduce the variability of a population and present some numerical summaries that characterizes this variability. Before doing so, let us review with the aid of an example some of the numerical summaries that were used for the characterization of the variability of data.</p>
+<p>Recall the file “<code>ex1.csv</code>” that contains data on the height and sex of 100 subjects. (The data file can be obtained from <a href="http://pluto.huji.ac.il/~msby/StatThink/Datasets/ex1.csv" class="uri">http://pluto.huji.ac.il/~msby/StatThink/Datasets/ex1.csv</a>.) We read the content of the file into a data frame by the name “<code>ex.1</code>” and apply the function “<code>summary</code>” to the data frame:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">ex.<span class="dv">1</span> &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;_data/ex1.csv&quot;</span>)
+<span class="kw">summary</span>(ex.<span class="dv">1</span>)</code></pre></div>
+<pre><code>##        id              sex         height      
+##  Min.   :1538611   FEMALE:54   Min.   :117.00  
+##  1st Qu.:3339583   MALE  :46   1st Qu.:158.00  
+##  Median :5105620               Median :171.00  
+##  Mean   :5412367               Mean   :170.11  
+##  3rd Qu.:7622236               3rd Qu.:180.25  
+##  Max.   :9878130               Max.   :208.00</code></pre>
+<p>We saw in the previous chapter that, when applied to a numeric sequence, the function “<code>summary</code>” produces the smallest and largest values in the sequence, the three quartiles (including the median) and the mean. If the input of the same function is a factor then the outcome is the frequency in the data of each of the levels of the factor. Here “<code>sex</code>” is a factor with two levels. From the summary we can see that 54 of the subjects in the sample are female and 46 are male.</p>
+<p>Notice that when the input to the function “<code>summary</code>” is a data frame, as is the case in this example, then the output is a summary of each of the variables of the data frame. In this example two of the variables are numeric (“<code>id</code>” and “<code>height</code>”) and one variable is a factor (“<code>sex</code>”).</p>
+<p>Recall that the mean is the arithmetic average of the data which is computed by summing all the values of the variable and dividing the result by the number of observations. Hence, if <span class="math inline">\(n\)</span> is the number of observations (<span class="math inline">\(n=100\)</span> in this example) and <span class="math inline">\(x_i\)</span> is the value of the variable for subject <span class="math inline">\(i\)</span>, then one may write the mean in a formula form as</p>
+<p><span class="math display">\[\bar x = \frac{\mbox{Sum of all values in the data}}{\mbox{Number of values in the data}} = \frac{\sum_{i=1}^n x_i}{n}\;,\]</span></p>
+<p>where <span class="math inline">\(\bar x\)</span> corresponds to the mean of the data and the symbol “<span class="math inline">\(\sum_{i=1}^n x_i\)</span>” corresponds to the sum of all values in the data.</p>
+<p>The median is computed by ordering the data values and selecting a value that splits the ordered data into two equal parts. The first and third quartile are obtained by further splitting each of the halves into two quarters.</p>
+<p>Let us discuss the variability associated with an entire target population. The file “<code>pop1.csv</code>” that contains the population data can be found on the internet (<a href="http://pluto.huji.ac.il/~msby/StatThink/Datasets/pop1.csv" class="uri">http://pluto.huji.ac.il/~msby/StatThink/Datasets/pop1.csv</a>). It is a CSV file that contains the information on sex and height of an entire adult population of some imaginary city. (The data in “<code>ex.1</code>” corresponds to a sample from this city.) Read the population data into <code>R</code> and examine it:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">pop.<span class="dv">1</span> &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="dt">file=</span><span class="st">&quot;_data/pop1.csv&quot;</span>)
+<span class="kw">summary</span>(pop.<span class="dv">1</span>)</code></pre></div>
+<pre><code>##        id              sex            height      
+##  Min.   :1000082   FEMALE:48888   Min.   :117.00  
+##  1st Qu.:3254220   MALE  :51112   1st Qu.:162.00  
+##  Median :5502618                  Median :170.00  
+##  Mean   :5502428                  Mean   :170.03  
+##  3rd Qu.:7757518                  3rd Qu.:178.00  
+##  Max.   :9999937                  Max.   :217.00</code></pre>
+<p>The object “<code>pop.1</code>” is a data frame of the same structure as the data frame “<code>ex.1</code>”. It contains three variables: a unique identifier of each subject (<code>id</code>), the sex of the subject (<code>sex</code>), and its height (<code>height</code>). Applying the function “<code>summary</code>” to the data frame produces the summary of the variables that it contains. In particular, for the variable “<code>sex</code>”, which is a factor, it produces the frequency of its two categories – 48,888 female and 51,112 – a total of 100,000 subjects. For the variable “<code>height</code>”, which is a numeric variable, it produces the extreme values, the quartiles, and the mean.</p>
+<div class="figure" style="text-align: center"><span id="fig:Prob1"></span>
+<img src="thinkstat_files/figure-html/Prob1-1.png" alt="Bar Plot of Height" width="60%" />
+<p class="caption">
+FIGURE 4.1: Bar Plot of Height
+</p>
+</div>
+<p>Let us concentrate on the variable “<code>height</code>”. A bar plot of the distribution of the heights in the entire population is given in Figure <a href="ChapProbability.html#fig:Prob1">4.1</a> <a href="#fn7" class="footnoteRef" id="fnref7"><sup>7</sup></a>. Recall that a vertical bar is placed above each value of height that appears in the population, with the height of the bar representing the frequency of the value in the population. One may read out of the graph or obtain from the numerical summaries that the variable takes integer values in the range between 117 and 217 (heights are rounded to the nearest centimeter). The distribution is centered at 170 centimeter, with the central 50% of the values spreading between 162 and 178 centimeters.</p>
+<p>The mean of the height in the entire population is equal to 170 centimeter. This mean, just like the mean for the distribution of data, is obtained by the summation of all the heights in the population divided by the population size. Let us denote the size of the entire population by <span class="math inline">\(N\)</span>. In this example <span class="math inline">\(N = 100,000\)</span>. (The size of the sample for the data was called <span class="math inline">\(n\)</span> and was equal to <span class="math inline">\(n=100\)</span> in the parallel example that deals with the data of a sample.) The mean of an entire population is denoted by the Greek letter <span class="math inline">\(\mu\)</span> and is read “<em>mew</em>”. (The average for the data was denoted <span class="math inline">\(\bar x\)</span>). The formula of the population mean is:</p>
+<p><span class="math display">\[\mu = \frac{\mbox{Sum of all values in the population}}{\mbox{Number of values in the population}}= \frac{\sum_{i=1}^N x_i}{N}\;.\]</span></p>
+<p>Observe the similarity between the definition of the mean for the data and the definition of the mean for the population. In both cases the arithmetic average is computed. The only difference is that in the case of the mean of the data the computation is with respect to the values that appear in the sample whereas for the population all the values in the population participate in the computation.</p>
+<p>In actual life, we will not have all the values of a variable in the entire population. Hence, we will not be able to compute the actual value of the population mean. However, it is still meaningful to talk about the population mean because this number exists, even though we do not know what its value is. As a matter of fact, one of the issues in statistics is to try to estimate this unknown quantity on the basis of the data we do have in the sample.</p>
+<p>A characteristic of the distribution of an entire population is called a <em>parameter</em>. Hence, <span class="math inline">\(\mu\)</span>, the population average, is a parameter. Other examples of parameters are the population median and the population quartiles. These parameters are defined exactly like their data counterparts, but with respect to the values of the entire population instead of the observations in the sample alone.</p>
+<p>Another example of a parameter is the population variance. Recall that the sample variance was defined with the aid of the deviations <span class="math inline">\(x_i - \bar x\)</span>, where <span class="math inline">\(x_i\)</span> is the value of the measurement for the <span class="math inline">\(i\)</span>th subject and <span class="math inline">\(\bar x\)</span> is the mean for the data. In order to compute the sample variance these deviations were squared to produce the squared deviations. The squares were summed up and then divided by the sample size minus one (<span class="math inline">\(n-1\)</span>). The sample variance, computed from the data, was denoted <span class="math inline">\(s^2\)</span>.</p>
+<p>The population variance is defined in a similar way. First, the deviations from the population mean <span class="math inline">\(x_i - \mu\)</span> are considered for each of the members of the population. These deviations are squared and the average of the squares is computed. We denote this parameter by <span class="math inline">\(\sigma^2\)</span> (read “<em>sigma square</em>”). A minor difference between the sample variance and the population variance is that for the latter we should divide the sum of squared deviations by the population size (<span class="math inline">\(N\)</span>) and not by the population size minus one (<span class="math inline">\(N-1\)</span>):</p>
+<p><span class="math display">\[\begin{aligned}
+\sigma^2 =&amp; \mbox{The average square deviation in the population}\\
+         =&amp; \frac{\mbox{Sum of the squares of the deviations in the population}}{\mbox{Number of values in the population}}\\
+         =&amp; \frac{\sum_{i=1}^N (x_i-\mu)^2}{N}\;.\end{aligned}\]</span></p>
+<p>The standard deviation of the population, yet another parameter, is denoted by <span class="math inline">\(\sigma\)</span> and is equal to the square root of the variance. The standard deviation summarizes the overall variability of the measurement across the population. Again, the typical situation is that we do not know what the actual value of the standard deviation of the population is. Yet, we may refer to it as a quantity and we may try to estimate its value based on the data we do have from the sample.</p>
+<p>For the height of the subjects in our imaginary city we get that the variance is equal to <span class="math inline">\(\sigma^2 =126.1576\)</span>. The standard deviation is equal to <span class="math inline">\(\sigma = \sqrt{126.1576} = 11.23199\)</span>. These quantities can be computed in this example from the data frame “<code>pop.1</code>” with the aid of the functions “<code>var</code>” and “<code>sd</code>”, respectively<a href="#fn8" class="footnoteRef" id="fnref8"><sup>8</sup></a>.</p>
+</div>
+<div id="random-variables" class="section level2">
+<h2><span class="header-section-number">4.4</span> Random Variables</h2>
+<p>In the previous section we dealt with the variability of the population. Next we consider the variability of a random variable. As an example, consider taking a sample of size <span class="math inline">\(n=1\)</span> from the population (a single person) and measuring his/her height.</p>
+<p>The object <code>pop.1$height</code> is a sequence with 100,000 entries. Think of it as a population. We will apply the function “<code>sample</code>” to this sequence:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sample</span>(pop.<span class="dv">1</span><span class="op">$</span>height,<span class="dv">1</span>)</code></pre></div>
+<pre><code>## [1] 186</code></pre>
+<p>The first entry to the function is the given sequence of heights. When we set the second argument to 1 then the function selects one of the entries of the sequence at random, with each entry having the same likelihood of being selected. Specifically, in this example an entry that contains the value 162 was selected. Let us run the function again:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sample</span>(pop.<span class="dv">1</span><span class="op">$</span>height,<span class="dv">1</span>)</code></pre></div>
+<pre><code>## [1] 164</code></pre>
+<p>In this instance an entry with a different value was selected. Try to run the command several times yourself and see what you get. Would you necessarily obtain a different value in each run?</p>
+<p>Now let us enter the same command without pressing the return key:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sample</span>(pop.<span class="dv">1</span><span class="op">$</span>height,<span class="dv">1</span>)</code></pre></div>
+<p>Can you tell, before pressing the key, what value will you get?</p>
+<p>The answer to this question is of course <em>“No”</em>. There are 100,000 entries with a total of 94 distinct values. In principle, any of the values may be selected and there is no way of telling in advance which of the values will turn out as an outcome.</p>
+<p>A random variable is the future outcome of a measurement, <span><strong>before</strong></span> the measurement is taken. It does not have a specific value, but rather a collection of potential values with a distribution over these values. After the measurement is taken and the specific value is revealed then the random variable ceases to be a random variable! Instead, it becomes data.</p>
+<p>Although one is not able to say what the outcome of a random variable will turn out to be. Still, one may identify patterns in this potential outcome. For example, knowing that the distribution of heights in the population ranges between 117 and 217 centimeter one may say in advance that the outcome of the measurement must also be in that interval. Moreover, since there is a total of 3,476 subjects with height equal to 168 centimeter and since the likelihood of each subject to be selected is equal then the likelihood of selecting a subject of this height is 3,476/100,000 = 0.03476. In the context of random variables we call this likelihood <em>probability</em>. In the same vain, the frequency of subjects with hight 192 centimeter is 488, and therefore the probability of measuring such a height is 0.00488. The frequency of subjects with height 200 centimeter or above is 393, hence the probability of obtaining a measurement in the range between 200 and 217 centimeter is 0.00393.</p>
+<div id="sample-space-and-distribution" class="section level3">
+<h3><span class="header-section-number">4.4.1</span> Sample Space and Distribution</h3>
+<p>Let us turn to the formal definition of a random variable: A random variable refer to numerical values, typically the outcome of an observation, a measurement, or a function thereof.</p>
+<p>A random variable is characterized via the collection of potential values it may obtain, known as the <em>sample space</em> and the likelihood of obtaining each of the values in the sample space (namely, the probability of the value). In the given example, the sample space contains the 94 integer values that are marked in Figure <a href="ChapProbability.html#fig:Prob1">4.1</a>. The probability of each value is the height of the bar above the value, divided by the total frequency of 100,000 (namely, the relative frequency in the population).</p>
+<p>We will denote random variables with capital Latin letters such as <span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span>, and <span class="math inline">\(Z\)</span>. Values they may obtain will be marked by small Latin letters such as <span class="math inline">\(x\)</span>, <span class="math inline">\(y\)</span>, <span class="math inline">\(z\)</span>. For the probability of values we will use the letter “<span class="math inline">\(\Prob\)</span>”. Hence, if we denote by <span class="math inline">\(X\)</span> the measurement of height of a random individual that is sampled from the given population then:</p>
+<p><span class="math display">\[\Prob(X = 168) = 0.03476\]</span> and <span class="math display">\[\Prob(X \geq 200) = 0.00393\;.\]</span></p>
+<p>Consider, as yet another example, the probability that the height of a random person sampled from the population differs from 170 centimeter by no more than 10 centimeters. (In other words, that the height is between 160 and 180 centimeters.) Denote by <span class="math inline">\(X\)</span> the height of that random person. We are interested in the probability <span class="math inline">\(\Prob(|X -170| \leq 10)\)</span>.<a href="#fn9" class="footnoteRef" id="fnref9"><sup>9</sup></a></p>
+<p>The random person can be any of the subjects of the population with equal probability. Thus, the sequence of the heights of the 100,000 subjects represents the distribution of the random variable <span class="math inline">\(X\)</span>:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">pop.<span class="dv">1</span> &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="dt">file=</span><span class="st">&quot;_data/pop1.csv&quot;</span>)
+X &lt;-<span class="st"> </span>pop.<span class="dv">1</span><span class="op">$</span>height</code></pre></div>
+<p>Notice that the object “<code>X</code>” is a sequence of lenght 100,000 that stores all the heights of the population. The probability we seek is the relative frequency in this sequency of values between 160 and 180. First we compute the probability and then explain the method of computation:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(<span class="kw">abs</span>(X<span class="op">-</span><span class="dv">170</span>) <span class="op">&lt;=</span><span class="st"> </span><span class="dv">10</span>)</code></pre></div>
+<pre><code>## [1] 0.64541</code></pre>
+<p>We get that the height of a person randomly sampled from the population is between 160 and 180 centimeters with probability 0.64541.</p>
+<p>Let us produce a small example that will help us explain the computation of the probability. We start by forming a sequence with 10 numbers:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">Y &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="fl">6.3</span>, <span class="fl">6.9</span>, <span class="fl">6.6</span>, <span class="fl">3.4</span>, <span class="fl">5.5</span>, <span class="fl">4.3</span>, <span class="fl">6.5</span>, <span class="fl">4.7</span>, <span class="fl">6.1</span>, <span class="fl">5.3</span>)</code></pre></div>
+<p>The goal is to compute the proportion of numbers that are in the range <span class="math inline">\([4,6]\)</span> (or, equivalently, <span class="math inline">\(\{|Y-5| \leq 1\}\)</span>).</p>
+<p>The function “<code>abs</code>” computes the absolute number of its input argument. When the function is applied to the sequence “<code>Y-5</code>” it produces a sequence of the same length with the distances between the components of “<code>Y</code>” and the number 5:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">abs</span>(Y<span class="op">-</span><span class="dv">5</span>)</code></pre></div>
+<pre><code>##  [1] 1.3 1.9 1.6 1.6 0.5 0.7 1.5 0.3 1.1 0.3</code></pre>
+<p>Compare the resulting output to the original sequence. The first value in the input sequence is 6.3. Its distance from 5 is indeed 1.3. The fourth value in the input sequence is 3.4. The difference 3.4 - 5 is equal to -1.6, and when the absolute value is taken we get a distance of 1.6.</p>
+<p>The function “<code>&lt;=</code>” expects an argument to the right and an argument to the left. It compares each component to the left with the parallel component to the right and returns a logical value, “<code>TRUE</code>” or “<code>FALSE</code>”, depending on whether the relation that is tested holds or not:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">abs</span>(Y <span class="op">-</span><span class="st"> </span><span class="dv">5</span>) <span class="op">&lt;=</span><span class="st"> </span><span class="dv">1</span></code></pre></div>
+<pre><code>##  [1] FALSE FALSE FALSE FALSE  TRUE  TRUE FALSE  TRUE FALSE  TRUE</code></pre>
+<p>Observe the in this example the function “<code>&lt;=</code>” produced 10 logical values, one for each of the elements of the sequence to the left of it. The first input in the sequence “<code>Y</code>” is 6.3, which is more than one unit away from 5. Hence, the first output of the logical expression is “<code>FALSE</code>”. On the other hand, the last input in the sequence “<code>Y</code>” is 5.3, which is within the range. Therefore, the last output of the logical expression is “<code>TRUE</code>”.</p>
+<p>Next, we compute the proportion of “<code>TRUE</code>” values in the sequence:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(<span class="kw">abs</span>(Y <span class="op">-</span><span class="st"> </span><span class="dv">5</span>) <span class="op">&lt;=</span><span class="st"> </span><span class="dv">1</span>)</code></pre></div>
+<pre><code>## [1] 0.4</code></pre>
+<p>When a sequence with logical values is entered into the function “<code>mean</code>” then the function replaces the <code>TRUE</code>’s by 1 and the <code>FALSE</code>’s by 0. The average produces then the relative frequency of <code>TRUE</code>’s in the sequence as required. Specifically, in this example there are 4 <code>TRUE</code>’s and 6 <code>FALSE</code>’s. Consequently, the output of the final expression is <span class="math inline">\(4/10 = 0.4\)</span>.</p>
+<p>The computation of the probability that the sampled height falls within 10 centimeter of 170 is based on the same code. The only differences are that the input sequence “<code>Y</code>” is replaced by the sequence of population heights “<code>X</code>” as input. the number “<code>5</code>” is replaced by the number “<code>170</code>” and the number “<code>1</code>” is replaced by the number “<code>10</code>”. In both cases the result of the computation is the relative proportion of the times that the values of the input sequence fall within a given range of the indicated number.</p>
+<p>The probability function of a random variable is defined for any value that the random variable may obtain and produces the <em>distribution</em> of the random variable. The probability function may emerge as a relative frequency as in the given example or it may be a result of theoretical modeling. Examples of theoretical random variables are presented mainly in the next two chapters.</p>
+<p>Consider an example of a random variable. The sample space and the probability function specify the distribution of the random variable. For example, assume it is known that a random variable <span class="math inline">\(X\)</span> may obtain the values 0, 1, 2, or 3. Moreover, imagine that it is known that <span class="math inline">\(\Prob(X=1) = 0.25\)</span>, <span class="math inline">\(\Prob(X=2) = 0.15\)</span>, and <span class="math inline">\(\Prob(X=3)= 0.10\)</span>. What is <span class="math inline">\(\Prob(X=0)\)</span>, the probability that <span class="math inline">\(X\)</span> is equal to 0?</p>
+<p>The sample space, the collection of possible values that the random variable may obtain is the collection <span class="math inline">\(\{0,1,2,3\}\)</span>. Observe that the sum over the positive values is:</p>
+<p><span class="math display">\[\Prob(X &gt; 0) = \Prob(X=1) + \Prob(X=2) + \Prob(X=3) = 0.25 + 0.15 + 0.10 = 0.50\;.\]</span> It follows, since the sum of probabilities over the entire sample space is equal to 1, that <span class="math inline">\(\Prob(X=0) = 1- 0.5 = 0.5\)</span>.</p>
+<table>
+<caption><span id="tab:Probability1">TABLE 4.1: </span>The Distribution of <span class="math inline">\(X\)</span></caption>
+<thead>
+<tr class="header">
+<th align="right">Value</th>
+<th align="right">Probability</th>
+<th align="right">Cum.Prob</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">0</td>
+<td align="right">0.50</td>
+<td align="right">0.50</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">0.25</td>
+<td align="right">0.75</td>
+</tr>
+<tr class="odd">
+<td align="right">2</td>
+<td align="right">0.15</td>
+<td align="right">0.90</td>
+</tr>
+<tr class="even">
+<td align="right">3</td>
+<td align="right">0.10</td>
+<td align="right">1.00</td>
+</tr>
+</tbody>
+</table>
+<p>Table <a href="ChapProbability.html#tab:Probability1">4.1</a> summarizes the distribution of the random variable <span class="math inline">\(X\)</span>. Observe the similarity between the probability function and the notion of relative frequency that was discussed in Chapter <a href="ChapData.html#ChapData">2</a>. Both quantities describe distribution. Both are non-negative and sum to 1. Likewise, notice that one may define the cumulative probability the same way cumulative relative frequency is defined: Ordering the values of the random variable from smallest to largest, the cumulative probability at a given value is the sum of probabilities for values less or equal to the given value.</p>
+<p>Knowledge of the probabilities of a random variable (or the cumulative probabilities) enables the computation of other probabilities that are associated with the random variable. For example, considering the random variable <span class="math inline">\(X\)</span> of Table <a href="ChapProbability.html#tab:Probability1">4.1</a>, we may calculate the probability of <span class="math inline">\(X\)</span> falling in the interval <span class="math inline">\([0.5, 2.3]\)</span>. Observe that the given range contains two values from the sample space, 1 and 2, therefore:</p>
+<p><span class="math display">\[\Prob(0.5 \leq X \leq 2.3) = \Prob(X=1) + \Prob(X = 2) = 0.25 + 0.15 = 0.40\;.\]</span> Likewise, we may produce the probability of <span class="math inline">\(X\)</span> obtaining an odd value:</p>
+<p><span class="math display">\[\Prob(X = \mbox{odd}) = \Prob(X=1) + \Prob(X=3) = 0.25 + 0.10 = 0.35\;.\]</span> Observe that both <span class="math inline">\(\{0.5 \leq X \leq 2.3\}\)</span> and <span class="math inline">\(\{X = \mbox{odd}\}\)</span> refer to subsets of values of the sample space. Such subsets are denoted <em>events</em>. In both examples the probability of the event was computed by the summation of the probabilities associated with values that belong to the event.</p>
+</div>
+<div id="expectation-and-standard-deviation" class="section level3">
+<h3><span class="header-section-number">4.4.2</span> Expectation and Standard Deviation</h3>
+<p>We may characterize the center of the distribution of a random variable and the spread of the distribution in ways similar to those used for the characterization of the distribution of data and the distribution of a population.</p>
+<p>The <em>expectation</em> marks the center of the distribution of a random variable. It is equivalent to the data average <span class="math inline">\(\bar x\)</span> and the population average <span class="math inline">\(\mu\)</span>, which was used in order to mark the location of the distribution of the data and the population, respectively.</p>
+<p>Recall from Chapter <a href="ChapDescriptiveStat.html#ChapDescriptiveStat">3</a> that the average of the data can be computed as the weighted average of the values that are present in the data, with weights given by the relative frequency. Specifically, we saw for the data</p>
+<p><span class="math display">\[1,\; 1,\; 1,\; 2,\; 2,\; 3,\; 4,\; 4,\; 4,\; 4,\; 4\]</span> that</p>
+<p><span class="math display">\[\frac{1 + 1 + 1 + 2 + 2 + 3 + 4 + 4 + 4 + 4 + 4}{11} =
+1\times \frac{3}{11} + 2 \times \frac{2}{11} + 3 \times \frac{1}{11} + 4 \times \frac{5}{11}\;,\]</span> producing the value of <span class="math inline">\(\bar x =2.727\)</span> in both representations. Using a formula, the equality between the two ways of computing the mean is given in terms of the equation:</p>
+<p><span class="math display">\[\bar x = \frac{\sum_{i=1}^n x_i}{n} = \sum_x \big(x \times (f_x/n)\big)\;.\]</span> In the first representation of the arithmetic mean, the average is computed by the summation of all data points and dividing the sum by the sample size. In the second representation, that uses a weighted sum, the sum extends over all the unique values that appear in the data. For each unique value the value is multiplied by the relative frequency of the value in the data. These multiplications are summed up to produce the mean.</p>
+<p>The expectation of a random variable is computed in the spirit of the second formulation. The expectation of a random variable is marked with the letter “<span class="math inline">\(\Expec\)</span>” and is define via the equation:</p>
+<p><span class="math display">\[\Expec(X) = \sum_x \big(x \times \Prob(x)\big)\;.\]</span> In this definition all the unique values of the sample space are considered. For each value a product of the value and the probability of the value is taken. The expectation is obtained by the summation of all these products. In this definition the probability <span class="math inline">\(\Prob(x)\)</span> replaces the relative frequency <span class="math inline">\(f_x/n\)</span> but otherwise, the definition of the expectation and the second formulation of the mean are identical to each other.</p>
+<p>Consider the random variable <span class="math inline">\(X\)</span> with distribution that is described in Table <a href="ChapProbability.html#tab:Probability1">4.1</a>. In order to obtain its expectation we multiply each value in the sample space by the probability of the value. Summation of the products produces the expectation (see Table <a href="ChapProbability.html#tab:Probability1">4.1</a>:</p>
+<p><span class="math display">\[\Expec(X) = 0 \times 0.5 + 1 \times 0.25 + 2 \times 0.15 + 3\times 0.10 = 0.85\;.\]</span></p>
+<table>
+<caption><span id="tab:Probability2">TABLE 4.2: </span>The Expectation of <span class="math inline">\(X\)</span></caption>
+<thead>
+<tr class="header">
+<th align="right">Value</th>
+<th align="right">Probability</th>
+<th align="right">Value * Probability</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">0</td>
+<td align="right">0.50</td>
+<td align="right">0.00</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">0.25</td>
+<td align="right">0.25</td>
+</tr>
+<tr class="odd">
+<td align="right">2</td>
+<td align="right">0.15</td>
+<td align="right">0.30</td>
+</tr>
+<tr class="even">
+<td align="right">3</td>
+<td align="right">0.10</td>
+<td align="right">0.30</td>
+</tr>
+</tbody>
+</table>
+<pre><code>## Expectation = sum(Value*Probability) =  0.85</code></pre>
+<p>In the example of height we get that the expectation is equal to 170.035 centimeter. Notice that this expectation is equal to <span class="math inline">\(\mu\)</span>, the mean of the population<a href="#fn10" class="footnoteRef" id="fnref10"><sup>10</sup></a>. This is no accident. The expectation of a potential measurement of a randomly selected subject from a population is equal to the average of the measurement across all subjects.</p>
+<p>The sample variance (<span class="math inline">\(s^2\)</span>) is obtained as the sum of the squared deviations from the average, divided by the sample size (<span class="math inline">\(n\)</span>) minus 1:</p>
+<p><span class="math display">\[s^2 = \frac{\sum_{i=1}^n (x_i - \bar x)^2}{n-1}\;.\]</span> A second formulation for the computation of the same quantity is via the use of relative frequencies. The formula for the sample variance takes the form</p>
+<p><span class="math display">\[s^2 = \frac{n}{n-1}\sum_x \big((x - \bar x)^2\times (f_x/n)\big)\;.\]</span> In this formulation one considers each of the unique value that are present in the data. For each value the deviation between the value and the average is computed. These deviations are then squared and multiplied by the relative frequency. The products are summed up. Finally, the sum is multiplied by the ratio between the sample size <span class="math inline">\(n\)</span> and <span class="math inline">\(n-1\)</span> in order to correct for the fact that in the sample variance the sum of squared deviations is divided by the sample size minus 1 and not by the sample size.</p>
+<p>In a similar way, the variance of a random variable may be defined via the probability of the values that make the sample space. For each such value one computes the deviation from the expectation. This deviation is then squared and multiplied by the probability of the value. The multiplications are summed up in order to produce the variance:</p>
+<p><span class="math display">\[\Var(X) = \sum_x\big( (x-\Expec(X))^2 \times \Prob(x)\big)\;.\]</span> Notice that the formula for the computation of the variance of a random variable is very similar to the second formulation for the computation of the sample variance. Essentially, the mean of the data is replaced by the expectation of the random variable and the relative frequency of a value is replaced by the probability of the value. Another difference is that the correction factor is not used for the variance of a random variable.</p>
+<table>
+<caption><span id="tab:tab3">TABLE 4.3: </span>The Variance of <span class="math inline">\(X\)</span></caption>
+<thead>
+<tr class="header">
+<th align="right"><span class="math inline">\(x\)</span></th>
+<th align="right"><span class="math inline">\(P(X=x)\)</span></th>
+<th align="right"><span class="math inline">\(x - E[X]\)</span></th>
+<th align="right"><span class="math inline">\((x - E[X])^2\)</span></th>
+<th align="right"><span class="math inline">\(P(X=x)*(x - E[X])^2\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">0</td>
+<td align="right">0.50</td>
+<td align="right">-0.85</td>
+<td align="right">0.7225</td>
+<td align="right">0.361250</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">0.25</td>
+<td align="right">0.15</td>
+<td align="right">0.0225</td>
+<td align="right">0.005625</td>
+</tr>
+<tr class="odd">
+<td align="right">2</td>
+<td align="right">0.15</td>
+<td align="right">1.15</td>
+<td align="right">1.3225</td>
+<td align="right">0.198375</td>
+</tr>
+<tr class="even">
+<td align="right">3</td>
+<td align="right">0.10</td>
+<td align="right">2.15</td>
+<td align="right">4.6225</td>
+<td align="right">0.462250</td>
+</tr>
+</tbody>
+</table>
+<pre><code>## Var = sum(p*(x-sum(p*x))^2) =  1.0275</code></pre>
+<p>As an example consider the variance of the random variable <span class="math inline">\(X\)</span>. The computation of the variance of this random variable is carried out in Table <a href="ChapProbability.html#tab:tab3">4.3</a>. The sample space, the values that the random variable may obtain, are given in the first column and the probabilities of the values are given in the second column. In the third column the deviation of the value from the expectation <span class="math inline">\(\Expec(X) = 0.85\)</span> is computed for each value. The 4th column contains the square of these deviations and the 5th and last column involves the product of the square deviations and the probabilities. The variance is obtained by summing up the products in the last column. In the given example:</p>
+<p><span class="math display">\[\begin{aligned}
+\Var(X) = &amp; (0-0.85)^2 \times 0.5  + (1-0.85)^2 \times 0.25 \\ &amp;+ (2-0.85)^2\times 0.15 + (3-0.85)^2\times 0.10= 1.0275\;.\end{aligned}\]</span></p>
+<p>The standard deviation of a random variable is the square root of the variance. The standard deviation of <span class="math inline">\(X\)</span> is <span class="math inline">\(\sqrt{\Var(X)} = \sqrt{1.0275} = 1.013657\)</span>.</p>
+<p>In the example that involves the height of a subject selected from the population at random we obtain that the variance is <span class="math inline">\(126.1576\)</span>, equal to the population variance, and the standard deviation is 11.23199, the square root of the variance.</p>
+<p>Other characterization of the distribution that were computed for data, such as the median, the quartiles, etc., may also be defined for random variables.</p>
+</div>
+</div>
+<div id="probability-and-statistics" class="section level2">
+<h2><span class="header-section-number">4.5</span> Probability and Statistics</h2>
+<p>Modern science may be characterized by a systematic collection of empirical measurements and the attempt to model laws of nature using mathematical language. The drive to deliver better measurements led to the development of more accurate and more sensitive measurement tools. Nonetheless, at some point it became apparent that measurements may not be perfectly reproducible and any repeated measurement of presumably the exact same phenomena will typically produce variability in the outcomes. On the other hand, scientists also found that there are general laws that govern this variability in repetitions. For example, it was discovered that the average of several independent repeats of the measurement is less variable and more reproducible than each of the single measurements themselves.</p>
+<p>Probability was first introduced as a branch of mathematics in the investigation of uncertainty associated with gambling and games of chance. During the early 19th century probability began to be used in order to model variability in measurements. This application of probability turned out to be very successful. Indeed, one of the major achievements of probability was the development of the mathematical theory that explains the phenomena of reduced variability that is observed when averages are used instead of single measurements. In Chapter <a href="ChapSampDist.html#ChapSampDist">7</a> we discuss the conclusions of this theory.</p>
+<p>Statistics study method for inference based on data. Probability serves as the mathematical foundation for the development of statistical theory. In this chapter we introduced the probabilistic concept of a random variable. This concept is key for understanding statistics. In the rest of Part I of this book we discuss the probability theory that is used for statistical inference. Statistical inference itself is discussed in Part II of the book.</p>
+</div>
+<div id="exercises-3" class="section level2">
+<h2><span class="header-section-number">4.6</span> Exercises</h2>
+<table>
+<caption><span id="tab:tab4">TABLE 4.4: </span>The Distribution of <span class="math inline">\(Y\)</span></caption>
+<thead>
+<tr class="header">
+<th align="right">Value</th>
+<th align="left">Probability</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">0</td>
+<td align="left">1p</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="left">2p</td>
+</tr>
+<tr class="odd">
+<td align="right">2</td>
+<td align="left">3p</td>
+</tr>
+<tr class="even">
+<td align="right">3</td>
+<td align="left">4p</td>
+</tr>
+<tr class="odd">
+<td align="right">4</td>
+<td align="left">5p</td>
+</tr>
+<tr class="even">
+<td align="right">5</td>
+<td align="left">6p</td>
+</tr>
+</tbody>
+</table>
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-49" class="exercise"><strong>Exercise 4.1  </strong></span>Table <a href="ChapProbability.html#tab:tab4">4.4</a> presents the probabilities of the random variable <span class="math inline">\(Y\)</span>.</p>
+<p>These probabilities are a function of the number <span class="math inline">\(p\)</span>, the probability of the value “0”. Answer the following questions:</p>
+<ol style="list-style-type: decimal">
+<li><p>What is the value of <span class="math inline">\(p\)</span>?</p></li>
+<li><p><span class="math inline">\(\Prob(Y &lt;3 )\)</span> = ?</p></li>
+<li><p><span class="math inline">\(\Prob(Y = \mbox{odd})\)</span> = ?</p></li>
+<li><p><span class="math inline">\(\Prob(1 \leq Y &lt; 4)\)</span> = ?</p></li>
+<li><p><span class="math inline">\(\Prob(|Y -3| &lt; 1.5)\)</span> = ?</p></li>
+<li><p><span class="math inline">\(\Expec(Y)\)</span> = ?</p></li>
+<li><p><span class="math inline">\(\Var(Y)\)</span> = ?</p></li>
+<li>What is the standard deviation of <span class="math inline">\(Y\)</span>.</li>
+</ol>
+</div>
+
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-50" class="exercise"><strong>Exercise 4.2  </strong></span>One invests $2 to participate in a game of chance. In this game a coin is tossed three times. If all tosses end up “Head” then the player wins $10. Otherwise, the player losses the investment.</p>
+<ol style="list-style-type: decimal">
+<li><p>What is the probability of winning the game?</p></li>
+<li><p>What is the probability of loosing the game?</p></li>
+<li>What is the expected gain for the player that plays this game? (Notice that the expectation can obtain a negative value.)</li>
+</ol>
+</div>
+
+</div>
+<div id="summary-3" class="section level2">
+<h2><span class="header-section-number">4.7</span> Summary</h2>
+<div id="glossary" class="section level3 unnumbered">
+<h3>Glossary</h3>
+<dl>
+<dt>Random Variable:</dt>
+<dd><p>The probabilistic model for the value of a measurement, before the measurement is taken.</p>
+</dd>
+<dt>Sample Space:</dt>
+<dd><p>The set of all values a random variable may obtain.</p>
+</dd>
+<dt>Probability:</dt>
+<dd><p>A number between 0 and 1 which is assigned to a subset of the sample space. This number indicates the likelihood of the random variable obtaining a value in that subset.</p>
+</dd>
+<dt>Expectation:</dt>
+<dd><p>The central value for a random variable. The expectation of the random variable <span class="math inline">\(X\)</span> is marked by <span class="math inline">\(\Expec(X)\)</span>.</p>
+</dd>
+<dt>Variance:</dt>
+<dd><p>The (squared) spread of a random variable. The variance of the random variable <span class="math inline">\(X\)</span> is marked by <span class="math inline">\(\Var(X)\)</span>. The standard deviation is the square root of the variance.</p>
+</dd>
+</dl>
+</div>
+<div id="discussion-in-the-forum" class="section level3 unnumbered">
+<h3>Discussion in the Forum</h3>
+<p>Random variables are used to model situations in which the outcome, before the fact, is uncertain. One component in the model is the sample space. The sample space is the list of all possible outcomes. It includes the outcome that took place, but also all other outcomes that could have taken place but never did materialize. The rationale behind the consideration of the sample space is the intention to put the outcome that took place in context. What do you think of this rationale?</p>
+<p>When forming your answer to this question you may give an example of a situation from you own field of interest for which a random variable can serve as a model. Identify the sample space for that random variable and discuss the importance (or lack thereof) of the correct identification of the sample space.</p>
+<p>For example, consider a factory that produces car parts that are sold to car makers. The role of the QA personnel in the factory is to validate the quality of each batch of parts before the shipment to the client.</p>
+<p>To achieve that, a sample of parts may be subject to a battery of quality test. Say that 20 parts are selected to the sample. The number of those among them that will not pass the quality testing may be modeled as a random variable. The sample space for this random variable may be any of the numbers 0, 1, 2, …, 20.</p>
+<p>The number 0 corresponds to the situation where all parts in the sample passed the quality testing. The number 1 corresponds to the case where 1 part did not pass and the other 19 did. The number 2 describes the case where 2 of the 20 did not pass and 18 did pass, etc.</p>
+</div>
+<div id="summary-of-formulas" class="section level3 unnumbered">
+<h3>Summary of Formulas</h3>
+<dl>
+<dt>Population Size:</dt>
+<dd><p><span class="math inline">\(N\)</span> = the number of people, things, etc. in the population.</p>
+</dd>
+<dt>Population Average:</dt>
+<dd><p><span class="math inline">\(\mu = (1/N)\sum_{i=1}^N x_i\)</span></p>
+</dd>
+<dt>Expectation of a Random Variable:</dt>
+<dd><p><span class="math inline">\(\Expec(X) = \sum_x \big(x \times \Prob(x)\big)\)</span></p>
+</dd>
+<dt>Population Variance:</dt>
+<dd><p><span class="math inline">\(\sigma^2 = (1/N)\sum_{i=1}^N (x_i-\mu)^2\)</span></p>
+</dd>
+<dt>Variance of a Random Variable:</dt>
+<dd><p><span class="math inline">\(\Var(X) = \sum_x\big( (x-\Expec(X))^2 \times \Prob(x)\big)\)</span></p>
+</dd>
+</dl>
+
+</div>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="7">
+<li id="fn7"><p>Such a bar plot can be produced with the expression “<code>plot(table(pop.1$height))</code>”.<a href="ChapProbability.html#fnref7">↩</a></p></li>
+<li id="fn8"><p>Observe that the function “<code>var</code>” computes the sample variance. Consequently, the sum of squares is divided by <span class="math inline">\(N-1\)</span>. We can correct that when computing the population variance by multiplying the result by <span class="math inline">\(N-1\)</span> and dividing by <span class="math inline">\(N\)</span>. Notice that the difference between the two quantities is negligible for a large population. Henceforth we will use the functions “<code>var</code>” and “<code>sd</code>” to compute the variance and standard deviations of populations without the application of the correction.<a href="ChapProbability.html#fnref8">↩</a></p></li>
+<li id="fn9"><p>The expression <span class="math inline">\(\{|X -170| \leq 10\}\)</span> reads as “the absolute value of the difference between <span class="math inline">\(X\)</span> and 170 is no more that 10”. In other words, <span class="math inline">\(\{-10 \leq X - 170 \leq 10\}\)</span>, which is equivalent to the statement that <span class="math inline">\(\{160 \leq X \leq 180\}\)</span>. It follows that <span class="math inline">\(\Prob(|X-170|\leq 10) = \Prob(160\leq X \leq 180)\)</span>.<a href="ChapProbability.html#fnref9">↩</a></p></li>
+<li id="fn10"><p>The mean of the population can be computed with the expression “<code>mean(pop.1$height)</code>”<a href="ChapProbability.html#fnref10">↩</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="ChapDescriptiveStat.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="ChapRandomVar.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/yihui/bookdown-crc/edit/master/04-Probability.Rmd",
+"text": "Edit"
+},
+"download": ["thinkstat.pdf", "thinkstat.epub"],
+"toc": {
+"collapse": "none"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

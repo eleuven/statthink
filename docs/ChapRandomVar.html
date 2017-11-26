@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Introduction to Statistical Thinking</title>
+  <meta name="description" content="Introduction to Statistical Thinking">
+  <meta name="generator" content="bookdown 0.5.10 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Introduction to Statistical Thinking" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  <meta name="github-repo" content="eleuven/statthink" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Introduction to Statistical Thinking" />
+  
+  
+  
+
+<meta name="author" content="Benjamin Yakir">
+
+
+<meta name="date" content="2017-11-26">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="ChapProbability.html">
+<link rel="next" href="ChapNormal.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Introduction to Statistical Thinking</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="ChapIntroR.html"><a href="ChapIntroR.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="ChapIntroR.html"><a href="ChapIntroR.html#student-learning-objectives"><i class="fa fa-check"></i><b>1.1</b> Student Learning Objectives</a></li>
+<li class="chapter" data-level="1.2" data-path="ChapIntroR.html"><a href="ChapIntroR.html#why-learn-statistics"><i class="fa fa-check"></i><b>1.2</b> Why Learn Statistics?</a></li>
+<li class="chapter" data-level="1.3" data-path="ChapIntroR.html"><a href="ChapIntroR.html#statistics"><i class="fa fa-check"></i><b>1.3</b> Statistics</a></li>
+<li class="chapter" data-level="1.4" data-path="ChapIntroR.html"><a href="ChapIntroR.html#probability"><i class="fa fa-check"></i><b>1.4</b> Probability</a></li>
+<li class="chapter" data-level="1.5" data-path="ChapIntroR.html"><a href="ChapIntroR.html#key-terms"><i class="fa fa-check"></i><b>1.5</b> Key Terms</a></li>
+<li class="chapter" data-level="1.6" data-path="ChapIntroR.html"><a href="ChapIntroR.html#the-r-programming-environment"><i class="fa fa-check"></i><b>1.6</b> The <code>R</code> Programming Environment</a><ul>
+<li class="chapter" data-level="1.6.1" data-path="ChapIntroR.html"><a href="ChapIntroR.html#some-basic-r-commands"><i class="fa fa-check"></i><b>1.6.1</b> Some Basic <code>R</code> Commands</a></li>
+</ul></li>
+<li class="chapter" data-level="1.7" data-path="ChapIntroR.html"><a href="ChapIntroR.html#exercises"><i class="fa fa-check"></i><b>1.7</b> Exercises</a></li>
+<li class="chapter" data-level="1.8" data-path="ChapIntroR.html"><a href="ChapIntroR.html#summary"><i class="fa fa-check"></i><b>1.8</b> Summary</a><ul>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#discuss-in-the-forum"><i class="fa fa-check"></i>Discuss in the forum</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="ChapData.html"><a href="ChapData.html"><i class="fa fa-check"></i><b>2</b> Sampling and Data Structures</a><ul>
+<li class="chapter" data-level="2.1" data-path="ChapData.html"><a href="ChapData.html#student-learning-objectives-1"><i class="fa fa-check"></i><b>2.1</b> Student Learning Objectives</a></li>
+<li class="chapter" data-level="2.2" data-path="ChapData.html"><a href="ChapData.html#the-sampled-data"><i class="fa fa-check"></i><b>2.2</b> The Sampled Data</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="ChapData.html"><a href="ChapData.html#variation-in-data"><i class="fa fa-check"></i><b>2.2.1</b> Variation in Data</a></li>
+<li class="chapter" data-level="2.2.2" data-path="ChapData.html"><a href="ChapData.html#variation-in-samples"><i class="fa fa-check"></i><b>2.2.2</b> Variation in Samples</a></li>
+<li class="chapter" data-level="2.2.3" data-path="ChapData.html"><a href="ChapData.html#frequency"><i class="fa fa-check"></i><b>2.2.3</b> Frequency</a></li>
+<li class="chapter" data-level="2.2.4" data-path="ChapData.html"><a href="ChapData.html#critical-evaluation"><i class="fa fa-check"></i><b>2.2.4</b> Critical Evaluation</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="ChapData.html"><a href="ChapData.html#readingdata"><i class="fa fa-check"></i><b>2.3</b> Reading Data into <code>R</code></a><ul>
+<li class="chapter" data-level="2.3.1" data-path="ChapData.html"><a href="ChapData.html#saving-the-file-and-setting-the-working-directory"><i class="fa fa-check"></i><b>2.3.1</b> Saving the File and Setting the Working Directory</a></li>
+<li class="chapter" data-level="2.3.2" data-path="ChapData.html"><a href="ChapData.html#Data_3"><i class="fa fa-check"></i><b>2.3.2</b> Reading a CSV File into <code>R</code></a></li>
+<li class="chapter" data-level="2.3.3" data-path="ChapData.html"><a href="ChapData.html#data-types"><i class="fa fa-check"></i><b>2.3.3</b> Data Types</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="ChapData.html"><a href="ChapData.html#exercises-1"><i class="fa fa-check"></i><b>2.4</b> Exercises</a></li>
+<li class="chapter" data-level="2.5" data-path="ChapData.html"><a href="ChapData.html#summary-1"><i class="fa fa-check"></i><b>2.5</b> Summary</a><ul>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#discuss-in-the-forum"><i class="fa fa-check"></i>Discuss in the forum</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="ChapDescriptiveStat.html"><a href="ChapDescriptiveStat.html"><i class="fa fa-check"></i><b>3</b> Descriptive Statistics</a><ul>
+<li class="chapter" data-level="3.1" data-path="ChapDescriptiveStat.html"><a href="ChapDescriptiveStat.html#student-learning-objectives-2"><i class="fa fa-check"></i><b>3.1</b> Student Learning Objectives</a></li>
+<li class="chapter" data-level="3.2" data-path="ChapDescriptiveStat.html"><a href="ChapDescriptiveStat.html#displaying-data"><i class="fa fa-check"></i><b>3.2</b> Displaying Data</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="ChapDescriptiveStat.html"><a href="ChapDescriptiveStat.html#histograms"><i class="fa fa-check"></i><b>3.2.1</b> Histograms</a></li>
+<li class="chapter" data-level="3.2.2" data-path="ChapDescriptiveStat.html"><a href="ChapDescriptiveStat.html#box-plots"><i class="fa fa-check"></i><b>3.2.2</b> Box Plots</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="ChapDescriptiveStat.html"><a href="ChapDescriptiveStat.html#measures-of-the-center-of-data"><i class="fa fa-check"></i><b>3.3</b> Measures of the Center of Data</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="ChapDescriptiveStat.html"><a href="ChapDescriptiveStat.html#skewness-the-mean-and-the-median"><i class="fa fa-check"></i><b>3.3.1</b> Skewness, the Mean and the Median</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="ChapDescriptiveStat.html"><a href="ChapDescriptiveStat.html#measures-of-the-spread-of-data"><i class="fa fa-check"></i><b>3.4</b> Measures of the Spread of Data</a></li>
+<li class="chapter" data-level="3.5" data-path="ChapDescriptiveStat.html"><a href="ChapDescriptiveStat.html#exercises-2"><i class="fa fa-check"></i><b>3.5</b> Exercises</a></li>
+<li class="chapter" data-level="3.6" data-path="ChapDescriptiveStat.html"><a href="ChapDescriptiveStat.html#summary-2"><i class="fa fa-check"></i><b>3.6</b> Summary</a><ul>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#discuss-in-the-forum"><i class="fa fa-check"></i>Discuss in the forum</a></li>
+<li class="chapter" data-level="" data-path="ChapDescriptiveStat.html"><a href="ChapDescriptiveStat.html#commonly-used-symbols"><i class="fa fa-check"></i>Commonly Used Symbols</a></li>
+<li class="chapter" data-level="" data-path="ChapDescriptiveStat.html"><a href="ChapDescriptiveStat.html#commonly-used-expressions"><i class="fa fa-check"></i>Commonly Used Expressions</a></li>
+<li class="chapter" data-level="" data-path="ChapDescriptiveStat.html"><a href="ChapDescriptiveStat.html#formulas"><i class="fa fa-check"></i>Formulas:</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="ChapProbability.html"><a href="ChapProbability.html"><i class="fa fa-check"></i><b>4</b> Probability</a><ul>
+<li class="chapter" data-level="4.1" data-path="ChapProbability.html"><a href="ChapProbability.html#student-learning-objective"><i class="fa fa-check"></i><b>4.1</b> Student Learning Objective</a></li>
+<li class="chapter" data-level="4.2" data-path="ChapProbability.html"><a href="ChapProbability.html#different-forms-of-variability"><i class="fa fa-check"></i><b>4.2</b> Different Forms of Variability</a></li>
+<li class="chapter" data-level="4.3" data-path="ChapProbability.html"><a href="ChapProbability.html#a-population"><i class="fa fa-check"></i><b>4.3</b> A Population</a></li>
+<li class="chapter" data-level="4.4" data-path="ChapProbability.html"><a href="ChapProbability.html#random-variables"><i class="fa fa-check"></i><b>4.4</b> Random Variables</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="ChapProbability.html"><a href="ChapProbability.html#sample-space-and-distribution"><i class="fa fa-check"></i><b>4.4.1</b> Sample Space and Distribution</a></li>
+<li class="chapter" data-level="4.4.2" data-path="ChapProbability.html"><a href="ChapProbability.html#expectation-and-standard-deviation"><i class="fa fa-check"></i><b>4.4.2</b> Expectation and Standard Deviation</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="ChapProbability.html"><a href="ChapProbability.html#probability-and-statistics"><i class="fa fa-check"></i><b>4.5</b> Probability and Statistics</a></li>
+<li class="chapter" data-level="4.6" data-path="ChapProbability.html"><a href="ChapProbability.html#exercises-3"><i class="fa fa-check"></i><b>4.6</b> Exercises</a></li>
+<li class="chapter" data-level="4.7" data-path="ChapProbability.html"><a href="ChapProbability.html#summary-3"><i class="fa fa-check"></i><b>4.7</b> Summary</a><ul>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li class="chapter" data-level="" data-path="ChapProbability.html"><a href="ChapProbability.html#discussion-in-the-forum"><i class="fa fa-check"></i>Discussion in the Forum</a></li>
+<li class="chapter" data-level="" data-path="ChapProbability.html"><a href="ChapProbability.html#summary-of-formulas"><i class="fa fa-check"></i>Summary of Formulas</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="ChapRandomVar.html"><a href="ChapRandomVar.html"><i class="fa fa-check"></i><b>5</b> Random Variables</a><ul>
+<li class="chapter" data-level="5.1" data-path="ChapRandomVar.html"><a href="ChapRandomVar.html#student-learning-objective-1"><i class="fa fa-check"></i><b>5.1</b> Student Learning Objective</a></li>
+<li class="chapter" data-level="5.2" data-path="ChapRandomVar.html"><a href="ChapRandomVar.html#discrete-random-variables"><i class="fa fa-check"></i><b>5.2</b> Discrete Random Variables</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="ChapRandomVar.html"><a href="ChapRandomVar.html#the-binomial-random-variable"><i class="fa fa-check"></i><b>5.2.1</b> The Binomial Random Variable</a></li>
+<li class="chapter" data-level="5.2.2" data-path="ChapRandomVar.html"><a href="ChapRandomVar.html#the-poisson-random-variable"><i class="fa fa-check"></i><b>5.2.2</b> The Poisson Random Variable</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="ChapRandomVar.html"><a href="ChapRandomVar.html#RandomVar_5"><i class="fa fa-check"></i><b>5.3</b> Continuous Random Variable</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="ChapRandomVar.html"><a href="ChapRandomVar.html#the-uniform-random-variable"><i class="fa fa-check"></i><b>5.3.1</b> The Uniform Random Variable</a></li>
+<li class="chapter" data-level="5.3.2" data-path="ChapRandomVar.html"><a href="ChapRandomVar.html#the-exponential-random-variable"><i class="fa fa-check"></i><b>5.3.2</b> The Exponential Random Variable</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="ChapRandomVar.html"><a href="ChapRandomVar.html#sec:RVarExercises"><i class="fa fa-check"></i><b>5.4</b> Exercises</a></li>
+<li class="chapter" data-level="5.5" data-path="ChapRandomVar.html"><a href="ChapRandomVar.html#summary-4"><i class="fa fa-check"></i><b>5.5</b> Summary</a><ul>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#discuss-in-the-forum"><i class="fa fa-check"></i>Discuss in the Forum</a></li>
+<li class="chapter" data-level="" data-path="ChapProbability.html"><a href="ChapProbability.html#summary-of-formulas"><i class="fa fa-check"></i>Summary of Formulas</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="ChapNormal.html"><a href="ChapNormal.html"><i class="fa fa-check"></i><b>6</b> The Normal Random Variable</a><ul>
+<li class="chapter" data-level="6.1" data-path="ChapNormal.html"><a href="ChapNormal.html#student-learning-objective-2"><i class="fa fa-check"></i><b>6.1</b> Student Learning Objective</a></li>
+<li class="chapter" data-level="6.2" data-path="ChapNormal.html"><a href="ChapNormal.html#the-normal-random-variable"><i class="fa fa-check"></i><b>6.2</b> The Normal Random Variable</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="ChapNormal.html"><a href="ChapNormal.html#the-normal-distribution"><i class="fa fa-check"></i><b>6.2.1</b> The Normal Distribution</a></li>
+<li class="chapter" data-level="6.2.2" data-path="ChapNormal.html"><a href="ChapNormal.html#the-standard-normal-distribution"><i class="fa fa-check"></i><b>6.2.2</b> The Standard Normal Distribution</a></li>
+<li class="chapter" data-level="6.2.3" data-path="ChapNormal.html"><a href="ChapNormal.html#computing-percentiles"><i class="fa fa-check"></i><b>6.2.3</b> Computing Percentiles</a></li>
+<li class="chapter" data-level="6.2.4" data-path="ChapNormal.html"><a href="ChapNormal.html#outliers-and-the-normal-distribution"><i class="fa fa-check"></i><b>6.2.4</b> Outliers and the Normal Distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="ChapNormal.html"><a href="ChapNormal.html#approximation-of-the-binomial-distribution"><i class="fa fa-check"></i><b>6.3</b> Approximation of the Binomial Distribution</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="ChapNormal.html"><a href="ChapNormal.html#approximate-binomial-probabilities-and-percentiles"><i class="fa fa-check"></i><b>6.3.1</b> Approximate Binomial Probabilities and Percentiles</a></li>
+<li class="chapter" data-level="6.3.2" data-path="ChapNormal.html"><a href="ChapNormal.html#continuity-corrections"><i class="fa fa-check"></i><b>6.3.2</b> Continuity Corrections</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="ChapNormal.html"><a href="ChapNormal.html#Normal4"><i class="fa fa-check"></i><b>6.4</b> Exercises</a></li>
+<li class="chapter" data-level="6.5" data-path="ChapNormal.html"><a href="ChapNormal.html#summary-5"><i class="fa fa-check"></i><b>6.5</b> Summary</a><ul>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#discuss-in-the-forum"><i class="fa fa-check"></i>Discuss in the Forum</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="ChapSampDist.html"><a href="ChapSampDist.html"><i class="fa fa-check"></i><b>7</b> The Sampling Distribution</a><ul>
+<li class="chapter" data-level="7.1" data-path="ChapSampDist.html"><a href="ChapSampDist.html#student-learning-objective-3"><i class="fa fa-check"></i><b>7.1</b> Student Learning Objective</a></li>
+<li class="chapter" data-level="7.2" data-path="ChapSampDist.html"><a href="ChapSampDist.html#the-sampling-distribution"><i class="fa fa-check"></i><b>7.2</b> The Sampling Distribution</a><ul>
+<li class="chapter" data-level="7.2.1" data-path="ChapSampDist.html"><a href="ChapSampDist.html#a-random-sample"><i class="fa fa-check"></i><b>7.2.1</b> A Random Sample</a></li>
+<li class="chapter" data-level="7.2.2" data-path="ChapSampDist.html"><a href="ChapSampDist.html#sampling-from-a-population"><i class="fa fa-check"></i><b>7.2.2</b> Sampling From a Population</a></li>
+<li class="chapter" data-level="7.2.3" data-path="ChapSampDist.html"><a href="ChapSampDist.html#subsec:theoreticalmdls"><i class="fa fa-check"></i><b>7.2.3</b> Theoretical Models</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="ChapSampDist.html"><a href="ChapSampDist.html#law-of-large-numbers-and-central-limit-theorem"><i class="fa fa-check"></i><b>7.3</b> Law of Large Numbers and Central Limit Theorem</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="ChapSampDist.html"><a href="ChapSampDist.html#the-law-of-large-numbers"><i class="fa fa-check"></i><b>7.3.1</b> The Law of Large Numbers</a></li>
+<li class="chapter" data-level="7.3.2" data-path="ChapSampDist.html"><a href="ChapSampDist.html#the-central-limit-theorem-clt"><i class="fa fa-check"></i><b>7.3.2</b> The Central Limit Theorem (CLT)</a></li>
+<li class="chapter" data-level="7.3.3" data-path="ChapSampDist.html"><a href="ChapSampDist.html#applying-the-central-limit-theorem"><i class="fa fa-check"></i><b>7.3.3</b> Applying the Central Limit Theorem</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="ChapSampDist.html"><a href="ChapSampDist.html#SampDistEx"><i class="fa fa-check"></i><b>7.4</b> Exercises</a></li>
+<li class="chapter" data-level="7.5" data-path="ChapSampDist.html"><a href="ChapSampDist.html#summary-6"><i class="fa fa-check"></i><b>7.5</b> Summary</a><ul>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li class="chapter" data-level="" data-path="ChapProbability.html"><a href="ChapProbability.html#discussion-in-the-forum"><i class="fa fa-check"></i>Discussion in the Forum</a></li>
+<li class="chapter" data-level="" data-path="ChapProbability.html"><a href="ChapProbability.html#summary-of-formulas"><i class="fa fa-check"></i>Summary of Formulas</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="overview-and-integration.html"><a href="overview-and-integration.html"><i class="fa fa-check"></i><b>8</b> Overview and Integration</a><ul>
+<li class="chapter" data-level="8.1" data-path="overview-and-integration.html"><a href="overview-and-integration.html#student-learning-objective-4"><i class="fa fa-check"></i><b>8.1</b> Student Learning Objective</a></li>
+<li class="chapter" data-level="8.2" data-path="overview-and-integration.html"><a href="overview-and-integration.html#an-overview"><i class="fa fa-check"></i><b>8.2</b> An Overview</a></li>
+<li class="chapter" data-level="8.3" data-path="overview-and-integration.html"><a href="overview-and-integration.html#integrated-applications"><i class="fa fa-check"></i><b>8.3</b> Integrated Applications</a><ul>
+<li class="chapter" data-level="8.3.1" data-path="overview-and-integration.html"><a href="overview-and-integration.html#example-1"><i class="fa fa-check"></i><b>8.3.1</b> Example 1</a></li>
+<li class="chapter" data-level="" data-path="overview-and-integration.html"><a href="overview-and-integration.html#solution"><i class="fa fa-check"></i>Solution:</a></li>
+<li class="chapter" data-level="8.3.2" data-path="overview-and-integration.html"><a href="overview-and-integration.html#example-2"><i class="fa fa-check"></i><b>8.3.2</b> Example 2</a></li>
+<li class="chapter" data-level="" data-path="overview-and-integration.html"><a href="overview-and-integration.html#solution-1"><i class="fa fa-check"></i>Solution:</a></li>
+<li class="chapter" data-level="8.3.3" data-path="overview-and-integration.html"><a href="overview-and-integration.html#example-3"><i class="fa fa-check"></i><b>8.3.3</b> Example 3</a></li>
+<li class="chapter" data-level="" data-path="overview-and-integration.html"><a href="overview-and-integration.html#solution-2"><i class="fa fa-check"></i>Solution:</a></li>
+<li class="chapter" data-level="8.3.4" data-path="overview-and-integration.html"><a href="overview-and-integration.html#example-4"><i class="fa fa-check"></i><b>8.3.4</b> Example 4</a></li>
+<li class="chapter" data-level="" data-path="overview-and-integration.html"><a href="overview-and-integration.html#solution-3"><i class="fa fa-check"></i>Solution</a></li>
+<li class="chapter" data-level="8.3.5" data-path="overview-and-integration.html"><a href="overview-and-integration.html#example-5"><i class="fa fa-check"></i><b>8.3.5</b> Example 5</a></li>
+<li class="chapter" data-level="" data-path="overview-and-integration.html"><a href="overview-and-integration.html#solution-4"><i class="fa fa-check"></i>Solution</a></li>
+<li class="chapter" data-level="" data-path="ChapProbability.html"><a href="ChapProbability.html#discussion-in-the-forum"><i class="fa fa-check"></i>Discussion in the Forum</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="ChapInference.html"><a href="ChapInference.html"><i class="fa fa-check"></i><b>9</b> Introduction to Statistical Inference</a><ul>
+<li class="chapter" data-level="9.1" data-path="ChapInference.html"><a href="ChapInference.html#student-learning-objectives-3"><i class="fa fa-check"></i><b>9.1</b> Student Learning Objectives</a></li>
+<li class="chapter" data-level="9.2" data-path="ChapInference.html"><a href="ChapInference.html#key-terms-1"><i class="fa fa-check"></i><b>9.2</b> Key Terms</a></li>
+<li class="chapter" data-level="9.3" data-path="ChapInference.html"><a href="ChapInference.html#the-cars-data-set"><i class="fa fa-check"></i><b>9.3</b> The Cars Data Set</a></li>
+<li class="chapter" data-level="9.4" data-path="ChapSampDist.html"><a href="ChapSampDist.html#the-sampling-distribution"><i class="fa fa-check"></i><b>9.4</b> The Sampling Distribution</a><ul>
+<li class="chapter" data-level="9.4.1" data-path="ChapInference.html"><a href="ChapInference.html#statistics-1"><i class="fa fa-check"></i><b>9.4.1</b> Statistics</a></li>
+<li class="chapter" data-level="9.4.2" data-path="ChapInference.html"><a href="ChapInference.html#the-sampling-distribution-1"><i class="fa fa-check"></i><b>9.4.2</b> The Sampling Distribution</a></li>
+<li class="chapter" data-level="9.4.3" data-path="ChapInference.html"><a href="ChapInference.html#theoretical-distributions-of-observations"><i class="fa fa-check"></i><b>9.4.3</b> Theoretical Distributions of Observations</a></li>
+<li class="chapter" data-level="9.4.4" data-path="ChapInference.html"><a href="ChapInference.html#sampling-distribution-of-statistics"><i class="fa fa-check"></i><b>9.4.4</b> Sampling Distribution of Statistics</a></li>
+<li class="chapter" data-level="9.4.5" data-path="ChapInference.html"><a href="ChapInference.html#the-normal-approximation"><i class="fa fa-check"></i><b>9.4.5</b> The Normal Approximation</a></li>
+<li class="chapter" data-level="9.4.6" data-path="ChapInference.html"><a href="ChapInference.html#simulations"><i class="fa fa-check"></i><b>9.4.6</b> Simulations</a></li>
+</ul></li>
+<li class="chapter" data-level="9.5" data-path="ChapInference.html"><a href="ChapInference.html#exercises-4"><i class="fa fa-check"></i><b>9.5</b> Exercises</a></li>
+<li class="chapter" data-level="9.6" data-path="ChapInference.html"><a href="ChapInference.html#summary-7"><i class="fa fa-check"></i><b>9.6</b> Summary</a><ul>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#discuss-in-the-forum"><i class="fa fa-check"></i>Discuss in the forum</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="ChapEstimation.html"><a href="ChapEstimation.html"><i class="fa fa-check"></i><b>10</b> Point Estimation</a><ul>
+<li class="chapter" data-level="10.1" data-path="ChapEstimation.html"><a href="ChapEstimation.html#student-learning-objectives-4"><i class="fa fa-check"></i><b>10.1</b> Student Learning Objectives</a></li>
+<li class="chapter" data-level="10.2" data-path="ChapEstimation.html"><a href="ChapEstimation.html#estimating-parameters"><i class="fa fa-check"></i><b>10.2</b> Estimating Parameters</a></li>
+<li class="chapter" data-level="10.3" data-path="ChapEstimation.html"><a href="ChapEstimation.html#EstimationExp"><i class="fa fa-check"></i><b>10.3</b> Estimation of the Expectation</a><ul>
+<li class="chapter" data-level="10.3.1" data-path="ChapEstimation.html"><a href="ChapEstimation.html#the-accuracy-of-the-sample-average"><i class="fa fa-check"></i><b>10.3.1</b> The Accuracy of the Sample Average</a></li>
+<li class="chapter" data-level="10.3.2" data-path="ChapEstimation.html"><a href="ChapEstimation.html#ComparingEstimators"><i class="fa fa-check"></i><b>10.3.2</b> Comparing Estimators</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="ChapEstimation.html"><a href="ChapEstimation.html#estimation-of-the-variance-and-standard-deviation"><i class="fa fa-check"></i><b>10.4</b> Estimation of the Variance and Standard Deviation</a></li>
+<li class="chapter" data-level="10.5" data-path="ChapEstimation.html"><a href="ChapEstimation.html#EstimationOtherPars"><i class="fa fa-check"></i><b>10.5</b> Estimation of Other Parameters</a></li>
+<li class="chapter" data-level="10.6" data-path="ChapEstimation.html"><a href="ChapEstimation.html#exercises-5"><i class="fa fa-check"></i><b>10.6</b> Exercises</a></li>
+<li class="chapter" data-level="10.7" data-path="ChapEstimation.html"><a href="ChapEstimation.html#summary-8"><i class="fa fa-check"></i><b>10.7</b> Summary</a><ul>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#discuss-in-the-forum"><i class="fa fa-check"></i>Discuss in the forum</a></li>
+<li class="chapter" data-level="" data-path="ChapDescriptiveStat.html"><a href="ChapDescriptiveStat.html#formulas"><i class="fa fa-check"></i>Formulas:</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="ChapConfidence.html"><a href="ChapConfidence.html"><i class="fa fa-check"></i><b>11</b> Confidence Intervals</a><ul>
+<li class="chapter" data-level="11.1" data-path="ChapConfidence.html"><a href="ChapConfidence.html#student-learning-objectives-5"><i class="fa fa-check"></i><b>11.1</b> Student Learning Objectives</a></li>
+<li class="chapter" data-level="11.2" data-path="ChapConfidence.html"><a href="ChapConfidence.html#intervals-for-mean-and-proportion"><i class="fa fa-check"></i><b>11.2</b> Intervals for Mean and Proportion</a><ul>
+<li class="chapter" data-level="11.2.1" data-path="ChapConfidence.html"><a href="ChapConfidence.html#ConfidenceExamples"><i class="fa fa-check"></i><b>11.2.1</b> Examples of Confidence Intervals</a></li>
+<li class="chapter" data-level="11.2.2" data-path="ChapConfidence.html"><a href="ChapConfidence.html#subsec:CImean"><i class="fa fa-check"></i><b>11.2.2</b> Confidence Intervals for the Mean</a></li>
+<li class="chapter" data-level="11.2.3" data-path="ChapConfidence.html"><a href="ChapConfidence.html#subsec:CIfrac"><i class="fa fa-check"></i><b>11.2.3</b> Confidence Intervals for a Proportion</a></li>
+</ul></li>
+<li class="chapter" data-level="11.3" data-path="ChapConfidence.html"><a href="ChapConfidence.html#CInormal"><i class="fa fa-check"></i><b>11.3</b> Intervals for Normal Measurements</a><ul>
+<li class="chapter" data-level="11.3.1" data-path="ChapConfidence.html"><a href="ChapConfidence.html#confidence-intervals-for-a-normal-mean"><i class="fa fa-check"></i><b>11.3.1</b> Confidence Intervals for a Normal Mean</a></li>
+<li class="chapter" data-level="11.3.2" data-path="ChapConfidence.html"><a href="ChapConfidence.html#confidence-intervals-for-a-normal-variance"><i class="fa fa-check"></i><b>11.3.2</b> Confidence Intervals for a Normal Variance</a></li>
+</ul></li>
+<li class="chapter" data-level="11.4" data-path="ChapConfidence.html"><a href="ChapConfidence.html#choosing-the-sample-size"><i class="fa fa-check"></i><b>11.4</b> Choosing the Sample Size</a></li>
+<li class="chapter" data-level="11.5" data-path="ChapConfidence.html"><a href="ChapConfidence.html#exercises-6"><i class="fa fa-check"></i><b>11.5</b> Exercises</a></li>
+<li class="chapter" data-level="11.6" data-path="ChapConfidence.html"><a href="ChapConfidence.html#summary-9"><i class="fa fa-check"></i><b>11.6</b> Summary</a><ul>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#discuss-in-the-forum"><i class="fa fa-check"></i>Discuss in the forum</a></li>
+<li class="chapter" data-level="" data-path="ChapConfidence.html"><a href="ChapConfidence.html#formulas-for-confidence-intervals-95-confidence-level"><i class="fa fa-check"></i>Formulas for Confidence Intervals, 95% Confidence Level:</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="ChapTesting.html"><a href="ChapTesting.html"><i class="fa fa-check"></i><b>12</b> Testing Hypothesis</a><ul>
+<li class="chapter" data-level="12.1" data-path="ChapTesting.html"><a href="ChapTesting.html#student-learning-objectives-6"><i class="fa fa-check"></i><b>12.1</b> Student Learning Objectives</a></li>
+<li class="chapter" data-level="12.2" data-path="ChapTesting.html"><a href="ChapTesting.html#the-theory-of-hypothesis-testing"><i class="fa fa-check"></i><b>12.2</b> The Theory of Hypothesis Testing</a><ul>
+<li class="chapter" data-level="12.2.1" data-path="ChapTesting.html"><a href="ChapTesting.html#an-example-of-hypothesis-testing"><i class="fa fa-check"></i><b>12.2.1</b> An Example of Hypothesis Testing</a></li>
+<li class="chapter" data-level="12.2.2" data-path="ChapTesting.html"><a href="ChapTesting.html#the-structure-of-a-statistical-test-of-hypotheses"><i class="fa fa-check"></i><b>12.2.2</b> The Structure of a Statistical Test of Hypotheses</a></li>
+<li class="chapter" data-level="12.2.3" data-path="ChapTesting.html"><a href="ChapTesting.html#error-types-and-error-probabilities"><i class="fa fa-check"></i><b>12.2.3</b> Error Types and Error Probabilities</a></li>
+<li class="chapter" data-level="12.2.4" data-path="ChapTesting.html"><a href="ChapTesting.html#p-values"><i class="fa fa-check"></i><b>12.2.4</b> <span class="math inline">\(p\)</span>-Values</a></li>
+</ul></li>
+<li class="chapter" data-level="12.3" data-path="ChapTesting.html"><a href="ChapTesting.html#testing-hypothesis-on-expectation"><i class="fa fa-check"></i><b>12.3</b> Testing Hypothesis on Expectation</a></li>
+<li class="chapter" data-level="12.4" data-path="ChapTesting.html"><a href="ChapTesting.html#TestFrac"><i class="fa fa-check"></i><b>12.4</b> Testing Hypothesis on Proportion</a></li>
+<li class="chapter" data-level="12.5" data-path="ChapTesting.html"><a href="ChapTesting.html#exercises-7"><i class="fa fa-check"></i><b>12.5</b> Exercises</a></li>
+<li class="chapter" data-level="12.6" data-path="ChapTesting.html"><a href="ChapTesting.html#summary-10"><i class="fa fa-check"></i><b>12.6</b> Summary</a><ul>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#discuss-in-the-forum"><i class="fa fa-check"></i>Discuss in the forum</a></li>
+<li class="chapter" data-level="" data-path="ChapDescriptiveStat.html"><a href="ChapDescriptiveStat.html#formulas"><i class="fa fa-check"></i>Formulas:</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="ChapTwoSamp.html"><a href="ChapTwoSamp.html"><i class="fa fa-check"></i><b>13</b> Comparing Two Samples</a><ul>
+<li class="chapter" data-level="13.1" data-path="ChapTwoSamp.html"><a href="ChapTwoSamp.html#student-learning-objectives-7"><i class="fa fa-check"></i><b>13.1</b> Student Learning Objectives</a></li>
+<li class="chapter" data-level="13.2" data-path="ChapTwoSamp.html"><a href="ChapTwoSamp.html#comparing-two-distributions"><i class="fa fa-check"></i><b>13.2</b> Comparing Two Distributions</a></li>
+<li class="chapter" data-level="13.3" data-path="ChapTwoSamp.html"><a href="ChapTwoSamp.html#sec:ComparingMeans"><i class="fa fa-check"></i><b>13.3</b> Comparing the Sample Means</a><ul>
+<li class="chapter" data-level="13.3.1" data-path="ChapTwoSamp.html"><a href="ChapTwoSamp.html#an-example-of-a-comparison-of-means"><i class="fa fa-check"></i><b>13.3.1</b> An Example of a Comparison of Means</a></li>
+<li class="chapter" data-level="13.3.2" data-path="ChapTwoSamp.html"><a href="ChapTwoSamp.html#confidence-interval-for-the-difference"><i class="fa fa-check"></i><b>13.3.2</b> Confidence Interval for the Difference</a></li>
+<li class="chapter" data-level="13.3.3" data-path="ChapTwoSamp.html"><a href="ChapTwoSamp.html#the-t-test-for-two-means"><i class="fa fa-check"></i><b>13.3.3</b> The t-Test for Two Means</a></li>
+</ul></li>
+<li class="chapter" data-level="13.4" data-path="ChapTwoSamp.html"><a href="ChapTwoSamp.html#comparing-sample-variances"><i class="fa fa-check"></i><b>13.4</b> Comparing Sample Variances</a></li>
+<li class="chapter" data-level="13.5" data-path="ChapTwoSamp.html"><a href="ChapTwoSamp.html#exercises-8"><i class="fa fa-check"></i><b>13.5</b> Exercises</a></li>
+<li class="chapter" data-level="13.6" data-path="ChapTwoSamp.html"><a href="ChapTwoSamp.html#summary-11"><i class="fa fa-check"></i><b>13.6</b> Summary</a><ul>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#discuss-in-the-forum"><i class="fa fa-check"></i>Discuss in the forum</a></li>
+<li class="chapter" data-level="" data-path="ChapDescriptiveStat.html"><a href="ChapDescriptiveStat.html#formulas"><i class="fa fa-check"></i>Formulas:</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="ChapRegression.html"><a href="ChapRegression.html"><i class="fa fa-check"></i><b>14</b> Linear Regression</a><ul>
+<li class="chapter" data-level="14.1" data-path="ChapRegression.html"><a href="ChapRegression.html#student-learning-objectives-8"><i class="fa fa-check"></i><b>14.1</b> Student Learning Objectives</a></li>
+<li class="chapter" data-level="14.2" data-path="ChapRegression.html"><a href="ChapRegression.html#points-and-lines"><i class="fa fa-check"></i><b>14.2</b> Points and Lines</a><ul>
+<li class="chapter" data-level="14.2.1" data-path="ChapRegression.html"><a href="ChapRegression.html#the-scatter-plot"><i class="fa fa-check"></i><b>14.2.1</b> The Scatter Plot</a></li>
+<li class="chapter" data-level="14.2.2" data-path="ChapRegression.html"><a href="ChapRegression.html#linear-equation"><i class="fa fa-check"></i><b>14.2.2</b> Linear Equation</a></li>
+</ul></li>
+<li class="chapter" data-level="14.3" data-path="ChapRegression.html"><a href="ChapRegression.html#linear-regression"><i class="fa fa-check"></i><b>14.3</b> Linear Regression</a><ul>
+<li class="chapter" data-level="14.3.1" data-path="ChapRegression.html"><a href="ChapRegression.html#fitting-the-regression-line"><i class="fa fa-check"></i><b>14.3.1</b> Fitting the Regression Line</a></li>
+<li class="chapter" data-level="14.3.2" data-path="ChapRegression.html"><a href="ChapRegression.html#subsec:Inference"><i class="fa fa-check"></i><b>14.3.2</b> Inference</a></li>
+</ul></li>
+<li class="chapter" data-level="14.4" data-path="ChapRegression.html"><a href="ChapRegression.html#r-squared-and-the-variance-of-residuals"><i class="fa fa-check"></i><b>14.4</b> R-squared and the Variance of Residuals</a></li>
+<li class="chapter" data-level="14.5" data-path="ChapRegression.html"><a href="ChapRegression.html#exercises-9"><i class="fa fa-check"></i><b>14.5</b> Exercises</a></li>
+<li class="chapter" data-level="14.6" data-path="ChapRegression.html"><a href="ChapRegression.html#summary-12"><i class="fa fa-check"></i><b>14.6</b> Summary</a><ul>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#discuss-in-the-forum"><i class="fa fa-check"></i>Discuss in the Forum</a></li>
+<li class="chapter" data-level="" data-path="ChapDescriptiveStat.html"><a href="ChapDescriptiveStat.html#formulas"><i class="fa fa-check"></i>Formulas:</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="ChapLogistic.html"><a href="ChapLogistic.html"><i class="fa fa-check"></i><b>15</b> A Bernoulli Response</a><ul>
+<li class="chapter" data-level="15.1" data-path="ChapLogistic.html"><a href="ChapLogistic.html#student-learning-objectives-9"><i class="fa fa-check"></i><b>15.1</b> Student Learning Objectives</a></li>
+<li class="chapter" data-level="15.2" data-path="ChapLogistic.html"><a href="ChapLogistic.html#comparing-sample-proportions"><i class="fa fa-check"></i><b>15.2</b> Comparing Sample Proportions</a></li>
+<li class="chapter" data-level="15.3" data-path="ChapLogistic.html"><a href="ChapLogistic.html#logistic-regression"><i class="fa fa-check"></i><b>15.3</b> Logistic Regression</a></li>
+<li class="chapter" data-level="15.4" data-path="ChapLogistic.html"><a href="ChapLogistic.html#exercises-10"><i class="fa fa-check"></i><b>15.4</b> Exercises</a><ul>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#discuss-in-the-forum"><i class="fa fa-check"></i>Discuss in the forum</a></li>
+<li class="chapter" data-level="" data-path="ChapDescriptiveStat.html"><a href="ChapDescriptiveStat.html#formulas"><i class="fa fa-check"></i>Formulas:</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="ChapCaseStudies.html"><a href="ChapCaseStudies.html"><i class="fa fa-check"></i><b>16</b> Case Studies</a><ul>
+<li class="chapter" data-level="16.1" data-path="ChapCaseStudies.html"><a href="ChapCaseStudies.html#student-learning-objective-5"><i class="fa fa-check"></i><b>16.1</b> Student Learning Objective</a></li>
+<li class="chapter" data-level="16.2" data-path="ChapCaseStudies.html"><a href="ChapCaseStudies.html#a-review"><i class="fa fa-check"></i><b>16.2</b> A Review</a></li>
+<li class="chapter" data-level="16.3" data-path="ChapCaseStudies.html"><a href="ChapCaseStudies.html#case-studies"><i class="fa fa-check"></i><b>16.3</b> Case Studies</a><ul>
+<li class="chapter" data-level="16.3.1" data-path="ChapCaseStudies.html"><a href="ChapCaseStudies.html#physicians-reactions-to-the-size-of-a-patient"><i class="fa fa-check"></i><b>16.3.1</b> Physicians’ Reactions to the Size of a Patient</a></li>
+<li class="chapter" data-level="16.3.2" data-path="ChapCaseStudies.html"><a href="ChapCaseStudies.html#physical-strength-and-job-performance"><i class="fa fa-check"></i><b>16.3.2</b> Physical Strength and Job Performance</a></li>
+</ul></li>
+<li class="chapter" data-level="16.4" data-path="ChapCaseStudies.html"><a href="ChapCaseStudies.html#summary-13"><i class="fa fa-check"></i><b>16.4</b> Summary</a><ul>
+<li class="chapter" data-level="16.4.1" data-path="ChapCaseStudies.html"><a href="ChapCaseStudies.html#concluding-remarks"><i class="fa fa-check"></i><b>16.4.1</b> Concluding Remarks</a></li>
+<li class="chapter" data-level="16.4.2" data-path="ChapProbability.html"><a href="ChapProbability.html#discussion-in-the-forum"><i class="fa fa-check"></i><b>16.4.2</b> Discussion in the Forum</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html"><i class="fa fa-check"></i>Exercise Solutions</a><ul>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-1"><i class="fa fa-check"></i>Chapter 1</a><ul>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-1.1"><i class="fa fa-check"></i>Exercise 1.1</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-1.2"><i class="fa fa-check"></i>Exercise 1.2</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-2"><i class="fa fa-check"></i>Chapter 2</a><ul>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-2.1"><i class="fa fa-check"></i>Exercise 2.1</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-2.2"><i class="fa fa-check"></i>Exercise 2.2</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-3"><i class="fa fa-check"></i>Chapter 3</a><ul>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-3.1"><i class="fa fa-check"></i>Exercise 3.1</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-3.2"><i class="fa fa-check"></i>Exercise 3.2</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-4"><i class="fa fa-check"></i>Chapter 4</a><ul>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-4.1"><i class="fa fa-check"></i>Exercise 4.1</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-4.2"><i class="fa fa-check"></i>Exercise 4.2</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-5"><i class="fa fa-check"></i>Chapter 5</a><ul>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-5.1"><i class="fa fa-check"></i>Exercise 5.1</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-5.2"><i class="fa fa-check"></i>Exercise 5.2</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-6"><i class="fa fa-check"></i>Chapter 6</a><ul>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-6.1"><i class="fa fa-check"></i>Exercise 6.1</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-6.2"><i class="fa fa-check"></i>Exercise 6.2</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-7"><i class="fa fa-check"></i>Chapter 7</a><ul>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-7.1"><i class="fa fa-check"></i>Exercise 7.1</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-7.2"><i class="fa fa-check"></i>Exercise 7.2</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-9"><i class="fa fa-check"></i>Chapter 9</a><ul>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-9.1"><i class="fa fa-check"></i>Exercise 9.1</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-9.2"><i class="fa fa-check"></i>Exercise 9.2</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-10"><i class="fa fa-check"></i>Chapter 10</a><ul>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-10.1"><i class="fa fa-check"></i>Exercise 10.1</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-10.2"><i class="fa fa-check"></i>Exercise 10.2</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-11"><i class="fa fa-check"></i>Chapter 11</a><ul>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-11.1"><i class="fa fa-check"></i>Exercise 11.1</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-11.2"><i class="fa fa-check"></i>Exercise 11.2</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-11.3"><i class="fa fa-check"></i>Exercise 11.3</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-12"><i class="fa fa-check"></i>Chapter 12</a><ul>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-12.1"><i class="fa fa-check"></i>Exercise 12.1</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-12.2"><i class="fa fa-check"></i>Exercise 12.2</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-12.3"><i class="fa fa-check"></i>Exercise 12.3</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-13"><i class="fa fa-check"></i>Chapter 13</a><ul>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-13.1"><i class="fa fa-check"></i>Exercise 13.1</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-13.2"><i class="fa fa-check"></i>Exercise 13.2</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-13.3"><i class="fa fa-check"></i>Exercise 13.3</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-14"><i class="fa fa-check"></i>Chapter 14</a><ul>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-14.1"><i class="fa fa-check"></i>Exercise 14.1</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-14.2"><i class="fa fa-check"></i>Exercise 14.2</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-14.3"><i class="fa fa-check"></i>Exercise 14.3</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-14.4"><i class="fa fa-check"></i>Exercise 14.4</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-14.5"><i class="fa fa-check"></i>Exercise 14.5</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-14.6"><i class="fa fa-check"></i>Exercise 14.6</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#chapter-15"><i class="fa fa-check"></i>Chapter 15</a><ul>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-15.1"><i class="fa fa-check"></i>Exercise 15.1</a></li>
+<li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html#exercise-15.2"><i class="fa fa-check"></i>Exercise 15.2</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://bookdown.org" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Introduction to Statistical Thinking</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="ChapRandomVar" class="section level1">
+<h1><span class="header-section-number">Chapter 5</span> Random Variables</h1>
+<div id="student-learning-objective-1" class="section level2">
+<h2><span class="header-section-number">5.1</span> Student Learning Objective</h2>
+<p>This section introduces some important examples of random variables. The distributions of these random variables emerge as mathematical models of real-life settings. In two of the examples the sample space is composed of integers. In the other two examples the sample space is made of continuum of values. For random variables of the latter type one may use the density, which is a type of a histogram, in order to describe the distribution.</p>
+<p>By the end of the chapter the student should:</p>
+<ul>
+<li><p>Identify the Binomial, Poisson, Uniform, and Exponential random variables, relate them to real life situations, and memorize their expectations and variances.</p></li>
+<li><p>Relate the plot of the density/probability function and the cumulative probability function to the distribution of a random variable.</p></li>
+<li><p>Become familiar with the <code>R</code> functions that produce the density/probability of these random variables and their cumulative probabilities.</p></li>
+<li><p>Plot the density and the cumulative probability function of a random variable and compute probabilities associated with random variables.</p></li>
+</ul>
+</div>
+<div id="discrete-random-variables" class="section level2">
+<h2><span class="header-section-number">5.2</span> Discrete Random Variables</h2>
+<p>In the previous chapter we introduced the notion of a random variable. A random variable corresponds to the outcome of an observation or a measurement prior to the actual making of the measurement. In this context one can talk of all the values that the measurement may potentially obtain. This collection of values is called the <em>sample space</em>. To each value in the sample space one may associate the <em>probability</em> of obtaining this particular value. Probabilities are like relative frequencies. All probabilities are positive and the sum of the probabilities that are associated with all the values in the sample space is equal to one.</p>
+<p>A random variable is defined by the identification of its sample space and the probabilities that are associated with the values in the sample space. For each type of random variable we will identify first the sample space — the values it may obtain — and then describe the probabilities of the values. Examples of situations in which each type of random variable may serve as a model of a measurement will be provided. The <code>R</code> system provides functions for the computation of probabilities associated with specific types of random variables. We will use these functions in this and in proceeding chapters in order to carry out computations associated with the random variables and in order to plot their distributions.</p>
+<p>The distribution of a random variable, just like the distribution of data, can be characterized using numerical summaries. For the latter we used summaries such as the mean and the sample variance and standard deviation. The mean is used to describe the central location of the distribution and the variance and standard deviation are used to characterize the total spread. Parallel summaries are used for random variable. In the case of a random variable the name <em>expectation</em> is used for the central location of the distribution and the <em>variance</em> and the <em>standard deviation</em> (the square root of the variation) are used to summarize the spread. In all the examples of random variables we will identify the expectation and the variance (and, thereby, also the standard deviation).</p>
+<p>Random variables are used as probabilistic models of measurements. Theoretical considerations are used in many cases in order to define random variables and their distribution. A random variable for which the values in the sample space are separated from each other, say the values are integers, is called a <em>discrete random variable</em>. In this section we introduce two important integer-valued random variables: The <em>Binomial</em> and the <em>Poisson</em> random variables. These random variables may emerge as models in contexts where the measurement involves counting the number of occurrences of some phenomena.</p>
+<p>Many other models, apart from the Binomial and Poisson, exist for discrete random variables. An example of such model, the Negative-Binomial model, will be considered in Section <a href="ChapRandomVar.html#sec:RVarExercises">5.4</a>. Depending on the specific context that involves measurements with discrete values, one may select the Binomial, the Poisson, or one of these other models to serve as a theoretical approximation of the distribution of the measurement.</p>
+<div id="the-binomial-random-variable" class="section level3">
+<h3><span class="header-section-number">5.2.1</span> The Binomial Random Variable</h3>
+<p>The Binomial random variable is used in settings in which a trial that has two possible outcomes is repeated several times. Let us designate one of the outcomes as “Success” and the other as “Failure”. Assume that the probability of success in each trial is given by some number <span class="math inline">\(p\)</span> that is larger than 0 and smaller than 1. Given a number <span class="math inline">\(n\)</span> of repeats of the trial and given the probability of success, the actual number of trials that will produce “Success” as their outcome is a random variable. We call such random variable <em>Binomial</em>. The fact that a random variable <span class="math inline">\(X\)</span> has such a distribution is marked by the expression: “<span class="math inline">\(X \sim \mathrm{Binomial}(n,p)\)</span>”.</p>
+<p>As an example consider tossing 10 coins. Designate “Head” as success and “Tail” as failure. For fair coins the probability of “Head” is <span class="math inline">\(1/2\)</span>. Consequently, if <span class="math inline">\(X\)</span> is the total number of “Heads” then <span class="math inline">\(X \sim \mathrm{Binomial}(10,0.5)\)</span>, where <span class="math inline">\(n=10\)</span> is the number of trials and <span class="math inline">\(p=0.5\)</span> is the probability of success in each trial.</p>
+<p>It may happen that all 10 coins turn up “Tail”. In this case <span class="math inline">\(X\)</span> is equal to 0. It may also be the case that one of the coins turns up “Head” and the others turn up “Tail”. The random variable <span class="math inline">\(X\)</span> will obtain the value 1 in such a case. Likewise, for any integer between 0 and 10 it may be the case that the number of “Heads” that turn up is equal to that integer with the other coins turning up “Tail”. Hence, the sample space of <span class="math inline">\(X\)</span> is the set of integers <span class="math inline">\(\{0, 1, 2, \ldots, 10\}\)</span>. The probability of each outcome may be computed by an appropriate mathematical formula that will not be discussed here<a href="#fn11" class="footnoteRef" id="fnref11"><sup>11</sup></a>.</p>
+<p>The probabilities of the various possible values of a Binomial random variable may be computed with the aid of the <code>R</code> function “<code>dbinom</code>” (that uses the mathematical formula for the computation). The input to this function is a sequence of values, the value of <span class="math inline">\(n\)</span>, and the value of <span class="math inline">\(p\)</span>. The output is the sequence of probabilities associated with each of the values in the first input.</p>
+<div class="figure" style="text-align: center"><span id="fig:RVar2"></span>
+<img src="thinkstat_files/figure-html/RVar2-1.png" alt="The Binomial(10,0.5) Distribution" width="60%" />
+<p class="caption">
+FIGURE 5.1: The Binomial(10,0.5) Distribution
+</p>
+</div>
+<p>For example, let us use the function in order to compute the probability that the given Binomial obtains an odd value. A sequence that contains the odd values in the Binomial sample space can be created with the expression “<code>c(1,3,5,7,9)</code>”. This sequence can serve as the input in the first argument of the function “<code>dbinom</code>”. The other arguments are “<code>10</code>” and “<code>0.5</code>”, respectively:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dbinom</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">7</span>,<span class="dv">9</span>),<span class="dv">10</span>,<span class="fl">0.5</span>)</code></pre></div>
+<pre><code>## [1] 0.009765625 0.117187500 0.246093750 0.117187500 0.009765625</code></pre>
+<p>Observe that the output of the function is a sequence of the same length as the first argument. This output contains the Binomial probabilities of the values in the first argument. In order to obtain the probability of the event <span class="math inline">\(\{\mbox{X is odd}\}\)</span> we should sum up these probabilities, which we can do by applying the function “<code>sum</code>” to the output of the function that computes the Binomial probabilities:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sum</span>(<span class="kw">dbinom</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">7</span>,<span class="dv">9</span>),<span class="dv">10</span>,<span class="fl">0.5</span>))</code></pre></div>
+<pre><code>## [1] 0.5</code></pre>
+<p>Observe that the probability of obtaining an odd value in this specific case is equal to one half.</p>
+<p>Another example is to compute all the probabilities of all the potential values of a <span class="math inline">\(\mathrm{Binomial}(10,0.5)\)</span> random variable:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="dv">0</span><span class="op">:</span><span class="dv">10</span>
+<span class="kw">dbinom</span>(x,<span class="dv">10</span>,<span class="fl">0.5</span>)</code></pre></div>
+<pre><code>##  [1] 0.0009765625 0.0097656250 0.0439453125 0.1171875000 0.2050781250
+##  [6] 0.2460937500 0.2050781250 0.1171875000 0.0439453125 0.0097656250
+## [11] 0.0009765625</code></pre>
+<p>The expression “<code>start.value:end.value</code>” produces a sequence of numbers that initiate with the number “<code>start.value</code>” and proceeds in jumps of size one until reaching the number “<code>end.value</code>”. In this example, “<code>0:10</code>” produces the sequence of integers between 0 and 10, which is the sample space of the current Binomial example. Entering this sequence as the first argument to the function “<code>dbinom</code>” produces the probabilities of all the values in the sample space.</p>
+<p>One may display the distribution of a discrete random variable with a bar plot similar to the one used to describe the distribution of data. In this plot a vertical bar representing the probability is placed above each value of the sample space. The hight of the bar is equal to the probability. A bar plot of the <span class="math inline">\(\mathrm{Binomial}(10,0.5)\)</span> distribution is provided in Figure <a href="ChapRandomVar.html#fig:RVar2">5.1</a>.</p>
+<p>Another useful function is “<code>pbinom</code>”, which produces the cumulative probability of the Binomial:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pbinom</span>(x,<span class="dv">10</span>,<span class="fl">0.5</span>)</code></pre></div>
+<pre><code>##  [1] 0.0009765625 0.0107421875 0.0546875000 0.1718750000 0.3769531250
+##  [6] 0.6230468750 0.8281250000 0.9453125000 0.9892578125 0.9990234375
+## [11] 1.0000000000</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cumsum</span>(<span class="kw">dbinom</span>(x,<span class="dv">10</span>,<span class="fl">0.5</span>))</code></pre></div>
+<pre><code>##  [1] 0.0009765625 0.0107421875 0.0546875000 0.1718750000 0.3769531250
+##  [6] 0.6230468750 0.8281250000 0.9453125000 0.9892578125 0.9990234375
+## [11] 1.0000000000</code></pre>
+<p>The output of the function “<code>pbinom</code>” is the cumulative probability <span class="math inline">\(\Prob(X \leq x)\)</span> that the random variable is less than or equal to the input value. Observe that this cumulative probability is obtained by summing all the probabilities associated with values that are less than or equal to the input value. Specifically, the cumulative probability at <span class="math inline">\(x=3\)</span> is obtained by the summation of the probabilities at <span class="math inline">\(x=0\)</span>, <span class="math inline">\(x=1\)</span>, <span class="math inline">\(x=2\)</span>, and <span class="math inline">\(x=3\)</span>:</p>
+<p><span class="math display">\[\Prob(X \leq 3) = 0.0009765625 + 0.009765625 + 0.0439453125 + 0.1171875 = 0.171875\]</span> The numbers in the sum are the first 4 values from the output of the function “<code>dbinom(x,10,0.5)</code>”, which computes the probabilities of the values of the sample space.</p>
+<p>In principle, the expectation of the Binomial random variable, like the expectation of any other (discrete) random variable is obtained from the application of the general formulae:</p>
+<p><span class="math display">\[\Expec(X) = \sum_x \big(x \times \Prob(X = x)\big)\;,\quad \Var(X) = \sum_x\big( (x-\Expec(X))^2 \times \Prob(x)\big)\;.\]</span> However, in the specific case of the Binomial random variable, in which the probability <span class="math inline">\(\Prob(X = x)\)</span> obeys the specific mathematical formula of the Binomial distribution, the expectation and the variance reduce to the specific formulae:</p>
+<p><span class="math display">\[\Expec(X) = n p\;,\quad \Var(X) = n p(1-p)\;.\]</span> Hence, the expectation is the product of the number of trials <span class="math inline">\(n\)</span> with the probability of success in each trial <span class="math inline">\(p\)</span>. In the variance the number of trials is multiplied by the product of a probability of success (<span class="math inline">\(p\)</span>) with the probability of a failure (<span class="math inline">\(1-p\)</span>).</p>
+<p>As illustration, let us compute for the given example the expectation and the variance according to the general formulae for the computation of the expectation and variance in random variables and compare the outcome to the specific formulae for the expectation and variance in the Binomial distribution:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">X.val &lt;-<span class="st"> </span><span class="dv">0</span><span class="op">:</span><span class="dv">10</span>
+P.val &lt;-<span class="st"> </span><span class="kw">dbinom</span>(X.val,<span class="dv">10</span>,<span class="fl">0.5</span>)
+EX &lt;-<span class="st"> </span><span class="kw">sum</span>(X.val<span class="op">*</span>P.val)
+EX</code></pre></div>
+<pre><code>## [1] 5</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sum</span>((X.val<span class="op">-</span>EX)<span class="op">^</span><span class="dv">2</span><span class="op">*</span>P.val)</code></pre></div>
+<pre><code>## [1] 2.5</code></pre>
+<p>This agrees with the specific formulae for Binomial variables, since <span class="math inline">\(10 \times 0.5 = 5\)</span> and <span class="math inline">\(10 \times 0.5 \times(1-0.5) = 2.5\)</span>.</p>
+<p>Recall that the general formula for the computation of the expectation calls for the multiplication of each value in the sample space with the probability of that value, followed by the summation of all the products. The object “<code>X.val</code>” contains all the values of the random variable and the object “<code>P.val</code>” contains the probabilities of these values. Hence, the expression “<code>X.val*P.val</code>” produces the product of each value of the random variable times the probability of that value. Summation of these products with the function “<code>sum</code>” gives the expectation, which is saved in an object that is called “<code>EX</code>”.</p>
+<p>The general formula for the computation of the variance of a random variable involves the product of the squared deviation associated with each value with the probability of that value, followed by the summation of all products. The expression “<code>(X.val-EX)^ 2</code>” produces the sequence of squared deviations from the expectation for all the values of the random variable. Summation of the product of these squared deviations with the probabilities of the values (the outcome of “<code>(X.val-EX)^2*P.val</code>”) gives the variance.</p>
+<p>When the value of <span class="math inline">\(p\)</span> changes (without changing the number of trials <span class="math inline">\(n\)</span>) then the probabilities that are assigned to each of the values of the sample space of the Binomial random variable change, but the sample space itself does not. For example, consider rolling a die 10 times and counting the number of times that the face 3 was obtained. Having the face 3 turning up is a “Success”. The probability <span class="math inline">\(p\)</span> of a success in this example is 1/6, since the given face is one out of 6 equally likely faces. The resulting random variable that counts the total number of success in 10 trials has a <span class="math inline">\(\mathrm{Binomial}(10,1/6)\)</span> distribution. The sample space is yet again equal to the set of integers <span class="math inline">\(\{0,1, \ldots,10\}\)</span>. However, the probabilities of values are different. These probabilities can again be computes with the aid of the function “<code>dbinom</code>”:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dbinom</span>(x,<span class="dv">10</span>,<span class="dv">1</span><span class="op">/</span><span class="dv">6</span>)</code></pre></div>
+<pre><code>##  [1] 1.6150558e-01 3.2301117e-01 2.9071005e-01 1.5504536e-01 5.4265876e-02
+##  [6] 1.3023810e-02 2.1706350e-03 2.4807258e-04 1.8605443e-05 8.2690858e-07
+## [11] 1.6538172e-08</code></pre>
+<p>In this case smaller values of the random variable are assigned higher probabilities and larger values are assigned lower probabilities..</p>
+<div class="figure" style="text-align: center"><span id="fig:RVar3"></span>
+<img src="thinkstat_files/figure-html/RVar3-1.png" alt="The Binomial Distribution for Various Probability of &quot;Success&quot;&quot; $p$" width="60%" />
+<p class="caption">
+FIGURE 5.2: The Binomial Distribution for Various Probability of “Success”&quot; <span class="math inline">\(p\)</span>
+</p>
+</div>
+<p>In Figure <a href="ChapRandomVar.html#fig:RVar3">5.2</a> the probabilities for <span class="math inline">\(\mathrm{Binomial}(10,1/6)\)</span>, the <span class="math inline">\(\mathrm{Binomial}(10,1/2)\)</span>, and the <span class="math inline">\(\mathrm{Binomial}(10,0.6)\)</span> distributions are plotted side by side. In all these 3 distributions the sample space is the same, the integers between 0 and 10. However, the probabilities of the different values differ. (Note that all bars should be placed on top of the integers. For clarity of the presentation, the bars associated with the <span class="math inline">\(\mathrm{Binomial}(10,1/6)\)</span> are shifted slightly to the left and the bars associated with the <span class="math inline">\(\mathrm{Binomial}(10,0.6)\)</span> are shifted slightly to the right.)</p>
+<p>The expectation of the <span class="math inline">\(\mathrm{Binomial}(10,0.5)\)</span> distribution is equal to <span class="math inline">\(10 \times 0.5 = 5\)</span>. Compare this to the expectation of the <span class="math inline">\(\mathrm{Binomial}(10,1/6)\)</span> distribution, which is <span class="math inline">\(10 \times (1/6) = 1.666667\)</span> and to the expectation of the <span class="math inline">\(\mathrm{Binomial}(10,0.6)\)</span> distribution which equals <span class="math inline">\(10 \times 0.6 = 6\)</span>.</p>
+<p>The variance of the <span class="math inline">\(\mathrm{Binomial}(10,0.5)\)</span> distribution is <span class="math inline">\(10 \times 0.5 \times 0.5 = 2.5\)</span>. The variance when <span class="math inline">\(p=1/6\)</span> is <span class="math inline">\(10 \times (1/6) \times (5/6) = 1.388889\)</span> and the variance when <span class="math inline">\(p=0.6\)</span> is <span class="math inline">\(10 \times 0.6 \times 0.4 = 2.4\)</span>.</p>
+
+<div class="example">
+<span id="exm:exrvar1" class="example"><strong>Example 5.1  </strong></span>As an application of the Binomial distribution consider a pre-election poll. A candidate is running for office and is interested in knowing the percentage of support in the general population in its candidacy. Denote the probability of support by <span class="math inline">\(p\)</span>. In order to estimate the percentage a sample of size 300 is selected from the population. Let <span class="math inline">\(X\)</span> be the count of supporters in the sample. A natural model for the distribution of <span class="math inline">\(X\)</span> is the <span class="math inline">\(\mathrm{Binomial}(300,p)\)</span> distribution, since each subject in the sample may be a supporter (“Success”) or may not be a supporter (“Failure”). The probability that a subject supports the candidate is <span class="math inline">\(p\)</span> and there are <span class="math inline">\(n=300\)</span> subjects in the sample.
+</div>
+
+
+<div class="example">
+<span id="exm:exrvar2" class="example"><strong>Example 5.2  </strong></span>As another example consider the procedure for quality control that is described in Discussion Forum of Chapter <a href="ChapProbability.html#ChapProbability">4</a>. According to the procedure 20 items are tested and the number of faulty items is recorded. If <span class="math inline">\(p\)</span> is the probability that an item is identified as faulty then the distribution of the total number of faulty items may be modeled by the <span class="math inline">\(\mathrm{Binomial}(20,p)\)</span> distribution.
+</div>
+
+<p>In both examples one may be interested in making statements on the probability <span class="math inline">\(p\)</span> based on the sample. Statistical inference relates the actual count obtained in the sample to the theoretical Binomial distribution in order to make such statements.</p>
+</div>
+<div id="the-poisson-random-variable" class="section level3">
+<h3><span class="header-section-number">5.2.2</span> The Poisson Random Variable</h3>
+<p>The <em>Poisson</em> distribution is used as an approximation of the total number of occurrences of rare events. Consider, for example, the Binomial setting that involves <span class="math inline">\(n\)</span> trials with <span class="math inline">\(p\)</span> as the probability of success of each trial. Then, if <span class="math inline">\(p\)</span> is small but <span class="math inline">\(n\)</span> is large then the number of successes <span class="math inline">\(X\)</span> has, approximately, the Poisson distribution.</p>
+<p>The sample space of the Poisson random variable is the unbounded collection of integers: <span class="math inline">\(\{0,1,2, \ldots\}\)</span>. Any integer value is assigned a positive probability. Hence, the Poisson random variable is a convenient model when the maximal number of occurrences of the events in a-priori unknown or is very large. For example, one may use the Poisson distribution to model the number of phone calls that enter a switchboard in a given interval of time or the number of malfunctioning components in a shipment of some product.</p>
+<div class="figure" style="text-align: center"><span id="fig:RVar4"></span>
+<img src="thinkstat_files/figure-html/RVar4-1.png" alt="The Poisson(2) Distribution" width="60%" />
+<p class="caption">
+FIGURE 5.3: The Poisson(2) Distribution
+</p>
+</div>
+<p>The Binomial distribution was specified by the number of trials <span class="math inline">\(n\)</span> and probability of success in each trial <span class="math inline">\(p\)</span>. The Poisson distribution is specified by its expectation, which we denote by <span class="math inline">\(\lambda\)</span>. The expression “<span class="math inline">\(X \sim \mathrm{Poisson}(\lambda)\)</span>” states that the random variable <span class="math inline">\(X\)</span> has a Poisson distribution<a href="#fn12" class="footnoteRef" id="fnref12"><sup>12</sup></a> with expectation <span class="math inline">\(\Expec(X) = \lambda\)</span>. The function “<code>dpois</code>” computes the probability, according to the Poisson distribution, of values that are entered as the first argument to the function. The expectation of the distribution is entered in the second argument. The function “<code>ppois</code>” computes the cumulative probability. Consequently, we can compute the probabilities and the cumulative probabilities of the values between 0 and 10 for the <span class="math inline">\(\mathrm{Poisson}(2)\)</span> distribution via:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="dv">0</span><span class="op">:</span><span class="dv">10</span>
+<span class="kw">dpois</span>(x,<span class="dv">2</span>)</code></pre></div>
+<pre><code>##  [1] 0.135335283237 0.270670566473 0.270670566473 0.180447044315
+##  [5] 0.090223522158 0.036089408863 0.012029802954 0.003437086558
+##  [9] 0.000859271640 0.000190949253 0.000038189851</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ppois</span>(x,<span class="dv">2</span>)</code></pre></div>
+<pre><code>##  [1] 0.13533528 0.40600585 0.67667642 0.85712346 0.94734698 0.98343639
+##  [7] 0.99546619 0.99890328 0.99976255 0.99995350 0.99999169</code></pre>
+<p>The probability function of the Poisson distribution with <span class="math inline">\(\lambda = 2\)</span>, in the range between 0 and 10, is plotted in Figure <a href="ChapRandomVar.html#fig:RVar4">5.3</a>. Observe that in this example probabilities of the values 8 and beyond are very small. As a matter of fact, the cumulative probability at <span class="math inline">\(x=7\)</span> (the 8th value in the output of “<code>ppois(x,2)</code>”) is approximately 0.999, out of the total cumulative probability of 1.000, leaving a total probability of about 0.001 to be distributed among all the values larger than 7.</p>
+<div class="figure" style="text-align: center"><span id="fig:RVar5"></span>
+<img src="thinkstat_files/figure-html/RVar5-1.png" alt="The Poisson Distribution for Various Values of $\lambda$" width="60%" />
+<p class="caption">
+FIGURE 5.4: The Poisson Distribution for Various Values of <span class="math inline">\(\lambda\)</span>
+</p>
+</div>
+<p>Let us compute the expectation of the given Poisson distribution:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">X.val &lt;-<span class="st"> </span><span class="dv">0</span><span class="op">:</span><span class="dv">10</span>
+P.val &lt;-<span class="st"> </span><span class="kw">dpois</span>(X.val,<span class="dv">2</span>)
+<span class="kw">sum</span>(X.val<span class="op">*</span>P.val)</code></pre></div>
+<pre><code>## [1] 1.999907</code></pre>
+<p>Observe that the outcome is almost, but not quite, equal to <span class="math inline">\(2.00\)</span>, which is the actual value of the expectation. The reason for the inaccuracy is the fact that we have based the computation in <code>R</code> on the first 11 values of the distribution only, instead of the infinite sequence of values. A more accurate result may be obtained by the consideration of the first 101 values:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">X.val &lt;-<span class="st"> </span><span class="dv">0</span><span class="op">:</span><span class="dv">100</span>
+P.val &lt;-<span class="st"> </span><span class="kw">dpois</span>(X.val,<span class="dv">2</span>)
+EX &lt;-<span class="st"> </span><span class="kw">sum</span>(X.val<span class="op">*</span>P.val)
+EX</code></pre></div>
+<pre><code>## [1] 2</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sum</span>((X.val<span class="op">-</span>EX)<span class="op">^</span><span class="dv">2</span><span class="op">*</span>P.val)</code></pre></div>
+<pre><code>## [1] 2</code></pre>
+<p>In the last expression we have computed the variance of the Poisson distribution and obtained that it is equal to the expectation. This results can be validated mathematically. For the Poisson distribution it is always the case that the variance is equal to the expectation, namely to <span class="math inline">\(\lambda\)</span>: <span class="math display">\[\Expec(X) = \Var(X) = \lambda\;.\]</span></p>
+<p>In Figure <a href="ChapRandomVar.html#fig:RVar5">5.4</a> you may find the probabilities of the Poisson distribution for <span class="math inline">\(\lambda = 0.5\)</span>, <span class="math inline">\(\lambda = 1\)</span> and <span class="math inline">\(\lambda = 2\)</span>. Notice once more that the sample space is the same for all the Poisson distributions. What varies when we change the value of <span class="math inline">\(\lambda\)</span> are the probabilities. Observe that as <span class="math inline">\(\lambda\)</span> increases then probability of larger values increases as well.</p>
+
+<div class="example">
+<span id="exm:exrvar3" class="example"><strong>Example 5.3  </strong></span>A radio active element decays by the release of subatomic particles and energy. The decay activity is measured in terms of the number of decays per second in a unit mass. A typical model for the distribution of the number of decays is the Poisson distribution. Observe that the number of decays in a second is a integer and, in principle, it may obtain any integer value larger or equal to zero. The event of a radio active decay of an atom is a relatively rare event. Therefore, the Poisson model is likely to fit this phenomena<a href="#fn13" class="footnoteRef" id="fnref13"><sup>13</sup></a>.
+</div>
+
+
+<div class="example">
+<span id="exm:exrvar4" class="example"><strong>Example 5.4  </strong></span>Consider an overhead power line suspended between two utility poles. During rain, drops of water may hit the power line. The total number of drops that hit the line in a one minute period may be modeled by a Poisson random variable.
+</div>
+
+</div>
+</div>
+<div id="RandomVar_5" class="section level2">
+<h2><span class="header-section-number">5.3</span> Continuous Random Variable</h2>
+<p>Many types of measurements, such as height, weight, angle, temperature, etc., may in principle have a continuum of possible values. Continuous random variables are used to model uncertainty regarding future values of such measurements.</p>
+<p>The main difference between discrete random variables, which is the type we examined thus far, and continuous random variable, that are added now to the list, is in the sample space, i.e., the collection of possible outcomes. The former type is used when the possible outcomes are separated from each other as the integers are. The latter type is used when the possible outcomes are the entire line of real numbers or when they form an interval (possibly an open ended one) of real numbers.</p>
+<p>The difference between the two types of sample spaces implies differences in the way the distribution of the random variables is being described. For discrete random variables one may list the probability associated with each value in the sample space using a table, a formula, or a bar plot. For continuous random variables, on the other hand, probabilities are assigned to intervals of values, and not to specific values. Thence, densities are used in order to display the distribution.</p>
+<p>Densities are similar to histograms, with areas under the plot corresponding to probabilities. We will provide a more detailed description of densities as we discuss the different examples of continuous random variables.</p>
+<p>In continuous random variables integration replaces summation and the density replaces the probability in the computation of quantities such as the probability of an event, the expectation, and the variance.</p>
+<p>Hence, if the expectation of a discrete random variable is given in the formula <span class="math inline">\(\Expec(X) = \sum_x \big(x \times \Prob(x)\big)\)</span>, which involves the summation over all values of the product between the value and the probability of the value, then for continuous random variable the definition becomes:</p>
+<p><span class="math display">\[\Expec(X) = \int \big(x \times f(x)\big)dx\;,\]</span> where <span class="math inline">\(f(x)\)</span> is the density of <span class="math inline">\(X\)</span> at the value <span class="math inline">\(x\)</span>. Therefore, in the expectation of a continuous random variable one multiplies the value by the density at the value. This product is then integrated over the sample space.</p>
+<p>Likewise, the formula <span class="math inline">\(\Var(X) = \sum_x\big( (x-\Expec(X))^2 \times \Prob(x)\big)\)</span> for the variance is replaced by:</p>
+<p><span class="math display">\[\Var(X) =\int\big((x-\Expec(X))^2 \times f(x) \big) dx\;.\]</span> Nonetheless, the intuitive interpretation of the expectation as the central value of the distribution that identifies the location and the interpretation of the standard deviation (the square root of the variance) as the summary of the total spread of the distribution is still valid.</p>
+<p>In this section we will describe two types of continuous random variables: Uniform and Exponential. In the next chapter another example – the Normal distribution – will be introduced.</p>
+<div id="the-uniform-random-variable" class="section level3">
+<h3><span class="header-section-number">5.3.1</span> The Uniform Random Variable</h3>
+<p>The Uniform distribution is used in order to model measurements that may have values in a given interval, with all values in this interval equally likely to occur.</p>
+<p>For example, consider a random variable <span class="math inline">\(X\)</span> with the Uniform distribution over the interval <span class="math inline">\([3,7]\)</span>, denoted by “<span class="math inline">\(X \sim \mathrm{Uniform}(3,7)\)</span>”. The density function at given values may be computed with the aid of the function “<code>dunif</code>”. For instance let us compute the density of the <span class="math inline">\(\mathrm{Uniform}(3,7)\)</span> distribution over the integers <span class="math inline">\(\{0, 1, \ldots, 10\}\)</span>:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dunif</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">10</span>,<span class="dv">3</span>,<span class="dv">7</span>)</code></pre></div>
+<pre><code>##  [1] 0.00 0.00 0.00 0.25 0.25 0.25 0.25 0.25 0.00 0.00 0.00</code></pre>
+<p>Notice that for the values 0, 1, and 2, and the values 8, 9 and 10 that are outside of the interval the density is equal to zero, indicating that such values cannot occur in the given distribution. The values of the density at integers inside the interval are positive and equal to each other. The density is not restricted to integer values. For example, at the point <span class="math inline">\(4.73\)</span> we get that the density is positive and of the same height:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dunif</span>(<span class="fl">4.73</span>,<span class="dv">3</span>,<span class="dv">7</span>)</code></pre></div>
+<pre><code>## [1] 0.25</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:RVar6"></span>
+<img src="thinkstat_files/figure-html/RVar6-1.png" alt="The Uniform(3,7) Distribution" width="60%" />
+<p class="caption">
+FIGURE 5.5: The Uniform(3,7) Distribution
+</p>
+</div>
+<p>A plot of the <span class="math inline">\(\mathrm{Uniform}(3,7)\)</span> density is given in Figure <a href="ChapRandomVar.html#fig:RVar6">5.5</a> in the form of a solid line. Observe that the density is positive over the interval <span class="math inline">\([3,7]\)</span> where its height is 1/4. Area under the curve in the density corresponds to probability. Indeed, the fact that the total probability is one is reflected in the total area under the curve being equal to 1. Over the interval <span class="math inline">\([3,7]\)</span> the density forms a rectangle. The base of the rectangle is the length of the interval <span class="math inline">\(7-3=4\)</span>. The height of the rectangle is thus equal to 1/4 in order to produce a total area of <span class="math inline">\(4 \times (1/4) = 1\)</span>.</p>
+<p>The function “<code>punif</code>” computes the cumulative probability of the uniform distribution. The probability <span class="math inline">\(\Prob(X \leq 4.73)\)</span>, for <span class="math inline">\(X \sim \mathrm{Uniform}(3,7)\)</span>, is given by:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">punif</span>(<span class="fl">4.73</span>,<span class="dv">3</span>,<span class="dv">7</span>)</code></pre></div>
+<pre><code>## [1] 0.4325</code></pre>
+<p>This probability corresponds to the marked area to the left of the point <span class="math inline">\(x = 4.73\)</span> in Figure <a href="ChapRandomVar.html#fig:RVar6">5.5</a>. This area of the marked rectangle is equal to the length of the base 4.73 - 3 = 1.73, times the height of the rectangle 1/(7-3) = 1/4. Indeed:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(<span class="fl">4.73</span><span class="op">-</span><span class="dv">3</span>)<span class="op">/</span>(<span class="dv">7</span><span class="op">-</span><span class="dv">3</span>)</code></pre></div>
+<pre><code>## [1] 0.4325</code></pre>
+<p>is the area of the marked rectangle and is equal to the probability.</p>
+<p>Let us use <code>R</code> in order to plot the density and the cumulative probability functions of the Uniform distribution. We produce first a large number of points in the region we want to plot. The points are produced with aid of the function “<code>seq</code>”. The output of this function is a sequence with equally spaced values. The starting value of the sequence is the first argument in the input of the function and the last value is the second argument in the input. The argument “<code>length=1000</code>” sets the length of the sequence, 1,000 values in this case:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">0</span>,<span class="dv">10</span>,<span class="dt">length=</span><span class="dv">1000</span>)
+den &lt;-<span class="st"> </span><span class="kw">dunif</span>(x,<span class="dv">3</span>,<span class="dv">7</span>)
+<span class="kw">plot</span>(x,den)</code></pre></div>
+<p><img src="thinkstat_files/figure-html/unnamed-chunk-64-1.png" width="60%" style="display: block; margin: auto;" /></p>
+<p>The object “<code>den</code>” is a sequence of length 1,000 that contains the density of the <span class="math inline">\(\mathrm{Uniform}(3,7)\)</span> evaluated over the values of “<code>x</code>”. When we apply the function “<code>plot</code>” to the two sequences we get a scatter plot of the 1,000 points.</p>
+<p>A scatter plot is a plot of points. Each point in the scatter plot is identify by its horizontal location on the plot (its “<span class="math inline">\(x\)</span>” value) and by its vertical location on the plot (its <span class="math inline">\(y\)</span> value). The horizontal value of each point in the plot is determined by the first argument to the function “<code>plot</code>” and the vertical value is determined by the second argument. For example, the first value in the sequence “<code>x</code>” is 0. The value of the Uniform density at this point is 0. Hence, the first value of the sequence “<code>den</code>” is also 0. A point that corresponds to these values is produced in the plot. The horizontal value of the point is 0 and the vertical value is 0. In a similar way the other 999 points are plotted. The last point to be plotted has a horizontal value of 10 and a vertical value of 0.</p>
+<p>The number of points that are plotted is large and they overlap each other in the graph and thus produce an impression of a continuum. In order to obtain nicer looking plots we may choose to connect the points to each other with segments and use smaller points. This may be achieved by the addition of the argument “<code>type=l</code>”, with the letter <code>l</code> for line, to the plotting function:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(x,den,<span class="dt">type=</span><span class="st">&quot;l&quot;</span>)</code></pre></div>
+<p><img src="thinkstat_files/figure-html/unnamed-chunk-65-1.png" width="60%" style="display: block; margin: auto;" /></p>
+<p>The cumulative probability of the <span class="math inline">\(\mathrm{Uniform}(3,7)\)</span> is produced by the code:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">cdf &lt;-<span class="st"> </span><span class="kw">punif</span>(x,<span class="dv">3</span>,<span class="dv">7</span>)
+<span class="kw">plot</span>(x,cdf,<span class="dt">type=</span><span class="st">&quot;l&quot;</span>)</code></pre></div>
+<p><img src="thinkstat_files/figure-html/unnamed-chunk-66-1.png" width="60%" style="display: block; margin: auto;" /></p>
+<p>One can think of the density of the Uniform as an histogram<a href="#fn14" class="footnoteRef" id="fnref14"><sup>14</sup></a>. The expectation of a Uniform random variable is the middle point of it’s histogram. Hence, if <span class="math inline">\(X \sim \mathrm{Uniform}(a,b)\)</span> then:</p>
+<p><span class="math display">\[\Expec(X) = \frac{a+b}{2}\;.\]</span> For the <span class="math inline">\(X \sim \mathrm{Uniform}(3,7)\)</span> distribution the expectation is <span class="math inline">\(\Expec(X)= (3+7)/2 = 5\)</span>. Observe that 5 is the center of the Uniform density in Plot <a href="ChapRandomVar.html#fig:RVar6">5.5</a>.</p>
+<p>It can be shown that the variance of the <span class="math inline">\(\mathrm{Uniform}(a,b)\)</span> is equal to</p>
+<p><span class="math display">\[\Var(X) = \frac{(b-a)^2}{12}\;,\]</span> with the standard deviation being the square root of this value. Specifically, for <span class="math inline">\(X \sim \mathrm{Uniform}(3,7)\)</span> we get that <span class="math inline">\(\Var(X) = (7-3)^2/12 = 1.333333\)</span>. The standard deviation is equal to <span class="math inline">\(\sqrt{1.333333} = 1.154701\)</span>.</p>
+
+<div class="example">
+<span id="exm:exrvar5" class="example"><strong>Example 5.5  </strong></span>In Example <a href="ChapRandomVar.html#exm:exrvar4">5.4</a> we considered rain drops that hit an overhead power line suspended between two utility poles. The <span><strong>number</strong></span> of drops that hit the line can be modeled using the Poisson distribution. The <span><strong>position</strong></span> between the two poles where a rain drop hits the line can be modeled by the Uniform distribution. The rain drop can hit any position between the two utility poles. Hitting one position along the line is as likely as hitting any other position.
+</div>
+
+
+<div class="example">
+<span id="exm:exrvar6" class="example"><strong>Example 5.6  </strong></span>Meiosis is the process in which a diploid cell that contains two copies of the genetic material produces an haploid cell with only one copy (sperms or eggs, depending on the sex). The resulting molecule of genetic material is linear molecule (chromosome) that is composed of consecutive segments: a segment that originated from one of the two copies followed by a segment from the other copy and vice versa. The border points between segments are called points of crossover. The Haldane model for crossovers states that the position of a crossover between two given loci on the chromosome corresponds to the Uniform distribution and the total number of crossovers between these two loci corresponds to the Poisson distribution.
+</div>
+
+</div>
+<div id="the-exponential-random-variable" class="section level3">
+<h3><span class="header-section-number">5.3.2</span> The Exponential Random Variable</h3>
+<p>The Exponential distribution is frequently used to model times between events. For example, times between incoming phone calls, the time until a component becomes malfunction, etc. We denote the Exponential distribution via “<span class="math inline">\(X \sim \mathrm{Exponential}(\lambda)\)</span>”, where <span class="math inline">\(\lambda\)</span> is a parameter that characterizes the distribution and is called the <em>rate</em> of the distribution. The overlap between the parameter used to characterize the Exponential distribution and the one used for the Poisson distribution is deliberate. The two distributions are tightly interconnected. As a matter of fact, it can be shown that if the distribution between occurrences of a phenomena has the Exponential distribution with rate <span class="math inline">\(\lambda\)</span> then the total number of the occurrences of the phenomena within a unit interval of time has a <span class="math inline">\(\mathrm{Poisson}(\lambda)\)</span> distribution.</p>
+<p>The sample space of an Exponential random variable contains all non-negative numbers. Consider, for example, <span class="math inline">\(X \sim \mathrm{Exponential}(0.5)\)</span>. The density of the distribution in the range between 0 and 10 is presented in Figure <a href="ChapRandomVar.html#fig:RVar7">5.6</a>. Observe that in the Exponential distribution smaller values are more likely to occur in comparison to larger values. This is indicated by the density being larger at the vicinity of 0. The density of the exponential distribution given in the plot is positive, but hardly so, for values larger than 10.</p>
+<div class="figure" style="text-align: center"><span id="fig:RVar7"></span>
+<img src="thinkstat_files/figure-html/RVar7-1.png" alt="The Exponential(0.5) Distribution" width="60%" />
+<p class="caption">
+FIGURE 5.6: The Exponential(0.5) Distribution
+</p>
+</div>
+<p>The density of the Exponential distribution can be computed with the aid of the function “<code>dexp</code>”<a href="#fn15" class="footnoteRef" id="fnref15"><sup>15</sup></a>. The cumulative probability can be computed with the function “<code>pexp</code>”. For illustration, assume <span class="math inline">\(X \sim \mathrm{Exponential}(0.5)\)</span>. Say one is interested in the computation of the probability <span class="math inline">\(\Prob(2 &lt; X \leq 6)\)</span> that the random variable obtains a value that belongs to the interval <span class="math inline">\((2,6]\)</span>. The required probability is indicated as the marked area in Figure <a href="ChapRandomVar.html#fig:RVar7">5.6</a>. This area can be computed as the difference between the probability <span class="math inline">\(\Prob(X \leq 6)\)</span>, the area to the left of 6, and the probability <span class="math inline">\(\Prob(X \leq 2)\)</span>, the area to the left of 2:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pexp</span>(<span class="dv">6</span>,<span class="fl">0.5</span>) <span class="op">-</span><span class="st"> </span><span class="kw">pexp</span>(<span class="dv">2</span>,<span class="fl">0.5</span>)</code></pre></div>
+<pre><code>## [1] 0.31809237</code></pre>
+<p>The difference is the probability of belonging to the interval, namely the area marked in the plot.</p>
+<p>The expectation of <span class="math inline">\(X\)</span>, when <span class="math inline">\(X \sim \mathrm{Exponential}(\lambda)\)</span>, is given by the equation:</p>
+<p><span class="math display">\[\Expec(X) = 1/\lambda\;,\]</span> and the variance is given by:</p>
+<p><span class="math display">\[\Var(X) =1/\lambda^2\;.\]</span> The standard deviation is the square root of the variance, namely <span class="math inline">\(1/\lambda\)</span>. Observe that the larger is the rate the smaller are the expectation and the standard deviation.</p>
+<div class="figure" style="text-align: center"><span id="fig:RVar8"></span>
+<img src="thinkstat_files/figure-html/RVar8-1.png" alt="The Exponential Distribution for Various Values of $\lambda$" width="60%" />
+<p class="caption">
+FIGURE 5.7: The Exponential Distribution for Various Values of <span class="math inline">\(\lambda\)</span>
+</p>
+</div>
+<p>In Figure <a href="ChapRandomVar.html#fig:RVar8">5.7</a> the densities of the Exponential distribution are plotted for <span class="math inline">\(\lambda = 0.5\)</span>, <span class="math inline">\(\lambda = 1\)</span>, and <span class="math inline">\(\lambda = 2\)</span>. Notice that with the increase in the value of the parameter then the values of the random variable tends to become smaller. This inverse relation makes sense in connection to the Poisson distribution. Recall that the Poisson distribution corresponds to the total number of occurrences in a unit interval of time when the time between occurrences has an Exponential distribution. A larger expectation <span class="math inline">\(\lambda\)</span> of the Poisson corresponds to a larger number of occurrences that are likely to take place during the unit interval of time. The larger is the number of occurrences the smaller are the time intervals between occurrences.</p>
+
+<div class="example">
+<span id="exm:exrvar7" class="example"><strong>Example 5.7  </strong></span>Consider Examples <a href="ChapRandomVar.html#exm:exrvar4">5.4</a> and <a href="ChapRandomVar.html#exm:exrvar5">5.5</a> that deal with rain dropping on a power line. The times between consecutive hits of the line may be modeled by the Exponential distribution. Hence, the time to the first hit has an Exponential distribution. The time between the first and the second hit is also Exponentially distributed, and so on.
+</div>
+
+
+<div class="example">
+<span id="exm:exrvar8" class="example"><strong>Example 5.8  </strong></span>Return to Example <a href="ChapRandomVar.html#exm:exrvar3">5.3</a> that deals with the radio activity of some element. The total count of decays per second is model by the Poisson distribution. The times between radio active decays is modeled according to the Exponential distribution. The rate <span class="math inline">\(\lambda\)</span> of that Exponential distribution is equal to the expectation of the total count of decays in one second, i.e. the expectation of the Poisson distribution.
+</div>
+
+</div>
+</div>
+<div id="sec:RVarExercises" class="section level2">
+<h2><span class="header-section-number">5.4</span> Exercises</h2>
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-68" class="exercise"><strong>Exercise 5.1  </strong></span>A particular measles vaccine produces a reaction (a fever higher that 102 Fahrenheit) in each vaccinee with probability of 0.09. A clinic vaccinates 500 people each day.</p>
+<ol style="list-style-type: decimal">
+<li><p>What is the expected number of people that will develop a reaction each day?</p></li>
+<li><p>What is the standard deviation of the number of people that will develop a reaction each day?</p></li>
+<li><p>In a given day, what is the probability that more than 40 people will develop a reaction?</p></li>
+<li>In a given day, what is the probability that the number of people that will develop a reaction is between 50 and 45 (inclusive)?</li>
+</ol>
+</div>
+
+<div class="figure" style="text-align: center"><span id="fig:RVar10"></span>
+<img src="thinkstat_files/figure-html/RVar10-1.png" alt="Bar Plots of the Negative-Binomial Distribution" width="60%" />
+<p class="caption">
+FIGURE 5.8: Bar Plots of the Negative-Binomial Distribution
+</p>
+</div>
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-69" class="exercise"><strong>Exercise 5.2  </strong></span>The Negative-Binomial distribution is yet another example of a discrete, integer valued, random variable. The sample space of the distribution are all non-negative integers <span class="math inline">\(\{0, 1, 2, \ldots\}\)</span>. The fact that a random variable <span class="math inline">\(X\)</span> has this distribution is marked by “<span class="math inline">\(X \sim \mbox{Negative-Binomial}(r,p)\)</span>”, where <span class="math inline">\(r\)</span> and <span class="math inline">\(p\)</span> are parameters that specify the distribution.</p>
+<p>Consider 3 random variables from the Negative-Binomial distribution:</p>
+<ul>
+<li><p><span class="math inline">\(X_1 \sim \mbox{Negative-Binomial}(2,0.5)\)</span></p></li>
+<li><p><span class="math inline">\(X_2 \sim \mbox{Negative-Binomial}(4,0.5)\)</span></p></li>
+<li><p><span class="math inline">\(X_3 \sim \mbox{Negative-Binomial}(8,0.8)\)</span></p></li>
+</ul>
+<p>The bar plots of these random variables are presented in Figure <a href="ChapRandomVar.html#fig:RVar10">5.8</a>, re-organizer in a random order.</p>
+<ol style="list-style-type: decimal">
+<li><p>Produce bar plots of the distributions of the random variables <span class="math inline">\(X_1\)</span>, <span class="math inline">\(X_2\)</span>, <span class="math inline">\(X_3\)</span> in the range of integers between 0 and 15 and thereby identify the pair of parameters that produced each one of the plots in Figure <a href="ChapRandomVar.html#fig:RVar10">5.8</a>. Notice that the bar plots can be produced with the aid of the function “<code>plot</code>” and the function “<code>dnbinom(x,r,p)</code>”, where “<code>x</code>” is a sequence of integers and “<code>r</code>” and “<code>p</code>” are the parameters of the distribution. Pay attention to the fact that you should use the argument “<code>type = h</code>” in the function “<code>plot</code>” in order to produce the horizontal bars.</p></li>
+<li><p>Below is a list of pairs that includes an expectation and a variance. Each of the pairs is associated with one of the random variables <span class="math inline">\(X_1\)</span>, <span class="math inline">\(X_2\)</span>, and <span class="math inline">\(X_3\)</span>:</p>
+<ol style="list-style-type: decimal">
+<li><p><span class="math inline">\(\Expec(X) = 4\)</span>, <span class="math inline">\(\Var(X) = 8\)</span>.</p></li>
+<li><p><span class="math inline">\(\Expec(X) = 2\)</span>, <span class="math inline">\(\Var(X) = 4\)</span>.</p></li>
+<li><p><span class="math inline">\(\Expec(X) = 2\)</span>, <span class="math inline">\(\Var(X) = 2.5\)</span>.</p></li>
+</ol>
+Use Figure <a href="ChapRandomVar.html#fig:RVar10">5.8</a> in order to match the random variable with its associated pair. Do not use numerical computations or formulae for the expectation and the variance in the Negative-Binomial distribution in order to carry out the matching<a href="#fn16" class="footnoteRef" id="fnref16"><sup>16</sup></a>. Use, instead, the structure of the bar-plots.</li>
+</ol>
+</div>
+
+</div>
+<div id="summary-4" class="section level2">
+<h2><span class="header-section-number">5.5</span> Summary</h2>
+<div id="glossary" class="section level3 unnumbered">
+<h3>Glossary</h3>
+<dl>
+<dt>Binomial Random Variable:</dt>
+<dd><p>The number of successes among <span class="math inline">\(n\)</span> repeats of independent trials with a probability <span class="math inline">\(p\)</span> of success in each trial. The distribution is marked as <span class="math inline">\(\mathrm{Binomial}(n,p)\)</span>.</p>
+</dd>
+<dt>Poisson Random Variable:</dt>
+<dd><p>An approximation to the number of occurrences of a rare event, when the expected number of events is <span class="math inline">\(\lambda\)</span>. The distribution is marked as <span class="math inline">\(\mathrm{Poisson}(\lambda)\)</span>.</p>
+</dd>
+<dt>Density:</dt>
+<dd><p>Histogram that describes the distribution of a continuous random variable. The area under the curve corresponds to probability.</p>
+</dd>
+<dt>Uniform Random Variable:</dt>
+<dd><p>A model for a measurement with equally likely outcomes over an interval <span class="math inline">\([a,b]\)</span>. The distribution is marked as <span class="math inline">\(\mathrm{Uniform}(a,b)\)</span>.</p>
+</dd>
+<dt>Exponential Random Variable:</dt>
+<dd><p>A model for times between events. The distribution is marked as <span class="math inline">\(\mathrm{Exponential}(\lambda)\)</span>.</p>
+</dd>
+</dl>
+</div>
+<div id="discuss-in-the-forum" class="section level3 unnumbered">
+<h3>Discuss in the Forum</h3>
+<p>This unit deals with two types of discrete random variables, the Binomial and the Poisson, and two types of continuous random variables, the Uniform and the Exponential. Depending on the context, these types of random variables may serve as theoretical models of the uncertainty associated with the outcome of a measurement.</p>
+<p>In your opinion, is it or is it not useful to have a theoretical model for a situation that occurs in real life?</p>
+<p>When forming your answer to this question you may give an example of a situation from you own field of interest for which a random variable, possibly from one of the types that are presented in this unit, can serve as a model. Discuss the importance (or lack thereof) of having a theoretical model for the situation.</p>
+<p>For example, the Exponential distribution may serve as a model for the time until an atom of a radio active element decays by the release of subatomic particles and energy. The decay activity is measured in terms of the number of decays per second. This number is modeled as having a Poisson distribution. Its expectation is the rate of the Exponential distribution. For the radioactive element Carbon-14 (<span class="math inline">\({}^{\mbox{\tiny 14}}\mathrm{C}\)</span>) the decay rate is <span class="math inline">\(3.8394 \times 10^{-12}\)</span> particles per second. Computations that are based on the Exponential model may be used in order to date ancient specimens.</p>
+</div>
+<div id="summary-of-formulas" class="section level3 unnumbered">
+<h3>Summary of Formulas</h3>
+<dl>
+<dt>Discrete Random Variable:</dt>
+<dd>
+</dd>
+</dl>
+<p><span class="math display">\[\begin{aligned}
+        \Expec(X) &amp;= \sum_x \big(x \times \Prob(x)\big) \\
+        \Var(X) &amp;= \sum_x\big( (x-\Expec(X))^2 \times \Prob(x)\big) \end{aligned}\]</span></p>
+<dl>
+<dt>Continuous Random Variable:</dt>
+<dd>
+</dd>
+</dl>
+<p><span class="math display">\[\begin{aligned}
+        \Expec(X) &amp;= \int \big(x \times f(x)\big)dx \\
+        \Var(X) &amp;= \int\big((x-\Expec(X))^2 \times f(x) \big) dx \end{aligned}\]</span></p>
+<dl>
+<dt>Binomial:</dt>
+<dd><p><span class="math inline">\(\Expec(X) = n p \;, \quad \Var(X) = n p(1-p)\)</span></p>
+</dd>
+<dt>Poisson:</dt>
+<dd><p><span class="math inline">\(\Expec(X) = \lambda\;, \quad \Var(X) = \lambda\)</span></p>
+</dd>
+<dt>Uniform:</dt>
+<dd><p><span class="math inline">\(\Expec(X) = (a+b)/2\;, \quad \Var(X)= (b-a)^2/12\)</span></p>
+</dd>
+<dt>Exponential:</dt>
+<dd><p><span class="math inline">\(\Expec(X) = 1/\lambda\;, \quad \Var(X)= 1/\lambda^2\)</span></p>
+</dd>
+</dl>
+
+</div>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="11">
+<li id="fn11"><p>If <span class="math inline">\(X\sim \mathrm{Binomial}(n,p)\)</span> then <span class="math inline">\(\Prob(X = x) = {n \choose x} p^x (1-p)^{n-x}\)</span>, for <span class="math inline">\(x = 0, 1, \ldots, n\)</span>.<a href="ChapRandomVar.html#fnref11">↩</a></p></li>
+<li id="fn12"><p>If <span class="math inline">\(X \sim \mathrm{Poisson}(\lambda)\)</span> then <span class="math inline">\(\Prob(X=x) = e^{-\lambda}\lambda^x/x!\)</span>, for <span class="math inline">\(x=0,1,2,\ldots\)</span>.<a href="ChapRandomVar.html#fnref12">↩</a></p></li>
+<li id="fn13"><p>The number of decays may also be considered in the <span class="math inline">\(\mathrm{Binomial}(n,p)\)</span> setting. The number <span class="math inline">\(n\)</span> is the total number of atoms in the unit mass and <span class="math inline">\(p\)</span> is the probability that an atom decays within the given second. However, since <span class="math inline">\(n\)</span> is very large and <span class="math inline">\(p\)</span> is very small we get that the Poisson distribution is an appropriate model for the count.<a href="ChapRandomVar.html#fnref13">↩</a></p></li>
+<li id="fn14"><p>If <span class="math inline">\(X \sim \mathrm{Uniform}(a,b)\)</span> then the density is <span class="math inline">\(f(x) = 1/(b-a)\)</span>, for <span class="math inline">\(a \leq x \leq b\)</span>, and it is equal to 0 for other values of <span class="math inline">\(x\)</span>.<a href="ChapRandomVar.html#fnref14">↩</a></p></li>
+<li id="fn15"><p>If <span class="math inline">\(X \sim \mathrm{Exponential}(\lambda)\)</span> then the density is <span class="math inline">\(f(x) =\lambda e^{-\lambda x}\)</span>, for <span class="math inline">\(0 \leq x\)</span>, and it is equal to 0 for <span class="math inline">\(x &lt; 0\)</span>.<a href="ChapRandomVar.html#fnref15">↩</a></p></li>
+<li id="fn16"><p>It can be shown, or else found on the web, that if <span class="math inline">\(X\sim \mbox{Negative-Binomial}(r,p)\)</span> then <span class="math inline">\(\Expec(X) = r(1-p)/p\)</span> and <span class="math inline">\(\Var(X) = r(1-p)/p^2\)</span>.<a href="ChapRandomVar.html#fnref16">↩</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="ChapProbability.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="ChapNormal.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/yihui/bookdown-crc/edit/master/05-RandomVar.Rmd",
+"text": "Edit"
+},
+"download": ["thinkstat.pdf", "thinkstat.epub"],
+"toc": {
+"collapse": "none"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

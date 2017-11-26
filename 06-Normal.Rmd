@@ -43,7 +43,7 @@ $\mu = \Expec(X)$ is the expectation of the random variable and
 $\sigma^2 = \Var(X)$ is it’s variance[^6_1].
 
 Consider, for example, $X \sim \mathrm{Normal}(2,9)$. The density of the
-distribution is presented in Figure \[fig:Normal\_1\]. Observe that the
+distribution is presented in Figure \@ref(fig:Normal1). Observe that the
 distribution is symmetric about the expectation 2. The random variable
 is more likely to obtain its value in the vicinity of the expectation.
 Values much larger or much smaller than the expectation are

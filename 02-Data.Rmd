@@ -529,14 +529,14 @@ The number of calves that were born to some cows during
 their productive years was recorded. The data was entered into an R
 object by the name “`calves`". Refer to the following `R` code:
 
-    ```{r, echo=FALSE}
-    calves=c(rep(1,4),rep(2,3),rep(3,11),rep(4,10),rep(5,4),rep(6,6),rep(7,7))
-    ```
-
-    ```{r}
-    freq <- table(calves)
-    cumsum(freq)
-    ```
+      ```{r, echo=FALSE}
+      calves=c(rep(1,4),rep(2,3),rep(3,11),rep(4,10),rep(5,4),rep(6,6),rep(7,7))
+      ```
+  
+      ```{r}
+      freq <- table(calves)
+      cumsum(freq)
+      ```
 
 1.  How many cows were involved in this study?
 

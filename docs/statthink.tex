@@ -1537,15 +1537,15 @@ the name ``\texttt{calves}''. Refer to the following \texttt{R} code:
 \EndKnitrBlock{exercise}
 
 \begin{verbatim}
-```r
-freq <- table(calves)
-cumsum(freq)
-```
-
-```
-##  1  2  3  4  5  6  7 
-##  4  7 18 28 32 38 45
-```
+  ```r
+  freq <- table(calves)
+  cumsum(freq)
+  ```
+  
+  ```
+  ##  1  2  3  4  5  6  7 
+  ##  4  7 18 28 32 38 45
+  ```
 \end{verbatim}
 
 \begin{enumerate}
@@ -2863,7 +2863,7 @@ Think of it as a population. We will apply the function
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 167
+## [1] 155
 \end{verbatim}
 
 The first entry to the function is the given sequence of heights. When
@@ -5688,12 +5688,12 @@ this time in order to sample the heights of 100 subjects:
 \end{Shaded}
 
 \begin{verbatim}
-##   [1] 170 170 171 160 163 173 176 179 180 180 179 156 152 171 174 178 154
-##  [18] 169 204 169 171 162 176 177 163 167 175 164 157 178 179 158 167 172
-##  [35] 184 168 156 189 184 169 176 178 174 168 177 155 190 168 158 165 155
-##  [52] 149 178 176 192 185 156 181 162 171 170 158 168 166 156 154 139 168
-##  [69] 158 159 166 172 164 171 156 174 151 185 182 181 181 161 177 185 177
-##  [86] 197 150 180 173 164 159 167 172 187 158 160 178 156 165 165
+##   [1] 168 172 173 194 181 180 178 180 173 170 172 180 170 170 158 166 185
+##  [18] 166 165 158 178 173 160 162 165 168 169 163 195 153 175 169 155 175
+##  [35] 157 153 159 164 161 151 173 157 178 173 178 150 177 172 140 169 193
+##  [52] 187 167 161 170 184 162 190 196 155 173 167 176 169 168 162 158 175
+##  [69] 170 164 176 169 190 168 169 162 184 172 172 181 165 187 164 154 161
+##  [86] 163 164 150 161 185 147 188 144 170 187 159 166 168 181 177
 \end{verbatim}
 
 In the first line of code we produce a data frame that contains the
@@ -5730,7 +5730,7 @@ average to serve as an estimate:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 169.68
+## [1] 169.62
 \end{verbatim}
 
 In our artificial example we can actually compute the true population
@@ -5775,7 +5775,7 @@ select another sample and compute its average:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 170.97
+## [1] 170.27
 \end{verbatim}
 
 and do it once more:
@@ -5789,7 +5789,7 @@ and do it once more:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 171.04
+## [1] 170.72
 \end{verbatim}
 
 In each case we got a different value for the sample average. In the
@@ -5957,7 +5957,7 @@ original measurement:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 170.02958
+## [1] 170.03877
 \end{verbatim}
 
 \begin{Shaded}
@@ -5967,7 +5967,7 @@ original measurement:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 1.1235285
+## [1] 1.122416
 \end{verbatim}
 
 Observe that the expectation of the population and the expectation of
@@ -5988,7 +5988,7 @@ probability and then explain the details of the computation:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 0.62756
+## [1] 0.62642
 \end{verbatim}
 
 Hence we get that the probability of the given event is about 62.6\%.
@@ -6081,7 +6081,7 @@ Examine the sampling distribution of the Binomial average:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 4.9991794
+## [1] 4.9997716
 \end{verbatim}
 
 \begin{Shaded}
@@ -6091,7 +6091,7 @@ Examine the sampling distribution of the Binomial average:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 0.198126
+## [1] 0.19717322
 \end{verbatim}
 
 The histogram of the sample average is presented in the lower panel of
@@ -6166,7 +6166,7 @@ standard deviation as the average of the Binomials:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 4.6108595 5.3874992
+## [1] 4.6133191 5.3862240
 \end{verbatim}
 
 Observe the similarity between the percentiles of the distribution of
@@ -6247,7 +6247,7 @@ Consider the expectation of sample average for the three sample sizes:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 4.9996645
+## [1] 4.9975806
 \end{verbatim}
 
 \begin{Shaded}
@@ -6257,7 +6257,7 @@ Consider the expectation of sample average for the three sample sizes:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 5.000226
+## [1] 5.0002857
 \end{verbatim}
 
 \begin{Shaded}
@@ -6267,7 +6267,7 @@ Consider the expectation of sample average for the three sample sizes:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 4.9999893
+## [1] 4.9998464
 \end{verbatim}
 
 For all sample size the expectation of the sample average is equal to 5,
@@ -6285,7 +6285,7 @@ sample averages are:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 0.13404019
+## [1] 0.13336571
 \end{verbatim}
 
 \begin{Shaded}
@@ -6295,7 +6295,7 @@ sample averages are:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 0.013239908
+## [1] 0.013413649
 \end{verbatim}
 
 \begin{Shaded}
@@ -6305,7 +6305,7 @@ sample averages are:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 0.0013351007
+## [1] 0.0013341705
 \end{verbatim}
 
 Notice that the variances decrease with the increase of the sample
@@ -6420,7 +6420,7 @@ measurement and the variances of the sample averages follow the relation
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 2.0001748
+## [1] 2.0010512
 \end{verbatim}
 
 \begin{Shaded}
@@ -6430,7 +6430,7 @@ measurement and the variances of the sample averages follow the relation
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 1.9994167
+## [1] 2.0000511
 \end{verbatim}
 
 \begin{Shaded}
@@ -6440,7 +6440,7 @@ measurement and the variances of the sample averages follow the relation
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 1.9999512
+## [1] 2.0000223
 \end{verbatim}
 
 So the expectations of the sample average are all equal to 2. For the
@@ -6453,7 +6453,7 @@ variance we get:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 0.39961016
+## [1] 0.3997639
 \end{verbatim}
 
 \begin{Shaded}
@@ -6463,7 +6463,7 @@ variance we get:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 0.040107624
+## [1] 0.039981335
 \end{verbatim}
 
 \begin{Shaded}
@@ -6473,7 +6473,7 @@ variance we get:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 0.0040386989
+## [1] 0.004007055
 \end{verbatim}
 
 Which is in agreement with the decrease proposed by the theory,
@@ -7422,7 +7422,7 @@ Consider the statistic proposed by Statistician A:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 9.9960269
+## [1] 10.001133
 \end{verbatim}
 
 \begin{Shaded}
@@ -7432,7 +7432,7 @@ Consider the statistic proposed by Statistician A:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 0.33376735
+## [1] 0.33188636
 \end{verbatim}
 
 \begin{Shaded}
@@ -7442,7 +7442,7 @@ Consider the statistic proposed by Statistician A:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 0.33378314
+## [1] 0.33188764
 \end{verbatim}
 
 The expectation of the statistic is 9.99772 and the variance is
@@ -7459,7 +7459,7 @@ Next, deal with the statistic proposed by Statistician B:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 9.9013604
+## [1] 9.9008443
 \end{verbatim}
 
 \begin{Shaded}
@@ -7469,7 +7469,7 @@ Next, deal with the statistic proposed by Statistician B:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 0.0096064024
+## [1] 0.0096680389
 \end{verbatim}
 
 \begin{Shaded}
@@ -7479,7 +7479,7 @@ Next, deal with the statistic proposed by Statistician B:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 0.019336171
+## [1] 0.019499888
 \end{verbatim}
 
 The expectation of the statistic is 9.901259 and the variance is
@@ -7512,7 +7512,7 @@ Again, considering the statistic proposed by Statistician A we get:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 13.700252
+## [1] 13.699661
 \end{verbatim}
 
 \begin{Shaded}
@@ -7522,7 +7522,7 @@ Again, considering the statistic proposed by Statistician A we get:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 0.62887998
+## [1] 0.62591249
 \end{verbatim}
 
 \begin{Shaded}
@@ -7532,7 +7532,7 @@ Again, considering the statistic proposed by Statistician A we get:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 0.62888004
+## [1] 0.6259126
 \end{verbatim}
 
 The expectation of the statistic in this setting is 13.70009 and the
@@ -7550,7 +7550,7 @@ For the statistic proposed by Statistician B we obtain:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 13.564101
+## [1] 13.564982
 \end{verbatim}
 
 \begin{Shaded}
@@ -7560,7 +7560,7 @@ For the statistic proposed by Statistician B we obtain:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 0.018129341
+## [1] 0.01794465
 \end{verbatim}
 
 \begin{Shaded}
@@ -7570,7 +7570,7 @@ For the statistic proposed by Statistician B we obtain:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 0.036597832
+## [1] 0.036174552
 \end{verbatim}
 
 The expectation of the statistic is 13.56467 and the variance is
@@ -8298,7 +8298,7 @@ standard deviation is \(0.0705\times 12000\). Hence:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 0.94973
+## [1] 0.94836
 \end{verbatim}
 
 Observe that the simulation produces 0.9496 as the probability of the
@@ -8393,7 +8393,7 @@ mid-range statistic for the Uniform distribution:
 
 \begin{verbatim}
 ##      2.5%     97.5% 
-## 4.9413463 5.0593087
+## 4.9406832 5.0584064
 \end{verbatim}
 
 Observe that (approximately) 95\% of the sampling distribution of the
@@ -8415,7 +8415,7 @@ observations from the \(\mathrm{Uniform}(3,7)\) distribution:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 5.0000563
+## [1] 4.9998982
 \end{verbatim}
 
 \begin{Shaded}
@@ -8425,7 +8425,7 @@ observations from the \(\mathrm{Uniform}(3,7)\) distribution:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 0.027871492
+## [1] 0.027813991
 \end{verbatim}
 
 The expectation of the statistic is obtained by the application of the
@@ -8802,7 +8802,7 @@ approximated via the production of a large number of sample averages:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 0.72477
+## [1] 0.72358
 \end{verbatim}
 
 In the last line of the code we compute the probability of being within
@@ -9016,7 +9016,7 @@ computes the minimum value:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 0.019987879
+## [1] 0.0199609
 \end{verbatim}
 
 \begin{Shaded}
@@ -9026,7 +9026,7 @@ computes the minimum value:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 0.18767504
+## [1] 0.18767113
 \end{verbatim}
 
 We get that the variance of the sample average\footnote{As a matter of
@@ -9080,7 +9080,7 @@ that was used before:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 0.020820025
+## [1] 0.020670106
 \end{verbatim}
 
 \begin{Shaded}
@@ -9090,7 +9090,7 @@ that was used before:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 0.0012062701
+## [1] 0.0012183395
 \end{verbatim}
 
 Again, we get that the variance of the sample average is approximately
@@ -9228,7 +9228,7 @@ Compute the expectations of the two estimators:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 2.9936057
+## [1] 2.9978814
 \end{verbatim}
 
 \begin{Shaded}
@@ -9238,7 +9238,7 @@ Compute the expectations of the two estimators:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 2.8439255
+## [1] 2.8479874
 \end{verbatim}
 
 Note that 3 is the value of the variance of the measurement that was
@@ -9391,7 +9391,7 @@ compute their variances:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 0.93752115
+## [1] 0.94087127
 \end{verbatim}
 
 \begin{Shaded}
@@ -9401,7 +9401,7 @@ compute their variances:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 0.84611284
+## [1] 0.84913632
 \end{verbatim}
 
 Observe that the variance of \(S^2\) is essentially equal to 0.936 and
@@ -10035,7 +10035,7 @@ containing the value of the expectation:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 0.94529
+## [1] 0.94395
 \end{verbatim}
 
 Below we will go over the code and explain the simulation. But, before
@@ -10206,7 +10206,7 @@ value of \(p\) that was used in the simulation:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 0.95201
+## [1] 0.9522
 \end{verbatim}
 
 In this simulation we obtained that the actual confidence level is
@@ -10704,7 +10704,7 @@ Consider first the confidence interval for the expectation:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 0.95024
+## [1] 0.94911
 \end{verbatim}
 
 The nominal significance level of the confidence interval is 95\%, which
@@ -10724,7 +10724,7 @@ computation of the upper and lower confidence limits:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 0.94945
+## [1] 0.94924
 \end{verbatim}
 
 Again, we obtain that the nominal confidence level of 95\% coincides
@@ -17218,7 +17218,7 @@ Therefore, the Poisson approximation proposes
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 24.983944
+## [1] 24.983953
 \end{verbatim}
 
   Initially, we produce a vector of zeros of the given lenght (100,000).
@@ -17247,7 +17247,7 @@ Therefore, the Poisson approximation proposes
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 0.3421653
+## [1] 0.34107753
 \end{verbatim}
 
   The resulting standard deviation is 0.3422717. Recall that the
@@ -17269,7 +17269,7 @@ Therefore, the Poisson approximation proposes
 
 \begin{verbatim}
 ##       10%       90% 
-## 24.546211 25.421663
+## 24.545731 25.421893
 \end{verbatim}
 
   The value 24.54972 is the 10\%-percentile of the sampling
@@ -17291,7 +17291,7 @@ Therefore, the Poisson approximation proposes
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 24.545442 25.422447
+## [1] 24.546845 25.421061
 \end{verbatim}
 
   Observe that we used the expectation and the standard deviation of the
@@ -17537,7 +17537,7 @@ Therefore, the Poisson approximation proposes
 
 \begin{verbatim}
 ##       2.5%      97.5% 
-## -2.0146351  2.0118850
+## -2.0149997  2.0512367
 \end{verbatim}
 
   Observe that each iteration of the simulation involves the generation
@@ -17628,7 +17628,7 @@ Therefore, the Poisson approximation proposes
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 3.0000723
+## [1] 2.9998283
 \end{verbatim}
 
 \begin{Shaded}
@@ -17638,7 +17638,7 @@ Therefore, the Poisson approximation proposes
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 3.0003668
+## [1] 2.9994507
 \end{verbatim}
 
   The expectation of the measurement, the parameter of interest is equal
@@ -17657,7 +17657,7 @@ Therefore, the Poisson approximation proposes
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 0.020045953
+## [1] 0.019877091
 \end{verbatim}
 
 \begin{Shaded}
@@ -17667,7 +17667,7 @@ Therefore, the Poisson approximation proposes
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 0.031108808
+## [1] 0.030897331
 \end{verbatim}
 
   Observe that the variance of the sample average is essentially equal
@@ -17709,7 +17709,7 @@ Therefore, the Poisson approximation proposes
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 2.9995489
+## [1] 2.9996277
 \end{verbatim}
 
 \begin{Shaded}
@@ -17719,7 +17719,7 @@ Therefore, the Poisson approximation proposes
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 2.9997489
+## [1] 2.9987075
 \end{verbatim}
 
   Compute the variances:
@@ -17731,7 +17731,7 @@ Therefore, the Poisson approximation proposes
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 0.020942283
+## [1] 0.02091803
 \end{verbatim}
 
 \begin{Shaded}
@@ -17741,7 +17741,7 @@ Therefore, the Poisson approximation proposes
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 0.061146973
+## [1] 0.06053344
 \end{verbatim}
 
   Observe \(0.021\) is, essentially, the value of the variance of the
@@ -17860,7 +17860,7 @@ Therefore, the Poisson approximation proposes
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 0.28129967
+## [1] 0.28135147
 \end{verbatim}
 
   Observe that the sampling distribution is stored in the object
@@ -17887,7 +17887,7 @@ Therefore, the Poisson approximation proposes
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 0.0013436945
+## [1] 0.0013463994
 \end{verbatim}
 
   Hence, the variance of the estimator is (approximately) equal to
@@ -18128,7 +18128,7 @@ Therefore, the Poisson approximation proposes
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 0.90346
+## [1] 0.905
 \end{verbatim}
 
   The expectation of the measurement is equal to 4. This number belongs
@@ -18149,7 +18149,7 @@ Therefore, the Poisson approximation proposes
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 0.91829
+## [1] 0.91923
 \end{verbatim}
 
   Based on the assumption we used the percentiles of the
@@ -18295,7 +18295,7 @@ We obtain a confidence interval of the form $[0.774369, 0.825631]$.
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 0.08089
+## [1] 0.08242
 \end{verbatim}
 
   We compute the test statistic ``\texttt{T}'' from the sample average
@@ -18331,7 +18331,7 @@ We obtain a confidence interval of the form $[0.774369, 0.825631]$.
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 0.05187
+## [1] 0.05347
 \end{verbatim}
 
   The actual significance level of the test is \(0.05163\), much closer
@@ -18584,7 +18584,7 @@ We obtain a confidence interval of the form $[0.774369, 0.825631]$.
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 0.05073
+## [1] 0.05052
 \end{verbatim}
 
   We compute the test statistic ``\texttt{F}'' as the ratio of the two
@@ -18627,7 +18627,7 @@ We obtain a confidence interval of the form $[0.774369, 0.825631]$.
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 0.27345
+## [1] 0.27511
 \end{verbatim}
 
   The actual significance level of the test is \(0.27596\), which is

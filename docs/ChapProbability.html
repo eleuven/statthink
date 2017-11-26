@@ -554,9 +554,9 @@ FIGURE 4.1: Bar Plot of Height
 <h3><span class="header-section-number">4.4.1</span> Sample Space and Distribution</h3>
 <p>Let us turn to the formal definition of a random variable: A random variable refer to numerical values, typically the outcome of an observation, a measurement, or a function thereof.</p>
 <p>A random variable is characterized via the collection of potential values it may obtain, known as the <em>sample space</em> and the likelihood of obtaining each of the values in the sample space (namely, the probability of the value). In the given example, the sample space contains the 94 integer values that are marked in Figure <a href="ChapProbability.html#fig:Prob1">4.1</a>. The probability of each value is the height of the bar above the value, divided by the total frequency of 100,000 (namely, the relative frequency in the population).</p>
-<p>We will denote random variables with capital Latin letters such as <span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span>, and <span class="math inline">\(Z\)</span>. Values they may obtain will be marked by small Latin letters such as <span class="math inline">\(x\)</span>, <span class="math inline">\(y\)</span>, <span class="math inline">\(z\)</span>. For the probability of values we will use the letter “<span class="math inline">\(\Prob\)</span>”. Hence, if we denote by <span class="math inline">\(X\)</span> the measurement of height of a random individual that is sampled from the given population then:</p>
-<p><span class="math display">\[\Prob(X = 168) = 0.03476\]</span> and <span class="math display">\[\Prob(X \geq 200) = 0.00393\;.\]</span></p>
-<p>Consider, as yet another example, the probability that the height of a random person sampled from the population differs from 170 centimeter by no more than 10 centimeters. (In other words, that the height is between 160 and 180 centimeters.) Denote by <span class="math inline">\(X\)</span> the height of that random person. We are interested in the probability <span class="math inline">\(\Prob(|X -170| \leq 10)\)</span>.<a href="#fn9" class="footnoteRef" id="fnref9"><sup>9</sup></a></p>
+<p>We will denote random variables with capital Latin letters such as <span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span>, and <span class="math inline">\(Z\)</span>. Values they may obtain will be marked by small Latin letters such as <span class="math inline">\(x\)</span>, <span class="math inline">\(y\)</span>, <span class="math inline">\(z\)</span>. For the probability of values we will use the letter “<span class="math inline">\(P\)</span>”. Hence, if we denote by <span class="math inline">\(X\)</span> the measurement of height of a random individual that is sampled from the given population then:</p>
+<p><span class="math display">\[P(X = 168) = 0.03476\]</span> and <span class="math display">\[P(X \geq 200) = 0.00393\;.\]</span></p>
+<p>Consider, as yet another example, the probability that the height of a random person sampled from the population differs from 170 centimeter by no more than 10 centimeters. (In other words, that the height is between 160 and 180 centimeters.) Denote by <span class="math inline">\(X\)</span> the height of that random person. We are interested in the probability <span class="math inline">\(P(|X -170| \leq 10)\)</span>.<a href="#fn9" class="footnoteRef" id="fnref9"><sup>9</sup></a></p>
 <p>The random person can be any of the subjects of the population with equal probability. Thus, the sequence of the heights of the 100,000 subjects represents the distribution of the random variable <span class="math inline">\(X\)</span>:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">pop.<span class="dv">1</span> &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="dt">file=</span><span class="st">&quot;_data/pop1.csv&quot;</span>)
 X &lt;-<span class="st"> </span>pop.<span class="dv">1</span><span class="op">$</span>height</code></pre></div>
@@ -581,9 +581,9 @@ X &lt;-<span class="st"> </span>pop.<span class="dv">1</span><span class="op">$<
 <p>When a sequence with logical values is entered into the function “<code>mean</code>” then the function replaces the <code>TRUE</code>’s by 1 and the <code>FALSE</code>’s by 0. The average produces then the relative frequency of <code>TRUE</code>’s in the sequence as required. Specifically, in this example there are 4 <code>TRUE</code>’s and 6 <code>FALSE</code>’s. Consequently, the output of the final expression is <span class="math inline">\(4/10 = 0.4\)</span>.</p>
 <p>The computation of the probability that the sampled height falls within 10 centimeter of 170 is based on the same code. The only differences are that the input sequence “<code>Y</code>” is replaced by the sequence of population heights “<code>X</code>” as input. the number “<code>5</code>” is replaced by the number “<code>170</code>” and the number “<code>1</code>” is replaced by the number “<code>10</code>”. In both cases the result of the computation is the relative proportion of the times that the values of the input sequence fall within a given range of the indicated number.</p>
 <p>The probability function of a random variable is defined for any value that the random variable may obtain and produces the <em>distribution</em> of the random variable. The probability function may emerge as a relative frequency as in the given example or it may be a result of theoretical modeling. Examples of theoretical random variables are presented mainly in the next two chapters.</p>
-<p>Consider an example of a random variable. The sample space and the probability function specify the distribution of the random variable. For example, assume it is known that a random variable <span class="math inline">\(X\)</span> may obtain the values 0, 1, 2, or 3. Moreover, imagine that it is known that <span class="math inline">\(\Prob(X=1) = 0.25\)</span>, <span class="math inline">\(\Prob(X=2) = 0.15\)</span>, and <span class="math inline">\(\Prob(X=3)= 0.10\)</span>. What is <span class="math inline">\(\Prob(X=0)\)</span>, the probability that <span class="math inline">\(X\)</span> is equal to 0?</p>
+<p>Consider an example of a random variable. The sample space and the probability function specify the distribution of the random variable. For example, assume it is known that a random variable <span class="math inline">\(X\)</span> may obtain the values 0, 1, 2, or 3. Moreover, imagine that it is known that <span class="math inline">\(P(X=1) = 0.25\)</span>, <span class="math inline">\(P(X=2) = 0.15\)</span>, and <span class="math inline">\(P(X=3)= 0.10\)</span>. What is <span class="math inline">\(P(X=0)\)</span>, the probability that <span class="math inline">\(X\)</span> is equal to 0?</p>
 <p>The sample space, the collection of possible values that the random variable may obtain is the collection <span class="math inline">\(\{0,1,2,3\}\)</span>. Observe that the sum over the positive values is:</p>
-<p><span class="math display">\[\Prob(X &gt; 0) = \Prob(X=1) + \Prob(X=2) + \Prob(X=3) = 0.25 + 0.15 + 0.10 = 0.50\;.\]</span> It follows, since the sum of probabilities over the entire sample space is equal to 1, that <span class="math inline">\(\Prob(X=0) = 1- 0.5 = 0.5\)</span>.</p>
+<p><span class="math display">\[P(X &gt; 0) = P(X=1) + P(X=2) + P(X=3) = 0.25 + 0.15 + 0.10 = 0.50\;.\]</span> It follows, since the sum of probabilities over the entire sample space is equal to 1, that <span class="math inline">\(P(X=0) = 1- 0.5 = 0.5\)</span>.</p>
 <table>
 <caption><span id="tab:Probability1">TABLE 4.1: </span>The Distribution of <span class="math inline">\(X\)</span></caption>
 <thead>
@@ -618,8 +618,8 @@ X &lt;-<span class="st"> </span>pop.<span class="dv">1</span><span class="op">$<
 </table>
 <p>Table <a href="ChapProbability.html#tab:Probability1">4.1</a> summarizes the distribution of the random variable <span class="math inline">\(X\)</span>. Observe the similarity between the probability function and the notion of relative frequency that was discussed in Chapter <a href="ChapData.html#ChapData">2</a>. Both quantities describe distribution. Both are non-negative and sum to 1. Likewise, notice that one may define the cumulative probability the same way cumulative relative frequency is defined: Ordering the values of the random variable from smallest to largest, the cumulative probability at a given value is the sum of probabilities for values less or equal to the given value.</p>
 <p>Knowledge of the probabilities of a random variable (or the cumulative probabilities) enables the computation of other probabilities that are associated with the random variable. For example, considering the random variable <span class="math inline">\(X\)</span> of Table <a href="ChapProbability.html#tab:Probability1">4.1</a>, we may calculate the probability of <span class="math inline">\(X\)</span> falling in the interval <span class="math inline">\([0.5, 2.3]\)</span>. Observe that the given range contains two values from the sample space, 1 and 2, therefore:</p>
-<p><span class="math display">\[\Prob(0.5 \leq X \leq 2.3) = \Prob(X=1) + \Prob(X = 2) = 0.25 + 0.15 = 0.40\;.\]</span> Likewise, we may produce the probability of <span class="math inline">\(X\)</span> obtaining an odd value:</p>
-<p><span class="math display">\[\Prob(X = \mbox{odd}) = \Prob(X=1) + \Prob(X=3) = 0.25 + 0.10 = 0.35\;.\]</span> Observe that both <span class="math inline">\(\{0.5 \leq X \leq 2.3\}\)</span> and <span class="math inline">\(\{X = \mbox{odd}\}\)</span> refer to subsets of values of the sample space. Such subsets are denoted <em>events</em>. In both examples the probability of the event was computed by the summation of the probabilities associated with values that belong to the event.</p>
+<p><span class="math display">\[P(0.5 \leq X \leq 2.3) = P(X=1) + P(X = 2) = 0.25 + 0.15 = 0.40\;.\]</span> Likewise, we may produce the probability of <span class="math inline">\(X\)</span> obtaining an odd value:</p>
+<p><span class="math display">\[P(X = \mbox{odd}) = P(X=1) + P(X=3) = 0.25 + 0.10 = 0.35\;.\]</span> Observe that both <span class="math inline">\(\{0.5 \leq X \leq 2.3\}\)</span> and <span class="math inline">\(\{X = \mbox{odd}\}\)</span> refer to subsets of values of the sample space. Such subsets are denoted <em>events</em>. In both examples the probability of the event was computed by the summation of the probabilities associated with values that belong to the event.</p>
 </div>
 <div id="expectation-and-standard-deviation" class="section level3">
 <h3><span class="header-section-number">4.4.2</span> Expectation and Standard Deviation</h3>
@@ -630,10 +630,10 @@ X &lt;-<span class="st"> </span>pop.<span class="dv">1</span><span class="op">$<
 <p><span class="math display">\[\frac{1 + 1 + 1 + 2 + 2 + 3 + 4 + 4 + 4 + 4 + 4}{11} =
 1\times \frac{3}{11} + 2 \times \frac{2}{11} + 3 \times \frac{1}{11} + 4 \times \frac{5}{11}\;,\]</span> producing the value of <span class="math inline">\(\bar x =2.727\)</span> in both representations. Using a formula, the equality between the two ways of computing the mean is given in terms of the equation:</p>
 <p><span class="math display">\[\bar x = \frac{\sum_{i=1}^n x_i}{n} = \sum_x \big(x \times (f_x/n)\big)\;.\]</span> In the first representation of the arithmetic mean, the average is computed by the summation of all data points and dividing the sum by the sample size. In the second representation, that uses a weighted sum, the sum extends over all the unique values that appear in the data. For each unique value the value is multiplied by the relative frequency of the value in the data. These multiplications are summed up to produce the mean.</p>
-<p>The expectation of a random variable is computed in the spirit of the second formulation. The expectation of a random variable is marked with the letter “<span class="math inline">\(\Expec\)</span>” and is define via the equation:</p>
-<p><span class="math display">\[\Expec(X) = \sum_x \big(x \times \Prob(x)\big)\;.\]</span> In this definition all the unique values of the sample space are considered. For each value a product of the value and the probability of the value is taken. The expectation is obtained by the summation of all these products. In this definition the probability <span class="math inline">\(\Prob(x)\)</span> replaces the relative frequency <span class="math inline">\(f_x/n\)</span> but otherwise, the definition of the expectation and the second formulation of the mean are identical to each other.</p>
+<p>The expectation of a random variable is computed in the spirit of the second formulation. The expectation of a random variable is marked with the letter “<span class="math inline">\(E\)</span>” and is define via the equation:</p>
+<p><span class="math display">\[E(X) = \sum_x \big(x \times P(x)\big)\;.\]</span> In this definition all the unique values of the sample space are considered. For each value a product of the value and the probability of the value is taken. The expectation is obtained by the summation of all these products. In this definition the probability <span class="math inline">\(P(x)\)</span> replaces the relative frequency <span class="math inline">\(f_x/n\)</span> but otherwise, the definition of the expectation and the second formulation of the mean are identical to each other.</p>
 <p>Consider the random variable <span class="math inline">\(X\)</span> with distribution that is described in Table <a href="ChapProbability.html#tab:Probability1">4.1</a>. In order to obtain its expectation we multiply each value in the sample space by the probability of the value. Summation of the products produces the expectation (see Table <a href="ChapProbability.html#tab:Probability1">4.1</a>:</p>
-<p><span class="math display">\[\Expec(X) = 0 \times 0.5 + 1 \times 0.25 + 2 \times 0.15 + 3\times 0.10 = 0.85\;.\]</span></p>
+<p><span class="math display">\[E(X) = 0 \times 0.5 + 1 \times 0.25 + 2 \times 0.15 + 3\times 0.10 = 0.85\;.\]</span></p>
 <table>
 <caption><span id="tab:Probability2">TABLE 4.2: </span>The Expectation of <span class="math inline">\(X\)</span></caption>
 <thead>
@@ -672,7 +672,7 @@ X &lt;-<span class="st"> </span>pop.<span class="dv">1</span><span class="op">$<
 <p><span class="math display">\[s^2 = \frac{\sum_{i=1}^n (x_i - \bar x)^2}{n-1}\;.\]</span> A second formulation for the computation of the same quantity is via the use of relative frequencies. The formula for the sample variance takes the form</p>
 <p><span class="math display">\[s^2 = \frac{n}{n-1}\sum_x \big((x - \bar x)^2\times (f_x/n)\big)\;.\]</span> In this formulation one considers each of the unique value that are present in the data. For each value the deviation between the value and the average is computed. These deviations are then squared and multiplied by the relative frequency. The products are summed up. Finally, the sum is multiplied by the ratio between the sample size <span class="math inline">\(n\)</span> and <span class="math inline">\(n-1\)</span> in order to correct for the fact that in the sample variance the sum of squared deviations is divided by the sample size minus 1 and not by the sample size.</p>
 <p>In a similar way, the variance of a random variable may be defined via the probability of the values that make the sample space. For each such value one computes the deviation from the expectation. This deviation is then squared and multiplied by the probability of the value. The multiplications are summed up in order to produce the variance:</p>
-<p><span class="math display">\[\Var(X) = \sum_x\big( (x-\Expec(X))^2 \times \Prob(x)\big)\;.\]</span> Notice that the formula for the computation of the variance of a random variable is very similar to the second formulation for the computation of the sample variance. Essentially, the mean of the data is replaced by the expectation of the random variable and the relative frequency of a value is replaced by the probability of the value. Another difference is that the correction factor is not used for the variance of a random variable.</p>
+<p><span class="math display">\[V(X) = \sum_x\big( (x-E(X))^2 \times P(x)\big)\;.\]</span> Notice that the formula for the computation of the variance of a random variable is very similar to the second formulation for the computation of the sample variance. Essentially, the mean of the data is replaced by the expectation of the random variable and the relative frequency of a value is replaced by the probability of the value. Another difference is that the correction factor is not used for the variance of a random variable.</p>
 <table>
 <caption><span id="tab:tab3">TABLE 4.3: </span>The Variance of <span class="math inline">\(X\)</span></caption>
 <thead>
@@ -716,10 +716,10 @@ X &lt;-<span class="st"> </span>pop.<span class="dv">1</span><span class="op">$<
 </tbody>
 </table>
 <pre><code>## Var = sum(p*(x-sum(p*x))^2) =  1.0275</code></pre>
-<p>As an example consider the variance of the random variable <span class="math inline">\(X\)</span>. The computation of the variance of this random variable is carried out in Table <a href="ChapProbability.html#tab:tab3">4.3</a>. The sample space, the values that the random variable may obtain, are given in the first column and the probabilities of the values are given in the second column. In the third column the deviation of the value from the expectation <span class="math inline">\(\Expec(X) = 0.85\)</span> is computed for each value. The 4th column contains the square of these deviations and the 5th and last column involves the product of the square deviations and the probabilities. The variance is obtained by summing up the products in the last column. In the given example:</p>
+<p>As an example consider the variance of the random variable <span class="math inline">\(X\)</span>. The computation of the variance of this random variable is carried out in Table <a href="ChapProbability.html#tab:tab3">4.3</a>. The sample space, the values that the random variable may obtain, are given in the first column and the probabilities of the values are given in the second column. In the third column the deviation of the value from the expectation <span class="math inline">\(E(X) = 0.85\)</span> is computed for each value. The 4th column contains the square of these deviations and the 5th and last column involves the product of the square deviations and the probabilities. The variance is obtained by summing up the products in the last column. In the given example:</p>
 <p><span class="math display">\[\begin{aligned}
-\Var(X) = &amp; (0-0.85)^2 \times 0.5  + (1-0.85)^2 \times 0.25 \\ &amp;+ (2-0.85)^2\times 0.15 + (3-0.85)^2\times 0.10= 1.0275\;.\end{aligned}\]</span></p>
-<p>The standard deviation of a random variable is the square root of the variance. The standard deviation of <span class="math inline">\(X\)</span> is <span class="math inline">\(\sqrt{\Var(X)} = \sqrt{1.0275} = 1.013657\)</span>.</p>
+V(X) = &amp; (0-0.85)^2 \times 0.5  + (1-0.85)^2 \times 0.25 \\ &amp;+ (2-0.85)^2\times 0.15 + (3-0.85)^2\times 0.10= 1.0275\;.\end{aligned}\]</span></p>
+<p>The standard deviation of a random variable is the square root of the variance. The standard deviation of <span class="math inline">\(X\)</span> is <span class="math inline">\(\sqrt{V(X)} = \sqrt{1.0275} = 1.013657\)</span>.</p>
 <p>In the example that involves the height of a subject selected from the population at random we obtain that the variance is <span class="math inline">\(126.1576\)</span>, equal to the population variance, and the standard deviation is 11.23199, the square root of the variance.</p>
 <p>Other characterization of the distribution that were computed for data, such as the median, the quartiles, etc., may also be defined for random variables.</p>
 </div>
@@ -773,12 +773,12 @@ X &lt;-<span class="st"> </span>pop.<span class="dv">1</span><span class="op">$<
 <p>These probabilities are a function of the number <span class="math inline">\(p\)</span>, the probability of the value “0”. Answer the following questions:</p>
 <ol style="list-style-type: decimal">
 <li><p>What is the value of <span class="math inline">\(p\)</span>?</p></li>
-<li><p><span class="math inline">\(\Prob(Y &lt;3 )\)</span> = ?</p></li>
-<li><p><span class="math inline">\(\Prob(Y = \mbox{odd})\)</span> = ?</p></li>
-<li><p><span class="math inline">\(\Prob(1 \leq Y &lt; 4)\)</span> = ?</p></li>
-<li><p><span class="math inline">\(\Prob(|Y -3| &lt; 1.5)\)</span> = ?</p></li>
-<li><p><span class="math inline">\(\Expec(Y)\)</span> = ?</p></li>
-<li><p><span class="math inline">\(\Var(Y)\)</span> = ?</p></li>
+<li><p><span class="math inline">\(P(Y &lt;3 )\)</span> = ?</p></li>
+<li><p><span class="math inline">\(P(Y = \mbox{odd})\)</span> = ?</p></li>
+<li><p><span class="math inline">\(P(1 \leq Y &lt; 4)\)</span> = ?</p></li>
+<li><p><span class="math inline">\(P(|Y -3| &lt; 1.5)\)</span> = ?</p></li>
+<li><p><span class="math inline">\(E(Y)\)</span> = ?</p></li>
+<li><p><span class="math inline">\(V(Y)\)</span> = ?</p></li>
 <li>What is the standard deviation of <span class="math inline">\(Y\)</span>.</li>
 </ol>
 </div>
@@ -809,10 +809,10 @@ X &lt;-<span class="st"> </span>pop.<span class="dv">1</span><span class="op">$<
 <dd><p>A number between 0 and 1 which is assigned to a subset of the sample space. This number indicates the likelihood of the random variable obtaining a value in that subset.</p>
 </dd>
 <dt>Expectation:</dt>
-<dd><p>The central value for a random variable. The expectation of the random variable <span class="math inline">\(X\)</span> is marked by <span class="math inline">\(\Expec(X)\)</span>.</p>
+<dd><p>The central value for a random variable. The expectation of the random variable <span class="math inline">\(X\)</span> is marked by <span class="math inline">\(E(X)\)</span>.</p>
 </dd>
 <dt>Variance:</dt>
-<dd><p>The (squared) spread of a random variable. The variance of the random variable <span class="math inline">\(X\)</span> is marked by <span class="math inline">\(\Var(X)\)</span>. The standard deviation is the square root of the variance.</p>
+<dd><p>The (squared) spread of a random variable. The variance of the random variable <span class="math inline">\(X\)</span> is marked by <span class="math inline">\(V(X)\)</span>. The standard deviation is the square root of the variance.</p>
 </dd>
 </dl>
 </div>
@@ -834,13 +834,13 @@ X &lt;-<span class="st"> </span>pop.<span class="dv">1</span><span class="op">$<
 <dd><p><span class="math inline">\(\mu = (1/N)\sum_{i=1}^N x_i\)</span></p>
 </dd>
 <dt>Expectation of a Random Variable:</dt>
-<dd><p><span class="math inline">\(\Expec(X) = \sum_x \big(x \times \Prob(x)\big)\)</span></p>
+<dd><p><span class="math inline">\(E(X) = \sum_x \big(x \times P(x)\big)\)</span></p>
 </dd>
 <dt>Population Variance:</dt>
 <dd><p><span class="math inline">\(\sigma^2 = (1/N)\sum_{i=1}^N (x_i-\mu)^2\)</span></p>
 </dd>
 <dt>Variance of a Random Variable:</dt>
-<dd><p><span class="math inline">\(\Var(X) = \sum_x\big( (x-\Expec(X))^2 \times \Prob(x)\big)\)</span></p>
+<dd><p><span class="math inline">\(V(X) = \sum_x\big( (x-E(X))^2 \times P(x)\big)\)</span></p>
 </dd>
 </dl>
 
@@ -852,7 +852,7 @@ X &lt;-<span class="st"> </span>pop.<span class="dv">1</span><span class="op">$<
 <ol start="7">
 <li id="fn7"><p>Such a bar plot can be produced with the expression “<code>plot(table(pop.1$height))</code>”.<a href="ChapProbability.html#fnref7">↩</a></p></li>
 <li id="fn8"><p>Observe that the function “<code>var</code>” computes the sample variance. Consequently, the sum of squares is divided by <span class="math inline">\(N-1\)</span>. We can correct that when computing the population variance by multiplying the result by <span class="math inline">\(N-1\)</span> and dividing by <span class="math inline">\(N\)</span>. Notice that the difference between the two quantities is negligible for a large population. Henceforth we will use the functions “<code>var</code>” and “<code>sd</code>” to compute the variance and standard deviations of populations without the application of the correction.<a href="ChapProbability.html#fnref8">↩</a></p></li>
-<li id="fn9"><p>The expression <span class="math inline">\(\{|X -170| \leq 10\}\)</span> reads as “the absolute value of the difference between <span class="math inline">\(X\)</span> and 170 is no more that 10”. In other words, <span class="math inline">\(\{-10 \leq X - 170 \leq 10\}\)</span>, which is equivalent to the statement that <span class="math inline">\(\{160 \leq X \leq 180\}\)</span>. It follows that <span class="math inline">\(\Prob(|X-170|\leq 10) = \Prob(160\leq X \leq 180)\)</span>.<a href="ChapProbability.html#fnref9">↩</a></p></li>
+<li id="fn9"><p>The expression <span class="math inline">\(\{|X -170| \leq 10\}\)</span> reads as “the absolute value of the difference between <span class="math inline">\(X\)</span> and 170 is no more that 10”. In other words, <span class="math inline">\(\{-10 \leq X - 170 \leq 10\}\)</span>, which is equivalent to the statement that <span class="math inline">\(\{160 \leq X \leq 180\}\)</span>. It follows that <span class="math inline">\(P(|X-170|\leq 10) = P(160\leq X \leq 180)\)</span>.<a href="ChapProbability.html#fnref9">↩</a></p></li>
 <li id="fn10"><p>The mean of the population can be computed with the expression “<code>mean(pop.1$height)</code>”<a href="ChapProbability.html#fnref10">↩</a></p></li>
 </ol>
 </div>

@@ -1,5 +1,6 @@
 book_filename: "thinkstat"
 clean: [packages.bib, bookdown.bbl]
+output_dir: "docs"
 language:
   label:
     fig: "FIGURE "

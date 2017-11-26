@@ -482,7 +482,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>It may happen that all 10 coins turn up “Tail”. In this case <span class="math inline">\(X\)</span> is equal to 0. It may also be the case that one of the coins turns up “Head” and the others turn up “Tail”. The random variable <span class="math inline">\(X\)</span> will obtain the value 1 in such a case. Likewise, for any integer between 0 and 10 it may be the case that the number of “Heads” that turn up is equal to that integer with the other coins turning up “Tail”. Hence, the sample space of <span class="math inline">\(X\)</span> is the set of integers <span class="math inline">\(\{0, 1, 2, \ldots, 10\}\)</span>. The probability of each outcome may be computed by an appropriate mathematical formula that will not be discussed here<a href="#fn11" class="footnoteRef" id="fnref11"><sup>11</sup></a>.</p>
 <p>The probabilities of the various possible values of a Binomial random variable may be computed with the aid of the <code>R</code> function “<code>dbinom</code>” (that uses the mathematical formula for the computation). The input to this function is a sequence of values, the value of <span class="math inline">\(n\)</span>, and the value of <span class="math inline">\(p\)</span>. The output is the sequence of probabilities associated with each of the values in the first input.</p>
 <div class="figure" style="text-align: center"><span id="fig:RVar2"></span>
-<img src="thinkstat_files/figure-html/RVar2-1.png" alt="The Binomial(10,0.5) Distribution" width="60%" />
+<img src="statthink_files/figure-html/RVar2-1.png" alt="The Binomial(10,0.5) Distribution" width="60%" />
 <p class="caption">
 FIGURE 5.1: The Binomial(10,0.5) Distribution
 </p>
@@ -534,7 +534,7 @@ EX</code></pre></div>
 ## [11] 1.6538172e-08</code></pre>
 <p>In this case smaller values of the random variable are assigned higher probabilities and larger values are assigned lower probabilities..</p>
 <div class="figure" style="text-align: center"><span id="fig:RVar3"></span>
-<img src="thinkstat_files/figure-html/RVar3-1.png" alt="The Binomial Distribution for Various Probability of &quot;Success&quot;&quot; $p$" width="60%" />
+<img src="statthink_files/figure-html/RVar3-1.png" alt="The Binomial Distribution for Various Probability of &quot;Success&quot;&quot; $p$" width="60%" />
 <p class="caption">
 FIGURE 5.2: The Binomial Distribution for Various Probability of “Success”&quot; <span class="math inline">\(p\)</span>
 </p>
@@ -559,7 +559,7 @@ FIGURE 5.2: The Binomial Distribution for Various Probability of “Success”&q
 <p>The <em>Poisson</em> distribution is used as an approximation of the total number of occurrences of rare events. Consider, for example, the Binomial setting that involves <span class="math inline">\(n\)</span> trials with <span class="math inline">\(p\)</span> as the probability of success of each trial. Then, if <span class="math inline">\(p\)</span> is small but <span class="math inline">\(n\)</span> is large then the number of successes <span class="math inline">\(X\)</span> has, approximately, the Poisson distribution.</p>
 <p>The sample space of the Poisson random variable is the unbounded collection of integers: <span class="math inline">\(\{0,1,2, \ldots\}\)</span>. Any integer value is assigned a positive probability. Hence, the Poisson random variable is a convenient model when the maximal number of occurrences of the events in a-priori unknown or is very large. For example, one may use the Poisson distribution to model the number of phone calls that enter a switchboard in a given interval of time or the number of malfunctioning components in a shipment of some product.</p>
 <div class="figure" style="text-align: center"><span id="fig:RVar4"></span>
-<img src="thinkstat_files/figure-html/RVar4-1.png" alt="The Poisson(2) Distribution" width="60%" />
+<img src="statthink_files/figure-html/RVar4-1.png" alt="The Poisson(2) Distribution" width="60%" />
 <p class="caption">
 FIGURE 5.3: The Poisson(2) Distribution
 </p>
@@ -575,7 +575,7 @@ FIGURE 5.3: The Poisson(2) Distribution
 ##  [7] 0.99546619 0.99890328 0.99976255 0.99995350 0.99999169</code></pre>
 <p>The probability function of the Poisson distribution with <span class="math inline">\(\lambda = 2\)</span>, in the range between 0 and 10, is plotted in Figure <a href="ChapRandomVar.html#fig:RVar4">5.3</a>. Observe that in this example probabilities of the values 8 and beyond are very small. As a matter of fact, the cumulative probability at <span class="math inline">\(x=7\)</span> (the 8th value in the output of “<code>ppois(x,2)</code>”) is approximately 0.999, out of the total cumulative probability of 1.000, leaving a total probability of about 0.001 to be distributed among all the values larger than 7.</p>
 <div class="figure" style="text-align: center"><span id="fig:RVar5"></span>
-<img src="thinkstat_files/figure-html/RVar5-1.png" alt="The Poisson Distribution for Various Values of $\lambda$" width="60%" />
+<img src="statthink_files/figure-html/RVar5-1.png" alt="The Poisson Distribution for Various Values of $\lambda$" width="60%" />
 <p class="caption">
 FIGURE 5.4: The Poisson Distribution for Various Values of <span class="math inline">\(\lambda\)</span>
 </p>
@@ -629,7 +629,7 @@ EX</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dunif</span>(<span class="fl">4.73</span>,<span class="dv">3</span>,<span class="dv">7</span>)</code></pre></div>
 <pre><code>## [1] 0.25</code></pre>
 <div class="figure" style="text-align: center"><span id="fig:RVar6"></span>
-<img src="thinkstat_files/figure-html/RVar6-1.png" alt="The Uniform(3,7) Distribution" width="60%" />
+<img src="statthink_files/figure-html/RVar6-1.png" alt="The Uniform(3,7) Distribution" width="60%" />
 <p class="caption">
 FIGURE 5.5: The Uniform(3,7) Distribution
 </p>
@@ -646,16 +646,16 @@ FIGURE 5.5: The Uniform(3,7) Distribution
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">0</span>,<span class="dv">10</span>,<span class="dt">length=</span><span class="dv">1000</span>)
 den &lt;-<span class="st"> </span><span class="kw">dunif</span>(x,<span class="dv">3</span>,<span class="dv">7</span>)
 <span class="kw">plot</span>(x,den)</code></pre></div>
-<p><img src="thinkstat_files/figure-html/unnamed-chunk-64-1.png" width="60%" style="display: block; margin: auto;" /></p>
+<p><img src="statthink_files/figure-html/unnamed-chunk-64-1.png" width="60%" style="display: block; margin: auto;" /></p>
 <p>The object “<code>den</code>” is a sequence of length 1,000 that contains the density of the <span class="math inline">\(\mathrm{Uniform}(3,7)\)</span> evaluated over the values of “<code>x</code>”. When we apply the function “<code>plot</code>” to the two sequences we get a scatter plot of the 1,000 points.</p>
 <p>A scatter plot is a plot of points. Each point in the scatter plot is identify by its horizontal location on the plot (its “<span class="math inline">\(x\)</span>” value) and by its vertical location on the plot (its <span class="math inline">\(y\)</span> value). The horizontal value of each point in the plot is determined by the first argument to the function “<code>plot</code>” and the vertical value is determined by the second argument. For example, the first value in the sequence “<code>x</code>” is 0. The value of the Uniform density at this point is 0. Hence, the first value of the sequence “<code>den</code>” is also 0. A point that corresponds to these values is produced in the plot. The horizontal value of the point is 0 and the vertical value is 0. In a similar way the other 999 points are plotted. The last point to be plotted has a horizontal value of 10 and a vertical value of 0.</p>
 <p>The number of points that are plotted is large and they overlap each other in the graph and thus produce an impression of a continuum. In order to obtain nicer looking plots we may choose to connect the points to each other with segments and use smaller points. This may be achieved by the addition of the argument “<code>type=l</code>”, with the letter <code>l</code> for line, to the plotting function:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(x,den,<span class="dt">type=</span><span class="st">&quot;l&quot;</span>)</code></pre></div>
-<p><img src="thinkstat_files/figure-html/unnamed-chunk-65-1.png" width="60%" style="display: block; margin: auto;" /></p>
+<p><img src="statthink_files/figure-html/unnamed-chunk-65-1.png" width="60%" style="display: block; margin: auto;" /></p>
 <p>The cumulative probability of the <span class="math inline">\(\mathrm{Uniform}(3,7)\)</span> is produced by the code:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">cdf &lt;-<span class="st"> </span><span class="kw">punif</span>(x,<span class="dv">3</span>,<span class="dv">7</span>)
 <span class="kw">plot</span>(x,cdf,<span class="dt">type=</span><span class="st">&quot;l&quot;</span>)</code></pre></div>
-<p><img src="thinkstat_files/figure-html/unnamed-chunk-66-1.png" width="60%" style="display: block; margin: auto;" /></p>
+<p><img src="statthink_files/figure-html/unnamed-chunk-66-1.png" width="60%" style="display: block; margin: auto;" /></p>
 <p>One can think of the density of the Uniform as an histogram<a href="#fn14" class="footnoteRef" id="fnref14"><sup>14</sup></a>. The expectation of a Uniform random variable is the middle point of it’s histogram. Hence, if <span class="math inline">\(X \sim \mathrm{Uniform}(a,b)\)</span> then:</p>
 <p><span class="math display">\[\Expec(X) = \frac{a+b}{2}\;.\]</span> For the <span class="math inline">\(X \sim \mathrm{Uniform}(3,7)\)</span> distribution the expectation is <span class="math inline">\(\Expec(X)= (3+7)/2 = 5\)</span>. Observe that 5 is the center of the Uniform density in Plot <a href="ChapRandomVar.html#fig:RVar6">5.5</a>.</p>
 <p>It can be shown that the variance of the <span class="math inline">\(\mathrm{Uniform}(a,b)\)</span> is equal to</p>
@@ -676,7 +676,7 @@ den &lt;-<span class="st"> </span><span class="kw">dunif</span>(x,<span class="d
 <p>The Exponential distribution is frequently used to model times between events. For example, times between incoming phone calls, the time until a component becomes malfunction, etc. We denote the Exponential distribution via “<span class="math inline">\(X \sim \mathrm{Exponential}(\lambda)\)</span>”, where <span class="math inline">\(\lambda\)</span> is a parameter that characterizes the distribution and is called the <em>rate</em> of the distribution. The overlap between the parameter used to characterize the Exponential distribution and the one used for the Poisson distribution is deliberate. The two distributions are tightly interconnected. As a matter of fact, it can be shown that if the distribution between occurrences of a phenomena has the Exponential distribution with rate <span class="math inline">\(\lambda\)</span> then the total number of the occurrences of the phenomena within a unit interval of time has a <span class="math inline">\(\mathrm{Poisson}(\lambda)\)</span> distribution.</p>
 <p>The sample space of an Exponential random variable contains all non-negative numbers. Consider, for example, <span class="math inline">\(X \sim \mathrm{Exponential}(0.5)\)</span>. The density of the distribution in the range between 0 and 10 is presented in Figure <a href="ChapRandomVar.html#fig:RVar7">5.6</a>. Observe that in the Exponential distribution smaller values are more likely to occur in comparison to larger values. This is indicated by the density being larger at the vicinity of 0. The density of the exponential distribution given in the plot is positive, but hardly so, for values larger than 10.</p>
 <div class="figure" style="text-align: center"><span id="fig:RVar7"></span>
-<img src="thinkstat_files/figure-html/RVar7-1.png" alt="The Exponential(0.5) Distribution" width="60%" />
+<img src="statthink_files/figure-html/RVar7-1.png" alt="The Exponential(0.5) Distribution" width="60%" />
 <p class="caption">
 FIGURE 5.6: The Exponential(0.5) Distribution
 </p>
@@ -689,7 +689,7 @@ FIGURE 5.6: The Exponential(0.5) Distribution
 <p><span class="math display">\[\Expec(X) = 1/\lambda\;,\]</span> and the variance is given by:</p>
 <p><span class="math display">\[\Var(X) =1/\lambda^2\;.\]</span> The standard deviation is the square root of the variance, namely <span class="math inline">\(1/\lambda\)</span>. Observe that the larger is the rate the smaller are the expectation and the standard deviation.</p>
 <div class="figure" style="text-align: center"><span id="fig:RVar8"></span>
-<img src="thinkstat_files/figure-html/RVar8-1.png" alt="The Exponential Distribution for Various Values of $\lambda$" width="60%" />
+<img src="statthink_files/figure-html/RVar8-1.png" alt="The Exponential Distribution for Various Values of $\lambda$" width="60%" />
 <p class="caption">
 FIGURE 5.7: The Exponential Distribution for Various Values of <span class="math inline">\(\lambda\)</span>
 </p>
@@ -721,7 +721,7 @@ FIGURE 5.7: The Exponential Distribution for Various Values of <span class="math
 </div>
 
 <div class="figure" style="text-align: center"><span id="fig:RVar10"></span>
-<img src="thinkstat_files/figure-html/RVar10-1.png" alt="Bar Plots of the Negative-Binomial Distribution" width="60%" />
+<img src="statthink_files/figure-html/RVar10-1.png" alt="Bar Plots of the Negative-Binomial Distribution" width="60%" />
 <p class="caption">
 FIGURE 5.8: Bar Plots of the Negative-Binomial Distribution
 </p>
@@ -863,7 +863,7 @@ gitbook.start({
 "link": "https://github.com/yihui/bookdown-crc/edit/master/05-RandomVar.Rmd",
 "text": "Edit"
 },
-"download": ["thinkstat.pdf", "thinkstat.epub"],
+"download": ["statthink.pdf", "thinkstat.epub"],
 "toc": {
 "collapse": "none"
 }

@@ -492,7 +492,7 @@ dif.mpg &lt;-<span class="st"> </span>cars<span class="op">$</span>highway.mpg <
 <p>The variable “<code>curb.weight</code>” is numeric and the expression “<code>cars$curb.weight &gt; 2414</code>” produces a sequence with logical “<code>TRUE</code>” or “<code>FALSE</code>” components. This sequence is not a factor. In order to produce a factor we apply the function “<code>factor</code>” to the sequence. The function “<code>factor</code>” transforms its input into a factor. Specifically, the application of this function to a sequence with logical components produces a factor with two levels that are given the names “<code>TRUE</code>” and “<code>FALSE</code>”<a href="#fn62" class="footnoteRef" id="fnref62"><sup>62</sup></a>.</p>
 <p>We want to examine the relation between the response variable “<code>dif.mpg</code>” and the explanatory factor “<code>heavy</code>”. Towards that end we produce a plot of the relation with the function “<code>plot</code>” and test for the equality of the expectations of the response with the function “<code>t.test</code>”. First the plot:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(dif.mpg<span class="op">~</span>heavy)</code></pre></div>
-<p><img src="thinkstat_files/figure-html/unnamed-chunk-194-1.png" width="60%" style="display: block; margin: auto;" /></p>
+<p><img src="statthink_files/figure-html/unnamed-chunk-194-1.png" width="60%" style="display: block; margin: auto;" /></p>
 <p>Observe that the figure contains two box plots, one associated with the level “<code>FALSE</code>” of the explanatory factor and the other with the level “<code>TRUE</code>” of that factor. The box plots describe the distribution of the response variable for each level of the explanatory factor. Overall, the distribution of the response for heavier cars (cars associated with the level “<code>TRUE</code>”) tends to obtain smaller values than the distribution of the response for lighter cars (cars associated with the level “<code>FALSE</code>”).</p>
 <p>The input to the function “<code>plot</code>” is a <em>formula</em> expression of the form: “<em>response<span class="math inline">\(\;\tilde{}\;\)</span>explanatory.variable</em>”. A formula identifies the role of variables. The variable to the left of the tilde character (<span class="math inline">\(\;\tilde{}\;\)</span>) in a formula is the response and the variable to the right is the explanatory variable. In the current case the variable “<code>dif.mpg</code>” is the response and the variable “<code>heavy</code>” is the explanatory variable.</p>
 <p>Let us use a formal test in order to negate the hypothesis that the expectation of the response for the two weight groups is the same. The test is provided by the application of the function “<code>t.test</code>” to the formula “<code>dif.mpg\;\tilde{}\;heavy</code>”:</p>
@@ -741,7 +741,7 @@ gitbook.start({
 "link": "https://github.com/yihui/bookdown-crc/edit/master/13-TwoSamp.Rmd",
 "text": "Edit"
 },
-"download": ["thinkstat.pdf", "thinkstat.epub"],
+"download": ["statthink.pdf", "thinkstat.epub"],
 "toc": {
 "collapse": "none"
 }

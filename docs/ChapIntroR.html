@@ -478,7 +478,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h2><span class="header-section-number">1.3</span> Statistics</h2>
 <p>The science of statistics deals with the collection, analysis, interpretation, and presentation of data. We see and use data in our everyday lives. To be able to use data correctly is essential to many professions and is in your own best self-interest.</p>
 <div class="figure" style="text-align: center"><span id="fig:intror1"></span>
-<img src="thinkstat_files/figure-html/intror1-1.png" alt="Frequency of Average Time (in Hours) Spent Sleeping per Night" width="60%" />
+<img src="statthink_files/figure-html/intror1-1.png" alt="Frequency of Average Time (in Hours) Spent Sleeping per Night" width="60%" />
 <p class="caption">
 FIGURE 1.1: Frequency of Average Time (in Hours) Spent Sleeping per Night
 </p>
@@ -558,7 +558,7 @@ FIGURE 1.2: Save Workspace Dialog
 <p>Notice that the output of the function “<code>table</code>” is a table of the different levels of the input vector and the frequency of each level. This output is yet another type of an object.</p>
 <p>The bar-plot of Figure <a href="ChapIntroR.html#fig:intror1">1.1</a> can be produced by the application of the function “<code>plot</code>” to the object that is produced as an output of the function “<code>table</code>”:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="kw">table</span>(X))</code></pre></div>
-<p><img src="thinkstat_files/figure-html/unnamed-chunk-8-1.png" width="60%" style="display: block; margin: auto;" /></p>
+<p><img src="statthink_files/figure-html/unnamed-chunk-8-1.png" width="60%" style="display: block; margin: auto;" /></p>
 <p>This plot is practically identical to the plot in Figure <a href="ChapIntroR.html#fig:intror1">1.1</a>. The only difference is in the names given to the access. These names were changed in Figure <a href="ChapIntroR.html#fig:intror1">1.1</a> for clarity.</p>
 <p>Clearly, if one wants to produce a bar-plot to other numerical data all one has to do is replace in the expression <code>plot(table(X))</code> the object <code>X</code> by an object that contains the other data. For example, to plot the data in <code>my.vector</code> you may use <code>plot(table(my.vector))</code>.</p>
 </div>
@@ -660,7 +660,7 @@ gitbook.start({
 "link": "https://github.com/yihui/bookdown-crc/edit/master/01-IntroR.Rmd",
 "text": "Edit"
 },
-"download": ["thinkstat.pdf", "thinkstat.epub"],
+"download": ["statthink.pdf", "thinkstat.epub"],
 "toc": {
 "collapse": "none"
 }

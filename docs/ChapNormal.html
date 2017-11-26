@@ -474,7 +474,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>A Normal random variable has a continuous distribution over the sample space of all numbers, negative or positive. We denote the Normal distribution via “<span class="math inline">\(X \sim \mathrm{Normal}(\mu, \sigma^2)\)</span>”, where <span class="math inline">\(\mu = \Expec(X)\)</span> is the expectation of the random variable and <span class="math inline">\(\sigma^2 = \Var(X)\)</span> is it’s variance<a href="#fn17" class="footnoteRef" id="fnref17"><sup>17</sup></a>.</p>
 <p>Consider, for example, <span class="math inline">\(X \sim \mathrm{Normal}(2,9)\)</span>. The density of the distribution is presented in Figure <span class="math display">\[fig:Normal\_1\]</span>. Observe that the distribution is symmetric about the expectation 2. The random variable is more likely to obtain its value in the vicinity of the expectation. Values much larger or much smaller than the expectation are substantially less likely.</p>
 <div class="figure" style="text-align: center"><span id="fig:Normal1"></span>
-<img src="thinkstat_files/figure-html/Normal1-1.png" alt="The Normal(2,9) Distribution" width="60%" />
+<img src="statthink_files/figure-html/Normal1-1.png" alt="The Normal(2,9) Distribution" width="60%" />
 <p class="caption">
 FIGURE 6.1: The Normal(2,9) Distribution
 </p>
@@ -485,7 +485,7 @@ FIGURE 6.1: The Normal(2,9) Distribution
 <p>The difference is the indicated area that corresponds to the probability of being inside the interval, which turns out to be approximately equal to 0.589. Notice that the expectation <span class="math inline">\(\mu\)</span> of the Normal distribution is entered as the second argument to the function. The third argument to the function is the standard deviation, i.e. the square root of the variance. In this example, the standard deviation is <span class="math inline">\(\sqrt{9}=3\)</span>.</p>
 <p>Figure <a href="ChapNormal.html#fig:Normal2">6.2</a> displays the densities of the Normal distribution for the combinations <span class="math inline">\(\mu= 0\)</span>, <span class="math inline">\(\sigma^2 = 1\)</span> (the <em>red</em> line); <span class="math inline">\(\mu = 2\)</span>, <span class="math inline">\(\sigma^2 = 9\)</span> (the <em>black</em> line); and <span class="math inline">\(\mu = -3\)</span>, <span class="math inline">\(\sigma^2 = 1/4\)</span> (the <em>green</em> line). Observe that the smaller the variance the more concentrated is the distribution of the random variable about the expectation.</p>
 <div class="figure" style="text-align: center"><span id="fig:Normal2"></span>
-<img src="thinkstat_files/figure-html/Normal2-1.png" alt="The Normal Distribution for Various Values of $\mu$ and $\sigma^2$" width="60%" />
+<img src="statthink_files/figure-html/Normal2-1.png" alt="The Normal Distribution for Various Values of $\mu$ and $\sigma^2$" width="60%" />
 <p class="caption">
 FIGURE 6.2: The Normal Distribution for Various Values of <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\sigma^2\)</span>
 </p>
@@ -509,7 +509,7 @@ FIGURE 6.2: The Normal Distribution for Various Values of <span class="math inli
 <p>The standard Normal distribution is the distribution of a standardized Normal measurement. The expectation for the standard Normal distribution is 0 and the variance is 1. When <span class="math inline">\(X \sim N(\mu,\sigma^2)\)</span> has a Normal distribution with expectation <span class="math inline">\(\mu\)</span> and variance <span class="math inline">\(\sigma^2\)</span> then the transformed random variable <span class="math inline">\(Z = (X-\mu)/\sigma\)</span> produces the standard Normal distribution <span class="math inline">\(Z\sim N(0,1)\)</span>. The transformation corresponds to the reexpression of the original measurement in terms of a new “zero” and a new unit of measurement. The new “zero” is the expectation of the original measurement and the new unit is the standard deviation of the original measurement.</p>
 <p>Computation of probabilities associated with a Normal random variable <span class="math inline">\(X\)</span> can be carried out with the aid of the standard Normal distribution. For example, consider the computation of the probability <span class="math inline">\(\Prob(0 &lt; X \leq 5)\)</span> for <span class="math inline">\(X \sim N(2, 9)\)</span>, that has expectation <span class="math inline">\(\mu=2\)</span> and standard deviation <span class="math inline">\(\sigma = 3\)</span>. Consider <span class="math inline">\(X\)</span>’s standardized values: <span class="math inline">\(Z = (X-2)/3\)</span>. The boundaries of the interval <span class="math inline">\([0,5]\)</span>, namely <span class="math inline">\(0\)</span> and <span class="math inline">\(5\)</span>, have standardized <span class="math inline">\(z\)</span>-scores of <span class="math inline">\((0-2)/3=-2/3\)</span> and <span class="math inline">\((5-2)/3 =1\)</span>, respectively. Clearly, the original measurement <span class="math inline">\(X\)</span> falls between the original boundaries (<span class="math inline">\(0 &lt; X \leq 5\)</span>) if, and only if, the standardized measurement <span class="math inline">\(Z\)</span> falls between the standardized boundaries (<span class="math inline">\(-2/3 &lt; Z \leq 1\)</span>). Therefore, the probability that <span class="math inline">\(X\)</span> obtains a value in the range <span class="math inline">\([0,5]\)</span> is equal to the probability that <span class="math inline">\(Z\)</span> obtains a value in the range <span class="math inline">\([-2/3,1]\)</span>.</p>
 <div class="figure" style="text-align: center"><span id="fig:Normal3"></span>
-<img src="thinkstat_files/figure-html/Normal3-1.png" alt="The Standard Normal Distribution" width="60%" />
+<img src="statthink_files/figure-html/Normal3-1.png" alt="The Standard Normal Distribution" width="60%" />
 <p class="caption">
 FIGURE 6.3: The Standard Normal Distribution
 </p>
@@ -526,7 +526,7 @@ FIGURE 6.3: The Standard Normal Distribution
 <p>We may find the <span class="math inline">\(z\)</span>-values of the boundaries of the region, denoted in the figure as <span class="math inline">\(z_0\)</span> and <span class="math inline">\(z_1\)</span> by the investigation of the cumulative distribution function. Indeed, in order to have 95% of the distribution in the central region one should leave out 2.5% of the distribution in each of the two tails. That is, 0.025 should be the area of the unshaded region to the right of <span class="math inline">\(z_1\)</span> and, likewise, 0.025 should be the area of the unshaded region to the left of <span class="math inline">\(z_0\)</span>. In other words, the cumulative probability up to <span class="math inline">\(z_0\)</span> should be 0.025 and the cumulative distribution up to <span class="math inline">\(z_1\)</span> should be 0.975.</p>
 <p>In general, given a random variable <span class="math inline">\(X\)</span> and given a percent <span class="math inline">\(p\)</span>, the <span class="math inline">\(x\)</span> value with the property that the cumulative distribution up to <span class="math inline">\(x\)</span> is equal to the probability <span class="math inline">\(p\)</span> is called the <span class="math inline">\(p\)</span>-<em>percentile</em> of the distribution. Here we seek the 2.5%-percentile and the 97.5%-percentile of the standard Normal distribution.</p>
 <div class="figure" style="text-align: center"><span id="fig:Normal4"></span>
-<img src="thinkstat_files/figure-html/Normal4-1.png" alt="Central 95$\%$ of the Standard Normal Distribution" width="60%" />
+<img src="statthink_files/figure-html/Normal4-1.png" alt="Central 95$\%$ of the Standard Normal Distribution" width="60%" />
 <p class="caption">
 FIGURE 6.4: Central 95<span class="math inline">\(\%\)</span> of the Standard Normal Distribution
 </p>
@@ -538,7 +538,7 @@ FIGURE 6.4: Central 95<span class="math inline">\(\%\)</span> of the Standard No
 <pre><code>## [1] -1.959964</code></pre>
 <p>Observe that <span class="math inline">\(z_1\)</span> is practically equal to 1.96 and <span class="math inline">\(z_0 = -1.96 = -z_1\)</span>. The fact that <span class="math inline">\(z_0\)</span> is the negative of <span class="math inline">\(z_1\)</span> results from the symmetry of the standard Normal distribution about 0. As a conclusion we get that for the standard Normal distribution 95% of the probability is concentrated in the range <span class="math inline">\([-1.96, 1.96]\)</span>.</p>
 <div class="figure" style="text-align: center"><span id="fig:Normal5"></span>
-<img src="thinkstat_files/figure-html/Normal5-1.png" alt="Central 95$\%$ of the Normal(2,9) Distribution" width="60%" />
+<img src="statthink_files/figure-html/Normal5-1.png" alt="Central 95$\%$ of the Normal(2,9) Distribution" width="60%" />
 <p class="caption">
 FIGURE 6.5: Central 95<span class="math inline">\(\%\)</span> of the Normal(2,9) Distribution
 </p>
@@ -616,7 +616,7 @@ sig &lt;-<span class="st"> </span><span class="kw">sqrt</span>(<span class="dv">
 <h3><span class="header-section-number">6.3.2</span> Continuity Corrections</h3>
 <p>In order to complete this section let us look more carefully at the Normal approximations of the Binomial distribution.</p>
 <div class="figure" style="text-align: center"><span id="fig:Normal6"></span>
-<img src="thinkstat_files/figure-html/Normal6-1.png" alt="Normal Approximation of the Binomial Distribution" width="60%" />
+<img src="statthink_files/figure-html/Normal6-1.png" alt="Normal Approximation of the Binomial Distribution" width="60%" />
 <p class="caption">
 FIGURE 6.6: Normal Approximation of the Binomial Distribution
 </p>
@@ -757,7 +757,7 @@ gitbook.start({
 "link": "https://github.com/yihui/bookdown-crc/edit/master/06-Normal.Rmd",
 "text": "Edit"
 },
-"download": ["thinkstat.pdf", "thinkstat.epub"],
+"download": ["statthink.pdf", "thinkstat.epub"],
 "toc": {
 "collapse": "none"
 }

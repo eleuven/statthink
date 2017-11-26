@@ -1,4 +1,4 @@
-book_filename: "thinkstat"
+book_filename: "statthink"
 clean: [packages.bib, bookdown.bbl]
 output_dir: "docs"
 language:

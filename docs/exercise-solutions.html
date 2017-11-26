@@ -647,11 +647,11 @@ E</code></pre></div>
 <li><p>The plots can be produced with the following code, which should be run one line at a time:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="dv">0</span><span class="op">:</span><span class="dv">15</span>
 <span class="kw">plot</span>(x,<span class="kw">dnbinom</span>(x,<span class="dv">2</span>,<span class="fl">0.5</span>),<span class="dt">type=</span><span class="st">&quot;h&quot;</span>)</code></pre></div>
-<p><img src="thinkstat_files/figure-html/unnamed-chunk-258-1.png" width="60%" style="display: block; margin: auto;" /></p>
+<p><img src="statthink_files/figure-html/unnamed-chunk-258-1.png" width="60%" style="display: block; margin: auto;" /></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(x,<span class="kw">dnbinom</span>(x,<span class="dv">4</span>,<span class="fl">0.5</span>),<span class="dt">type=</span><span class="st">&quot;h&quot;</span>)</code></pre></div>
-<p><img src="thinkstat_files/figure-html/unnamed-chunk-258-2.png" width="60%" style="display: block; margin: auto;" /></p>
+<p><img src="statthink_files/figure-html/unnamed-chunk-258-2.png" width="60%" style="display: block; margin: auto;" /></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(x,<span class="kw">dnbinom</span>(x,<span class="dv">8</span>,<span class="fl">0.8</span>),<span class="dt">type=</span><span class="st">&quot;h&quot;</span>)</code></pre></div>
-<p><img src="thinkstat_files/figure-html/unnamed-chunk-258-3.png" width="60%" style="display: block; margin: auto;" /></p>
+<p><img src="statthink_files/figure-html/unnamed-chunk-258-3.png" width="60%" style="display: block; margin: auto;" /></p>
 <p>The first plot, that corresponds to <span class="math inline">\(X_1 \sim \mbox{Negative-Binomial}(2,0.5)\)</span>, fits Barplot 3. Notice that the distribution tends to obtain smaller values and that the probability of the value “0” is equal to the probability of the value “1”.</p>
 <p>The second plot, the one that corresponds to <span class="math inline">\(X_2 \sim \mbox{Negative-Binomial}(4,0.5)\)</span>, is associated with Barplot 1. Notice that the distribution tends to obtain larger values. For example, the probability of the value “10” is substantially larger than zero, where for the other two plots this is not the case.</p>
 <p>The third plot, the one that corresponds to <span class="math inline">\(X_3 \sim \mbox{Negative-Binomial}(8,0.8)\)</span>, matches Barplot 2. Observe that this distribution tends to produce smaller probabilities for the small values as well as for the larger values. Overall, it is more concentrated than the other two.</p></li>
@@ -798,9 +798,9 @@ sig &lt;-<span class="st"> </span><span class="kw">sqrt</span>(<span class="dv">
 <p>The sample standard deviation for the patients that were treated with active magnets is 3.236568 and sample standard deviation for the patients that were treated with inactive placebo is 1.578124.</p></li>
 <li><p>We apply the function “<code>boxplot</code>” to each sub-sequences:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">boxplot</span>(magnets<span class="op">$</span>change[<span class="dv">1</span><span class="op">:</span><span class="dv">29</span>])</code></pre></div>
-<p><img src="thinkstat_files/figure-html/unnamed-chunk-278-1.png" width="60%" style="display: block; margin: auto;" /></p>
+<p><img src="statthink_files/figure-html/unnamed-chunk-278-1.png" width="60%" style="display: block; margin: auto;" /></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">boxplot</span>(magnets<span class="op">$</span>change[<span class="dv">30</span><span class="op">:</span><span class="dv">50</span>])</code></pre></div>
-<p><img src="thinkstat_files/figure-html/unnamed-chunk-278-2.png" width="60%" style="display: block; margin: auto;" /></p>
+<p><img src="statthink_files/figure-html/unnamed-chunk-278-2.png" width="60%" style="display: block; margin: auto;" /></p>
 <p>The first box-plot corresponds to the sub-sequence of the patients that received an active magnet. There are no outliers in this plot. The second box-plot corresponds to the sub-sequence of the patients that received an inactive placebo. Three values, the values “3”, “4”, and “5” are associated with outliers. Let us see what is the total number of observations that receive these values:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">table</span>(magnets<span class="op">$</span>change[<span class="dv">30</span><span class="op">:</span><span class="dv">50</span>])</code></pre></div>
 <pre><code>## 
@@ -980,7 +980,7 @@ p<span class="op">*</span>(<span class="dv">1</span><span class="op">-</span>p)<
 <p>Obtain that average for the condition “<code>C</code>” is <span class="math inline">\(2.613332\)</span> and the standard deviation is <span class="math inline">\(0.5329833\)</span>.</p>
 <p>You may note that the rating given by students that were exposed to the description of the lecturer as charismatic is higher on the average than the rating given by students that were exposed to a less favorable description. The box plots of the ratings for the two conditions are presented in Figure <a href="exercise-solutions.html#fig:Confidence2">16.2</a>.</p>
 <div class="figure" style="text-align: center"><span id="fig:Confidence2"></span>
-<img src="thinkstat_files/figure-html/Confidence2-1.png" alt="Box Plots of Ratings" width="60%" />
+<img src="statthink_files/figure-html/Confidence2-1.png" alt="Box Plots of Ratings" width="60%" />
 <p class="caption">
 FIGURE 16.2: Box Plots of Ratings
 </p>
@@ -1360,7 +1360,7 @@ fit.deaths &lt;-<span class="st"> </span><span class="kw">lm</span>(deaths<span 
 <li><p>A scatter plot of the two variables is produced by the application of the function “<code>plot</code>” to the formula that involves these two variables. The regression line is added to the plot using the function “<code>abline</code>” with the fitted model as an input:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(deaths<span class="op">~</span>diagnosed,<span class="dt">data=</span>aids)
 <span class="kw">abline</span>(fit.deaths)</code></pre></div>
-<p><img src="thinkstat_files/figure-html/unnamed-chunk-321-1.png" width="60%" style="display: block; margin: auto;" /></p>
+<p><img src="statthink_files/figure-html/unnamed-chunk-321-1.png" width="60%" style="display: block; margin: auto;" /></p>
 <p>Observe that the points are nicely placed very to a line that characterizes the linear trend of the regression.</p></li>
 <li><p>We fit a linear regression model of “<code>diagnosed</code>” as a response and “<code>year</code>” as the explanatory variable and save the fit in the object “<code>fit.diagnosed</code>”. A summary of the model is produced by the application of the function “<code>summary</code>” to the fit:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">fit.diagnosed &lt;-<span class="st"> </span><span class="kw">lm</span>(diagnosed<span class="op">~</span>year,<span class="dt">data=</span>aids)
@@ -1392,7 +1392,7 @@ fit.deaths &lt;-<span class="st"> </span><span class="kw">lm</span>(deaths<span 
 <li><p>A scatter plot of the two variables is produced by the application of the function “<code>plot</code>” and the regression line is added with function “<code>abline</code>”:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(diagnosed<span class="op">~</span>year,<span class="dt">data=</span>aids)
 <span class="kw">abline</span>(fit.diagnosed)</code></pre></div>
-<p><img src="thinkstat_files/figure-html/unnamed-chunk-324-1.png" width="60%" style="display: block; margin: auto;" /></p>
+<p><img src="statthink_files/figure-html/unnamed-chunk-324-1.png" width="60%" style="display: block; margin: auto;" /></p>
 <p>Observe that the points do not follow a linear trend. It seems that the number of diagnosed cases increased in an exponential rate during the first years after Aids was discovered. The trend changed in the mid 90’s with a big drop in the number of diagnosed Aids patients. This drop may be associated with the administration of therapies such as AZT to HIV infected subjects that reduced the number of such subjects that developed Aids. In the late 90’s there seams to be yet again a change in the trend and the possible increase in numbers. The line of linear regression misses all these changes and is a poor representation of the historical development.</p>
 <p>The take home message from this exercise is to not use models blindly. A good advise is to plot the data. An examination of the plot provides a warning that the linear model is probably not a good model for the given problem.</p></li>
 </ol>
@@ -1405,7 +1405,7 @@ fit.deaths &lt;-<span class="st"> </span><span class="kw">lm</span>(deaths<span 
 percent &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="fl">35.5</span>,<span class="fl">31.5</span>,<span class="fl">31.4</span>,<span class="fl">27.3</span>,<span class="fl">21.9</span>,<span class="fl">17.5</span>,<span class="fl">15.8</span>)
 <span class="kw">plot</span>(percent<span class="op">~</span>year)
 <span class="kw">abline</span>(<span class="kw">lm</span>(percent<span class="op">~</span>year))</code></pre></div>
-<p><img src="thinkstat_files/figure-html/unnamed-chunk-325-1.png" width="60%" style="display: block; margin: auto;" /></p>
+<p><img src="statthink_files/figure-html/unnamed-chunk-325-1.png" width="60%" style="display: block; margin: auto;" /></p>
 <p>Observe that a linear trend is a reasonable description of the reduction in the percentage of workers that belong to labor unions in the post World War II period.</p></li>
 <li><p>We compute the averages, standard deviations and the covariance:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mean.x &lt;-<span class="st"> </span><span class="kw">mean</span>(year)
@@ -1484,7 +1484,7 @@ a</code></pre></div>
 <p>Following our own advice, we plot the data and the regression model:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(dif.mpg <span class="op">~</span><span class="st"> </span>cars<span class="op">$</span>curb.weight)
 <span class="kw">abline</span>(<span class="kw">lm</span>(dif.mpg <span class="op">~</span><span class="st"> </span>cars<span class="op">$</span>curb.weight))</code></pre></div>
-<p><img src="thinkstat_files/figure-html/unnamed-chunk-330-1.png" width="60%" style="display: block; margin: auto;" /></p>
+<p><img src="statthink_files/figure-html/unnamed-chunk-330-1.png" width="60%" style="display: block; margin: auto;" /></p>
 <p>One may observe that although there seems to be an overall downward trend, there is still allot of variability about the line of regression.</p></li>
 <li><p>We now fit and summarize the regression model with the size of engine as the explanatory variable:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(<span class="kw">lm</span>(dif.mpg <span class="op">~</span><span class="st"> </span>cars<span class="op">$</span>engine.size))</code></pre></div>
@@ -1510,7 +1510,7 @@ a</code></pre></div>
 <p>Produce the scatter plot with the line of regression:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(dif.mpg <span class="op">~</span><span class="st"> </span>cars<span class="op">$</span>engine.size)
 <span class="kw">abline</span>(<span class="kw">lm</span>(dif.mpg <span class="op">~</span><span class="st"> </span>cars<span class="op">$</span>engine.size))</code></pre></div>
-<p><img src="thinkstat_files/figure-html/unnamed-chunk-332-1.png" width="60%" style="display: block; margin: auto;" /></p>
+<p><img src="statthink_files/figure-html/unnamed-chunk-332-1.png" width="60%" style="display: block; margin: auto;" /></p>
 <p>Again, there is variability about the line of regression.</p></li>
 <li><p>Of the two models, the model that uses the curb weigh as the explanatory variable explains a larger portion of the variability in the response. Hence, unless other criteria tells us otherwise, we will prefer this model over the model that uses the size of engine as an explanatory variable.</p></li>
 </ol>
@@ -1533,7 +1533,7 @@ a</code></pre></div>
 <p>The resulting table has two columns and 4 rows. The third row corresponds to healthy subjects. Of these, 239 subjects used the AHA recommended diet and 273 used the Mediterranean diet. We may also plot this data using a mosaic plot:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(health<span class="op">~</span>type,<span class="dt">data=</span>diet)</code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:Logistic4"></span>
-<img src="thinkstat_files/figure-html/Logistic4-1.png" alt="Health Condition Versus Type of Diet" width="60%" />
+<img src="statthink_files/figure-html/Logistic4-1.png" alt="Health Condition Versus Type of Diet" width="60%" />
 <p class="caption">
 FIGURE 16.3: Health Condition Versus Type of Diet
 </p>
@@ -1569,14 +1569,14 @@ FIGURE 16.3: Health Condition Versus Type of Diet
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">cushings &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;_data/cushings.csv&quot;</span>)
 <span class="kw">plot</span>(type<span class="op">~</span>tetra,<span class="dt">data=</span>cushings)</code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:Logistic5"></span>
-<img src="thinkstat_files/figure-html/Logistic5-1.png" alt="Health Condition Versus Type of Diet" width="60%" />
+<img src="statthink_files/figure-html/Logistic5-1.png" alt="Health Condition Versus Type of Diet" width="60%" />
 <p class="caption">
 FIGURE 16.4: Health Condition Versus Type of Diet
 </p>
 </div>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">hist</span>(cushings<span class="op">$</span>tetra)</code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:Logistic5"></span>
-<img src="thinkstat_files/figure-html/Logistic5-2.png" alt="Health Condition Versus Type of Diet" width="60%" />
+<img src="statthink_files/figure-html/Logistic5-2.png" alt="Health Condition Versus Type of Diet" width="60%" />
 <p class="caption">
 FIGURE 16.4: Health Condition Versus Type of Diet
 </p>
@@ -1795,7 +1795,7 @@ gitbook.start({
 "link": "https://github.com/yihui/bookdown-crc/edit/master/17-Solutions.Rmd",
 "text": "Edit"
 },
-"download": ["thinkstat.pdf", "thinkstat.epub"],
+"download": ["statthink.pdf", "thinkstat.epub"],
 "toc": {
 "collapse": "none"
 }

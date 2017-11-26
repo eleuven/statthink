@@ -530,7 +530,7 @@ X.bar</code></pre></div>
 <p>The main part of the program is a “<code>for</code>” loop. The argument of the function “<code>for</code>” takes the special form: “<em>index.name</em> <code>in</code> <em>index.values</em>”, where <em>index.name</em> is the name of the running index and <em>index.values</em> is the collection of values over which the running index is evaluated. In each iteration of the loop the running index is assigned a value from the collection and the expression that follows the brackets of the “<code>for</code>” function is evaluated with the given value of the running index.</p>
 <p>In the given example the collection of values is produced by the expression “<code>1:n</code>”. Recall that the expression “<code>1:n</code>” produces the collection of integers between <code>1</code> and <code>n</code>. Here, <code>n</code> = 100,000. Hence, in the given application the collection of values is a sequence that contains the integers between 1 and 100,000. The running index is called “<code>i</code>”. the expression is evaluated 100,000 times, each time with a different integer value for the running index “<code>i</code>”.</p>
 <div class="figure" style="text-align: center"><span id="fig:SampDist6"></span>
-<img src="thinkstat_files/figure-html/SampDist6-1.png" alt="Distribution of Height and the Sampling Distribution of Averages" width="60%" />
+<img src="statthink_files/figure-html/SampDist6-1.png" alt="Distribution of Height and the Sampling Distribution of Averages" width="60%" />
 <p class="caption">
 FIGURE 7.1: Distribution of Height and the Sampling Distribution of Averages
 </p>
@@ -571,7 +571,7 @@ FIGURE 7.1: Distribution of Height and the Sampling Distribution of Averages
 }</code></pre></div>
 <p>Observe that in this code we created a sequence of length 100,000 with evaluations of the sample average of 64 Binomial random variables. We start with a sequence of zeros and in each iteration of the “<code>for</code>” loop a zero is replaced by the average of a random sample of 64 Binomial random variables.</p>
 <div class="figure" style="text-align: center"><span id="fig:SampDist7"></span>
-<img src="thinkstat_files/figure-html/SampDist7-1.png" alt="Distributions of an Average and a Single Binomial(10,0.5)" width="60%" />
+<img src="statthink_files/figure-html/SampDist7-1.png" alt="Distributions of an Average and a Single Binomial(10,0.5)" width="60%" />
 <p class="caption">
 FIGURE 7.2: Distributions of an Average and a Single Binomial(10,0.5)
 </p>
@@ -643,7 +643,7 @@ unif.<span class="dv">1000</span> &lt;-<span class="st"> </span><span class="kw"
 <h3><span class="header-section-number">7.3.2</span> The Central Limit Theorem (CLT)</h3>
 <p>The Law of Large Numbers states that the distribution of the sample average tends to be more concentrated as the sample size increases. The Central Limit Theorem (CLT in short) provides an approximation of this distribution.</p>
 <div class="figure" style="text-align: center"><span id="fig:SampDist8"></span>
-<img src="thinkstat_files/figure-html/SampDist8-1.png" alt="The CLT for the Uniform(3,7) Distribution" width="60%" />
+<img src="statthink_files/figure-html/SampDist8-1.png" alt="The CLT for the Uniform(3,7) Distribution" width="60%" />
 <p class="caption">
 FIGURE 7.3: The CLT for the Uniform(3,7) Distribution
 </p>
@@ -667,7 +667,7 @@ exp.<span class="dv">1000</span> &lt;-<span class="st"> </span><span class="kw">
   exp.<span class="dv">1000</span>[i] &lt;-<span class="st"> </span><span class="kw">mean</span>(X.samp.<span class="dv">1000</span>)
 }</code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:SampDist9"></span>
-<img src="thinkstat_files/figure-html/SampDist9-1.png" alt="The CLT for the Exponential(0.5) Distribution" width="60%" />
+<img src="statthink_files/figure-html/SampDist9-1.png" alt="The CLT for the Exponential(0.5) Distribution" width="60%" />
 <p class="caption">
 FIGURE 7.4: The CLT for the Exponential(0.5) Distribution
 </p>
@@ -839,7 +839,7 @@ gitbook.start({
 "link": "https://github.com/yihui/bookdown-crc/edit/master/07-SampDist.Rmd",
 "text": "Edit"
 },
-"download": ["thinkstat.pdf", "thinkstat.epub"],
+"download": ["statthink.pdf", "thinkstat.epub"],
 "toc": {
 "collapse": "none"
 }

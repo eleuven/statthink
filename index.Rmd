@@ -1,0 +1,132 @@
+--- 
+title: "Introduction to Statistical Thinking"
+author: "Benjamin Yakir"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: krantz
+bibliography: [book.bib, packages.bib]
+sansfont: "Helvetica"
+monofont: "Source Code Pro"
+monofontoptions: "Scale=0.7"
+mathfont: "XITS Math"
+biblio-style: apalike
+link-citations: yes
+colorlinks: yes
+lot: no
+lof: no
+#github-repo: rstudio/bookdown-demo
+description: ""
+#cover-image: images/cover.jpg
+---
+
+# Preface {-}
+
+The target audience for this book is college students who are required
+to learn statistics, students with little background in mathematics and
+often no motivation to learn more. It is assumed that the students do
+have basic skills in using computers and have access to one. Moreover,
+it is assumed that the students are willing to actively follow the
+discussion in the text, to practice, and more importantly, to think.
+
+Teaching statistics is a challenge. Teaching it to students who are
+required to learn the subject as part of their curriculum, is an art
+mastered by few. In the past I have tried to master this art and failed.
+In desperation, I wrote this book.
+
+This book uses the basic structure of generic introduction to statistics
+course. However, in some ways I have chosen to diverge from the
+traditional approach. One divergence is the introduction of `R` as part
+of the learning process. Many have used statistical packages or
+spreadsheets as tools for teaching statistics. Others have used `R` in
+advanced courses. I am not aware of attempts to use `R` in introductory
+level courses. Indeed, mastering `R` requires much investment of time
+and energy that may be distracting and counterproductive for learning
+more fundamental issues. Yet, I believe that if one restricts the
+application of `R` to a limited number of commands, the benefits that
+`R` provides outweigh the difficulties that `R` engenders.
+
+Another departure from the standard approach is the treatment of
+probability as part of the course. In this book I do not attempt to
+teach probability as a subject matter, but only specific elements of it
+which I feel are essential for understanding statistics. Hence,
+Kolmogorov’s Axioms are out as well as attempts to prove basic theorems
+and a Balls and Urns type of discussion. On the other hand, emphasis is
+given to the notion of a *random variable* and, in that context, the
+*sample space*.
+
+The first part of the book deals with descriptive statistics and
+provides probability concepts that are required for the interpretation
+of statistical inference. Statistical inference is the subject of the
+second part of the book.
+
+The first chapter is a short introduction to statistics and probability.
+Students are required to have access to `R` right from the start.
+Instructions regarding the installation of `R` on a PC are provided.
+
+The second chapter deals with data structures and variation. Chapter 3
+provides numerical and graphical tools for presenting and summarizing
+the distribution of data.
+
+The fundamentals of probability are treated in Chapters 4 to 7. The
+concept of a random variable is presented in Chapter 4 and examples of
+special types of random variables are discussed in Chapter 5. Chapter 6
+deals with the Normal random variable. Chapter 7 introduces sampling
+distribution and presents the Central Limit Theorem and the Law of Large
+Numbers. Chapter 8 summarizes the material of the first seven chapters
+and discusses it in the statistical context.
+
+Chapter 9 starts the second part of the book and the discussion of
+statistical inference. It provides an overview of the topics that are
+presented in the subsequent chapter. The material of the first half is
+revisited.
+
+Chapters 10 to 12 introduce the basic tools of statistical inference,
+namely point estimation, estimation with a confidence interval, and the
+testing of statistical hypothesis. All these concepts are demonstrated
+in the context of a single measurements.
+
+Chapters 13 to 15 discuss inference that involve the comparison of two
+measurements. The context where these comparisons are carried out is
+that of regression that relates the distribution of a response to an
+explanatory variable. In Chapter 13 the response is numeric and the
+explanatory variable is a factor with two levels. In Chapter 14 both the
+response and the explanatory variable are numeric and in Chapter 15 the
+response in a factor with two levels.
+
+Chapter 16 ends the book with the analysis of two case studies. These
+analyses require the application of the tools that are presented
+throughout the book.
+
+This book was originally written for a pair of courses in the
+[University of the People](http://www.uopeople.org/). As such, each part
+was restricted to 8 chapters. Due to lack of space, some important
+material, especially the concepts of correlation and statistical
+independence were omitted. In future versions of the book I hope to fill
+this gap.
+
+Large portions of this book, mainly in the first chapters and some of
+the quizzes, are based on material from the online book “Collaborative
+Statistics" by Barbara Illowsky and Susan Dean (Connexions, March 2,
+2010. <http://cnx.org/content/col10522/1.37/>). Most of the material was
+edited by this author, who is the only person responsible for any errors
+that where introduced in the process of editing.
+
+Case studies that are presented in the second part of the book are taken
+from [Rice Virtual Lab in
+Statistics](http://onlinestatbook.com/rvls.html) can be found in their
+[Case Studies](http://onlinestatbook.com/case_studies_rvls/) section.
+The responsibility for mistakes in the analysis of the data, if such
+mistakes are found, are my own.
+
+I would like to thank my mother Ruth who, apart from giving birth,
+feeding and educating me, has also helped to improve the pedagogical
+structure of this text. I would like to thank also Gary Engstrom for
+correcting many of the mistakes in English that I made.
+
+This book is an open source and may be used by anyone who wishes to do
+so. (Under the conditions of the [ Creative Commons Attribution License
+(CC-BY 3.0)](http://creativecommons.org/licenses/by/3.0/).))
+
+Jerusalem, June 2011.
+

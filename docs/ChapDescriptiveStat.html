@@ -5,11 +5,11 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Introduction to Statistical Thinking</title>
-  <meta name="description" content="Introduction to Statistical Thinking">
-  <meta name="generator" content="bookdown 0.5.10 and GitBook 2.6.7">
+  <title>Chapter 3 Descriptive Statistics | Introduction to Statistical Thinking</title>
+  <meta name="description" content="Chapter 3 Descriptive Statistics | Introduction to Statistical Thinking">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="Introduction to Statistical Thinking" />
+  <meta property="og:title" content="Chapter 3 Descriptive Statistics | Introduction to Statistical Thinking" />
   <meta property="og:type" content="book" />
   
   
@@ -17,7 +17,7 @@
   <meta name="github-repo" content="eleuven/statthink" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Introduction to Statistical Thinking" />
+  <meta name="twitter:title" content="Chapter 3 Descriptive Statistics | Introduction to Statistical Thinking" />
   
   
   
@@ -25,7 +25,7 @@
 <meta name="author" content="Benjamin Yakir">
 
 
-<meta name="date" content="2017-11-26">
+<meta name="date" content="2019-01-16">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -36,6 +36,7 @@
 <link rel="next" href="ChapProbability.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
@@ -50,41 +51,69 @@
 
 
 <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; position: absolute; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; }
+pre.numberSource a.sourceLine:empty
+  { position: absolute; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 <link rel="stylesheet" href="css/style.css" type="text/css" />
@@ -248,9 +277,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="9.1" data-path="ChapInference.html"><a href="ChapInference.html#student-learning-objectives-3"><i class="fa fa-check"></i><b>9.1</b> Student Learning Objectives</a></li>
 <li class="chapter" data-level="9.2" data-path="ChapInference.html"><a href="ChapInference.html#key-terms-1"><i class="fa fa-check"></i><b>9.2</b> Key Terms</a></li>
 <li class="chapter" data-level="9.3" data-path="ChapInference.html"><a href="ChapInference.html#the-cars-data-set"><i class="fa fa-check"></i><b>9.3</b> The Cars Data Set</a></li>
-<li class="chapter" data-level="9.4" data-path="ChapSampDist.html"><a href="ChapSampDist.html#the-sampling-distribution"><i class="fa fa-check"></i><b>9.4</b> The Sampling Distribution</a><ul>
+<li class="chapter" data-level="9.4" data-path="ChapInference.html"><a href="ChapInference.html#the-sampling-distribution-1"><i class="fa fa-check"></i><b>9.4</b> The Sampling Distribution</a><ul>
 <li class="chapter" data-level="9.4.1" data-path="ChapInference.html"><a href="ChapInference.html#statistics-1"><i class="fa fa-check"></i><b>9.4.1</b> Statistics</a></li>
-<li class="chapter" data-level="9.4.2" data-path="ChapInference.html"><a href="ChapInference.html#the-sampling-distribution-1"><i class="fa fa-check"></i><b>9.4.2</b> The Sampling Distribution</a></li>
+<li class="chapter" data-level="9.4.2" data-path="ChapInference.html"><a href="ChapInference.html#the-sampling-distribution-2"><i class="fa fa-check"></i><b>9.4.2</b> The Sampling Distribution</a></li>
 <li class="chapter" data-level="9.4.3" data-path="ChapInference.html"><a href="ChapInference.html#theoretical-distributions-of-observations"><i class="fa fa-check"></i><b>9.4.3</b> Theoretical Distributions of Observations</a></li>
 <li class="chapter" data-level="9.4.4" data-path="ChapInference.html"><a href="ChapInference.html#sampling-distribution-of-statistics"><i class="fa fa-check"></i><b>9.4.4</b> Sampling Distribution of Statistics</a></li>
 <li class="chapter" data-level="9.4.5" data-path="ChapInference.html"><a href="ChapInference.html#the-normal-approximation"><i class="fa fa-check"></i><b>9.4.5</b> The Normal Approximation</a></li>
@@ -367,7 +396,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li class="chapter" data-level="16.4" data-path="ChapCaseStudies.html"><a href="ChapCaseStudies.html#summary-13"><i class="fa fa-check"></i><b>16.4</b> Summary</a><ul>
 <li class="chapter" data-level="16.4.1" data-path="ChapCaseStudies.html"><a href="ChapCaseStudies.html#concluding-remarks"><i class="fa fa-check"></i><b>16.4.1</b> Concluding Remarks</a></li>
-<li class="chapter" data-level="16.4.2" data-path="ChapProbability.html"><a href="ChapProbability.html#discussion-in-the-forum"><i class="fa fa-check"></i><b>16.4.2</b> Discussion in the Forum</a></li>
+<li class="chapter" data-level="16.4.2" data-path="ChapCaseStudies.html"><a href="ChapCaseStudies.html#discussion-in-the-forum-1"><i class="fa fa-check"></i><b>16.4.2</b> Discussion in the Forum</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html"><i class="fa fa-check"></i>Exercise Solutions</a><ul>
@@ -459,87 +488,253 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h1><span class="header-section-number">Chapter 3</span> Descriptive Statistics</h1>
 <div id="student-learning-objectives-2" class="section level2">
 <h2><span class="header-section-number">3.1</span> Student Learning Objectives</h2>
-<p>This chapter deals with numerical and graphical ways to describe and display data. This area of statistics is called <em>descriptive statistics</em>. You will learn to calculate and interpret these measures and graphs. By the end of this chapter, you should be able to:</p>
+<p>This chapter deals with numerical and graphical ways to describe and
+display data. This area of statistics is called <em>descriptive
+statistics</em>. You will learn to calculate and interpret these measures
+and graphs. By the end of this chapter, you should be able to:</p>
 <ul>
 <li>Use histograms and box plots in order to display data graphically.</li>
 <li>Calculate measures of central location: mean and median.</li>
-<li>Calculate measures of the spread: variance, standard deviation, and inter-quartile range.</li>
-<li>Identify outliers, which are values that do not fit the rest of the distribution.</li>
+<li>Calculate measures of the spread: variance, standard deviation, and
+inter-quartile range.</li>
+<li>Identify outliers, which are values that do not fit the rest of the
+distribution.</li>
 </ul>
 </div>
 <div id="displaying-data" class="section level2">
 <h2><span class="header-section-number">3.2</span> Displaying Data</h2>
-<p>Once you have collected data, what will you do with it? Data can be described and presented in many different formats. For example, suppose you are interested in buying a house in a particular area. You may have no clue about the house prices, so you may ask your real estate agent to give you a sample data set of prices. Looking at all the prices in the sample is often overwhelming. A better way may be to look at the median price and the variation of prices. The median and variation are just two ways that you will learn to describe data. Your agent might also provide you with a graph of the data.</p>
-<p>A statistical graph is a tool that helps you learn about the shape of the distribution of a sample. The graph can be a more effective way of presenting data than a mass of numbers because we can see where data clusters and where there are only a few data values. Newspapers and the Internet use graphs to show trends and to enable readers to compare facts and figures quickly.</p>
-<p>Statisticians often start the analysis by graphing the data in order to get an overall picture of it. Afterwards, more formal tools may be applied.</p>
-<p>In the previous chapters we used the bar plot, where bars that indicate the frequencies in the data of values are placed over these values. In this chapter our emphasis will be on histograms and box plots, which are other types of plots. Some of the other types of graphs that are frequently used, but will not be discussed in this book, are the stem-and-leaf plot, the frequency polygon (a type of broken line graph) and the pie charts. The types of plots that will be discussed and the types that will not are all tightly linked to the notion of <em>frequency</em> of the data that was introduced in Chapter <a href="ChapData.html#ChapData">2</a> and intend to give a graphical representation of this notion.</p>
+<p>Once you have collected data, what will you do with it? Data can be
+described and presented in many different formats. For example, suppose
+you are interested in buying a house in a particular area. You may have
+no clue about the house prices, so you may ask your real estate agent to
+give you a sample data set of prices. Looking at all the prices in the
+sample is often overwhelming. A better way may be to look at the median
+price and the variation of prices. The median and variation are just two
+ways that you will learn to describe data. Your agent might also provide
+you with a graph of the data.</p>
+<p>A statistical graph is a tool that helps you learn about the shape of
+the distribution of a sample. The graph can be a more effective way of
+presenting data than a mass of numbers because we can see where data
+clusters and where there are only a few data values. Newspapers and the
+Internet use graphs to show trends and to enable readers to compare
+facts and figures quickly.</p>
+<p>Statisticians often start the analysis by graphing the data in order to
+get an overall picture of it. Afterwards, more formal tools may be
+applied.</p>
+<p>In the previous chapters we used the bar plot, where bars that indicate
+the frequencies in the data of values are placed over these values. In
+this chapter our emphasis will be on histograms and box plots, which are
+other types of plots. Some of the other types of graphs that are
+frequently used, but will not be discussed in this book, are the
+stem-and-leaf plot, the frequency polygon (a type of broken line graph)
+and the pie charts. The types of plots that will be discussed and the
+types that will not are all tightly linked to the notion of <em>frequency</em>
+of the data that was introduced in Chapter <a href="ChapData.html#ChapData">2</a> and intend to
+give a graphical representation of this notion.</p>
 <div id="histograms" class="section level3">
 <h3><span class="header-section-number">3.2.1</span> Histograms</h3>
-<p>The <em>histogram</em> is a frequently used method for displaying the distribution of continuous numerical data. An advantage of a histogram is that it can readily display large data sets. A rule of thumb is to use a histogram when the data set consists of 100 values or more.</p>
-<p>One may produce a histogram in <code>R</code> by the application of the function “<code>hist</code>” to a sequence of numerical data. Let us read into <code>R</code> the data frame “<code>ex.1</code>” that contains data on the sex and height and create a histogram of the heights:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">ex.<span class="dv">1</span> &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;_data/ex1.csv&quot;</span>)
-<span class="kw">hist</span>(ex.<span class="dv">1</span><span class="op">$</span>height)</code></pre></div>
+<p>The <em>histogram</em> is a frequently used method for displaying the
+distribution of continuous numerical data. An advantage of a histogram
+is that it can readily display large data sets. A rule of thumb is to
+use a histogram when the data set consists of 100 values or more.</p>
+<p>One may produce a histogram in <code>R</code> by the application of the function
+“<code>hist</code>” to a sequence of numerical data. Let us read into <code>R</code> the data
+frame “<code>ex.1</code>” that contains data on the sex and height and create a
+histogram of the heights:</p>
+<pre class="sourceCode r"><code class="sourceCode r">ex<span class="fl">.1</span> &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;_data/ex1.csv&quot;</span>)
+<span class="kw">hist</span>(ex<span class="fl">.1</span><span class="op">$</span>height)</code></pre>
 <div class="figure" style="text-align: center"><span id="fig:DStat1"></span>
 <img src="statthink_files/figure-html/DStat1-1.png" alt="Histogram of Height" width="60%" />
 <p class="caption">
 FIGURE 3.1: Histogram of Height
 </p>
 </div>
-<p>The data set, which is the content of the CSV file “<code>ex1.csv</code>”, was used in Chapter <a href="ChapData.html#ChapData">2</a> in order to demonstrate the reading of data that is stored in a external file into <code>R</code>. The first line of the above script reads in the data from “<code>ex1.csv</code>” into a data frame object named “<code>ex.1</code>” that maintains the data internally in <code>R</code>. The second line of the script produces the histogram. We will discuss below the code associated with this second line.</p>
-<p>A histogram consists of contiguous boxes. It has both a horizontal axis and a vertical axis. The horizontal axis is labeled with what the data represents (the height, in this example). The vertical axis presents frequencies and is labeled “Frequency”. By the examination of the histogram one can appreciate the shape of the data, the center, and the spread of the data.</p>
-<p>The histogram is constructed by dividing the range of the data (the x-axis) into equal intervals, which are the bases for the boxes. The height of each box represents the count of the number of observations that fall within the interval. For example, consider the box with the base between 160 and 170. There is a total of 19 subjects with height larger that 160 but no more than 170 (that is, <span class="math inline">\(160 &lt; \texttt{height} \leq 170\)</span>). Consequently, the height of that box<a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a> is 19.</p>
-<p>The input to the function “<code>hist</code>” should be a sequence of numerical values. In principle, one may use the function “<code>c</code>” to produce a sequence of data and apply the histogram plotting function to the output of the sequence producing function. However, in the current case we have already the data stored in the data frame “<code>ex.1</code>”, all we need to learn is how to extract that data so it can be used as input to the function “<code>hist</code>” that plots the histogram.</p>
-<p>Notice the structure of the input that we have used in order to construct the histogram of the variable “<code>height</code>” in the “<code>ex.1</code>” data frame. One may address the variable “<code>variable.name</code>” in the data frame “<code>dataframe.name</code>” using the format: “<code>dataframe.name$variable.name</code>”. Indeed, when we type the expression “<code>ex.1$height</code>” we get as an output the values of the variable “<code>height</code>” from the given data frame:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">ex.<span class="dv">1</span><span class="op">$</span>height</code></pre></div>
+<p>The data set, which is the content of the CSV file “<code>ex1.csv</code>”, was used
+in Chapter <a href="ChapData.html#ChapData">2</a> in order to demonstrate the reading of data that
+is stored in a external file into <code>R</code>. The first line of the above
+script reads in the data from “<code>ex1.csv</code>” into a data frame object named
+“<code>ex.1</code>” that maintains the data internally in <code>R</code>. The second line of
+the script produces the histogram. We will discuss below the code
+associated with this second line.</p>
+<p>A histogram consists of contiguous boxes. It has both a horizontal axis
+and a vertical axis. The horizontal axis is labeled with what the data
+represents (the height, in this example). The vertical axis presents
+frequencies and is labeled “Frequency”. By the examination of the
+histogram one can appreciate the shape of the data, the center, and the
+spread of the data.</p>
+<p>The histogram is constructed by dividing the range of the data (the
+x-axis) into equal intervals, which are the bases for the boxes. The
+height of each box represents the count of the number of observations
+that fall within the interval. For example, consider the box with the
+base between 160 and 170. There is a total of 19 subjects with height
+larger that 160 but no more than 170 (that is,
+<span class="math inline">\(160 &lt; \texttt{height} \leq 170\)</span>). Consequently, the height of that
+box<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a> is 19.</p>
+<p>The input to the function “<code>hist</code>” should be a sequence of numerical
+values. In principle, one may use the function “<code>c</code>” to produce a
+sequence of data and apply the histogram plotting function to the output
+of the sequence producing function. However, in the current case we have
+already the data stored in the data frame “<code>ex.1</code>”, all we need to learn
+is how to extract that data so it can be used as input to the function
+“<code>hist</code>” that plots the histogram.</p>
+<p>Notice the structure of the input that we have used in order to
+construct the histogram of the variable “<code>height</code>” in the “<code>ex.1</code>” data
+frame. One may address the variable “<code>variable.name</code>” in the data frame
+“<code>dataframe.name</code>” using the format: “<code>dataframe.name$variable.name</code>”.
+Indeed, when we type the expression “<code>ex.1$height</code>” we get as an output
+the values of the variable “<code>height</code>” from the given data frame:</p>
+<pre class="sourceCode r"><code class="sourceCode r">ex<span class="fl">.1</span><span class="op">$</span>height</code></pre>
 <pre><code>##   [1] 182 168 172 154 174 176 193 156 157 186 143 182 194 187 171 178 157
 ##  [18] 156 172 157 171 164 142 140 202 176 165 176 175 170 169 153 169 158
 ##  [35] 208 185 157 147 160 173 164 182 175 165 194 178 178 186 165 180 174
 ##  [52] 169 173 199 163 160 172 177 165 205 193 158 180 167 165 183 171 191
 ##  [69] 191 152 148 176 155 156 177 180 186 167 174 171 148 153 136 199 161
 ##  [86] 150 181 166 147 168 188 170 189 117 174 187 141 195 129 172</code></pre>
-<p>This is a numeric sequence and can serve as the input to a function that expects a numeric sequence as input, a function such as “<code>hist</code>”. (But also other functions, for example, “<code>sum</code>” and “<code>cumsum</code>”.)</p>
-<p>There are 100 observations in the variable “<code>ex.1$height</code>”. So many observations cannot be displayed on the screen on one line. Consequently, the sequence of the data is wrapped and displayed over several lines. Notice that the square brackets on the left hand side of each line indicate the position in the sequence of the first value on that line. Hence, the number on the first line is “<code>[1]</code>”. The number on the second line is “<code>[16]</code>”, since the second line starts with the 16th observation in the display given in the book. Notice, that numbers in the square brackets on your <code>R Console</code> window may be different, depending on the setting of the display on your computer.</p>
+<p>This is a numeric sequence and can serve as the input to a function that
+expects a numeric sequence as input, a function such as “<code>hist</code>”. (But
+also other functions, for example, “<code>sum</code>” and “<code>cumsum</code>”.)</p>
+<p>There are 100 observations in the variable “<code>ex.1$height</code>”. So many
+observations cannot be displayed on the screen on one line.
+Consequently, the sequence of the data is wrapped and displayed over
+several lines. Notice that the square brackets on the left hand side of
+each line indicate the position in the sequence of the first value on
+that line. Hence, the number on the first line is “<code>[1]</code>”. The number on
+the second line is “<code>[16]</code>”, since the second line starts with the 16th
+observation in the display given in the book. Notice, that numbers in
+the square brackets on your <code>R Console</code> window may be different,
+depending on the setting of the display on your computer.</p>
 </div>
 <div id="box-plots" class="section level3">
 <h3><span class="header-section-number">3.2.2</span> Box Plots</h3>
-<p>The <em>box plot</em>, or box-whisker plot, gives a good graphical overall impression of the concentration of the data. It also shows how far from most of the data the extreme values are. In principle, the box plot is constructed from five values: the smallest value, the first quartile, the median, the third quartile, and the largest value. The median, the first quartile, and the third quartile will be discussed here, and then once more in the next section.</p>
-<p>The <em>median</em>, a number, is a way of measuring the “center” of the data. You can think of the median as the “middle value,” although it does not actually have to be one of the observed values. It is a number that separates ordered data into halves. Half the values are the same size or smaller than the median and half the values are the same size or larger than it. For example, consider the following data that contains 14 values:</p>
-<p><span class="math display">\[1,\;   11.5,\;   6,\;   7.2,\;   4,\;   8,\;   9,\;   10,\;   6.8,\;   8.3,\;   2,\;   2,\;   10,\;   1\]</span> Ordered, from smallest to largest, we get:</p>
+<p>The <em>box plot</em>, or box-whisker plot, gives a good graphical overall
+impression of the concentration of the data. It also shows how far from
+most of the data the extreme values are. In principle, the box plot is
+constructed from five values: the smallest value, the first quartile,
+the median, the third quartile, and the largest value. The median, the
+first quartile, and the third quartile will be discussed here, and then
+once more in the next section.</p>
+<p>The <em>median</em>, a number, is a way of measuring the “center” of the data.
+You can think of the median as the “middle value,” although it does not
+actually have to be one of the observed values. It is a number that
+separates ordered data into halves. Half the values are the same size or
+smaller than the median and half the values are the same size or larger
+than it. For example, consider the following data that contains 14
+values:</p>
+<p><span class="math display">\[1,\;   11.5,\;   6,\;   7.2,\;   4,\;   8,\;   9,\;   10,\;   6.8,\;   8.3,\;   2,\;   2,\;   10,\;   1\]</span>
+Ordered, from smallest to largest, we get:</p>
 <p><span class="math display">\[1,\;   1,\;   2,\;   2,\;   4,\;   6,\;   6.8,\;   7.2,\;   8,\;   8.3,\;   9,\;   10,\;   10,\;   11.5\]</span></p>
-<p>The median is between the 7th value, 6.8, and the 8th value 7.2. To find the median, add the two values together and divide by 2:</p>
-<p><span class="math display">\[\frac{6.8+7.2}{2} = 7\]</span> The median is 7. Half of the values are smaller than 7 and half of the values are larger than 7.</p>
-<p><em>Quartiles</em> are numbers that separate the data into quarters. Quartiles may or may not be part of the data. To find the quartiles, first find the median or second quartile. The first quartile is the middle value of the lower half of the data and the third quartile is the middle value of the upper half of the data. For illustration consider the same data set from above:</p>
+<p>The median is between the 7th value, 6.8, and the 8th value 7.2. To find
+the median, add the two values together and divide by 2:</p>
+<p><span class="math display">\[\frac{6.8+7.2}{2} = 7\]</span> The median is 7. Half of the values are
+smaller than 7 and half of the values are larger than 7.</p>
+<p><em>Quartiles</em> are numbers that separate the data into quarters. Quartiles
+may or may not be part of the data. To find the quartiles, first find
+the median or second quartile. The first quartile is the middle value of
+the lower half of the data and the third quartile is the middle value of
+the upper half of the data. For illustration consider the same data set
+from above:</p>
 <p><span class="math display">\[1,\;   1,\;   2,\;   2,\;   4,\;   6,\;   6.8,\;   7.2,\;   8,\;   8.3,\;   9,\;   10,\;   10,\;   11.5\]</span></p>
 <p>The median or second quartile is 7. The lower half of the data is:</p>
-<p><span class="math display">\[1,\;   1,\;   2,\;   2,\;   4,\;   6,\;   6.8\]</span> The middle value of the lower half is 2. The number 2, which is part of the data in this case, is the first quartile which is denoted Q1. One-fourth of the values are the same or less than 2 and three-fourths of the values are more than 2.</p>
+<p><span class="math display">\[1,\;   1,\;   2,\;   2,\;   4,\;   6,\;   6.8\]</span> The middle value of
+the lower half is 2. The number 2, which is part of the data in this
+case, is the first quartile which is denoted Q1. One-fourth of the
+values are the same or less than 2 and three-fourths of the values are
+more than 2.</p>
 <p>The upper half of the data is:</p>
-<p><span class="math display">\[7.2,\;   8,\;   8.3,\;   9,\;   10,\;   10,\;   11.5\]</span> The middle value of the upper half is 9. The number 9 is the third quartile which is denoted Q3. Three-fourths of the values are less than 9 and one-fourth of the values<a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a> are more than 9.</p>
-<p><em>Outliers</em> are values that do not fit with the rest of the data and lie outside of the normal range. Data points with values that are much too large or much too small in comparison to the vast majority of the observations will be identified as outliers. In the context of the construction of a box plot we identify potential outliers with the help of the <em>inter-quartile range</em> (IQR). The inter-quartile range is the distance between the third quartile (Q3) and the first quartile (Q1), i.e., <span class="math inline">\(\mbox{IQR} = \mbox{Q3} - \mbox{Q1}\)</span>. A data point that is larger than the third quartile plus 1.5 times the inter-quartile range will be marked as a potential outlier. Likewise, a data point smaller than the first quartile minus 1.5 times the inter-quartile range will also be so marked. Outliers may have a substantial effect on the outcome of statistical analysis, therefore it is important that one is alerted to the presence of outliers.</p>
-<p>In the running example we obtained an inter-quartile range of size 9-2=7. The upper threshold for defining an outlier is <span class="math inline">\(9+1.5 \times 7 = 19.5\)</span> and the lower threshold is <span class="math inline">\(2-1.5 \times 7 = -8.5\)</span>. All data points are within the two thresholds, hence there are no outliers in this data.</p>
-<p>In the construction of a box plot one uses a vertical rectangular box and two vertical “whiskers” that extend from the ends of the box to the smallest and largest data values that are not outliers. Outlier values, if any exist, are marked as points above or blow the endpoints of the whiskers. The smallest and largest non-outlier data values label the endpoints of the axis. The first quartile marks one end of the box and the third quartile marks the other end of the box. The central 50% of the data fall within the box.</p>
-<p>One may produce a box plot with the aid of the function “<code>boxplot</code>”. The input to the function is a sequence of numerical values and the output is a plot. As an example, let us produce the box plot of the 14 data points that were used as an illustration:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">boxplot</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="fl">11.5</span>,<span class="dv">6</span>,<span class="fl">7.2</span>,<span class="dv">4</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">10</span>,<span class="fl">6.8</span>,<span class="fl">8.3</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">10</span>,<span class="dv">1</span>))</code></pre></div>
+<p><span class="math display">\[7.2,\;   8,\;   8.3,\;   9,\;   10,\;   10,\;   11.5\]</span> The middle
+value of the upper half is 9. The number 9 is the third quartile which
+is denoted Q3. Three-fourths of the values are less than 9 and
+one-fourth of the values<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a> are more than 9.</p>
+<p><em>Outliers</em> are values that do not fit with the rest of the data and lie
+outside of the normal range. Data points with values that are much too
+large or much too small in comparison to the vast majority of the
+observations will be identified as outliers. In the context of the
+construction of a box plot we identify potential outliers with the help
+of the <em>inter-quartile range</em> (IQR). The inter-quartile range is the
+distance between the third quartile (Q3) and the first quartile (Q1),
+i.e., <span class="math inline">\(\mbox{IQR} = \mbox{Q3} - \mbox{Q1}\)</span>. A data point that is larger
+than the third quartile plus 1.5 times the inter-quartile range will be
+marked as a potential outlier. Likewise, a data point smaller than the
+first quartile minus 1.5 times the inter-quartile range will also be so
+marked. Outliers may have a substantial effect on the outcome of
+statistical analysis, therefore it is important that one is alerted to
+the presence of outliers.</p>
+<p>In the running example we obtained an inter-quartile range of size
+9-2=7. The upper threshold for defining an outlier is
+<span class="math inline">\(9+1.5 \times 7 = 19.5\)</span> and the lower threshold is
+<span class="math inline">\(2-1.5 \times 7 = -8.5\)</span>. All data points are within the two thresholds,
+hence there are no outliers in this data.</p>
+<p>In the construction of a box plot one uses a vertical rectangular box
+and two vertical “whiskers” that extend from the ends of the box to the
+smallest and largest data values that are not outliers. Outlier values,
+if any exist, are marked as points above or blow the endpoints of the
+whiskers. The smallest and largest non-outlier data values label the
+endpoints of the axis. The first quartile marks one end of the box and
+the third quartile marks the other end of the box. The central 50% of
+the data fall within the box.</p>
+<p>One may produce a box plot with the aid of the function “<code>boxplot</code>”. The
+input to the function is a sequence of numerical values and the output
+is a plot. As an example, let us produce the box plot of the 14 data
+points that were used as an illustration:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">boxplot</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="fl">11.5</span>,<span class="dv">6</span>,<span class="fl">7.2</span>,<span class="dv">4</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">10</span>,<span class="fl">6.8</span>,<span class="fl">8.3</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">10</span>,<span class="dv">1</span>))</code></pre>
 <p><img src="statthink_files/figure-html/unnamed-chunk-24-1.png" width="60%" style="display: block; margin: auto;" /></p>
-<p>Observe that the end points of the whiskers are 1, for the minimal value, and 11.5 for the largest value. The end values of the box are 9 for the third quartile and 2 for the first quartile. The median 7 is marked inside the box.</p>
+<p>Observe that the end points of the
+whiskers are 1, for the minimal value, and 11.5 for the largest value.
+The end values of the box are 9 for the third quartile and 2 for the
+first quartile. The median 7 is marked inside the box.</p>
 <p>Next, let us examine the box plot for the height data:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">boxplot</span>(ex.<span class="dv">1</span><span class="op">$</span>height)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">boxplot</span>(ex<span class="fl">.1</span><span class="op">$</span>height)</code></pre>
 <p><img src="statthink_files/figure-html/unnamed-chunk-25-1.png" width="60%" style="display: block; margin: auto;" /></p>
 <p>In order to assess the plot let us compute quartiles of the variable:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(ex.<span class="dv">1</span><span class="op">$</span>height)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(ex<span class="fl">.1</span><span class="op">$</span>height)</code></pre>
 <pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
 ##  117.00  158.00  171.00  170.11  180.25  208.00</code></pre>
-<p>The function “<code>summary</code>”, when applied to a numerical sequence, produce the minimal and maximal entries, as well the first, second and third quartiles (the second is the Median). It also computes the average of the numbers (the Mean), which will be discussed in the next section.</p>
-<p>Let us compare the results with the box plot for the height data. Observe that the median 171 coincides with the thick horizontal line inside the box and that the lower end of the box coincides with first quartile 158.0 and the upper end with 180.2, which is the third quartile. The inter-quartile range is <span class="math inline">\(180.2 - 158.0 = 22.2\)</span>. The upper threshold is <span class="math inline">\(180.2 + 1.5 \times 22.2 = 213.5\)</span>. This threshold is larger than the largest observation (208.0). Hence, the largest observation is not an outlier and it marks the end of the upper whisker. The lower threshold is <span class="math inline">\(158.0 - 1.5 \times 22.2 = 124.7\)</span>. The minimal observation (117.0) is less than this threshold. Hence it is an outlier and it is marked as a point below the end of the lower whisker. The second smallest observation is 129. It lies above the lower threshold and it marks the end point of the lower whisker.</p>
+<p>The function “<code>summary</code>”, when applied to a numerical sequence, produce
+the minimal and maximal entries, as well the first, second and third
+quartiles (the second is the Median). It also computes the average of
+the numbers (the Mean), which will be discussed in the next section.</p>
+<p>Let us compare the results with the box plot for the height data.
+Observe that the median 171 coincides
+with the thick horizontal line inside the box and that the lower end of
+the box coincides with first quartile 158.0 and the upper end with
+180.2, which is the third quartile. The inter-quartile range is
+<span class="math inline">\(180.2 - 158.0 = 22.2\)</span>. The upper threshold is
+<span class="math inline">\(180.2 + 1.5 \times 22.2 = 213.5\)</span>. This threshold is larger than the
+largest observation (208.0). Hence, the largest observation is not an
+outlier and it marks the end of the upper whisker. The lower threshold
+is <span class="math inline">\(158.0 - 1.5 \times 22.2 = 124.7\)</span>. The minimal observation (117.0) is
+less than this threshold. Hence it is an outlier and it is marked as a
+point below the end of the lower whisker. The second smallest
+observation is 129. It lies above the lower threshold and it marks the
+end point of the lower whisker.</p>
 </div>
 </div>
 <div id="measures-of-the-center-of-data" class="section level2">
 <h2><span class="header-section-number">3.3</span> Measures of the Center of Data</h2>
-<p>The two most widely used measures of the central location of the data are the <em>mean</em> (average) and the <em>median</em>. To calculate the average weight of 50 people one should add together the 50 weights and divide the result by 50. To find the median weight of the same 50 people, one may order the data and locate a number that splits the data into two equal parts. The median is generally a better measure of the center when there are extreme values or outliers because it is not affected by the precise numerical values of the outliers. Nonetheless, the mean is the most commonly used measure of the center.</p>
-<p>We shall use small Latin letters such as <span class="math inline">\(x\)</span> to mark the sequence of data. In such a case we may mark the sample mean by placing a bar over the <span class="math inline">\(x\)</span>: <span class="math inline">\(\bar x\)</span> (pronounced “<span class="math inline">\(x\)</span> bar”).</p>
-<p>The mean can be calculated by averaging the data points or it also can be calculated with the relative frequencies of the values that are present in the data. In the latter case one multiplies each distinct value by its relative frequency and then sum the products across all values. To see that both ways of calculating the mean are the same, consider the data:</p>
-<p><span class="math display">\[1,\; 1,\; 1,\; 2,\; 2,\; 3,\; 4,\; 4,\; 4,\; 4,\; 4\]</span> In the first way of calculating the mean we get:</p>
+<p>The two most widely used measures of the central location of the data
+are the <em>mean</em> (average) and the <em>median</em>. To calculate the average
+weight of 50 people one should add together the 50 weights and divide
+the result by 50. To find the median weight of the same 50 people, one
+may order the data and locate a number that splits the data into two
+equal parts. The median is generally a better measure of the center when
+there are extreme values or outliers because it is not affected by the
+precise numerical values of the outliers. Nonetheless, the mean is the
+most commonly used measure of the center.</p>
+<p>We shall use small Latin letters such as <span class="math inline">\(x\)</span> to mark the sequence of
+data. In such a case we may mark the sample mean by placing a bar over
+the <span class="math inline">\(x\)</span>: <span class="math inline">\(\bar x\)</span> (pronounced “<span class="math inline">\(x\)</span> bar”).</p>
+<p>The mean can be calculated by averaging the data points or it also can
+be calculated with the relative frequencies of the values that are
+present in the data. In the latter case one multiplies each distinct
+value by its relative frequency and then sum the products across all
+values. To see that both ways of calculating the mean are the same,
+consider the data:</p>
+<p><span class="math display">\[1,\; 1,\; 1,\; 2,\; 2,\; 3,\; 4,\; 4,\; 4,\; 4,\; 4\]</span> In the first
+way of calculating the mean we get:</p>
 <p><span class="math display">\[\bar x = \frac{1 + 1 + 1 + 2 + 2 + 3 + 4 + 4 + 4 + 4 + 4}{11} = 2.7\;.\]</span></p>
-<p>Alternatively, we may note that the distinct values in the sample are 1, 2, 3, and 4 with relative frequencies of 3/11, 2/11, 1/11 and 5/11, respectively. The alternative method of computation produces:</p>
+<p>Alternatively, we may note that the distinct values in the sample are 1,
+2, 3, and 4 with relative frequencies of 3/11, 2/11, 1/11 and 5/11,
+respectively. The alternative method of computation produces:</p>
 <p><span class="math display">\[\bar x = 1\times \frac{3}{11} + 2 \times \frac{2}{11} + 3 \times \frac{1}{11} + 4 \times \frac{5}{11} = 2.7\;.\]</span></p>
 <div id="skewness-the-mean-and-the-median" class="section level3">
 <h3><span class="header-section-number">3.3.1</span> Skewness, the Mean and the Median</h3>
@@ -550,92 +745,189 @@ FIGURE 3.2: Three Histograms
 </p>
 </div>
 <p>Consider the following data set:</p>
-<p><span class="math display">\[4,\; 5,\; 6,\; 6,\; 6,\; 7,\; 7,\; 7,\; 7,\;  7,\;  7,\;  8,\;  8,\;  8,\;  9,\;  10\]</span> This data produces the upper most histogram in Figure <a href="ChapDescriptiveStat.html#fig:DStat4">3.2</a>. Each interval has width one and each value is located at the middle of an interval. The histogram displays a symmetrical distribution of data. A distribution is symmetrical if a vertical line can be drawn at some point in the histogram such that the shape to the left and to the right of the vertical line are mirror images of each other.</p>
+<p><span class="math display">\[4,\; 5,\; 6,\; 6,\; 6,\; 7,\; 7,\; 7,\; 7,\;  7,\;  7,\;  8,\;  8,\;  8,\;  9,\;  10\]</span>
+This data produces the upper most histogram in
+Figure <a href="ChapDescriptiveStat.html#fig:DStat4">3.2</a>. Each interval has width one and each
+value is located at the middle of an interval. The histogram displays a
+symmetrical distribution of data. A distribution is symmetrical if a
+vertical line can be drawn at some point in the histogram such that the
+shape to the left and to the right of the vertical line are mirror
+images of each other.</p>
 <p>Let us compute the mean and the median of this data:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">6</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">7</span>,<span class="dv">7</span>,<span class="dv">7</span>,<span class="dv">7</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">8</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">10</span>)
-<span class="kw">mean</span>(x)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">6</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">7</span>,<span class="dv">7</span>,<span class="dv">7</span>,<span class="dv">7</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">8</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">10</span>)
+<span class="kw">mean</span>(x)</code></pre>
 <pre><code>## [1] 7</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">median</span>(x)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">median</span>(x)</code></pre>
 <pre><code>## [1] 7</code></pre>
-<p>The mean and the median are each 7 for these data. In a perfectly symmetrical distribution, the mean and the median are the same<a href="#fn6" class="footnoteRef" id="fnref6"><sup>6</sup></a>.</p>
-<p>The functions “<code>mean</code>” and “<code>median</code>” were used in order to compute the mean and median. Both functions expect a numeric sequence as an input and produce the appropriate measure of centrality of the sequence as an output.</p>
+<p>The mean and the median are each 7 for these data. In a perfectly
+symmetrical distribution, the mean and the median are the same<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a>.</p>
+<p>The functions “<code>mean</code>” and “<code>median</code>” were used in order to compute the
+mean and median. Both functions expect a numeric sequence as an input
+and produce the appropriate measure of centrality of the sequence as an
+output.</p>
 <p>The histogram for the data:</p>
-<p><span class="math display">\[4,\;  5,\;  6,\;  6,\;  6,\;  7,\;  7,\;  7,\;  7,\;  7,\;  7,\;  8\]</span> is not symmetrical and is displayed in the middle of Figure <a href="ChapDescriptiveStat.html#fig:DStat4">3.2</a>. The right-hand side seems “chopped off” compared to the left side. The shape of the distribution is called skewed to the left because it is pulled out towards the left.</p>
+<p><span class="math display">\[4,\;  5,\;  6,\;  6,\;  6,\;  7,\;  7,\;  7,\;  7,\;  7,\;  7,\;  8\]</span>
+is not symmetrical and is displayed in the middle of
+Figure <a href="ChapDescriptiveStat.html#fig:DStat4">3.2</a>. The right-hand side seems “chopped
+off” compared to the left side. The shape of the distribution is called
+skewed to the left because it is pulled out towards the left.</p>
 <p>Let us compute the mean and the median for this data:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">6</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">7</span>,<span class="dv">7</span>,<span class="dv">7</span>,<span class="dv">7</span>,<span class="dv">7</span>,<span class="dv">8</span>)
-<span class="kw">mean</span>(x)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">6</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">7</span>,<span class="dv">7</span>,<span class="dv">7</span>,<span class="dv">7</span>,<span class="dv">7</span>,<span class="dv">8</span>)
+<span class="kw">mean</span>(x)</code></pre>
 <pre><code>## [1] 6.4166667</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">median</span>(x)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">median</span>(x)</code></pre>
 <pre><code>## [1] 7</code></pre>
-<p>(Notice that the original data is replaced by the new data when object <code>x</code> is reassigned.) The median is still 7, but the mean is less than 7. The relation between the mean and the median reflects the skewing.</p>
+<p>(Notice that the original data is replaced by the new data when object
+<code>x</code> is reassigned.) The median is still 7, but the mean is less than 7.
+The relation between the mean and the median reflects the skewing.</p>
 <p>Consider yet another set of data:</p>
-<p><span class="math display">\[6,\;  7,\;  7,\;  7,\;  7,\;  7,\;  7,\;  8,\;  8,\;  8,\;  9,\;  10\]</span> The histogram for the data is also not symmetrical and is displayed at the bottom of Figure <a href="ChapDescriptiveStat.html#fig:DStat4">3.2</a>. Notice that it is skewed to the right. Compute the mean and the median:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">7</span>,<span class="dv">7</span>,<span class="dv">7</span>,<span class="dv">7</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">8</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">10</span>)
-<span class="kw">mean</span>(x)</code></pre></div>
+<p><span class="math display">\[6,\;  7,\;  7,\;  7,\;  7,\;  7,\;  7,\;  8,\;  8,\;  8,\;  9,\;  10\]</span>
+The histogram for the data is also not symmetrical and is displayed at
+the bottom of Figure <a href="ChapDescriptiveStat.html#fig:DStat4">3.2</a>. Notice that it is
+skewed to the right. Compute the mean and the median:</p>
+<pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">7</span>,<span class="dv">7</span>,<span class="dv">7</span>,<span class="dv">7</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">8</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">10</span>)
+<span class="kw">mean</span>(x)</code></pre>
 <pre><code>## [1] 7.5833333</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">median</span>(x)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">median</span>(x)</code></pre>
 <pre><code>## [1] 7</code></pre>
-<p>The median is yet again equal to 7, but this time the mean is greater than 7. Again, the mean reflects the skewing.</p>
-<p>In summary, if the distribution of data is skewed to the left then the mean is less than the median. If the distribution of data is skewed to the right then the median is less than the mean.</p>
+<p>The median is yet again equal to 7, but this time the mean is greater
+than 7. Again, the mean reflects the skewing.</p>
+<p>In summary, if the distribution of data is skewed to the left then the
+mean is less than the median. If the distribution of data is skewed to
+the right then the median is less than the mean.</p>
 <p>Examine the data on the height in “<code>ex.1</code>”:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(ex.<span class="dv">1</span><span class="op">$</span>height)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(ex<span class="fl">.1</span><span class="op">$</span>height)</code></pre>
 <pre><code>## [1] 170.11</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">median</span>(ex.<span class="dv">1</span><span class="op">$</span>height)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">median</span>(ex<span class="fl">.1</span><span class="op">$</span>height)</code></pre>
 <pre><code>## [1] 171</code></pre>
-<p>Observe that the histogram of the height (Figure <a href="ChapDescriptiveStat.html#fig:DStat1">3.1</a>) is skewed to the left. This is consistent with the fact that the mean is less than the median.</p>
+<p>Observe that the histogram of the height
+(Figure <a href="ChapDescriptiveStat.html#fig:DStat1">3.1</a>) is skewed to the left. This is
+consistent with the fact that the mean is less than the median.</p>
 </div>
 </div>
 <div id="measures-of-the-spread-of-data" class="section level2">
 <h2><span class="header-section-number">3.4</span> Measures of the Spread of Data</h2>
-<p>One measure of the spread of the data is the inter-quartile range that was introduced in the context of the box plot. However, the most important measure of spread is the standard deviation.</p>
-<p>Before dealing with the standard deviation let us discuss the calculation of the variance. If <span class="math inline">\(x_i\)</span> is a data value for subject <span class="math inline">\(i\)</span> and <span class="math inline">\(\bar x\)</span> is the sample mean, then <span class="math inline">\(x_i-\bar x\)</span> is called the deviation of subject <span class="math inline">\(i\)</span> from the mean, or simply the deviation. In a data set, there are as many deviations as there are data values. The variance is in principle the average of the squares of the deviations.</p>
-<p>Consider the following example: In a fifth grade class, the teacher was interested in the average age and the standard deviation of the ages of her students. Here are the ages of her students to the nearest half a year:</p>
+<p>One measure of the spread of the data is the inter-quartile range that
+was introduced in the context of the box plot. However, the most
+important measure of spread is the standard deviation.</p>
+<p>Before dealing with the standard deviation let us discuss the
+calculation of the variance. If <span class="math inline">\(x_i\)</span> is a data value for subject <span class="math inline">\(i\)</span>
+and <span class="math inline">\(\bar x\)</span> is the sample mean, then <span class="math inline">\(x_i-\bar x\)</span> is called the
+deviation of subject <span class="math inline">\(i\)</span> from the mean, or simply the deviation. In a
+data set, there are as many deviations as there are data values. The
+variance is in principle the average of the squares of the deviations.</p>
+<p>Consider the following example: In a fifth grade class, the teacher was
+interested in the average age and the standard deviation of the ages of
+her students. Here are the ages of her students to the nearest half a
+year:</p>
 <p><span class="math display">\[\begin{aligned}
 &amp; 9,\; 9.5,\; 9.5,\; 10,\; 10,\; 10,\; 10,\; 10.5,\; 10.5,\; 10.5,\; 10.5,\; 11,\; 11,\; 11,\; 11,\; 11,\; 11,\;\\
 &amp; 11.5,\; 11.5,\; 11.5\;.\end{aligned}\]</span></p>
-<p>In order to explain the computation of the variance of these data let us create an object <code>x</code> that contains the data:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">9</span>,<span class="fl">9.5</span>,<span class="fl">9.5</span>,<span class="dv">10</span>,<span class="dv">10</span>,<span class="dv">10</span>,<span class="dv">10</span>,<span class="fl">10.5</span>,<span class="fl">10.5</span>,<span class="fl">10.5</span>,<span class="fl">10.5</span>,<span class="dv">11</span>,<span class="dv">11</span>,<span class="dv">11</span>,<span class="dv">11</span>,<span class="dv">11</span>,<span class="dv">11</span>,<span class="fl">11.5</span>,<span class="fl">11.5</span>,<span class="fl">11.5</span>)
-<span class="kw">length</span>(x)</code></pre></div>
+<p>In order to explain the computation of the variance of these data let us
+create an object <code>x</code> that contains the data:</p>
+<pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">9</span>,<span class="fl">9.5</span>,<span class="fl">9.5</span>,<span class="dv">10</span>,<span class="dv">10</span>,<span class="dv">10</span>,<span class="dv">10</span>,<span class="fl">10.5</span>,<span class="fl">10.5</span>,<span class="fl">10.5</span>,<span class="fl">10.5</span>,<span class="dv">11</span>,<span class="dv">11</span>,<span class="dv">11</span>,<span class="dv">11</span>,<span class="dv">11</span>,<span class="dv">11</span>,<span class="fl">11.5</span>,<span class="fl">11.5</span>,<span class="fl">11.5</span>)
+<span class="kw">length</span>(x)</code></pre>
 <pre><code>## [1] 20</code></pre>
-<p>Pay attention to the fact that we did not write the “<code>+</code>” at the beginning of the second line. That symbol was produced by <code>R</code> when moving to the next line to indicate that the expression is not complete yet and will not be executed. Only after inputting the right bracket and the hitting of the Return key does <code>R</code> carry out the command and creates the object “<code>x</code>”. When you execute this example yourself on your own computer make sure not to copy the “<code>+</code>” sign. Instead, if you hit the return key after the last comma on the first line, the plus sign will be produced by <code>R</code> as a new prompt and you can go on typing in the rest of the numbers.</p>
-<p>The function “<code>length</code>” returns the length of the input sequence. Notice that we have a total of 20 data points.</p>
+<p>Pay attention to the fact that we did not write the “<code>+</code>” at the
+beginning of the second line. That symbol was produced by <code>R</code> when
+moving to the next line to indicate that the expression is not complete
+yet and will not be executed. Only after inputting the right bracket and
+the hitting of the Return key does <code>R</code> carry out the command and creates
+the object “<code>x</code>”. When you execute this example yourself on your own
+computer make sure not to copy the “<code>+</code>” sign. Instead, if you hit the
+return key after the last comma on the first line, the plus sign will be
+produced by <code>R</code> as a new prompt and you can go on typing in the rest of
+the numbers.</p>
+<p>The function “<code>length</code>” returns the length of the input sequence. Notice
+that we have a total of 20 data points.</p>
 <p>The next step involves the computation of the deviations:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x.bar &lt;-<span class="st"> </span><span class="kw">mean</span>(x)
-x.bar</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">x.bar &lt;-<span class="st"> </span><span class="kw">mean</span>(x)
+x.bar</code></pre>
 <pre><code>## [1] 10.525</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x <span class="op">-</span><span class="st"> </span>x.bar</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">x <span class="op">-</span><span class="st"> </span>x.bar</code></pre>
 <pre><code>##  [1] -1.525 -1.025 -1.025 -0.525 -0.525 -0.525 -0.525 -0.025 -0.025 -0.025
 ## [11] -0.025  0.475  0.475  0.475  0.475  0.475  0.475  0.975  0.975  0.975</code></pre>
-<p>The average of the observations is equal to 10.525 and when we delete this number from each of the components of the sequence <code>x</code> we obtain the deviations. For example, the first deviation is obtained as 9 - 10.525 = -1.525, the second deviation is 9.5 - 10.525 = -1.025, and so forth. The 20th deviation is 11.5 - 10.525 = 0.975, and this is the last number that is presented in the output.</p>
-<p>From a more technical point of view observe that the expression that computed the deviations, “<code>x - x.bar</code>”, involved the deletion of a single value (<code>x.bar</code>) from a sequence with 20 values (<code>x</code>). The expression resulted in the deletion of the value from each component of the sequence. This is an example of the general way by which <code>R</code> operates on sequences. The typical behavior of <code>R</code> is to apply an operation to each component of the sequence.</p>
-<p>As yet another illustration of this property consider the computation of the squares of the deviations:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(x <span class="op">-</span><span class="st"> </span>x.bar)<span class="op">^</span><span class="dv">2</span></code></pre></div>
+<p>The average of the observations is equal to 10.525 and when we delete
+this number from each of the components of the sequence <code>x</code> we obtain
+the deviations. For example, the first deviation is obtained as 9 -
+10.525 = -1.525, the second deviation is 9.5 - 10.525 = -1.025, and so
+forth. The 20th deviation is 11.5 - 10.525 = 0.975, and this is the last
+number that is presented in the output.</p>
+<p>From a more technical point of view observe that the expression that
+computed the deviations, “<code>x - x.bar</code>”, involved the deletion of a
+single value (<code>x.bar</code>) from a sequence with 20 values (<code>x</code>). The
+expression resulted in the deletion of the value from each component of
+the sequence. This is an example of the general way by which <code>R</code>
+operates on sequences. The typical behavior of <code>R</code> is to apply an
+operation to each component of the sequence.</p>
+<p>As yet another illustration of this property consider the computation of
+the squares of the deviations:</p>
+<pre class="sourceCode r"><code class="sourceCode r">(x <span class="op">-</span><span class="st"> </span>x.bar)<span class="op">^</span><span class="dv">2</span></code></pre>
 <pre><code>##  [1] 2.325625 1.050625 1.050625 0.275625 0.275625 0.275625 0.275625
 ##  [8] 0.000625 0.000625 0.000625 0.000625 0.225625 0.225625 0.225625
 ## [15] 0.225625 0.225625 0.225625 0.950625 0.950625 0.950625</code></pre>
-<p>Recall that “<code>x - x.bar</code>” is a sequence of length 20. We apply the square function to this sequence. This function is applied to each of the components of the sequence. Indeed, for the first component we have that <span class="math inline">\((-1.525)^2 = 2.325625\)</span>, for the second component <span class="math inline">\((-1.025)^2 = 1.050625\)</span>, and for the last component <span class="math inline">\((0.975)^2 = 0.950625\)</span>.</p>
-<p>For the variance we sum the square of the deviations and divide by the total number of data values minus one (<span class="math inline">\(n-1\)</span>). The standard deviation is obtained by taking the square root of the variance:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sum</span>((x <span class="op">-</span><span class="st"> </span>x.bar)<span class="op">^</span><span class="dv">2</span>)<span class="op">/</span>(<span class="kw">length</span>(x)<span class="op">-</span><span class="dv">1</span>)</code></pre></div>
+<p>Recall that “<code>x - x.bar</code>” is a sequence of length 20. We apply the
+square function to this sequence. This function is applied to each of
+the components of the sequence. Indeed, for the first component we have
+that <span class="math inline">\((-1.525)^2 = 2.325625\)</span>, for the second component
+<span class="math inline">\((-1.025)^2 = 1.050625\)</span>, and for the last component
+<span class="math inline">\((0.975)^2 = 0.950625\)</span>.</p>
+<p>For the variance we sum the square of the deviations and divide by the
+total number of data values minus one (<span class="math inline">\(n-1\)</span>). The standard deviation is
+obtained by taking the square root of the variance:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sum</span>((x <span class="op">-</span><span class="st"> </span>x.bar)<span class="op">^</span><span class="dv">2</span>)<span class="op">/</span>(<span class="kw">length</span>(x)<span class="op">-</span><span class="dv">1</span>)</code></pre>
 <pre><code>## [1] 0.5125</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sqrt</span>(<span class="kw">sum</span>((x <span class="op">-</span><span class="st"> </span>x.bar)<span class="op">^</span><span class="dv">2</span>)<span class="op">/</span>(<span class="kw">length</span>(x)<span class="op">-</span><span class="dv">1</span>))</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sqrt</span>(<span class="kw">sum</span>((x <span class="op">-</span><span class="st"> </span>x.bar)<span class="op">^</span><span class="dv">2</span>)<span class="op">/</span>(<span class="kw">length</span>(x)<span class="op">-</span><span class="dv">1</span>))</code></pre>
 <pre><code>## [1] 0.71589105</code></pre>
-<p>If the variance is produced as a result of dividing the sum of squares by the number of observations minus one then the variance is called the <em>sample variance</em>.</p>
-<p>The function “<code>var</code>” computes the sample variance and the function “<code>sd</code>” computes the standard deviations. The input to both functions is the sequence of data values and the outputs are the sample variance and the standard deviation, respectively:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">var</span>(x)</code></pre></div>
+<p>If the variance is produced as a result of dividing the sum of squares
+by the number of observations minus one then the variance is called the
+<em>sample variance</em>.</p>
+<p>The function “<code>var</code>” computes the sample variance and the function
+“<code>sd</code>” computes the standard deviations. The input to both functions is
+the sequence of data values and the outputs are the sample variance and
+the standard deviation, respectively:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">var</span>(x)</code></pre>
 <pre><code>## [1] 0.5125</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sd</span>(x)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sd</span>(x)</code></pre>
 <pre><code>## [1] 0.71589105</code></pre>
-<p>In the computation of the variance we divide the sum of squared deviations by the number of deviations minus one and not by the number of deviations. The reason for that stems from the theory of statistical inference that will be discussed in Part II of this book. Unless the size of the data is small, dividing by <span class="math inline">\(n\)</span> or by <span class="math inline">\(n-1\)</span> does not introduce much of a difference.</p>
-<p>The variance is a squared measure and does not have the same units as the data. Taking the square root solves the problem. The standard deviation measures the spread in the same units as the data.</p>
-<p>The sample standard deviation, <span class="math inline">\(s\)</span>, is either zero or is larger than zero. When <span class="math inline">\(s=0\)</span>, there is no spread and the data values are equal to each other. When <span class="math inline">\(s\)</span> is a lot larger than zero, the data values are very spread out about the mean. Outliers can make <span class="math inline">\(s\)</span> very large.</p>
-<p>The standard deviation is a number that measures how far data values are from their mean. For example, if the data contains the value 7 and if the mean of the data is 5 and the standard deviation is 2, then the value 7 is one standard deviation from its mean because <span class="math inline">\(5 + 1 \times 2 = 7\)</span>. We say, then, that 7 is one standard deviation larger than the mean 5 (or also say “to the right of 5”). If the value 1 was also part of the data set, then 1 is two standard deviations smaller than the mean (or two standard deviations to the left of 5) because <span class="math inline">\(5 - 2 \times 2 = 1\)</span>.</p>
-<p>The standard deviation, when first presented, may not be too simple to interpret. By graphing your data, you can get a better “feel” for the deviations and the standard deviation. You will find that in symmetrical distributions, the standard deviation can be very helpful but in skewed distributions, the standard deviation is less so. The reason is that the two sides of a skewed distribution have different spreads. In a skewed distribution, it is better to look at the first quartile, the median, the third quartile, the smallest value, and the largest value.</p>
+<p>In the computation of the variance we divide the sum of squared
+deviations by the number of deviations minus one and not by the number
+of deviations. The reason for that stems from the theory of statistical
+inference that will be discussed in Part II of this book. Unless the
+size of the data is small, dividing by <span class="math inline">\(n\)</span> or by <span class="math inline">\(n-1\)</span> does not
+introduce much of a difference.</p>
+<p>The variance is a squared measure and does not have the same units as
+the data. Taking the square root solves the problem. The standard
+deviation measures the spread in the same units as the data.</p>
+<p>The sample standard deviation, <span class="math inline">\(s\)</span>, is either zero or is larger than
+zero. When <span class="math inline">\(s=0\)</span>, there is no spread and the data values are equal to
+each other. When <span class="math inline">\(s\)</span> is a lot larger than zero, the data values are very
+spread out about the mean. Outliers can make <span class="math inline">\(s\)</span> very large.</p>
+<p>The standard deviation is a number that measures how far data values are
+from their mean. For example, if the data contains the value 7 and if
+the mean of the data is 5 and the standard deviation is 2, then the
+value 7 is one standard deviation from its mean because
+<span class="math inline">\(5 + 1 \times 2 = 7\)</span>. We say, then, that 7 is one standard deviation
+larger than the mean 5 (or also say “to the right of 5”). If the value 1
+was also part of the data set, then 1 is two standard deviations smaller
+than the mean (or two standard deviations to the left of 5) because
+<span class="math inline">\(5 - 2 \times 2 = 1\)</span>.</p>
+<p>The standard deviation, when first presented, may not be too simple to
+interpret. By graphing your data, you can get a better “feel” for the
+deviations and the standard deviation. You will find that in symmetrical
+distributions, the standard deviation can be very helpful but in skewed
+distributions, the standard deviation is less so. The reason is that the
+two sides of a skewed distribution have different spreads. In a skewed
+distribution, it is better to look at the first quartile, the median,
+the third quartile, the smallest value, and the largest value.</p>
 </div>
 <div id="exercises-2" class="section level2">
 <h2><span class="header-section-number">3.5</span> Exercises</h2>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-36" class="exercise"><strong>Exercise 3.1  </strong></span>Three sequences of data were saved in 3 <code>R</code> objects named “<code>x1</code>”, “<code>x2</code>” and “<code>x3</code>”, respectively. The application of the function “<code>summary</code>” to each of these objects is presented below:</p>
+<p><span id="exr:unnamed-chunk-36" class="exercise"><strong>Exercise 3.1  </strong></span>Three sequences of data were saved in 3 <code>R</code>
+objects named “<code>x1</code>”, “<code>x2</code>” and “<code>x3</code>”, respectively. The application
+of the function “<code>summary</code>” to each of these objects is presented below:</p>
 <pre><code>&gt; summary(x1)
    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.
   0.000   2.498   3.218   3.081   3.840   4.871
@@ -645,29 +937,35 @@ x.bar</code></pre></div>
 &gt; summary(x3)
    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.
   2.200   3.391   4.020   4.077   4.690   6.414</code></pre>
-<p>In Figure <a href="ChapDescriptiveStat.html#fig:DStat9">3.3</a> one may find the histograms of these three data sequences, given in a random order. In Figure <a href="ChapDescriptiveStat.html#fig:DStat10">3.4</a> one may find the box plots of the same data, given in yet a different order.</p>
+<p>In Figure <a href="ChapDescriptiveStat.html#fig:DStat9">3.3</a> one may find the histograms of
+these three data sequences, given in a random order. In
+Figure <a href="ChapDescriptiveStat.html#fig:DStat10">3.4</a> one may find the box plots of the
+same data, given in yet a different order.</p>
 <ol style="list-style-type: decimal">
-<li><p>Match the summary result with the appropriate histogram and the appropriate box plot.</p></li>
+<li><p>Match the summary result with the appropriate histogram and the
+appropriate box plot.</p></li>
 <li><p>Is the value 0.000 in the sequence “<code>x1</code>” an outlier?</p></li>
 <li>Is the value 6.414 in the sequence “<code>x3</code>” an outlier?</li>
 </ol>
 </div>
 
 <div class="figure"><span id="fig:DStat9"></span>
-<img src="_figures/DescriptiveStat_9.pdf" alt="Three Histograms"  />
+<img src="statthink_files/figure-html/DStat9-1.png" alt="Three Histograms" width="672" />
 <p class="caption">
 FIGURE 3.3: Three Histograms
 </p>
 </div>
 <div class="figure"><span id="fig:DStat10"></span>
-<img src="_figures/DescriptiveStat_10.pdf" alt="Three Box Plots"  />
+<img src="statthink_files/figure-html/DStat10-1.png" alt="Three Box Plots" width="672" />
 <p class="caption">
 FIGURE 3.4: Three Box Plots
 </p>
 </div>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-37" class="exercise"><strong>Exercise 3.2  </strong></span>The number of toilet facilities in 30 buildings were counted. The results are recorded in an <code>R</code> object by the name “<code>x</code>”. The frequency table of the data “<code>x</code>” is:</p>
+<p><span id="exr:unnamed-chunk-38" class="exercise"><strong>Exercise 3.2  </strong></span>The number of toilet facilities in 30 buildings
+were counted. The results are recorded in an <code>R</code> object by the name
+“<code>x</code>”. The frequency table of the data “<code>x</code>” is:</p>
 <pre><code>&gt; table(x)
 x
  2  4  6  8 10
@@ -688,35 +986,58 @@ x
 <h3>Glossary</h3>
 <dl>
 <dt>Median:</dt>
-<dd><p>A number that separates ordered data into halves: half the values are the same number or smaller than the median and half the values are the same number or larger than the median. The median may or may not be part of the data.</p>
+<dd><p>A number that separates ordered data into halves: half the values
+are the same number or smaller than the median and half the values
+are the same number or larger than the median. The median may or may
+not be part of the data.</p>
 </dd>
 <dt>Quartiles:</dt>
-<dd><p>The numbers that separate the data into quarters. Quartiles may or may not be part of the data. The second quartile is the median of the data.</p>
+<dd><p>The numbers that separate the data into quarters. Quartiles may or
+may not be part of the data. The second quartile is the median of
+the data.</p>
 </dd>
 <dt>Outlier:</dt>
 <dd><p>An observation that does not fit the rest of the data.</p>
 </dd>
 <dt>Interquartile Range (IQR)</dt>
-<dd><p>: The distance between the third quartile (Q3) and the first quartile (Q1). IQR = Q3 - Q1.</p>
+<dd><p>: The distance between the third quartile (Q3) and the first
+quartile (Q1). IQR = Q3 - Q1.</p>
 </dd>
 <dt>Mean:</dt>
-<dd><p>A number that measures the central tendency. A common name for mean is ‘average.’ The term ‘mean’ is a shortened form of ‘arithmetic mean.’ By definition, the mean for a sample (denoted by <span class="math inline">\(\bar x\)</span>) is</p>
+<dd><p>A number that measures the central tendency. A common name for mean
+is ‘average.’ The term ‘mean’ is a shortened form of ‘arithmetic
+mean.’ By definition, the mean for a sample (denoted by <span class="math inline">\(\bar x\)</span>) is</p>
 <p><span class="math display">\[\bar x = \frac{\mbox{Sum of all values in the sample}}{\mbox{Number of values in the sample}}\;.\]</span></p>
 </dd>
 <dt>(Sample) Variance:</dt>
-<dd><p>Mean of the squared deviations from the mean. Square of the standard deviation. For a set of data, a deviation can be represented as <span class="math inline">\(x - \bar x\)</span> where <span class="math inline">\(x\)</span> is a value of the data and <span class="math inline">\(\bar x\)</span> is the sample mean. The sample variance is equal to the sum of the squares of the deviations divided by the difference of the sample size and 1:</p>
+<dd><p>Mean of the squared deviations from the mean. Square of the standard
+deviation. For a set of data, a deviation can be represented as
+<span class="math inline">\(x - \bar x\)</span> where <span class="math inline">\(x\)</span> is a value of the data and <span class="math inline">\(\bar x\)</span> is the
+sample mean. The sample variance is equal to the sum of the squares
+of the deviations divided by the difference of the sample size and
+1:</p>
 <p><span class="math display">\[s^2 = \frac{\mbox{Sum of the squares of the deviations}}{\mbox{Number of values in the sample}-1}\;.\]</span></p>
 </dd>
 <dt>(Sample) Standard Deviation:</dt>
-<dd><p>A number that is equal to the square root of the variance and measures how far data values are from their mean. <span class="math inline">\(s = \sqrt{s^2}\)</span>.</p>
+<dd><p>A number that is equal to the square root of the variance and
+measures how far data values are from their mean. <span class="math inline">\(s = \sqrt{s^2}\)</span>.</p>
 </dd>
 </dl>
 </div>
 <div id="discuss-in-the-forum" class="section level3 unnumbered">
 <h3>Discuss in the forum</h3>
-<p>An important practice is to check the validity of any data set that you are supposed to analyze in order to detect errors in the data and outlier observations. Recall that outliers are observations with values outside the normal range of values of the rest of the observations.</p>
-<p>It is said by some that outliers can help us understand our data better. What is your opinion?</p>
-<p>When forming your answer to this question you may give an example of how outliers may provide insight or, else, how they may abstract our understanding. For example, consider the price of a stock that tend to go up or go down at most 2% within each trading day. A sudden 5% drop in the price of the stock may be an indication to reconsidering our position with respect to this stock.</p>
+<p>An important practice is to check the validity of any data set that you
+are supposed to analyze in order to detect errors in the data and
+outlier observations. Recall that outliers are observations with values
+outside the normal range of values of the rest of the observations.</p>
+<p>It is said by some that outliers can help us understand our data better.
+What is your opinion?</p>
+<p>When forming your answer to this question you may give an example of how
+outliers may provide insight or, else, how they may abstract our
+understanding. For example, consider the price of a stock that tend to
+go up or go down at most 2% within each trading day. A sudden 5% drop in
+the price of the stock may be an indication to reconsidering our
+position with respect to this stock.</p>
 </div>
 <div id="commonly-used-symbols" class="section level3 unnumbered">
 <h3>Commonly Used Symbols</h3>
@@ -733,18 +1054,23 @@ x
 <div id="commonly-used-expressions" class="section level3 unnumbered">
 <h3>Commonly Used Expressions</h3>
 <ul>
-<li><p><span class="math inline">\(x \times (f_x/n)\)</span> = A value multiplied by its respective relative frequency.</p></li>
+<li><p><span class="math inline">\(x \times (f_x/n)\)</span> = A value multiplied by its respective relative
+frequency.</p></li>
 <li><p><span class="math inline">\(\sum_{i=1}^n x_i\)</span> = The sum of the data values.</p></li>
-<li><p><span class="math inline">\(\sum_x (x \times f_x/n)\)</span>= The sum of values multiplied by their respective relative frequencies.</p></li>
-<li><p><span class="math inline">\(x - \bar x\)</span> = Deviations from the mean (how far a value is from the mean).</p></li>
+<li><p><span class="math inline">\(\sum_x (x \times f_x/n)\)</span>= The sum of values multiplied by their
+respective relative frequencies.</p></li>
+<li><p><span class="math inline">\(x - \bar x\)</span> = Deviations from the mean (how far a value is from the
+mean).</p></li>
 <li><p><span class="math inline">\((x - \bar x)^2\)</span> = Deviations squared.</p></li>
 </ul>
 </div>
 <div id="formulas" class="section level3 unnumbered">
 <h3>Formulas:</h3>
 <ul>
-<li><p>Mean: <span class="math inline">\(\bar x = \frac{1}{n} \sum_{i=1}^n x_i = \sum_x \big(x \times (f_x/n)\big)\)</span></p></li>
-<li><p>Variance: <span class="math inline">\(s^2 = \frac{1}{n-1}\sum_{i=1}^n (x_i - \bar x)^2 = \frac{n}{n-1}\sum_x \big((x - \bar x)^2\times (f_x/n)\big)\)</span></p></li>
+<li><p>Mean:
+<span class="math inline">\(\bar x = \frac{1}{n} \sum_{i=1}^n x_i = \sum_x \big(x \times (f_x/n)\big)\)</span></p></li>
+<li><p>Variance:
+<span class="math inline">\(s^2 = \frac{1}{n-1}\sum_{i=1}^n (x_i - \bar x)^2 = \frac{n}{n-1}\sum_x \big((x - \bar x)^2\times (f_x/n)\big)\)</span></p></li>
 <li><p>Standard Deviation: <span class="math inline">\(s = \sqrt{s^2}\)</span></p></li>
 </ul>
 
@@ -754,9 +1080,19 @@ x
 <div class="footnotes">
 <hr />
 <ol start="4">
-<li id="fn4"><p>In some books an histogram is introduced as a form of a density. In densities the <em>area</em> of the box represents the frequency or the relative frequency. In the current example the height would have been 19/10 = 1.9 if the area of the box would have represented the frequency and it would have been <span class="math inline">\((19/100)/10 = 0.019\)</span> if the area of the box would have represented the relative frequency. However, in this book we follow the default of <code>R</code> in which the height represents the frequency.<a href="ChapDescriptiveStat.html#fnref4">↩</a></p></li>
-<li id="fn5"><p>The actual computation in <code>R</code> of the first quartile and the third quartile may vary slightly from the description given here, depending on the exact structure of the data.<a href="ChapDescriptiveStat.html#fnref5">↩</a></p></li>
-<li id="fn6"><p>In the case of a symmetric distribution the vertical line of symmetry is located at the mean, which is also equal to the median.<a href="ChapDescriptiveStat.html#fnref6">↩</a></p></li>
+<li id="fn4"><p>In some books an histogram is introduced as a form of a density.
+In densities the <em>area</em> of the box represents the frequency or the
+relative frequency. In the current example the height would have
+been 19/10 = 1.9 if the area of the box would have represented the
+frequency and it would have been <span class="math inline">\((19/100)/10 = 0.019\)</span> if the area
+of the box would have represented the relative frequency. However,
+in this book we follow the default of <code>R</code> in which the height
+represents the frequency.<a href="ChapDescriptiveStat.html#fnref4" class="footnote-back">↩</a></p></li>
+<li id="fn5"><p>The actual computation in <code>R</code> of the first quartile and the third
+quartile may vary slightly from the description given here,
+depending on the exact structure of the data.<a href="ChapDescriptiveStat.html#fnref5" class="footnote-back">↩</a></p></li>
+<li id="fn6"><p>In the case of a symmetric distribution the vertical line of
+symmetry is located at the mean, which is also equal to the median.<a href="ChapDescriptiveStat.html#fnref6" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>
@@ -783,17 +1119,26 @@ gitbook.start({
 "facebook": false,
 "twitter": true,
 "google": false,
+"linkedin": false,
 "weibo": false,
-"instapper": false,
+"instapaper": false,
 "vk": false,
-"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
 "theme": "white",
 "family": "sans",
 "size": 2
 },
-"download": ["statthink.pdf", "thinkstat.epub", "stathink_datasets.zip"],
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["statthink.pdf"],
 "toc": {
 "collapse": "none"
 }
@@ -806,8 +1151,8 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    var src = "";
-    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(src))
       src = src.replace(/^https?:/, '');
     script.src = src;

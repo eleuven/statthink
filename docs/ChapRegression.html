@@ -5,11 +5,11 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Introduction to Statistical Thinking</title>
-  <meta name="description" content="Introduction to Statistical Thinking">
-  <meta name="generator" content="bookdown 0.5.10 and GitBook 2.6.7">
+  <title>Chapter 14 Linear Regression | Introduction to Statistical Thinking</title>
+  <meta name="description" content="Chapter 14 Linear Regression | Introduction to Statistical Thinking">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="Introduction to Statistical Thinking" />
+  <meta property="og:title" content="Chapter 14 Linear Regression | Introduction to Statistical Thinking" />
   <meta property="og:type" content="book" />
   
   
@@ -17,7 +17,7 @@
   <meta name="github-repo" content="eleuven/statthink" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Introduction to Statistical Thinking" />
+  <meta name="twitter:title" content="Chapter 14 Linear Regression | Introduction to Statistical Thinking" />
   
   
   
@@ -25,7 +25,7 @@
 <meta name="author" content="Benjamin Yakir">
 
 
-<meta name="date" content="2017-11-26">
+<meta name="date" content="2019-01-16">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -36,6 +36,7 @@
 <link rel="next" href="ChapLogistic.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
@@ -50,41 +51,69 @@
 
 
 <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; position: absolute; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; }
+pre.numberSource a.sourceLine:empty
+  { position: absolute; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 <link rel="stylesheet" href="css/style.css" type="text/css" />
@@ -248,9 +277,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="9.1" data-path="ChapInference.html"><a href="ChapInference.html#student-learning-objectives-3"><i class="fa fa-check"></i><b>9.1</b> Student Learning Objectives</a></li>
 <li class="chapter" data-level="9.2" data-path="ChapInference.html"><a href="ChapInference.html#key-terms-1"><i class="fa fa-check"></i><b>9.2</b> Key Terms</a></li>
 <li class="chapter" data-level="9.3" data-path="ChapInference.html"><a href="ChapInference.html#the-cars-data-set"><i class="fa fa-check"></i><b>9.3</b> The Cars Data Set</a></li>
-<li class="chapter" data-level="9.4" data-path="ChapSampDist.html"><a href="ChapSampDist.html#the-sampling-distribution"><i class="fa fa-check"></i><b>9.4</b> The Sampling Distribution</a><ul>
+<li class="chapter" data-level="9.4" data-path="ChapInference.html"><a href="ChapInference.html#the-sampling-distribution-1"><i class="fa fa-check"></i><b>9.4</b> The Sampling Distribution</a><ul>
 <li class="chapter" data-level="9.4.1" data-path="ChapInference.html"><a href="ChapInference.html#statistics-1"><i class="fa fa-check"></i><b>9.4.1</b> Statistics</a></li>
-<li class="chapter" data-level="9.4.2" data-path="ChapInference.html"><a href="ChapInference.html#the-sampling-distribution-1"><i class="fa fa-check"></i><b>9.4.2</b> The Sampling Distribution</a></li>
+<li class="chapter" data-level="9.4.2" data-path="ChapInference.html"><a href="ChapInference.html#the-sampling-distribution-2"><i class="fa fa-check"></i><b>9.4.2</b> The Sampling Distribution</a></li>
 <li class="chapter" data-level="9.4.3" data-path="ChapInference.html"><a href="ChapInference.html#theoretical-distributions-of-observations"><i class="fa fa-check"></i><b>9.4.3</b> Theoretical Distributions of Observations</a></li>
 <li class="chapter" data-level="9.4.4" data-path="ChapInference.html"><a href="ChapInference.html#sampling-distribution-of-statistics"><i class="fa fa-check"></i><b>9.4.4</b> Sampling Distribution of Statistics</a></li>
 <li class="chapter" data-level="9.4.5" data-path="ChapInference.html"><a href="ChapInference.html#the-normal-approximation"><i class="fa fa-check"></i><b>9.4.5</b> The Normal Approximation</a></li>
@@ -367,7 +396,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li class="chapter" data-level="16.4" data-path="ChapCaseStudies.html"><a href="ChapCaseStudies.html#summary-13"><i class="fa fa-check"></i><b>16.4</b> Summary</a><ul>
 <li class="chapter" data-level="16.4.1" data-path="ChapCaseStudies.html"><a href="ChapCaseStudies.html#concluding-remarks"><i class="fa fa-check"></i><b>16.4.1</b> Concluding Remarks</a></li>
-<li class="chapter" data-level="16.4.2" data-path="ChapProbability.html"><a href="ChapProbability.html#discussion-in-the-forum"><i class="fa fa-check"></i><b>16.4.2</b> Discussion in the Forum</a></li>
+<li class="chapter" data-level="16.4.2" data-path="ChapCaseStudies.html"><a href="ChapCaseStudies.html#discussion-in-the-forum-1"><i class="fa fa-check"></i><b>16.4.2</b> Discussion in the Forum</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html"><i class="fa fa-check"></i>Exercise Solutions</a><ul>
@@ -459,23 +488,55 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h1><span class="header-section-number">Chapter 14</span> Linear Regression</h1>
 <div id="student-learning-objectives-8" class="section level2">
 <h2><span class="header-section-number">14.1</span> Student Learning Objectives</h2>
-<p>In the previous chapter we examined the situation where the response is numeric and the explanatory variable is a factor with two levels. This chapter deals with the case where both the response and the explanatory variables are numeric. The method that is used in order to describe the relations between the two variables is <em>regression</em>. Here we apply <em>linear regression</em> to deal with a linear relation between two numeric variables. This type of regression fits a line to the data. The line summarizes the effect of the explanatory variable on the distribution of the response.</p>
-<p>Statistical inference can be conducted in the context of regression. Specifically, one may fit the regression model to the data. This corresponds to the point estimation of the parameters of the model. Also, one may produce confidence intervals for the parameters and carry out hypotheses testing. Another issue that is considered is the assessment of the percentage of variability of the response that is explained by the regression model.</p>
+<p>In the previous chapter we examined the situation where the response is
+numeric and the explanatory variable is a factor with two levels. This
+chapter deals with the case where both the response and the explanatory
+variables are numeric. The method that is used in order to describe the
+relations between the two variables is <em>regression</em>. Here we apply
+<em>linear regression</em> to deal with a linear relation between two numeric
+variables. This type of regression fits a line to the data. The line
+summarizes the effect of the explanatory variable on the distribution of
+the response.</p>
+<p>Statistical inference can be conducted in the context of regression.
+Specifically, one may fit the regression model to the data. This
+corresponds to the point estimation of the parameters of the model.
+Also, one may produce confidence intervals for the parameters and carry
+out hypotheses testing. Another issue that is considered is the
+assessment of the percentage of variability of the response that is
+explained by the regression model.</p>
 <p>By the end of this chapter, the student should be able to:</p>
 <ul>
 <li><p>Produce scatter plots of the response and the explanatory variable.</p></li>
-<li><p>Explain the relation between a line and the parameters of a linear equation. Add lines to a scatter plot.</p></li>
-<li><p>Fit the linear regression to data using the function “<code>lm</code>” and conduct statistical inference on the fitted model.</p></li>
-<li><p>Explain the relations among <span class="math inline">\(R^2\)</span>, the percentage of response variability explained by the regression model, the variability of the regression residuals, and the variance of the response.</p></li>
+<li><p>Explain the relation between a line and the parameters of a linear
+equation. Add lines to a scatter plot.</p></li>
+<li><p>Fit the linear regression to data using the function “<code>lm</code>” and
+conduct statistical inference on the fitted model.</p></li>
+<li><p>Explain the relations among <span class="math inline">\(R^2\)</span>, the percentage of response
+variability explained by the regression model, the variability of
+the regression residuals, and the variance of the response.</p></li>
 </ul>
 </div>
 <div id="points-and-lines" class="section level2">
 <h2><span class="header-section-number">14.2</span> Points and Lines</h2>
-<p>In this section we consider the graphical representation of the response and the explanatory variables on the same plot. The data associated with both variables is plotted as points in a two-dimensional plane. Linear equations can be represented as lines on the same two-dimensional plane. This section prepares the background for the discussion of the linear regression model. The actual model of linear regression is introduced in the next section.</p>
+<p>In this section we consider the graphical representation of the response
+and the explanatory variables on the same plot. The data associated with
+both variables is plotted as points in a two-dimensional plane. Linear
+equations can be represented as lines on the same two-dimensional plane.
+This section prepares the background for the discussion of the linear
+regression model. The actual model of linear regression is introduced in
+the next section.</p>
 <div id="the-scatter-plot" class="section level3">
 <h3><span class="header-section-number">14.2.1</span> The Scatter Plot</h3>
-<p>Consider two numeric variables. A scatter plot can be used in order to display the data in these two variables. The scatter plot is a graph in which each observation is represented as a point. Examination of the scatter plot may revile relations between the two variables.</p>
-<p>Consider an example. A marine biologist measured the length (in millimeters) and the weight (in grams) of 10 fish that where collected in one of her expeditions. The results are summarized in a data frame that is presented in Table <span class="math display">\[tab:Regression\_1\]</span>. Notice that the data frame contains 10 observations. The variable <span class="math inline">\(x\)</span> corresponds to the length of the fish and the variable <span class="math inline">\(y\)</span> corresponds to the weight.</p>
+<p>Consider two numeric variables. A scatter plot can be used in order to
+display the data in these two variables. The scatter plot is a graph in
+which each observation is represented as a point. Examination of the
+scatter plot may revile relations between the two variables.</p>
+<p>Consider an example. A marine biologist measured the length (in
+millimeters) and the weight (in grams) of 10 fish that where collected
+in one of her expeditions. The results are summarized in a data frame
+that is presented in Table <span class="math display">\[tab:Regression\_1\]</span>. Notice that the data
+frame contains 10 observations. The variable <span class="math inline">\(x\)</span> corresponds to the
+length of the fish and the variable <span class="math inline">\(y\)</span> corresponds to the weight.</p>
 <p><span class="math display">\[tab:Regression\_1\]</span></p>
 <table>
 <caption>Data</caption>
@@ -539,71 +600,200 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </tr>
 </tbody>
 </table>
-<p>Let us display this data in a scatter plot. Towards that end, let us read the length data into an object by the name “<code>x</code>” and the weight data into an object by the name “<code>y</code>”. Finally, let us apply the function “<code>plot</code>” to the formula that relates the response “<code>y</code>” to the explanatory variable “<code>x</code>”:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="fl">4.5</span>,<span class="fl">3.7</span>,<span class="fl">1.8</span>,<span class="fl">1.3</span>,<span class="fl">3.2</span>,<span class="fl">3.8</span>,<span class="fl">2.5</span>,<span class="fl">4.5</span>,<span class="fl">4.1</span>,<span class="fl">1.1</span>)
+<p>Let us display this data in a scatter plot. Towards that end, let us
+read the length data into an object by the name “<code>x</code>” and the weight
+data into an object by the name “<code>y</code>”. Finally, let us apply the
+function “<code>plot</code>” to the formula that relates the response “<code>y</code>” to the
+explanatory variable “<code>x</code>”:</p>
+<pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="fl">4.5</span>,<span class="fl">3.7</span>,<span class="fl">1.8</span>,<span class="fl">1.3</span>,<span class="fl">3.2</span>,<span class="fl">3.8</span>,<span class="fl">2.5</span>,<span class="fl">4.5</span>,<span class="fl">4.1</span>,<span class="fl">1.1</span>)
 y &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="fl">9.5</span>,<span class="fl">8.2</span>,<span class="fl">4.9</span>,<span class="fl">6.7</span>,<span class="fl">12.9</span>,<span class="fl">14.1</span>,<span class="fl">5.6</span>,<span class="fl">8.0</span>,<span class="fl">12.6</span>,<span class="fl">7.2</span>)
-<span class="kw">plot</span>(y<span class="op">~</span>x)</code></pre></div>
+<span class="kw">plot</span>(y<span class="op">~</span>x)</code></pre>
 <div class="figure" style="text-align: center"><span id="fig:Regression1"></span>
 <img src="statthink_files/figure-html/Regression1-1.png" alt="A Scatter Plot" width="60%" />
 <p class="caption">
 FIGURE 14.1: A Scatter Plot
 </p>
 </div>
-<p>The scatter plot that is produced by the last expression is presented in Figure <a href="ChapRegression.html#fig:Regression1">14.1</a>.</p>
-<p>A scatter plot is a graph that displays jointly the data of two numerical variables. The variables (“<code>x</code>” and “<code>y</code>” in this case) are represented by the <span class="math inline">\(x\)</span>-axis and the <span class="math inline">\(y\)</span>-axis, respectively. The <span class="math inline">\(x\)</span>-axis is associated with the explanatory variable and the <span class="math inline">\(y\)</span>-axis is associated with the response.</p>
-<p>Each observation is represented by a point. The <span class="math inline">\(x\)</span>-value of the point corresponds to the value of the explanatory variable for the observation and the <span class="math inline">\(y\)</span>-value corresponds to the value of the response. For example, the first observation is represented by the point <span class="math inline">\((x=4.5,y=9.5)\)</span>. The two rightmost points have an <span class="math inline">\(x\)</span> value of 4.5. The higher of the two has a <span class="math inline">\(y\)</span> value of 9.5 and is therefore point associated with the first observation. The lower of the two has a <span class="math inline">\(y\)</span> value of 8.0, and is thus associated with the 8th observation. Altogether there are 10 points in the plot, corresponding to the 10 observations in the data frame.</p>
-<p>Let us consider another example of a scatter plot. The file “<code>cars.csv</code>” contains data regarding characteristics of cars. Among the variables in this data frame are the variables “<code>horsepower</code>” and the variable “<code>engine.size</code>”. Both variables are numeric.</p>
-<p>The variable “<code>engine.size</code>” describes the volume, in cubic inches, that is swept by all the pistons inside the cylinders. The variable “<code>horsepower</code>” measures the power of the engine in units of horsepower. Let us examine the relation between these two variables with a scatter plot:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">cars &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;_data/cars.csv&quot;</span>)
-<span class="kw">plot</span>(horsepower <span class="op">~</span><span class="st"> </span>engine.size, <span class="dt">data=</span>cars)</code></pre></div>
+<p>The scatter plot that is produced by the last expression is presented in
+Figure <a href="ChapRegression.html#fig:Regression1">14.1</a>.</p>
+<p>A scatter plot is a graph that displays jointly the data of two
+numerical variables. The variables (“<code>x</code>” and “<code>y</code>” in this case) are
+represented by the <span class="math inline">\(x\)</span>-axis and the <span class="math inline">\(y\)</span>-axis, respectively. The <span class="math inline">\(x\)</span>-axis
+is associated with the explanatory variable and the <span class="math inline">\(y\)</span>-axis is
+associated with the response.</p>
+<p>Each observation is represented by a point. The <span class="math inline">\(x\)</span>-value of the point
+corresponds to the value of the explanatory variable for the observation
+and the <span class="math inline">\(y\)</span>-value corresponds to the value of the response. For example,
+the first observation is represented by the point <span class="math inline">\((x=4.5,y=9.5)\)</span>. The
+two rightmost points have an <span class="math inline">\(x\)</span> value of 4.5. The higher of the two has
+a <span class="math inline">\(y\)</span> value of 9.5 and is therefore point associated with the first
+observation. The lower of the two has a <span class="math inline">\(y\)</span> value of 8.0, and is thus
+associated with the 8th observation. Altogether there are 10 points in
+the plot, corresponding to the 10 observations in the data frame.</p>
+<p>Let us consider another example of a scatter plot. The file “<code>cars.csv</code>”
+contains data regarding characteristics of cars. Among the variables in
+this data frame are the variables “<code>horsepower</code>” and the variable
+“<code>engine.size</code>”. Both variables are numeric.</p>
+<p>The variable “<code>engine.size</code>” describes the volume, in cubic inches, that
+is swept by all the pistons inside the cylinders. The variable
+“<code>horsepower</code>” measures the power of the engine in units of horsepower.
+Let us examine the relation between these two variables with a scatter
+plot:</p>
+<pre class="sourceCode r"><code class="sourceCode r">cars &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;_data/cars.csv&quot;</span>)
+<span class="kw">plot</span>(horsepower <span class="op">~</span><span class="st"> </span>engine.size, <span class="dt">data=</span>cars)</code></pre>
 <div class="figure" style="text-align: center"><span id="fig:Regression2"></span>
 <img src="statthink_files/figure-html/Regression2-1.png" alt="The Scatter Plot of Power versus Engine Size" width="60%" />
 <p class="caption">
 FIGURE 14.2: The Scatter Plot of Power versus Engine Size
 </p>
 </div>
-<p>In the first line of code we read the data from the file into an <code>R</code> data frame that is given the name “<code>cars</code>”. In the second line we produce the scatter plot with “<code>horsepower</code>” as the response and “<code>engine.size</code>” as the explanatory variable. Both variables are taken from the data frame “<code>cars</code>”. The plot that is produced by the last expression is presented in Figure <span class="math display">\[fig:Regression\_2\]</span>.</p>
-<p>Consider the expression “<code>plot(horsepower~engine.size, data=cars)</code>”. Both the response variable and the explanatory variables that are given in this expression do not exist in the computer’s memory as independent objects, but only as variables within the object “<code>cars</code>”. In some cases, however, one may refer to these variables directly within the function, provided that the argument “<code>data=</code><em>data.frame.name</em>” is added to the function. This argument informs the function in which data frame the variables can be found, where <em>data.frame.name</em> is the name of the data frame. In the current example, the variables are located in the data frame “<code>cars</code>”.</p>
-<p>Examine the scatter plot in Figure <a href="ChapRegression.html#fig:Regression2">14.2</a>. One may see that the values of the response (<code>horsepower</code>) tend to increase with the increase in the values of the explanatory variable (<code>engine.size</code>). Overall, the increase tends to follow a linear trend, a straight line, although the data points are not located exactly on a single line. The role of linear regression, which will be discussed in the subsequent sections, is to describe and assess this linear trend.</p>
+<p>In the first line of code we read the data from the file into an <code>R</code>
+data frame that is given the name “<code>cars</code>”. In the second line we
+produce the scatter plot with “<code>horsepower</code>” as the response and
+“<code>engine.size</code>” as the explanatory variable. Both variables are taken
+from the data frame “<code>cars</code>”. The plot that is produced by the last
+expression is presented in Figure <span class="math display">\[fig:Regression\_2\]</span>.</p>
+<p>Consider the expression “<code>plot(horsepower~engine.size, data=cars)</code>”.
+Both the response variable and the explanatory variables that are given
+in this expression do not exist in the computer’s memory as independent
+objects, but only as variables within the object “<code>cars</code>”. In some
+cases, however, one may refer to these variables directly within the
+function, provided that the argument “<code>data=</code><em>data.frame.name</em>” is added
+to the function. This argument informs the function in which data frame
+the variables can be found, where <em>data.frame.name</em> is the name of the
+data frame. In the current example, the variables are located in the
+data frame “<code>cars</code>”.</p>
+<p>Examine the scatter plot in Figure <a href="ChapRegression.html#fig:Regression2">14.2</a>. One may see
+that the values of the response (<code>horsepower</code>) tend to increase with the
+increase in the values of the explanatory variable (<code>engine.size</code>).
+Overall, the increase tends to follow a linear trend, a straight line,
+although the data points are not located exactly on a single line. The
+role of linear regression, which will be discussed in the subsequent
+sections, is to describe and assess this linear trend.</p>
 </div>
 <div id="linear-equation" class="section level3">
 <h3><span class="header-section-number">14.2.2</span> Linear Equation</h3>
-<p>Linear regression describes linear trends in the relation between a response and an explanatory variable. Linear trends may be specified with the aid of linear equations. In this subsection we discuss the relation between a linear equation and a linear trend (a straight line).</p>
+<p>Linear regression describes linear trends in the relation between a
+response and an explanatory variable. Linear trends may be specified
+with the aid of linear equations. In this subsection we discuss the
+relation between a linear equation and a linear trend (a straight line).</p>
 <p>A linear equation is an equation of the form:</p>
-<p><span class="math display">\[y = a + b \cdot x\;,\]</span> where <span class="math inline">\(y\)</span> and <span class="math inline">\(x\)</span> are variables and <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> are the coefficients of the equation. The coefficient <span class="math inline">\(a\)</span> is called the <em>intercept</em> and the coefficient <span class="math inline">\(b\)</span> is called the <em>slope</em>.</p>
-<p>A linear equation can be used in order to plot a line on a graph. With each value on the <span class="math inline">\(x\)</span>-axis one may associate a value on the <span class="math inline">\(y\)</span>-axis: the value that satisfies the linear equation. The collection of all such pairs of points, all possible <span class="math inline">\(x\)</span> values and their associated <span class="math inline">\(y\)</span> values, produces a straight line in the two-dimensional plane.</p>
+<p><span class="math display">\[y = a + b \cdot x\;,\]</span>
+where <span class="math inline">\(y\)</span> and <span class="math inline">\(x\)</span> are variables and <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> are the coefficients of
+the equation. The coefficient <span class="math inline">\(a\)</span> is called the <em>intercept</em> and the
+coefficient <span class="math inline">\(b\)</span> is called the <em>slope</em>.</p>
+<p>A linear equation can be used in order to plot a line on a graph. With
+each value on the <span class="math inline">\(x\)</span>-axis one may associate a value on the <span class="math inline">\(y\)</span>-axis:
+the value that satisfies the linear equation. The collection of all such
+pairs of points, all possible <span class="math inline">\(x\)</span> values and their associated <span class="math inline">\(y\)</span>
+values, produces a straight line in the two-dimensional plane.</p>
 <div class="figure" style="text-align: center"><span id="fig:Regression3"></span>
 <img src="statthink_files/figure-html/Regression3-1.png" alt="Lines" width="60%" />
 <p class="caption">
 FIGURE 14.3: Lines
 </p>
 </div>
-<p>As an illustration consider the three lines in Figure <a href="ChapRegression.html#fig:Regression3">14.3</a>. The <em>green</em> line is produced via the equation <span class="math inline">\(y = 7 + x\)</span>, the intercept of the line is 7 and the slope is 1. The <em>blue</em> is a result of the equation <span class="math inline">\(y = 14 - 2 x\)</span>. For this line the intercept is 14 and the slope is -2. Finally, the <em>red</em> line is produced by the equation <span class="math inline">\(y = 8.97\)</span>. The intercept of the line is 8.97 and the slope is equal to 0.</p>
-<p>The intercept describes the value of <span class="math inline">\(y\)</span> when the line crosses the <span class="math inline">\(y\)</span>-axis. Equivalently, it is the result of the application of the linear equation for the value <span class="math inline">\(x=0\)</span>. Observe in Figure <a href="ChapRegression.html#fig:Regression3">14.3</a> that the <em>green</em> line crosses the <span class="math inline">\(y\)</span>-axis at the level <span class="math inline">\(y=7\)</span>. Likewise, the <em>blue</em> line crosses the <span class="math inline">\(y\)</span>-axis at the level <span class="math inline">\(y=14\)</span>. The <em>red</em> line stays constantly at the level <span class="math inline">\(y=8.97\)</span>, and this is also the level at which it crosses the <span class="math inline">\(y\)</span>-axis.</p>
-<p>The slope is the change in the value of <span class="math inline">\(y\)</span> for each unit change in the value of <span class="math inline">\(x\)</span>. Consider the <em>green</em> line. When <span class="math inline">\(x=0\)</span> the value of <span class="math inline">\(y\)</span> is <span class="math inline">\(y=7\)</span>. When <span class="math inline">\(x\)</span> changes to <span class="math inline">\(x=1\)</span> then the value of <span class="math inline">\(y\)</span> changes to <span class="math inline">\(y=8\)</span>. A change of one unit in <span class="math inline">\(x\)</span> corresponds to an <em>increase</em> in one unit in <span class="math inline">\(y\)</span>. Indeed, the slope for this line is <span class="math inline">\(b=1\)</span>. As for the <em>blue</em> line, when <span class="math inline">\(x\)</span> changes from 0 to 1 the value of <span class="math inline">\(y\)</span> changes from <span class="math inline">\(y=14\)</span> to <span class="math inline">\(y=12\)</span>; a <em>decrease</em> of two units. This decrease is associated with the slope <span class="math inline">\(b=-2\)</span>. Lastly, for the constant <em>red</em> line there is no change in the value of <span class="math inline">\(y\)</span> when <span class="math inline">\(x\)</span> changes its value from <span class="math inline">\(x=0\)</span> to <span class="math inline">\(x=1\)</span>. Therefore, the slope is <span class="math inline">\(b=0\)</span>. A positive slope is associated with an increasing line, a negative slope is associated with a decreasing line and a zero slope is associated with a constant line.</p>
-<p>Lines can be considered in the context of scatter plots. Figure <a href="ChapRegression.html#fig:Regression3">14.3</a> contains the scatter plot of the data on the relation between the length of fish and their weight. A regression line is the line that best describes the linear trend of the relation between the explanatory variable and the response. Neither of the lines in the figure is the regression line, although the <em>green</em> line is a better description of the trend than the <em>blue</em> line. The regression line is the best description of the linear trend.</p>
-<p>The <em>red</em> line is a fixed line that is constructed at a level equal to the average value<a href="#fn70" class="footnoteRef" id="fnref70"><sup>70</sup></a> of the variable <span class="math inline">\(y\)</span>. This line partly reflects the information in the data. The regression line, which we fit in the next section, reflects more of the information by including a description of the trend in the data.</p>
-<p>Lastly, let us see how one can add lines to a plot in <code>R</code>. Functions to produce plots in <code>R</code> can be divided into two categories: high level and low level plotting functions. High level functions produce an entire plot, including the axes and the labels of the plot. The plotting functions that we encountered in the past such as “<code>plot</code>”, “<code>hist</code>”, “<code>boxplot</code>” and the like are all high level plotting functions. Low level functions, on the other hand, add features to an existing plot.</p>
-<p>An example of a low level plotting function is the function “<code>abline</code>”. This function adds a straight line to an existing plot. The first argument to the function is the intercept of the line and the second argument is the slope of the line. Other arguments may be used in order to specify the characteristics of the line. For example, the argument “<code>col=</code><em>color.name</em>” may be used in order to change the color of the line from its default black color. A plot that is very similar to plot in Figure <a href="ChapRegression.html#fig:Regression3">14.3</a> may be produced with the following code<a href="#fn71" class="footnoteRef" id="fnref71"><sup>71</sup></a>:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(y<span class="op">~</span>x)
+<p>As an illustration consider the three lines in
+Figure <a href="ChapRegression.html#fig:Regression3">14.3</a>. The <em>green</em> line is produced via the
+equation <span class="math inline">\(y = 7 + x\)</span>, the intercept of the line is 7 and the slope is 1.
+The <em>blue</em> is a result of the equation <span class="math inline">\(y = 14 - 2 x\)</span>. For this line the
+intercept is 14 and the slope is -2. Finally, the <em>red</em> line is produced
+by the equation <span class="math inline">\(y = 8.97\)</span>. The intercept of the line is 8.97 and the
+slope is equal to 0.</p>
+<p>The intercept describes the value of <span class="math inline">\(y\)</span> when the line crosses the
+<span class="math inline">\(y\)</span>-axis. Equivalently, it is the result of the application of the
+linear equation for the value <span class="math inline">\(x=0\)</span>. Observe in
+Figure <a href="ChapRegression.html#fig:Regression3">14.3</a> that the <em>green</em> line crosses the <span class="math inline">\(y\)</span>-axis
+at the level <span class="math inline">\(y=7\)</span>. Likewise, the <em>blue</em> line crosses the <span class="math inline">\(y\)</span>-axis at
+the level <span class="math inline">\(y=14\)</span>. The <em>red</em> line stays constantly at the level <span class="math inline">\(y=8.97\)</span>,
+and this is also the level at which it crosses the <span class="math inline">\(y\)</span>-axis.</p>
+<p>The slope is the change in the value of <span class="math inline">\(y\)</span> for each unit change in the
+value of <span class="math inline">\(x\)</span>. Consider the <em>green</em> line. When <span class="math inline">\(x=0\)</span> the value of <span class="math inline">\(y\)</span> is
+<span class="math inline">\(y=7\)</span>. When <span class="math inline">\(x\)</span> changes to <span class="math inline">\(x=1\)</span> then the value of <span class="math inline">\(y\)</span> changes to <span class="math inline">\(y=8\)</span>.
+A change of one unit in <span class="math inline">\(x\)</span> corresponds to an <em>increase</em> in one unit in
+<span class="math inline">\(y\)</span>. Indeed, the slope for this line is <span class="math inline">\(b=1\)</span>. As for the <em>blue</em> line,
+when <span class="math inline">\(x\)</span> changes from 0 to 1 the value of <span class="math inline">\(y\)</span> changes from <span class="math inline">\(y=14\)</span> to
+<span class="math inline">\(y=12\)</span>; a <em>decrease</em> of two units. This decrease is associated with the
+slope <span class="math inline">\(b=-2\)</span>. Lastly, for the constant <em>red</em> line there is no change in
+the value of <span class="math inline">\(y\)</span> when <span class="math inline">\(x\)</span> changes its value from <span class="math inline">\(x=0\)</span> to <span class="math inline">\(x=1\)</span>.
+Therefore, the slope is <span class="math inline">\(b=0\)</span>. A positive slope is associated with an
+increasing line, a negative slope is associated with a decreasing line
+and a zero slope is associated with a constant line.</p>
+<p>Lines can be considered in the context of scatter plots.
+Figure <a href="ChapRegression.html#fig:Regression3">14.3</a> contains the scatter plot of the data on
+the relation between the length of fish and their weight. A regression
+line is the line that best describes the linear trend of the relation
+between the explanatory variable and the response. Neither of the lines
+in the figure is the regression line, although the <em>green</em> line is a
+better description of the trend than the <em>blue</em> line. The regression
+line is the best description of the linear trend.</p>
+<p>The <em>red</em> line is a fixed line that is constructed at a level equal to
+the average value<a href="#fn70" class="footnote-ref" id="fnref70"><sup>70</sup></a> of the variable <span class="math inline">\(y\)</span>. This line partly reflects the
+information in the data. The regression line, which we fit in the next
+section, reflects more of the information by including a description of
+the trend in the data.</p>
+<p>Lastly, let us see how one can add lines to a plot in <code>R</code>. Functions to
+produce plots in <code>R</code> can be divided into two categories: high level and
+low level plotting functions. High level functions produce an entire
+plot, including the axes and the labels of the plot. The plotting
+functions that we encountered in the past such as “<code>plot</code>”, “<code>hist</code>”,
+“<code>boxplot</code>” and the like are all high level plotting functions. Low
+level functions, on the other hand, add features to an existing plot.</p>
+<p>An example of a low level plotting function is the function “<code>abline</code>”.
+This function adds a straight line to an existing plot. The first
+argument to the function is the intercept of the line and the second
+argument is the slope of the line. Other arguments may be used in order
+to specify the characteristics of the line. For example, the argument
+“<code>col=</code><em>color.name</em>” may be used in order to change the color of the
+line from its default black color. A plot that is very similar to plot
+in Figure <a href="ChapRegression.html#fig:Regression3">14.3</a> may be produced with the following
+code<a href="#fn71" class="footnote-ref" id="fnref71"><sup>71</sup></a>:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(y<span class="op">~</span>x)
 <span class="kw">abline</span>(<span class="dv">7</span>,<span class="dv">1</span>,<span class="dt">col=</span><span class="st">&quot;green&quot;</span>)
 <span class="kw">abline</span>(<span class="dv">14</span>,<span class="op">-</span><span class="dv">2</span>,<span class="dt">col=</span><span class="st">&quot;blue&quot;</span>)
-<span class="kw">abline</span>(<span class="kw">mean</span>(y),<span class="dv">0</span>,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>)</code></pre></div>
-<p><img src="statthink_files/figure-html/unnamed-chunk-204-1.png" width="60%" style="display: block; margin: auto;" /></p>
-<p>Initially, the scatter plot is created and the lines are added to the plot one after the other. Observe that color of the first line that is added is green, it has an intercept of 7 and a slope of 1. The second line is blue, with a intercept of 14 and a negative slope of -2. The last line is red, and its constant value is the average of the variable <span class="math inline">\(y\)</span>.</p>
-<p>In the next section we discuss the computation of the regression line, the line that describes the linear trend in the data. This line will be added to scatter plots with the aid of the function “<code>abline</code>”.</p>
+<span class="kw">abline</span>(<span class="kw">mean</span>(y),<span class="dv">0</span>,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>)</code></pre>
+<p><img src="statthink_files/figure-html/unnamed-chunk-205-1.png" width="60%" style="display: block; margin: auto;" /></p>
+<p>Initially, the scatter plot is created and the lines are added to the
+plot one after the other. Observe that color of the first line that is
+added is green, it has an intercept of 7 and a slope of 1. The second
+line is blue, with a intercept of 14 and a negative slope of -2. The
+last line is red, and its constant value is the average of the variable
+<span class="math inline">\(y\)</span>.</p>
+<p>In the next section we discuss the computation of the regression line,
+the line that describes the linear trend in the data. This line will be
+added to scatter plots with the aid of the function “<code>abline</code>”.</p>
 </div>
 </div>
 <div id="linear-regression" class="section level2">
 <h2><span class="header-section-number">14.3</span> Linear Regression</h2>
-<p>Data that describes the joint distribution of two numeric variables can be represented with a scatter plot. The <span class="math inline">\(y\)</span>-axis in this plot corresponds to the response and the <span class="math inline">\(x\)</span>-axis corresponds to the explanatory variable. The regression line describes the linear trend of the response as a function of the explanatory variable. This line is characterized by a linear equation with an intercept and a slope that are computed from the data.</p>
-<p>In the first subsection we present the computation of the regression linear equation from the data. The second subsection discusses regression as a statistical model. Statistical inference can be carried out on the basis of this model. In the context of the statistical model, one may consider the intercept and the slope of the regression model that is fitted to the data as point estimates of the model’s parameter. Based on these estimates, one may test hypotheses regarding the regression model and construct confidence intervals for parameters.</p>
+<p>Data that describes the joint distribution of two numeric variables can
+be represented with a scatter plot. The <span class="math inline">\(y\)</span>-axis in this plot
+corresponds to the response and the <span class="math inline">\(x\)</span>-axis corresponds to the
+explanatory variable. The regression line describes the linear trend of
+the response as a function of the explanatory variable. This line is
+characterized by a linear equation with an intercept and a slope that
+are computed from the data.</p>
+<p>In the first subsection we present the computation of the regression
+linear equation from the data. The second subsection discusses
+regression as a statistical model. Statistical inference can be carried
+out on the basis of this model. In the context of the statistical model,
+one may consider the intercept and the slope of the regression model
+that is fitted to the data as point estimates of the model’s parameter.
+Based on these estimates, one may test hypotheses regarding the
+regression model and construct confidence intervals for parameters.</p>
 <div id="fitting-the-regression-line" class="section level3">
 <h3><span class="header-section-number">14.3.1</span> Fitting the Regression Line</h3>
-<p>The <code>R</code> function that fits the regression line to data is called “<code>lm</code>”, an acronym for <em>Linear Model</em>. The input to the function is a formula, with the response variable to the left of the tilde character and the explanatory variable to the right of it. The output of the function is the fitted linear regression model.</p>
-<p>Let us apply the linear regression function to the data on the weight and the length of fish. The output of the function is saved by us in a object called “<code>fit</code>”. Subsequently, the content of the object “<code>fit</code>” is displayed:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">fit &lt;-<span class="st"> </span><span class="kw">lm</span>(y<span class="op">~</span>x)
-fit</code></pre></div>
+<p>The <code>R</code> function that fits the regression line to data is called “<code>lm</code>”,
+an acronym for <em>Linear Model</em>. The input to the function is a formula,
+with the response variable to the left of the tilde character and the
+explanatory variable to the right of it. The output of the function is
+the fitted linear regression model.</p>
+<p>Let us apply the linear regression function to the data on the weight
+and the length of fish. The output of the function is saved by us in a
+object called “<code>fit</code>”. Subsequently, the content of the object “<code>fit</code>”
+is displayed:</p>
+<pre class="sourceCode r"><code class="sourceCode r">fit &lt;-<span class="st"> </span><span class="kw">lm</span>(y<span class="op">~</span>x)
+fit</code></pre>
 <pre><code>## 
 ## Call:
 ## lm(formula = y ~ x)
@@ -611,43 +801,101 @@ fit</code></pre></div>
 ## Coefficients:
 ## (Intercept)            x  
 ##      4.6165       1.4274</code></pre>
-<p>When displayed, the output of the function “<code>lm</code>” shows the formula that was used by the function and provides the coefficients of the regression linear equation. Observe that the intercept of the line is equal to 4.616. The slope of the line, the coefficient that multiplies “<code>x</code>” in linear equation, is equal to 1.427.</p>
-<p>One may add the regression line to the scatter plot with the aid of the function “<code>abline</code>”:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(y<span class="op">~</span>x)
-<span class="kw">abline</span>(fit)</code></pre></div>
+<p>When displayed, the output of the function “<code>lm</code>” shows the formula that
+was used by the function and provides the coefficients of the regression
+linear equation. Observe that the intercept of the line is equal to
+4.616. The slope of the line, the coefficient that multiplies “<code>x</code>” in
+linear equation, is equal to 1.427.</p>
+<p>One may add the regression line to the scatter plot with the aid of the
+function “<code>abline</code>”:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(y<span class="op">~</span>x)
+<span class="kw">abline</span>(fit)</code></pre>
 <div class="figure" style="text-align: center"><span id="fig:Regression4"></span>
 <img src="statthink_files/figure-html/Regression4-1.png" alt="A Fitted Regression Line" width="60%" />
 <p class="caption">
 FIGURE 14.4: A Fitted Regression Line
 </p>
 </div>
-<p>The first expression produces the scatter plot of the data on fish. The second expression adds the regression line to the scatter plot. When the input to the graphical function “<code>abline</code>” is the output of the function “<code>lm</code>” that fits the regression line, then the result is the addition of the regression line to the existing plot. The line that is added is the line characterized by the coefficients that are computed by the function “<code>lm</code>”. The coefficients in the current setting are 4.616 for the intercept and 1.427 for the slope.</p>
-<p>The scatter plot and the added regression line are displayed in Figure <a href="ChapRegression.html#fig:Regression4">14.4</a>. Observe that line passes through the points, balancing between the points that are above the line and the points that are below. The line captures the linear trend in the data.</p>
-<p>Examine the line in Figure <a href="ChapRegression.html#fig:Regression4">14.4</a>. When <span class="math inline">\(x=1\)</span> then the <span class="math inline">\(y\)</span> value of the line is slightly above 6. When the value of <span class="math inline">\(x\)</span> is equal to 2, a change of one unit, then value of <span class="math inline">\(y\)</span> is below 8, and is approximately equal to 7.5. This observation is consistent with the fact that the slop of the line is 1.427. The value of <span class="math inline">\(x\)</span> is decreased by 1 when changing from <span class="math inline">\(x=1\)</span> to <span class="math inline">\(x=0\)</span>. Consequently, the value of <span class="math inline">\(y\)</span> when <span class="math inline">\(x=0\)</span> should decrease by 1.427 in comparison to its value when <span class="math inline">\(x=1\)</span>. The value at <span class="math inline">\(x=1\)</span> is approximately 6. Therefore, the value at <span class="math inline">\(x=0\)</span> should be approximately 4.6. Indeed, we do get that the intercept is equal to 4.616.</p>
-<p>The coefficients of the regression line are computed from the data and are hence statistics. Specifically, the slope of the regression line is computed as the ratio between the <em>covariance</em> of the response and the explanatory variable, divided by the variance of the explanatory variable. The intercept of the regression line is computed using the sample averages of both variables and the computed slope.</p>
-<p>Start with the slope. The main ingredient in the formula for the slope, the numerator in the ratio, is the covariance between the two variables. The covariance measures the joint variability of two variables. Recall that the formula for the sample variance of the variable <span class="math inline">\(x\)</span> is equal to::</p>
-<p><span class="math display">\[s^2 = \frac{\mbox{Sum of the squares of the deviations}}{\mbox{Number of values in the sample}-1} = \frac{\sum_{i=1}^n (x_i - \bar x)^2}{n-1}\;.\]</span> The formula of the sample covariance between <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> replaces the square of the deviations by the product of deviations. The product is between an <span class="math inline">\(y\)</span> deviation and the parallel <span class="math inline">\(x\)</span> deviation:</p>
+<p>The first expression produces the scatter plot of the data on fish. The
+second expression adds the regression line to the scatter plot. When the
+input to the graphical function “<code>abline</code>” is the output of the function
+“<code>lm</code>” that fits the regression line, then the result is the addition of
+the regression line to the existing plot. The line that is added is the
+line characterized by the coefficients that are computed by the function
+“<code>lm</code>”. The coefficients in the current setting are 4.616 for the
+intercept and 1.427 for the slope.</p>
+<p>The scatter plot and the added regression line are displayed in
+Figure <a href="ChapRegression.html#fig:Regression4">14.4</a>. Observe that line passes through the
+points, balancing between the points that are above the line and the
+points that are below. The line captures the linear trend in the data.</p>
+<p>Examine the line in Figure <a href="ChapRegression.html#fig:Regression4">14.4</a>. When <span class="math inline">\(x=1\)</span> then the
+<span class="math inline">\(y\)</span> value of the line is slightly above 6. When the value of <span class="math inline">\(x\)</span> is
+equal to 2, a change of one unit, then value of <span class="math inline">\(y\)</span> is below 8, and is
+approximately equal to 7.5. This observation is consistent with the fact
+that the slop of the line is 1.427. The value of <span class="math inline">\(x\)</span> is decreased by 1
+when changing from <span class="math inline">\(x=1\)</span> to <span class="math inline">\(x=0\)</span>. Consequently, the value of <span class="math inline">\(y\)</span> when
+<span class="math inline">\(x=0\)</span> should decrease by 1.427 in comparison to its value when <span class="math inline">\(x=1\)</span>.
+The value at <span class="math inline">\(x=1\)</span> is approximately 6. Therefore, the value at <span class="math inline">\(x=0\)</span>
+should be approximately 4.6. Indeed, we do get that the intercept is
+equal to 4.616.</p>
+<p>The coefficients of the regression line are computed from the data and
+are hence statistics. Specifically, the slope of the regression line is
+computed as the ratio between the <em>covariance</em> of the response and the
+explanatory variable, divided by the variance of the explanatory
+variable. The intercept of the regression line is computed using the
+sample averages of both variables and the computed slope.</p>
+<p>Start with the slope. The main ingredient in the formula for the slope,
+the numerator in the ratio, is the covariance between the two variables.
+The covariance measures the joint variability of two variables. Recall
+that the formula for the sample variance of the variable <span class="math inline">\(x\)</span> is equal
+to::</p>
+<p><span class="math display">\[s^2 = \frac{\mbox{Sum of the squares of the deviations}}{\mbox{Number of values in the sample}-1} = \frac{\sum_{i=1}^n (x_i - \bar x)^2}{n-1}\;.\]</span>
+The formula of the sample covariance between <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> replaces the
+square of the deviations by the product of deviations. The product is
+between an <span class="math inline">\(y\)</span> deviation and the parallel <span class="math inline">\(x\)</span> deviation:</p>
 <p><span class="math display">\[\mbox{covariance} = \frac{\mbox{Sum of products of the deviations}}{\mbox{Number of values in the sample}-1} = \frac{\sum_{i=1}^n (y_i-\bar y)(x_i - \bar x)}{n-1}\;.\]</span></p>
-<p>The function “<code>cov</code>” computes the sample covariance between two numeric variables. The two variables enter as arguments to the function and the sample covariance is the output. Let us demonstrate the computation by first applying the given function to the data on fish and then repeating the computations without the aid of the function:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cov</span>(y,x)</code></pre></div>
+<p>The function “<code>cov</code>” computes the sample covariance between two numeric
+variables. The two variables enter as arguments to the function and the
+sample covariance is the output. Let us demonstrate the computation by
+first applying the given function to the data on fish and then repeating
+the computations without the aid of the function:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cov</span>(y,x)</code></pre>
 <pre><code>## [1] 2.3861111</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sum</span>((y<span class="op">-</span><span class="kw">mean</span>(y))<span class="op">*</span>(x<span class="op">-</span><span class="kw">mean</span>(x)))<span class="op">/</span><span class="dv">9</span></code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sum</span>((y<span class="op">-</span><span class="kw">mean</span>(y))<span class="op">*</span>(x<span class="op">-</span><span class="kw">mean</span>(x)))<span class="op">/</span><span class="dv">9</span></code></pre>
 <pre><code>## [1] 2.3861111</code></pre>
-<p>In both cases we obtained the same result. Notice that the sum of products of deviations in the second expression was divided by 9, which is the number of observations, minus 1.</p>
-<p>The slope of the regression line is the ratio between the covariance and the variance of the explanatory variable.</p>
-<p>The regression line passes through the point <span class="math inline">\((\bar x, \bar y)\)</span>, a point that is determined by the means of the both the explanatory variable and the response. It follows that the intercept should obey the equation:</p>
-<p><span class="math display">\[\bar y = a + b\cdot \bar x \quad\Longrightarrow\quad a = \bar y - b\cdot \bar x\;,\]</span> The left-hand-side equation corresponds to the statement that the value of the regression line at the average <span class="math inline">\(\bar x\)</span> is equal to the average of the response <span class="math inline">\(\bar y\)</span>. The right-hand-side equation is the solution to the left-hand-side equation.</p>
-<p>One may compute the coefficients of the regression model manually by computing first the slope as a ratio between the covariance and the variance of explanatory variable. The intercept can then be obtained by the equation that uses the computed slope and the averages of both variables:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">b &lt;-<span class="st"> </span><span class="kw">cov</span>(x,y)<span class="op">/</span><span class="kw">var</span>(x)
+<p>In both cases we obtained the same result. Notice that the sum of
+products of deviations in the second expression was divided by 9, which
+is the number of observations, minus 1.</p>
+<p>The slope of the regression line is the ratio between the covariance and
+the variance of the explanatory variable.</p>
+<p>The regression line passes through the point <span class="math inline">\((\bar x, \bar y)\)</span>, a point
+that is determined by the means of the both the explanatory variable and
+the response. It follows that the intercept should obey the equation:</p>
+<p><span class="math display">\[\bar y = a + b\cdot \bar x \quad\Longrightarrow\quad a = \bar y - b\cdot \bar x\;,\]</span>
+The left-hand-side equation corresponds to the statement that the value
+of the regression line at the average <span class="math inline">\(\bar x\)</span> is equal to the average
+of the response <span class="math inline">\(\bar y\)</span>. The right-hand-side equation is the solution
+to the left-hand-side equation.</p>
+<p>One may compute the coefficients of the regression model manually by
+computing first the slope as a ratio between the covariance and the
+variance of explanatory variable. The intercept can then be obtained by
+the equation that uses the computed slope and the averages of both
+variables:</p>
+<pre class="sourceCode r"><code class="sourceCode r">b &lt;-<span class="st"> </span><span class="kw">cov</span>(x,y)<span class="op">/</span><span class="kw">var</span>(x)
 a &lt;-<span class="st"> </span><span class="kw">mean</span>(y) <span class="op">-</span><span class="st"> </span>b<span class="op">*</span><span class="kw">mean</span>(x)
-a</code></pre></div>
+a</code></pre>
 <pre><code>## [1] 4.6164772</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">b</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">b</code></pre>
 <pre><code>## [1] 1.4273845</code></pre>
-<p>Applying the manual method we obtain, after rounding up, the same coefficients that were produced by the application of the function “<code>lm</code>” to the data.</p>
-<p>As an exercise, let us fit the regression model to the data on the relation between the response “<code>horsepower</code>” and the explanatory variable “<code>engine.size</code>”. Apply the function “<code>lm</code>” to the data and present the results:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">fit.power &lt;-<span class="st"> </span><span class="kw">lm</span>(horsepower <span class="op">~</span><span class="st"> </span>engine.size, <span class="dt">data=</span>cars)
-fit.power</code></pre></div>
+<p>Applying the manual method we obtain, after rounding up, the same
+coefficients that were produced by the application of the function
+“<code>lm</code>” to the data.</p>
+<p>As an exercise, let us fit the regression model to the data on the
+relation between the response “<code>horsepower</code>” and the explanatory
+variable “<code>engine.size</code>”. Apply the function “<code>lm</code>” to the data and
+present the results:</p>
+<pre class="sourceCode r"><code class="sourceCode r">fit.power &lt;-<span class="st"> </span><span class="kw">lm</span>(horsepower <span class="op">~</span><span class="st"> </span>engine.size, <span class="dt">data=</span>cars)
+fit.power</code></pre>
 <pre><code>## 
 ## Call:
 ## lm(formula = horsepower ~ engine.size, data = cars)
@@ -655,29 +903,80 @@ fit.power</code></pre></div>
 ## Coefficients:
 ## (Intercept)  engine.size  
 ##     6.64138      0.76949</code></pre>
-<p>The fitted regression model is stored in an object called “<code>fit.power</code>”. The intercept in the current setting is equal to 6.6414 and the slope is equal to 0.7695.</p>
-<p>Observe that one may refer to variables that belong to a data frame, provided that the name of the data frame is entered as the value of the argument “<code>data</code>” in the function “<code>lm</code>”. Here we refer to variables that belong to the data frame “<code>cars</code>”.</p>
+<p>The fitted regression model is stored in an object called “<code>fit.power</code>”.
+The intercept in the current setting is equal to 6.6414 and the slope is
+equal to 0.7695.</p>
+<p>Observe that one may refer to variables that belong to a data frame,
+provided that the name of the data frame is entered as the value of the
+argument “<code>data</code>” in the function “<code>lm</code>”. Here we refer to variables
+that belong to the data frame “<code>cars</code>”.</p>
 <p>Next we plot the scatter plot of the data and add the regression line:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(horsepower <span class="op">~</span><span class="st"> </span>engine.size, <span class="dt">data=</span>cars)
-<span class="kw">abline</span>(fit.power)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(horsepower <span class="op">~</span><span class="st"> </span>engine.size, <span class="dt">data=</span>cars)
+<span class="kw">abline</span>(fit.power)</code></pre>
 <div class="figure" style="text-align: center"><span id="fig:Regression5"></span>
 <img src="statthink_files/figure-html/Regression5-1.png" alt="A Regression Model of Power versus Engine Size" width="60%" />
 <p class="caption">
 FIGURE 14.5: A Regression Model of Power versus Engine Size
 </p>
 </div>
-<p>The output of the plotting functions is presented in Figure <a href="ChapRegression.html#fig:Regression5">14.5</a>. Again, the regression line describes the general linear trend in the data. Overall, with the increase in engine size one observes increase in the power of the engine.</p>
+<p>The output of the plotting functions is presented in
+Figure <a href="ChapRegression.html#fig:Regression5">14.5</a>. Again, the regression line describes the
+general linear trend in the data. Overall, with the increase in engine
+size one observes increase in the power of the engine.</p>
 </div>
 <div id="subsec:Inference" class="section level3">
 <h3><span class="header-section-number">14.3.2</span> Inference</h3>
-<p>Up to this point we have been considering the regression model in the context of descriptive statistics. The aim in fitting the regression line to the data was to characterize the linear trend observed in the data. Our next goal is to deal with regression in the context of inferential statistics. The goal here is to produce statements on characteristics of an entire population on the basis of the data contained in the sample.</p>
-<p>The foundation for statistical inference in a given setting is a statistical model that produces the sampling distribution in that setting. The sampling distribution is the frame of reference for the analysis. In this context, the observed sample is a single realization of the sampling distribution, one realization among infinitely many potential realizations that never take place. The setting of regression involves a response and an explanatory variable. We provide a description of the statistical model for this setting.</p>
-<p>The relation between the response and the explanatory variable is such that the value of the later affects the distribution of the former. Still, the value of the response is not uniquely defined by the value of the explanatory variable. This principle also hold for the regression model of the relation between the response <span class="math inline">\(Y\)</span> and the explanatory variable <span class="math inline">\(X\)</span>. According to the model of linear regression the value of the <em>expectation</em> of the response for observation <span class="math inline">\(i\)</span>, <span class="math inline">\(E(Y_i)\)</span>, is a linear function of the value of the explanatory variable for the same observation. Hence, there exist and intercept <span class="math inline">\(a\)</span> and a slope <span class="math inline">\(b\)</span>, common for all observations, such that if <span class="math inline">\(X_i = x_i\)</span> then</p>
-<p><span class="math display">\[E(Y_i) = a + b \cdot x_i\;.\]</span> The regression line can thus be interpreted as the average trend of the response in the population. This average trend is a linear function of the explanatory variable.</p>
-<p>The intercept <span class="math inline">\(a\)</span> and the slope <span class="math inline">\(b\)</span> of the statistical model are parameters of the sampling distribution. One may test hypotheses and construct confidence intervals for these parameters based on the observed data and in relation to the sampling distribution.</p>
-<p>Consider testing hypothesis. A natural null hypothesis to consider is the hypothesis that the slope is equal to zero. This hypothesis corresponds to statement that the expected value of the response is constant for all values of the explanatory variable. In other words, the hypothesis is that the explanatory variable does not affect the distribution of the response<a href="#fn72" class="footnoteRef" id="fnref72"><sup>72</sup></a>. One may formulate this null hypothesis as <span class="math inline">\(H_0:b = 0\)</span> and test it against the alternative <span class="math inline">\(H_1: b \not= 0\)</span> that states that the explanatory variable does affect the distribution of the response.</p>
-<p>A test of the given hypotheses can be carried out by the application of the function “<code>summary</code>” to the output of the function “<code>lm</code>”. Recall that the function “<code>lm</code>” was used in order to fit the linear regression to the data. In particular, this function was applied to the data on the relation between the size of the engine and the power that the engine produces. The function fitted a regression line that describes the linear trend of the data. The output of the function was saved in an object by the name “<code>fit.power</code>”. We apply the function “<code>summary</code>” to this object:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(fit.power)</code></pre></div>
+<p>Up to this point we have been considering the regression model in the
+context of descriptive statistics. The aim in fitting the regression
+line to the data was to characterize the linear trend observed in the
+data. Our next goal is to deal with regression in the context of
+inferential statistics. The goal here is to produce statements on
+characteristics of an entire population on the basis of the data
+contained in the sample.</p>
+<p>The foundation for statistical inference in a given setting is a
+statistical model that produces the sampling distribution in that
+setting. The sampling distribution is the frame of reference for the
+analysis. In this context, the observed sample is a single realization
+of the sampling distribution, one realization among infinitely many
+potential realizations that never take place. The setting of regression
+involves a response and an explanatory variable. We provide a
+description of the statistical model for this setting.</p>
+<p>The relation between the response and the explanatory variable is such
+that the value of the later affects the distribution of the former.
+Still, the value of the response is not uniquely defined by the value of
+the explanatory variable. This principle also hold for the regression
+model of the relation between the response <span class="math inline">\(Y\)</span> and the explanatory
+variable <span class="math inline">\(X\)</span>. According to the model of linear regression the value of
+the <em>expectation</em> of the response for observation <span class="math inline">\(i\)</span>, <span class="math inline">\(\Expec(Y_i)\)</span>, is
+a linear function of the value of the explanatory variable for the same
+observation. Hence, there exist and intercept <span class="math inline">\(a\)</span> and a slope <span class="math inline">\(b\)</span>,
+common for all observations, such that if <span class="math inline">\(X_i = x_i\)</span> then</p>
+<p><span class="math display">\[\Expec(Y_i) = a + b \cdot x_i\;.\]</span> The regression line can thus be
+interpreted as the average trend of the response in the population. This
+average trend is a linear function of the explanatory variable.</p>
+<p>The intercept <span class="math inline">\(a\)</span> and the slope <span class="math inline">\(b\)</span> of the statistical model are
+parameters of the sampling distribution. One may test hypotheses and
+construct confidence intervals for these parameters based on the
+observed data and in relation to the sampling distribution.</p>
+<p>Consider testing hypothesis. A natural null hypothesis to consider is
+the hypothesis that the slope is equal to zero. This hypothesis
+corresponds to statement that the expected value of the response is
+constant for all values of the explanatory variable. In other words, the
+hypothesis is that the explanatory variable does not affect the
+distribution of the response<a href="#fn72" class="footnote-ref" id="fnref72"><sup>72</sup></a>. One may formulate this null hypothesis
+as <span class="math inline">\(H_0:b = 0\)</span> and test it against the alternative <span class="math inline">\(H_1: b \not= 0\)</span> that
+states that the explanatory variable does affect the distribution of the
+response.</p>
+<p>A test of the given hypotheses can be carried out by the application of
+the function “<code>summary</code>” to the output of the function “<code>lm</code>”. Recall
+that the function “<code>lm</code>” was used in order to fit the linear regression
+to the data. In particular, this function was applied to the data on the
+relation between the size of the engine and the power that the engine
+produces. The function fitted a regression line that describes the
+linear trend of the data. The output of the function was saved in an
+object by the name “<code>fit.power</code>”. We apply the function “<code>summary</code>” to
+this object:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(fit.power)</code></pre>
 <pre><code>## 
 ## Call:
 ## lm(formula = horsepower ~ engine.size, data = cars)
@@ -697,26 +996,98 @@ FIGURE 14.5: A Regression Model of Power versus Engine Size
 ##   (2 observations deleted due to missingness)
 ## Multiple R-squared:  0.65735,    Adjusted R-squared:  0.65565 
 ## F-statistic: 385.61 on 1 and 201 DF,  p-value: &lt; 2.22e-16</code></pre>
-<p>The output produced by the application of the function “<code>summary</code>” is long and detailed. We will discuss this output in the next section. Here we concentrate on the table that goes under the title “<code>Coefficients:</code>”. The said table is made of 2 rows and 4 columns. It contains information for testing, for each of the coefficients, the null hypothesis that the value of the given coefficient is equal to zero. In particular, the second row may be used is order to test this hypothesis for the slope of the regression line, the coefficient that multiplies the explanatory variable.</p>
-<p>Consider the second row. The first value on this row is 0.76949, which is equal (after rounding up) to the slope of the line that was fitted to the data in the previous subsection. However, in the context of statistical inference this value is the <em>estimate</em> of the slope of the population regression coefficient, the realization of the estimator of the slope<a href="#fn73" class="footnoteRef" id="fnref73"><sup>73</sup></a>.</p>
-<p>The second value is 0.03919. This is an estimate of the standard deviation of the estimator of the slope. The third value is the test statistic. This statistic is the ratio between the deviation of the sample estimate of the parameter (0.76949) from the value of the parameter under the null hypothesis (0), divided by the estimated standard deviation (0.03919): <span class="math inline">\((0.76949 - 0)/0.03919 = 0.76949/0.03919 = 19.63486\)</span>, which is essentially the value given in the report<a href="#fn74" class="footnoteRef" id="fnref74"><sup>74</sup></a>.</p>
-<p>The last value is the computed <span class="math inline">\(p\)</span>-value for the test. It can be shown that the sampling distribution of the given test statistic, under the null distribution which assumes no slope, is asymptotically the standard Normal distribution. If the distribution of the response itself is Normal then the distribution of the statistic is the <span class="math inline">\(t\)</span>-distribution on <span class="math inline">\(n-2\)</span> degrees of freedom. In the current situation this corresponds to 201 degrees of freedom<a href="#fn75" class="footnoteRef" id="fnref75"><sup>75</sup></a>. The computed <span class="math inline">\(p\)</span>-value is extremely small, practically eliminating the possibility that the slope is equal to zero.</p>
-<p>The first row presents information regarding the intercept. The estimated intercept is 6.64138 with an estimated standard deviation of 5.23318. The value of the test statistic is 1.269 and the <span class="math inline">\(p\)</span>-value for testing the null hypothesis that the intercept is equal to zero against the two sided alternative is 0.206. In this case the null hypothesis is not rejected since the <span class="math inline">\(p\)</span>-value is larger than 0.05.</p>
-<p>The report contains an inference for the intercept. However, one is advised to take this inference in the current case with a grain of salt. Indeed, the intercept is the expected value of the response when the explanatory variable is equal to zero. Here the explanatory variable is the size of the engine and the response is the power of that engine. The power of an engine of size zero is a quantity that has no physical meaning! In general, unless the intercept is in the range of observations (i.e. the value 0 is in the range of the observed explanatory variable) one should treat the inference on the intercept cautiously. Such inference requires extrapolation and is sensitive to the miss-specification of the regression model.</p>
-<p>Apart from testing hypotheses one may also construct confidence intervals for the parameters. A crude confidence interval may be obtained by taking 1.96 standard deviations on each side of the estimate of the parameter. Hence, a confidence interval for the slope is approximately equal to <span class="math inline">\(0.76949 \pm 1.96\times 0.03919 = [0.6926776, 0.8463024]\)</span>. In a similar way one may obtain a confidence interval for the slope<a href="#fn76" class="footnoteRef" id="fnref76"><sup>76</sup></a>: <span class="math inline">\(6.64138 \pm 1.96\times 5.23318 = [-3.615653, 16.89841]\)</span>.</p>
-<p>Alternatively, one may compute confidence intervals for the parameters of the linear regression model using the function “<code>confint</code>”. The input to this function is the fitted model and the output is a confidence interval for each of the parameters:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">confint</span>(fit.power)</code></pre></div>
+<p>The output produced by the application of the function “<code>summary</code>” is
+long and detailed. We will discuss this output in the next section. Here
+we concentrate on the table that goes under the title “<code>Coefficients:</code>”.
+The said table is made of 2 rows and 4 columns. It contains information
+for testing, for each of the coefficients, the null hypothesis that the
+value of the given coefficient is equal to zero. In particular, the
+second row may be used is order to test this hypothesis for the slope of
+the regression line, the coefficient that multiplies the explanatory
+variable.</p>
+<p>Consider the second row. The first value on this row is 0.76949, which
+is equal (after rounding up) to the slope of the line that was fitted to
+the data in the previous subsection. However, in the context of
+statistical inference this value is the <em>estimate</em> of the slope of the
+population regression coefficient, the realization of the estimator of
+the slope<a href="#fn73" class="footnote-ref" id="fnref73"><sup>73</sup></a>.</p>
+<p>The second value is 0.03919. This is an estimate of the standard
+deviation of the estimator of the slope. The third value is the test
+statistic. This statistic is the ratio between the deviation of the
+sample estimate of the parameter (0.76949) from the value of the
+parameter under the null hypothesis (0), divided by the estimated
+standard deviation (0.03919):
+<span class="math inline">\((0.76949 - 0)/0.03919 = 0.76949/0.03919 = 19.63486\)</span>, which is
+essentially the value given in the report<a href="#fn74" class="footnote-ref" id="fnref74"><sup>74</sup></a>.</p>
+<p>The last value is the computed <span class="math inline">\(p\)</span>-value for the test. It can be shown
+that the sampling distribution of the given test statistic, under the
+null distribution which assumes no slope, is asymptotically the standard
+Normal distribution. If the distribution of the response itself is
+Normal then the distribution of the statistic is the <span class="math inline">\(t\)</span>-distribution on
+<span class="math inline">\(n-2\)</span> degrees of freedom. In the current situation this corresponds to
+201 degrees of freedom<a href="#fn75" class="footnote-ref" id="fnref75"><sup>75</sup></a>. The computed <span class="math inline">\(p\)</span>-value is extremely small,
+practically eliminating the possibility that the slope is equal to zero.</p>
+<p>The first row presents information regarding the intercept. The
+estimated intercept is 6.64138 with an estimated standard deviation of
+5.23318. The value of the test statistic is 1.269 and the <span class="math inline">\(p\)</span>-value for
+testing the null hypothesis that the intercept is equal to zero against
+the two sided alternative is 0.206. In this case the null hypothesis is
+not rejected since the <span class="math inline">\(p\)</span>-value is larger than 0.05.</p>
+<p>The report contains an inference for the intercept. However, one is
+advised to take this inference in the current case with a grain of salt.
+Indeed, the intercept is the expected value of the response when the
+explanatory variable is equal to zero. Here the explanatory variable is
+the size of the engine and the response is the power of that engine. The
+power of an engine of size zero is a quantity that has no physical
+meaning! In general, unless the intercept is in the range of
+observations (i.e. the value 0 is in the range of the observed
+explanatory variable) one should treat the inference on the intercept
+cautiously. Such inference requires extrapolation and is sensitive to
+the miss-specification of the regression model.</p>
+<p>Apart from testing hypotheses one may also construct confidence
+intervals for the parameters. A crude confidence interval may be
+obtained by taking 1.96 standard deviations on each side of the estimate
+of the parameter. Hence, a confidence interval for the slope is
+approximately equal to
+<span class="math inline">\(0.76949 \pm 1.96\times 0.03919 = [0.6926776, 0.8463024]\)</span>. In a similar
+way one may obtain a confidence interval for the slope<a href="#fn76" class="footnote-ref" id="fnref76"><sup>76</sup></a>:
+<span class="math inline">\(6.64138 \pm 1.96\times 5.23318 = [-3.615653, 16.89841]\)</span>.</p>
+<p>Alternatively, one may compute confidence intervals for the parameters
+of the linear regression model using the function “<code>confint</code>”. The input
+to this function is the fitted model and the output is a confidence
+interval for each of the parameters:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">confint</span>(fit.power)</code></pre>
 <pre><code>##                   2.5 %      97.5 %
 ## (Intercept) -3.67759894 16.96035643
 ## engine.size  0.69221808  0.84675366</code></pre>
-<p>Observe the similarity between the confidence intervals that are computed by the function and the crude confidence intervals that were produced by us. The small discrepancies that do exist between the intervals result from the fact that the function “<code>confint</code>” uses the <span class="math inline">\(t\)</span>-distribution whereas we used the Normal approximation.</p>
+<p>Observe the similarity between the confidence intervals that are
+computed by the function and the crude confidence intervals that were
+produced by us. The small discrepancies that do exist between the
+intervals result from the fact that the function “<code>confint</code>” uses the
+<span class="math inline">\(t\)</span>-distribution whereas we used the Normal approximation.</p>
 </div>
 </div>
 <div id="r-squared-and-the-variance-of-residuals" class="section level2">
 <h2><span class="header-section-number">14.4</span> R-squared and the Variance of Residuals</h2>
-<p>In this section we discuss the residuals between the values of the response and their estimated expected value according to the regression model. These residuals are the regression model equivalence of the deviations between the observations and the sample average. We use these residuals in order compute the variability that is not accounted for by the regression model. Indeed, the ratio between the total variability of the residuals and the total variability of the deviations from the average serves as a measure of the variability that is not explained by the explanatory variable. R-squared, which is equal to 1 minus this ratio, is interpreted as the fraction of the variability of the response that is explained by the regression model.</p>
-<p>We start with the definition of residuals. Let us return to the artificial example that compared length of fish to their weight. The data for this example was given in Table <span class="math display">\[tab:Regression\_1\]</span> and was saved in the objects “<code>x</code>” and “<code>y</code>”. The regression model was fitted to this data by the application of the function “<code>lm</code>” to the formula “<code>y~x</code>” and the fitted model was saved in an object called “<code>fit</code>”. Let us apply the function “<code>summary</code>” to the fitted model:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(fit)</code></pre></div>
+<p>In this section we discuss the residuals between the values of the
+response and their estimated expected value according to the regression
+model. These residuals are the regression model equivalence of the
+deviations between the observations and the sample average. We use these
+residuals in order compute the variability that is not accounted for by
+the regression model. Indeed, the ratio between the total variability of
+the residuals and the total variability of the deviations from the
+average serves as a measure of the variability that is not explained by
+the explanatory variable. R-squared, which is equal to 1 minus this
+ratio, is interpreted as the fraction of the variability of the response
+that is explained by the regression model.</p>
+<p>We start with the definition of residuals. Let us return to the
+artificial example that compared length of fish to their weight. The
+data for this example was given in Table <span class="math display">\[tab:Regression\_1\]</span> and was
+saved in the objects “<code>x</code>” and “<code>y</code>”. The regression model was fitted to
+this data by the application of the function “<code>lm</code>” to the formula
+“<code>y~x</code>” and the fitted model was saved in an object called “<code>fit</code>”. Let
+us apply the function “<code>summary</code>” to the fitted model:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(fit)</code></pre>
 <pre><code>## 
 ## Call:
 ## lm(formula = y ~ x)
@@ -735,50 +1106,180 @@ FIGURE 14.5: A Regression Model of Power versus Engine Size
 ## Residual standard error: 2.7908 on 8 degrees of freedom
 ## Multiple R-squared:  0.32974,    Adjusted R-squared:  0.24596 
 ## F-statistic: 3.9357 on 1 and 8 DF,  p-value: 0.082554</code></pre>
-<p>The given report contains a table with estimates of the regression coefficients and information for conducting hypothesis testing. The report contains other information that is associated mainly with the notion of the residuals from regression line. Our current goal is to understand what is that other information.</p>
-<p>The residual from regression for each observation is the difference between the value of the response for the observation and the estimated expectation of the response under the regression model<a href="#fn77" class="footnoteRef" id="fnref77"><sup>77</sup></a>. An observation is a pair <span class="math inline">\((x_i,y_i)\)</span>, with <span class="math inline">\(y_i\)</span> being the value of the response. The expectation of the response according to the regression model is <span class="math inline">\(a + b \cdot x_i\)</span>, where <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> are the coefficients of the model. The estimated expectation is obtained by using, in the formula for the expectation, the coefficients that are estimated from the data. The residual is the difference between <span class="math inline">\(y_i\)</span> and <span class="math inline">\(a + b \cdot x_i\)</span>.</p>
-<p>Consider an example. The first observation on the fish is <span class="math inline">\((4.5, 9.5)\)</span>, where <span class="math inline">\(x_1 = 4.5\)</span> and <span class="math inline">\(y_1 = 9.5\)</span>. The estimated intercept is 4.6165 and the estimated slope is 1.4274. The estimated expectation of the response for the first variable is equal to</p>
-<p><span class="math display">\[4.6165 + 1.4274 \cdot x_1 = 4.6165 + 1.4274 \cdot 4.5  =  11.0398\;.\]</span> The residual is the difference between the observes response and this value:</p>
+<p>The given report contains a table with estimates of the regression
+coefficients and information for conducting hypothesis testing. The
+report contains other information that is associated mainly with the
+notion of the residuals from regression line. Our current goal is to
+understand what is that other information.</p>
+<p>The residual from regression for each observation is the difference
+between the value of the response for the observation and the estimated
+expectation of the response under the regression model<a href="#fn77" class="footnote-ref" id="fnref77"><sup>77</sup></a>. An
+observation is a pair <span class="math inline">\((x_i,y_i)\)</span>, with <span class="math inline">\(y_i\)</span> being the value of the
+response. The expectation of the response according to the regression
+model is <span class="math inline">\(a + b \cdot x_i\)</span>, where <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> are the coefficients of
+the model. The estimated expectation is obtained by using, in the
+formula for the expectation, the coefficients that are estimated from
+the data. The residual is the difference between <span class="math inline">\(y_i\)</span> and
+<span class="math inline">\(a + b \cdot x_i\)</span>.</p>
+<p>Consider an example. The first observation on the fish is <span class="math inline">\((4.5, 9.5)\)</span>,
+where <span class="math inline">\(x_1 = 4.5\)</span> and <span class="math inline">\(y_1 = 9.5\)</span>. The estimated intercept is 4.6165 and
+the estimated slope is 1.4274. The estimated expectation of the response
+for the first variable is equal to</p>
+<p><span class="math display">\[4.6165 + 1.4274 \cdot x_1 = 4.6165 + 1.4274 \cdot 4.5  =  11.0398\;.\]</span>
+The residual is the difference between the observes response and this
+value:</p>
 <p><span class="math display">\[y_1 - (4.6165 + 1.4274 \cdot x_1) = 9.5 - 11.0398 = -1.5398\;.\]</span></p>
-<p>The residuals for the other observations are computed in the same manner. The values of the intercept and the slope are kept the same but the values of the explanatory variable and the response are changed.</p>
+<p>The residuals for the other observations are computed in the same
+manner. The values of the intercept and the slope are kept the same but
+the values of the explanatory variable and the response are changed.</p>
 <div class="figure" style="text-align: center"><span id="fig:Regression6"></span>
 <img src="statthink_files/figure-html/Regression6-1.png" alt="Residuals and Deviations from the Mean" width="60%" />
 <p class="caption">
 FIGURE 14.6: Residuals and Deviations from the Mean
 </p>
 </div>
-<p>Consult the upper plot in Figure <a href="ChapRegression.html#fig:Regression6">14.6</a>. This is a scatter plot of the data, together with the regression line in <em>black</em> and the line of the average in <em>red</em>. A vertical arrow extends from each data point to the regression line. The point where each arrow hits the regression line is associated with the estimated value of the expectation for that point. The residual is the difference between the value of the response at the origin of the arrow and the value of the response at the tip of its head. Notice that there are as many residuals as there are observations.</p>
-<p>The function “<code>residuals</code>” computes the residuals. The input to the function is the fitted regression model and the output is the sequence of residuals. When we apply the function to the object “<code>fit</code>”, which contains the fitted regression model for the fish data, we get the residuals:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">residuals</span>(fit)</code></pre></div>
+<p>Consult the upper plot in Figure <a href="ChapRegression.html#fig:Regression6">14.6</a>. This is a
+scatter plot of the data, together with the regression line in <em>black</em>
+and the line of the average in <em>red</em>. A vertical arrow extends from each
+data point to the regression line. The point where each arrow hits the
+regression line is associated with the estimated value of the
+expectation for that point. The residual is the difference between the
+value of the response at the origin of the arrow and the value of the
+response at the tip of its head. Notice that there are as many residuals
+as there are observations.</p>
+<p>The function “<code>residuals</code>” computes the residuals. The input to the
+function is the fitted regression model and the output is the sequence
+of residuals. When we apply the function to the object “<code>fit</code>”, which
+contains the fitted regression model for the fish data, we get the
+residuals:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">residuals</span>(fit)</code></pre>
 <pre><code>##          1          2          3          4          5          6 
 ## -1.5397075 -1.6977999 -2.2857694  0.2279229  3.7158923  4.0594616 
 ##          7          8          9         10 
 ## -2.5849385 -3.0397075  2.1312463  1.0133998</code></pre>
-<p>Indeed, 10 residuals are produced, one for each observation. In particular, the residual for the first observation is -1.5397075, which is essentially the value that we obtained<a href="#fn78" class="footnoteRef" id="fnref78"><sup>78</sup></a>.</p>
-<p>Return to the report produced by the application of the function “<code>summary</code>” to the fitted regression model. The first component in the report is the formula that identifies the response and the explanatory variable. The second component, the component that comes under the title “<code>Residuals:</code>”, gives a summary of the distribution of the residuals. This summary includes the smallest and the largest values in the sequence of residuals, as well as the first and third quartiles and the median. The average is not reported since the average of the residuals from the regression line is always equal to 0.</p>
-<p>The table that contains information on the coefficients was discussed in the previous section. Let us consider the last 3 lines of the report.</p>
-<p>The first of the three lines contains the estimated value of the standard deviation of the response from the regression model. If the expectations of the measurements of the response are located on the regression line then the variability of the response corresponds to the variability about this line. The resulting variance is estimated by the sum of squares of the residuals from the regression line, divided by the number of observations minus 2. A division by the number of observation minus 2 produces an unbiased estimator of the variance of the response about the regression model. Taking the square root of the estimated variance produces an estimate of the standard deviation:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sqrt</span>(<span class="kw">sum</span>(<span class="kw">residuals</span>(fit)<span class="op">^</span><span class="dv">2</span>)<span class="op">/</span><span class="dv">8</span>)</code></pre></div>
+<p>Indeed, 10 residuals are produced, one for each observation. In
+particular, the residual for the first observation is -1.5397075, which
+is essentially the value that we obtained<a href="#fn78" class="footnote-ref" id="fnref78"><sup>78</sup></a>.</p>
+<p>Return to the report produced by the application of the function
+“<code>summary</code>” to the fitted regression model. The first component in the
+report is the formula that identifies the response and the explanatory
+variable. The second component, the component that comes under the title
+“<code>Residuals:</code>”, gives a summary of the distribution of the residuals.
+This summary includes the smallest and the largest values in the
+sequence of residuals, as well as the first and third quartiles and the
+median. The average is not reported since the average of the residuals
+from the regression line is always equal to 0.</p>
+<p>The table that contains information on the coefficients was discussed in
+the previous section. Let us consider the last 3 lines of the report.</p>
+<p>The first of the three lines contains the estimated value of the
+standard deviation of the response from the regression model. If the
+expectations of the measurements of the response are located on the
+regression line then the variability of the response corresponds to the
+variability about this line. The resulting variance is estimated by the
+sum of squares of the residuals from the regression line, divided by the
+number of observations minus 2. A division by the number of observation
+minus 2 produces an unbiased estimator of the variance of the response
+about the regression model. Taking the square root of the estimated
+variance produces an estimate of the standard deviation:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sqrt</span>(<span class="kw">sum</span>(<span class="kw">residuals</span>(fit)<span class="op">^</span><span class="dv">2</span>)<span class="op">/</span><span class="dv">8</span>)</code></pre>
 <pre><code>## [1] 2.7907866</code></pre>
-<p>The last computation is a manual computation of the estimated standard deviation. It involves squaring the residuals and summing the squares. This sum is divided by the number of observations minus 2 (<span class="math inline">\(10-2=8\)</span>). Taking the square root produces estimate. The value that we get for the estimated standard deviation is 2.790787, which coincides with the value that appears in the first of the last 3 lines of the report.</p>
-<p>The second of these lines reports the R-squared of the linear fit. In order to explain the meaning of R-squared let us consider Figure <a href="ChapRegression.html#fig:Regression6">14.6</a> once again. The two plots in the figure present the scatter plot of the data together with the regression line and the line of the average. Vertical <em>black</em> arrows that represent the residuals from the regression are added to the upper plot. The lower plot contains vertical <em>red</em> arrows that extend from the data points to the line of the average. These arrows represent the deviations of the response from the average.</p>
-<p>Consider two forms of variation. One form is the variation of the response from its average value. This variation is summarized by the sample variance, the sum of the squared lengths of the <em>red</em> arrows divided by the number of observations minus 1. The other form of variation is the variation of the response from the fitted regression line. This variation is summarized by the sample variation of the residuals, the sum of squared lengths of the <em>black</em> arrows divided by the number of observations minus 1. The ratio between these two quantities gives the relative variability of the response that remains after fitting the regression line to the data.</p>
-<p>The line of the average is a straight line. The deviations of the observations from this straight line can be thought of as residuals from that line. The variability of these residuals, the sum of squares of the deviations from the average divided by the number of observations minus 1, is equal to the sample variance.</p>
-<p>The regression line is the unique straight line that minimizes the variability of its residuals. Consequently, the variability of the residuals from the regression, the sum of squares of the residuals from the regression divided by the number of observations minus 1, is the smallest residual variability produced by any straight line. It follows that the sample variance of the regression residuals is less than the sample variance of the response. Therefore, the ratio between the variance of the residuals and the variance of the response is less than 1.</p>
-<p>R-squared is the difference between 1 and the ratio of the variances. Its value is between 0 and 1 and it represents the fraction of the variability of the response that is <em>explained</em> by the regression line. The closer the points are to the regression line the larger the value of R-squared becomes. On the other hand, the less there is a linear trend in the data the closer to 0 is the value of R-squared. In the extreme case of R-squared equal to 1 all the data point are positioned exactly on a single straight line. In the other extreme, a value of 0 for R-squared implies no linear trend in the data.</p>
-<p>Let us compte manually the difference between 1 and the ratio between the variance of the residuals and the variance of the response:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">1</span><span class="op">-</span><span class="kw">var</span>(<span class="kw">residuals</span>(fit))<span class="op">/</span><span class="kw">var</span>(y)</code></pre></div>
+<p>The last computation is a manual computation of the estimated standard
+deviation. It involves squaring the residuals and summing the squares.
+This sum is divided by the number of observations minus 2 (<span class="math inline">\(10-2=8\)</span>).
+Taking the square root produces estimate. The value that we get for the
+estimated standard deviation is 2.790787, which coincides with the value
+that appears in the first of the last 3 lines of the report.</p>
+<p>The second of these lines reports the R-squared of the linear fit. In
+order to explain the meaning of R-squared let us consider
+Figure <a href="ChapRegression.html#fig:Regression6">14.6</a> once again. The two plots in the figure
+present the scatter plot of the data together with the regression line
+and the line of the average. Vertical <em>black</em> arrows that represent the
+residuals from the regression are added to the upper plot. The lower
+plot contains vertical <em>red</em> arrows that extend from the data points to
+the line of the average. These arrows represent the deviations of the
+response from the average.</p>
+<p>Consider two forms of variation. One form is the variation of the
+response from its average value. This variation is summarized by the
+sample variance, the sum of the squared lengths of the <em>red</em> arrows
+divided by the number of observations minus 1. The other form of
+variation is the variation of the response from the fitted regression
+line. This variation is summarized by the sample variation of the
+residuals, the sum of squared lengths of the <em>black</em> arrows divided by
+the number of observations minus 1. The ratio between these two
+quantities gives the relative variability of the response that remains
+after fitting the regression line to the data.</p>
+<p>The line of the average is a straight line. The deviations of the
+observations from this straight line can be thought of as residuals from
+that line. The variability of these residuals, the sum of squares of the
+deviations from the average divided by the number of observations minus
+1, is equal to the sample variance.</p>
+<p>The regression line is the unique straight line that minimizes the
+variability of its residuals. Consequently, the variability of the
+residuals from the regression, the sum of squares of the residuals from
+the regression divided by the number of observations minus 1, is the
+smallest residual variability produced by any straight line. It follows
+that the sample variance of the regression residuals is less than the
+sample variance of the response. Therefore, the ratio between the
+variance of the residuals and the variance of the response is less than
+1.</p>
+<p>R-squared is the difference between 1 and the ratio of the variances.
+Its value is between 0 and 1 and it represents the fraction of the
+variability of the response that is <em>explained</em> by the regression line.
+The closer the points are to the regression line the larger the value of
+R-squared becomes. On the other hand, the less there is a linear trend
+in the data the closer to 0 is the value of R-squared. In the extreme
+case of R-squared equal to 1 all the data point are positioned exactly
+on a single straight line. In the other extreme, a value of 0 for
+R-squared implies no linear trend in the data.</p>
+<p>Let us compte manually the difference between 1 and the ratio between
+the variance of the residuals and the variance of the response:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="dv">1</span><span class="op">-</span><span class="kw">var</span>(<span class="kw">residuals</span>(fit))<span class="op">/</span><span class="kw">var</span>(y)</code></pre>
 <pre><code>## [1] 0.32974132</code></pre>
-<p>Observe that the computed value of R-squared is the same as the value “<code>Multiple R-squared: 0.3297</code>” that is given in the report.</p>
-<p>The report provides another value of R-squared, titled <em>Adjusted R-squared</em>. The difference between the adjusted and unadjusted quantities is that in the former the sample variance of the residuals from the regression is replaced by an unbiased estimate of the variability of the response about the regression line. The sum of squares in the unbiased estimator is divided by the number of observations minus 2. Indeed, when we re-compute the ratio using the unbiased estimate, the sum of squared residuals divided by <span class="math inline">\(10 - 2 = 8\)</span>, we get:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">1</span><span class="op">-</span>(<span class="kw">sum</span>(<span class="kw">residuals</span>(fit)<span class="op">^</span><span class="dv">2</span>)<span class="op">/</span><span class="dv">8</span>)<span class="op">/</span><span class="kw">var</span>(y)</code></pre></div>
+<p>Observe that the computed value of R-squared is the same as the value
+“<code>Multiple R-squared: 0.3297</code>” that is given in the report.</p>
+<p>The report provides another value of R-squared, titled <em>Adjusted
+R-squared</em>. The difference between the adjusted and unadjusted
+quantities is that in the former the sample variance of the residuals
+from the regression is replaced by an unbiased estimate of the
+variability of the response about the regression line. The sum of
+squares in the unbiased estimator is divided by the number of
+observations minus 2. Indeed, when we re-compute the ratio using the
+unbiased estimate, the sum of squared residuals divided by <span class="math inline">\(10 - 2 = 8\)</span>,
+we get:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="dv">1</span><span class="op">-</span>(<span class="kw">sum</span>(<span class="kw">residuals</span>(fit)<span class="op">^</span><span class="dv">2</span>)<span class="op">/</span><span class="dv">8</span>)<span class="op">/</span><span class="kw">var</span>(y)</code></pre>
 <pre><code>## [1] 0.24595898</code></pre>
-<p>The value of this adjusted quantity is equal to the value “<code>Adjusted R-squared: 0.246</code>” in the report.</p>
-<p>Which value of R-squared to use is a matter of personal taste. In any case, for a larger number of observations the difference between the two values becomes negligible.</p>
-<p>The last line in the report produces an overall goodness of fit test for the regression model. In the current application of linear regression this test reduces to a test of the slope being equal to zero, the same test that is reported in the second row of the table of coefficients<a href="#fn79" class="footnoteRef" id="fnref79"><sup>79</sup></a>. The <span class="math inline">\(F\)</span> statistic is simply the square of the <span class="math inline">\(t\)</span> value that is given in the second row of the table. The sampling distribution of this statistic under the null hypothesis is the <span class="math inline">\(F\)</span>-distribution on 1 and <span class="math inline">\(n-2\)</span> degrees of freedom, which is the sampling distribution of the square of the test statistic for the slope. The computed <span class="math inline">\(p\)</span>-value, “<code>p-value: 0.08255</code>” is the identical (after rounding up) to the <span class="math inline">\(p\)</span>-value given in the second line of the table.</p>
-<p>Return to the R-squared coefficient. This coefficient is a convenient measure of the goodness of fit of the regression model to the data. Let us demonstrate this point with the aid of the “<code>cars</code>” data. In Subsection <a href="ChapRegression.html#subsec:Inference">14.3.2</a> we fitted a regression model to the power of the engine as a response and the size of the engine as an explanatory variable. The fitted model was saved in the object called “<code>fit.power</code>”. A report of this fit, the output of the expression “<code>summary(fit.power)</code>” was also presented. The null hypothesis of zero slope was clearly rejected. The value of R-squared for this fit was 0.6574. Consequently, about 2/3 of the variability in the power of the engine is explained by the size of the engine.</p>
-<p>Consider trying to fit a different regression model for the power of the engine as a response. The variable “<code>length</code>” describes the length of the car (in inches). How well would the length explain the power of the car? We may examine this question using linear regression:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(<span class="kw">lm</span>(horsepower <span class="op">~</span><span class="st"> </span>length, <span class="dt">data=</span>cars))</code></pre></div>
+<p>The value of this adjusted quantity is equal to the value
+“<code>Adjusted R-squared: 0.246</code>” in the report.</p>
+<p>Which value of R-squared to use is a matter of personal taste. In any
+case, for a larger number of observations the difference between the two
+values becomes negligible.</p>
+<p>The last line in the report produces an overall goodness of fit test for
+the regression model. In the current application of linear regression
+this test reduces to a test of the slope being equal to zero, the same
+test that is reported in the second row of the table of
+coefficients<a href="#fn79" class="footnote-ref" id="fnref79"><sup>79</sup></a>. The <span class="math inline">\(F\)</span> statistic is simply the square of the <span class="math inline">\(t\)</span>
+value that is given in the second row of the table. The sampling
+distribution of this statistic under the null hypothesis is the
+<span class="math inline">\(F\)</span>-distribution on 1 and <span class="math inline">\(n-2\)</span> degrees of freedom, which is the
+sampling distribution of the square of the test statistic for the slope.
+The computed <span class="math inline">\(p\)</span>-value, “<code>p-value: 0.08255</code>” is the identical (after
+rounding up) to the <span class="math inline">\(p\)</span>-value given in the second line of the table.</p>
+<p>Return to the R-squared coefficient. This coefficient is a convenient
+measure of the goodness of fit of the regression model to the data. Let
+us demonstrate this point with the aid of the “<code>cars</code>” data. In
+Subsection <a href="ChapRegression.html#subsec:Inference">14.3.2</a> we fitted a regression model to
+the power of the engine as a response and the size of the engine as an
+explanatory variable. The fitted model was saved in the object called
+“<code>fit.power</code>”. A report of this fit, the output of the expression
+“<code>summary(fit.power)</code>” was also presented. The null hypothesis of zero
+slope was clearly rejected. The value of R-squared for this fit was
+0.6574. Consequently, about 2/3 of the variability in the power of the
+engine is explained by the size of the engine.</p>
+<p>Consider trying to fit a different regression model for the power of the
+engine as a response. The variable “<code>length</code>” describes the length of
+the car (in inches). How well would the length explain the power of the
+car? We may examine this question using linear regression:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(<span class="kw">lm</span>(horsepower <span class="op">~</span><span class="st"> </span>length, <span class="dt">data=</span>cars))</code></pre>
 <pre><code>## 
 ## Call:
 ## lm(formula = horsepower ~ length, data = cars)
@@ -798,29 +1299,51 @@ FIGURE 14.6: Residuals and Deviations from the Mean
 ##   (2 observations deleted due to missingness)
 ## Multiple R-squared:  0.30803,    Adjusted R-squared:  0.30459 
 ## F-statistic: 89.474 on 1 and 201 DF,  p-value: &lt; 2.22e-16</code></pre>
-<p>We used one expression to fit the regression model to the data and to summarize the outcome of the fit.</p>
-<p>A scatter plot of the two variables together with the regression line may be produced using the code:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(horsepower <span class="op">~</span><span class="st"> </span>length, <span class="dt">data=</span>cars)
-<span class="kw">abline</span>(<span class="kw">lm</span>(horsepower <span class="op">~</span><span class="st"> </span>length, <span class="dt">data=</span>cars))</code></pre></div>
-<p><img src="statthink_files/figure-html/unnamed-chunk-217-1.png" width="60%" style="display: block; margin: auto;" /></p>
-<p>From the examination of the figure we may see that indeed there is a linear trend in the relation between the length and the power of the car. Longer cars tend to have more power. Testing the null hypothesis that the slope is equal to zero produces a very small <span class="math inline">\(p\)</span>-value and leads to the rejection of the null hypothesis.</p>
-<p>The length of the car and the size of the engine are both statistically significant in their relation to the response. However, which of the two explanatory variables produces a better fit?</p>
-<p>An answer to this question may be provided by the examination of values of R-squared, the ratio of the variance of the response explained by each of the explanatory variable. The R-squared for the size of the engine as an explanatory variable is 0.6574, which is approximately equal to 2/3. The value of R-squared for the length of the car as an explanatory variable is 0.308, less than 1/3. It follows that the size of the engine explains twice as much of the variability of the power of the engine than the size of car and is a better explanatory variable.</p>
+<p>We used one expression to fit the regression model to the data and to
+summarize the outcome of the fit.</p>
+<p>A scatter plot of the two variables together with the regression line may be produced
+using the code:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(horsepower <span class="op">~</span><span class="st"> </span>length, <span class="dt">data=</span>cars)
+<span class="kw">abline</span>(<span class="kw">lm</span>(horsepower <span class="op">~</span><span class="st"> </span>length, <span class="dt">data=</span>cars))</code></pre>
+<p><img src="statthink_files/figure-html/unnamed-chunk-218-1.png" width="60%" style="display: block; margin: auto;" /></p>
+<p>From the examination of the figure we may see that indeed there is a
+linear trend in the relation between the length and the power of the
+car. Longer cars tend to have more power. Testing the null hypothesis
+that the slope is equal to zero produces a very small <span class="math inline">\(p\)</span>-value and
+leads to the rejection of the null hypothesis.</p>
+<p>The length of the car and the size of the engine are both statistically
+significant in their relation to the response. However, which of the two
+explanatory variables produces a better fit?</p>
+<p>An answer to this question may be provided by the examination of values
+of R-squared, the ratio of the variance of the response explained by
+each of the explanatory variable. The R-squared for the size of the
+engine as an explanatory variable is 0.6574, which is approximately
+equal to 2/3. The value of R-squared for the length of the car as an
+explanatory variable is 0.308, less than 1/3. It follows that the size
+of the engine explains twice as much of the variability of the power of
+the engine than the size of car and is a better explanatory variable.</p>
 </div>
 <div id="exercises-9" class="section level2">
 <h2><span class="header-section-number">14.5</span> Exercises</h2>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-218" class="exercise"><strong>Exercise 14.1  </strong></span>Figure <a href="ChapRegression.html#fig:Regression8">14.7</a> presents 10 points and three lines. One of the lines is colored <em>red</em> and one of the points is marked as a <em>red triangle</em>. The points in the plot refer to the data frame in Table <span class="math display">\[tab:Regression\_2\]</span> and the three lines refer to the linear equations:</p>
+<p><span id="exr:unnamed-chunk-219" class="exercise"><strong>Exercise 14.1  </strong></span>Figure <a href="ChapRegression.html#fig:Regression8">14.7</a> presents 10 points and
+three lines. One of the lines is colored <em>red</em> and one of the points is
+marked as a <em>red triangle</em>. The points in the plot refer to the data
+frame in Table <span class="math display">\[tab:Regression\_2\]</span> and the three lines refer to the
+linear equations:</p>
 <ol style="list-style-type: decimal">
 <li><p><span class="math inline">\(y = 4\)</span></p></li>
 <li><p><span class="math inline">\(y = 5 - 2x\)</span></p></li>
 <li><p><span class="math inline">\(y = x\)</span></p></li>
 </ol>
-<p>You are asked to match the marked line to the appropriate linear equation and match the marked point to the appropriate observation:</p>
+<p>You are asked to match the marked line to the appropriate linear
+equation and match the marked point to the appropriate observation:</p>
 <ol style="list-style-type: decimal">
-<li><p>Which of the three equations, 1, 2 or 3, describes the line marked in <em>red</em>?</p></li>
-<li><p>The poind marked with a <em>red triangle</em> represents which of the observations. (Identify the observation number.)</p></li>
+<li><p>Which of the three equations, 1, 2 or 3, describes the line marked
+in <em>red</em>?</p></li>
+<li><p>The poind marked with a <em>red triangle</em> represents which of the
+observations. (Identify the observation number.)</p></li>
 </ol>
 <p><span class="math display">\[tab:Regression\_2\]</span></p>
 <table>
@@ -895,29 +1418,56 @@ FIGURE 14.7: Lines and Points
 </div>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-219" class="exercise"><strong>Exercise 14.2  </strong></span>Assume a regression model that describes the relation between the expectation of the response and the value of the explanatory variable in the form:</p>
-<p><span class="math display">\[E(Y_i) = 2.13 \cdot x_i - 3.60\;.\]</span></p>
+<p><span id="exr:unnamed-chunk-220" class="exercise"><strong>Exercise 14.2  </strong></span>Assume a regression model that describes the
+relation between the expectation of the response and the value of the
+explanatory variable in the form:</p>
+<p><span class="math display">\[\Expec(Y_i) = 2.13 \cdot x_i - 3.60\;.\]</span></p>
 <ol style="list-style-type: decimal">
-<li><p>What is the value of the intercept and what is the value of the slope in the linear equation that describes the model?</p></li>
-<li>Assume the <span class="math inline">\(x_1 = 5.5\)</span>, <span class="math inline">\(x_2 = 12.13\)</span>, <span class="math inline">\(x_3 = 4.2\)</span>, and <span class="math inline">\(x_4 = 6.7\)</span>. What is the expected value of the response of the 3rd observation?</li>
+<li><p>What is the value of the intercept and what is the value of the
+slope in the linear equation that describes the model?</p></li>
+<li>Assume the <span class="math inline">\(x_1 = 5.5\)</span>, <span class="math inline">\(x_2 = 12.13\)</span>, <span class="math inline">\(x_3 = 4.2\)</span>, and <span class="math inline">\(x_4 = 6.7\)</span>.
+What is the expected value of the response of the 3rd observation?</li>
 </ol>
 </div>
 
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-220" class="exercise"><strong>Exercise 14.3  </strong></span>The file “<code>aids.csv</code>” contains data on the number of diagnosed cases of Aids and the number of deaths associated with Aids among adults and adolescents in the United States between 1981 and 2002<a href="#fn80" class="footnoteRef" id="fnref80"><sup>80</sup></a>. The file can be found on the internet at <a href="http://pluto.huji.ac.il/~msby/StatThink/Datasets/aids.csv" class="uri">http://pluto.huji.ac.il/~msby/StatThink/Datasets/aids.csv</a>.</p>
-<p>The file contains 3 variables: The variable “<code>year</code>” that tells the relevant year, the variable “<code>diagnosed</code>” that reports the number of Aids cases that were diagnosed in each year, and the variable “<code>deaths</code>” that reports the number of Aids related deaths in each year. The following questions refer to the data in the file:</p>
+<p><span id="exr:unnamed-chunk-221" class="exercise"><strong>Exercise 14.3  </strong></span>The file “<code>aids.csv</code>” contains data on the number of
+diagnosed cases of Aids and the number of deaths associated with Aids
+among adults and adolescents in the United States between 1981 and
+2002<a href="#fn80" class="footnote-ref" id="fnref80"><sup>80</sup></a>. The file can be found on the internet at
+<a href="http://pluto.huji.ac.il/~msby/StatThink/Datasets/aids.csv" class="uri">http://pluto.huji.ac.il/~msby/StatThink/Datasets/aids.csv</a>.</p>
+<p>The file contains 3 variables: The variable “<code>year</code>” that tells the
+relevant year, the variable “<code>diagnosed</code>” that reports the number of
+Aids cases that were diagnosed in each year, and the variable “<code>deaths</code>”
+that reports the number of Aids related deaths in each year. The
+following questions refer to the data in the file:</p>
 <ol style="list-style-type: decimal">
-<li><p>Consider the variable “<code>deaths</code>” as response and the variable “<code>diagnosed</code>” as an explanatory variable. What is the slope of the regression line? Produce a point estimate and a confidence interval. Is it statistically significant (namely, significantly different than 0)?</p></li>
-<li><p>Plot the scatter plot that is produced by these two variables and add the regression line to the plot. Does the regression line provided a good description of the trend in the data?</p></li>
-<li><p>Consider the variable “<code>diagnosed</code>” as the response and the variable “<code>year</code>” as the explanatory variable. What is the slope of the regression line? Produce a point estimate and a confidence interval. Is the slope in this case statistically significant?</p></li>
-<li>Plot the scatter plot that is produced by the later pair of variables and add the regression line to the plot. Does the regression line provided a good description of the trend in the data?</li>
+<li><p>Consider the variable “<code>deaths</code>” as response and the variable
+“<code>diagnosed</code>” as an explanatory variable. What is the slope of the
+regression line? Produce a point estimate and a confidence interval.
+Is it statistically significant (namely, significantly different
+than 0)?</p></li>
+<li><p>Plot the scatter plot that is produced by these two variables and
+add the regression line to the plot. Does the regression line
+provided a good description of the trend in the data?</p></li>
+<li><p>Consider the variable “<code>diagnosed</code>” as the response and the variable
+“<code>year</code>” as the explanatory variable. What is the slope of the
+regression line? Produce a point estimate and a confidence interval.
+Is the slope in this case statistically significant?</p></li>
+<li>Plot the scatter plot that is produced by the later pair of
+variables and add the regression line to the plot. Does the
+regression line provided a good description of the trend in the
+data?</li>
 </ol>
 </div>
 
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-221" class="exercise"><strong>Exercise 14.4  </strong></span>Below are the percents of the U.S. labor force (excluding self-employed and unemployed) that are members of a labor union<a href="#fn81" class="footnoteRef" id="fnref81"><sup>81</sup></a>. We use this data in order to practice the computation of the regression coefficients.</p>
+<p><span id="exr:unnamed-chunk-222" class="exercise"><strong>Exercise 14.4  </strong></span>Below are the percents of the U.S. labor force
+(excluding self-employed and unemployed) that are members of a labor
+union<a href="#fn81" class="footnote-ref" id="fnref81"><sup>81</sup></a>. We use this data in order to practice the computation of the
+regression coefficients.</p>
 <p><span class="math display">\[tab:Regression\_4\]</span></p>
 <table>
 <caption>Percent of Union Members</caption>
@@ -959,27 +1509,51 @@ FIGURE 14.7: Lines and Points
 </tbody>
 </table>
 <ol style="list-style-type: decimal">
-<li><p>Produce the scatter plot of the data and add the regression line. Is the regression model reasonable for this data?</p></li>
-<li><p>Compute the sample averages and the sample standard deviations of both variables. Compute the covariance between the two variables.</p></li>
-<li>Using the summaries you have just computed, recompute the coefficients of the regression model.</li>
+<li><p>Produce the scatter plot of the data and add the regression line. Is
+the regression model reasonable for this data?</p></li>
+<li><p>Compute the sample averages and the sample standard deviations of
+both variables. Compute the covariance between the two variables.</p></li>
+<li>Using the summaries you have just computed, recompute the
+coefficients of the regression model.</li>
 </ol>
 </div>
 
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-222" class="exercise"><strong>Exercise 14.5  </strong></span>Assume a regression model was fit to some data that describes the relation between the explanatory variable <span class="math inline">\(x\)</span> and the response <span class="math inline">\(y\)</span>. Assume that the coefficients of the fitted model are <span class="math inline">\(a=2.5\)</span> and <span class="math inline">\(b=-1.13\)</span>, for the intercept and the slope, respectively. The first 4 observations in the data are <span class="math inline">\((x_1,y_1) = (5.5,3.22)\)</span>, <span class="math inline">\((x_2,y_2) = (12.13,-6.02)\)</span>, <span class="math inline">\((x_3,y_3) = (4.2,-8.3)\)</span>, and <span class="math inline">\((x_4,y_4) = (6.7,0.17)\)</span>.</p>
+<p><span id="exr:unnamed-chunk-223" class="exercise"><strong>Exercise 14.5  </strong></span>Assume a regression model was fit to some data that
+describes the relation between the explanatory variable <span class="math inline">\(x\)</span> and the
+response <span class="math inline">\(y\)</span>. Assume that the coefficients of the fitted model are
+<span class="math inline">\(a=2.5\)</span> and <span class="math inline">\(b=-1.13\)</span>, for the intercept and the slope, respectively.
+The first 4 observations in the data are <span class="math inline">\((x_1,y_1) = (5.5,3.22)\)</span>,
+<span class="math inline">\((x_2,y_2) = (12.13,-6.02)\)</span>, <span class="math inline">\((x_3,y_3) = (4.2,-8.3)\)</span>, and
+<span class="math inline">\((x_4,y_4) = (6.7,0.17)\)</span>.</p>
 <ol style="list-style-type: decimal">
-<li><p>What is the estimated expectation of the response for the 4th observation?</p></li>
-<li>What is the residual from the regression line for the 4th observation?</li>
+<li><p>What is the estimated expectation of the response for the 4th
+observation?</p></li>
+<li>What is the residual from the regression line for the 4th
+observation?</li>
 </ol>
 </div>
 
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-223" class="exercise"><strong>Exercise 14.6  </strong></span>In Chapter <a href="ChapTwoSamp.html#ChapTwoSamp">13</a> we analyzed an example that involved the difference between fuel consumption in highway and city driving conditions as the response<a href="#fn82" class="footnoteRef" id="fnref82"><sup>82</sup></a>. The explanatory variable was a factor that was produced by splitting the cars into two weight groups. In this exercise we would like to revisit this example. Here we use the weight of the car directly as an explanatory variable. We also consider the size of the engine as an alternative explanatory variable and compare between the two regression models.</p>
+<p><span id="exr:unnamed-chunk-224" class="exercise"><strong>Exercise 14.6  </strong></span>In Chapter <a href="ChapTwoSamp.html#ChapTwoSamp">13</a> we analyzed an example
+that involved the difference between fuel consumption in highway and
+city driving conditions as the response<a href="#fn82" class="footnote-ref" id="fnref82"><sup>82</sup></a>. The explanatory variable
+was a factor that was produced by splitting the cars into two weight
+groups. In this exercise we would like to revisit this example. Here we
+use the weight of the car directly as an explanatory variable. We also
+consider the size of the engine as an alternative explanatory variable
+and compare between the two regression models.</p>
 <ol style="list-style-type: decimal">
-<li><p>Fit the regression model that uses the variable “<code>curb.weight</code>” as an explanatory variable. Is the slope significantly different than 0? What fraction of the standard deviation of the response is explained by a regression model involving this variable?</p></li>
-<li><p>Fit the regression model that uses the variable “<code>engine.size</code>” as an explanatory variable. Is the slope significantly different than 0? What fraction of the standard deviation of the response is explained by a regression model involving this variable?</p></li>
+<li><p>Fit the regression model that uses the variable “<code>curb.weight</code>” as
+an explanatory variable. Is the slope significantly different than
+0? What fraction of the standard deviation of the response is
+explained by a regression model involving this variable?</p></li>
+<li><p>Fit the regression model that uses the variable “<code>engine.size</code>” as
+an explanatory variable. Is the slope significantly different than
+0? What fraction of the standard deviation of the response is
+explained by a regression model involving this variable?</p></li>
 <li>Which of the two models fits the data better?</li>
 </ol>
 </div>
@@ -991,48 +1565,82 @@ FIGURE 14.7: Lines and Points
 <h3>Glossary</h3>
 <dl>
 <dt>Regression:</dt>
-<dd><p>Relates different variables that are measured on the same sample. Regression models are used to describe the effect of one of the variables on the distribution of the other one. The former is called the explanatory variable and the later is called the response.</p>
+<dd><p>Relates different variables that are measured on the same sample.
+Regression models are used to describe the effect of one of the
+variables on the distribution of the other one. The former is called
+the explanatory variable and the later is called the response.</p>
 </dd>
 <dt>Linear Regression:</dt>
-<dd><p>The effect of a numeric explanatory variable on the distribution of a numeric response is described in terms of a linear trend.</p>
+<dd><p>The effect of a numeric explanatory variable on the distribution of
+a numeric response is described in terms of a linear trend.</p>
 </dd>
 <dt>Scatter Plot:</dt>
-<dd><p>A plot that presents the data in a pair of numeric variables. The axes represents the variables and each point represents an observation.</p>
+<dd><p>A plot that presents the data in a pair of numeric variables. The
+axes represents the variables and each point represents an
+observation.</p>
 </dd>
 <dt>Intercept:</dt>
-<dd><p>A coefficient of a linear equation. Equals the value of <span class="math inline">\(y\)</span> when the line crosses the <span class="math inline">\(y\)</span>-axis.</p>
+<dd><p>A coefficient of a linear equation. Equals the value of <span class="math inline">\(y\)</span> when the
+line crosses the <span class="math inline">\(y\)</span>-axis.</p>
 </dd>
 <dt>Slope:</dt>
-<dd><p>A coefficient of a linear equation. The change in the value of <span class="math inline">\(y\)</span> for each unit change in the value of <span class="math inline">\(x\)</span>. A positive slope corresponds to an increasing line and a negative slope corresponds to a decreasing line.</p>
+<dd><p>A coefficient of a linear equation. The change in the value of <span class="math inline">\(y\)</span>
+for each unit change in the value of <span class="math inline">\(x\)</span>. A positive slope
+corresponds to an increasing line and a negative slope corresponds
+to a decreasing line.</p>
 </dd>
 <dt>Covariance:</dt>
-<dd><p>A measures the joint variability of two numeric variables. It is equal to the sum of the product of the deviations from the mean, divided by the number of observations minus 1.</p>
+<dd><p>A measures the joint variability of two numeric variables. It is
+equal to the sum of the product of the deviations from the mean,
+divided by the number of observations minus 1.</p>
 </dd>
 <dt>Residuals from Regression:</dt>
-<dd><p>The residual differences between the values of the response for the observation and the estimated expectations of the response under the regression model (the predicted response).</p>
+<dd><p>The residual differences between the values of the response for the
+observation and the estimated expectations of the response under the
+regression model (the predicted response).</p>
 </dd>
 <dt>R-Square:</dt>
-<dd><p>is the difference between 1 and the ratio between the variance of the residuals from the regression and the variance of the response. Its value is between 0 and 1 and it represents the fraction of the variability of the response that is <em>explained</em> by the regression line.</p>
+<dd><p>is the difference between 1 and the ratio between the variance of
+the residuals from the regression and the variance of the response.
+Its value is between 0 and 1 and it represents the fraction of the
+variability of the response that is <em>explained</em> by the regression
+line.</p>
 </dd>
 </dl>
 </div>
 <div id="discuss-in-the-forum" class="section level3 unnumbered">
 <h3>Discuss in the Forum</h3>
-<p>The topic for discussion in the Forum of Chapter <a href="ChapNormal.html#ChapNormal">6</a> was mathematical models and how good they should fit reality. In this Forum we would like to return to the same topic subject, but consider it specifically in the context of statistical models.</p>
-<p>Some statisticians prefer complex models, models that try to fit the data as closely as one can. Others prefer a simple model. They claim that although simpler models are more remote from the data yet they are easier to interpret and thus provide more insight. What do you think? Which type of model is better to use?</p>
-<p>When formulating your answer to this question you may thing of a situation that involves inference based on data conducted by yourself for the sack of others. What would be the best way to report your findings and explain them to the others?</p>
+<p>The topic for discussion in the Forum of Chapter <a href="ChapNormal.html#ChapNormal">6</a> was
+mathematical models and how good they should fit reality. In this Forum
+we would like to return to the same topic subject, but consider it
+specifically in the context of statistical models.</p>
+<p>Some statisticians prefer complex models, models that try to fit the
+data as closely as one can. Others prefer a simple model. They claim
+that although simpler models are more remote from the data yet they are
+easier to interpret and thus provide more insight. What do you think?
+Which type of model is better to use?</p>
+<p>When formulating your answer to this question you may thing of a
+situation that involves inference based on data conducted by yourself
+for the sack of others. What would be the best way to report your
+findings and explain them to the others?</p>
 </div>
 <div id="formulas" class="section level3 unnumbered">
 <h3>Formulas:</h3>
 <ul>
 <li><p>A Linear Equation: <span class="math inline">\(y = a + b \cdot x\)</span>.</p></li>
-<li><p>Covariance: <span class="math inline">\(\frac{\mbox{Sum of products of the deviations}}{\mbox{Number of values in the sample}-1} = \frac{\sum_{i=1}^n (y_i-\bar y)(x_i - \bar x)}{n-1}\)</span>.</p></li>
+<li><p>Covariance:
+<span class="math inline">\(\frac{\mbox{Sum of products of the deviations}}{\mbox{Number of values in the sample}-1} = \frac{\sum_{i=1}^n (y_i-\bar y)(x_i - \bar x)}{n-1}\)</span>.</p></li>
 <li><p>Regression Slope: <span class="math inline">\(b = \mbox{Covariance}(x,y)/\mbox{Var}(x)\)</span>.</p></li>
 <li><p>Regression Intercept: <span class="math inline">\(a = \bar y - b\bar x\)</span>.</p></li>
-<li><p>The Regression Model: <span class="math inline">\(E(Y_i) = a + b \cdot x_i\)</span>, <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> population parameters.</p></li>
+<li><p>The Regression Model: <span class="math inline">\(\Expec(Y_i) = a + b \cdot x_i\)</span>, <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>
+population parameters.</p></li>
 <li><p>Residuals: <span class="math inline">\(y_i - (a + bx_i)\)</span>, <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> estimated from the data.</p></li>
-<li><p>Estimate of Residual Variance: <span class="math inline">\(\sum_{i=1}^n(y_i - (a + bx_i))^2/(n-2)\)</span>, <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> estimated from the data.</p></li>
-<li><p>R-Squared: <span class="math inline">\(1 - \sum_{i=1}^n(y_i - (a + bx_i))^2/\sum_{i=1}^n(y_i - \bar y)^2\)</span>, <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> estimated from the data.</p></li>
+<li><p>Estimate of Residual Variance:
+<span class="math inline">\(\sum_{i=1}^n(y_i - (a + bx_i))^2/(n-2)\)</span>, <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> estimated from
+the data.</p></li>
+<li><p>R-Squared:
+<span class="math inline">\(1 - \sum_{i=1}^n(y_i - (a + bx_i))^2/\sum_{i=1}^n(y_i - \bar y)^2\)</span>,
+<span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> estimated from the data.</p></li>
 </ul>
 
 </div>
@@ -1041,19 +1649,56 @@ FIGURE 14.7: Lines and Points
 <div class="footnotes">
 <hr />
 <ol start="70">
-<li id="fn70"><p>Run the expression “<code>mean(y)</code>” to obtain <span class="math inline">\(\bar y = 8.97\)</span> as the value of the sample average.<a href="ChapRegression.html#fnref70">↩</a></p></li>
-<li id="fn71"><p>The actual plot in Figure <span class="math display">\[fig:Regression\_3\]</span> is produced by a slightly modified code. First an empty plot is produced with the expression “<code>plot(c(0,5),c(5,15),type=n,xlab=x,ylab=y)</code>” and then the points are added with the expression “<code>points(y~x)</code>”. The lines are added as in the text. Finally, a legend is added with the function “<code>legend</code>”.<a href="ChapRegression.html#fnref71">↩</a></p></li>
-<li id="fn72"><p>According to the model of linear regression, the only effect of the explanatory variable on the distribution of the response is via the expectation. If such an effect, according to the null hypothesis, is also excluded then the so called explanatory variable is not effecting at all the distribution of the response.<a href="ChapRegression.html#fnref72">↩</a></p></li>
-<li id="fn73"><p>The estimator of the slope is obtained via the application of the formula for the computation of the slope to the sample: <span class="math inline">\(\frac{1}{n-1}\sum_{i=1}^n (Y_i-\bar Y)(X_i - \bar X)/\frac{1}{n-1}\sum_{i=1}^n (X_i - \bar X)^2\)</span>.<a href="ChapRegression.html#fnref73">↩</a></p></li>
-<li id="fn74"><p>Our computation involves rounding up errors, hence the small discrepancy between the value we computed and the value in the report.<a href="ChapRegression.html#fnref74">↩</a></p></li>
-<li id="fn75"><p>Notice that the “<code>horsepower</code>” measurement is missing for two observation. These observations are deleted for the analysis, leaving a total of <span class="math inline">\(n=203\)</span> observations. The number of degrees of freedom is <span class="math inline">\(n-2 = 203-2=201\)</span>.<a href="ChapRegression.html#fnref75">↩</a></p></li>
-<li id="fn76"><p>The warning message that was made in the context of testing hypotheses on the intercept should be applied also to the construction of confidence intervals. If the value 0 is not in the range of the explanatory variable then one should be careful when interpreting a confidence interval for the intercept.<a href="ChapRegression.html#fnref76">↩</a></p></li>
-<li id="fn77"><p>The estimated expectation of the response is also called <em>the predicted response</em>.<a href="ChapRegression.html#fnref77">↩</a></p></li>
-<li id="fn78"><p>The discrepancy between the value that we computed and the value computed by the function results from rounding up errors. We used the vales of the coefficients that appear in the report. These values are rounded up. The function “<code>residuals</code>” uses the coefficients without rounding.<a href="ChapRegression.html#fnref78">↩</a></p></li>
-<li id="fn79"><p>In more complex applications of linear regression, applications that are not considered in this book, the test in the last line of the report and the tests of coefficients do not coincide.<a href="ChapRegression.html#fnref79">↩</a></p></li>
-<li id="fn80"><p>The data is taken from <a href="http://cnx.org/content/m17088/latest/">Table 1</a> in section “Practice in Linear Regression” of the online Textbook <a href="http://cnx.org/content/col10522/1.38">“Collaborative Statistics” (Connexions. March 22, 2010. http://cnx.org/content/col10522/1.38/)</a> by Barbara Illowsky and Susan Dean.<a href="ChapRegression.html#fnref80">↩</a></p></li>
-<li id="fn81"><p>Taken from <a href="http://cnx.org/content/m17085/latest/">Homework</a> section in the chapter on linear regression of the online Textbook <a href="http://cnx.org/content/col10522/1.38">“Collaborative Statistics” (Connexions. March 22, 2010. http://cnx.org/content/col10522/1.38/)</a> by Barbara Illowsky and Susan Dean.<a href="ChapRegression.html#fnref81">↩</a></p></li>
-<li id="fn82"><p>The response was computed using the expression “<code>cars$highway.mpg - cars$city.mpg</code>”<a href="ChapRegression.html#fnref82">↩</a></p></li>
+<li id="fn70"><p>Run the expression “<code>mean(y)</code>” to obtain <span class="math inline">\(\bar y = 8.97\)</span> as the
+value of the sample average.<a href="ChapRegression.html#fnref70" class="footnote-back">↩</a></p></li>
+<li id="fn71"><p>The actual plot in Figure <span class="math display">\[fig:Regression\_3\]</span> is produced by a
+slightly modified code. First an empty plot is produced with the
+expression “<code>plot(c(0,5),c(5,15),type=n,xlab=x,ylab=y)</code>” and then
+the points are added with the expression “<code>points(y~x)</code>”. The lines
+are added as in the text. Finally, a legend is added with the
+function “<code>legend</code>”.<a href="ChapRegression.html#fnref71" class="footnote-back">↩</a></p></li>
+<li id="fn72"><p>According to the model of linear regression, the only effect of
+the explanatory variable on the distribution of the response is via
+the expectation. If such an effect, according to the null
+hypothesis, is also excluded then the so called explanatory variable
+is not effecting at all the distribution of the response.<a href="ChapRegression.html#fnref72" class="footnote-back">↩</a></p></li>
+<li id="fn73"><p>The estimator of the slope is obtained via the application of the
+formula for the computation of the slope to the sample:
+<span class="math inline">\(\frac{1}{n-1}\sum_{i=1}^n (Y_i-\bar Y)(X_i - \bar X)/\frac{1}{n-1}\sum_{i=1}^n (X_i - \bar X)^2\)</span>.<a href="ChapRegression.html#fnref73" class="footnote-back">↩</a></p></li>
+<li id="fn74"><p>Our computation involves rounding up errors, hence the small
+discrepancy between the value we computed and the value in the
+report.<a href="ChapRegression.html#fnref74" class="footnote-back">↩</a></p></li>
+<li id="fn75"><p>Notice that the “<code>horsepower</code>” measurement is missing for two
+observation. These observations are deleted for the analysis,
+leaving a total of <span class="math inline">\(n=203\)</span> observations. The number of degrees of
+freedom is <span class="math inline">\(n-2 = 203-2=201\)</span>.<a href="ChapRegression.html#fnref75" class="footnote-back">↩</a></p></li>
+<li id="fn76"><p>The warning message that was made in the context of testing
+hypotheses on the intercept should be applied also to the
+construction of confidence intervals. If the value 0 is not in the
+range of the explanatory variable then one should be careful when
+interpreting a confidence interval for the intercept.<a href="ChapRegression.html#fnref76" class="footnote-back">↩</a></p></li>
+<li id="fn77"><p>The estimated expectation of the response is also called <em>the
+predicted response</em>.<a href="ChapRegression.html#fnref77" class="footnote-back">↩</a></p></li>
+<li id="fn78"><p>The discrepancy between the value that we computed and the value
+computed by the function results from rounding up errors. We used
+the vales of the coefficients that appear in the report. These
+values are rounded up. The function “<code>residuals</code>” uses the
+coefficients without rounding.<a href="ChapRegression.html#fnref78" class="footnote-back">↩</a></p></li>
+<li id="fn79"><p>In more complex applications of linear regression, applications
+that are not considered in this book, the test in the last line of
+the report and the tests of coefficients do not coincide.<a href="ChapRegression.html#fnref79" class="footnote-back">↩</a></p></li>
+<li id="fn80"><p>The data is taken from <a href="http://cnx.org/content/m17088/latest/">Table 1</a> in section “Practice
+in Linear Regression” of the online Textbook <a href="http://cnx.org/content/col10522/1.38">“Collaborative
+Statistics” (Connexions. March 22, 2010.
+http://cnx.org/content/col10522/1.38/)</a>
+by Barbara Illowsky and Susan Dean.<a href="ChapRegression.html#fnref80" class="footnote-back">↩</a></p></li>
+<li id="fn81"><p>Taken from <a href="http://cnx.org/content/m17085/latest/">Homework</a>
+section in the chapter on linear regression of the online Textbook
+<a href="http://cnx.org/content/col10522/1.38">“Collaborative Statistics” (Connexions. March 22, 2010.
+http://cnx.org/content/col10522/1.38/)</a>
+by Barbara Illowsky and Susan Dean.<a href="ChapRegression.html#fnref81" class="footnote-back">↩</a></p></li>
+<li id="fn82"><p>The response was computed using the expression
+“<code>cars$highway.mpg - cars$city.mpg</code>”<a href="ChapRegression.html#fnref82" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>
@@ -1080,17 +1725,26 @@ gitbook.start({
 "facebook": false,
 "twitter": true,
 "google": false,
+"linkedin": false,
 "weibo": false,
-"instapper": false,
+"instapaper": false,
 "vk": false,
-"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
 "theme": "white",
 "family": "sans",
 "size": 2
 },
-"download": ["statthink.pdf", "thinkstat.epub", "stathink_datasets.zip"],
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["statthink.pdf"],
 "toc": {
 "collapse": "none"
 }
@@ -1103,8 +1757,8 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    var src = "";
-    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(src))
       src = src.replace(/^https?:/, '');
     script.src = src;

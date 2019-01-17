@@ -5,11 +5,11 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Introduction to Statistical Thinking</title>
-  <meta name="description" content="Introduction to Statistical Thinking">
-  <meta name="generator" content="bookdown 0.5.10 and GitBook 2.6.7">
+  <title>Chapter 2 Sampling and Data Structures | Introduction to Statistical Thinking</title>
+  <meta name="description" content="Chapter 2 Sampling and Data Structures | Introduction to Statistical Thinking">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="Introduction to Statistical Thinking" />
+  <meta property="og:title" content="Chapter 2 Sampling and Data Structures | Introduction to Statistical Thinking" />
   <meta property="og:type" content="book" />
   
   
@@ -17,7 +17,7 @@
   <meta name="github-repo" content="eleuven/statthink" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Introduction to Statistical Thinking" />
+  <meta name="twitter:title" content="Chapter 2 Sampling and Data Structures | Introduction to Statistical Thinking" />
   
   
   
@@ -25,7 +25,7 @@
 <meta name="author" content="Benjamin Yakir">
 
 
-<meta name="date" content="2017-11-26">
+<meta name="date" content="2019-01-16">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -36,6 +36,7 @@
 <link rel="next" href="ChapDescriptiveStat.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
@@ -50,41 +51,69 @@
 
 
 <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; position: absolute; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; }
+pre.numberSource a.sourceLine:empty
+  { position: absolute; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 <link rel="stylesheet" href="css/style.css" type="text/css" />
@@ -248,9 +277,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="9.1" data-path="ChapInference.html"><a href="ChapInference.html#student-learning-objectives-3"><i class="fa fa-check"></i><b>9.1</b> Student Learning Objectives</a></li>
 <li class="chapter" data-level="9.2" data-path="ChapInference.html"><a href="ChapInference.html#key-terms-1"><i class="fa fa-check"></i><b>9.2</b> Key Terms</a></li>
 <li class="chapter" data-level="9.3" data-path="ChapInference.html"><a href="ChapInference.html#the-cars-data-set"><i class="fa fa-check"></i><b>9.3</b> The Cars Data Set</a></li>
-<li class="chapter" data-level="9.4" data-path="ChapSampDist.html"><a href="ChapSampDist.html#the-sampling-distribution"><i class="fa fa-check"></i><b>9.4</b> The Sampling Distribution</a><ul>
+<li class="chapter" data-level="9.4" data-path="ChapInference.html"><a href="ChapInference.html#the-sampling-distribution-1"><i class="fa fa-check"></i><b>9.4</b> The Sampling Distribution</a><ul>
 <li class="chapter" data-level="9.4.1" data-path="ChapInference.html"><a href="ChapInference.html#statistics-1"><i class="fa fa-check"></i><b>9.4.1</b> Statistics</a></li>
-<li class="chapter" data-level="9.4.2" data-path="ChapInference.html"><a href="ChapInference.html#the-sampling-distribution-1"><i class="fa fa-check"></i><b>9.4.2</b> The Sampling Distribution</a></li>
+<li class="chapter" data-level="9.4.2" data-path="ChapInference.html"><a href="ChapInference.html#the-sampling-distribution-2"><i class="fa fa-check"></i><b>9.4.2</b> The Sampling Distribution</a></li>
 <li class="chapter" data-level="9.4.3" data-path="ChapInference.html"><a href="ChapInference.html#theoretical-distributions-of-observations"><i class="fa fa-check"></i><b>9.4.3</b> Theoretical Distributions of Observations</a></li>
 <li class="chapter" data-level="9.4.4" data-path="ChapInference.html"><a href="ChapInference.html#sampling-distribution-of-statistics"><i class="fa fa-check"></i><b>9.4.4</b> Sampling Distribution of Statistics</a></li>
 <li class="chapter" data-level="9.4.5" data-path="ChapInference.html"><a href="ChapInference.html#the-normal-approximation"><i class="fa fa-check"></i><b>9.4.5</b> The Normal Approximation</a></li>
@@ -367,7 +396,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li class="chapter" data-level="16.4" data-path="ChapCaseStudies.html"><a href="ChapCaseStudies.html#summary-13"><i class="fa fa-check"></i><b>16.4</b> Summary</a><ul>
 <li class="chapter" data-level="16.4.1" data-path="ChapCaseStudies.html"><a href="ChapCaseStudies.html#concluding-remarks"><i class="fa fa-check"></i><b>16.4.1</b> Concluding Remarks</a></li>
-<li class="chapter" data-level="16.4.2" data-path="ChapProbability.html"><a href="ChapProbability.html#discussion-in-the-forum"><i class="fa fa-check"></i><b>16.4.2</b> Discussion in the Forum</a></li>
+<li class="chapter" data-level="16.4.2" data-path="ChapCaseStudies.html"><a href="ChapCaseStudies.html#discussion-in-the-forum-1"><i class="fa fa-check"></i><b>16.4.2</b> Discussion in the Forum</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html"><i class="fa fa-check"></i>Exercise Solutions</a><ul>
@@ -459,7 +488,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h1><span class="header-section-number">Chapter 2</span> Sampling and Data Structures</h1>
 <div id="student-learning-objectives-1" class="section level2">
 <h2><span class="header-section-number">2.1</span> Student Learning Objectives</h2>
-<p>In this chapter we deal with issues associated with the data that is obtained from a sample. The variability associated with this data is emphasized and critical thinking about validity of the data encouraged. A method for the introduction of data from an external source into <code>R</code> is proposed and the data types used by <code>R</code> for storage are described. By the end of this chapter, the student should be able to:</p>
+<p>In this chapter we deal with issues associated with the data that is
+obtained from a sample. The variability associated with this data is
+emphasized and critical thinking about validity of the data encouraged.
+A method for the introduction of data from an external source into <code>R</code>
+is proposed and the data types used by <code>R</code> for storage are described. By
+the end of this chapter, the student should be able to:</p>
 <ul>
 <li>Recognize potential difficulties with sampled data.</li>
 <li>Read an external data file into <code>R</code>.</li>
@@ -468,33 +502,84 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <div id="the-sampled-data" class="section level2">
 <h2><span class="header-section-number">2.2</span> The Sampled Data</h2>
-<p>The aim in statistics is to learn the characteristics of a population on the basis of a sample selected from the population. An essential part of this analysis involves consideration of variation in the data.</p>
+<p>The aim in statistics is to learn the characteristics of a population on
+the basis of a sample selected from the population. An essential part of
+this analysis involves consideration of variation in the data.</p>
 <div id="variation-in-data" class="section level3">
 <h3><span class="header-section-number">2.2.1</span> Variation in Data</h3>
-<p>Variation is given a central role in statistics. To some extent the assessment of variation and the quantification of its contribution to uncertainties in making inference is the statistician’s main concern.</p>
-<p>Variation is present in any set of data. For example, 16-ounce cans of beverage may contain more or less than 16 ounces of liquid. In one study, eight 16 ounce cans were measured and produced the following amount (in ounces) of beverage:</p>
-<p><span class="math display">\[15.8,16.1,15.2,14.8,15.8,15.9,16.0,15.5\]</span> Measurements of the amount of beverage in a 16-ounce may vary because the conditions of measurement varied or because the exact amount, 16 ounces of liquid, was not put into the cans. Manufacturers regularly run tests to determine if the amount of beverage in a 16-ounce can falls within the desired range.</p>
-<p>Be aware that if an investigator collects data, the data may vary somewhat from the data someone else is taking for the same purpose. This is completely natural. However, if two investigators or more, are taking data from the same source and get very different results, it is time for them to reevaluate their data-collection methods and data recording accuracy.</p>
+<p>Variation is given a central role in statistics. To some extent the
+assessment of variation and the quantification of its contribution to
+uncertainties in making inference is the statistician’s main concern.</p>
+<p>Variation is present in any set of data. For example, 16-ounce cans of
+beverage may contain more or less than 16 ounces of liquid. In one
+study, eight 16 ounce cans were measured and produced the following
+amount (in ounces) of beverage:</p>
+<p><span class="math display">\[15.8,16.1,15.2,14.8,15.8,15.9,16.0,15.5\]</span>
+Measurements of the amount of beverage in a 16-ounce may vary because
+the conditions of measurement varied or because the exact amount, 16
+ounces of liquid, was not put into the cans. Manufacturers regularly run
+tests to determine if the amount of beverage in a 16-ounce can falls
+within the desired range.</p>
+<p>Be aware that if an investigator collects data, the data may vary
+somewhat from the data someone else is taking for the same purpose. This
+is completely natural. However, if two investigators or more, are taking
+data from the same source and get very different results, it is time for
+them to reevaluate their data-collection methods and data recording
+accuracy.</p>
 </div>
 <div id="variation-in-samples" class="section level3">
 <h3><span class="header-section-number">2.2.2</span> Variation in Samples</h3>
-<p>Two or more samples from the same population, all having the same characteristics as the population, may nonetheless be different from each other. Suppose Doreen and Jung both decide to study the average amount of time students sleep each night and use all students at their college as the population. Doreen may decide to sample randomly a given number of students from the entire body of collage students. Jung, on the other hand, may decide to sample randomly a given number of classes and survey all students in the selected classes. Doreen’s method is called <em>random sampling</em> whereas Jung’s method is called <em>cluster sampling</em>. Doreen’s sample will be different from Jung’s sample even though both samples have the characteristics of the population. Even if Doreen and Jung used the same sampling method, in all likelihood their samples would be different. Neither would be wrong, however.</p>
-<p>If Doreen and Jung took larger samples (i.e. the number of data values is increased), their sample results (say, the average amount of time a student sleeps) would be closer to the actual population average. But still, their samples would be, most probably, different from each other.</p>
-<p>The size of a sample (often called the number of observations) is important. The examples you have seen in this book so far have been small. Samples of only a few hundred observations, or even smaller, are sufficient for many purposes. In polling, samples that are from 1200 to 1500 observations are considered large enough and good enough if the survey is random and is well done. The theory of statistical inference, that is the subject matter of the second part of this book, provides justification for these claims.</p>
+<p>Two or more samples from the same population, all having the same
+characteristics as the population, may nonetheless be different from
+each other. Suppose Doreen and Jung both decide to study the average
+amount of time students sleep each night and use all students at their
+college as the population. Doreen may decide to sample randomly a given
+number of students from the entire body of collage students. Jung, on
+the other hand, may decide to sample randomly a given number of classes
+and survey all students in the selected classes. Doreen’s method is
+called <em>random sampling</em> whereas Jung’s method is called <em>cluster
+sampling</em>. Doreen’s sample will be different from Jung’s sample even
+though both samples have the characteristics of the population. Even if
+Doreen and Jung used the same sampling method, in all likelihood their
+samples would be different. Neither would be wrong, however.</p>
+<p>If Doreen and Jung took larger samples (i.e. the number of data values
+is increased), their sample results (say, the average amount of time a
+student sleeps) would be closer to the actual population average. But
+still, their samples would be, most probably, different from each other.</p>
+<p>The size of a sample (often called the number of observations) is
+important. The examples you have seen in this book so far have been
+small. Samples of only a few hundred observations, or even smaller, are
+sufficient for many purposes. In polling, samples that are from 1200 to
+1500 observations are considered large enough and good enough if the
+survey is random and is well done. The theory of statistical inference,
+that is the subject matter of the second part of this book, provides
+justification for these claims.</p>
 </div>
 <div id="frequency" class="section level3">
 <h3><span class="header-section-number">2.2.3</span> Frequency</h3>
-<p>The primary way of summarizing the variability of data is via the frequency distribution. Consider an example. Twenty students were asked how many hours they worked per day. Their responses, in hours, are listed below:</p>
-<p><span class="math display">\[5,\; 6,\; 3,\; 3,\; 2,\; 4,\; 7,\; 5,\; 2,\; 3,\; 5,\; 6,\; 5,\; 4,\; 4,\; 3,\; 5,\; 2,\; 5,\; 3\]</span> Let us create an <code>R</code> object by the name “<code>work.hours</code>” that contains these data:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">work.hours &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">7</span>,<span class="dv">5</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">5</span>,<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">3</span>)</code></pre></div>
-<p>Next, let us create a table that summarizes the different values of working hours and the frequency in which these values appear in the data:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">table</span>(work.hours)</code></pre></div>
+<p>The primary way of summarizing the variability of data is via the
+frequency distribution. Consider an example. Twenty students were asked
+how many hours they worked per day. Their responses, in hours, are
+listed below:</p>
+<p><span class="math display">\[5,\; 6,\; 3,\; 3,\; 2,\; 4,\; 7,\; 5,\; 2,\; 3,\; 5,\; 6,\; 5,\; 4,\; 4,\; 3,\; 5,\; 2,\; 5,\; 3\]</span>
+Let us create an <code>R</code> object by the name “<code>work.hours</code>” that contains
+these data:</p>
+<pre class="sourceCode r"><code class="sourceCode r">work.hours &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">7</span>,<span class="dv">5</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">5</span>,<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">3</span>)</code></pre>
+<p>Next, let us create a table that summarizes the different values of
+working hours and the frequency in which these values appear in the
+data:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">table</span>(work.hours)</code></pre>
 <pre><code>## work.hours
 ## 2 3 4 5 6 7 
 ## 3 5 3 6 2 1</code></pre>
-<p>Recall that the function “<code>table</code>” takes as input a sequence of data and produces as output the frequencies of the different values.</p>
-<p>We may have a clearer understanding of the meaning of the output of the function “<code>table</code>” if we presented outcome as a frequency listing the different data values in ascending order and their frequencies. For that end we may apply the function “<code>data.frame</code>” to the output of the “<code>table</code>” function and obtain:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data.frame</span>(<span class="kw">table</span>(work.hours))</code></pre></div>
+<p>Recall that the function “<code>table</code>” takes as input a sequence of data and
+produces as output the frequencies of the different values.</p>
+<p>We may have a clearer understanding of the meaning of the output of the
+function “<code>table</code>” if we presented outcome as a frequency listing the
+different data values in ascending order and their frequencies. For that
+end we may apply the function “<code>data.frame</code>” to the output of the
+“<code>table</code>” function and obtain:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data.frame</span>(<span class="kw">table</span>(work.hours))</code></pre>
 <pre><code>##   work.hours Freq
 ## 1          2    3
 ## 2          3    5
@@ -502,92 +587,208 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 ## 4          5    6
 ## 5          6    2
 ## 6          7    1</code></pre>
-<p>A frequency is the number of times a given datum occurs in a data set. According to the table above, there are three students who work 2 hours, five students who work 3 hours, etc. The total of the frequency column, 20, represents the total number of students included in the sample.</p>
-<p>The function “<code>data.frame</code>” transforms its input into a data frame, which is the standard way of storing statistical data. We will introduce data frames in more detail in Section <a href="ChapData.html#readingdata">2.3</a> below.</p>
-<p>A relative frequency is the fraction of times a value occurs. To find the relative frequencies, divide each frequency by the total number of students in the sample – 20 in this case. Relative frequencies can be written as fractions, percents, or decimals.</p>
+<p>A frequency is the number of times a given datum occurs in a data set.
+According to the table above, there are three students who work 2 hours,
+five students who work 3 hours, etc. The total of the frequency column,
+20, represents the total number of students included in the sample.</p>
+<p>The function “<code>data.frame</code>” transforms its input into a data frame,
+which is the standard way of storing statistical data. We will introduce
+data frames in more detail in Section <a href="ChapData.html#readingdata">2.3</a> below.</p>
+<p>A relative frequency is the fraction of times a value occurs. To find
+the relative frequencies, divide each frequency by the total number of
+students in the sample – 20 in this case. Relative frequencies can be
+written as fractions, percents, or decimals.</p>
 <p>As an illustration let us compute the relative frequencies in our data:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">freq &lt;-<span class="st"> </span><span class="kw">table</span>(work.hours)
-freq</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">freq &lt;-<span class="st"> </span><span class="kw">table</span>(work.hours)
+freq</code></pre>
 <pre><code>## work.hours
 ## 2 3 4 5 6 7 
 ## 3 5 3 6 2 1</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sum</span>(freq)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sum</span>(freq)</code></pre>
 <pre><code>## [1] 20</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">freq<span class="op">/</span><span class="kw">sum</span>(freq)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">freq<span class="op">/</span><span class="kw">sum</span>(freq)</code></pre>
 <pre><code>## work.hours
 ##    2    3    4    5    6    7 
 ## 0.15 0.25 0.15 0.30 0.10 0.05</code></pre>
-<p>We stored the frequencies in an object called “<code>freq</code>”. The content of the object are the frequencies 3, 5, 3, 6, 2 and 1. The function “<code>sum</code>” sums the components of its input. The sum of the frequencies is the sample size , the total number of students that responded to the survey, which is 20. Hence, when we apply the function “<code>sum</code>” to the object “<code>freq</code>” we get 20 as an output.</p>
-<p>The outcome of dividing an object by a number is a division of each element in the object by the given number. Therefore, when we divide “<code>freq</code>” by “<code>sum(freq)</code>” (the number 20) we get a sequence of relative frequencies. The first entry to this sequence is <span class="math inline">\(3/20 = 0.15\)</span>, the second entry is <span class="math inline">\(5/20 = 0.25\)</span>, and the last entry is <span class="math inline">\(1/20 = 0.05\)</span>. The sum of the relative frequencies should always be equal to 1:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sum</span>(freq<span class="op">/</span><span class="kw">sum</span>(freq))</code></pre></div>
+<p>We stored the frequencies in an object called “<code>freq</code>”. The content of
+the object are the frequencies 3, 5, 3, 6, 2 and 1. The function “<code>sum</code>”
+sums the components of its input. The sum of the frequencies is the
+sample size , the total number of students that responded to the survey,
+which is 20. Hence, when we apply the function “<code>sum</code>” to the object
+“<code>freq</code>” we get 20 as an output.</p>
+<p>The outcome of dividing an object by a number is a division of each
+element in the object by the given number. Therefore, when we divide
+“<code>freq</code>” by “<code>sum(freq)</code>” (the number 20) we get a sequence of relative
+frequencies. The first entry to this sequence is <span class="math inline">\(3/20 = 0.15\)</span>, the
+second entry is <span class="math inline">\(5/20 = 0.25\)</span>, and the last entry is <span class="math inline">\(1/20 = 0.05\)</span>. The
+sum of the relative frequencies should always be equal to 1:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sum</span>(freq<span class="op">/</span><span class="kw">sum</span>(freq))</code></pre>
 <pre><code>## [1] 1</code></pre>
-<p>The cumulative relative frequency is the accumulation of previous relative frequencies. To find the cumulative relative frequencies, add all the previous relative frequencies to the relative frequency of the current value. Alternatively, we may apply the function “<code>cumsum</code>” to the sequence of relative frequencies:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cumsum</span>(freq<span class="op">/</span><span class="kw">sum</span>(freq))</code></pre></div>
+<p>The cumulative relative frequency is the accumulation of previous
+relative frequencies. To find the cumulative relative frequencies, add
+all the previous relative frequencies to the relative frequency of the
+current value. Alternatively, we may apply the function “<code>cumsum</code>” to
+the sequence of relative frequencies:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cumsum</span>(freq<span class="op">/</span><span class="kw">sum</span>(freq))</code></pre>
 <pre><code>##    2    3    4    5    6    7 
 ## 0.15 0.40 0.55 0.85 0.95 1.00</code></pre>
-<p>Observe that the cumulative relative frequency of the smallest value 2 is the frequency of that value (0.15). The cumulative relative frequency of the second value 3 is the sum of the relative frequency of the smaller value (0.15) and the relative frequency of the current value (0.25), which produces a total of <span class="math inline">\(0.15 + 0.25 = 0.40\)</span>. Likewise, for the third value 4 we get a cumulative relative frequency of <span class="math inline">\(0.15 + 0.25 + 0.15 = 0.55\)</span>. The last entry of the cumulative relative frequency column is one, indicating that one hundred percent of the data has been accumulated.</p>
-<p>The computation of the cumulative relative frequency was carried out with the aid of the function “<code>cumsum</code>”. This function takes as an input argument a numerical sequence and produces as output a numerical sequence of the same length with the cumulative sums of the components of the input sequence.</p>
+<p>Observe that the cumulative relative frequency of the smallest value 2
+is the frequency of that value (0.15). The cumulative relative frequency
+of the second value 3 is the sum of the relative frequency of the
+smaller value (0.15) and the relative frequency of the current value
+(0.25), which produces a total of <span class="math inline">\(0.15 + 0.25 = 0.40\)</span>. Likewise, for
+the third value 4 we get a cumulative relative frequency of
+<span class="math inline">\(0.15 + 0.25 + 0.15 = 0.55\)</span>. The last entry of the cumulative relative
+frequency column is one, indicating that one hundred percent of the data
+has been accumulated.</p>
+<p>The computation of the cumulative relative frequency was carried out
+with the aid of the function “<code>cumsum</code>”. This function takes as an input
+argument a numerical sequence and produces as output a numerical
+sequence of the same length with the cumulative sums of the components
+of the input sequence.</p>
 </div>
 <div id="critical-evaluation" class="section level3">
 <h3><span class="header-section-number">2.2.4</span> Critical Evaluation</h3>
-<p>Inappropriate methods of sampling and data collection may produce samples that do not represent the target population. A naïve application of statistical analysis to such data may produce misleading conclusions.</p>
-<p>Consequently, it is important to evaluate critically the statistical analyses we encounter before accepting the conclusions that are obtained as a result of these analyses. Common problems that occurs in data that one should be aware of include:</p>
+<p>Inappropriate methods of sampling and data collection may produce
+samples that do not represent the target population. A naïve application
+of statistical analysis to such data may produce misleading conclusions.</p>
+<p>Consequently, it is important to evaluate critically the statistical
+analyses we encounter before accepting the conclusions that are obtained
+as a result of these analyses. Common problems that occurs in data that
+one should be aware of include:</p>
 <dl>
 <dt>Problems with Samples:</dt>
-<dd><p>A sample should be representative of the population. A sample that is not representative of the population is biased. Biased samples may produce results that are inaccurate and not valid.</p>
+<dd><p>A sample should be representative of the population. A sample that
+is not representative of the population is biased. Biased samples
+may produce results that are inaccurate and not valid.</p>
 </dd>
 <dt>Data Quality:</dt>
-<dd><p>Avoidable errors may be introduced to the data via inaccurate handling of forms, mistakes in the input of data, etc. Data should be cleaned from such errors as much as possible.</p>
+<dd><p>Avoidable errors may be introduced to the data via inaccurate
+handling of forms, mistakes in the input of data, etc. Data should
+be cleaned from such errors as much as possible.</p>
 </dd>
 <dt>Self-Selected Samples:</dt>
-<dd><p>Responses only by people who choose to respond, such as call-in surveys, that are often biased.</p>
+<dd><p>Responses only by people who choose to respond, such as call-in
+surveys, that are often biased.</p>
 </dd>
 <dt>Sample Size Issues:</dt>
-<dd><p>Samples that are too small may be unreliable. Larger samples, when possible, are better. In some situations, small samples are unavoidable and can still be used to draw conclusions. Examples: Crash testing cars, medical testing for rare conditions.</p>
+<dd><p>Samples that are too small may be unreliable. Larger samples, when
+possible, are better. In some situations, small samples are
+unavoidable and can still be used to draw conclusions. Examples:
+Crash testing cars, medical testing for rare conditions.</p>
 </dd>
 <dt>Undue Influence:</dt>
-<dd><p>Collecting data or asking questions in a way that influences the response.</p>
+<dd><p>Collecting data or asking questions in a way that influences the
+response.</p>
 </dd>
 <dt>Causality:</dt>
-<dd><p>A relationship between two variables does not mean that one causes the other to occur. They may both be related (correlated) because of their relationship to a third variable.</p>
+<dd><p>A relationship between two variables does not mean that one causes
+the other to occur. They may both be related (correlated) because of
+their relationship to a third variable.</p>
 </dd>
 <dt>Self-Funded or Self-Interest Studies:</dt>
-<dd><p>A study performed by a person or organization in order to support their claim. Is the study impartial? Read the study carefully to evaluate the work. Do not automatically assume that the study is good but do not automatically assume the study is bad either. Evaluate it on its merits and the work done.</p>
+<dd><p>A study performed by a person or organization in order to support
+their claim. Is the study impartial? Read the study carefully to
+evaluate the work. Do not automatically assume that the study is
+good but do not automatically assume the study is bad either.
+Evaluate it on its merits and the work done.</p>
 </dd>
 <dt>Misleading Use of Data:</dt>
 <dd><p>Improperly displayed graphs and incomplete data.</p>
 </dd>
 <dt>Confounding:</dt>
-<dd><p>Confounding in this context means confusing. When the effects of multiple factors on a response cannot be separated. Confounding makes it difficult or impossible to draw valid conclusions about the effect of each factor.</p>
+<dd><p>Confounding in this context means confusing. When the effects of
+multiple factors on a response cannot be separated. Confounding
+makes it difficult or impossible to draw valid conclusions about the
+effect of each factor.</p>
 </dd>
 </dl>
 </div>
 </div>
 <div id="readingdata" class="section level2">
 <h2><span class="header-section-number">2.3</span> Reading Data into <code>R</code></h2>
-<p>In the examples so far the size of the data set was very small and we were able to input the data directly into <code>R</code> with the use of the function “<code>c</code>”. In more practical settings the data sets to be analyzed are much larger and it is very inefficient to enter them manually. In this section we learn how to upload data from a file in the Comma Separated Values (CSV) format.</p>
-<p>The file “<code>ex1.csv</code>” contains data on the sex and height of 100 individuals. This file is given in the CSV format. The file can be found on the internet at <a href="http://pluto.huji.ac.il/~msby/StatThink/Datasets/ex1.csv" class="uri">http://pluto.huji.ac.il/~msby/StatThink/Datasets/ex1.csv</a>. We will discuss the process of reading data from a file into <code>R</code> and use this file as an illustration.</p>
+<p>In the examples so far the size of the data set was very small and we
+were able to input the data directly into <code>R</code> with the use of the
+function “<code>c</code>”. In more practical settings the data sets to be analyzed
+are much larger and it is very inefficient to enter them manually. In
+this section we learn how to upload data from a file in the Comma
+Separated Values (CSV) format.</p>
+<p>The file “<code>ex1.csv</code>” contains data on the sex and height of 100
+individuals. This file is given in the CSV format. The file can be found
+on the internet at
+<a href="http://pluto.huji.ac.il/~msby/StatThink/Datasets/ex1.csv" class="uri">http://pluto.huji.ac.il/~msby/StatThink/Datasets/ex1.csv</a>. We will
+discuss the process of reading data from a file into <code>R</code> and use this
+file as an illustration.</p>
 <div id="saving-the-file-and-setting-the-working-directory" class="section level3">
 <h3><span class="header-section-number">2.3.1</span> Saving the File and Setting the Working Directory</h3>
-<p>Before the file is read into <code>R</code> you may find it convenient to obtain a copy of the file and store it in some directory on the computer and read the file from that directory. We recommend that you create a special directory in which you keep all the material associated with this course. In the explanations provided below we assume that the directory to which the file is stored in called “<code>IntroStat</code>”. (See Figure <a href="ChapData.html#fig:Data1">2.1</a></p>
+<p>Before the file is read into <code>R</code> you may find it convenient to obtain a
+copy of the file and store it in some directory on the computer and read
+the file from that directory. We recommend that you create a special
+directory in which you keep all the material associated with this
+course. In the explanations provided below we assume that the directory
+to which the file is stored in called “<code>IntroStat</code>”. (See
+Figure <a href="ChapData.html#fig:Data1">2.1</a></p>
 <div class="figure" style="text-align: center"><span id="fig:Data1"></span>
 <img src="_figures/Data-file.PNG" alt="The File “`ex1.csv`&quot;" width="60%" />
 <p class="caption">
 FIGURE 2.1: The File “<code>ex1.csv</code>”
 </p>
 </div>
-<p>Files in the CSV format are ordinary text files. They can be created manually or as a result of converting data stored in a different format into this particular format. A convenient way to produce, browse and edit CSV files is by the use of a standard electronic spreadsheet programs such as Excel or Calc. The Excel spreadsheet is part of the Microsoft’s Office suite. The Calc spreadsheet is part of the free <a href="http://www.libreoffice.org/">LibreOffice suite</a>.</p>
-<p>Opening a CSV file by a spreadsheet program displays a spreadsheet with the content of the file. Values in the cells of the spreadsheet may be modified directly. (However, when saving, one should pay attention to save the file in the CVS format.) Similarly, new CSV files may be created by the entering of the data in an empty spreadsheet. The first row should include the name of the variable, preferably as a single character string with no empty spaces. The following rows may contain the data values associated with this variable. When saving, the spreadsheet should be saved in the CSV format by the use of the “” dialog and choosing there the option of CSV in the “<code>Save by Type</code>” selection.</p>
-<p>After saving a file with the data in a directory, <code>R</code> should be notified where the file is located in order to be able to read it. A simple way of doing so is by setting the directory with the file as <code>R</code>’s <em>working directory</em>. The working directory is the first place <code>R</code> is searching for files. Files produced by <code>R</code> are saved in that directory. In Windows, during an active <code>R</code> session, one may set the working directory to be some target directory with the “<code>File/Change Dir...</code>” dialog. This dialog is opened by selecting the option “<code>File</code>” on the left hand side of the ruler on the top of the <code>R Console</code> window. Selecting the option of “<code>Change Dir...</code>” in the ruler that opens will start the dialog. (See Figure <a href="ChapData.html#fig:Data2">2.2</a>.) Browsing via this dialog window to the directory of choice, selecting it, and approving the selection by clicking the “<code>OK</code>” bottom in the dialog window will set the directory of choice as the working directory of <code>R</code>.</p>
+<p>Files in the CSV format are ordinary text files. They can be created
+manually or as a result of converting data stored in a different format
+into this particular format. A convenient way to produce, browse and
+edit CSV files is by the use of a standard electronic spreadsheet
+programs such as Excel or Calc. The Excel spreadsheet is part of the
+Microsoft’s Office suite. The Calc spreadsheet is part of the free <a href="http://www.libreoffice.org/">LibreOffice
+suite</a>.</p>
+<p>Opening a CSV file by a spreadsheet program displays a spreadsheet with
+the content of the file. Values in the cells of the spreadsheet may be
+modified directly. (However, when saving, one should pay attention to
+save the file in the CVS format.) Similarly, new CSV files may be
+created by the entering of the data in an empty spreadsheet. The first
+row should include the name of the variable, preferably as a single
+character string with no empty spaces. The following rows may contain
+the data values associated with this variable. When saving, the
+spreadsheet should be saved in the CSV format by the use of the “&quot;
+dialog and choosing there the option of CSV in the “<code>Save by Type</code>”
+selection.</p>
+<p>After saving a file with the data in a directory, <code>R</code> should be notified
+where the file is located in order to be able to read it. A simple way
+of doing so is by setting the directory with the file as <code>R</code>’s <em>working
+directory</em>. The working directory is the first place <code>R</code> is searching
+for files. Files produced by <code>R</code> are saved in that directory. In
+Windows, during an active <code>R</code> session, one may set the working directory
+to be some target directory with the “<code>File/Change Dir...</code>” dialog. This
+dialog is opened by selecting the option “<code>File</code>” on the left hand side
+of the ruler on the top of the <code>R Console</code> window. Selecting the option
+of “<code>Change Dir...</code>” in the ruler that opens will start the dialog. (See
+Figure <a href="ChapData.html#fig:Data2">2.2</a>.) Browsing via this dialog window to the
+directory of choice, selecting it, and approving the selection by
+clicking the “<code>OK</code>” bottom in the dialog window will set the directory
+of choice as the working directory of <code>R</code>.</p>
 <div class="figure" style="text-align: center"><span id="fig:Data2"></span>
 <img src="_figures/Data-change-dir.PNG" alt="Changing The Working Directory" width="60%" />
 <p class="caption">
 FIGURE 2.2: Changing The Working Directory
 </p>
 </div>
-<p>Rather than changing the working directory every time that <code>R</code> is opened one may set a selected directory to be <code>R</code>’s working directory on opening. Again, we demonstrate how to do this on the XP Windows operating system.</p>
-<p>The <code>R</code> icon was added to the Desktop when the <code>R</code> system was installed. The <code>R Console</code> is opened by double-clicking on this icon. One may change the properties of the icon so that it sets a directory of choice as <code>R</code>’s working directory.</p>
-<p>In order to do so click on the icon with the mouse’s <span><strong>right</strong></span> bottom. A menu opens in which you should select the option “<code>Properties</code>”. As a result, a dialog window opens. (See Figure <a href="ChapData.html#fig:Data1">2.1</a>.) Look at the line that starts with the words “<code>Start in</code>” and continues with a name of a directory that is the current working directory. The name of this directory is enclosed in double quotes and is given with it’s full path, i.e. its address on the computer. This name and path should be changed to the name and path of the directory that you want to fix as the new working directory.</p>
+<p>Rather than changing the working directory every time that <code>R</code> is opened
+one may set a selected directory to be <code>R</code>’s working directory on
+opening. Again, we demonstrate how to do this on the XP Windows
+operating system.</p>
+<p>The <code>R</code> icon was added to the Desktop when the <code>R</code> system was installed.
+The <code>R Console</code> is opened by double-clicking on this icon. One may
+change the properties of the icon so that it sets a directory of choice
+as <code>R</code>’s working directory.</p>
+<p>In order to do so click on the icon with the mouse’s <span><strong>right</strong></span>
+bottom. A menu opens in which you should select the option
+“<code>Properties</code>”. As a result, a dialog window opens. (See
+Figure <a href="ChapData.html#fig:Data1">2.1</a>.) Look at the line that starts with the words
+“<code>Start in</code>” and continues with a name of a directory that is the
+current working directory. The name of this directory is enclosed in
+double quotes and is given with it’s full path, i.e. its address on the
+computer. This name and path should be changed to the name and path of
+the directory that you want to fix as the new working directory.</p>
 <div class="figure" style="text-align: center"><span id="fig:Data3"></span>
 <img src="_figures/Data-set-dir-before.PNG" alt="Setting the Working Directory (Before the Change)" width="60%" />
 <p class="caption">
@@ -600,16 +801,45 @@ FIGURE 2.3: Setting the Working Directory (Before the Change)
 FIGURE 2.4: Setting the Working Directory (After the Change)
 </p>
 </div>
-<p>Consider again Figure <a href="ChapData.html#fig:Data1">2.1</a>. Imagine that one wants to fix the directory that contains the file “<code>ex1.csv</code>” as the permanent working directory. Notice that the full address of the directory appears at the “<code>Address</code>” bar on the top of the window. One may copy the address and paste it instead of the name of the current working directory that is specified in the “<code>Properties</code>” dialog of the <code>R</code> icon. One should make sure that the address to the new directory is, again, placed between double-quotes. (See in Figure <a href="ChapData.html#fig:Data4">2.4</a> the dialog window after the changing the address of the working directory. Compare this to Figure <a href="ChapData.html#fig:Data3">2.3</a> of the window before the change.) After approving the change by clicking the “<code>OK</code>” bottom the new working directory is set. Henceforth, each time that the <code>R Console</code> is opened by double-clicking the icon it will have the designated directory as its working directory.</p>
-<p>In the rest of this book we assume that a designated directory is set as <code>R</code>’s working directory and that all external files that need to be read into <code>R</code>, such as “<code>ex1.csv</code>” for example, are saved in that working directory. Once a working directory has been set then the history of subsequent <code>R</code> sessions is stored in that directory. Hence, if you choose to save the image of the session when you end the session then objects created in the session will be uploaded the next time the <code>R Console</code> is opened.</p>
+<p>Consider again Figure <a href="ChapData.html#fig:Data1">2.1</a>. Imagine that one wants to fix the
+directory that contains the file “<code>ex1.csv</code>” as the permanent working
+directory. Notice that the full address of the directory appears at the
+“<code>Address</code>” bar on the top of the window. One may copy the address and
+paste it instead of the name of the current working directory that is
+specified in the “<code>Properties</code>” dialog of the <code>R</code> icon. One should make
+sure that the address to the new directory is, again, placed between
+double-quotes. (See in Figure <a href="ChapData.html#fig:Data4">2.4</a> the dialog window after
+the changing the address of the working directory. Compare this to
+Figure <a href="ChapData.html#fig:Data3">2.3</a> of the window before the change.) After approving
+the change by clicking the “<code>OK</code>” bottom the new working directory is
+set. Henceforth, each time that the <code>R Console</code> is opened by
+double-clicking the icon it will have the designated directory as its
+working directory.</p>
+<p>In the rest of this book we assume that a designated directory is set as
+<code>R</code>’s working directory and that all external files that need to be read
+into <code>R</code>, such as “<code>ex1.csv</code>” for example, are saved in that working
+directory. Once a working directory has been set then the history of
+subsequent <code>R</code> sessions is stored in that directory. Hence, if you
+choose to save the image of the session when you end the session then
+objects created in the session will be uploaded the next time the
+<code>R Console</code> is opened.</p>
 </div>
 <div id="Data_3" class="section level3">
 <h3><span class="header-section-number">2.3.2</span> Reading a CSV File into <code>R</code></h3>
-<p>Now that a copy of the file “<code>ex1.csv</code>” is placed in the working directory we would like to read its content into <code>R</code>. Reading of files in the CSV format can be carried out with the <code>R</code> function “<code>read.csv</code>”. To read the file of the example we run the following line of code in the <code>R Console</code> window:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">ex.<span class="dv">1</span> &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;_data/ex1.csv&quot;</span>)</code></pre></div>
-<p>The function “<code>read.csv</code>” takes as an input argument the address of a CSV file and produces as output a <em>data frame</em> object with the content of the file. Notice that the address is placed between double-quotes. If the file is located in the working directory then giving the name of the file as an address is sufficient<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a>.</p>
-<p>Consider the content of that <code>R</code> object “<code>ex.1</code>” that was created by the previous expression, by inspecting the first part using the function “<code>head()</code>”:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(ex.<span class="dv">1</span>)</code></pre></div>
+<p>Now that a copy of the file “<code>ex1.csv</code>” is placed in the working
+directory we would like to read its content into <code>R</code>. Reading of files
+in the CSV format can be carried out with the <code>R</code> function “<code>read.csv</code>”.
+To read the file of the example we run the following line of code in the
+<code>R Console</code> window:</p>
+<pre class="sourceCode r"><code class="sourceCode r">ex<span class="fl">.1</span> &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;_data/ex1.csv&quot;</span>)</code></pre>
+<p>The function “<code>read.csv</code>” takes as an input argument the address of a
+CSV file and produces as output a <em>data frame</em> object with the content
+of the file. Notice that the address is placed between double-quotes. If
+the file is located in the working directory then giving the name of the
+file as an address is sufficient<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a>.</p>
+<p>Consider the content of that <code>R</code> object “<code>ex.1</code>” that was created by the
+previous expression, by inspecting the first part using the function “<code>head()</code>”:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(ex<span class="fl">.1</span>)</code></pre>
 <pre><code>##        id    sex height
 ## 1 5696379 FEMALE    182
 ## 2 3019088   MALE    168
@@ -617,44 +847,114 @@ FIGURE 2.4: Setting the Working Directory (After the Change)
 ## 4 1920587 FEMALE    154
 ## 5 6006813   MALE    174
 ## 6 4055945 FEMALE    176</code></pre>
-<p>The object “<code>ex.1</code>”, the output of the function “<code>read.csv</code>” is a <em>data frame</em>. Data frames are the standard tabular format of storing statistical data. The columns of the table are called <em>variables</em> and correspond to measurements. In this example the three variables are:</p>
+<p>The object “<code>ex.1</code>”, the output of the function “<code>read.csv</code>” is a <em>data
+frame</em>. Data frames are the standard tabular format of storing
+statistical data. The columns of the table are called <em>variables</em> and
+correspond to measurements. In this example the three variables are:</p>
 <dl>
 <dt>id:</dt>
 <dd><p>A 7 digits number that serves as a unique identifier of the subject.</p>
 </dd>
 <dt>sex:</dt>
-<dd><p>The sex of each subject. The values are either “<code>MALE</code>” or “<code>FEMALE</code>”.</p>
+<dd><p>The sex of each subject. The values are either “<code>MALE</code>” or
+“<code>FEMALE</code>”.</p>
 </dd>
 <dt>height:</dt>
 <dd><p>The height (in centimeter) of each subject. A numerical value.</p>
 </dd>
 </dl>
-<p>When the values of the variable are numerical we say that it is a <em>quantitative variable</em> or a <em>numeric variable</em>. On the other hand, if the variable has qualitative or level values we say that it is a <em>factor</em>. In the given example, <code>sex</code> is a factor and <code>height</code> is a numeric variable.</p>
-<p>The rows of the table are called <em>observations</em> and correspond to the subjects. In this data set there are 100 subjects, with subject number 1, for example, being a female of height 182 cm and identifying number 5696379. Subject number 98, on the other hand, is a male of height 195 cm and identifying number 9383288.</p>
+<p>When the values of the variable are numerical we say that it is a
+<em>quantitative variable</em> or a <em>numeric variable</em>. On the other hand, if
+the variable has qualitative or level values we say that it is a
+<em>factor</em>. In the given example, <code>sex</code> is a factor and <code>height</code> is a
+numeric variable.</p>
+<p>The rows of the table are called <em>observations</em> and correspond to the
+subjects. In this data set there are 100 subjects, with subject number
+1, for example, being a female of height 182 cm and identifying number
+5696379. Subject number 98, on the other hand, is a male of height 195
+cm and identifying number 9383288.</p>
 </div>
 <div id="data-types" class="section level3">
 <h3><span class="header-section-number">2.3.3</span> Data Types</h3>
-<p>The columns of <code>R</code> data frames represent variables, i.e. measurements recorded for each of the subjects in the sample. <code>R</code> associates with each variable a type that characterizes the content of the variable. The two major types are</p>
+<p>The columns of <code>R</code> data frames represent variables, i.e. measurements
+recorded for each of the subjects in the sample. <code>R</code> associates with
+each variable a type that characterizes the content of the variable. The
+two major types are</p>
 <ul>
 <li><p>Factors, or Qualitative Data. The type is “<code>factor</code>”.</p></li>
 <li><p>Quantitative Data. The type is “<code>numeric</code>”.</p></li>
 </ul>
-<p>Factors are the result of categorizing or describing attributes of a population. Hair color, blood type, ethnic group, the car a person drives, and the street a person lives on are examples of qualitative data. Qualitative data are generally described by words or letters. For instance, hair color might be black, dark brown, light brown, blonde, gray, or red. Blood type might be AB+, O-, or B+. Qualitative data are not as widely used as quantitative data because many numerical techniques do not apply to the qualitative data. For example, it does not make sense to find an average hair color or blood type.</p>
-<p>Quantitative data are always numbers and are usually the data of choice because there are many methods available for analyzing such data. Quantitative data are the result of counting or measuring attributes of a population. Amount of money, pulse rate, weight, number of people living in your town, and the number of students who take statistics are examples of quantitative data.</p>
-<p>Quantitative data may be either discrete or continuous. All data that are the result of counting are called quantitative discrete data. These data take on only certain numerical values. If you count the number of phone calls you receive for each day of the week, you may get results such as 0, 1, 2, 3, etc. On the other hand, data that are the result of measuring on a continuous scale are quantitative continuous data, assuming that we can measure accurately. Measuring angles in radians may result in the numbers <span class="math inline">\(\frac{\pi}{6}\)</span>, <span class="math inline">\(\frac{\pi}{3}\)</span>, <span class="math inline">\(\frac{\pi}{2}\)</span>, <span class="math inline">\(\pi\)</span>, <span class="math inline">\(\frac{3\pi}{4}\)</span>, etc. If you and your friends carry backpacks with books in them to school, the numbers of books in the backpacks are discrete data and the weights of the backpacks are continuous data.</p>
-<p>The data are the number of books students carry in their backpacks. You sample five students. Two students carry 3 books, one student carries 4 books, one student carries 2 books, and one student carries 1 book. The numbers of books (3, 4, 2, and 1) are the quantitative discrete data.</p>
-<p>The data are the weights of the backpacks with the books in it. You sample the same five students. The weights (in pounds) of their backpacks are 6.2, 7, 6.8, 9.1, 4.3. Notice that backpacks carrying three books can have different weights. Weights are quantitative continuous data because weights are measured.</p>
-<p>The data are the colors of backpacks. Again, you sample the same five students. One student has a red backpack, two students have black backpacks, one student has a green backpack, and one student has a gray backpack. The colors red, black, black, green, and gray are qualitative data.</p>
-<p>The distinction between continuous and discrete numeric data is not reflected usually in the statistical method that are used in order to analyze the data. Indeed, <code>R</code> does not distinguish between these two types of numeric data and store them both as “<code>numeric</code>”. Consequently, we will also not worry about the specific categorization of numeric data and treat them as one. On the other hand, emphasis will be given to the difference between numeric and factors data.</p>
-<p>One may collect data as numbers and report it categorically. For example, the quiz scores for each student are recorded throughout the term. At the end of the term, the quiz scores are reported as A, B, C, D, or F. On the other hand, one may code categories of qualitative data with numerical values and report the values. The resulting data should nonetheless be treated as a factor.</p>
-<p>As default, <code>R</code> saves variables that contain non-numeric values as factors. Otherwise, the variables are saved as numeric. The variable type is important because different statistical methods are applied to different data types. Hence, one should make sure that the variables that are analyzed have the appropriate type. Especially that factors using numbers to denote the levels are labeled as factors. Otherwise <code>R</code> will treat them as quantitative data.</p>
+<p>Factors are the result of categorizing or describing attributes of a
+population. Hair color, blood type, ethnic group, the car a person
+drives, and the street a person lives on are examples of qualitative
+data. Qualitative data are generally described by words or letters. For
+instance, hair color might be black, dark brown, light brown, blonde,
+gray, or red. Blood type might be AB+, O-, or B+. Qualitative data are
+not as widely used as quantitative data because many numerical
+techniques do not apply to the qualitative data. For example, it does
+not make sense to find an average hair color or blood type.</p>
+<p>Quantitative data are always numbers and are usually the data of choice
+because there are many methods available for analyzing such data.
+Quantitative data are the result of counting or measuring attributes of
+a population. Amount of money, pulse rate, weight, number of people
+living in your town, and the number of students who take statistics are
+examples of quantitative data.</p>
+<p>Quantitative data may be either discrete or continuous. All data that
+are the result of counting are called quantitative discrete data. These
+data take on only certain numerical values. If you count the number of
+phone calls you receive for each day of the week, you may get results
+such as 0, 1, 2, 3, etc. On the other hand, data that are the result of
+measuring on a continuous scale are quantitative continuous data,
+assuming that we can measure accurately. Measuring angles in radians may
+result in the numbers <span class="math inline">\(\frac{\pi}{6}\)</span>, <span class="math inline">\(\frac{\pi}{3}\)</span>, <span class="math inline">\(\frac{\pi}{2}\)</span>,
+<span class="math inline">\(\pi\)</span>, <span class="math inline">\(\frac{3\pi}{4}\)</span>, etc. If you and your friends carry backpacks
+with books in them to school, the numbers of books in the backpacks are
+discrete data and the weights of the backpacks are continuous data.</p>
+<p>The data are the number of books students carry in their backpacks. You
+sample five students. Two students carry 3 books, one student carries 4
+books, one student carries 2 books, and one student carries 1 book. The
+numbers of books (3, 4, 2, and 1) are the quantitative discrete data.</p>
+<p>The data are the weights of the backpacks with the books in it. You
+sample the same five students. The weights (in pounds) of their
+backpacks are 6.2, 7, 6.8, 9.1, 4.3. Notice that backpacks carrying
+three books can have different weights. Weights are quantitative
+continuous data because weights are measured.</p>
+<p>The data are the colors of backpacks. Again, you sample the same five
+students. One student has a red backpack, two students have black
+backpacks, one student has a green backpack, and one student has a gray
+backpack. The colors red, black, black, green, and gray are qualitative
+data.</p>
+<p>The distinction between continuous and discrete numeric data is not
+reflected usually in the statistical method that are used in order to
+analyze the data. Indeed, <code>R</code> does not distinguish between these two
+types of numeric data and store them both as “<code>numeric</code>”. Consequently,
+we will also not worry about the specific categorization of numeric data
+and treat them as one. On the other hand, emphasis will be given to the
+difference between numeric and factors data.</p>
+<p>One may collect data as numbers and report it categorically. For
+example, the quiz scores for each student are recorded throughout the
+term. At the end of the term, the quiz scores are reported as A, B, C,
+D, or F. On the other hand, one may code categories of qualitative data
+with numerical values and report the values. The resulting data should
+nonetheless be treated as a factor.</p>
+<p>As default, <code>R</code> saves variables that contain non-numeric values as
+factors. Otherwise, the variables are saved as numeric. The variable
+type is important because different statistical methods are applied to
+different data types. Hence, one should make sure that the variables
+that are analyzed have the appropriate type. Especially that factors
+using numbers to denote the levels are labeled as factors. Otherwise <code>R</code>
+will treat them as quantitative data.</p>
 </div>
 </div>
 <div id="exercises-1" class="section level2">
 <h2><span class="header-section-number">2.4</span> Exercises</h2>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-19" class="exercise"><strong>Exercise 2.1  </strong></span>Consider the following relative frequency table on hurricanes that have made direct hits on the U.S. between 1851 and 2004 (<a href="http://www.nhc.noaa.gov/gifs/table5.gif" class="uri">http://www.nhc.noaa.gov/gifs/table5.gif</a>). Hurricanes are given a strength category rating based on the minimum wind speed generated by the storm. Some of the entries to the table are missing.</p>
+<p><span id="exr:unnamed-chunk-19" class="exercise"><strong>Exercise 2.1  </strong></span>Consider the following relative frequency table on
+hurricanes that have made direct hits on the U.S. between 1851 and 2004
+(<a href="http://www.nhc.noaa.gov/gifs/table5.gif" class="uri">http://www.nhc.noaa.gov/gifs/table5.gif</a>). Hurricanes are given a
+strength category rating based on the minimum wind speed generated by
+the storm. Some of the entries to the table are missing.</p>
 <table>
 <caption>Frequency of Hurricane Direct Hits</caption>
 <thead>
@@ -706,22 +1006,25 @@ FIGURE 2.4: Setting the Working Directory (After the Change)
 
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-20" class="exercise"><strong>Exercise 2.2  </strong></span>The number of calves that were born to some cows during their productive years was recorded. The data was entered into an R object by the name “<code>calves</code>”. Refer to the following <code>R</code> code:</p>
+<p><span id="exr:unnamed-chunk-20" class="exercise"><strong>Exercise 2.2  </strong></span>The number of calves that were born to some cows during
+their productive years was recorded. The data was entered into an R
+object by the name “<code>calves</code>”. Refer to the following <code>R</code> code:</p>
 </div>
 
-<pre><code>```r
-freq &lt;- table(calves)
-cumsum(freq)
-```
-
-```
-##  1  2  3  4  5  6  7 
-##  4  7 18 28 32 38 45
-```</code></pre>
+<pre><code>  ```r
+  freq &lt;- table(calves)
+  cumsum(freq)
+  ```
+  
+  ```
+  ##  1  2  3  4  5  6  7 
+  ##  4  7 18 28 32 38 45
+  ```</code></pre>
 <ol style="list-style-type: decimal">
 <li><p>How many cows were involved in this study?</p></li>
 <li><p>How many cows gave birth to a total of 4 calves?</p></li>
-<li><p>What is the relative frequency of cows that gave birth to at least 4 calves?</p></li>
+<li><p>What is the relative frequency of cows that gave birth to at least 4
+calves?</p></li>
 </ol>
 <p>```</p>
 </div>
@@ -731,10 +1034,12 @@ cumsum(freq)
 <h3>Glossary</h3>
 <dl>
 <dt>Population:</dt>
-<dd><p>The collection, or set, of all individuals, objects, or measurements whose properties are being studied.</p>
+<dd><p>The collection, or set, of all individuals, objects, or measurements
+whose properties are being studied.</p>
 </dd>
 <dt>Sample:</dt>
-<dd><p>A portion of the population understudy. A sample is representative if it characterizes the population being studied.</p>
+<dd><p>A portion of the population understudy. A sample is representative
+if it characterizes the population being studied.</p>
 </dd>
 <dt>Frequency:</dt>
 <dd><p>The number of times a value occurs in the data.</p>
@@ -743,13 +1048,20 @@ cumsum(freq)
 <dd><p>The ratio between the frequency and the size of data.</p>
 </dd>
 <dt>Cumulative Relative Frequency:</dt>
-<dd><p>The term applies to an ordered set of data values from smallest to largest. The cumulative relative frequency is the sum of the relative frequencies for all values that are less than or equal to the given value.</p>
+<dd><p>The term applies to an ordered set of data values from smallest to
+largest. The cumulative relative frequency is the sum of the
+relative frequencies for all values that are less than or equal to
+the given value.</p>
 </dd>
 <dt>Data Frame:</dt>
-<dd><p>A tabular format for storing statistical data. Columns correspond to variables and rows correspond to observations.</p>
+<dd><p>A tabular format for storing statistical data. Columns correspond to
+variables and rows correspond to observations.</p>
 </dd>
 <dt>Variable:</dt>
-<dd><p>A measurement that may be carried out over a collection of subjects. The outcome of the measurement may be numerical, which produces a quantitative variable; or it may be non-numeric, in which case a factor is produced.</p>
+<dd><p>A measurement that may be carried out over a collection of subjects.
+The outcome of the measurement may be numerical, which produces a
+quantitative variable; or it may be non-numeric, in which case a
+factor is produced.</p>
 </dd>
 <dt>Observation:</dt>
 <dd><p>The evaluation of a variable (or variables) for a given subject.</p>
@@ -758,7 +1070,8 @@ cumsum(freq)
 <dd><p>A digital format for storing data frames.</p>
 </dd>
 <dt>Factor:</dt>
-<dd><p>Qualitative data that is associated with categorization or the description of an attribute.</p>
+<dd><p>Qualitative data that is associated with categorization or the
+description of an attribute.</p>
 </dd>
 <dt>Quantitative:</dt>
 <dd><p>Data generated by numerical measurements.</p>
@@ -767,8 +1080,15 @@ cumsum(freq)
 </div>
 <div id="discuss-in-the-forum" class="section level3 unnumbered">
 <h3>Discuss in the forum</h3>
-<p>Factors are qualitative data that are associated with categorization or the description of an attribute. On the other hand, numeric data are generated by numerical measurements. A common practice is to code the levels of factors using numerical values. What do you think of this practice?</p>
-<p>In the formulation of your answer to the question you may think of an example of factor variable from your own field of interest. You may describe a benefit or a disadvantage that results from the use of a numerical values to code the level of this factor.</p>
+<p>Factors are qualitative data that are associated with categorization or
+the description of an attribute. On the other hand, numeric data are
+generated by numerical measurements. A common practice is to code the
+levels of factors using numerical values. What do you think of this
+practice?</p>
+<p>In the formulation of your answer to the question you may think of an
+example of factor variable from your own field of interest. You may
+describe a benefit or a disadvantage that results from the use of a
+numerical values to code the level of this factor.</p>
 
 </div>
 </div>
@@ -776,7 +1096,15 @@ cumsum(freq)
 <div class="footnotes">
 <hr />
 <ol start="3">
-<li id="fn3"><p>If the file is located in a different directory then the complete address, including the path to the file, should be provided. The file need not reside on the computer. One may provide, for example, a URL (an internet address) as the address. Thus, instead of saving the file of the example on the computer one may read its content into an <code>R</code> object by using the line of code “<code>ex.1 &lt;- read.csv(http://pluto.huji.ac.il/~msby/StatThink/Datasets/ex1.csv)</code>” instead of the code that we provide and the working method that we recommend to follow.<a href="ChapData.html#fnref3">↩</a></p></li>
+<li id="fn3"><p>If the file is located in a different directory then the complete
+address, including the path to the file, should be provided. The
+file need not reside on the computer. One may provide, for example,
+a URL (an internet address) as the address. Thus, instead of saving
+the file of the example on the computer one may read its content
+into an <code>R</code> object by using the line of code
+“<code>ex.1 &lt;- read.csv(http://pluto.huji.ac.il/~msby/StatThink/Datasets/ex1.csv)</code>”
+instead of the code that we provide and the working method that we
+recommend to follow.<a href="ChapData.html#fnref3" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>
@@ -803,17 +1131,26 @@ gitbook.start({
 "facebook": false,
 "twitter": true,
 "google": false,
+"linkedin": false,
 "weibo": false,
-"instapper": false,
+"instapaper": false,
 "vk": false,
-"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
 "theme": "white",
 "family": "sans",
 "size": 2
 },
-"download": ["statthink.pdf", "thinkstat.epub", "stathink_datasets.zip"],
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["statthink.pdf"],
 "toc": {
 "collapse": "none"
 }
@@ -826,8 +1163,8 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    var src = "";
-    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(src))
       src = src.replace(/^https?:/, '');
     script.src = src;

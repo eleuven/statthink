@@ -5,11 +5,11 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Introduction to Statistical Thinking</title>
-  <meta name="description" content="Introduction to Statistical Thinking">
-  <meta name="generator" content="bookdown 0.5.10 and GitBook 2.6.7">
+  <title>Chapter 7 The Sampling Distribution | Introduction to Statistical Thinking</title>
+  <meta name="description" content="Chapter 7 The Sampling Distribution | Introduction to Statistical Thinking">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="Introduction to Statistical Thinking" />
+  <meta property="og:title" content="Chapter 7 The Sampling Distribution | Introduction to Statistical Thinking" />
   <meta property="og:type" content="book" />
   
   
@@ -17,7 +17,7 @@
   <meta name="github-repo" content="eleuven/statthink" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Introduction to Statistical Thinking" />
+  <meta name="twitter:title" content="Chapter 7 The Sampling Distribution | Introduction to Statistical Thinking" />
   
   
   
@@ -25,7 +25,7 @@
 <meta name="author" content="Benjamin Yakir">
 
 
-<meta name="date" content="2017-11-26">
+<meta name="date" content="2019-01-16">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -36,6 +36,7 @@
 <link rel="next" href="overview-and-integration.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
@@ -50,41 +51,69 @@
 
 
 <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; position: absolute; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; }
+pre.numberSource a.sourceLine:empty
+  { position: absolute; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 <link rel="stylesheet" href="css/style.css" type="text/css" />
@@ -248,9 +277,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="9.1" data-path="ChapInference.html"><a href="ChapInference.html#student-learning-objectives-3"><i class="fa fa-check"></i><b>9.1</b> Student Learning Objectives</a></li>
 <li class="chapter" data-level="9.2" data-path="ChapInference.html"><a href="ChapInference.html#key-terms-1"><i class="fa fa-check"></i><b>9.2</b> Key Terms</a></li>
 <li class="chapter" data-level="9.3" data-path="ChapInference.html"><a href="ChapInference.html#the-cars-data-set"><i class="fa fa-check"></i><b>9.3</b> The Cars Data Set</a></li>
-<li class="chapter" data-level="9.4" data-path="ChapSampDist.html"><a href="ChapSampDist.html#the-sampling-distribution"><i class="fa fa-check"></i><b>9.4</b> The Sampling Distribution</a><ul>
+<li class="chapter" data-level="9.4" data-path="ChapInference.html"><a href="ChapInference.html#the-sampling-distribution-1"><i class="fa fa-check"></i><b>9.4</b> The Sampling Distribution</a><ul>
 <li class="chapter" data-level="9.4.1" data-path="ChapInference.html"><a href="ChapInference.html#statistics-1"><i class="fa fa-check"></i><b>9.4.1</b> Statistics</a></li>
-<li class="chapter" data-level="9.4.2" data-path="ChapInference.html"><a href="ChapInference.html#the-sampling-distribution-1"><i class="fa fa-check"></i><b>9.4.2</b> The Sampling Distribution</a></li>
+<li class="chapter" data-level="9.4.2" data-path="ChapInference.html"><a href="ChapInference.html#the-sampling-distribution-2"><i class="fa fa-check"></i><b>9.4.2</b> The Sampling Distribution</a></li>
 <li class="chapter" data-level="9.4.3" data-path="ChapInference.html"><a href="ChapInference.html#theoretical-distributions-of-observations"><i class="fa fa-check"></i><b>9.4.3</b> Theoretical Distributions of Observations</a></li>
 <li class="chapter" data-level="9.4.4" data-path="ChapInference.html"><a href="ChapInference.html#sampling-distribution-of-statistics"><i class="fa fa-check"></i><b>9.4.4</b> Sampling Distribution of Statistics</a></li>
 <li class="chapter" data-level="9.4.5" data-path="ChapInference.html"><a href="ChapInference.html#the-normal-approximation"><i class="fa fa-check"></i><b>9.4.5</b> The Normal Approximation</a></li>
@@ -367,7 +396,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li class="chapter" data-level="16.4" data-path="ChapCaseStudies.html"><a href="ChapCaseStudies.html#summary-13"><i class="fa fa-check"></i><b>16.4</b> Summary</a><ul>
 <li class="chapter" data-level="16.4.1" data-path="ChapCaseStudies.html"><a href="ChapCaseStudies.html#concluding-remarks"><i class="fa fa-check"></i><b>16.4.1</b> Concluding Remarks</a></li>
-<li class="chapter" data-level="16.4.2" data-path="ChapProbability.html"><a href="ChapProbability.html#discussion-in-the-forum"><i class="fa fa-check"></i><b>16.4.2</b> Discussion in the Forum</a></li>
+<li class="chapter" data-level="16.4.2" data-path="ChapCaseStudies.html"><a href="ChapCaseStudies.html#discussion-in-the-forum-1"><i class="fa fa-check"></i><b>16.4.2</b> Discussion in the Forum</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html"><i class="fa fa-check"></i>Exercise Solutions</a><ul>
@@ -459,117 +488,364 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h1><span class="header-section-number">Chapter 7</span> The Sampling Distribution</h1>
 <div id="student-learning-objective-3" class="section level2">
 <h2><span class="header-section-number">7.1</span> Student Learning Objective</h2>
-<p>In this section we integrate the concept of <em>data</em> that is extracted from a sample with the concept of a <em>random variable</em>. The new element that connects between these two concepts is the notion of <em>sampling distribution</em>. The data we observe results from the specific sample that was selected. The sampling distribution, in a similar way to random variables, corresponds to all samples that could have been selected. (Or, stated in a different tense, to the sample that will be selected prior to the selection itself.) Summaries of the distribution of the data, such as the sample mean and the sample standard deviation, become random variables when considered in the context of the sampling distribution. In this section we investigate the sampling distribution of such data summaries. In particular, it is demonstrated that (for large samples) the sampling distribution of the sample average may be approximated by the Normal distribution. The mathematical theorem that proves this approximation is called the <em>Central Limit Theory</em>. By the end of this chapter, the student should be able to:</p>
+<p>In this section we integrate the concept of <em>data</em> that is extracted
+from a sample with the concept of a <em>random variable</em>. The new element
+that connects between these two concepts is the notion of <em>sampling
+distribution</em>. The data we observe results from the specific sample that
+was selected. The sampling distribution, in a similar way to random
+variables, corresponds to all samples that could have been selected.
+(Or, stated in a different tense, to the sample that will be selected
+prior to the selection itself.) Summaries of the distribution of the
+data, such as the sample mean and the sample standard deviation, become
+random variables when considered in the context of the sampling
+distribution. In this section we investigate the sampling distribution
+of such data summaries. In particular, it is demonstrated that (for
+large samples) the sampling distribution of the sample average may be
+approximated by the Normal distribution. The mathematical theorem that
+proves this approximation is called the <em>Central Limit Theory</em>. By the
+end of this chapter, the student should be able to:</p>
 <ul>
-<li><p>Comprehend the notion of sampling distribution and simulate the sampling distribution of the sample average.</p></li>
-<li><p>Relate the expectation and standard deviation of a measurement to the expectation and standard deviation of the sample average.</p></li>
+<li><p>Comprehend the notion of sampling distribution and simulate the
+sampling distribution of the sample average.</p></li>
+<li><p>Relate the expectation and standard deviation of a measurement to
+the expectation and standard deviation of the sample average.</p></li>
 <li><p>Apply the Central Limit Theorem to the sample averages.</p></li>
 </ul>
 </div>
 <div id="the-sampling-distribution" class="section level2">
 <h2><span class="header-section-number">7.2</span> The Sampling Distribution</h2>
-<p>In Chapter <a href="ChapRandomVar.html#ChapRandomVar">5</a> the concept of a random variable was introduced. As part of the introduction we used an example that involved the selection of a random person from the population and the measuring of his/her height. Prior to the action of selection, the height of that person is a <em>random variable</em>. It has the potential of obtaining any of the heights that are present in the population, which is the <em>sample space</em> of this example, with a distribution that reflects the relative frequencies of each of the heights in the population: the <em>probabilities</em> of the values. After the selection of the person and the measuring of the height we get a particular value. This is the <em>observed value</em> and is no longer a random variable. In this section we extend the concept of a random variable and define the concept of <em>a random sample</em>.</p>
+<p>In Chapter <a href="ChapRandomVar.html#ChapRandomVar">5</a> the concept of a random variable was
+introduced. As part of the introduction we used an example that involved
+the selection of a random person from the population and the measuring
+of his/her height. Prior to the action of selection, the height of that
+person is a <em>random variable</em>. It has the potential of obtaining any of
+the heights that are present in the population, which is the <em>sample
+space</em> of this example, with a distribution that reflects the relative
+frequencies of each of the heights in the population: the
+<em>probabilities</em> of the values. After the selection of the person and the
+measuring of the height we get a particular value. This is the <em>observed
+value</em> and is no longer a random variable. In this section we extend the
+concept of a random variable and define the concept of <em>a random
+sample</em>.</p>
 <div id="a-random-sample" class="section level3">
 <h3><span class="header-section-number">7.2.1</span> A Random Sample</h3>
-<p>The relation between the random sample and the data is similar to the relation between a random variable and the observed value. The data is the observed values of a sample taken from a population. The content of the data is known. The random sample, similarly to a random variable, is the data that <em>will</em> be selected when taking a sample, prior to the selection itself. The content of the random sample is unknown, since the sample has not yet been taken. Still, just like for the case of the random variable, one is able to say what the possible evaluations of the sample may be and, depending on the mechanism of selecting the sample, what are the probabilities of the different potential evaluations. The collection of all possible evaluations of the sample is the <em>sample space of the random sample</em> and the probabilities of the different evaluations produce the <em>distribution</em> of the random sample.</p>
-<p>(Alternatively, if one prefers to speak in past tense, one can define the sample space of a random sample to be the evaluations of the sample that could have taken place, with the distribution of the random sample being the probabilities of these evaluations.)</p>
-<p>A <em>statistic</em> is a function of the data. Example of statistics are the average of the data, the sample variance and standard deviation, the median of the data, etc. In each case a given formula is applied to the data. In each type of statistic a different formula is applied.</p>
-<p>The same formula that is applied to the observed data may, in principle, be applied to random samples. Hence, for example, one may talk of the sample average, which is the average of the elements in the data. The average, considered in the context of the observed data, is a number and its value is known. However, if we think of the average in the context of a random sample then it becomes a random variable. Prior to the selection of the actual sample we do not know what values it will include. Hence, we cannot tell what the outcome of the average of the values will be. However, due to the identification of all possible evaluations that the sample can possess we may say in advance what is the collection of values the sample average can have. This is the sample space of the sample average. Moreover, from the sampling distribution of the random sample one may identify the probability of each value of the sample average, thus obtaining the <em>sampling distribution</em> of the sample average.</p>
-<p>The same line of argumentation applies to any statistic. Computed in the context of the observed data, the statistic is a known number that may, for example, be used to characterize the variation in the data. When thinking of a statistic in the context of a random sample it becomes a random variable. The distribution of the statistic is called the sampling distribution of the statistic. Consequently, we may talk of the sampling distribution of the median, the sample distribution of the sample variance, etc.</p>
-<p>Random variables are also applied as models for uncertainty in future measurements in more abstract settings that need not involve a specific population. Specifically, we introduced the Binomial and Poisson random variables for settings that involve counting and the Uniform, Exponential, and Normal random variables for settings where the measurement is continuous.</p>
-<p>The notion of a sampling distribution may be extended to a situation where one is taking several measurements, each measurement taken independently of the others. As a result one obtains a <em>sequence</em> of measurements. We use the term “sample” to denote this sequence. The distribution of this sequence is also called the sampling distribution. If all the measurements in the sequence are Binomial then we call it a <em>Binomial sample</em>. If all the measurements are Exponential we call it an <em>Exponential sample</em> and so forth.</p>
-<p>Again, one may apply a formula (such as the average) to the content of the random sequence and produce a random variable. The term <em>sampling distribution</em> describes again the distribution that the random variable produced by the formula inherits from the sample.</p>
-<p>In the next subsection we examine an example of a sample taken from a population. Subsequently, we discuss examples that involves a sequence of measurements from a theoretical model.</p>
+<p>The relation between the random sample and the data is similar to the
+relation between a random variable and the observed value. The data is
+the observed values of a sample taken from a population. The content of
+the data is known. The random sample, similarly to a random variable, is
+the data that <em>will</em> be selected when taking a sample, prior to the
+selection itself. The content of the random sample is unknown, since the
+sample has not yet been taken. Still, just like for the case of the
+random variable, one is able to say what the possible evaluations of the
+sample may be and, depending on the mechanism of selecting the sample,
+what are the probabilities of the different potential evaluations. The
+collection of all possible evaluations of the sample is the <em>sample
+space of the random sample</em> and the probabilities of the different
+evaluations produce the <em>distribution</em> of the random sample.</p>
+<p>(Alternatively, if one prefers to speak in past tense, one can define
+the sample space of a random sample to be the evaluations of the sample
+that could have taken place, with the distribution of the random sample
+being the probabilities of these evaluations.)</p>
+<p>A <em>statistic</em> is a function of the data. Example of statistics are the
+average of the data, the sample variance and standard deviation, the
+median of the data, etc. In each case a given formula is applied to the
+data. In each type of statistic a different formula is applied.</p>
+<p>The same formula that is applied to the observed data may, in principle,
+be applied to random samples. Hence, for example, one may talk of the
+sample average, which is the average of the elements in the data. The
+average, considered in the context of the observed data, is a number and
+its value is known. However, if we think of the average in the context
+of a random sample then it becomes a random variable. Prior to the
+selection of the actual sample we do not know what values it will
+include. Hence, we cannot tell what the outcome of the average of the
+values will be. However, due to the identification of all possible
+evaluations that the sample can possess we may say in advance what is
+the collection of values the sample average can have. This is the sample
+space of the sample average. Moreover, from the sampling distribution of
+the random sample one may identify the probability of each value of the
+sample average, thus obtaining the <em>sampling distribution</em> of the sample
+average.</p>
+<p>The same line of argumentation applies to any statistic. Computed in the
+context of the observed data, the statistic is a known number that may,
+for example, be used to characterize the variation in the data. When
+thinking of a statistic in the context of a random sample it becomes a
+random variable. The distribution of the statistic is called the
+sampling distribution of the statistic. Consequently, we may talk of the
+sampling distribution of the median, the sample distribution of the
+sample variance, etc.</p>
+<p>Random variables are also applied as models for uncertainty in future
+measurements in more abstract settings that need not involve a specific
+population. Specifically, we introduced the Binomial and Poisson random
+variables for settings that involve counting and the Uniform,
+Exponential, and Normal random variables for settings where the
+measurement is continuous.</p>
+<p>The notion of a sampling distribution may be extended to a situation
+where one is taking several measurements, each measurement taken
+independently of the others. As a result one obtains a <em>sequence</em> of
+measurements. We use the term “sample” to denote this sequence. The
+distribution of this sequence is also called the sampling distribution.
+If all the measurements in the sequence are Binomial then we call it a
+<em>Binomial sample</em>. If all the measurements are Exponential we call it an
+<em>Exponential sample</em> and so forth.</p>
+<p>Again, one may apply a formula (such as the average) to the content of
+the random sequence and produce a random variable. The term <em>sampling
+distribution</em> describes again the distribution that the random variable
+produced by the formula inherits from the sample.</p>
+<p>In the next subsection we examine an example of a sample taken from a
+population. Subsequently, we discuss examples that involves a sequence
+of measurements from a theoretical model.</p>
 </div>
 <div id="sampling-from-a-population" class="section level3">
 <h3><span class="header-section-number">7.2.2</span> Sampling From a Population</h3>
-<p>Consider taking a sample from a population. Let us use again for the illustration the file “<code>pop1.csv</code>” like we did in Chapter <a href="ChapProbability.html#ChapProbability">4</a>. The data frame produced from the file contains the sex and hight of the 100,000 members of some imaginary population. Recall that in Chapter <a href="ChapProbability.html#ChapProbability">4</a> we applied the function “<code>sample</code>” to randomly sample the height of a single subject from the population. Let us apply the same function again, but this time in order to sample the heights of 100 subjects:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">pop.<span class="dv">1</span> &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;_data/pop1.csv&quot;</span>)
-X.samp &lt;-<span class="st"> </span><span class="kw">sample</span>(pop.<span class="dv">1</span><span class="op">$</span>height,<span class="dv">100</span>)
-X.samp</code></pre></div>
-<pre><code>##   [1] 180 173 176 163 164 162 161 193 172 156 182 155 156 191 169 169 185
-##  [18] 184 177 168 173 162 172 153 160 177 148 159 169 163 175 168 182 144
-##  [35] 156 166 171 176 177 168 169 159 155 174 161 184 153 172 166 185 182
-##  [52] 165 192 165 175 159 179 186 162 168 158 174 178 186 174 178 173 152
-##  [69] 167 175 169 157 179 186 163 153 175 183 161 161 158 187 163 168 150
-##  [86] 151 167 184 179 144 186 183 163 170 172 174 175 168 178 173</code></pre>
-<p>In the first line of code we produce a data frame that contains the information on the entire population. In the second line we select a sample of size 100 from the population, and in the third line we present the content of the sample.</p>
-<p>The first argument to the function “<code>sample</code>” that selects the sample is the sequence of length 100,000 with the list of heights of all the members of the population. The second argument indicates the sample size, 100 in this case. The outcome of the random selection is stored in the object “<code>X.samp</code>”, which is a sequence that contains 100 heights.</p>
-<p>Typically, a researcher does not get to examine the entire population. Instead, measurements on a sample from the population are made. In relation to the imaginary setting we simulate in the example, the typical situation is that the research does not have the complete list of potential measurement evaluations, i.e. the complete list of 100,000 heights in “<code>pop.1$height</code>”, but only a sample of measurements, namely the list of 100 numbers that are stored in “<code>X.samp</code>” and are presented above. The role of statistics is to make inference on the parameters of the unobserved population based on the information that is obtained from the sample.</p>
-<p>For example, we may be interested in estimating the mean value of the heights in the population. A reasonable proposal is to use the sample average to serve as an estimate:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(X.samp)</code></pre></div>
-<pre><code>## [1] 169.61</code></pre>
-<p>In our artificial example we can actually compute the true population mean:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(pop.<span class="dv">1</span><span class="op">$</span>height)</code></pre></div>
+<p>Consider taking a sample from a population. Let us use again for the
+illustration the file “<code>pop1.csv</code>” like we did in
+Chapter <a href="ChapProbability.html#ChapProbability">4</a>. The data frame produced from the file
+contains the sex and hight of the 100,000 members of some imaginary
+population. Recall that in Chapter <a href="ChapProbability.html#ChapProbability">4</a> we applied the
+function “<code>sample</code>” to randomly sample the height of a single subject
+from the population. Let us apply the same function again, but this time
+in order to sample the heights of 100 subjects:</p>
+<pre class="sourceCode r"><code class="sourceCode r">pop<span class="fl">.1</span> &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;_data/pop1.csv&quot;</span>)
+X.samp &lt;-<span class="st"> </span><span class="kw">sample</span>(pop<span class="fl">.1</span><span class="op">$</span>height,<span class="dv">100</span>)
+X.samp</code></pre>
+<pre><code>##   [1] 185 182 178 162 153 195 171 158 165 175 164 168 154 170 172 160 170
+##  [18] 181 165 163 162 160 160 172 159 181 155 173 163 159 167 168 181 170
+##  [35] 191 173 157 175 173 167 148 155 196 194 182 156 186 172 188 157 143
+##  [52] 163 154 168 151 183 166 159 180 171 174 168 173 169 156 159 166 160
+##  [69] 176 160 178 156 173 169 161 188 151 156 172 160 165 170 186 173 158
+##  [86] 154 163 143 177 149 172 161 164 156 164 165 165 161 172 140</code></pre>
+<p>In the first line of code we produce a data frame that contains the
+information on the entire population. In the second line we select a
+sample of size 100 from the population, and in the third line we present
+the content of the sample.</p>
+<p>The first argument to the function “<code>sample</code>” that selects the sample is
+the sequence of length 100,000 with the list of heights of all the
+members of the population. The second argument indicates the sample
+size, 100 in this case. The outcome of the random selection is stored in
+the object “<code>X.samp</code>”, which is a sequence that contains 100 heights.</p>
+<p>Typically, a researcher does not get to examine the entire population.
+Instead, measurements on a sample from the population are made. In
+relation to the imaginary setting we simulate in the example, the
+typical situation is that the research does not have the complete list
+of potential measurement evaluations, i.e. the complete list of 100,000
+heights in “<code>pop.1$height</code>”, but only a sample of measurements, namely
+the list of 100 numbers that are stored in “<code>X.samp</code>” and are presented
+above. The role of statistics is to make inference on the parameters of
+the unobserved population based on the information that is obtained from
+the sample.</p>
+<p>For example, we may be interested in estimating the mean value of the
+heights in the population. A reasonable proposal is to use the sample
+average to serve as an estimate:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(X.samp)</code></pre>
+<pre><code>## [1] 167.12</code></pre>
+<p>In our artificial example we can actually compute the true population
+mean:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(pop<span class="fl">.1</span><span class="op">$</span>height)</code></pre>
 <pre><code>## [1] 170.035</code></pre>
-<p>Hence, we may see that although the match between the estimated value and the actual value is not perfect still they are close enough.</p>
-<p>The actual estimate that we have obtained resulted from the specific sample that was collected. Had we collected a different subset of 100 individuals we would have obtained different numerical value for the estimate. Consequently, one may wonder: Was it pure luck that we got such good estimates? How likely is it to get estimates that are close to the target parameter?</p>
-<p>Notice that in realistic settings we do not know the actual value of the target population parameters. Nonetheless, we would still want to have at least a probabilistic assessment of the distance between our estimates and the parameters they try to estimate. The sampling distribution is the vehicle that may enable us to address these questions.</p>
-<p>In order to illustrate the concept of the sampling distribution let us select another sample and compute its average:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">X.samp &lt;-<span class="st"> </span><span class="kw">sample</span>(pop.<span class="dv">1</span><span class="op">$</span>height,<span class="dv">100</span>)
+<p>Hence, we may see that although the match between the estimated value
+and the actual value is not perfect still they are close enough.</p>
+<p>The actual estimate that we have obtained resulted from the specific
+sample that was collected. Had we collected a different subset of 100
+individuals we would have obtained different numerical value for the
+estimate. Consequently, one may wonder: Was it pure luck that we got
+such good estimates? How likely is it to get estimates that are close to
+the target parameter?</p>
+<p>Notice that in realistic settings we do not know the actual value of the
+target population parameters. Nonetheless, we would still want to have
+at least a probabilistic assessment of the distance between our
+estimates and the parameters they try to estimate. The sampling
+distribution is the vehicle that may enable us to address these
+questions.</p>
+<p>In order to illustrate the concept of the sampling distribution let us
+select another sample and compute its average:</p>
+<pre class="sourceCode r"><code class="sourceCode r">X.samp &lt;-<span class="st"> </span><span class="kw">sample</span>(pop<span class="fl">.1</span><span class="op">$</span>height,<span class="dv">100</span>)
 X.bar &lt;-<span class="st"> </span><span class="kw">mean</span>(X.samp)
-X.bar</code></pre></div>
-<pre><code>## [1] 171.05</code></pre>
+X.bar</code></pre>
+<pre><code>## [1] 169.09</code></pre>
 <p>and do it once more:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">X.samp &lt;-<span class="st"> </span><span class="kw">sample</span>(pop.<span class="dv">1</span><span class="op">$</span>height,<span class="dv">100</span>)
+<pre class="sourceCode r"><code class="sourceCode r">X.samp &lt;-<span class="st"> </span><span class="kw">sample</span>(pop<span class="fl">.1</span><span class="op">$</span>height,<span class="dv">100</span>)
 X.bar &lt;-<span class="st"> </span><span class="kw">mean</span>(X.samp)
-X.bar</code></pre></div>
-<pre><code>## [1] 171.04</code></pre>
-<p>In each case we got a different value for the sample average. In the first of the last two iterations the result was more than 1 centimeter away from the population average, which is equal to 170.035, and in the second it was within the range of 1 centimeter. Can we say, prior to taking the sample, what is the probability of falling within 1 centimeter of the population mean?</p>
-<p>Chapter <a href="ChapProbability.html#ChapProbability">4</a> discussed the random variable that emerges by randomly sampling a single number from the population presented by the sequence “<code>pop.1$height</code>”. The distribution of the random variable resulted from the assignment of the probability 1/100,000 to each one of the 100,000 possible outcomes. The same principle applies when we randomly sample 100 individuals. Each possible outcome is a collection of 100 numbers and each collection is assigned equal probability. The resulting distribution is called <em>the sampling distribution</em>.</p>
-<p>The distribution of the average of the sample emerges from this distribution: With each sample one may associate the average of that sample. The probability assigned to that average outcome is the probability of the sample. Hence, one may assess the probability of falling within 1 centimeter of the population mean using the sampling distribution. Each sample produces an average that either falls within the given range or not. The probability of the sample average falling within the given range is the proportion of samples for which this event happens among the entire collection of samples.</p>
-<p>However, we face a technical difficulty when we attempt to assess the sampling distribution of the average and the probability of falling within 1 centimeter of the population mean. Examination of the distribution of a sample of a single individual is easy enough. The total number of outcomes, which is 100,000 in the given example, can be handled with no effort by the computer. However, when we consider samples of size 100 we get that the total number of ways to select 100 number out of 100,000 numbers is in the order of <span class="math inline">\(10^{342}\)</span> (1 followed by 342 zeros) and cannot be handled by any computer. Thus, the probability cannot be computed.</p>
-<p>As a compromise we will approximate the distribution by selecting a large number of samples, say 100,000, to represent the entire collection, and use the resulting distribution as an approximation of the sampling distribution. Indeed, the larger the number of samples that we create the more accurate the approximation of the distribution is. Still, taking 100,000 repeats should produce approximations which are good enough for our purposes.</p>
-<p>Consider the sampling distribution of the sample average. We simulated above a few examples of the average. Now we would like to simulate 100,000 such examples. We do this by creating first a sequence of the length of the number of evaluations we seek (100,000) and then write a small program that produces each time a new random sample of size 100 and assigns the value of the average of that sample to the appropriate position in the sequence. Do first and explain later<a href="#fn18" class="footnoteRef" id="fnref18"><sup>18</sup></a>:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">X.bar &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="dv">0</span>,<span class="dv">10</span><span class="op">^</span><span class="dv">5</span>)
+X.bar</code></pre>
+<pre><code>## [1] 170.37</code></pre>
+<p>In each case we got a different value for the sample average. In the
+first of the last two iterations the result was more than 1 centimeter
+away from the population average, which is equal to 170.035, and in the
+second it was within the range of 1 centimeter. Can we say, prior to
+taking the sample, what is the probability of falling within 1
+centimeter of the population mean?</p>
+<p>Chapter <a href="ChapProbability.html#ChapProbability">4</a> discussed the random variable that emerges by
+randomly sampling a single number from the population presented by the
+sequence “<code>pop.1$height</code>”. The distribution of the random variable
+resulted from the assignment of the probability 1/100,000 to each one of
+the 100,000 possible outcomes. The same principle applies when we
+randomly sample 100 individuals. Each possible outcome is a collection
+of 100 numbers and each collection is assigned equal probability. The
+resulting distribution is called <em>the sampling distribution</em>.</p>
+<p>The distribution of the average of the sample emerges from this
+distribution: With each sample one may associate the average of that
+sample. The probability assigned to that average outcome is the
+probability of the sample. Hence, one may assess the probability of
+falling within 1 centimeter of the population mean using the sampling
+distribution. Each sample produces an average that either falls within
+the given range or not. The probability of the sample average falling
+within the given range is the proportion of samples for which this event
+happens among the entire collection of samples.</p>
+<p>However, we face a technical difficulty when we attempt to assess the
+sampling distribution of the average and the probability of falling
+within 1 centimeter of the population mean. Examination of the
+distribution of a sample of a single individual is easy enough. The
+total number of outcomes, which is 100,000 in the given example, can be
+handled with no effort by the computer. However, when we consider
+samples of size 100 we get that the total number of ways to select 100
+number out of 100,000 numbers is in the order of <span class="math inline">\(10^{342}\)</span> (1 followed
+by 342 zeros) and cannot be handled by any computer. Thus, the
+probability cannot be computed.</p>
+<p>As a compromise we will approximate the distribution by selecting a
+large number of samples, say 100,000, to represent the entire
+collection, and use the resulting distribution as an approximation of
+the sampling distribution. Indeed, the larger the number of samples that
+we create the more accurate the approximation of the distribution is.
+Still, taking 100,000 repeats should produce approximations which are
+good enough for our purposes.</p>
+<p>Consider the sampling distribution of the sample average. We simulated
+above a few examples of the average. Now we would like to simulate
+100,000 such examples. We do this by creating first a sequence of the
+length of the number of evaluations we seek (100,000) and then write a
+small program that produces each time a new random sample of size 100
+and assigns the value of the average of that sample to the appropriate
+position in the sequence. Do first and explain later<a href="#fn18" class="footnote-ref" id="fnref18"><sup>18</sup></a>:</p>
+<pre class="sourceCode r"><code class="sourceCode r">X.bar &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="dv">0</span>,<span class="dv">10</span><span class="op">^</span><span class="dv">5</span>)
 <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">10</span><span class="op">^</span><span class="dv">5</span>) {
-  X.samp &lt;-<span class="st"> </span><span class="kw">sample</span>(pop.<span class="dv">1</span><span class="op">$</span>height,<span class="dv">100</span>)
+  X.samp &lt;-<span class="st"> </span><span class="kw">sample</span>(pop<span class="fl">.1</span><span class="op">$</span>height,<span class="dv">100</span>)
   X.bar[i] &lt;-<span class="st"> </span><span class="kw">mean</span>(X.samp)
-}</code></pre></div>
-<p>In the first line we produce a sequence of length 100,000 that contains zeros. The function “<code>rep</code>” creates a sequence that contains repeats of its first argument a number of times that is specified by its second argument. In this example, the numerical value 0 is repeated 100,000 times to produce a sequence of zeros of the length we seek.</p>
-<p>The main part of the program is a “<code>for</code>” loop. The argument of the function “<code>for</code>” takes the special form: “<em>index.name</em> <code>in</code> <em>index.values</em>”, where <em>index.name</em> is the name of the running index and <em>index.values</em> is the collection of values over which the running index is evaluated. In each iteration of the loop the running index is assigned a value from the collection and the expression that follows the brackets of the “<code>for</code>” function is evaluated with the given value of the running index.</p>
-<p>In the given example the collection of values is produced by the expression “<code>1:n</code>”. Recall that the expression “<code>1:n</code>” produces the collection of integers between <code>1</code> and <code>n</code>. Here, <code>n</code> = 100,000. Hence, in the given application the collection of values is a sequence that contains the integers between 1 and 100,000. The running index is called “<code>i</code>”. the expression is evaluated 100,000 times, each time with a different integer value for the running index “<code>i</code>”.</p>
+}</code></pre>
+<p>In the first line we produce a sequence of length 100,000 that contains
+zeros. The function “<code>rep</code>” creates a sequence that contains repeats of
+its first argument a number of times that is specified by its second
+argument. In this example, the numerical value 0 is repeated 100,000
+times to produce a sequence of zeros of the length we seek.</p>
+<p>The main part of the program is a “<code>for</code>” loop. The argument of the
+function “<code>for</code>” takes the special form: “<em>index.name</em> <code>in</code>
+<em>index.values</em>”, where <em>index.name</em> is the name of the running index and
+<em>index.values</em> is the collection of values over which the running index
+is evaluated. In each iteration of the loop the running index is
+assigned a value from the collection and the expression that follows the
+brackets of the “<code>for</code>” function is evaluated with the given value of
+the running index.</p>
+<p>In the given example the collection of values is produced by the
+expression “<code>1:n</code>”. Recall that the expression “<code>1:n</code>” produces the
+collection of integers between <code>1</code> and <code>n</code>. Here, <code>n</code> = 100,000. Hence,
+in the given application the collection of values is a sequence that
+contains the integers between 1 and 100,000. The running index is called
+“<code>i</code>”. the expression is evaluated 100,000 times, each time with a
+different integer value for the running index “<code>i</code>”.</p>
 <div class="figure" style="text-align: center"><span id="fig:SampDist6"></span>
 <img src="statthink_files/figure-html/SampDist6-1.png" alt="Distribution of Height and the Sampling Distribution of Averages" width="60%" />
 <p class="caption">
 FIGURE 7.1: Distribution of Height and the Sampling Distribution of Averages
 </p>
 </div>
-<p>The <code>R</code> system treats a collection of expressions enclosed within curly brackets as one entity. Therefore, in each iteration of the “<code>for</code>” loop, the lines that are within the curly brackets are evaluated. In the first line a random sample of size 100 is produced and in the second line the average of the sample is computed and stored in the <span class="math inline">\(i\)</span>-th position of the sequence “<code>X.bar</code>”. Observe that the specific position in the sequence is referred to by using square brackets.</p>
-<p>The program changes the original components of the sequence, from 0 to the average of a random sample, one by one. When the loop ends all values are changed and the sequence “<code>X.bar</code>” contains 100,000 evaluations of the sample average. The last line, which is outside the curly brackets and is evaluated after the “<code>for</code>” loop ends, produces an histogram of the averages that were simulated. The histogram is presented in the lower panel of Figure <a href="ChapSampDist.html#fig:SampDist6">7.1</a>.</p>
-<p>Compare the distribution of the sample average to the distribution of the heights in the population that was presented first in Figure <a href="ChapProbability.html#fig:Prob1">4.1</a> and is currently presented in the upper panel of Figure <a href="ChapSampDist.html#fig:SampDist6">7.1</a>. Observe that both distributions are centered at about 170 centimeters. Notice, however, that the range of values of the sample average lies essentially between 166 and 174 centimeters, whereas the range of the distribution of heights themselves is between 127 and 217 centimeter. Broadly speaking, the sample average and the original measurement are centered around the same location but the sample average is less spread.</p>
-<p>Specifically, let us compare the expectation and standard deviation of the sample average to the expectation and standard deviation of the original measurement:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(pop.<span class="dv">1</span><span class="op">$</span>height)</code></pre></div>
+<p>The <code>R</code> system treats a collection of expressions enclosed within curly
+brackets as one entity. Therefore, in each iteration of the “<code>for</code>”
+loop, the lines that are within the curly brackets are evaluated. In the
+first line a random sample of size 100 is produced and in the second
+line the average of the sample is computed and stored in the <span class="math inline">\(i\)</span>-th
+position of the sequence “<code>X.bar</code>”. Observe that the specific position
+in the sequence is referred to by using square brackets.</p>
+<p>The program changes the original components of the sequence, from 0 to
+the average of a random sample, one by one. When the loop ends all
+values are changed and the sequence “<code>X.bar</code>” contains 100,000
+evaluations of the sample average. The last line, which is outside the
+curly brackets and is evaluated after the “<code>for</code>” loop ends, produces an
+histogram of the averages that were simulated. The histogram is
+presented in the lower panel of Figure <a href="ChapSampDist.html#fig:SampDist6">7.1</a>.</p>
+<p>Compare the distribution of the sample average to the distribution of
+the heights in the population that was presented first in
+Figure <a href="ChapProbability.html#fig:Prob1">4.1</a> and is currently presented in the upper
+panel of Figure <a href="ChapSampDist.html#fig:SampDist6">7.1</a>. Observe that both distributions are
+centered at about 170 centimeters. Notice, however, that the range of
+values of the sample average lies essentially between 166 and 174
+centimeters, whereas the range of the distribution of heights themselves
+is between 127 and 217 centimeter. Broadly speaking, the sample average
+and the original measurement are centered around the same location but
+the sample average is less spread.</p>
+<p>Specifically, let us compare the expectation and standard deviation of
+the sample average to the expectation and standard deviation of the
+original measurement:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(pop<span class="fl">.1</span><span class="op">$</span>height)</code></pre>
 <pre><code>## [1] 170.035</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sd</span>(pop.<span class="dv">1</span><span class="op">$</span>height)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sd</span>(pop<span class="fl">.1</span><span class="op">$</span>height)</code></pre>
 <pre><code>## [1] 11.232047</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(X.bar)</code></pre></div>
-<pre><code>## [1] 170.03228</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sd</span>(X.bar)</code></pre></div>
-<pre><code>## [1] 1.1211777</code></pre>
-<p>Observe that the expectation of the population and the expectation of the sample average, are practically the same, the standard deviation of the sample average is about 10 times smaller than the standard deviation of the population. This result is not accidental and actually reflects a general phenomena that will be seen below in other examples.</p>
-<p>We may use the simulated sampling distribution in order to compute an approximation of the probability of the sample average falling within 1 centimeter of the population mean. Let us first compute the relevant probability and then explain the details of the computation:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(<span class="kw">abs</span>(X.bar <span class="op">-</span><span class="st"> </span><span class="kw">mean</span>(pop.<span class="dv">1</span><span class="op">$</span>height)) <span class="op">&lt;=</span><span class="st"> </span><span class="dv">1</span>)</code></pre></div>
-<pre><code>## [1] 0.62855</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(X.bar)</code></pre>
+<pre><code>## [1] 170.03988</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sd</span>(X.bar)</code></pre>
+<pre><code>## [1] 1.1259946</code></pre>
+<p>Observe that the expectation of the population and the expectation of
+the sample average, are practically the same, the standard deviation of
+the sample average is about 10 times smaller than the standard deviation
+of the population. This result is not accidental and actually reflects a
+general phenomena that will be seen below in other examples.</p>
+<p>We may use the simulated sampling distribution in order to compute an
+approximation of the probability of the sample average falling within 1
+centimeter of the population mean. Let us first compute the relevant
+probability and then explain the details of the computation:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(<span class="kw">abs</span>(X.bar <span class="op">-</span><span class="st"> </span><span class="kw">mean</span>(pop<span class="fl">.1</span><span class="op">$</span>height)) <span class="op">&lt;=</span><span class="st"> </span><span class="dv">1</span>)</code></pre>
+<pre><code>## [1] 0.62483</code></pre>
 <p>Hence we get that the probability of the given event is about 62.6%.</p>
-<p>The object “<code>X.bar</code>” is a sequence of length 100,000 that contains the simulated sample averages. This sequence represents the distribution of the sample average. The expression “<code>abs(X.bar - mean(pop.1$height)) &lt;= 1</code>” produces a sequence of logical “<code>TRUE</code>” or “<code>FALSE</code>” values, depending on the value of the sample average being less or more than one unit away from the population mean. The application of the function “<code>mean</code>” to the output of the last expression results in the computation of the relative frequency of <code>TRUE</code>s, which corresponds to the probability of the event of interest.</p>
+<p>The object “<code>X.bar</code>” is a sequence of length 100,000 that contains the
+simulated sample averages. This sequence represents the distribution of
+the sample average. The expression
+“<code>abs(X.bar - mean(pop.1$height)) &lt;= 1</code>” produces a sequence of logical
+“<code>TRUE</code>” or “<code>FALSE</code>” values, depending on the value of the sample
+average being less or more than one unit away from the population mean.
+The application of the function “<code>mean</code>” to the output of the last
+expression results in the computation of the relative frequency of
+<code>TRUE</code>s, which corresponds to the probability of the event of interest.</p>
 
 <div class="example">
-<span id="exm:exsampdist1" class="example"><strong>Example 7.1  </strong></span>A poll for the determination of the support in the population for a candidate was describe in Example <a href="ChapRandomVar.html#exm:exrvar1">5.1</a>. The proportion in the population of supporters was denoted by <span class="math inline">\(p\)</span>. A sample of size <span class="math inline">\(n=300\)</span> was considered in order to estimate the size of <span class="math inline">\(p\)</span>. We identified that the distribution of <span class="math inline">\(X\)</span>, the number of supporters in the sample, is <span class="math inline">\(\mathrm{Binomial}(300,p)\)</span>. This distribution is the sampling distribution<a href="#fn19" class="footnoteRef" id="fnref19"><sup>19</sup></a> of <span class="math inline">\(X\)</span>. One may use the proportion in the sample of supporters, the number of supporters in the sample divided by 300, as an estimate to the parameter <span class="math inline">\(p\)</span>. The sampling distribution of this quantity, <span class="math inline">\(X/300\)</span>, may be considered in order to assess the discrepancy between the estimate and the actual value of the parameter.
+<span id="exm:exsampdist1" class="example"><strong>Example 7.1  </strong></span>A poll for the determination of the support in the
+population for a candidate was describe in
+Example <a href="ChapRandomVar.html#exm:exrvar1">5.1</a>. The proportion in the population of
+supporters was denoted by <span class="math inline">\(p\)</span>. A sample of size <span class="math inline">\(n=300\)</span> was considered
+in order to estimate the size of <span class="math inline">\(p\)</span>. We identified that the
+distribution of <span class="math inline">\(X\)</span>, the number of supporters in the sample, is
+<span class="math inline">\(\mathrm{Binomial}(300,p)\)</span>. This distribution is the sampling
+distribution<a href="#fn19" class="footnote-ref" id="fnref19"><sup>19</sup></a> of <span class="math inline">\(X\)</span>. One may use the proportion in the sample of
+supporters, the number of supporters in the sample divided by 300, as an
+estimate to the parameter <span class="math inline">\(p\)</span>. The sampling distribution of this
+quantity, <span class="math inline">\(X/300\)</span>, may be considered in order to assess the discrepancy
+between the estimate and the actual value of the parameter.
 </div>
 
 </div>
 <div id="subsec:theoreticalmdls" class="section level3">
 <h3><span class="header-section-number">7.2.3</span> Theoretical Models</h3>
-<p>Sampling distribution can also be considered in the context of theoretical distribution models. For example, take a measurement <span class="math inline">\(X \sim \mathrm{Binomial}(10,0.5)\)</span> from the Binomial distribution. Assume 64 independent measurements are produced with this distribution: <span class="math inline">\(X_1, X_2, \ldots, X_{64}\)</span>. The sample average in this case corresponds to the distribution of the random variable produced by averaging these 64 random variables:</p>
-<p><span class="math display">\[\bar X = \frac{X_1 + X_2 + \cdots + X_{64}} {64} = \frac{1}{64}\sum_{i=1}^{64} X_i\;.\]</span> Again, one may wonder what is the distribution of the sample average <span class="math inline">\(\bar X\)</span> in this case?</p>
-<p>We can approximate the distribution of the sample average by simulation. The function “<code>rbinom</code>” produces a random sample from the Binomial distribution. The first argument to the function is the sample size, which we take in this example to be equal to 64. The second and third arguments are the parameters of the Binomial distribution, 10 and 0.5 in this case. We can use this function in the simulation:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">X.bar &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="dv">0</span>,<span class="dv">10</span><span class="op">^</span><span class="dv">5</span>)
+<p>Sampling distribution can also be considered in the context of
+theoretical distribution models. For example, take a measurement
+<span class="math inline">\(X \sim \mathrm{Binomial}(10,0.5)\)</span> from the Binomial distribution.
+Assume 64 independent measurements are produced with this distribution:
+<span class="math inline">\(X_1, X_2, \ldots, X_{64}\)</span>. The sample average in this case corresponds
+to the distribution of the random variable produced by averaging these
+64 random variables:</p>
+<p><span class="math display">\[\bar X = \frac{X_1 + X_2 + \cdots + X_{64}} {64} = \frac{1}{64}\sum_{i=1}^{64} X_i\;.\]</span>
+Again, one may wonder what is the distribution of the sample average
+<span class="math inline">\(\bar X\)</span> in this case?</p>
+<p>We can approximate the distribution of the sample average by simulation.
+The function “<code>rbinom</code>” produces a random sample from the Binomial
+distribution. The first argument to the function is the sample size,
+which we take in this example to be equal to 64. The second and third
+arguments are the parameters of the Binomial distribution, 10 and 0.5 in
+this case. We can use this function in the simulation:</p>
+<pre class="sourceCode r"><code class="sourceCode r">X.bar &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="dv">0</span>,<span class="dv">10</span><span class="op">^</span><span class="dv">5</span>)
 <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">10</span><span class="op">^</span><span class="dv">5</span>) {
   X.samp &lt;-<span class="st"> </span><span class="kw">rbinom</span>(<span class="dv">64</span>,<span class="dv">10</span>,<span class="fl">0.5</span>)
   X.bar[i] &lt;-<span class="st"> </span><span class="kw">mean</span>(X.samp)
-}</code></pre></div>
-<p>Observe that in this code we created a sequence of length 100,000 with evaluations of the sample average of 64 Binomial random variables. We start with a sequence of zeros and in each iteration of the “<code>for</code>” loop a zero is replaced by the average of a random sample of 64 Binomial random variables.</p>
+}</code></pre>
+<p>Observe that in this code we created a sequence of length 100,000 with
+evaluations of the sample average of 64 Binomial random variables. We
+start with a sequence of zeros and in each iteration of the “<code>for</code>” loop
+a zero is replaced by the average of a random sample of 64 Binomial
+random variables.</p>
 <div class="figure" style="text-align: center"><span id="fig:SampDist7"></span>
 <img src="statthink_files/figure-html/SampDist7-1.png" alt="Distributions of an Average and a Single Binomial(10,0.5)" width="60%" />
 <p class="caption">
@@ -577,137 +853,293 @@ FIGURE 7.2: Distributions of an Average and a Single Binomial(10,0.5)
 </p>
 </div>
 <p>Examine the sampling distribution of the Binomial average:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(X.bar)</code></pre></div>
-<pre><code>## [1] 5.0000081</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sd</span>(X.bar)</code></pre></div>
-<pre><code>## [1] 0.19788946</code></pre>
-<p>The histogram of the sample average is presented in the lower panel of Figure <a href="ChapSampDist.html#fig:SampDist7">7.2</a>. Compare it to the distribution of a single Binomial random variable that appears in the upper panel. Notice, once more, that the center of the two distributions coincide but the spread of the sample average is smaller. The sample space of a single Binomial random variable is composed of integers. The sample space of the average of 64 Binomial random variables, on the other hand, contains many more values and is closer to the sample space of a random variable with a continuous distribution.</p>
-<p>Recall that the expectation of a <span class="math inline">\(\mathrm{Binomial}(10,0.5)\)</span> random variable is <span class="math inline">\(E(X) = 10 \cdot 0.5 = 5\)</span> and the variance is <span class="math inline">\(V(X) = 10 \cdot 0.5 \cdot 0.5 = 2.5\)</span> (thus, the standard deviation is <span class="math inline">\(\sqrt{2.5} = 1.581139\)</span>). Observe that the expectation of the sample average that we got from the simulation is essentially equal to 5 and the standard deviation is 0.1982219.</p>
-<p>One may prove mathematically that the expectation of the sample mean is equal to the theoretical expectation of its components:</p>
-<p><span class="math display">\[E(\bar X) = E(X)\;.\]</span> The results of the simulation for the expectation of the sample average are consistent with the mathematical statement. The mathematical theory of probability may also be used in order to prove that the variance of the sample average is equal to the variance of each of the components, divided by the sample size:</p>
-<p><span class="math display">\[V(\bar X) = V(X)/n\;,\]</span> here <span class="math inline">\(n\)</span> is the number of observations in the sample. Specifically, in the Binomial example we get that <span class="math inline">\(V(\bar X) = 2.5/64\)</span>, since the variance of a Binomial component is 2.5 and there are 64 observations. Consequently, the standard deviation is <span class="math inline">\(\sqrt{2.5/64} = 0.1976424\)</span>, in agreement, more or less, with the results of the simulation (that produced 0.1982219 as the standard deviation).</p>
-<p>Consider the problem of identifying the central interval that contains 95% of the distribution. In the Normal distribution we were able to use the function “<code>qnorm</code>” in order to compute the percentiles of the theoretical distribution. A function that can be used for the same purpose for simulated distribution is the function “<code>quantile</code>”. The first argument to this function is the sequence of simulated values of the statistic, “<code>X.bar</code>” in the current case. The second argument is a number between 0 and 1, or a sequence of such numbers:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">quantile</span>(X.bar,<span class="kw">c</span>(<span class="fl">0.025</span>,<span class="fl">0.975</span>))</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(X.bar)</code></pre>
+<pre><code>## [1] 4.9994747</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sd</span>(X.bar)</code></pre>
+<pre><code>## [1] 0.19827376</code></pre>
+<p>The histogram of the sample average is presented in the lower panel of
+Figure <a href="ChapSampDist.html#fig:SampDist7">7.2</a>. Compare it to the distribution of a single
+Binomial random variable that appears in the upper panel. Notice, once
+more, that the center of the two distributions coincide but the spread
+of the sample average is smaller. The sample space of a single Binomial
+random variable is composed of integers. The sample space of the average
+of 64 Binomial random variables, on the other hand, contains many more
+values and is closer to the sample space of a random variable with a
+continuous distribution.</p>
+<p>Recall that the expectation of a <span class="math inline">\(\mathrm{Binomial}(10,0.5)\)</span> random
+variable is <span class="math inline">\(\Expec(X) = 10 \cdot 0.5 = 5\)</span> and the variance is
+<span class="math inline">\(\Var(X) = 10 \cdot 0.5 \cdot 0.5 = 2.5\)</span> (thus, the standard deviation
+is <span class="math inline">\(\sqrt{2.5} = 1.581139\)</span>). Observe that the expectation of the sample
+average that we got from the simulation is essentially equal to 5 and
+the standard deviation is 0.1982219.</p>
+<p>One may prove mathematically that the expectation of the sample mean is
+equal to the theoretical expectation of its components:</p>
+<p><span class="math display">\[\Expec(\bar X) = \Expec(X)\;.\]</span> The results of the simulation for the
+expectation of the sample average are consistent with the mathematical
+statement. The mathematical theory of probability may also be used in
+order to prove that the variance of the sample average is equal to the
+variance of each of the components, divided by the sample size:</p>
+<p><span class="math display">\[\Var(\bar X) = \Var(X)/n\;,\]</span> here <span class="math inline">\(n\)</span> is the number of observations
+in the sample. Specifically, in the Binomial example we get that
+<span class="math inline">\(\Var(\bar X) = 2.5/64\)</span>, since the variance of a Binomial component is
+2.5 and there are 64 observations. Consequently, the standard deviation
+is <span class="math inline">\(\sqrt{2.5/64} = 0.1976424\)</span>, in agreement, more or less, with the
+results of the simulation (that produced 0.1982219 as the standard
+deviation).</p>
+<p>Consider the problem of identifying the central interval that contains
+95% of the distribution. In the Normal distribution we were able to use
+the function “<code>qnorm</code>” in order to compute the percentiles of the
+theoretical distribution. A function that can be used for the same
+purpose for simulated distribution is the function “<code>quantile</code>”. The
+first argument to this function is the sequence of simulated values of
+the statistic, “<code>X.bar</code>” in the current case. The second argument is a
+number between 0 and 1, or a sequence of such numbers:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">quantile</span>(X.bar,<span class="kw">c</span>(<span class="fl">0.025</span>,<span class="fl">0.975</span>))</code></pre>
 <pre><code>##     2.5%    97.5% 
 ## 4.609375 5.390625</code></pre>
-<p>We used the sequence “<code>c(0.025,0.975)</code>” as the input to the second argument. As a result we obtained the output 4.609375, which is the 2.5%-percentile of the sampling distribution of the average, and 5.390625, which is the 97.5%-percentile of the sampling distribution of the average.</p>
-<p>Of interest is to compare these percentiles to the parallel percentiles of the Normal distribution with the same expectation and the same standard deviation as the average of the Binomials:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">qnorm</span>(<span class="kw">c</span>(<span class="fl">0.025</span>,<span class="fl">0.975</span>),<span class="kw">mean</span>(X.bar),<span class="kw">sd</span>(X.bar))</code></pre></div>
-<pre><code>## [1] 4.6121519 5.3878643</code></pre>
-<p>Observe the similarity between the percentiles of the distribution of the average and the percentiles of the Normal distribution. This similarity is a reflection of the Normal approximation of the sampling distribution of the average, which is formulated in the next section under the title: <em>The Central Limit Theorem</em>.</p>
+<p>We used the sequence “<code>c(0.025,0.975)</code>” as the input to the second
+argument. As a result we obtained the output 4.609375, which is the
+2.5%-percentile of the sampling distribution of the average, and
+5.390625, which is the 97.5%-percentile of the sampling distribution of
+the average.</p>
+<p>Of interest is to compare these percentiles to the parallel percentiles
+of the Normal distribution with the same expectation and the same
+standard deviation as the average of the Binomials:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">qnorm</span>(<span class="kw">c</span>(<span class="fl">0.025</span>,<span class="fl">0.975</span>),<span class="kw">mean</span>(X.bar),<span class="kw">sd</span>(X.bar))</code></pre>
+<pre><code>## [1] 4.6108653 5.3880841</code></pre>
+<p>Observe the similarity between the percentiles of the distribution of
+the average and the percentiles of the Normal distribution. This
+similarity is a reflection of the Normal approximation of the sampling
+distribution of the average, which is formulated in the next section
+under the title: <em>The Central Limit Theorem</em>.</p>
 
 <div class="example">
-<span id="exm:exsampdist3" class="example"><strong>Example 7.2  </strong></span>The distribution of the number of events of radio active decay in a second was modeled in Example <a href="ChapRandomVar.html#exm:exrvar3">5.3</a> according to the Poisson distribution. A quantity of interest is <span class="math inline">\(\lambda\)</span>, the expectation of that Poisson distribution. This quantity may be estimated by measuring the total number of decays over a period of time and dividing the outcome by the number of seconds in that period of time. Let <span class="math inline">\(n\)</span> be this number of second. The procedure just described corresponds to taking the sample average of <span class="math inline">\(\mathrm{Poisson}(\lambda)\)</span> observations for a sample of size <span class="math inline">\(n\)</span>. The expectation of the sample average is <span class="math inline">\(\lambda\)</span> and the variance is <span class="math inline">\(\lambda/n\)</span>, leading to a standard deviation of size <span class="math inline">\(\sqrt{\lambda/n}\)</span>. The Central Limit Theorem states that the sampling distribution of this average corresponds, approximately, to the Normal distribution with this expectation and standard deviation.
+<span id="exm:exsampdist3" class="example"><strong>Example 7.2  </strong></span>The distribution of the number of events of radio
+active decay in a second was modeled in Example <a href="ChapRandomVar.html#exm:exrvar3">5.3</a>
+according to the Poisson distribution. A quantity of interest is
+<span class="math inline">\(\lambda\)</span>, the expectation of that Poisson distribution. This quantity
+may be estimated by measuring the total number of decays over a period
+of time and dividing the outcome by the number of seconds in that period
+of time. Let <span class="math inline">\(n\)</span> be this number of second. The procedure just described
+corresponds to taking the sample average of <span class="math inline">\(\mathrm{Poisson}(\lambda)\)</span>
+observations for a sample of size <span class="math inline">\(n\)</span>. The expectation of the sample
+average is <span class="math inline">\(\lambda\)</span> and the variance is <span class="math inline">\(\lambda/n\)</span>, leading to a
+standard deviation of size <span class="math inline">\(\sqrt{\lambda/n}\)</span>. The Central Limit Theorem
+states that the sampling distribution of this average corresponds,
+approximately, to the Normal distribution with this expectation and
+standard deviation.
 </div>
 
 </div>
 </div>
 <div id="law-of-large-numbers-and-central-limit-theorem" class="section level2">
 <h2><span class="header-section-number">7.3</span> Law of Large Numbers and Central Limit Theorem</h2>
-<p>The Law of Large Numbers and the Central Limit Theorem are mathematical theorems that describe the sampling distribution of the average for large samples.</p>
+<p>The Law of Large Numbers and the Central Limit Theorem are mathematical
+theorems that describe the sampling distribution of the average for
+large samples.</p>
 <div id="the-law-of-large-numbers" class="section level3">
 <h3><span class="header-section-number">7.3.1</span> The Law of Large Numbers</h3>
-<p>The Law of Large Numbers states that, as the sample size becomes larger, the sampling distribution of the sample average becomes more and more concentrated about the expectation.</p>
-<p>Let us demonstrate the Law of Large Numbers in the context of the Uniform distribution. Let the distribution of the measurement <span class="math inline">\(X\)</span> be <span class="math inline">\(\mathrm{Uniform}(3,7)\)</span>. Consider three different sample sizes <span class="math inline">\(n\)</span>: <span class="math inline">\(n=10\)</span>, <span class="math inline">\(n=100\)</span>, and <span class="math inline">\(n=1000\)</span>. Let us carry out a simulation similar to the simulations of the previous section. However, this time we run the simulation for the three sample sizes in parallel:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">unif.<span class="dv">10</span> &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="dv">0</span>,<span class="dv">10</span><span class="op">^</span><span class="dv">5</span>)
-unif.<span class="dv">100</span> &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="dv">0</span>,<span class="dv">10</span><span class="op">^</span><span class="dv">5</span>)
-unif.<span class="dv">1000</span> &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="dv">0</span>,<span class="dv">10</span><span class="op">^</span><span class="dv">5</span>)
+<p>The Law of Large Numbers states that, as the sample size becomes larger,
+the sampling distribution of the sample average becomes more and more
+concentrated about the expectation.</p>
+<p>Let us demonstrate the Law of Large Numbers in the context of the
+Uniform distribution. Let the distribution of the measurement <span class="math inline">\(X\)</span> be
+<span class="math inline">\(\mathrm{Uniform}(3,7)\)</span>. Consider three different sample sizes <span class="math inline">\(n\)</span>:
+<span class="math inline">\(n=10\)</span>, <span class="math inline">\(n=100\)</span>, and <span class="math inline">\(n=1000\)</span>. Let us carry out a simulation similar to
+the simulations of the previous section. However, this time we run the
+simulation for the three sample sizes in parallel:</p>
+<pre class="sourceCode r"><code class="sourceCode r">unif<span class="fl">.10</span> &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="dv">0</span>,<span class="dv">10</span><span class="op">^</span><span class="dv">5</span>)
+unif<span class="fl">.100</span> &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="dv">0</span>,<span class="dv">10</span><span class="op">^</span><span class="dv">5</span>)
+unif<span class="fl">.1000</span> &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="dv">0</span>,<span class="dv">10</span><span class="op">^</span><span class="dv">5</span>)
 <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">10</span><span class="op">^</span><span class="dv">5</span>) {
-  X.samp.<span class="dv">10</span> &lt;-<span class="st"> </span><span class="kw">runif</span>(<span class="dv">10</span>,<span class="dv">3</span>,<span class="dv">7</span>)
-  unif.<span class="dv">10</span>[i] &lt;-<span class="st"> </span><span class="kw">mean</span>(X.samp.<span class="dv">10</span>)
-  X.samp.<span class="dv">100</span> &lt;-<span class="st"> </span><span class="kw">runif</span>(<span class="dv">100</span>,<span class="dv">3</span>,<span class="dv">7</span>)
-  unif.<span class="dv">100</span>[i] &lt;-<span class="st"> </span><span class="kw">mean</span>(X.samp.<span class="dv">100</span>)
-  X.samp.<span class="dv">1000</span> &lt;-<span class="st"> </span><span class="kw">runif</span>(<span class="dv">1000</span>,<span class="dv">3</span>,<span class="dv">7</span>)
-  unif.<span class="dv">1000</span>[i] &lt;-<span class="st"> </span><span class="kw">mean</span>(X.samp.<span class="dv">1000</span>)
-}</code></pre></div>
-<p>Observe that we have produced 3 sequences of length 100,000 each: “<code>unif.10</code>”, “<code>unif.100</code>”, and “<code>unif.1000</code>”. The first sequence is an approximation of the sampling distribution of an average of 10 independent Uniform measurements, the second approximates the sampling distribution of an average of 100 measurements and the third the distribution of an average of 1000 measurements. The distribution of single measurement in each of the examples is <span class="math inline">\(\mathrm{Uniform}(3,7)\)</span>.</p>
+  X.samp<span class="fl">.10</span> &lt;-<span class="st"> </span><span class="kw">runif</span>(<span class="dv">10</span>,<span class="dv">3</span>,<span class="dv">7</span>)
+  unif<span class="fl">.10</span>[i] &lt;-<span class="st"> </span><span class="kw">mean</span>(X.samp<span class="fl">.10</span>)
+  X.samp<span class="fl">.100</span> &lt;-<span class="st"> </span><span class="kw">runif</span>(<span class="dv">100</span>,<span class="dv">3</span>,<span class="dv">7</span>)
+  unif<span class="fl">.100</span>[i] &lt;-<span class="st"> </span><span class="kw">mean</span>(X.samp<span class="fl">.100</span>)
+  X.samp<span class="fl">.1000</span> &lt;-<span class="st"> </span><span class="kw">runif</span>(<span class="dv">1000</span>,<span class="dv">3</span>,<span class="dv">7</span>)
+  unif<span class="fl">.1000</span>[i] &lt;-<span class="st"> </span><span class="kw">mean</span>(X.samp<span class="fl">.1000</span>)
+}</code></pre>
+<p>Observe that we have produced 3 sequences of length 100,000 each:
+“<code>unif.10</code>”, “<code>unif.100</code>”, and “<code>unif.1000</code>”. The first sequence is an
+approximation of the sampling distribution of an average of 10
+independent Uniform measurements, the second approximates the sampling
+distribution of an average of 100 measurements and the third the
+distribution of an average of 1000 measurements. The distribution of
+single measurement in each of the examples is <span class="math inline">\(\mathrm{Uniform}(3,7)\)</span>.</p>
 <p>Consider the expectation of sample average for the three sample sizes:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(unif.<span class="dv">10</span>)</code></pre></div>
-<pre><code>## [1] 5.0009893</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(unif.<span class="dv">100</span>)</code></pre></div>
-<pre><code>## [1] 4.9996692</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(unif.<span class="dv">1000</span>)</code></pre></div>
-<pre><code>## [1] 4.999882</code></pre>
-<p>For all sample size the expectation of the sample average is equal to 5, which is the expectation of the <span class="math inline">\(\mathrm{Uniform}(3,7)\)</span> distribution.</p>
-<p>Recall that the variance of the <span class="math inline">\(\mathrm{Uniform}(a,b)\)</span> distribution is <span class="math inline">\((b-a)^2/12\)</span>. Hence, the variance of the given Uniform distribution is <span class="math inline">\(V(X) = (7-3)^2/12 = 16/12 \approx 1.3333\)</span>. The variances of the sample averages are:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">var</span>(unif.<span class="dv">10</span>)</code></pre></div>
-<pre><code>## [1] 0.13382259</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">var</span>(unif.<span class="dv">100</span>)</code></pre></div>
-<pre><code>## [1] 0.013263651</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">var</span>(unif.<span class="dv">1000</span>)</code></pre></div>
-<pre><code>## [1] 0.0013279112</code></pre>
-<p>Notice that the variances decrease with the increase of the sample sizes. The decrease is according to the formula <span class="math inline">\(V(\bar X) = V(X)/n\)</span>.</p>
-<p>The variance is a measure of the spread of the distribution about the expectation. The smaller the variance the more concentrated is the distribution around the expectation. Consequently, in agreement with the Law of Large Numbers, the larger the sample size the more concentrated is the sampling distribution of the sample average about the expectation.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(unif<span class="fl">.10</span>)</code></pre>
+<pre><code>## [1] 5.0003975</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(unif<span class="fl">.100</span>)</code></pre>
+<pre><code>## [1] 4.9995767</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(unif<span class="fl">.1000</span>)</code></pre>
+<pre><code>## [1] 4.9999472</code></pre>
+<p>For all sample size the expectation of the sample average is equal to 5,
+which is the expectation of the <span class="math inline">\(\mathrm{Uniform}(3,7)\)</span> distribution.</p>
+<p>Recall that the variance of the <span class="math inline">\(\mathrm{Uniform}(a,b)\)</span> distribution is
+<span class="math inline">\((b-a)^2/12\)</span>. Hence, the variance of the given Uniform distribution is
+<span class="math inline">\(\Var(X) = (7-3)^2/12 = 16/12 \approx 1.3333\)</span>. The variances of the
+sample averages are:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">var</span>(unif<span class="fl">.10</span>)</code></pre>
+<pre><code>## [1] 0.13327908</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">var</span>(unif<span class="fl">.100</span>)</code></pre>
+<pre><code>## [1] 0.01335441</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">var</span>(unif<span class="fl">.1000</span>)</code></pre>
+<pre><code>## [1] 0.0013266032</code></pre>
+<p>Notice that the variances decrease with the increase of the sample
+sizes. The decrease is according to the formula
+<span class="math inline">\(\Var(\bar X) = \Var(X)/n\)</span>.</p>
+<p>The variance is a measure of the spread of the distribution about the
+expectation. The smaller the variance the more concentrated is the
+distribution around the expectation. Consequently, in agreement with the
+Law of Large Numbers, the larger the sample size the more concentrated
+is the sampling distribution of the sample average about the
+expectation.</p>
 </div>
 <div id="the-central-limit-theorem-clt" class="section level3">
 <h3><span class="header-section-number">7.3.2</span> The Central Limit Theorem (CLT)</h3>
-<p>The Law of Large Numbers states that the distribution of the sample average tends to be more concentrated as the sample size increases. The Central Limit Theorem (CLT in short) provides an approximation of this distribution.</p>
+<p>The Law of Large Numbers states that the distribution of the sample
+average tends to be more concentrated as the sample size increases. The
+Central Limit Theorem (CLT in short) provides an approximation of this
+distribution.</p>
 <div class="figure" style="text-align: center"><span id="fig:SampDist8"></span>
 <img src="statthink_files/figure-html/SampDist8-1.png" alt="The CLT for the Uniform(3,7) Distribution" width="60%" />
 <p class="caption">
 FIGURE 7.3: The CLT for the Uniform(3,7) Distribution
 </p>
 </div>
-<p>The deviation between the sample average and the expectation of the measurement tend to decreases with the increase in sample size. In order to obtain a refined assessment of this deviation one needs to magnify it. The appropriate way to obtain the magnification is to consider the standardized sample average, in which the deviation of the sample average from its expectation is divided by the standard deviation of the sample average:</p>
-<p><span class="math display">\[Z = \frac{\bar X - E(\bar X)}{\sqrt{V(\bar X)}}\;.\]</span></p>
-<p>Recall that the expectation of the sample average is equal to the expectation of a single random variable (<span class="math inline">\(E(\bar X) = E(X)\)</span>) and that the variance of the sample average is equal to the variance of a single observation, divided by the sample size (<span class="math inline">\(V(\bar X) = V(X)/n\)</span>). Consequently, one may rewrite the standardized sample average in the form:</p>
-<p><span class="math display">\[Z = \frac{\bar X - E(X)}{\sqrt{V(X)/n}}= \frac{\sqrt{n}(\bar X - E(X))}{\sqrt{V(X)}}\;.\]</span> The second equality follows from placing in the numerator the square root of <span class="math inline">\(n\)</span> which <em>divides</em> the term in the denominator. Observe that with the increase of the sample size the decreasing difference between the average and the expectation is magnified by the square root of <span class="math inline">\(n\)</span>.</p>
-<p>The Central Limit Theorem states that, with the increase in sample size, the sample average converges (after standardization) to the standard Normal distribution.</p>
-<p>Let us examine the Central Normal Theorem in the context of the example of the Uniform measurement. In Figure <a href="ChapSampDist.html#fig:SampDist8">7.3</a> you may find the (approximated) density of the standardized average for the three sample sizes based on the simulation that we carried out previously (as <em>red</em>, <em>green</em>, and <em>blue</em> lines). Along side with these densities you may also find the theoretical density of the standard Normal distribution (as a <em>black</em> line). Observe that the four curves are almost one on top of the other, proposing that the approximation of the distribution of the average by the Normal distribution is good even for a sample size as small as <span class="math inline">\(n=10\)</span>.</p>
-<p>However, before jumping to the conclusion that the Central Limit Theorem applies to any sample size, let us consider another example. In this example we repeat the same simulation that we did with the Uniform distribution, but this time we take <span class="math inline">\(\mathrm{Exponential}(0.5)\)</span> measurements instead:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">exp.<span class="dv">10</span> &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="dv">0</span>,<span class="dv">10</span><span class="op">^</span><span class="dv">5</span>)
-exp.<span class="dv">100</span> &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="dv">0</span>,<span class="dv">10</span><span class="op">^</span><span class="dv">5</span>)
-exp.<span class="dv">1000</span> &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="dv">0</span>,<span class="dv">10</span><span class="op">^</span><span class="dv">5</span>)
+<p>The deviation between the sample average and the expectation of the
+measurement tend to decreases with the increase in sample size. In order
+to obtain a refined assessment of this deviation one needs to magnify
+it. The appropriate way to obtain the magnification is to consider the
+standardized sample average, in which the deviation of the sample
+average from its expectation is divided by the standard deviation of the
+sample average:</p>
+<p><span class="math display">\[Z = \frac{\bar X - \Expec(\bar X)}{\sqrt{\Var(\bar X)}}\;.\]</span></p>
+<p>Recall that the expectation of the sample average is equal to the
+expectation of a single random variable (<span class="math inline">\(\Expec(\bar X) = \Expec(X)\)</span>)
+and that the variance of the sample average is equal to the variance of
+a single observation, divided by the sample size
+(<span class="math inline">\(\Var(\bar X) = \Var(X)/n\)</span>). Consequently, one may rewrite the
+standardized sample average in the form:</p>
+<p><span class="math display">\[Z = \frac{\bar X - \Expec(X)}{\sqrt{\Var(X)/n}}= \frac{\sqrt{n}(\bar X - \Expec(X))}{\sqrt{\Var(X)}}\;.\]</span>
+The second equality follows from placing in the numerator the square
+root of <span class="math inline">\(n\)</span> which <em>divides</em> the term in the denominator. Observe that
+with the increase of the sample size the decreasing difference between
+the average and the expectation is magnified by the square root of <span class="math inline">\(n\)</span>.</p>
+<p>The Central Limit Theorem states that, with the increase in sample size,
+the sample average converges (after standardization) to the standard
+Normal distribution.</p>
+<p>Let us examine the Central Normal Theorem in the context of the example
+of the Uniform measurement. In Figure <a href="ChapSampDist.html#fig:SampDist8">7.3</a> you may find
+the (approximated) density of the standardized average for the three
+sample sizes based on the simulation that we carried out previously (as
+<em>red</em>, <em>green</em>, and <em>blue</em> lines). Along side with these densities you
+may also find the theoretical density of the standard Normal
+distribution (as a <em>black</em> line). Observe that the four curves are
+almost one on top of the other, proposing that the approximation of the
+distribution of the average by the Normal distribution is good even for
+a sample size as small as <span class="math inline">\(n=10\)</span>.</p>
+<p>However, before jumping to the conclusion that the Central Limit Theorem
+applies to any sample size, let us consider another example. In this
+example we repeat the same simulation that we did with the Uniform
+distribution, but this time we take <span class="math inline">\(\mathrm{Exponential}(0.5)\)</span>
+measurements instead:</p>
+<pre class="sourceCode r"><code class="sourceCode r">exp<span class="fl">.10</span> &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="dv">0</span>,<span class="dv">10</span><span class="op">^</span><span class="dv">5</span>)
+exp<span class="fl">.100</span> &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="dv">0</span>,<span class="dv">10</span><span class="op">^</span><span class="dv">5</span>)
+exp<span class="fl">.1000</span> &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="dv">0</span>,<span class="dv">10</span><span class="op">^</span><span class="dv">5</span>)
 <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">10</span><span class="op">^</span><span class="dv">5</span>) {
-  X.samp.<span class="dv">10</span> &lt;-<span class="st"> </span><span class="kw">rexp</span>(<span class="dv">10</span>,<span class="fl">0.5</span>)
-  exp.<span class="dv">10</span>[i] &lt;-<span class="st"> </span><span class="kw">mean</span>(X.samp.<span class="dv">10</span>)
-  X.samp.<span class="dv">100</span> &lt;-<span class="st"> </span><span class="kw">rexp</span>(<span class="dv">100</span>,<span class="fl">0.5</span>)
-  exp.<span class="dv">100</span>[i] &lt;-<span class="st"> </span><span class="kw">mean</span>(X.samp.<span class="dv">100</span>)
-  X.samp.<span class="dv">1000</span> &lt;-<span class="st"> </span><span class="kw">rexp</span>(<span class="dv">1000</span>,<span class="fl">0.5</span>)
-  exp.<span class="dv">1000</span>[i] &lt;-<span class="st"> </span><span class="kw">mean</span>(X.samp.<span class="dv">1000</span>)
-}</code></pre></div>
+  X.samp<span class="fl">.10</span> &lt;-<span class="st"> </span><span class="kw">rexp</span>(<span class="dv">10</span>,<span class="fl">0.5</span>)
+  exp<span class="fl">.10</span>[i] &lt;-<span class="st"> </span><span class="kw">mean</span>(X.samp<span class="fl">.10</span>)
+  X.samp<span class="fl">.100</span> &lt;-<span class="st"> </span><span class="kw">rexp</span>(<span class="dv">100</span>,<span class="fl">0.5</span>)
+  exp<span class="fl">.100</span>[i] &lt;-<span class="st"> </span><span class="kw">mean</span>(X.samp<span class="fl">.100</span>)
+  X.samp<span class="fl">.1000</span> &lt;-<span class="st"> </span><span class="kw">rexp</span>(<span class="dv">1000</span>,<span class="fl">0.5</span>)
+  exp<span class="fl">.1000</span>[i] &lt;-<span class="st"> </span><span class="kw">mean</span>(X.samp<span class="fl">.1000</span>)
+}</code></pre>
 <div class="figure" style="text-align: center"><span id="fig:SampDist9"></span>
 <img src="statthink_files/figure-html/SampDist9-1.png" alt="The CLT for the Exponential(0.5) Distribution" width="60%" />
 <p class="caption">
 FIGURE 7.4: The CLT for the Exponential(0.5) Distribution
 </p>
 </div>
-<p>The expectation of an <span class="math inline">\(\mathrm{Exponential}(0.5)\)</span> random variable is <span class="math inline">\(E(X) = 1/\lambda = 1/0.5 = 2\)</span> and the variance is <span class="math inline">\(V(X) = 1/\lambda^2 = 1/(0.5)^2 = 4\)</span>. Observe below that the expectations of the sample averages are equal to the expectation of the measurement and the variances of the sample averages follow the relation <span class="math inline">\(V(\bar X) = V (X)/n\)</span>:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(exp.<span class="dv">10</span>)</code></pre></div>
-<pre><code>## [1] 2.002844</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(exp.<span class="dv">100</span>)</code></pre></div>
-<pre><code>## [1] 2.0003453</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(exp.<span class="dv">1000</span>)</code></pre></div>
-<pre><code>## [1] 2.0001572</code></pre>
-<p>So the expectations of the sample average are all equal to 2. For the variance we get:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">var</span>(exp.<span class="dv">10</span>)</code></pre></div>
-<pre><code>## [1] 0.40205542</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">var</span>(exp.<span class="dv">100</span>)</code></pre></div>
-<pre><code>## [1] 0.03978048</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">var</span>(exp.<span class="dv">1000</span>)</code></pre></div>
-<pre><code>## [1] 0.0040057027</code></pre>
+<p>The expectation of an <span class="math inline">\(\mathrm{Exponential}(0.5)\)</span> random variable is
+<span class="math inline">\(\Expec(X) = 1/\lambda = 1/0.5 = 2\)</span> and the variance is
+<span class="math inline">\(\Var(X) = 1/\lambda^2 = 1/(0.5)^2 = 4\)</span>. Observe below that the
+expectations of the sample averages are equal to the expectation of the
+measurement and the variances of the sample averages follow the relation
+<span class="math inline">\(\Var(\bar X) = \Var (X)/n\)</span>:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(exp<span class="fl">.10</span>)</code></pre>
+<pre><code>## [1] 1.9999383</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(exp<span class="fl">.100</span>)</code></pre>
+<pre><code>## [1] 2.0005219</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(exp<span class="fl">.1000</span>)</code></pre>
+<pre><code>## [1] 2.0000078</code></pre>
+<p>So the expectations of the sample average are all equal to 2. For the
+variance we get:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">var</span>(exp<span class="fl">.10</span>)</code></pre>
+<pre><code>## [1] 0.40447324</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">var</span>(exp<span class="fl">.100</span>)</code></pre>
+<pre><code>## [1] 0.039919575</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">var</span>(exp<span class="fl">.1000</span>)</code></pre>
+<pre><code>## [1] 0.0039724056</code></pre>
 <p>Which is in agreement with the decrease proposed by the theory,</p>
-<p>However, when one examines the densities of the sample averages in Figure @reF(fig:SampDist9) one may see a clear distinction between the sampling distribution of the average for a sample of size 10 and the normal distribution (compare the <em>red</em> curve to the <em>black</em> curve. The match between the <em>green</em> curve that corresponds to a sample of size <span class="math inline">\(n=100\)</span> and the <em>black</em> line is better, but not perfect. When the sample size is as large as <span class="math inline">\(n=1000\)</span> (the <em>blue</em> curve) then the agreement with the normal curve is very good.</p>
+<p>However, when one examines the densities of the sample averages in
+Figure @reF(fig:SampDist9) one may see a clear distinction between the
+sampling distribution of the average for a sample of size 10 and the
+normal distribution (compare the <em>red</em> curve to the <em>black</em> curve. The
+match between the <em>green</em> curve that corresponds to a sample of size
+<span class="math inline">\(n=100\)</span> and the <em>black</em> line is better, but not perfect. When the sample
+size is as large as <span class="math inline">\(n=1000\)</span> (the <em>blue</em> curve) then the agreement with
+the normal curve is very good.</p>
 </div>
 <div id="applying-the-central-limit-theorem" class="section level3">
 <h3><span class="header-section-number">7.3.3</span> Applying the Central Limit Theorem</h3>
-<p>The conclusion of the Central Limit Theorem is that the sampling distribution of the sample average can be approximated by the Normal distribution, regardless what is the distribution of the original measurement, but provided that the sample size is large enough. This statement is very important, since it allows us, in the context of the sample average, to carry out probabilistic computations using the Normal distribution even if we do not know the actual distribution of the measurement. All we need to know for the computation are the expectation of the measurement, its variance (or standard deviation) and the sample size.</p>
-<p>The theorem can be applied whenever probability computations associated with the sampling distribution of the average are required. The computation of the approximation is carried out by using the Normal distribution with the same expectation and the same standard deviation as the sample average.</p>
-<p>An example of such computation was conducted in Subsection <a href="ChapSampDist.html#subsec:theoreticalmdls">7.2.3</a> where the central interval that contains 95% of the sampling distribution of a Binomial average was required. The 2.5%- and the 97.5%-percentiles of the Normal distribution with the same expectation and variance as the sample average produced boundaries for the interval. These boundaries were in good agreement with the boundaries produced by the simulation. More examples will be provided in the Solved Exercises of this chapter and the next one.</p>
-<p>With all its usefulness, one should treat the Central Limit Theorem with a grain of salt. The approximation may be valid for large samples, but may be bad for samples that are not large enough. When the sample is small a careless application of the Central Limit Theorem may produce misleading conclusions.</p>
+<p>The conclusion of the Central Limit Theorem is that the sampling
+distribution of the sample average can be approximated by the Normal
+distribution, regardless what is the distribution of the original
+measurement, but provided that the sample size is large enough. This
+statement is very important, since it allows us, in the context of the
+sample average, to carry out probabilistic computations using the Normal
+distribution even if we do not know the actual distribution of the
+measurement. All we need to know for the computation are the expectation
+of the measurement, its variance (or standard deviation) and the sample
+size.</p>
+<p>The theorem can be applied whenever probability computations associated
+with the sampling distribution of the average are required. The
+computation of the approximation is carried out by using the Normal
+distribution with the same expectation and the same standard deviation
+as the sample average.</p>
+<p>An example of such computation was conducted in
+Subsection <a href="ChapSampDist.html#subsec:theoreticalmdls">7.2.3</a> where the central interval that
+contains 95% of the sampling distribution of a Binomial average was
+required. The 2.5%- and the 97.5%-percentiles of the Normal distribution
+with the same expectation and variance as the sample average produced
+boundaries for the interval. These boundaries were in good agreement
+with the boundaries produced by the simulation. More examples will be
+provided in the Solved Exercises of this chapter and the next one.</p>
+<p>With all its usefulness, one should treat the Central Limit Theorem with
+a grain of salt. The approximation may be valid for large samples, but
+may be bad for samples that are not large enough. When the sample is
+small a careless application of the Central Limit Theorem may produce
+misleading conclusions.</p>
 </div>
 </div>
 <div id="SampDistEx" class="section level2">
 <h2><span class="header-section-number">7.4</span> Exercises</h2>
 
 <div class="exercise">
-<p><span id="exr:ex1sampdist" class="exercise"><strong>Exercise 7.1  </strong></span>The file “<code>pop2.csv</code>” contains information associated to the blood pressure of an imaginary population of size 100,000. The file can be found on the internet (<a href="http://pluto.huji.ac.il/~msby/StatThink/Datasets/pop2.csv" class="uri">http://pluto.huji.ac.il/~msby/StatThink/Datasets/pop2.csv</a>). The variables in this file are:</p>
+<p><span id="exr:ex1sampdist" class="exercise"><strong>Exercise 7.1  </strong></span>The file “<code>pop2.csv</code>” contains information associated
+to the blood pressure of an imaginary population of size 100,000. The
+file can be found on the internet
+(<a href="http://pluto.huji.ac.il/~msby/StatThink/Datasets/pop2.csv" class="uri">http://pluto.huji.ac.il/~msby/StatThink/Datasets/pop2.csv</a>). The
+variables in this file are:</p>
 <dl>
 <dt>id:</dt>
-<dd><p>A numerical variable. A 7 digits number that serves as a unique identifier of the subject.</p>
+<dd><p>A numerical variable. A 7 digits number that serves as a unique
+identifier of the subject.</p>
 </dd>
 <dt>sex:</dt>
-<dd><p>A factor variable. The sex of each subject. The values are either “<code>MALE</code>” or “<code>FEMALE</code>”.</p>
+<dd><p>A factor variable. The sex of each subject. The values are either
+“<code>MALE</code>” or “<code>FEMALE</code>”.</p>
 </dd>
 <dt>age:</dt>
 <dd><p>A numerical variable. The age of each subject.</p>
@@ -722,28 +1154,49 @@ FIGURE 7.4: The CLT for the Exponential(0.5) Distribution
 <dd><p>A numerical variable. The diastolic blood pressure of each subject.</p>
 </dd>
 <dt>group:</dt>
-<dd><p>A factor variable. The blood pressure category of each subject. The values are “<code>NORMAL</code>” both the systolic blood pressure is within its normal range (between 90 and 139) and the diastolic blood pressure is within its normal range (between 60 and 89). The value is “<code>HIGH</code>” if either measurements of blood pressure are above their normal upper limits and it is “<code>LOW</code>” if either measurements are below their normal lower limits.</p>
+<dd><p>A factor variable. The blood pressure category of each subject. The
+values are “<code>NORMAL</code>” both the systolic blood pressure is within its
+normal range (between 90 and 139) and the diastolic blood pressure
+is within its normal range (between 60 and 89). The value is
+“<code>HIGH</code>” if either measurements of blood pressure are above their
+normal upper limits and it is “<code>LOW</code>” if either measurements are
+below their normal lower limits.</p>
 </dd>
 </dl>
-<p>Our goal in this question is to investigate the sampling distribution of the sample average of the variable “<code>bmi</code>”. We assume a sample of size <span class="math inline">\(n=150\)</span>.</p>
+<p>Our goal in this question is to investigate the sampling distribution of
+the sample average of the variable “<code>bmi</code>”. We assume a sample of size
+<span class="math inline">\(n=150\)</span>.</p>
 <ol style="list-style-type: decimal">
 <li><p>Compute the population average of the variable “<code>bmi</code>”.</p></li>
 <li><p>Compute the population standard deviation of the variable “<code>bmi</code>”.</p></li>
-<li><p>Compute the expectation of the sampling distribution for the sample average of the variable.</p></li>
-<li><p>Compute the standard deviation of the sampling distribution for the sample average of the variable.</p></li>
-<li><p>Identify, using simulations, the central region that contains 80% of the sampling distribution of the sample average.</p></li>
-<li>Identify, using the Central Limit Theorem, an approximation of the central region that contains 80% of the sampling distribution of the sample average.</li>
+<li><p>Compute the expectation of the sampling distribution for the sample
+average of the variable.</p></li>
+<li><p>Compute the standard deviation of the sampling distribution for the
+sample average of the variable.</p></li>
+<li><p>Identify, using simulations, the central region that contains 80% of
+the sampling distribution of the sample average.</p></li>
+<li>Identify, using the Central Limit Theorem, an approximation of the
+central region that contains 80% of the sampling distribution of the
+sample average.</li>
 </ol>
 </div>
 
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-108" class="exercise"><strong>Exercise 7.2  </strong></span>A subatomic particle hits a linear detector at random locations. The length of the detector is 10 nm and the hits are uniformly distributed. The location of 25 random hits, measured from a specified endpoint of the interval, are marked and the average of the location computed.</p>
+<p><span id="exr:unnamed-chunk-109" class="exercise"><strong>Exercise 7.2  </strong></span>A subatomic particle hits a linear detector at random
+locations. The length of the detector is 10 nm and the hits are
+uniformly distributed. The location of 25 random hits, measured from a
+specified endpoint of the interval, are marked and the average of the
+location computed.</p>
 <ol style="list-style-type: decimal">
 <li><p>What is the expectation of the average location?</p></li>
 <li><p>What is the standard deviation of the average location?</p></li>
-<li><p>Use the Central Limit Theorem in order to approximate the probability the average location is in the left-most third of the linear detector.</p></li>
-<li>The central region that contains 99% of the distribution of the average is of the form <span class="math inline">\(5 \pm c\)</span>. Use the Central Limit Theorem in order to approximate the value of c.</li>
+<li><p>Use the Central Limit Theorem in order to approximate the
+probability the average location is in the left-most third of the
+linear detector.</p></li>
+<li>The central region that contains 99% of the distribution of the
+average is of the form <span class="math inline">\(5 \pm c\)</span>. Use the Central Limit Theorem in
+order to approximate the value of c.</li>
 </ol>
 </div>
 
@@ -754,40 +1207,67 @@ FIGURE 7.4: The CLT for the Exponential(0.5) Distribution
 <h3>Glossary</h3>
 <dl>
 <dt>Random Sample:</dt>
-<dd><p>The probabilistic model for the values of a measurements in the sample, before the measurement is taken.</p>
+<dd><p>The probabilistic model for the values of a measurements in the
+sample, before the measurement is taken.</p>
 </dd>
 <dt>Sampling Distribution:</dt>
 <dd><p>The distribution of a random sample.</p>
 </dd>
 <dt>Sampling Distribution of a Statistic:</dt>
-<dd><p>A statistic is a function of the data; i.e. a formula applied to the data. The statistic becomes a random variable when the formula is applied to a random sample. The distribution of this random variable, which is inherited from the distribution of the sample, is its sampling distribution.</p>
+<dd><p>A statistic is a function of the data; i.e. a formula applied to the
+data. The statistic becomes a random variable when the formula is
+applied to a random sample. The distribution of this random
+variable, which is inherited from the distribution of the sample, is
+its sampling distribution.</p>
 </dd>
 <dt>Sampling Distribution of the Sample Average:</dt>
-<dd><p>The distribution of the sample average, considered as a random variable.</p>
+<dd><p>The distribution of the sample average, considered as a random
+variable.</p>
 </dd>
 <dt>The Law of Large Numbers:</dt>
-<dd><p>A mathematical result regarding the sampling distribution of the sample average. States that the distribution of the average of measurements is highly concentrated in the vicinity of the expectation of a measurement when the sample size is large.</p>
+<dd><p>A mathematical result regarding the sampling distribution of the
+sample average. States that the distribution of the average of
+measurements is highly concentrated in the vicinity of the
+expectation of a measurement when the sample size is large.</p>
 </dd>
 <dt>The Central Limit Theorem:</dt>
-<dd><p>A mathematical result regarding the sampling distribution of the sample average. States that the distribution of the average is approximately Normal when the sample size is large.</p>
+<dd><p>A mathematical result regarding the sampling distribution of the
+sample average. States that the distribution of the average is
+approximately Normal when the sample size is large.</p>
 </dd>
 </dl>
 </div>
 <div id="discussion-in-the-forum" class="section level3 unnumbered">
 <h3>Discussion in the Forum</h3>
-<p>Limit theorems in mathematics deal with the convergence of some property to a limit as some indexing parameter goes to infinity. The Law of Large Numbers and the Central Limit Theorem are examples of limit theorems. The property they consider is the sampling distribution of the sample average. The indexing parameter that goes to infinity is the sample size <span class="math inline">\(n\)</span>.</p>
-<p>Some people say that the Law of Large Numbers and the Central Limit Theorem are useless for practical purposes. These theorems deal with a sample size that goes to infinity. However, all sample sizes one finds in reality are necessarily finite. What is your opinion?</p>
-<p>When forming your answer to this question you may give an example of a situation from your own field of interest in which conclusions of an abstract mathematical theory are used in order to solve a practical problem. Identify the merits and weaknesses of the application of the mathematical theory.</p>
-<p>For example, in making statistical inference one frequently needs to make statements regarding the sampling distribution of the sample average. For instant, one may want to identify the central region that contains 95% of the distribution. The Normal distribution is used in the computation. The justification is the Central Limit Theorem.</p>
+<p>Limit theorems in mathematics deal with the convergence of some property
+to a limit as some indexing parameter goes to infinity. The Law of Large
+Numbers and the Central Limit Theorem are examples of limit theorems.
+The property they consider is the sampling distribution of the sample
+average. The indexing parameter that goes to infinity is the sample size
+<span class="math inline">\(n\)</span>.</p>
+<p>Some people say that the Law of Large Numbers and the Central Limit
+Theorem are useless for practical purposes. These theorems deal with a
+sample size that goes to infinity. However, all sample sizes one finds
+in reality are necessarily finite. What is your opinion?</p>
+<p>When forming your answer to this question you may give an example of a
+situation from your own field of interest in which conclusions of an
+abstract mathematical theory are used in order to solve a practical
+problem. Identify the merits and weaknesses of the application of the
+mathematical theory.</p>
+<p>For example, in making statistical inference one frequently needs to
+make statements regarding the sampling distribution of the sample
+average. For instant, one may want to identify the central region that
+contains 95% of the distribution. The Normal distribution is used in the
+computation. The justification is the Central Limit Theorem.</p>
 </div>
 <div id="summary-of-formulas" class="section level3 unnumbered">
 <h3>Summary of Formulas</h3>
 <dl>
 <dt>Expectation of the sample average:</dt>
-<dd><p><span class="math inline">\(E(\bar X) = E(X)\)</span></p>
+<dd><p><span class="math inline">\(\Expec(\bar X) = \Expec(X)\)</span></p>
 </dd>
 <dt>Variance of the sample average:</dt>
-<dd><p><span class="math inline">\(V(\bar X) = V(X)/n\)</span></p>
+<dd><p><span class="math inline">\(\Var(\bar X) = \Var(X)/n\)</span></p>
 </dd>
 </dl>
 
@@ -797,8 +1277,22 @@ FIGURE 7.4: The CLT for the Exponential(0.5) Distribution
 <div class="footnotes">
 <hr />
 <ol start="18">
-<li id="fn18"><p>Running this simulation, and similar simulations of the same nature that will be considered in the sequel, demands more of the computer’s resources than the examples that were considered up until now. Beware that running times may be long and, depending on the strength of your computer and your patience, too long. You may save time by running less iterations, replacing, say, “<code>10^5</code>” by “<code>10^4</code>”. The results of the simulation will be less accurate, but will still be meaningful.<a href="ChapSampDist.html#fnref18">↩</a></p></li>
-<li id="fn19"><p>Mathematically speaking, the Binomial distribution is only an approximation to the sampling distribution of <span class="math inline">\(X\)</span>. Actually, the Binomial is an exact description to the distribution only in the case where each subject has the chance be represented in the sample more than once. However, only when the size of the sample is comparable to the size of the population would the Binomial distribution fail to be an adequate approximation to the sampling distribution.<a href="ChapSampDist.html#fnref19">↩</a></p></li>
+<li id="fn18"><p>Running this simulation, and similar simulations of the same
+nature that will be considered in the sequel, demands more of the
+computer’s resources than the examples that were considered up until
+now. Beware that running times may be long and, depending on the
+strength of your computer and your patience, too long. You may save
+time by running less iterations, replacing, say, “<code>10^5</code>” by
+“<code>10^4</code>”. The results of the simulation will be less accurate, but
+will still be meaningful.<a href="ChapSampDist.html#fnref18" class="footnote-back">↩</a></p></li>
+<li id="fn19"><p>Mathematically speaking, the Binomial distribution is only an
+approximation to the sampling distribution of <span class="math inline">\(X\)</span>. Actually, the
+Binomial is an exact description to the distribution only in the
+case where each subject has the chance be represented in the sample
+more than once. However, only when the size of the sample is
+comparable to the size of the population would the Binomial
+distribution fail to be an adequate approximation to the sampling
+distribution.<a href="ChapSampDist.html#fnref19" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>
@@ -825,17 +1319,26 @@ gitbook.start({
 "facebook": false,
 "twitter": true,
 "google": false,
+"linkedin": false,
 "weibo": false,
-"instapper": false,
+"instapaper": false,
 "vk": false,
-"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
 "theme": "white",
 "family": "sans",
 "size": 2
 },
-"download": ["statthink.pdf", "thinkstat.epub", "stathink_datasets.zip"],
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["statthink.pdf"],
 "toc": {
 "collapse": "none"
 }
@@ -848,8 +1351,8 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    var src = "";
-    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(src))
       src = src.replace(/^https?:/, '');
     script.src = src;

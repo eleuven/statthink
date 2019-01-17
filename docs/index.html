@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Introduction to Statistical Thinking</title>
   <meta name="description" content="Introduction to Statistical Thinking">
-  <meta name="generator" content="bookdown 0.5.10 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
   <meta property="og:title" content="Introduction to Statistical Thinking" />
   <meta property="og:type" content="book" />
@@ -25,7 +25,7 @@
 <meta name="author" content="Benjamin Yakir">
 
 
-<meta name="date" content="2017-11-26">
+<meta name="date" content="2019-01-16">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -36,6 +36,7 @@
 <link rel="next" href="ChapIntroR.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
@@ -50,41 +51,69 @@
 
 
 <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; position: absolute; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; }
+pre.numberSource a.sourceLine:empty
+  { position: absolute; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 <link rel="stylesheet" href="css/style.css" type="text/css" />
@@ -248,9 +277,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="9.1" data-path="ChapInference.html"><a href="ChapInference.html#student-learning-objectives-3"><i class="fa fa-check"></i><b>9.1</b> Student Learning Objectives</a></li>
 <li class="chapter" data-level="9.2" data-path="ChapInference.html"><a href="ChapInference.html#key-terms-1"><i class="fa fa-check"></i><b>9.2</b> Key Terms</a></li>
 <li class="chapter" data-level="9.3" data-path="ChapInference.html"><a href="ChapInference.html#the-cars-data-set"><i class="fa fa-check"></i><b>9.3</b> The Cars Data Set</a></li>
-<li class="chapter" data-level="9.4" data-path="ChapSampDist.html"><a href="ChapSampDist.html#the-sampling-distribution"><i class="fa fa-check"></i><b>9.4</b> The Sampling Distribution</a><ul>
+<li class="chapter" data-level="9.4" data-path="ChapInference.html"><a href="ChapInference.html#the-sampling-distribution-1"><i class="fa fa-check"></i><b>9.4</b> The Sampling Distribution</a><ul>
 <li class="chapter" data-level="9.4.1" data-path="ChapInference.html"><a href="ChapInference.html#statistics-1"><i class="fa fa-check"></i><b>9.4.1</b> Statistics</a></li>
-<li class="chapter" data-level="9.4.2" data-path="ChapInference.html"><a href="ChapInference.html#the-sampling-distribution-1"><i class="fa fa-check"></i><b>9.4.2</b> The Sampling Distribution</a></li>
+<li class="chapter" data-level="9.4.2" data-path="ChapInference.html"><a href="ChapInference.html#the-sampling-distribution-2"><i class="fa fa-check"></i><b>9.4.2</b> The Sampling Distribution</a></li>
 <li class="chapter" data-level="9.4.3" data-path="ChapInference.html"><a href="ChapInference.html#theoretical-distributions-of-observations"><i class="fa fa-check"></i><b>9.4.3</b> Theoretical Distributions of Observations</a></li>
 <li class="chapter" data-level="9.4.4" data-path="ChapInference.html"><a href="ChapInference.html#sampling-distribution-of-statistics"><i class="fa fa-check"></i><b>9.4.4</b> Sampling Distribution of Statistics</a></li>
 <li class="chapter" data-level="9.4.5" data-path="ChapInference.html"><a href="ChapInference.html#the-normal-approximation"><i class="fa fa-check"></i><b>9.4.5</b> The Normal Approximation</a></li>
@@ -367,7 +396,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li class="chapter" data-level="16.4" data-path="ChapCaseStudies.html"><a href="ChapCaseStudies.html#summary-13"><i class="fa fa-check"></i><b>16.4</b> Summary</a><ul>
 <li class="chapter" data-level="16.4.1" data-path="ChapCaseStudies.html"><a href="ChapCaseStudies.html#concluding-remarks"><i class="fa fa-check"></i><b>16.4.1</b> Concluding Remarks</a></li>
-<li class="chapter" data-level="16.4.2" data-path="ChapProbability.html"><a href="ChapProbability.html#discussion-in-the-forum"><i class="fa fa-check"></i><b>16.4.2</b> Discussion in the Forum</a></li>
+<li class="chapter" data-level="16.4.2" data-path="ChapCaseStudies.html"><a href="ChapCaseStudies.html#discussion-in-the-forum-1"><i class="fa fa-check"></i><b>16.4.2</b> Discussion in the Forum</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html"><i class="fa fa-check"></i>Exercise Solutions</a><ul>
@@ -457,28 +486,100 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
             <section class="normal" id="section-">
 <div id="header">
 <h1 class="title">Introduction to Statistical Thinking</h1>
-<h4 class="author"><em>Benjamin Yakir</em></h4>
-<h4 class="date"><em>2017-11-26</em></h4>
+<p class="author"><em>Benjamin Yakir</em></p>
+<p class="date"><em>2019-01-16</em></p>
 </div>
 <div id="preface" class="section level1 unnumbered">
 <h1>Preface</h1>
-<p>The target audience for this book is college students who are required to learn statistics, students with little background in mathematics and often no motivation to learn more. It is assumed that the students do have basic skills in using computers and have access to one. Moreover, it is assumed that the students are willing to actively follow the discussion in the text, to practice, and more importantly, to think.</p>
-<p>Teaching statistics is a challenge. Teaching it to students who are required to learn the subject as part of their curriculum, is an art mastered by few. In the past I have tried to master this art and failed. In desperation, I wrote this book.</p>
-<p>This book uses the basic structure of generic introduction to statistics course. However, in some ways I have chosen to diverge from the traditional approach. One divergence is the introduction of <code>R</code> as part of the learning process. Many have used statistical packages or spreadsheets as tools for teaching statistics. Others have used <code>R</code> in advanced courses. I am not aware of attempts to use <code>R</code> in introductory level courses. Indeed, mastering <code>R</code> requires much investment of time and energy that may be distracting and counterproductive for learning more fundamental issues. Yet, I believe that if one restricts the application of <code>R</code> to a limited number of commands, the benefits that <code>R</code> provides outweigh the difficulties that <code>R</code> engenders.</p>
-<p>Another departure from the standard approach is the treatment of probability as part of the course. In this book I do not attempt to teach probability as a subject matter, but only specific elements of it which I feel are essential for understanding statistics. Hence, Kolmogorov’s Axioms are out as well as attempts to prove basic theorems and a Balls and Urns type of discussion. On the other hand, emphasis is given to the notion of a <em>random variable</em> and, in that context, the <em>sample space</em>.</p>
-<p>The first part of the book deals with descriptive statistics and provides probability concepts that are required for the interpretation of statistical inference. Statistical inference is the subject of the second part of the book.</p>
-<p>The first chapter is a short introduction to statistics and probability. Students are required to have access to <code>R</code> right from the start. Instructions regarding the installation of <code>R</code> on a PC are provided.</p>
-<p>The second chapter deals with data structures and variation. Chapter 3 provides numerical and graphical tools for presenting and summarizing the distribution of data.</p>
-<p>The fundamentals of probability are treated in Chapters 4 to 7. The concept of a random variable is presented in Chapter 4 and examples of special types of random variables are discussed in Chapter 5. Chapter 6 deals with the Normal random variable. Chapter 7 introduces sampling distribution and presents the Central Limit Theorem and the Law of Large Numbers. Chapter 8 summarizes the material of the first seven chapters and discusses it in the statistical context.</p>
-<p>Chapter 9 starts the second part of the book and the discussion of statistical inference. It provides an overview of the topics that are presented in the subsequent chapter. The material of the first half is revisited.</p>
-<p>Chapters 10 to 12 introduce the basic tools of statistical inference, namely point estimation, estimation with a confidence interval, and the testing of statistical hypothesis. All these concepts are demonstrated in the context of a single measurements.</p>
-<p>Chapters 13 to 15 discuss inference that involve the comparison of two measurements. The context where these comparisons are carried out is that of regression that relates the distribution of a response to an explanatory variable. In Chapter 13 the response is numeric and the explanatory variable is a factor with two levels. In Chapter 14 both the response and the explanatory variable are numeric and in Chapter 15 the response in a factor with two levels.</p>
-<p>Chapter 16 ends the book with the analysis of two case studies. These analyses require the application of the tools that are presented throughout the book.</p>
-<p>This book was originally written for a pair of courses in the <a href="http://www.uopeople.org/">University of the People</a>. As such, each part was restricted to 8 chapters. Due to lack of space, some important material, especially the concepts of correlation and statistical independence were omitted. In future versions of the book I hope to fill this gap.</p>
-<p>Large portions of this book, mainly in the first chapters and some of the quizzes, are based on material from the online book “Collaborative Statistics” by Barbara Illowsky and Susan Dean (Connexions, March 2, 2010. <a href="http://cnx.org/content/col10522/1.37/" class="uri">http://cnx.org/content/col10522/1.37/</a>). Most of the material was edited by this author, who is the only person responsible for any errors that where introduced in the process of editing.</p>
-<p>Case studies that are presented in the second part of the book are taken from <a href="http://onlinestatbook.com/rvls.html">Rice Virtual Lab in Statistics</a> can be found in their <a href="http://onlinestatbook.com/case_studies_rvls/">Case Studies</a> section. The responsibility for mistakes in the analysis of the data, if such mistakes are found, are my own.</p>
-<p>I would like to thank my mother Ruth who, apart from giving birth, feeding and educating me, has also helped to improve the pedagogical structure of this text. I would like to thank also Gary Engstrom for correcting many of the mistakes in English that I made.</p>
-<p>This book is an open source and may be used by anyone who wishes to do so. (Under the conditions of the <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution License (CC-BY 3.0)</a>.))</p>
+<p>The target audience for this book is college students who are required
+to learn statistics, students with little background in mathematics and
+often no motivation to learn more. It is assumed that the students do
+have basic skills in using computers and have access to one. Moreover,
+it is assumed that the students are willing to actively follow the
+discussion in the text, to practice, and more importantly, to think.</p>
+<p>Teaching statistics is a challenge. Teaching it to students who are
+required to learn the subject as part of their curriculum, is an art
+mastered by few. In the past I have tried to master this art and failed.
+In desperation, I wrote this book.</p>
+<p>This book uses the basic structure of generic introduction to statistics
+course. However, in some ways I have chosen to diverge from the
+traditional approach. One divergence is the introduction of <code>R</code> as part
+of the learning process. Many have used statistical packages or
+spreadsheets as tools for teaching statistics. Others have used <code>R</code> in
+advanced courses. I am not aware of attempts to use <code>R</code> in introductory
+level courses. Indeed, mastering <code>R</code> requires much investment of time
+and energy that may be distracting and counterproductive for learning
+more fundamental issues. Yet, I believe that if one restricts the
+application of <code>R</code> to a limited number of commands, the benefits that
+<code>R</code> provides outweigh the difficulties that <code>R</code> engenders.</p>
+<p>Another departure from the standard approach is the treatment of
+probability as part of the course. In this book I do not attempt to
+teach probability as a subject matter, but only specific elements of it
+which I feel are essential for understanding statistics. Hence,
+Kolmogorov’s Axioms are out as well as attempts to prove basic theorems
+and a Balls and Urns type of discussion. On the other hand, emphasis is
+given to the notion of a <em>random variable</em> and, in that context, the
+<em>sample space</em>.</p>
+<p>The first part of the book deals with descriptive statistics and
+provides probability concepts that are required for the interpretation
+of statistical inference. Statistical inference is the subject of the
+second part of the book.</p>
+<p>The first chapter is a short introduction to statistics and probability.
+Students are required to have access to <code>R</code> right from the start.
+Instructions regarding the installation of <code>R</code> on a PC are provided.</p>
+<p>The second chapter deals with data structures and variation. Chapter 3
+provides numerical and graphical tools for presenting and summarizing
+the distribution of data.</p>
+<p>The fundamentals of probability are treated in Chapters 4 to 7. The
+concept of a random variable is presented in Chapter 4 and examples of
+special types of random variables are discussed in Chapter 5. Chapter 6
+deals with the Normal random variable. Chapter 7 introduces sampling
+distribution and presents the Central Limit Theorem and the Law of Large
+Numbers. Chapter 8 summarizes the material of the first seven chapters
+and discusses it in the statistical context.</p>
+<p>Chapter 9 starts the second part of the book and the discussion of
+statistical inference. It provides an overview of the topics that are
+presented in the subsequent chapter. The material of the first half is
+revisited.</p>
+<p>Chapters 10 to 12 introduce the basic tools of statistical inference,
+namely point estimation, estimation with a confidence interval, and the
+testing of statistical hypothesis. All these concepts are demonstrated
+in the context of a single measurements.</p>
+<p>Chapters 13 to 15 discuss inference that involve the comparison of two
+measurements. The context where these comparisons are carried out is
+that of regression that relates the distribution of a response to an
+explanatory variable. In Chapter 13 the response is numeric and the
+explanatory variable is a factor with two levels. In Chapter 14 both the
+response and the explanatory variable are numeric and in Chapter 15 the
+response in a factor with two levels.</p>
+<p>Chapter 16 ends the book with the analysis of two case studies. These
+analyses require the application of the tools that are presented
+throughout the book.</p>
+<p>This book was originally written for a pair of courses in the
+<a href="http://www.uopeople.org/">University of the People</a>. As such, each part
+was restricted to 8 chapters. Due to lack of space, some important
+material, especially the concepts of correlation and statistical
+independence were omitted. In future versions of the book I hope to fill
+this gap.</p>
+<p>Large portions of this book, mainly in the first chapters and some of
+the quizzes, are based on material from the online book “Collaborative
+Statistics” by Barbara Illowsky and Susan Dean (Connexions, March 2,
+2010. <a href="http://cnx.org/content/col10522/1.37/" class="uri">http://cnx.org/content/col10522/1.37/</a>). Most of the material was
+edited by this author, who is the only person responsible for any errors
+that where introduced in the process of editing.</p>
+<p>Case studies that are presented in the second part of the book are taken
+from <a href="http://onlinestatbook.com/rvls.html">Rice Virtual Lab in
+Statistics</a> can be found in their
+<a href="http://onlinestatbook.com/case_studies_rvls/">Case Studies</a> section.
+The responsibility for mistakes in the analysis of the data, if such
+mistakes are found, are my own.</p>
+<p>I would like to thank my mother Ruth who, apart from giving birth,
+feeding and educating me, has also helped to improve the pedagogical
+structure of this text. I would like to thank also Gary Engstrom for
+correcting many of the mistakes in English that I made.</p>
+<p>This book is an open source and may be used by anyone who wishes to do
+so. (Under the conditions of the <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution License
+(CC-BY 3.0)</a>.))</p>
 <p>Jerusalem, June 2011.</p>
 
 
@@ -507,17 +608,26 @@ gitbook.start({
 "facebook": false,
 "twitter": true,
 "google": false,
+"linkedin": false,
 "weibo": false,
-"instapper": false,
+"instapaper": false,
 "vk": false,
-"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
 "theme": "white",
 "family": "sans",
 "size": 2
 },
-"download": ["statthink.pdf", "thinkstat.epub", "stathink_datasets.zip"],
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["statthink.pdf"],
 "toc": {
 "collapse": "none"
 }
@@ -530,8 +640,8 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    var src = "";
-    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(src))
       src = src.replace(/^https?:/, '');
     script.src = src;

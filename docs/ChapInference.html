@@ -5,11 +5,11 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Introduction to Statistical Thinking</title>
-  <meta name="description" content="Introduction to Statistical Thinking">
-  <meta name="generator" content="bookdown 0.5.10 and GitBook 2.6.7">
+  <title>Chapter 9 Introduction to Statistical Inference | Introduction to Statistical Thinking</title>
+  <meta name="description" content="Chapter 9 Introduction to Statistical Inference | Introduction to Statistical Thinking">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="Introduction to Statistical Thinking" />
+  <meta property="og:title" content="Chapter 9 Introduction to Statistical Inference | Introduction to Statistical Thinking" />
   <meta property="og:type" content="book" />
   
   
@@ -17,7 +17,7 @@
   <meta name="github-repo" content="eleuven/statthink" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Introduction to Statistical Thinking" />
+  <meta name="twitter:title" content="Chapter 9 Introduction to Statistical Inference | Introduction to Statistical Thinking" />
   
   
   
@@ -25,7 +25,7 @@
 <meta name="author" content="Benjamin Yakir">
 
 
-<meta name="date" content="2017-11-26">
+<meta name="date" content="2019-01-16">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -36,6 +36,7 @@
 <link rel="next" href="ChapEstimation.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
@@ -50,41 +51,69 @@
 
 
 <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; position: absolute; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; }
+pre.numberSource a.sourceLine:empty
+  { position: absolute; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 <link rel="stylesheet" href="css/style.css" type="text/css" />
@@ -248,9 +277,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="9.1" data-path="ChapInference.html"><a href="ChapInference.html#student-learning-objectives-3"><i class="fa fa-check"></i><b>9.1</b> Student Learning Objectives</a></li>
 <li class="chapter" data-level="9.2" data-path="ChapInference.html"><a href="ChapInference.html#key-terms-1"><i class="fa fa-check"></i><b>9.2</b> Key Terms</a></li>
 <li class="chapter" data-level="9.3" data-path="ChapInference.html"><a href="ChapInference.html#the-cars-data-set"><i class="fa fa-check"></i><b>9.3</b> The Cars Data Set</a></li>
-<li class="chapter" data-level="9.4" data-path="ChapSampDist.html"><a href="ChapSampDist.html#the-sampling-distribution"><i class="fa fa-check"></i><b>9.4</b> The Sampling Distribution</a><ul>
+<li class="chapter" data-level="9.4" data-path="ChapInference.html"><a href="ChapInference.html#the-sampling-distribution-1"><i class="fa fa-check"></i><b>9.4</b> The Sampling Distribution</a><ul>
 <li class="chapter" data-level="9.4.1" data-path="ChapInference.html"><a href="ChapInference.html#statistics-1"><i class="fa fa-check"></i><b>9.4.1</b> Statistics</a></li>
-<li class="chapter" data-level="9.4.2" data-path="ChapInference.html"><a href="ChapInference.html#the-sampling-distribution-1"><i class="fa fa-check"></i><b>9.4.2</b> The Sampling Distribution</a></li>
+<li class="chapter" data-level="9.4.2" data-path="ChapInference.html"><a href="ChapInference.html#the-sampling-distribution-2"><i class="fa fa-check"></i><b>9.4.2</b> The Sampling Distribution</a></li>
 <li class="chapter" data-level="9.4.3" data-path="ChapInference.html"><a href="ChapInference.html#theoretical-distributions-of-observations"><i class="fa fa-check"></i><b>9.4.3</b> Theoretical Distributions of Observations</a></li>
 <li class="chapter" data-level="9.4.4" data-path="ChapInference.html"><a href="ChapInference.html#sampling-distribution-of-statistics"><i class="fa fa-check"></i><b>9.4.4</b> Sampling Distribution of Statistics</a></li>
 <li class="chapter" data-level="9.4.5" data-path="ChapInference.html"><a href="ChapInference.html#the-normal-approximation"><i class="fa fa-check"></i><b>9.4.5</b> The Normal Approximation</a></li>
@@ -367,7 +396,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li class="chapter" data-level="16.4" data-path="ChapCaseStudies.html"><a href="ChapCaseStudies.html#summary-13"><i class="fa fa-check"></i><b>16.4</b> Summary</a><ul>
 <li class="chapter" data-level="16.4.1" data-path="ChapCaseStudies.html"><a href="ChapCaseStudies.html#concluding-remarks"><i class="fa fa-check"></i><b>16.4.1</b> Concluding Remarks</a></li>
-<li class="chapter" data-level="16.4.2" data-path="ChapProbability.html"><a href="ChapProbability.html#discussion-in-the-forum"><i class="fa fa-check"></i><b>16.4.2</b> Discussion in the Forum</a></li>
+<li class="chapter" data-level="16.4.2" data-path="ChapCaseStudies.html"><a href="ChapCaseStudies.html#discussion-in-the-forum-1"><i class="fa fa-check"></i><b>16.4.2</b> Discussion in the Forum</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html"><i class="fa fa-check"></i>Exercise Solutions</a><ul>
@@ -459,36 +488,150 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h1><span class="header-section-number">Chapter 9</span> Introduction to Statistical Inference</h1>
 <div id="student-learning-objectives-3" class="section level2">
 <h2><span class="header-section-number">9.1</span> Student Learning Objectives</h2>
-<p>The next section of this chapter introduces the basic issues and tools of statistical inference. These tools are the subject matter of the second part of this book. In Chapters <a href="ChapInference.html#ChapInference">9</a>–<a href="ChapLogistic.html#ChapLogistic">15</a> we use data on the specifications of cars in order to demonstrate the application of the tools for making statistical inference. In the third section of this chapter we present the data frame that contains this data. The fourth section reviews probability topics that were discussed in the first part of the book and are relevant for the second part. By the end of this chapter, the student should be able to:</p>
+<p>The next section of this chapter introduces the basic issues and tools
+of statistical inference. These tools are the subject matter of the
+second part of this book. In Chapters <a href="ChapInference.html#ChapInference">9</a>–<a href="ChapLogistic.html#ChapLogistic">15</a>
+we use data on the specifications of cars in order to demonstrate the
+application of the tools for making statistical inference. In the third
+section of this chapter we present the data frame that contains this
+data. The fourth section reviews probability topics that were discussed
+in the first part of the book and are relevant for the second part. By
+the end of this chapter, the student should be able to:</p>
 <ul>
 <li><p>Define key terms that are associated with inferential statistics.</p></li>
 <li><p>Recognize the variables of the “<code>cars.csv</code>” data frame.</p></li>
-<li><p>Revise concepts related to random variables, the sampling distribution and the Central Limit Theorem.</p></li>
+<li><p>Revise concepts related to random variables, the sampling
+distribution and the Central Limit Theorem.</p></li>
 </ul>
 </div>
 <div id="key-terms-1" class="section level2">
 <h2><span class="header-section-number">9.2</span> Key Terms</h2>
-<p>The first part of the book deals with descriptive statistics and with probability. In descriptive statistics one investigates the characteristics of the data by using graphical tools and numerical summaries. The frame of reference is the observed data. In probability, on the other hand, one extends the frame of reference to include all data sets that could have potentially emerged, with the observed data as one among many.</p>
-<p>The second part of the book deals with inferential statistics. The aim of statistical inference is to gain insight regarding the population parameters from the observed data. The method for obtaining such insight involves the application of formal computations to the data. The interpretation of the outcome of these formal computations is carried out in the probabilistic context, in which one considers the application of these formal computations to all potential data sets. The justification for using the specific form of computation on the observed data stems from the examination of the probabilistic properties of the formal computations.</p>
-<p>Typically, the formal computations will involve statistics, which are functions of the data. The assessment of the probabilistic properties of the computations will result from the sampling distribution of these statistics.</p>
-<p>An example of a problem that requires statistical inference is the estimation of a parameter of the population using the observed data. <em>Point estimation</em> attempts to obtain the best guess to the value of that parameter. An <em>estimator</em> is a statistic that produces such a guess. One may prefer an estimator whose sampling distribution is more concentrated about the population parameter value over another estimator whose sampling distribution is less so. Hence, the justification for selecting a specific statistic as an estimator is a consequence of the probabilistic characteristics of this statistic in the context of the sampling distribution.</p>
-<p>For example, a car manufacture may be interested in the fuel consumption of a new type of car. In order to do so the manufacturer may apply a standard test cycle to a sample of 10 new cars of the given type and measure their fuel consumptions. The parameter of interest is the average fuel consumption among <em>all</em> cars of the given type. The average consumption of the 10 cars is a point estimate of the parameter of interest.</p>
-<p>An alternative approach for the estimation of a parameter is to construct an interval that is most likely to contain the population parameter. Such an interval, which is computed on the basis of the data, is called the a <em>confidence interval</em>. The sampling probability that the confidence interval will indeed contain the parameter value is called the <em>confidence level</em>. Confidence intervals are constructed so as to have a prescribed confidence level.</p>
-<p>A different problem in statistical inference is <em>hypothesis testing</em>. The scientific paradigm involves the proposal of new theories and hypothesis that presumably provide a better description for the laws of Nature. On the basis of these hypothesis one may propose predictions that can be examined empirically. If the empirical evidence is consistent with the predictions of the new hypothesis but not with those of the old theory then the old theory is rejected in favor of the new one. Otherwise, the established theory maintains its status. Statistical hypothesis testing is a formal method for determining which of the two hypothesis should prevail that uses this paradigm.</p>
-<p>Each of the two hypothesis, the old and the new, predicts a different distribution for the empirical measurements. In order to decide which of the distributions is more in tune with the data a statistic is computed. This statistic is called the <em>test statistic</em>. A threshold is set and, depending on where the test statistic falls with respect to this threshold, the decision is made whether or not to reject the old theory in favor of the new one.</p>
-<p>This decision rule is not error proof, since the test statistic may fall by chance on the wrong side of the threshold. Nonetheless, by the examination of the sampling distribution of the test statistic one is able to assess the probability of making an error. In particular, the probability of erroneously rejecting the currently accepted theory (the old one) is called the <em>significance level</em> of the test. Indeed, the threshold is selected in order to assure a small enough significance level.</p>
-<p>Returning to the car manufacturer. Assume that the car in question is manufactured in two different factories. One may want to examine the hypothesis that the car’s fuel consumption is the same for both factories. If 5 of the tested cars were manufactured in one factory and the other 5 in the other factory then the test may be based on the absolute value of the difference between the average consumption of the first 5 and the average consumption of the other 5.</p>
-<p>The method of testing hypothesis is also applied in other practical settings where it is required to make decisions. For example, before a new treatment to a medical condition is approved for marketing by the appropriate authorities it must undergo a process of objective testing through clinical trials. In these trials the new treatment is administered to some patients while other obtain the (currently) standard treatment. Statistical tests are applied in order to compare the two groups of patient. The new treatment is released to the market only if it is shown to be beneficial with statistical significance and it is shown to have no unacceptable side effects.</p>
-<p>In subsequent chapters we will discuss in more details the computation of point estimation, the construction of confidence intervals, and the application of hypothesis testing. The discussion will be initiated in the context of a single measurement but will later be extended to settings that involve comparison of measurements.</p>
-<p>An example of such analysis is the analysis of clinical trials where the response of the patients treated with the new procedure is compared to the response of patients that were treated with the conventional treatment. This comparison involves the same measurement taken for two sub-samples. The tools of statistical inference – hypothesis testing, point estimation and the construction of confidence intervals – may be used in order to carry out this comparison.</p>
-<p>Other comparisons may involve two measurements taken for the entire sample. An important tool for the investigation of the relations between two measurements, or variables, is <em>regression</em>. Models of regression describe the change in the distribution in one variable as a function of the other variable. Again, point estimation, confidence intervals, and hypothesis testing can be carried out in order to examine regression models. The variable whose distribution is the target of investigation is called the response. The other variable that may affect that distribution is called the explanatory variable.</p>
+<p>The first part of the book deals with descriptive statistics and with
+probability. In descriptive statistics one investigates the
+characteristics of the data by using graphical tools and numerical
+summaries. The frame of reference is the observed data. In probability,
+on the other hand, one extends the frame of reference to include all
+data sets that could have potentially emerged, with the observed data as
+one among many.</p>
+<p>The second part of the book deals with inferential statistics. The aim
+of statistical inference is to gain insight regarding the population
+parameters from the observed data. The method for obtaining such insight
+involves the application of formal computations to the data. The
+interpretation of the outcome of these formal computations is carried
+out in the probabilistic context, in which one considers the application
+of these formal computations to all potential data sets. The
+justification for using the specific form of computation on the observed
+data stems from the examination of the probabilistic properties of the
+formal computations.</p>
+<p>Typically, the formal computations will involve statistics, which are
+functions of the data. The assessment of the probabilistic properties of
+the computations will result from the sampling distribution of these
+statistics.</p>
+<p>An example of a problem that requires statistical inference is the
+estimation of a parameter of the population using the observed data.
+<em>Point estimation</em> attempts to obtain the best guess to the value of
+that parameter. An <em>estimator</em> is a statistic that produces such a
+guess. One may prefer an estimator whose sampling distribution is more
+concentrated about the population parameter value over another estimator
+whose sampling distribution is less so. Hence, the justification for
+selecting a specific statistic as an estimator is a consequence of the
+probabilistic characteristics of this statistic in the context of the
+sampling distribution.</p>
+<p>For example, a car manufacture may be interested in the fuel consumption
+of a new type of car. In order to do so the manufacturer may apply a
+standard test cycle to a sample of 10 new cars of the given type and
+measure their fuel consumptions. The parameter of interest is the
+average fuel consumption among <em>all</em> cars of the given type. The average
+consumption of the 10 cars is a point estimate of the parameter of
+interest.</p>
+<p>An alternative approach for the estimation of a parameter is to
+construct an interval that is most likely to contain the population
+parameter. Such an interval, which is computed on the basis of the data,
+is called the a <em>confidence interval</em>. The sampling probability that the
+confidence interval will indeed contain the parameter value is called
+the <em>confidence level</em>. Confidence intervals are constructed so as to
+have a prescribed confidence level.</p>
+<p>A different problem in statistical inference is <em>hypothesis testing</em>.
+The scientific paradigm involves the proposal of new theories and
+hypothesis that presumably provide a better description for the laws of
+Nature. On the basis of these hypothesis one may propose predictions
+that can be examined empirically. If the empirical evidence is
+consistent with the predictions of the new hypothesis but not with those
+of the old theory then the old theory is rejected in favor of the new
+one. Otherwise, the established theory maintains its status. Statistical
+hypothesis testing is a formal method for determining which of the two
+hypothesis should prevail that uses this paradigm.</p>
+<p>Each of the two hypothesis, the old and the new, predicts a different
+distribution for the empirical measurements. In order to decide which of
+the distributions is more in tune with the data a statistic is computed.
+This statistic is called the <em>test statistic</em>. A threshold is set and,
+depending on where the test statistic falls with respect to this
+threshold, the decision is made whether or not to reject the old theory
+in favor of the new one.</p>
+<p>This decision rule is not error proof, since the test statistic may fall
+by chance on the wrong side of the threshold. Nonetheless, by the
+examination of the sampling distribution of the test statistic one is
+able to assess the probability of making an error. In particular, the
+probability of erroneously rejecting the currently accepted theory (the
+old one) is called the <em>significance level</em> of the test. Indeed, the
+threshold is selected in order to assure a small enough significance
+level.</p>
+<p>Returning to the car manufacturer. Assume that the car in question is
+manufactured in two different factories. One may want to examine the
+hypothesis that the car’s fuel consumption is the same for both
+factories. If 5 of the tested cars were manufactured in one factory and
+the other 5 in the other factory then the test may be based on the
+absolute value of the difference between the average consumption of the
+first 5 and the average consumption of the other 5.</p>
+<p>The method of testing hypothesis is also applied in other practical
+settings where it is required to make decisions. For example, before a
+new treatment to a medical condition is approved for marketing by the
+appropriate authorities it must undergo a process of objective testing
+through clinical trials. In these trials the new treatment is
+administered to some patients while other obtain the (currently)
+standard treatment. Statistical tests are applied in order to compare
+the two groups of patient. The new treatment is released to the market
+only if it is shown to be beneficial with statistical significance and
+it is shown to have no unacceptable side effects.</p>
+<p>In subsequent chapters we will discuss in more details the computation
+of point estimation, the construction of confidence intervals, and the
+application of hypothesis testing. The discussion will be initiated in
+the context of a single measurement but will later be extended to
+settings that involve comparison of measurements.</p>
+<p>An example of such analysis is the analysis of clinical trials where the
+response of the patients treated with the new procedure is compared to
+the response of patients that were treated with the conventional
+treatment. This comparison involves the same measurement taken for two
+sub-samples. The tools of statistical inference – hypothesis testing,
+point estimation and the construction of confidence intervals – may be
+used in order to carry out this comparison.</p>
+<p>Other comparisons may involve two measurements taken for the entire
+sample. An important tool for the investigation of the relations between
+two measurements, or variables, is <em>regression</em>. Models of regression
+describe the change in the distribution in one variable as a function of
+the other variable. Again, point estimation, confidence intervals, and
+hypothesis testing can be carried out in order to examine regression
+models. The variable whose distribution is the target of investigation
+is called the response. The other variable that may affect that
+distribution is called the explanatory variable.</p>
 </div>
 <div id="the-cars-data-set" class="section level2">
 <h2><span class="header-section-number">9.3</span> The Cars Data Set</h2>
-<p>Statistical inference is applied to data in order to address specific research question. We will demonstrate different inferential procedures using a specific data set with the aim of making the discussion of the different procedures more concrete. The same data set will be used for all procedures that are presented in Chapters <a href="ChapEstimation.html#ChapEstimation">10</a>–<a href="ChapLogistic.html#ChapLogistic">15</a><a href="#fn23" class="footnoteRef" id="fnref23"><sup>23</sup></a>. This data set contains information on various models of cars and is stored in the CVS file “<code>cars.csv</code>”<a href="#fn24" class="footnoteRef" id="fnref24"><sup>24</sup></a>. The file can be found on the internet at <a href="http://pluto.huji.ac.il/~msby/StatThink/Datasets/cars.csv" class="uri">http://pluto.huji.ac.il/~msby/StatThink/Datasets/cars.csv</a>. You are advised to download this file to your computer and store it in the working directory of <code>R</code>.</p>
-<p>Let us read the content of the CSV file into an <code>R</code> data frame and produce a brief summary:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">cars &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;_data/cars.csv&quot;</span>)
-<span class="kw">summary</span>(cars)</code></pre></div>
+<p>Statistical inference is applied to data in order to address specific
+research question. We will demonstrate different inferential procedures
+using a specific data set with the aim of making the discussion of the
+different procedures more concrete. The same data set will be used for
+all procedures that are presented in
+Chapters <a href="ChapEstimation.html#ChapEstimation">10</a>–<a href="ChapLogistic.html#ChapLogistic">15</a><a href="#fn23" class="footnote-ref" id="fnref23"><sup>23</sup></a>. This data set contains
+information on various models of cars and is stored in the CVS file
+“<code>cars.csv</code>”<a href="#fn24" class="footnote-ref" id="fnref24"><sup>24</sup></a>. The file can be found on the internet at
+<a href="http://pluto.huji.ac.il/~msby/StatThink/Datasets/cars.csv" class="uri">http://pluto.huji.ac.il/~msby/StatThink/Datasets/cars.csv</a>. You are
+advised to download this file to your computer and store it in the
+working directory of <code>R</code>.</p>
+<p>Let us read the content of the CSV file into an <code>R</code> data frame and
+produce a brief summary:</p>
+<pre class="sourceCode r"><code class="sourceCode r">cars &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;_data/cars.csv&quot;</span>)
+<span class="kw">summary</span>(cars)</code></pre>
 <pre><code>##          make      fuel.type   num.of.doors       body.style drive.wheels
 ##  toyota    : 32   diesel: 20   four:114     convertible: 6   4wd:  9     
 ##  nissan    : 18   gas   :185   two : 89     hardtop    : 8   fwd:120     
@@ -521,11 +664,31 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 ##  3rd Qu.:5500.0   3rd Qu.:30.00   3rd Qu.:34.000   3rd Qu.:16500  
 ##  Max.   :6600.0   Max.   :49.00   Max.   :54.000   Max.   :45400  
 ##  NA&#39;s   :2                                         NA&#39;s   :4</code></pre>
-<p>Observe that the first 6 variables are factors, i.e. they contain qualitative data that is associated with categorization or the description of an attribute. The last 11 variable are numeric and contain quantitative data.</p>
-<p>Factors are summarized in <code>R</code> by listing the attributes and the frequency of each attribute value. If the number of attributes is large then only the most frequent attributes are listed. Numerical variables are summarized in <code>R</code> with the aid of the smallest and largest values, the three quartiles (Q1, the median, and Q3) and the average (mean).</p>
-<p>The third factor variable, “<code>num.of.doors</code>”, as well as several of the numerical variables have a special category titled “<code>NA’s</code>”. This category describes the number of missing values among the observations. For a given variable, the observations for which a value for the variable is not recorded, are marked as missing. <code>R</code> uses the symbol “<code>NA</code>” to identify a missing value<a href="#fn25" class="footnoteRef" id="fnref25"><sup>25</sup></a>.</p>
-<p>Missing observations are a concern in the analysis of statistical data. If the relative frequency of missing values is substantial and the reason for not obtaining the data for specific observations is related to the phenomena under investigation than naïve statistical inference may produce biased conclusions. In the “<code>cars</code>” data frame missing values are less of a concern since their relative frequency is low.</p>
-<p>One should be on the lookout for missing values when applying <code>R</code> to data since the different functions may have different ways for dealing with missing values. One should make sure that the appropriate way is applied for the specific analysis.</p>
+<p>Observe that the first 6 variables are factors, i.e. they contain
+qualitative data that is associated with categorization or the
+description of an attribute. The last 11 variable are numeric and
+contain quantitative data.</p>
+<p>Factors are summarized in <code>R</code> by listing the attributes and the
+frequency of each attribute value. If the number of attributes is large
+then only the most frequent attributes are listed. Numerical variables
+are summarized in <code>R</code> with the aid of the smallest and largest values,
+the three quartiles (Q1, the median, and Q3) and the average (mean).</p>
+<p>The third factor variable, “<code>num.of.doors</code>”, as well as several of the
+numerical variables have a special category titled “<code>NA’s</code>”. This
+category describes the number of missing values among the observations.
+For a given variable, the observations for which a value for the
+variable is not recorded, are marked as missing. <code>R</code> uses the symbol
+“<code>NA</code>” to identify a missing value<a href="#fn25" class="footnote-ref" id="fnref25"><sup>25</sup></a>.</p>
+<p>Missing observations are a concern in the analysis of statistical data.
+If the relative frequency of missing values is substantial and the
+reason for not obtaining the data for specific observations is related
+to the phenomena under investigation than naïve statistical inference
+may produce biased conclusions. In the “<code>cars</code>” data frame missing
+values are less of a concern since their relative frequency is low.</p>
+<p>One should be on the lookout for missing values when applying <code>R</code> to
+data since the different functions may have different ways for dealing
+with missing values. One should make sure that the appropriate way is
+applied for the specific analysis.</p>
 <p>Consider the variables of the data frame “<code>cars</code>”:</p>
 <dl>
 <dt><code>make</code>:</dt>
@@ -547,7 +710,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <dd><p>The location in the car of the engine (a factor).</p>
 </dd>
 <dt><code>wheel.base</code>:</dt>
-<dd><p>The distance between the centers of the front and rear wheels in inches (numeric).</p>
+<dd><p>The distance between the centers of the front and rear wheels in
+inches (numeric).</p>
 </dd>
 <dt><code>length</code>:</dt>
 <dd><p>The length of the body of the car in inches (numeric).</p>
@@ -559,10 +723,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <dd><p>The height of the car in inches (numeric).</p>
 </dd>
 <dt><code>curb.weight</code>:</dt>
-<dd><p>The total weight in pounds of a vehicle with standard equipment and a full tank of fuel, but with no passengers or cargo (numeric).</p>
+<dd><p>The total weight in pounds of a vehicle with standard equipment and
+a full tank of fuel, but with no passengers or cargo (numeric).</p>
 </dd>
 <dt><code>engine.size</code>:</dt>
-<dd><p>The volume swept by all the pistons inside the cylinders in cubic inches (numeric).</p>
+<dd><p>The volume swept by all the pistons inside the cylinders in cubic
+inches (numeric).</p>
 </dd>
 <dt><code>horsepower</code>:</dt>
 <dd><p>The power of the engine in horsepowers (numeric).</p>
@@ -571,145 +737,539 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <dd><p>The top speed of the engine in rounds-per-minute (numeric).</p>
 </dd>
 <dt><code>city.mpg</code>:</dt>
-<dd><p>The fuel consumption of the car in city driving conditions, measured as miles per gallon of fuel (numeric).</p>
+<dd><p>The fuel consumption of the car in city driving conditions, measured
+as miles per gallon of fuel (numeric).</p>
 </dd>
 <dt><code>highway.mpg</code>:</dt>
-<dd><p>The fuel consumption of the car in highway driving conditions, measured as miles per gallon of fuel (numeric).</p>
+<dd><p>The fuel consumption of the car in highway driving conditions,
+measured as miles per gallon of fuel (numeric).</p>
 </dd>
 <dt><code>price</code>:</dt>
 <dd><p>The retail price of the car in US Dollars (numeric).</p>
 </dd>
 </dl>
 </div>
-<div id="the-sampling-distribution" class="section level2">
+<div id="the-sampling-distribution-1" class="section level2">
 <h2><span class="header-section-number">9.4</span> The Sampling Distribution</h2>
 <div id="statistics-1" class="section level3">
 <h3><span class="header-section-number">9.4.1</span> Statistics</h3>
-<p>Statistical inferences, be it point estimation, confidence intervals, or testing hypothesis, are based on statistics computed from the data. Examples of statistics are the sample average and the sample standard deviation. These are important examples, but clearly not the only ones. Given numerical data, one may compute the smallest value, the largest value, the quartiles, and the median. All are examples of statistics. Statistics may also be associated with factors. The frequency of a given attribute among the observations is a statistic. (An example of such statistic is the frequency of diesel cars in the data frame.) As part of the discussion in the subsequent chapters we will consider these and other types of statistics.</p>
-<p>Any statistic, when computed in the context of the data frame being analyzed, obtains a single numerical value. However, once a sampling distribution is being considered then one may view the same statistic as a random variable. A statistic is a function or a formula which is applied to the data frame. Consequently, when a random collection of data frames is the frame of reference then the application of the formula to each of the data frames produces a random collection of values, which is the sampling distribution of the statistic.</p>
-<p>We distinguish in the text between the case where the statistic is computed in the context of the given data frame and the case where the computation is conducted in the context of the random sample. This distinguishing is emphasized by the use of small letters for the former and capital letters for the later. Consider, for example, the sample average. In the context of the observed data we denote the data values for a specific variable by <span class="math inline">\(x_1, x_2, \ldots, x_n\)</span>. The sample average computed for these values is denoted by</p>
-<p><span class="math display">\[\bar x = \frac{x_1 + x_2 + \cdots + x_n}{n}\;.\]</span> On the other hand, if the discussion of the sample average is conducted in the context of a random sample then the sample is a sequence <span class="math inline">\(X_1, X_2, \ldots, X_n\)</span> of random variables. The sample average is denoted in this context as</p>
-<p><span class="math display">\[\bar X = \frac{X_1 + X_2 + \cdots + X_n}{n}\;.\]</span> The same formula that was applied to the data values is applied now to the random components of the random sample. In the first context <span class="math inline">\(\bar x\)</span> is an observed non-random quantity. In the second context <span class="math inline">\(\bar X\)</span> is a random variable, an abstract mathematical concept.</p>
-<p>A second example is the sample variance. When we compute the sample variance for the observed data we use the formula:</p>
-<p><span class="math display">\[s^2 = \frac{\mbox{Sum of the squares of the deviations}}{\mbox{Number of values in the sample}-1}= \frac{\sum_{i=1}^n (x_i - \bar x)^2}{n-1}\;.\]</span> However, when we discuss the sampling distribution of the sample variance we apply the same formula to the random sample:</p>
-<p><span class="math display">\[S^2 = \frac{\mbox{Sum of the squares of the deviations}}{\mbox{Number of values in the sample}-1}= \frac{\sum_{i=1}^n (X_i - \bar X)^2}{n-1}\;.\]</span> Again, <span class="math inline">\(S^2\)</span> is a random variable whereas <span class="math inline">\(s^2\)</span> is a non-random quantity: The evaluation of the random variable at the specific sample that is being observed.</p>
+<p>Statistical inferences, be it point estimation, confidence intervals, or
+testing hypothesis, are based on statistics computed from the data.
+Examples of statistics are the sample average and the sample standard
+deviation. These are important examples, but clearly not the only ones.
+Given numerical data, one may compute the smallest value, the largest
+value, the quartiles, and the median. All are examples of statistics.
+Statistics may also be associated with factors. The frequency of a given
+attribute among the observations is a statistic. (An example of such
+statistic is the frequency of diesel cars in the data frame.) As part of
+the discussion in the subsequent chapters we will consider these and
+other types of statistics.</p>
+<p>Any statistic, when computed in the context of the data frame being
+analyzed, obtains a single numerical value. However, once a sampling
+distribution is being considered then one may view the same statistic as
+a random variable. A statistic is a function or a formula which is
+applied to the data frame. Consequently, when a random collection of
+data frames is the frame of reference then the application of the
+formula to each of the data frames produces a random collection of
+values, which is the sampling distribution of the statistic.</p>
+<p>We distinguish in the text between the case where the statistic is
+computed in the context of the given data frame and the case where the
+computation is conducted in the context of the random sample. This
+distinguishing is emphasized by the use of small letters for the former
+and capital letters for the later. Consider, for example, the sample
+average. In the context of the observed data we denote the data values
+for a specific variable by <span class="math inline">\(x_1, x_2, \ldots, x_n\)</span>. The sample average
+computed for these values is denoted by</p>
+<p><span class="math display">\[\bar x = \frac{x_1 + x_2 + \cdots + x_n}{n}\;.\]</span> On the other hand, if
+the discussion of the sample average is conducted in the context of a
+random sample then the sample is a sequence <span class="math inline">\(X_1, X_2, \ldots, X_n\)</span> of
+random variables. The sample average is denoted in this context as</p>
+<p><span class="math display">\[\bar X = \frac{X_1 + X_2 + \cdots + X_n}{n}\;.\]</span> The same formula that
+was applied to the data values is applied now to the random components
+of the random sample. In the first context <span class="math inline">\(\bar x\)</span> is an observed
+non-random quantity. In the second context <span class="math inline">\(\bar X\)</span> is a random
+variable, an abstract mathematical concept.</p>
+<p>A second example is the sample variance. When we compute the sample
+variance for the observed data we use the formula:</p>
+<p><span class="math display">\[s^2 = \frac{\mbox{Sum of the squares of the deviations}}{\mbox{Number of values in the sample}-1}= \frac{\sum_{i=1}^n (x_i - \bar x)^2}{n-1}\;.\]</span>
+However, when we discuss the sampling distribution of the sample
+variance we apply the same formula to the random sample:</p>
+<p><span class="math display">\[S^2 = \frac{\mbox{Sum of the squares of the deviations}}{\mbox{Number of values in the sample}-1}= \frac{\sum_{i=1}^n (X_i - \bar X)^2}{n-1}\;.\]</span>
+Again, <span class="math inline">\(S^2\)</span> is a random variable whereas <span class="math inline">\(s^2\)</span> is a non-random
+quantity: The evaluation of the random variable at the specific sample
+that is being observed.</p>
 </div>
-<div id="the-sampling-distribution-1" class="section level3">
+<div id="the-sampling-distribution-2" class="section level3">
 <h3><span class="header-section-number">9.4.2</span> The Sampling Distribution</h3>
-<p>The sampling distribution may emerge as random selection of samples from a particular population. In such a case, the sampling distribution of the sample, and hence of the statistic, is linked to the distribution of values of the variable in the population.</p>
-<p>Alternatively, one may assign theoretical distribution to the measurement associated with the variable. In this other case the sampling distribution of the statistic is linked to the theoretical model.</p>
-<p>Consider, for example, the variable “<code>price</code>” that describes the prices of the 205 car types (with 4 prices missing) in the data frame “<code>cars</code>”. In order to define a sampling distribution one may imagine a larger population of car types, perhaps all the car types that were sold during the 80’s in the United States, or some other frame of reference, with the car types that are included in the data frame considered as a random sample from that larger population. The observed sample corresponds to car types that where sold in 1985. Had one chosen to consider car types from a different year then one may expect to obtain other evaluations of the price variable. The reference population, in this case, is the distribution of the prices of the car types that were sold during the 80’s and the sampling distribution is associated with a random selection of a particular year within this period and the consideration of prices of car types sold in that year. The data for 1985 is what we have at hand. But in the sampling distribution we take into account the possibility that we could have obtained data for 1987, for example, rather than the data we did get.</p>
-<p>An alternative approach for addressing sampling distribution is to consider a theoretical model. Referring again to the variable “<code>price</code>” one may propose an Exponential model for the distribution of the prices of cars. This model implies that car types in the lower spectrum of the price range are more frequent than cars with a higher price tag. With this model in mind, one may propose the sampling distribution to be composed of 205 unrelated copies from the Exponential distribution (or 201 if we do not want to include the missing values). The rate <span class="math inline">\(\lambda\)</span> of the associated Exponential distribution is treated as an unknown parameter. One of the roles of statistical inference is to estimate the value of this parameter with the aid of the data at hand.</p>
-<p>Sampling distribution is relevant also for factor variables. Consider the variable “<code>fuel.type</code>” as an example. In the given data frame the frequency of diesel cars is 20. However, had one considered another year during the 80’s one may have obtained a different frequency, resulting in a sampling distribution. This type of sampling distribution refers to all cars types that were sold in the United States during the 80’s as the frame of reference.</p>
-<p>Alternatively, one may propose a theoretical model for the sampling distribution. Imagine there is a probability <span class="math inline">\(p\)</span> that a car runs on diesel (and probability <span class="math inline">\(1-p\)</span> that it runs on gas). Hence, when one selects 205 car types at random then one obtains that the distribution of the frequency of car types that run on diesel has the <span class="math inline">\(\mathrm{Binomial}(205,p)\)</span> distribution. This is the sampling distribution of the frequency statistic. Again, the value of <span class="math inline">\(p\)</span> is unknown and one of our tasks is to estimate it from the data we observe.</p>
-<p>In the context of statistical inference the use of theoretical models for the sampling distribution is the standard approach. There are situation, such as the application surveys to a specific target population, where the consideration of the entire population as the frame of reference is more natural. But, in most other applications the consideration of theoretical models is the method of choice. In this part of the book, where we consider statistical inference, we will always use the theoretical approach for modeling the sampling distribution.</p>
+<p>The sampling distribution may emerge as random selection of samples from
+a particular population. In such a case, the sampling distribution of
+the sample, and hence of the statistic, is linked to the distribution of
+values of the variable in the population.</p>
+<p>Alternatively, one may assign theoretical distribution to the
+measurement associated with the variable. In this other case the
+sampling distribution of the statistic is linked to the theoretical
+model.</p>
+<p>Consider, for example, the variable “<code>price</code>” that describes the prices
+of the 205 car types (with 4 prices missing) in the data frame “<code>cars</code>”.
+In order to define a sampling distribution one may imagine a larger
+population of car types, perhaps all the car types that were sold during
+the 80’s in the United States, or some other frame of reference, with
+the car types that are included in the data frame considered as a random
+sample from that larger population. The observed sample corresponds to
+car types that where sold in 1985. Had one chosen to consider car types
+from a different year then one may expect to obtain other evaluations of
+the price variable. The reference population, in this case, is the
+distribution of the prices of the car types that were sold during the
+80’s and the sampling distribution is associated with a random selection
+of a particular year within this period and the consideration of prices
+of car types sold in that year. The data for 1985 is what we have at
+hand. But in the sampling distribution we take into account the
+possibility that we could have obtained data for 1987, for example,
+rather than the data we did get.</p>
+<p>An alternative approach for addressing sampling distribution is to
+consider a theoretical model. Referring again to the variable “<code>price</code>”
+one may propose an Exponential model for the distribution of the prices
+of cars. This model implies that car types in the lower spectrum of the
+price range are more frequent than cars with a higher price tag. With
+this model in mind, one may propose the sampling distribution to be
+composed of 205 unrelated copies from the Exponential distribution (or
+201 if we do not want to include the missing values). The rate <span class="math inline">\(\lambda\)</span>
+of the associated Exponential distribution is treated as an unknown
+parameter. One of the roles of statistical inference is to estimate the
+value of this parameter with the aid of the data at hand.</p>
+<p>Sampling distribution is relevant also for factor variables. Consider
+the variable “<code>fuel.type</code>” as an example. In the given data frame the
+frequency of diesel cars is 20. However, had one considered another year
+during the 80’s one may have obtained a different frequency, resulting
+in a sampling distribution. This type of sampling distribution refers to
+all cars types that were sold in the United States during the 80’s as
+the frame of reference.</p>
+<p>Alternatively, one may propose a theoretical model for the sampling
+distribution. Imagine there is a probability <span class="math inline">\(p\)</span> that a car runs on
+diesel (and probability <span class="math inline">\(1-p\)</span> that it runs on gas). Hence, when one
+selects 205 car types at random then one obtains that the distribution
+of the frequency of car types that run on diesel has the
+<span class="math inline">\(\mathrm{Binomial}(205,p)\)</span> distribution. This is the sampling
+distribution of the frequency statistic. Again, the value of <span class="math inline">\(p\)</span> is
+unknown and one of our tasks is to estimate it from the data we observe.</p>
+<p>In the context of statistical inference the use of theoretical models
+for the sampling distribution is the standard approach. There are
+situation, such as the application surveys to a specific target
+population, where the consideration of the entire population as the
+frame of reference is more natural. But, in most other applications the
+consideration of theoretical models is the method of choice. In this
+part of the book, where we consider statistical inference, we will
+always use the theoretical approach for modeling the sampling
+distribution.</p>
 </div>
 <div id="theoretical-distributions-of-observations" class="section level3">
 <h3><span class="header-section-number">9.4.3</span> Theoretical Distributions of Observations</h3>
-<p>In the first part of the book we introduced several theoretical models that may describe the distribution of an observation. Let us take the opportunity and review the list of models:</p>
+<p>In the first part of the book we introduced several theoretical models
+that may describe the distribution of an observation. Let us take the
+opportunity and review the list of models:</p>
 <dl>
 <dt>Binomial:</dt>
-<dd><p>The Binomial distribution is used in settings that involve counting the number of occurrences of a particular outcome. The parameters that determine the distribution are <span class="math inline">\(n\)</span>, the number of observations, and <span class="math inline">\(p\)</span>, the probability of obtaining the particular outcome in each observation. The expression “<span class="math inline">\(\mathrm{Binomial}(n,p)\)</span>” is used to mark the Binomial distribution. The sample space for this distribution is formed by the integer values <span class="math inline">\(\{0, 1, 2, \ldots, n\}\)</span>. The expectation of the distribution is <span class="math inline">\(np\)</span> and the variance is <span class="math inline">\(np(1-p)\)</span>. The functions “<code>dbinom</code>”, “<code>pbinom</code>”, and “<code>qbinom</code>” may be used in order to compute the probability, the cumulative probability, and the percentiles, respectively, for the Binomial distribution. The function “<code>rbinom</code>” can be used in order to simulate a random sample from this distribution.</p>
+<dd><p>The Binomial distribution is used in settings that involve counting
+the number of occurrences of a particular outcome. The parameters
+that determine the distribution are <span class="math inline">\(n\)</span>, the number of observations,
+and <span class="math inline">\(p\)</span>, the probability of obtaining the particular outcome in each
+observation. The expression “<span class="math inline">\(\mathrm{Binomial}(n,p)\)</span>” is used to
+mark the Binomial distribution. The sample space for this
+distribution is formed by the integer values
+<span class="math inline">\(\{0, 1, 2, \ldots, n\}\)</span>. The expectation of the distribution is
+<span class="math inline">\(np\)</span> and the variance is <span class="math inline">\(np(1-p)\)</span>. The functions “<code>dbinom</code>”,
+“<code>pbinom</code>”, and “<code>qbinom</code>” may be used in order to compute the
+probability, the cumulative probability, and the percentiles,
+respectively, for the Binomial distribution. The function “<code>rbinom</code>”
+can be used in order to simulate a random sample from this
+distribution.</p>
 </dd>
 <dt>Poisson:</dt>
-<dd><p>The Poisson distribution is also used in settings that involve counting. This distribution approximates the Binomial distribution when the number of examinations <span class="math inline">\(n\)</span> is large but the probability <span class="math inline">\(p\)</span> of the particular outcome is small. The parameter that determines the distribution is the expectation <span class="math inline">\(\lambda\)</span>. The expression “<span class="math inline">\(\mathrm{Poisson}(\lambda)\)</span>” is used to mark the Poisson distribution. The sample space for this distribution is the entire collection of natural numbers <span class="math inline">\(\{0, 1, 2, \ldots\}\)</span>. The expectation of the distribution is <span class="math inline">\(\lambda\)</span> and the variance is also <span class="math inline">\(\lambda\)</span>. The functions “<code>dpois</code>”, “<code>ppois</code>”, and “<code>qpois</code>” may be used in order to compute the probability, the cumulative probability, and the percentiles, respectively, for the Poisson distribution. The function “<code>rpois</code>” can be used in order to simulate a random sample from this distribution.</p>
+<dd><p>The Poisson distribution is also used in settings that involve
+counting. This distribution approximates the Binomial distribution
+when the number of examinations <span class="math inline">\(n\)</span> is large but the probability <span class="math inline">\(p\)</span>
+of the particular outcome is small. The parameter that determines
+the distribution is the expectation <span class="math inline">\(\lambda\)</span>. The expression
+“<span class="math inline">\(\mathrm{Poisson}(\lambda)\)</span>” is used to mark the Poisson
+distribution. The sample space for this distribution is the entire
+collection of natural numbers <span class="math inline">\(\{0, 1, 2, \ldots\}\)</span>. The expectation
+of the distribution is <span class="math inline">\(\lambda\)</span> and the variance is also <span class="math inline">\(\lambda\)</span>.
+The functions “<code>dpois</code>”, “<code>ppois</code>”, and “<code>qpois</code>” may be used in
+order to compute the probability, the cumulative probability, and
+the percentiles, respectively, for the Poisson distribution. The
+function “<code>rpois</code>” can be used in order to simulate a random sample
+from this distribution.</p>
 </dd>
 <dt>Uniform:</dt>
-<dd><p>The Uniform distribution is used in order to model measurements that may have values in a given interval, with all values in this interval equally likely to occur. The parameters that determine the distribution are <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>, the two end points of the interval. The expression “<span class="math inline">\(\mathrm{Uniform}(a,b)\)</span>” is used to identify the Uniform distribution. The sample space for this distribution is the interval <span class="math inline">\([a,b]\)</span>. The expectation of the distribution is <span class="math inline">\((a+b)/2\)</span> and the variance is <span class="math inline">\((b-a)^2/12\)</span>. The functions “<code>dunif</code>”, “<code>punif</code>”, and “<code>qunif</code>” may be used in order to compute the density, the cumulative probability, and the percentiles for the Uniform distribution. The function “<code>runif</code>” can be used in order to simulate a random sample from this distribution.</p>
+<dd><p>The Uniform distribution is used in order to model measurements that
+may have values in a given interval, with all values in this
+interval equally likely to occur. The parameters that determine the
+distribution are <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>, the two end points of the interval.
+The expression “<span class="math inline">\(\mathrm{Uniform}(a,b)\)</span>” is used to identify the
+Uniform distribution. The sample space for this distribution is the
+interval <span class="math inline">\([a,b]\)</span>. The expectation of the distribution is <span class="math inline">\((a+b)/2\)</span>
+and the variance is <span class="math inline">\((b-a)^2/12\)</span>. The functions “<code>dunif</code>”,
+“<code>punif</code>”, and “<code>qunif</code>” may be used in order to compute the
+density, the cumulative probability, and the percentiles for the
+Uniform distribution. The function “<code>runif</code>” can be used in order to
+simulate a random sample from this distribution.</p>
 </dd>
 <dt>Exponential:</dt>
-<dd><p>The Exponential distribution is frequently used to model times between events. It can also be used in other cases where the outcome of the measurement is a positive number and where a smaller value is more likely than a larger value. The parameter that determines the distribution is the rate <span class="math inline">\(\lambda\)</span>. The expression “<span class="math inline">\(\mathrm{Exponential}(\lambda)\)</span>” is used to identify the Exponential distribution. The sample space for this distribution is the collection of positive numbers. The expectation of the distribution is <span class="math inline">\(1/\lambda\)</span> and the variance is <span class="math inline">\(1/\lambda^2\)</span>. The functions “<code>dexp</code>”, “<code>pexp</code>”, and “<code>qexp</code>” may be used in order to compute the density, the cumulative probability, and the percentiles, respectively, for the Exponential distribution. The function “<code>rexp</code>” can be used in order to simulate a random sample from this distribution.</p>
+<dd><p>The Exponential distribution is frequently used to model times
+between events. It can also be used in other cases where the outcome
+of the measurement is a positive number and where a smaller value is
+more likely than a larger value. The parameter that determines the
+distribution is the rate <span class="math inline">\(\lambda\)</span>. The expression
+“<span class="math inline">\(\mathrm{Exponential}(\lambda)\)</span>” is used to identify the
+Exponential distribution. The sample space for this distribution is
+the collection of positive numbers. The expectation of the
+distribution is <span class="math inline">\(1/\lambda\)</span> and the variance is <span class="math inline">\(1/\lambda^2\)</span>. The
+functions “<code>dexp</code>”, “<code>pexp</code>”, and “<code>qexp</code>” may be used in order to
+compute the density, the cumulative probability, and the
+percentiles, respectively, for the Exponential distribution. The
+function “<code>rexp</code>” can be used in order to simulate a random sample
+from this distribution.</p>
 </dd>
 <dt>Normal:</dt>
-<dd><p>The Normal distribution frequently serves as a generic model for the distribution of a measurement. Typically, it also emerges as an approximation of the sampling distribution of statistics. The parameters that determine the distribution are the expectation <span class="math inline">\(\mu\)</span> and the variance <span class="math inline">\(\sigma^2\)</span>. The expression “<span class="math inline">\(\mathrm{Normal}(\mu,\sigma^2)\)</span>” is used to mark the Normal distribution. The sample space for this distribution is the collection of all numbers, negative or positive. The expectation of the distribution is <span class="math inline">\(\mu\)</span> and the variance is <span class="math inline">\(\sigma^2\)</span>. The functions “<code>dnorm</code>”, “<code>pnorm</code>”, and “<code>qnorm</code>” may be used in order to compute the density, the cumulative probability, and the percentiles for the Normal distribution. The function “<code>rnorm</code>” can be used in order to simulate a random sample from this distribution.</p>
+<dd><p>The Normal distribution frequently serves as a generic model for the
+distribution of a measurement. Typically, it also emerges as an
+approximation of the sampling distribution of statistics. The
+parameters that determine the distribution are the expectation <span class="math inline">\(\mu\)</span>
+and the variance <span class="math inline">\(\sigma^2\)</span>. The expression
+“<span class="math inline">\(\mathrm{Normal}(\mu,\sigma^2)\)</span>” is used to mark the Normal
+distribution. The sample space for this distribution is the
+collection of all numbers, negative or positive. The expectation of
+the distribution is <span class="math inline">\(\mu\)</span> and the variance is <span class="math inline">\(\sigma^2\)</span>. The
+functions “<code>dnorm</code>”, “<code>pnorm</code>”, and “<code>qnorm</code>” may be used in order
+to compute the density, the cumulative probability, and the
+percentiles for the Normal distribution. The function “<code>rnorm</code>” can
+be used in order to simulate a random sample from this distribution.</p>
 </dd>
 </dl>
 </div>
 <div id="sampling-distribution-of-statistics" class="section level3">
 <h3><span class="header-section-number">9.4.4</span> Sampling Distribution of Statistics</h3>
-<p>Theoretical models describe the distribution of a measurement as a function of a parameter, or a small number of parameters. For example, in the Binomial case the distribution is determined by the number of trials <span class="math inline">\(n\)</span> and by the probability of success in each trial <span class="math inline">\(p\)</span>. In the Poisson case the distribution is a function of the expectation <span class="math inline">\(\lambda\)</span>. For the Uniform distribution we may use the end-points of the interval, <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>, as the parameters. In the Exponential case, the rate <span class="math inline">\(\lambda\)</span> is a natural parameter for specifying the distribution and in Normal case the expectation <span class="math inline">\(\mu\)</span> and the variance <span class="math inline">\(\sigma^2\)</span> my be used for that role.</p>
-<p>The general formulation of statistical inference problems involves the identification of a theoretical model for the distribution of the measurements. This theoretical model is a function of a parameter whose value is unknown. The goal is to produce statements that refer to this unknown parameter. These statements are based on a sample of observations from the given distribution.</p>
-<p>For example, one may try to guess the value of the parameter (point estimation), one may propose an interval which contains the value of the parameter with some subscribed probability (confidence interval) or one may test the hypothesis that the parameter obtains a specific value (hypothesis testing).</p>
-<p>The vehicles for conducting the statistical inferences are statistics that are computed as a function of the measurements. In the case of point estimation these statistics are called <em>estimators</em>. In the case where the construction of an interval that contains the value of the parameter is the goal then the statistics are called <em>confidence interval</em>. In the case of testing hypothesis these statistics are called <em>test statistics</em>.</p>
-<p>In all cases of inference, The relevant statistic possesses a distribution that it inherits from the sampling distribution of the observations. This distribution is the sampling distribution of the statistic. The properties of the statistic as a tool for inference are assessed in terms of its sampling distribution. The sampling distribution of a statistic is a function of the sample size and of the parameters that determine the distribution of the measurements, but otherwise may be of complex structure.</p>
-<p>In order to assess the performance of the statistics as agents of inference one should be able to determine their sampling distribution. We will apply two approaches for this determination. One approach is to use a Normal approximation. This approach relies on the Central Limit Theorem. The other approach is to simulate the distribution. This other approach relies on the functions available in <code>R</code> for the simulation of a random sample from a given distribution.</p>
+<p>Theoretical models describe the distribution of a measurement as a
+function of a parameter, or a small number of parameters. For example,
+in the Binomial case the distribution is determined by the number of
+trials <span class="math inline">\(n\)</span> and by the probability of success in each trial <span class="math inline">\(p\)</span>. In the
+Poisson case the distribution is a function of the expectation
+<span class="math inline">\(\lambda\)</span>. For the Uniform distribution we may use the end-points of the
+interval, <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>, as the parameters. In the Exponential case, the
+rate <span class="math inline">\(\lambda\)</span> is a natural parameter for specifying the distribution
+and in Normal case the expectation <span class="math inline">\(\mu\)</span> and the variance <span class="math inline">\(\sigma^2\)</span> my
+be used for that role.</p>
+<p>The general formulation of statistical inference problems involves the
+identification of a theoretical model for the distribution of the
+measurements. This theoretical model is a function of a parameter whose
+value is unknown. The goal is to produce statements that refer to this
+unknown parameter. These statements are based on a sample of
+observations from the given distribution.</p>
+<p>For example, one may try to guess the value of the parameter (point
+estimation), one may propose an interval which contains the value of the
+parameter with some subscribed probability (confidence interval) or one
+may test the hypothesis that the parameter obtains a specific value
+(hypothesis testing).</p>
+<p>The vehicles for conducting the statistical inferences are statistics
+that are computed as a function of the measurements. In the case of
+point estimation these statistics are called <em>estimators</em>. In the case
+where the construction of an interval that contains the value of the
+parameter is the goal then the statistics are called <em>confidence
+interval</em>. In the case of testing hypothesis these statistics are called
+<em>test statistics</em>.</p>
+<p>In all cases of inference, The relevant statistic possesses a
+distribution that it inherits from the sampling distribution of the
+observations. This distribution is the sampling distribution of the
+statistic. The properties of the statistic as a tool for inference are
+assessed in terms of its sampling distribution. The sampling
+distribution of a statistic is a function of the sample size and of the
+parameters that determine the distribution of the measurements, but
+otherwise may be of complex structure.</p>
+<p>In order to assess the performance of the statistics as agents of
+inference one should be able to determine their sampling distribution.
+We will apply two approaches for this determination. One approach is to
+use a Normal approximation. This approach relies on the Central Limit
+Theorem. The other approach is to simulate the distribution. This other
+approach relies on the functions available in <code>R</code> for the simulation of
+a random sample from a given distribution.</p>
 </div>
 <div id="the-normal-approximation" class="section level3">
 <h3><span class="header-section-number">9.4.5</span> The Normal Approximation</h3>
-<p>In general, the sampling distribution of a statistic is not the same as the sampling distribution of the measurements from which it is computed. For example, if the measurements are from the Uniform distributed then the distribution of a function of the measurements will, in most cases, not possess the Uniform distribution. Nonetheless, in many cases one may still identify, at least approximately, what the sampling distribution of the statistic is.</p>
-<p>The most important scenario where the limit distribution of the statistic has a known shape is when the statistic is the sample average or a function of the sample average. In such a case the Central Limit Theorem may be applied in order to show that, at least for a sample size not too small, the distribution of the statistic is approximately Normal.</p>
-<p>In the case where the Normal approximation may be applied then a probabilistic statement associated with the sampling distribution of the statistic can be substituted by the same statement formulated for the Normal distribution. For example, the probability that the statistic falls inside a given interval may be approximated by the probability that a Normal random variable with the same expectation and the same variance (or standard deviation) as the statistic falls inside the given interval.</p>
-<p>For the special case of the sample average one may use the fact that the expectation of the average of a sample of measurements is equal to the expectation of a single measurement and the fact that the variance of the average is the variance of a single measurement, divided by the sample size. Consequently, the probability that the sample average falls within a given interval may be approximate by the probability of the same interval according to the Normal distribution. The expectation that is used for the Normal distribution is the expectation of the measurement. The standard deviation is the standard deviation of the measurement, divided by the square root of the number of observations.</p>
-<p>The Normal approximation of the distribution of a statistic is valid for cases other than the sample average or functions thereof. For example, it can be shown (under some conditions) that the Normal approximation applies to the sample median, even though the sample median is not a function of the sample average.</p>
-<p>On the other hand, one need not always assume that the distribution of a statistic is necessarily Normal. In many cases it is not, even for a large sample size. For example, the minimal value of a sample that is generated from the Exponential distribution can be shown to follow the Exponential distribution with an appropriate rate<a href="#fn26" class="footnoteRef" id="fnref26"><sup>26</sup></a>, regardless of the sample size.</p>
+<p>In general, the sampling distribution of a statistic is not the same as
+the sampling distribution of the measurements from which it is computed.
+For example, if the measurements are from the Uniform distributed then
+the distribution of a function of the measurements will, in most cases,
+not possess the Uniform distribution. Nonetheless, in many cases one may
+still identify, at least approximately, what the sampling distribution
+of the statistic is.</p>
+<p>The most important scenario where the limit distribution of the
+statistic has a known shape is when the statistic is the sample average
+or a function of the sample average. In such a case the Central Limit
+Theorem may be applied in order to show that, at least for a sample size
+not too small, the distribution of the statistic is approximately
+Normal.</p>
+<p>In the case where the Normal approximation may be applied then a
+probabilistic statement associated with the sampling distribution of the
+statistic can be substituted by the same statement formulated for the
+Normal distribution. For example, the probability that the statistic
+falls inside a given interval may be approximated by the probability
+that a Normal random variable with the same expectation and the same
+variance (or standard deviation) as the statistic falls inside the given
+interval.</p>
+<p>For the special case of the sample average one may use the fact that the
+expectation of the average of a sample of measurements is equal to the
+expectation of a single measurement and the fact that the variance of
+the average is the variance of a single measurement, divided by the
+sample size. Consequently, the probability that the sample average falls
+within a given interval may be approximate by the probability of the
+same interval according to the Normal distribution. The expectation that
+is used for the Normal distribution is the expectation of the
+measurement. The standard deviation is the standard deviation of the
+measurement, divided by the square root of the number of observations.</p>
+<p>The Normal approximation of the distribution of a statistic is valid for
+cases other than the sample average or functions thereof. For example,
+it can be shown (under some conditions) that the Normal approximation
+applies to the sample median, even though the sample median is not a
+function of the sample average.</p>
+<p>On the other hand, one need not always assume that the distribution of a
+statistic is necessarily Normal. In many cases it is not, even for a
+large sample size. For example, the minimal value of a sample that is
+generated from the Exponential distribution can be shown to follow the
+Exponential distribution with an appropriate rate<a href="#fn26" class="footnote-ref" id="fnref26"><sup>26</sup></a>, regardless of the
+sample size.</p>
 </div>
 <div id="simulations" class="section level3">
 <h3><span class="header-section-number">9.4.6</span> Simulations</h3>
-<p>In most problems of statistical inference that will be discussed in this book we will be using the Normal approximation for the sampling distribution of the statistic. However, every now and then we may want to check the validity of this approximation in order to reassure ourselves of its appropriateness. Computerized simulations can be carried out for that checking. The simulations are equivalent to those used in the first part of the book.</p>
-<p>A model for the distribution of the observations is assumed each time a simulation is carried out. The simulation itself involves the generation of random samples from that model for the given sample size and for a given value of the parameter. The statistic is evaluated and stored for each generated sample. Thereby, via the generation of many samples, an approximation of the sampling distribution of the statistic is produced. A probabilistic statement inferred from the Normal approximation can be compared to the results of the simulation. Substantial disagreement between the Normal approximation and the outcome of the simulations is an evidence that the Normal approximation may not be valid in the specific setting.</p>
-<p>As an illustration, assume the statistic is the average price of a car. It is assumed that the price of a car follows an Exponential distribution with some unknown rate parameter <span class="math inline">\(\lambda\)</span>. We consider the sampling distribution of the average of 201 Exponential random variables. (Recall that in our sample there are 4 missing values among the 205 observations.) The expectation of the average is <span class="math inline">\(1/\lambda\)</span>, which is the expectation of a single Exponential random variable. The variance of a single observation is <span class="math inline">\(1/\lambda^2\)</span>. Consequently, the standard deviation of the average is <span class="math inline">\(\sqrt{(1/\lambda^2)/201} = (1/\lambda)/\sqrt{201} = (1/\lambda)/14.17745 = 0.0705/\lambda\)</span>.</p>
-<p>In the first part of the book we found out that for <span class="math inline">\(\mathrm{Normal}(\mu,\sigma^2)\)</span>, the Normal distribution with expectation <span class="math inline">\(\mu\)</span> and variance <span class="math inline">\(\sigma^2\)</span>, the central region that contains 95% of the distribution takes the form <span class="math inline">\(\mu \pm 1.96\, \sigma\)</span> (namely, the interval <span class="math inline">\([\mu-1.96\,\sigma,\mu + 1.96\, \sigma]\)</span>). Thereby, according to the Normal approximation for the sampling distribution of the average price we state that the region <span class="math inline">\(1/\lambda \pm 1.96 \cdot 0.0705/\lambda\)</span> should contain 95% of the distribution.</p>
-<p>We may use simulations in order to validate this approximation for selected values of the rate parameter <span class="math inline">\(\lambda\)</span>. Hence, for example, we may choose <span class="math inline">\(\lambda = 1/12,000\)</span> (which corresponds to an expected price of $12,000 for a car) and validate the approximation for that parameter value.</p>
-<p>The simulation itself is carried out by the generation of a sample of size <span class="math inline">\(n=201\)</span> from the <span class="math inline">\(\mathrm{Exponential}(1/1200)\)</span> distribution using the function “<code>rexp</code>” for generating Exponential samples<a href="#fn27" class="footnoteRef" id="fnref27"><sup>27</sup></a>. The function for computing the average (<code>mean</code>) is applied to each sample and the result stored. We repeat this process a large number of times (100,000 is the typical number we use) in order to produce an approximation of the sampling distribution of the sample average. Finally, we check the relative frequency of cases where the simulated average is within the given range<a href="#fn28" class="footnoteRef" id="fnref28"><sup>28</sup></a>. This relative frequency is an approximation of the required probability and may be compared to the target value of 0.95.</p>
-<p>Let us run the proposed simulation for the sample size of <span class="math inline">\(n=201\)</span> and for a rate parameter equal to <span class="math inline">\(\lambda = 1/12000\)</span>. Observe that the expectation of the sample average is equal to <span class="math inline">\(12,000\)</span> and the standard deviation is <span class="math inline">\(0.0705\times 12000\)</span>. Hence:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">X.bar &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="dv">0</span>,<span class="dv">10</span><span class="op">^</span><span class="dv">5</span>)
+<p>In most problems of statistical inference that will be discussed in this
+book we will be using the Normal approximation for the sampling
+distribution of the statistic. However, every now and then we may want
+to check the validity of this approximation in order to reassure
+ourselves of its appropriateness. Computerized simulations can be
+carried out for that checking. The simulations are equivalent to those
+used in the first part of the book.</p>
+<p>A model for the distribution of the observations is assumed each time a
+simulation is carried out. The simulation itself involves the generation
+of random samples from that model for the given sample size and for a
+given value of the parameter. The statistic is evaluated and stored for
+each generated sample. Thereby, via the generation of many samples, an
+approximation of the sampling distribution of the statistic is produced.
+A probabilistic statement inferred from the Normal approximation can be
+compared to the results of the simulation. Substantial disagreement
+between the Normal approximation and the outcome of the simulations is
+an evidence that the Normal approximation may not be valid in the
+specific setting.</p>
+<p>As an illustration, assume the statistic is the average price of a car.
+It is assumed that the price of a car follows an Exponential
+distribution with some unknown rate parameter <span class="math inline">\(\lambda\)</span>. We consider the
+sampling distribution of the average of 201 Exponential random
+variables. (Recall that in our sample there are 4 missing values among
+the 205 observations.) The expectation of the average is <span class="math inline">\(1/\lambda\)</span>,
+which is the expectation of a single Exponential random variable. The
+variance of a single observation is <span class="math inline">\(1/\lambda^2\)</span>. Consequently, the
+standard deviation of the average is
+<span class="math inline">\(\sqrt{(1/\lambda^2)/201} = (1/\lambda)/\sqrt{201} = (1/\lambda)/14.17745 = 0.0705/\lambda\)</span>.</p>
+<p>In the first part of the book we found out that for
+<span class="math inline">\(\mathrm{Normal}(\mu,\sigma^2)\)</span>, the Normal distribution with
+expectation <span class="math inline">\(\mu\)</span> and variance <span class="math inline">\(\sigma^2\)</span>, the central region that
+contains 95% of the distribution takes the form <span class="math inline">\(\mu \pm 1.96\, \sigma\)</span>
+(namely, the interval <span class="math inline">\([\mu-1.96\,\sigma,\mu + 1.96\, \sigma]\)</span>).
+Thereby, according to the Normal approximation for the sampling
+distribution of the average price we state that the region
+<span class="math inline">\(1/\lambda \pm 1.96 \cdot 0.0705/\lambda\)</span> should contain 95% of the
+distribution.</p>
+<p>We may use simulations in order to validate this approximation for
+selected values of the rate parameter <span class="math inline">\(\lambda\)</span>. Hence, for example, we
+may choose <span class="math inline">\(\lambda = 1/12,000\)</span> (which corresponds to an expected price
+of $12,000 for a car) and validate the approximation for that parameter
+value.</p>
+<p>The simulation itself is carried out by the generation of a sample of
+size <span class="math inline">\(n=201\)</span> from the <span class="math inline">\(\mathrm{Exponential}(1/1200)\)</span> distribution using
+the function “<code>rexp</code>” for generating Exponential samples<a href="#fn27" class="footnote-ref" id="fnref27"><sup>27</sup></a>. The
+function for computing the average (<code>mean</code>) is applied to each sample
+and the result stored. We repeat this process a large number of times
+(100,000 is the typical number we use) in order to produce an
+approximation of the sampling distribution of the sample average.
+Finally, we check the relative frequency of cases where the simulated
+average is within the given range<a href="#fn28" class="footnote-ref" id="fnref28"><sup>28</sup></a>. This relative frequency is an
+approximation of the required probability and may be compared to the
+target value of 0.95.</p>
+<p>Let us run the proposed simulation for the sample size of <span class="math inline">\(n=201\)</span> and
+for a rate parameter equal to <span class="math inline">\(\lambda = 1/12000\)</span>. Observe that the
+expectation of the sample average is equal to <span class="math inline">\(12,000\)</span> and the standard
+deviation is <span class="math inline">\(0.0705\times 12000\)</span>. Hence:</p>
+<pre class="sourceCode r"><code class="sourceCode r">X.bar &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="dv">0</span>,<span class="dv">10</span><span class="op">^</span><span class="dv">5</span>)
 <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">10</span><span class="op">^</span><span class="dv">5</span>) {
   X &lt;-<span class="st"> </span><span class="kw">rexp</span>(<span class="dv">201</span>,<span class="dv">1</span><span class="op">/</span><span class="dv">12000</span>)
   X.bar[i] &lt;-<span class="st"> </span><span class="kw">mean</span>(X)
 }
-<span class="kw">mean</span>(<span class="kw">abs</span>(X.bar<span class="op">-</span><span class="dv">12000</span>) <span class="op">&lt;=</span><span class="st"> </span><span class="fl">1.96</span><span class="op">*</span><span class="fl">0.0705</span><span class="op">*</span><span class="dv">12000</span>)</code></pre></div>
-<pre><code>## [1] 0.95034</code></pre>
-<p>Observe that the simulation produces 0.9496 as the probability of the interval. This result is close enough to the target probability of 0.95, proposing that the Normal approximation is adequate in this example.</p>
-<p>The simulation demonstrates the appropriateness of the Normal approximation for the specific value of the parameter that was used. In order to gain more confidence in the approximation we may want to consider other values as well. However, simulations in this book are used only for demonstration. Hence, in most cases where we conduct a simulation experiment, we conduct it only for a single evaluation of the parameters. We leave it to the curiosity of the reader to expand the simulations and try other evaluations of the parameters.</p>
-<p>Simulations may also be used in order to compute probabilities in cases where the Normal approximation does not hold. As an illustration, consider the mid-range statistic. This statistic is computed as the average between the largest and the smallest values in the sample. This statistic is discussed in the next chapter.</p>
-<p>Consider the case where we obtain 100 observations. Let the distribution of each observation be Uniform. Suppose we are interested as before in the central range that contains 95% of the distribution of the mid-range statistic. The Normal approximation does not apply in this case. Yet, if we specify the parameters of the Uniform distribution then we may use simulations in order to compute the range.</p>
-<p>As a specific example let the distribution of an observation be <span class="math inline">\(\mathrm{Uniform}(3,7)\)</span>. In the simulation we generate a sample of size <span class="math inline">\(n=100\)</span> from this distribution<a href="#fn29" class="footnoteRef" id="fnref29"><sup>29</sup></a> and compute the mid-range for the sample.</p>
-<p>For the computation of the statistic we need to obtain the minimal and the maximal values of the sample. The minimal value of a sequence is compute with the function “<code>min</code>”. The input to this function is a sequence and the output is the minimal value of the sequence. Similarly, the maximal value is computed with the function “<code>max</code>”. Again, the input to the function is a sequence and the output is the maximal value in the sequence. The statistic itself is obtained by adding the two extreme values to each other and dividing the sum by two<a href="#fn30" class="footnoteRef" id="fnref30"><sup>30</sup></a>.</p>
-<p>We produce, just as before, a large number of samples and compute the value of the statistic to each sample. The distribution of the simulated values of the statistic serves as an approximation of the sampling distribution of the statistic. The central range that contains 95% of the sampling distribution may be approximated with the aid of this simulated distribution.</p>
-<p>Specifically, we approximate the central range by the identification of the 0.025-percentile and the 0.975-percentile of the simulated distribution. Between these two values are 95% of the simulated values of the statistic. The percentiles of a sequence of simulated values of the statistic can be identified with the aid of the function “<code>quantile</code>” that was presented in the first part of the book. The first argument to the function is a sequence of values and the second argument is a number <span class="math inline">\(p\)</span> between 0 and 1. The output of the function is the <span class="math inline">\(p\)</span>-percentile of the sequence<a href="#fn31" class="footnoteRef" id="fnref31"><sup>31</sup></a>. The <span class="math inline">\(p\)</span>-percentile of the simulated sequence serves as an approximation of the <span class="math inline">\(p\)</span>-percentile of the sampling distribution of the statistic.</p>
-<p>The second argument to the function “<code>quantile</code>” may be a sequence of values between 0 and 1. If so, the percentile for each value in the second argument is computed<a href="#fn32" class="footnoteRef" id="fnref32"><sup>32</sup></a>.</p>
-<p>Let us carry out the simulation that produces an approximation of the central region that contains 95% of the sampling distribution of the mid-range statistic for the Uniform distribution:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mid.range &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="dv">0</span>,<span class="dv">10</span><span class="op">^</span><span class="dv">5</span>)
+<span class="kw">mean</span>(<span class="kw">abs</span>(X.bar<span class="dv">-12000</span>) <span class="op">&lt;=</span><span class="st"> </span><span class="fl">1.96</span><span class="op">*</span><span class="fl">0.0705</span><span class="op">*</span><span class="dv">12000</span>)</code></pre>
+<pre><code>## [1] 0.95085</code></pre>
+<p>Observe that the simulation produces 0.9496 as the probability of the
+interval. This result is close enough to the target probability of 0.95,
+proposing that the Normal approximation is adequate in this example.</p>
+<p>The simulation demonstrates the appropriateness of the Normal
+approximation for the specific value of the parameter that was used. In
+order to gain more confidence in the approximation we may want to
+consider other values as well. However, simulations in this book are
+used only for demonstration. Hence, in most cases where we conduct a
+simulation experiment, we conduct it only for a single evaluation of the
+parameters. We leave it to the curiosity of the reader to expand the
+simulations and try other evaluations of the parameters.</p>
+<p>Simulations may also be used in order to compute probabilities in cases
+where the Normal approximation does not hold. As an illustration,
+consider the mid-range statistic. This statistic is computed as the
+average between the largest and the smallest values in the sample. This
+statistic is discussed in the next chapter.</p>
+<p>Consider the case where we obtain 100 observations. Let the distribution
+of each observation be Uniform. Suppose we are interested as before in
+the central range that contains 95% of the distribution of the mid-range
+statistic. The Normal approximation does not apply in this case. Yet, if
+we specify the parameters of the Uniform distribution then we may use
+simulations in order to compute the range.</p>
+<p>As a specific example let the distribution of an observation be
+<span class="math inline">\(\mathrm{Uniform}(3,7)\)</span>. In the simulation we generate a sample of size
+<span class="math inline">\(n=100\)</span> from this distribution<a href="#fn29" class="footnote-ref" id="fnref29"><sup>29</sup></a> and compute the mid-range for the
+sample.</p>
+<p>For the computation of the statistic we need to obtain the minimal and
+the maximal values of the sample. The minimal value of a sequence is
+compute with the function “<code>min</code>”. The input to this function is a
+sequence and the output is the minimal value of the sequence. Similarly,
+the maximal value is computed with the function “<code>max</code>”. Again, the
+input to the function is a sequence and the output is the maximal value
+in the sequence. The statistic itself is obtained by adding the two
+extreme values to each other and dividing the sum by two<a href="#fn30" class="footnote-ref" id="fnref30"><sup>30</sup></a>.</p>
+<p>We produce, just as before, a large number of samples and compute the
+value of the statistic to each sample. The distribution of the simulated
+values of the statistic serves as an approximation of the sampling
+distribution of the statistic. The central range that contains 95% of
+the sampling distribution may be approximated with the aid of this
+simulated distribution.</p>
+<p>Specifically, we approximate the central range by the identification of
+the 0.025-percentile and the 0.975-percentile of the simulated
+distribution. Between these two values are 95% of the simulated values
+of the statistic. The percentiles of a sequence of simulated values of
+the statistic can be identified with the aid of the function
+“<code>quantile</code>” that was presented in the first part of the book. The first
+argument to the function is a sequence of values and the second argument
+is a number <span class="math inline">\(p\)</span> between 0 and 1. The output of the function is the
+<span class="math inline">\(p\)</span>-percentile of the sequence<a href="#fn31" class="footnote-ref" id="fnref31"><sup>31</sup></a>. The <span class="math inline">\(p\)</span>-percentile of the simulated
+sequence serves as an approximation of the <span class="math inline">\(p\)</span>-percentile of the
+sampling distribution of the statistic.</p>
+<p>The second argument to the function “<code>quantile</code>” may be a sequence of
+values between 0 and 1. If so, the percentile for each value in the
+second argument is computed<a href="#fn32" class="footnote-ref" id="fnref32"><sup>32</sup></a>.</p>
+<p>Let us carry out the simulation that produces an approximation of the
+central region that contains 95% of the sampling distribution of the
+mid-range statistic for the Uniform distribution:</p>
+<pre class="sourceCode r"><code class="sourceCode r">mid.range &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="dv">0</span>,<span class="dv">10</span><span class="op">^</span><span class="dv">5</span>)
 <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">10</span><span class="op">^</span><span class="dv">5</span>) {
   X &lt;-<span class="st"> </span><span class="kw">runif</span>(<span class="dv">100</span>,<span class="dv">3</span>,<span class="dv">7</span>)
   mid.range[i] &lt;-<span class="st"> </span>(<span class="kw">max</span>(X)<span class="op">+</span><span class="kw">min</span>(X))<span class="op">/</span><span class="dv">2</span>
 }
-<span class="kw">quantile</span>(mid.range,<span class="kw">c</span>(<span class="fl">0.025</span>,<span class="fl">0.975</span>))</code></pre></div>
+<span class="kw">quantile</span>(mid.range,<span class="kw">c</span>(<span class="fl">0.025</span>,<span class="fl">0.975</span>))</code></pre>
 <pre><code>##      2.5%     97.5% 
-## 4.9403851 5.0583687</code></pre>
-<p>Observe that (approximately) 95% of the sampling distribution of the statistic are in the range <span class="math inline">\([4.941680, 5.059004]\)</span>.</p>
-<p>Simulations can be used in order to compute the expectation, the standard deviation or any other numerical summary of the sampling distribution of a statistic. All one needs to do is compute the required summary for the simulated sequence of statistic values and hence obtain an approximation of the required summary. For example, we my use the sequence “<code>mid.range</code>” in order to obtain the expectation and the standard deviation of the mid-range statistic of a sample of 100 observations from the <span class="math inline">\(\mathrm{Uniform}(3,7)\)</span> distribution:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(mid.range)</code></pre></div>
-<pre><code>## [1] 4.999813</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sd</span>(mid.range)</code></pre></div>
-<pre><code>## [1] 0.027900371</code></pre>
-<p>The expectation of the statistic is obtained by the application of the function “<code>mean</code>” to the sequence. Observe that it is practically equal to 5. The standard deviation is obtained by the application of the function “<code>sd</code>”. Its value is approximately equal to 0.028.</p>
+## 4.9413242 5.0587529</code></pre>
+<p>Observe that (approximately) 95% of the sampling distribution of the
+statistic are in the range <span class="math inline">\([4.941680, 5.059004]\)</span>.</p>
+<p>Simulations can be used in order to compute the expectation, the
+standard deviation or any other numerical summary of the sampling
+distribution of a statistic. All one needs to do is compute the required
+summary for the simulated sequence of statistic values and hence obtain
+an approximation of the required summary. For example, we my use the
+sequence “<code>mid.range</code>” in order to obtain the expectation and the
+standard deviation of the mid-range statistic of a sample of 100
+observations from the <span class="math inline">\(\mathrm{Uniform}(3,7)\)</span> distribution:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(mid.range)</code></pre>
+<pre><code>## [1] 5.0000258</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sd</span>(mid.range)</code></pre>
+<pre><code>## [1] 0.027839354</code></pre>
+<p>The expectation of the statistic is obtained by the application of the
+function “<code>mean</code>” to the sequence. Observe that it is practically equal
+to 5. The standard deviation is obtained by the application of the
+function “<code>sd</code>”. Its value is approximately equal to 0.028.</p>
 </div>
 </div>
 <div id="exercises-4" class="section level2">
 <h2><span class="header-section-number">9.5</span> Exercises</h2>
-<p>Magnetic fields have been shown to have an effect on living tissue and were proposed as a method for treating pain. In the case study presented here, Carlos Vallbona and his colleagues<a href="#fn33" class="footnoteRef" id="fnref33"><sup>33</sup></a> sought to answer the question “Can the chronic pain experienced by postpolio patients be relieved by magnetic fields applied directly over an identified pain trigger point?”</p>
-<p>A total of 50 patients experiencing post-polio pain syndrome were recruited. Some of the patients were treated with an active magnetic device and the others were treated with an inactive placebo device. All patients rated their pain before (<code>score1</code>) and after application of the device (<code>score2</code>). The variable “<code>change</code>” is the difference between “<code>score1</code>” and “<code>score2</code>. The treatment condition is indicated by the variable “<code>active</code>.” The value “1” indicates subjects receiving treatment with the active magnet and the value “2” indicates subjects treated with the inactive placebo.</p>
-<p>This case study is taken from the <a href="http://onlinestatbook.com/rvls.html">Rice Virtual Lab in Statistics</a>. More details on this case study can be found in the case study <a href="http://onlinestatbook.com/case_studies_rvls/magnets/index.html">Magnets and Pain Relief</a> that is presented in that site.</p>
+<p>Magnetic fields have been shown to have an effect on living tissue and
+were proposed as a method for treating pain. In the case study presented
+here, Carlos Vallbona and his colleagues<a href="#fn33" class="footnote-ref" id="fnref33"><sup>33</sup></a> sought to answer the
+question “Can the chronic pain experienced by postpolio patients be
+relieved by magnetic fields applied directly over an identified pain
+trigger point?”</p>
+<p>A total of 50 patients experiencing post-polio pain syndrome were
+recruited. Some of the patients were treated with an active magnetic
+device and the others were treated with an inactive placebo device. All
+patients rated their pain before (<code>score1</code>) and after application of the
+device (<code>score2</code>). The variable “<code>change</code>” is the difference between
+“<code>score1</code>” and “<code>score2</code>. The treatment condition is indicated by the
+variable “<code>active</code>.” The value “1” indicates subjects receiving
+treatment with the active magnet and the value “2” indicates subjects
+treated with the inactive placebo.</p>
+<p>This case study is taken from the <a href="http://onlinestatbook.com/rvls.html">Rice Virtual Lab in
+Statistics</a>. More details on this
+case study can be found in the case study <a href="http://onlinestatbook.com/case_studies_rvls/magnets/index.html">Magnets and Pain
+Relief</a>
+that is presented in that site.</p>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-138" class="exercise"><strong>Exercise 9.1  </strong></span>The data for the 50 patients is stored in file “<code>magnets.csv</code>”. The file can be found on the internet at <a href="http://pluto.huji.ac.il/~msby/StatThink/Datasets/magnets.csv" class="uri">http://pluto.huji.ac.il/~msby/StatThink/Datasets/magnets.csv</a>. Download this file to your computer and store it in the working directory of <code>R</code>. Read the content of the file into an <code>R</code> data frame. Produce a summary of the content of the data frame and answer the following questions:</p>
+<p><span id="exr:unnamed-chunk-139" class="exercise"><strong>Exercise 9.1  </strong></span>The data for the 50 patients is stored in file
+“<code>magnets.csv</code>”. The file can be found on the internet at
+<a href="http://pluto.huji.ac.il/~msby/StatThink/Datasets/magnets.csv" class="uri">http://pluto.huji.ac.il/~msby/StatThink/Datasets/magnets.csv</a>. Download
+this file to your computer and store it in the working directory of <code>R</code>.
+Read the content of the file into an <code>R</code> data frame. Produce a summary
+of the content of the data frame and answer the following questions:</p>
 <ol style="list-style-type: decimal">
-<li><p>What is the sample average of the change in score between the patient’s rating before the application of the device and the rating after the application?</p></li>
+<li><p>What is the sample average of the change in score between the
+patient’s rating before the application of the device and the rating
+after the application?</p></li>
 <li><p>Is the variable “<code>active</code>” a factor or a numeric variable?</p></li>
-<li><p>Compute the average value of the variable “<code>change</code>” for the patients that received and active magnet and average value for those that received an inactive placebo. (Hint: Notice that the first 29 patients received an active magnet and the last 21 patients received an inactive placebo. The sub-sequence of the first 29 values of the given variables can be obtained via the expression “<code>change[1:29]</code>” and the last 21 vales are obtained via the expression “<code>change[30:50]</code>”.)</p></li>
-<li><p>Compute the sample standard deviation of the variable “<code>change</code>” for the patients that received and active magnet and the sample standard deviation for those that received an inactive placebo.</p></li>
-<li>Produce a boxplot of the variable “<code>change</code>” for the patients that received and active magnet and for patients that received an inactive placebo. What is the number of outliers in each subsequence?</li>
+<li><p>Compute the average value of the variable “<code>change</code>” for the
+patients that received and active magnet and average value for those
+that received an inactive placebo. (Hint: Notice that the first 29
+patients received an active magnet and the last 21 patients received
+an inactive placebo. The sub-sequence of the first 29 values of the
+given variables can be obtained via the expression “<code>change[1:29]</code>”
+and the last 21 vales are obtained via the expression
+“<code>change[30:50]</code>”.)</p></li>
+<li><p>Compute the sample standard deviation of the variable “<code>change</code>” for
+the patients that received and active magnet and the sample standard
+deviation for those that received an inactive placebo.</p></li>
+<li>Produce a boxplot of the variable “<code>change</code>” for the patients that
+received and active magnet and for patients that received an
+inactive placebo. What is the number of outliers in each
+subsequence?</li>
 </ol>
 </div>
 
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-139" class="exercise"><strong>Exercise 9.2  </strong></span>In Chapter <a href="ChapTwoSamp.html#ChapTwoSamp">13</a> we will present a statistical test for testing if there is a difference between the patients that received the active magnets and the patients that received the inactive placebo in terms of the <em>expected</em> value of the variable that measures the change. The test statist for this problem is taken to be</p>
-<p><span class="math display">\[\frac{\bar X_1 - \bar X_2}{\sqrt{S^2_1/29 + S^2_2/21}}\;,\]</span> where <span class="math inline">\(\bar X_1\)</span> and <span class="math inline">\(\bar X_2\)</span> are the sample averages for the 29 patients that receive active magnets and for the 21 patients that receive inactive placebo, respectively. The quantities <span class="math inline">\(S^2_1\)</span> and <span class="math inline">\(S_2^2\)</span> are the sample variances for each of the two samples. Our goal is to investigate the sampling distribution of this statistic in a case where both expectations are equal to each other and to compare this distribution to the observed value of the statistic.</p>
+<p><span id="exr:unnamed-chunk-140" class="exercise"><strong>Exercise 9.2  </strong></span>In Chapter <a href="ChapTwoSamp.html#ChapTwoSamp">13</a> we will present a
+statistical test for testing if there is a difference between the
+patients that received the active magnets and the patients that received
+the inactive placebo in terms of the <em>expected</em> value of the variable
+that measures the change. The test statist for this problem is taken to
+be</p>
+<p><span class="math display">\[\frac{\bar X_1 - \bar X_2}{\sqrt{S^2_1/29 + S^2_2/21}}\;,\]</span> where
+<span class="math inline">\(\bar X_1\)</span> and <span class="math inline">\(\bar X_2\)</span> are the sample averages for the 29 patients
+that receive active magnets and for the 21 patients that receive
+inactive placebo, respectively. The quantities <span class="math inline">\(S^2_1\)</span> and <span class="math inline">\(S_2^2\)</span> are
+the sample variances for each of the two samples. Our goal is to
+investigate the sampling distribution of this statistic in a case where
+both expectations are equal to each other and to compare this
+distribution to the observed value of the statistic.</p>
 <ol style="list-style-type: decimal">
-<li><p>Assume that the expectation of the measurement is equal to 3.5, regardless of what the type of treatment that the patient received. We take the standard deviation of the measurement for patients the receives an active magnet to be equal to 3 and for those that received the inactive placebo we take it to be equal to 1.5. Assume that the distribution of the measurements is Normal and there are 29 patients in the first group and 21 in the second. Find the interval that contains 95% of the sampling distribution of the statistic.</p></li>
-<li>Does the observed value of the statistic, computed for the data frame “<code>magnets</code>”, falls inside or outside of the interval that is computed in 1?</li>
+<li><p>Assume that the expectation of the measurement is equal to 3.5,
+regardless of what the type of treatment that the patient received.
+We take the standard deviation of the measurement for patients the
+receives an active magnet to be equal to 3 and for those that
+received the inactive placebo we take it to be equal to 1.5. Assume
+that the distribution of the measurements is Normal and there are 29
+patients in the first group and 21 in the second. Find the interval
+that contains 95% of the sampling distribution of the statistic.</p></li>
+<li>Does the observed value of the statistic, computed for the data
+frame “<code>magnets</code>”, falls inside or outside of the interval that is
+computed in 1?</li>
 </ol>
 </div>
 
@@ -720,34 +1280,65 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h3>Glossary</h3>
 <dl>
 <dt>Statistical Inferential:</dt>
-<dd><p>Methods for gaining insight regarding the population parameters from the observed data.</p>
+<dd><p>Methods for gaining insight regarding the population parameters from
+the observed data.</p>
 </dd>
 <dt>Point Estimation:</dt>
-<dd><p>An attempt to obtain the best guess of the value of a population parameter. An estimator is a statistic that produces such a guess. The estimate is the observed value of the estimator.</p>
+<dd><p>An attempt to obtain the best guess of the value of a population
+parameter. An estimator is a statistic that produces such a guess.
+The estimate is the observed value of the estimator.</p>
 </dd>
 <dt>Confidence Interval:</dt>
-<dd><p>An interval that is most likely to contain the population parameter. The confidence level of the interval is the sampling probability that the confidence interval contains the parameter value.</p>
+<dd><p>An interval that is most likely to contain the population parameter.
+The confidence level of the interval is the sampling probability
+that the confidence interval contains the parameter value.</p>
 </dd>
 <dt>Hypothesis Testing:</dt>
-<dd><p>A method for determining between two hypothesis, with one of the two being the currently accepted hypothesis. A determination is based on the value of the test statistic. The probability of falsely rejecting the currently accepted hypothesis is the significance level of the test.</p>
+<dd><p>A method for determining between two hypothesis, with one of the two
+being the currently accepted hypothesis. A determination is based on
+the value of the test statistic. The probability of falsely
+rejecting the currently accepted hypothesis is the significance
+level of the test.</p>
 </dd>
 <dt>Comparing Samples:</dt>
-<dd><p>Samples emerge from different populations or under different experimental conditions. Statistical inference may be used to compare the distributions of the samples to each other.</p>
+<dd><p>Samples emerge from different populations or under different
+experimental conditions. Statistical inference may be used to
+compare the distributions of the samples to each other.</p>
 </dd>
 <dt>Regression:</dt>
-<dd><p>Relates different variables that are measured on the same sample. Regression models are used to describe the effect of one of the variables on the distribution of the other one. The former is called the explanatory variable and the later is called the response.</p>
+<dd><p>Relates different variables that are measured on the same sample.
+Regression models are used to describe the effect of one of the
+variables on the distribution of the other one. The former is called
+the explanatory variable and the later is called the response.</p>
 </dd>
 <dt>Missing Value:</dt>
-<dd><p>An observation for which the value of the measurement is not recorded. <code>R</code> uses the symbol “<code>NA</code>” to identify a missing value.</p>
+<dd><p>An observation for which the value of the measurement is not
+recorded. <code>R</code> uses the symbol “<code>NA</code>” to identify a missing value.</p>
 </dd>
 </dl>
 </div>
 <div id="discuss-in-the-forum" class="section level3 unnumbered">
 <h3>Discuss in the forum</h3>
-<p>A data set may contain missing values. Missing value is an observation of a variable for which the value is not recorded. Most statistical procedures delete observations with missing values and conduct the inference on the remaining observations.</p>
-<p>Some people say that the method of deleting observations with missing values is dangerous and may lead to biased analysis. The reason is that missing values may contain information. What is your opinion?</p>
-<p>When you formulate your answer to this question it may be useful to come up with an example from you own field of interest. Think of an example in which a missing value contains information relevant for inference or an example in which it does not. In the former case try to assess the possible effects on the analysis that may emerge due to the deletion of observations with missing values.</p>
-<p>For example, the goal in some clinical trials is to assess the effect of a new treatment on the survival of patients with a life-threatening illness. The trial is conducted for a given duration, say two years, and the time of death of the patients is recorded. The time of death is missing for patients that survived the entire duration of the trial. Yet, one is advised not to ignore these patients in the analysis of the outcome of the trial.</p>
+<p>A data set may contain missing values. Missing value is an observation
+of a variable for which the value is not recorded. Most statistical
+procedures delete observations with missing values and conduct the
+inference on the remaining observations.</p>
+<p>Some people say that the method of deleting observations with missing
+values is dangerous and may lead to biased analysis. The reason is that
+missing values may contain information. What is your opinion?</p>
+<p>When you formulate your answer to this question it may be useful to come
+up with an example from you own field of interest. Think of an example
+in which a missing value contains information relevant for inference or
+an example in which it does not. In the former case try to assess the
+possible effects on the analysis that may emerge due to the deletion of
+observations with missing values.</p>
+<p>For example, the goal in some clinical trials is to assess the effect of
+a new treatment on the survival of patients with a life-threatening
+illness. The trial is conducted for a given duration, say two years, and
+the time of death of the patients is recorded. The time of death is
+missing for patients that survived the entire duration of the trial.
+Yet, one is advised not to ignore these patients in the analysis of the
+outcome of the trial.</p>
 
 </div>
 </div>
@@ -755,17 +1346,40 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div class="footnotes">
 <hr />
 <ol start="23">
-<li id="fn23"><p>Other data sets will be used in Chapter <span class="math display">\[ch:CaseStudies\]</span> and in the quizzes and assignments.<a href="ChapInference.html#fnref23">↩</a></p></li>
-<li id="fn24"><p>The original “Automobiles” data set is accessible at the UCI Machine Learning Repository (<a href="http://archive.ics.uci.edu/ml" class="uri">http://archive.ics.uci.edu/ml</a>). This data was assembled by Jeffrey C. Schlimmer, using as source the 1985 Model Import Car and Truck Specifications, 1985 Ward’s Automotive Yearbook. The current file “<code>cars.csv</code>” is based on all 205 observations of the original data set. We selected 17 of the 26 variables available in the original source.<a href="ChapInference.html#fnref24">↩</a></p></li>
-<li id="fn25"><p>Indeed, if you scan the CSV file directly by opening it with a spreadsheet then every now and again you will encounter this symbol.<a href="ChapInference.html#fnref25">↩</a></p></li>
-<li id="fn26"><p>If the rate of an Exponential measurement is <span class="math inline">\(\lambda\)</span> then the rate of the minimum of <span class="math inline">\(n\)</span> such measurements is <span class="math inline">\(n\lambda\)</span>.<a href="ChapInference.html#fnref26">↩</a></p></li>
-<li id="fn27"><p>The expression for generating a sample is “<code>rexp(201,1/12000)</code>”<a href="ChapInference.html#fnref27">↩</a></p></li>
-<li id="fn28"><p>In the case where the simulated averages are stored in the sequence “<code>X.bar</code>” then we may use the expression “<code>mean(abs(X.bar - 12000) &lt;= 1.96*0.0705*12000)</code>” in order to compute the relative frequency.<a href="ChapInference.html#fnref28">↩</a></p></li>
-<li id="fn29"><p>With the expression “<code>runif(100,3,7)</code>”.<a href="ChapInference.html#fnref29">↩</a></p></li>
-<li id="fn30"><p>If the sample is stored in an object by the name “<code>X</code>” then one may compute the mid-range statistic with the expression “<code>(max(X)+min(X))/2</code>”.<a href="ChapInference.html#fnref30">↩</a></p></li>
-<li id="fn31"><p>The <span class="math inline">\(p\)</span>-percentile of a sequence is a number with the property that the proportion of entries with values smaller than that number is <span class="math inline">\(p\)</span> and the proportion of entries with values larger than the number is <span class="math inline">\(1-p\)</span>.<a href="ChapInference.html#fnref31">↩</a></p></li>
-<li id="fn32"><p>If the simulated values of the statistic are stored in a sequence by the name “<code>mid.range</code>” then the 0.025-percentile and the 0.975-percentile of the sequence can be computed with the expression “<code>quantile(mid.range,c(0.025,0.975))</code>”.<a href="ChapInference.html#fnref32">↩</a></p></li>
-<li id="fn33"><p>Vallbona, Carlos, Carlton F. Hazlewood, and Gabor Jurida. (1997). Response of pain to static magnetic fields in postpolio patients: A double-blind pilot study. Archives of Physical and Rehabilitation Medicine 78(11): 1200-1203.<a href="ChapInference.html#fnref33">↩</a></p></li>
+<li id="fn23"><p>Other data sets will be used in Chapter <span class="math display">\[ch:CaseStudies\]</span> and in
+the quizzes and assignments.<a href="ChapInference.html#fnref23" class="footnote-back">↩</a></p></li>
+<li id="fn24"><p>The original “Automobiles” data set is accessible at the UCI
+Machine Learning Repository (<a href="http://archive.ics.uci.edu/ml" class="uri">http://archive.ics.uci.edu/ml</a>). This
+data was assembled by Jeffrey C. Schlimmer, using as source the 1985
+Model Import Car and Truck Specifications, 1985 Ward’s Automotive
+Yearbook. The current file “<code>cars.csv</code>” is based on all 205
+observations of the original data set. We selected 17 of the 26
+variables available in the original source.<a href="ChapInference.html#fnref24" class="footnote-back">↩</a></p></li>
+<li id="fn25"><p>Indeed, if you scan the CSV file directly by opening it with a
+spreadsheet then every now and again you will encounter this symbol.<a href="ChapInference.html#fnref25" class="footnote-back">↩</a></p></li>
+<li id="fn26"><p>If the rate of an Exponential measurement is <span class="math inline">\(\lambda\)</span> then the
+rate of the minimum of <span class="math inline">\(n\)</span> such measurements is <span class="math inline">\(n\lambda\)</span>.<a href="ChapInference.html#fnref26" class="footnote-back">↩</a></p></li>
+<li id="fn27"><p>The expression for generating a sample is “<code>rexp(201,1/12000)</code>”<a href="ChapInference.html#fnref27" class="footnote-back">↩</a></p></li>
+<li id="fn28"><p>In the case where the simulated averages are stored in the
+sequence “<code>X.bar</code>” then we may use the expression
+“<code>mean(abs(X.bar - 12000) &lt;= 1.96*0.0705*12000)</code>” in order to
+compute the relative frequency.<a href="ChapInference.html#fnref28" class="footnote-back">↩</a></p></li>
+<li id="fn29"><p>With the expression “<code>runif(100,3,7)</code>”.<a href="ChapInference.html#fnref29" class="footnote-back">↩</a></p></li>
+<li id="fn30"><p>If the sample is stored in an object by the name “<code>X</code>” then one
+may compute the mid-range statistic with the expression
+“<code>(max(X)+min(X))/2</code>”.<a href="ChapInference.html#fnref30" class="footnote-back">↩</a></p></li>
+<li id="fn31"><p>The <span class="math inline">\(p\)</span>-percentile of a sequence is a number with the property
+that the proportion of entries with values smaller than that number
+is <span class="math inline">\(p\)</span> and the proportion of entries with values larger than the
+number is <span class="math inline">\(1-p\)</span>.<a href="ChapInference.html#fnref31" class="footnote-back">↩</a></p></li>
+<li id="fn32"><p>If the simulated values of the statistic are stored in a sequence
+by the name “<code>mid.range</code>” then the 0.025-percentile and the
+0.975-percentile of the sequence can be computed with the expression
+“<code>quantile(mid.range,c(0.025,0.975))</code>”.<a href="ChapInference.html#fnref32" class="footnote-back">↩</a></p></li>
+<li id="fn33"><p>Vallbona, Carlos, Carlton F. Hazlewood, and Gabor Jurida. (1997).
+Response of pain to static magnetic fields in postpolio patients: A
+double-blind pilot study. Archives of Physical and Rehabilitation
+Medicine 78(11): 1200-1203.<a href="ChapInference.html#fnref33" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>
@@ -792,17 +1406,26 @@ gitbook.start({
 "facebook": false,
 "twitter": true,
 "google": false,
+"linkedin": false,
 "weibo": false,
-"instapper": false,
+"instapaper": false,
 "vk": false,
-"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
 "theme": "white",
 "family": "sans",
 "size": 2
 },
-"download": ["statthink.pdf", "thinkstat.epub", "stathink_datasets.zip"],
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["statthink.pdf"],
 "toc": {
 "collapse": "none"
 }
@@ -815,8 +1438,8 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    var src = "";
-    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(src))
       src = src.replace(/^https?:/, '');
     script.src = src;

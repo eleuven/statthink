@@ -5,11 +5,11 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Introduction to Statistical Thinking</title>
-  <meta name="description" content="Introduction to Statistical Thinking">
-  <meta name="generator" content="bookdown 0.5.10 and GitBook 2.6.7">
+  <title>Chapter 16 Case Studies | Introduction to Statistical Thinking</title>
+  <meta name="description" content="Chapter 16 Case Studies | Introduction to Statistical Thinking">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="Introduction to Statistical Thinking" />
+  <meta property="og:title" content="Chapter 16 Case Studies | Introduction to Statistical Thinking" />
   <meta property="og:type" content="book" />
   
   
@@ -17,7 +17,7 @@
   <meta name="github-repo" content="eleuven/statthink" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Introduction to Statistical Thinking" />
+  <meta name="twitter:title" content="Chapter 16 Case Studies | Introduction to Statistical Thinking" />
   
   
   
@@ -25,7 +25,7 @@
 <meta name="author" content="Benjamin Yakir">
 
 
-<meta name="date" content="2017-11-26">
+<meta name="date" content="2019-01-16">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -36,6 +36,7 @@
 <link rel="next" href="exercise-solutions.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
@@ -50,41 +51,69 @@
 
 
 <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; position: absolute; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; }
+pre.numberSource a.sourceLine:empty
+  { position: absolute; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 <link rel="stylesheet" href="css/style.css" type="text/css" />
@@ -248,9 +277,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="9.1" data-path="ChapInference.html"><a href="ChapInference.html#student-learning-objectives-3"><i class="fa fa-check"></i><b>9.1</b> Student Learning Objectives</a></li>
 <li class="chapter" data-level="9.2" data-path="ChapInference.html"><a href="ChapInference.html#key-terms-1"><i class="fa fa-check"></i><b>9.2</b> Key Terms</a></li>
 <li class="chapter" data-level="9.3" data-path="ChapInference.html"><a href="ChapInference.html#the-cars-data-set"><i class="fa fa-check"></i><b>9.3</b> The Cars Data Set</a></li>
-<li class="chapter" data-level="9.4" data-path="ChapSampDist.html"><a href="ChapSampDist.html#the-sampling-distribution"><i class="fa fa-check"></i><b>9.4</b> The Sampling Distribution</a><ul>
+<li class="chapter" data-level="9.4" data-path="ChapInference.html"><a href="ChapInference.html#the-sampling-distribution-1"><i class="fa fa-check"></i><b>9.4</b> The Sampling Distribution</a><ul>
 <li class="chapter" data-level="9.4.1" data-path="ChapInference.html"><a href="ChapInference.html#statistics-1"><i class="fa fa-check"></i><b>9.4.1</b> Statistics</a></li>
-<li class="chapter" data-level="9.4.2" data-path="ChapInference.html"><a href="ChapInference.html#the-sampling-distribution-1"><i class="fa fa-check"></i><b>9.4.2</b> The Sampling Distribution</a></li>
+<li class="chapter" data-level="9.4.2" data-path="ChapInference.html"><a href="ChapInference.html#the-sampling-distribution-2"><i class="fa fa-check"></i><b>9.4.2</b> The Sampling Distribution</a></li>
 <li class="chapter" data-level="9.4.3" data-path="ChapInference.html"><a href="ChapInference.html#theoretical-distributions-of-observations"><i class="fa fa-check"></i><b>9.4.3</b> Theoretical Distributions of Observations</a></li>
 <li class="chapter" data-level="9.4.4" data-path="ChapInference.html"><a href="ChapInference.html#sampling-distribution-of-statistics"><i class="fa fa-check"></i><b>9.4.4</b> Sampling Distribution of Statistics</a></li>
 <li class="chapter" data-level="9.4.5" data-path="ChapInference.html"><a href="ChapInference.html#the-normal-approximation"><i class="fa fa-check"></i><b>9.4.5</b> The Normal Approximation</a></li>
@@ -367,7 +396,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li class="chapter" data-level="16.4" data-path="ChapCaseStudies.html"><a href="ChapCaseStudies.html#summary-13"><i class="fa fa-check"></i><b>16.4</b> Summary</a><ul>
 <li class="chapter" data-level="16.4.1" data-path="ChapCaseStudies.html"><a href="ChapCaseStudies.html#concluding-remarks"><i class="fa fa-check"></i><b>16.4.1</b> Concluding Remarks</a></li>
-<li class="chapter" data-level="16.4.2" data-path="ChapProbability.html"><a href="ChapProbability.html#discussion-in-the-forum"><i class="fa fa-check"></i><b>16.4.2</b> Discussion in the Forum</a></li>
+<li class="chapter" data-level="16.4.2" data-path="ChapCaseStudies.html"><a href="ChapCaseStudies.html#discussion-in-the-forum-1"><i class="fa fa-check"></i><b>16.4.2</b> Discussion in the Forum</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="exercise-solutions.html"><a href="exercise-solutions.html"><i class="fa fa-check"></i>Exercise Solutions</a><ul>
@@ -459,33 +488,123 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h1><span class="header-section-number">Chapter 16</span> Case Studies</h1>
 <div id="student-learning-objective-5" class="section level2">
 <h2><span class="header-section-number">16.1</span> Student Learning Objective</h2>
-<p>This chapter concludes this book. We start with a short review of the topics that were discussed in the second part of the book, the part that dealt with statistical inference. The main part of the chapter involves the statistical analysis of 2 case studies. The tools that will be used for the analysis are those that were discussed in the book. We close this chapter and this book with some concluding remarks. By the end of this chapter, the student should be able to:</p>
+<p>This chapter concludes this book. We start with a short review of the
+topics that were discussed in the second part of the book, the part that
+dealt with statistical inference. The main part of the chapter involves
+the statistical analysis of 2 case studies. The tools that will be used
+for the analysis are those that were discussed in the book. We close
+this chapter and this book with some concluding remarks. By the end of
+this chapter, the student should be able to:</p>
 <ul>
-<li><p>Review the concepts and methods for statistical inference that were presented in the second part of the book.</p></li>
+<li><p>Review the concepts and methods for statistical inference that were
+presented in the second part of the book.</p></li>
 <li><p>Apply these methods to requirements of the analysis of real data.</p></li>
 <li><p>Develop a resolve to learn more statistics.</p></li>
 </ul>
 </div>
 <div id="a-review" class="section level2">
 <h2><span class="header-section-number">16.2</span> A Review</h2>
-<p>The second part of the book dealt with statistical inference; the science of making general statement on an entire population on the basis of data from a sample. The basis for the statements are theoretical models that produce the sampling distribution. Procedures for making the inference are evaluated based on their properties in the context of this sampling distribution. Procedures with desirable properties are applied to the data. One may attach to the output of this application summaries that describe these theoretical properties.</p>
-<p>In particular, we dealt with two forms of making inference. One form was estimation and the other was hypothesis testing. The goal in estimation is to determine the value of a parameter in the population. Point estimates or confidence intervals may be used in order to fulfill this goal. The properties of point estimators may be assessed using the mean square error (MSE) and the properties of the confidence interval may be assessed using the confidence level.</p>
-<p>The target in hypotheses testing is to decide between two competing hypothesis. These hypotheses are formulated in terms of population parameters. The decision rule is called a statistical test and is constructed with the aid of a test statistic and a rejection region. The default hypothesis among the two, is rejected if the test statistic falls in the rejection region. The major property a test must possess is a bound on the probability of a Type I error, the probability of erroneously rejecting the null hypothesis. This restriction is called the significance level of the test. A test may also be assessed in terms of it’s statistical power, the probability of rightfully rejecting the null hypothesis.</p>
-<p>Estimation and testing were applied in the context of single measurements and for the investigation of the relations between a pair of measurements. For single measurements we considered both numeric variables and factors. For numeric variables one may attempt to conduct inference on the expectation and/or the variance. For factors we considered the estimation of the probability of obtaining a level, or, more generally, the probability of the occurrence of an event.</p>
-<p>We introduced statistical models that may be used to describe the relations between variables. One of the variables was designated as the response. The other variable, the explanatory variable, is identified as a variable which may affect the distribution of the response. Specifically, we considered numeric variables and factors that have two levels. If the explanatory variable is a factor with two levels then the analysis reduces to the comparison of two sub-populations, each one associated with a level. If the explanatory variable is numeric then a regression model may be applied, either linear or logistic regression, depending on the type of the response.</p>
-<p>The foundations of statistical inference are the assumption that we make in the form of statistical models. These models attempt to reflect reality. However, one is advised to apply healthy skepticism when using the models. First, one should be aware what the assumptions are. Then one should ask oneself how reasonable are these assumption in the context of the specific analysis. Finally, one should check as much as one can the validity of the assumptions in light of the information at hand. It is useful to plot the data and compare the plot to the assumptions of the model.</p>
+<p>The second part of the book dealt with statistical inference; the
+science of making general statement on an entire population on the basis
+of data from a sample. The basis for the statements are theoretical
+models that produce the sampling distribution. Procedures for making the
+inference are evaluated based on their properties in the context of this
+sampling distribution. Procedures with desirable properties are applied
+to the data. One may attach to the output of this application summaries
+that describe these theoretical properties.</p>
+<p>In particular, we dealt with two forms of making inference. One form was
+estimation and the other was hypothesis testing. The goal in estimation
+is to determine the value of a parameter in the population. Point
+estimates or confidence intervals may be used in order to fulfill this
+goal. The properties of point estimators may be assessed using the mean
+square error (MSE) and the properties of the confidence interval may be
+assessed using the confidence level.</p>
+<p>The target in hypotheses testing is to decide between two competing
+hypothesis. These hypotheses are formulated in terms of population
+parameters. The decision rule is called a statistical test and is
+constructed with the aid of a test statistic and a rejection region. The
+default hypothesis among the two, is rejected if the test statistic
+falls in the rejection region. The major property a test must possess is
+a bound on the probability of a Type I error, the probability of
+erroneously rejecting the null hypothesis. This restriction is called
+the significance level of the test. A test may also be assessed in terms
+of it’s statistical power, the probability of rightfully rejecting the
+null hypothesis.</p>
+<p>Estimation and testing were applied in the context of single
+measurements and for the investigation of the relations between a pair
+of measurements. For single measurements we considered both numeric
+variables and factors. For numeric variables one may attempt to conduct
+inference on the expectation and/or the variance. For factors we
+considered the estimation of the probability of obtaining a level, or,
+more generally, the probability of the occurrence of an event.</p>
+<p>We introduced statistical models that may be used to describe the
+relations between variables. One of the variables was designated as the
+response. The other variable, the explanatory variable, is identified as
+a variable which may affect the distribution of the response.
+Specifically, we considered numeric variables and factors that have two
+levels. If the explanatory variable is a factor with two levels then the
+analysis reduces to the comparison of two sub-populations, each one
+associated with a level. If the explanatory variable is numeric then a
+regression model may be applied, either linear or logistic regression,
+depending on the type of the response.</p>
+<p>The foundations of statistical inference are the assumption that we make
+in the form of statistical models. These models attempt to reflect
+reality. However, one is advised to apply healthy skepticism when using
+the models. First, one should be aware what the assumptions are. Then
+one should ask oneself how reasonable are these assumption in the
+context of the specific analysis. Finally, one should check as much as
+one can the validity of the assumptions in light of the information at
+hand. It is useful to plot the data and compare the plot to the
+assumptions of the model.</p>
 </div>
 <div id="case-studies" class="section level2">
 <h2><span class="header-section-number">16.3</span> Case Studies</h2>
-<p>Let us apply the methods that were introduced throughout the book to two examples of data analysis. Both examples are taken from the case studies of the <a href="http://onlinestatbook.com/rvls.html">Rice Virtual Lab in Statistics</a> can be found in their <a href="http://onlinestatbook.com/case_studies_rvls/">Case Studies</a> section. The analysis of these case studies may involve any of the tools that were described in the second part of the book (and some from the first part). It may be useful to read again Chapters <a href="ChapInference.html#ChapInference">9</a>–<a href="ChapLogistic.html#ChapLogistic">15</a> before reading the case studies.</p>
+<p>Let us apply the methods that were introduced throughout the book to two
+examples of data analysis. Both examples are taken from the case studies
+of the <a href="http://onlinestatbook.com/rvls.html">Rice Virtual Lab in
+Statistics</a> can be found in their
+<a href="http://onlinestatbook.com/case_studies_rvls/">Case Studies</a> section.
+The analysis of these case studies may involve any of the tools that
+were described in the second part of the book (and some from the first
+part). It may be useful to read again
+Chapters <a href="ChapInference.html#ChapInference">9</a>–<a href="ChapLogistic.html#ChapLogistic">15</a> before reading the case
+studies.</p>
 <div id="physicians-reactions-to-the-size-of-a-patient" class="section level3">
 <h3><span class="header-section-number">16.3.1</span> Physicians’ Reactions to the Size of a Patient</h3>
-<p>Overweight and obesity is common in many of the developed contrives. In some cultures, obese individuals face discrimination in employment, education, and relationship contexts. The current research, conducted by Mikki Hebl and Jingping Xu<a href="#fn88" class="footnoteRef" id="fnref88"><sup>88</sup></a>, examines physicians’ attitude toward overweight and obese patients in comparison to their attitude toward patients who are not overweight.</p>
-<p>The experiment included a total of 122 primary care physicians affiliated with one of three major hospitals in the Texas Medical Center of Houston. These physicians were sent a packet containing a medical chart similar to the one they view upon seeing a patient. This chart portrayed a patient who was displaying symptoms of a migraine headache but was otherwise healthy. Two variables (the gender and the weight of the patient) were manipulated across six different versions of the medical charts. The weight of the patient, described in terms of Body Mass Index (BMI), was average (BMI = 23), overweight (BMI = 30), or obese (BMI = 36). Physicians were randomly assigned to receive one of the six charts, and were asked to look over the chart carefully and complete two medical forms. The first form asked physicians which of 42 tests they would recommend giving to the patient. The second form asked physicians to indicate how much time they believed they would spend with the patient, and to describe the reactions that they would have toward this patient.</p>
-<p>In this presentation, only the question on how much time the physicians believed they would spend with the patient is analyzed. Although three patient weight conditions were used in the study (average, overweight, and obese) only the average and overweight conditions will be analyzed. Therefore, there are two levels of patient weight (average and overweight) and one dependent variable (time spent).</p>
-<p>The data for the given collection of responses from 72 primary care physicians is stored in the file “<code>discriminate.csv</code>”<a href="#fn89" class="footnoteRef" id="fnref89"><sup>89</sup></a>. We start by reading the content of the file into a data frame by the name “<code>patient</code>” and presenting the summary of the variables:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">patient &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;_data/discriminate.csv&quot;</span>)
-<span class="kw">summary</span>(patient)</code></pre></div>
+<p>Overweight and obesity is common in many of the developed contrives. In
+some cultures, obese individuals face discrimination in employment,
+education, and relationship contexts. The current research, conducted by
+Mikki Hebl and Jingping Xu<a href="#fn88" class="footnote-ref" id="fnref88"><sup>88</sup></a>, examines physicians’ attitude toward
+overweight and obese patients in comparison to their attitude toward
+patients who are not overweight.</p>
+<p>The experiment included a total of 122 primary care physicians
+affiliated with one of three major hospitals in the Texas Medical Center
+of Houston. These physicians were sent a packet containing a medical
+chart similar to the one they view upon seeing a patient. This chart
+portrayed a patient who was displaying symptoms of a migraine headache
+but was otherwise healthy. Two variables (the gender and the weight of
+the patient) were manipulated across six different versions of the
+medical charts. The weight of the patient, described in terms of Body
+Mass Index (BMI), was average (BMI = 23), overweight (BMI = 30), or
+obese (BMI = 36). Physicians were randomly assigned to receive one of
+the six charts, and were asked to look over the chart carefully and
+complete two medical forms. The first form asked physicians which of 42
+tests they would recommend giving to the patient. The second form asked
+physicians to indicate how much time they believed they would spend with
+the patient, and to describe the reactions that they would have toward
+this patient.</p>
+<p>In this presentation, only the question on how much time the physicians
+believed they would spend with the patient is analyzed. Although three
+patient weight conditions were used in the study (average, overweight,
+and obese) only the average and overweight conditions will be analyzed.
+Therefore, there are two levels of patient weight (average and
+overweight) and one dependent variable (time spent).</p>
+<p>The data for the given collection of responses from 72 primary care
+physicians is stored in the file “<code>discriminate.csv</code>”<a href="#fn89" class="footnote-ref" id="fnref89"><sup>89</sup></a>. We start by
+reading the content of the file into a data frame by the name
+“<code>patient</code>” and presenting the summary of the variables:</p>
+<pre class="sourceCode r"><code class="sourceCode r">patient &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;_data/discriminate.csv&quot;</span>)
+<span class="kw">summary</span>(patient)</code></pre>
 <pre><code>##     weight        time       
 ##  BMI=23:33   Min.   : 5.000  
 ##  BMI=30:38   1st Qu.:20.000  
@@ -493,21 +612,42 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 ##              Mean   :27.817  
 ##              3rd Qu.:30.000  
 ##              Max.   :60.000</code></pre>
-<p>Observe that of the 72 “patients”, 38 are overweight and 33 have an average weight. The time spend with the patient, as predicted by physicians, is distributed between 5 minutes and 1 hour, with a average of 27.82 minutes and a median of 30 minutes.</p>
-<p>It is a good practice to have a look at the data before doing the analysis. In this examination on should see that the numbers make sense and one should identify special features of the data. Even in this very simple example we may want to have a look at the histogram of the variable “<code>time</code>”:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">hist</span>(patient<span class="op">$</span>time)</code></pre></div>
-<p><img src="statthink_files/figure-html/unnamed-chunk-231-1.png" width="60%" style="display: block; margin: auto;" /></p>
-<p>A feature in this plot that catches attention is the fact that there is a high concventration of values in the interval between 25 and 30. Together with the fact that the median is equal to 30, one may suspect that, as a matter of fact, a large numeber of the values are actually equal to 30. Indeed, let us produce a table of the response:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">table</span>(patient<span class="op">$</span>time)</code></pre></div>
+<p>Observe that of the 72 “patients”, 38 are overweight and 33 have an
+average weight. The time spend with the patient, as predicted by
+physicians, is distributed between 5 minutes and 1 hour, with a average
+of 27.82 minutes and a median of 30 minutes.</p>
+<p>It is a good practice to have a look at the data before doing the
+analysis. In this examination on should see that the numbers make sense
+and one should identify special features of the data. Even in this very
+simple example we may want to have a look at the histogram of the
+variable “<code>time</code>”:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">hist</span>(patient<span class="op">$</span>time)</code></pre>
+<p><img src="statthink_files/figure-html/unnamed-chunk-232-1.png" width="60%" style="display: block; margin: auto;" /></p>
+<p>A feature in this plot that catches
+attention is the fact that there is a high concventration of values in
+the interval between 25 and 30. Together with the fact that the median
+is equal to 30, one may suspect that, as a matter of fact, a large
+numeber of the values are actually equal to 30. Indeed, let us produce a
+table of the response:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">table</span>(patient<span class="op">$</span>time)</code></pre>
 <pre><code>## 
 ##  5 15 20 25 30 40 45 50 60 
 ##  1 10 15  3 30  4  5  2  1</code></pre>
-<p>Notice that 30 of the 72 physicians marked “<code>30</code>” as the time they expect to spend with the patient. This is the middle value in the range, and may just be the default value one marks if one just needs to complete a form and do not really place much importance to the question that was asked.</p>
-<p>The goal of the analysis is to examine the relation between overweigh and the Doctor’s response. The explanatory variable is a factor with two levels. The response is numeric. A natural tool to use in order to test this hypothesis is the <span class="math inline">\(t\)</span>-test, which is implemented with the function “<code>t.test</code>”.</p>
-<p>First we plot the relation between the response and the explanatory variable and then we apply the test:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">boxplot</span>(time<span class="op">~</span>weight,<span class="dt">data=</span>patient)</code></pre></div>
-<p><img src="statthink_files/figure-html/unnamed-chunk-233-1.png" width="60%" style="display: block; margin: auto;" /></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">t.test</span>(time<span class="op">~</span>weight,<span class="dt">data=</span>patient)</code></pre></div>
+<p>Notice that 30 of the 72 physicians marked “<code>30</code>” as the time they
+expect to spend with the patient. This is the middle value in the range,
+and may just be the default value one marks if one just needs to
+complete a form and do not really place much importance to the question
+that was asked.</p>
+<p>The goal of the analysis is to examine the relation between overweigh
+and the Doctor’s response. The explanatory variable is a factor with two
+levels. The response is numeric. A natural tool to use in order to test
+this hypothesis is the <span class="math inline">\(t\)</span>-test, which is implemented with the function
+“<code>t.test</code>”.</p>
+<p>First we plot the relation between the response and the explanatory
+variable and then we apply the test:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">boxplot</span>(time<span class="op">~</span>weight,<span class="dt">data=</span>patient)</code></pre>
+<p><img src="statthink_files/figure-html/unnamed-chunk-234-1.png" width="60%" style="display: block; margin: auto;" /></p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">t.test</span>(time<span class="op">~</span>weight,<span class="dt">data=</span>patient)</code></pre>
 <pre><code>## 
 ##  Welch Two Sample t-test
 ## 
@@ -519,11 +659,25 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 ## sample estimates:
 ## mean in group BMI=23 mean in group BMI=30 
 ##            31.363636            24.736842</code></pre>
-<p>Nothing seems problematic in the box plot. The two distributions, as they are reflected in the box plots, look fairly symmetric.</p>
-<p>When we consider the report that produced by the function “<code>t.test</code>” we may observe that the <span class="math inline">\(p\)</span>-value is equal to 0.005774. This <span class="math inline">\(p\)</span>-value is computed in testing the null hypothesis that the expectation of the response for both types of patients are equal against the two sided alternative. Since the <span class="math inline">\(p\)</span>-value is less than 0.05 we do reject the null hypothesis.</p>
-<p>The estimated value of the difference between the expectation of the response for a patient with BMI=23 and a patient with BMI=30 is <span class="math inline">\(31.36364 -24.73684 \approx 6.63\)</span> minutes. The confidence interval is (approximately) equal to <span class="math inline">\([1.99, 11.27]\)</span>. Hence, it looks as if the physicians expect to spend more time with the average weight patients.</p>
-<p>After analyzing the effect of the explanatory variable on the expectation of the response one may want to examine the presence, or lack thereof, of such effect on the variance of the response. Towards that end, one may use the function “<code>var.test</code>”:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">var.test</span>(time<span class="op">~</span>weight,<span class="dt">data=</span>patient)</code></pre></div>
+<p>Nothing seems problematic in the box plot.
+The two distributions, as they are reflected in the box plots, look
+fairly symmetric.</p>
+<p>When we consider the report that produced by the function “<code>t.test</code>” we
+may observe that the <span class="math inline">\(p\)</span>-value is equal to 0.005774. This <span class="math inline">\(p\)</span>-value is
+computed in testing the null hypothesis that the expectation of the
+response for both types of patients are equal against the two sided
+alternative. Since the <span class="math inline">\(p\)</span>-value is less than 0.05 we do reject the null
+hypothesis.</p>
+<p>The estimated value of the difference between the expectation of the
+response for a patient with BMI=23 and a patient with BMI=30 is
+<span class="math inline">\(31.36364 -24.73684 \approx 6.63\)</span> minutes. The confidence interval is
+(approximately) equal to <span class="math inline">\([1.99, 11.27]\)</span>. Hence, it looks as if the
+physicians expect to spend more time with the average weight patients.</p>
+<p>After analyzing the effect of the explanatory variable on the
+expectation of the response one may want to examine the presence, or
+lack thereof, of such effect on the variance of the response. Towards
+that end, one may use the function “<code>var.test</code>”:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">var.test</span>(time<span class="op">~</span>weight,<span class="dt">data=</span>patient)</code></pre>
 <pre><code>## 
 ##  F test to compare two variances
 ## 
@@ -535,10 +689,24 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 ## sample estimates:
 ## ratio of variances 
 ##           1.044316</code></pre>
-<p>In this test we do not reject the null hypothesis that the two variances of the response are equal since the <span class="math inline">\(p\)</span>-value is larger than <span class="math inline">\(0.05\)</span>. The sample variances are almost equal to each other (their ratio is <span class="math inline">\(1.044316\)</span>), with a confidence interval for the ration that essentially ranges between 1/2 and 2.</p>
-<p>The production of <span class="math inline">\(p\)</span>-values and confidence intervals is just one aspect in the analysis of data. Another aspect, which typically is much more time consuming and requires experience and healthy skepticism is the examination of the assumptions that are used in order to produce the <span class="math inline">\(p\)</span>-values and the confidence intervals. A clear violation of the assumptions may warn the statistician that perhaps the computed nominal quantities do not represent the actual statistical properties of the tools that were applied.</p>
-<p>In this case, we have noticed the high concentration of the response at the value “<code>30</code>”. What is the situation when we split the sample between the two levels of the explanatory variable? Let us apply the function “<code>table</code>” once more, this time with the explanatory variable included:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">table</span>(patient<span class="op">$</span>time,patient<span class="op">$</span>weight)</code></pre></div>
+<p>In this test we do not reject the null hypothesis that the two variances
+of the response are equal since the <span class="math inline">\(p\)</span>-value is larger than <span class="math inline">\(0.05\)</span>. The
+sample variances are almost equal to each other (their ratio is
+<span class="math inline">\(1.044316\)</span>), with a confidence interval for the ration that essentially
+ranges between 1/2 and 2.</p>
+<p>The production of <span class="math inline">\(p\)</span>-values and confidence intervals is just one aspect
+in the analysis of data. Another aspect, which typically is much more
+time consuming and requires experience and healthy skepticism is the
+examination of the assumptions that are used in order to produce the
+<span class="math inline">\(p\)</span>-values and the confidence intervals. A clear violation of the
+assumptions may warn the statistician that perhaps the computed nominal
+quantities do not represent the actual statistical properties of the
+tools that were applied.</p>
+<p>In this case, we have noticed the high concentration of the response at
+the value “<code>30</code>”. What is the situation when we split the sample between
+the two levels of the explanatory variable? Let us apply the function
+“<code>table</code>” once more, this time with the explanatory variable included:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">table</span>(patient<span class="op">$</span>time,patient<span class="op">$</span>weight)</code></pre>
 <pre><code>##     
 ##      BMI=23 BMI=30
 ##   5       0      1
@@ -550,12 +718,24 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 ##   45      4      1
 ##   50      2      0
 ##   60      0      1</code></pre>
-<p>Not surprisingly, there is still high concentration at that level “<code>30</code>”. But one can see that only 2 of the responses of the “<code>BMI=30</code>” group are above that value in comparison to a much more symmetric distribution of responses for the other group.</p>
-<p>The simulations of the significance level of the one-sample <span class="math inline">\(t\)</span>-test for an Exponential response that were conducted in Question <span class="math display">\[ex:Testing.2\]</span> may cast some doubt on how trustworthy are nominal <span class="math inline">\(p\)</span>-values of the <span class="math inline">\(t\)</span>-test when the measurements are skewed. The skewness of the response for the group “<code>BMI=30</code>” is a reason to be worry.</p>
-<p>We may consider a different test, which is more robust, in order to validate the significance of our findings. For example, we may turn the response into a factor by setting a level for values larger or equal to “<code>30</code>” and a different level for values less than “<code>30</code>”. The relation between the new response and the explanatory variable can be examined with the function “<code>prop.test</code>”. We first plot and then test:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="kw">factor</span>(patient<span class="op">$</span>time<span class="op">&gt;=</span><span class="dv">30</span>)<span class="op">~</span>weight,<span class="dt">data=</span>patient)</code></pre></div>
-<p><img src="statthink_files/figure-html/unnamed-chunk-236-1.png" width="60%" style="display: block; margin: auto;" /></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">prop.test</span>(<span class="kw">table</span>(patient<span class="op">$</span>time<span class="op">&gt;=</span><span class="dv">30</span>,patient<span class="op">$</span>weight))</code></pre></div>
+<p>Not surprisingly, there is still high concentration at that level
+“<code>30</code>”. But one can see that only 2 of the responses of the “<code>BMI=30</code>”
+group are above that value in comparison to a much more symmetric
+distribution of responses for the other group.</p>
+<p>The simulations of the significance level of the one-sample <span class="math inline">\(t\)</span>-test for
+an Exponential response that were conducted in Question <span class="math display">\[ex:Testing.2\]</span>
+may cast some doubt on how trustworthy are nominal <span class="math inline">\(p\)</span>-values of the
+<span class="math inline">\(t\)</span>-test when the measurements are skewed. The skewness of the response
+for the group “<code>BMI=30</code>” is a reason to be worry.</p>
+<p>We may consider a different test, which is more robust, in order to
+validate the significance of our findings. For example, we may turn the
+response into a factor by setting a level for values larger or equal to
+“<code>30</code>” and a different level for values less than “<code>30</code>”. The relation
+between the new response and the explanatory variable can be examined
+with the function “<code>prop.test</code>”. We first plot and then test:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="kw">factor</span>(patient<span class="op">$</span>time<span class="op">&gt;=</span><span class="dv">30</span>)<span class="op">~</span>weight,<span class="dt">data=</span>patient)</code></pre>
+<p><img src="statthink_files/figure-html/unnamed-chunk-237-1.png" width="60%" style="display: block; margin: auto;" /></p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">prop.test</span>(<span class="kw">table</span>(patient<span class="op">$</span>time<span class="op">&gt;=</span><span class="dv">30</span>,patient<span class="op">$</span>weight))</code></pre>
 <pre><code>## 
 ##  2-sample test for equality of proportions with continuity
 ##  correction
@@ -568,18 +748,58 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 ## sample estimates:
 ##     prop 1     prop 2 
 ## 0.31034483 0.57142857</code></pre>
-<p>The mosaic plot presents the relation between the explanatory variable and the new factor. The level “<code>TRUE</code>” is associated with a value of the predicted time spent with the patient being 30 minutes or more. The level “<code>FALSE</code>” is associated with a prediction of less than 30 minutes.</p>
-<p>The computed <span class="math inline">\(p\)</span>-value is equal to <span class="math inline">\(0.05409\)</span>, that almost reaches the significance level of 5%<a href="#fn90" class="footnoteRef" id="fnref90"><sup>90</sup></a>. Notice that the probabilities that are being estimated by the function are the probabilities of the level “<code>FALSE</code>”. Overall, one may see the outcome of this test as supporting evidence for the conclusion of the <span class="math inline">\(t\)</span>-test. However, the <span class="math inline">\(p\)</span>-value provided by the <span class="math inline">\(t\)</span>-test may over emphasize the evidence in the data for a significant difference in the physician attitude towards overweight patients.</p>
+<p>The mosaic plot presents the relation between the explanatory
+variable and the new factor.
+The level “<code>TRUE</code>” is associated with a value of the predicted time
+spent with the patient being 30 minutes or more. The level “<code>FALSE</code>” is
+associated with a prediction of less than 30 minutes.</p>
+<p>The computed <span class="math inline">\(p\)</span>-value is equal to <span class="math inline">\(0.05409\)</span>, that almost reaches the
+significance level of 5%<a href="#fn90" class="footnote-ref" id="fnref90"><sup>90</sup></a>. Notice that the probabilities that are
+being estimated by the function are the probabilities of the level
+“<code>FALSE</code>”. Overall, one may see the outcome of this test as supporting
+evidence for the conclusion of the <span class="math inline">\(t\)</span>-test. However, the <span class="math inline">\(p\)</span>-value
+provided by the <span class="math inline">\(t\)</span>-test may over emphasize the evidence in the data for
+a significant difference in the physician attitude towards overweight
+patients.</p>
 </div>
 <div id="physical-strength-and-job-performance" class="section level3">
 <h3><span class="header-section-number">16.3.2</span> Physical Strength and Job Performance</h3>
-<p>The next case study involves an attempt to develop a measure of physical ability that is easy and quick to administer, does not risk injury, and is related to how well a person performs the actual job. The current example is based on study by Blakely et al. <a href="#fn91" class="footnoteRef" id="fnref91"><sup>91</sup></a>, published in the journal Personnel Psychology.</p>
-<p>There are a number of very important jobs that require, in addition to cognitive skills, a significant amount of strength to be able to perform at a high level. Construction worker, electrician and auto mechanic, all require strength in order to carry out critical components of their job. An interesting applied problem is how to select the best candidates from amongst a group of applicants for physically demanding jobs in a safe and a cost effective way.</p>
-<p>The data presented in this case study, and may be used for the development of a method for selection among candidates, were collected from 147 individuals working in physically demanding jobs. Two measures of strength were gathered from each participant. These included grip and arm strength. A piece of equipment known as the Jackson Evaluation System (JES) was used to collect the strength data. The JES can be configured to measure the strength of a number of muscle groups. In this study, grip strength and arm strength were measured. The outcomes of these measurements were summarized in two scores of physical strength called “<code>grip</code>” and “<code>arm</code>”.</p>
-<p>Two separate measures of job performance are presented in this case study. First, the supervisors for each of the participants were asked to rate how well their employee(s) perform on the physical aspects of their jobs. This measure is summarizes in the variable “<code>ratings</code>”. Second, simulations of physically demanding work tasks were developed. The summary score of these simulations are given in the variable “<code>sims</code>”. Higher values of either measures of performance indicates better performance.</p>
-<p>The data for the 4 variables and 147 observations is stored in “<code>job.csv</code>”<a href="#fn92" class="footnoteRef" id="fnref92"><sup>92</sup></a>. We start by reading the content of the file into a data frame by the name “<code>job</code>”, presenting a summary of the variables, and their histograms:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">job &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;_data/job.csv&quot;</span>)
-<span class="kw">summary</span>(job)</code></pre></div>
+<p>The next case study involves an attempt to develop a measure of physical
+ability that is easy and quick to administer, does not risk injury, and
+is related to how well a person performs the actual job. The current
+example is based on study by Blakely et al. <a href="#fn91" class="footnote-ref" id="fnref91"><sup>91</sup></a>, published in the
+journal Personnel Psychology.</p>
+<p>There are a number of very important jobs that require, in addition to
+cognitive skills, a significant amount of strength to be able to perform
+at a high level. Construction worker, electrician and auto mechanic, all
+require strength in order to carry out critical components of their job.
+An interesting applied problem is how to select the best candidates from
+amongst a group of applicants for physically demanding jobs in a safe
+and a cost effective way.</p>
+<p>The data presented in this case study, and may be used for the
+development of a method for selection among candidates, were collected
+from 147 individuals working in physically demanding jobs. Two measures
+of strength were gathered from each participant. These included grip and
+arm strength. A piece of equipment known as the Jackson Evaluation
+System (JES) was used to collect the strength data. The JES can be
+configured to measure the strength of a number of muscle groups. In this
+study, grip strength and arm strength were measured. The outcomes of
+these measurements were summarized in two scores of physical strength
+called “<code>grip</code>” and “<code>arm</code>”.</p>
+<p>Two separate measures of job performance are presented in this case
+study. First, the supervisors for each of the participants were asked to
+rate how well their employee(s) perform on the physical aspects of their
+jobs. This measure is summarizes in the variable “<code>ratings</code>”. Second,
+simulations of physically demanding work tasks were developed. The
+summary score of these simulations are given in the variable “<code>sims</code>”.
+Higher values of either measures of performance indicates better
+performance.</p>
+<p>The data for the 4 variables and 147 observations is stored in
+“<code>job.csv</code>”<a href="#fn92" class="footnote-ref" id="fnref92"><sup>92</sup></a>. We start by reading the content of the file into a data
+frame by the name “<code>job</code>”, presenting a summary of the variables, and
+their histograms:</p>
+<pre class="sourceCode r"><code class="sourceCode r">job &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;_data/job.csv&quot;</span>)
+<span class="kw">summary</span>(job)</code></pre>
 <pre><code>##       grip             arm             ratings           sims         
 ##  Min.   : 29.00   Min.   : 19.000   Min.   :21.60   Min.   :-4.17000  
 ##  1st Qu.: 94.00   1st Qu.: 64.500   1st Qu.:34.80   1st Qu.:-0.96500  
@@ -587,15 +807,23 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 ##  Mean   :110.23   Mean   : 78.752   Mean   :41.01   Mean   : 0.20177  
 ##  3rd Qu.:124.50   3rd Qu.: 94.000   3rd Qu.:47.70   3rd Qu.: 1.07000  
 ##  Max.   :189.00   Max.   :132.000   Max.   :57.20   Max.   : 5.17000</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">2</span>)) <span class="co"># we&#39;ll plot a 2x2 grid</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">2</span>)) <span class="co"># we&#39;ll plot a 2x2 grid</span>
 <span class="kw">hist</span>(job<span class="op">$</span>grip)
 <span class="kw">hist</span>(job<span class="op">$</span>arm)
 <span class="kw">hist</span>(job<span class="op">$</span>ratings)
-<span class="kw">hist</span>(job<span class="op">$</span>sims)</code></pre></div>
-<p><img src="statthink_files/figure-html/unnamed-chunk-237-1.png" width="60%" style="display: block; margin: auto;" /></p>
-<p>All variables are numeric. Examination of the 4 summaries and histograms does not produce interest findings. All variables are, more or less, symmetric with the distribution of the variable “<code>ratings</code>” tending perhaps to be more uniform then the other three.</p>
-<p>The main analyses of interest are attempts to relate the two measures of physical strength “<code>grip</code>” and “<code>arm</code>” with the two measures of job performance, “<code>ratings</code>” and “<code>sims</code>”. A natural tool to consider in this context is a linear regression analysis that relates a measure of physical strength as an explanatory variable to a measure of job performance as a response.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">2</span>)) <span class="co"># we&#39;ll plot a 2x2 grid</span>
+<span class="kw">hist</span>(job<span class="op">$</span>sims)</code></pre>
+<p><img src="statthink_files/figure-html/unnamed-chunk-238-1.png" width="60%" style="display: block; margin: auto;" /></p>
+<p>All variables are numeric. Examination of the 4 summaries and
+histograms does not produce interest findings. All variables are, more
+or less, symmetric with the distribution of the variable “<code>ratings</code>”
+tending perhaps to be more uniform then the other three.</p>
+<p>The main analyses of interest are attempts to relate the two measures of
+physical strength “<code>grip</code>” and “<code>arm</code>” with the two measures of job
+performance, “<code>ratings</code>” and “<code>sims</code>”. A natural tool to consider in
+this context is a linear regression analysis that relates a measure of
+physical strength as an explanatory variable to a measure of job
+performance as a response.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">2</span>)) <span class="co"># we&#39;ll plot a 2x2 grid</span>
 
 <span class="kw">plot</span>(sims<span class="op">~</span>grip,<span class="dt">data=</span>job)
 sims.grip &lt;-<span class="st"> </span><span class="kw">lm</span>(sims<span class="op">~</span>grip,<span class="dt">data=</span>job)
@@ -605,31 +833,47 @@ sims.grip &lt;-<span class="st"> </span><span class="kw">lm</span>(sims<span cla
 sims.arm &lt;-<span class="st"> </span><span class="kw">lm</span>(sims<span class="op">~</span>arm,<span class="dt">data=</span>job)
 <span class="kw">abline</span>(sims.arm)
 
-score &lt;-<span class="st"> </span><span class="op">-</span><span class="fl">5.434</span> <span class="op">+</span><span class="st"> </span><span class="fl">0.024</span><span class="op">*</span>job<span class="op">$</span>grip<span class="op">+</span><span class="st"> </span><span class="fl">0.037</span><span class="op">*</span>job<span class="op">$</span>arm
+score &lt;-<span class="st"> </span><span class="fl">-5.434</span> <span class="op">+</span><span class="st"> </span><span class="fl">0.024</span><span class="op">*</span>job<span class="op">$</span>grip<span class="op">+</span><span class="st"> </span><span class="fl">0.037</span><span class="op">*</span>job<span class="op">$</span>arm
 <span class="kw">plot</span>(sims<span class="op">~</span>score,<span class="dt">data=</span>job)
 sims.score &lt;-<span class="st"> </span><span class="kw">lm</span>(sims<span class="op">~</span>score,<span class="dt">data=</span>job)
 <span class="kw">abline</span>(sims.score)
 
-<span class="kw">plot</span>(grip<span class="op">~</span>arm,<span class="dt">data=</span>job)</code></pre></div>
+<span class="kw">plot</span>(grip<span class="op">~</span>arm,<span class="dt">data=</span>job)</code></pre>
 <div class="figure" style="text-align: center"><span id="fig:CaseStudies5"></span>
 <img src="statthink_files/figure-html/CaseStudies5-1.png" alt="Scatter Plots and Regression Lines" width="60%" />
 <p class="caption">
 FIGURE 16.1: Scatter Plots and Regression Lines
 </p>
 </div>
-<p>Let us consider the variable “<code>sims</code>” as a response. The first step is to plot a scatter plot of the response and explanatory variable, for both explanatory variables. To the scatter plot we add the line of regression. In order to add the regression line we fit the regression model with the function “<code>lm</code>” and then apply the function “<code>abline</code>” to the fitted model. The plot for the relation between the response and the variable “<code>grip</code>” is produced by the code:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(sims<span class="op">~</span>grip,<span class="dt">data=</span>job)
+<p>Let us consider the variable “<code>sims</code>” as a response. The first step is
+to plot a scatter plot of the response and explanatory variable, for
+both explanatory variables. To the scatter plot we add the line of
+regression. In order to add the regression line we fit the regression
+model with the function “<code>lm</code>” and then apply the function “<code>abline</code>” to
+the fitted model. The plot for the relation between the response and the
+variable “<code>grip</code>” is produced by the code:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(sims<span class="op">~</span>grip,<span class="dt">data=</span>job)
 sims.grip &lt;-<span class="st"> </span><span class="kw">lm</span>(sims<span class="op">~</span>grip,<span class="dt">data=</span>job)
-<span class="kw">abline</span>(sims.grip)</code></pre></div>
-<p>The plot that is produced by this code is presented on the upper-left panel of Figure <a href="ChapCaseStudies.html#fig:CaseStudies5">16.1</a>.</p>
-<p>The plot for the relation between the response and the variable “<code>arm</code>” is produced by this code:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(sims<span class="op">~</span>arm,<span class="dt">data=</span>job)
+<span class="kw">abline</span>(sims.grip)</code></pre>
+<p>The plot that is produced by this code is presented on the upper-left
+panel of Figure <a href="ChapCaseStudies.html#fig:CaseStudies5">16.1</a>.</p>
+<p>The plot for the relation between the response and the variable “<code>arm</code>”
+is produced by this code:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(sims<span class="op">~</span>arm,<span class="dt">data=</span>job)
 sims.arm &lt;-<span class="st"> </span><span class="kw">lm</span>(sims<span class="op">~</span>arm,<span class="dt">data=</span>job)
-<span class="kw">abline</span>(sims.arm)</code></pre></div>
-<p>The plot that is produced by the last code is presented on the upper-right panel of Figure <a href="ChapCaseStudies.html#fig:CaseStudies5">16.1</a>.</p>
-<p>Both plots show similar characteristics. There is an overall linear trend in the relation between the explanatory variable and the response. The value of the response increases with the increase in the value of the explanatory variable (a positive slope). The regression line seems to follow, more or less, the trend that is demonstrated by the scatter plot.</p>
-<p>A more detailed analysis of the regression model is possible by the application of the function “<code>summary</code>” to the fitted model. First the case where the explanatory variable is “<code>grip</code>”:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(sims.grip)</code></pre></div>
+<span class="kw">abline</span>(sims.arm)</code></pre>
+<p>The plot that is produced by the last code is presented on the
+upper-right panel of Figure <a href="ChapCaseStudies.html#fig:CaseStudies5">16.1</a>.</p>
+<p>Both plots show similar characteristics. There is an overall linear
+trend in the relation between the explanatory variable and the response.
+The value of the response increases with the increase in the value of
+the explanatory variable (a positive slope). The regression line seems
+to follow, more or less, the trend that is demonstrated by the scatter
+plot.</p>
+<p>A more detailed analysis of the regression model is possible by the
+application of the function “<code>summary</code>” to the fitted model. First the
+case where the explanatory variable is “<code>grip</code>”:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(sims.grip)</code></pre>
 <pre><code>## 
 ## Call:
 ## lm(formula = sims ~ grip, data = job)
@@ -648,9 +892,16 @@ sims.arm &lt;-<span class="st"> </span><span class="kw">lm</span>(sims<span clas
 ## Residual standard error: 1.2947 on 145 degrees of freedom
 ## Multiple R-squared:  0.4094, Adjusted R-squared:  0.40533 
 ## F-statistic: 100.51 on 1 and 145 DF,  p-value: &lt; 2.22e-16</code></pre>
-<p>Examination of the report reviles a clear statistical significance for the effect of the explanatory variable on the distribution of response. The value of R-squared, the ration of the variance of the response explained by the regression is <span class="math inline">\(0.4094\)</span>. The square root of this quantity, <span class="math inline">\(\sqrt{0.4094} \approx 0.64\)</span>, is the proportion of the standard deviation of the response that is explained by the explanatory variable. Hence, about 64% of the variability in the response can be attributed to the measure of the strength of the grip.</p>
+<p>Examination of the report reviles a clear statistical significance for
+the effect of the explanatory variable on the distribution of response.
+The value of R-squared, the ration of the variance of the response
+explained by the regression is <span class="math inline">\(0.4094\)</span>. The square root of this
+quantity, <span class="math inline">\(\sqrt{0.4094} \approx 0.64\)</span>, is the proportion of the
+standard deviation of the response that is explained by the explanatory
+variable. Hence, about 64% of the variability in the response can be
+attributed to the measure of the strength of the grip.</p>
 <p>For the variable “<code>arm</code>” we get:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(sims.arm)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(sims.arm)</code></pre>
 <pre><code>## 
 ## Call:
 ## lm(formula = sims ~ arm, data = job)
@@ -669,15 +920,32 @@ sims.arm &lt;-<span class="st"> </span><span class="kw">lm</span>(sims<span clas
 ## Residual standard error: 1.2258 on 145 degrees of freedom
 ## Multiple R-squared:  0.47061,    Adjusted R-squared:  0.46696 
 ## F-statistic:  128.9 on 1 and 145 DF,  p-value: &lt; 2.22e-16</code></pre>
-<p>This variable is also statistically significant. The value of R-squared is <span class="math inline">\(0.4706\)</span>. The proportion of the standard deviation that is explained by the strength of the are is <span class="math inline">\(\sqrt{0.4706} \approx 0.69\)</span>, which is slightly higher than the proportion explained by the grip.</p>
-<p>Overall, the explanatory variables do a fine job in the reduction of the variability of the response “<code>sims</code>” and may be used as substitutes of the response in order to select among candidates. A better prediction of the response based on the values of the explanatory variables can be obtained by combining the information in both variables. The production of such combination is not discussed in this book, though it is similar in principle to the methods of linear regression that are presented in Chapter <a href="ChapRegression.html#ChapRegression">14</a>. The produced score<a href="#fn93" class="footnoteRef" id="fnref93"><sup>93</sup></a> takes the form:</p>
-<p><span class="math display">\[\mbox{\texttt{score}} = -5.434 + 0.024\cdot \mbox{\texttt{grip}}+ 0.037\cdot \mbox{\texttt{arm}}\;.\]</span> We use this combined score as an explanatory variable. First we form the score and plot the relation between it and the response:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">score &lt;-<span class="st"> </span><span class="op">-</span><span class="fl">5.434</span> <span class="op">+</span><span class="st"> </span><span class="fl">0.024</span><span class="op">*</span>job<span class="op">$</span>grip<span class="op">+</span><span class="st"> </span><span class="fl">0.037</span><span class="op">*</span>job<span class="op">$</span>arm
+<p>This variable is also statistically significant. The value of R-squared
+is <span class="math inline">\(0.4706\)</span>. The proportion of the standard deviation that is explained
+by the strength of the are is <span class="math inline">\(\sqrt{0.4706} \approx 0.69\)</span>, which is
+slightly higher than the proportion explained by the grip.</p>
+<p>Overall, the explanatory variables do a fine job in the reduction of the
+variability of the response “<code>sims</code>” and may be used as substitutes of
+the response in order to select among candidates. A better prediction of
+the response based on the values of the explanatory variables can be
+obtained by combining the information in both variables. The production
+of such combination is not discussed in this book, though it is similar
+in principle to the methods of linear regression that are presented in
+Chapter <a href="ChapRegression.html#ChapRegression">14</a>. The produced score<a href="#fn93" class="footnote-ref" id="fnref93"><sup>93</sup></a> takes the form:</p>
+<p><span class="math display">\[\mbox{\texttt{score}} = -5.434 + 0.024\cdot \mbox{\texttt{grip}}+ 0.037\cdot \mbox{\texttt{arm}}\;.\]</span>
+We use this combined score as an explanatory variable. First we form the
+score and plot the relation between it and the response:</p>
+<pre class="sourceCode r"><code class="sourceCode r">score &lt;-<span class="st"> </span><span class="fl">-5.434</span> <span class="op">+</span><span class="st"> </span><span class="fl">0.024</span><span class="op">*</span>job<span class="op">$</span>grip<span class="op">+</span><span class="st"> </span><span class="fl">0.037</span><span class="op">*</span>job<span class="op">$</span>arm
 <span class="kw">plot</span>(sims<span class="op">~</span>score,<span class="dt">data=</span>job)
 sims.score &lt;-<span class="st"> </span><span class="kw">lm</span>(sims<span class="op">~</span>score,<span class="dt">data=</span>job)
-<span class="kw">abline</span>(sims.score)</code></pre></div>
-<p>The scatter plot that includes the regression line can be found at the lower-left panel of Figure <a href="ChapCaseStudies.html#fig:CaseStudies5">16.1</a>. Indeed, the linear trend is more pronounced for this scatter plot and the regression line a better description of the relation between the response and the explanatory variable. A summary of the regression model produces the report:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(sims.score)</code></pre></div>
+<span class="kw">abline</span>(sims.score)</code></pre>
+<p>The scatter plot that includes the regression line can be found at the
+lower-left panel of Figure <a href="ChapCaseStudies.html#fig:CaseStudies5">16.1</a>. Indeed, the linear
+trend is more pronounced for this scatter plot and the regression line a
+better description of the relation between the response and the
+explanatory variable. A summary of the regression model produces the
+report:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(sims.score)</code></pre>
 <pre><code>## 
 ## Call:
 ## lm(formula = sims ~ score, data = job)
@@ -696,41 +964,154 @@ sims.score &lt;-<span class="st"> </span><span class="kw">lm</span>(sims<span cl
 ## Residual standard error: 1.14 on 145 degrees of freedom
 ## Multiple R-squared:  0.54216,    Adjusted R-squared:   0.539 
 ## F-statistic:  171.7 on 1 and 145 DF,  p-value: &lt; 2.22e-16</code></pre>
-<p>Indeed, the score is highly significant. More important, the R-squared coefficient that is associated with the score is <span class="math inline">\(0.5422\)</span>, which corresponds to a ratio of the standard deviation that is explained by the model of <span class="math inline">\(\sqrt{0.5422} \approx 0.74\)</span>. Thus, almost 3/4 of the variability is accounted for by the score, so the score is a reasonable mean of guessing what the results of the simulations will be. This guess is based only on the results of the simple tests of strength that is conducted with the JES device.</p>
-<p>Before putting the final seal on the results let us examine the assumptions of the statistical model. First, with respect to the two explanatory variables. Does each of them really measure a different property or do they actually measure the same phenomena? In order to examine this question let us look at the scatter plot that describes the relation between the two explanatory variables. This plot is produced using the code:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(grip<span class="op">~</span>arm,<span class="dt">data=</span>job)</code></pre></div>
-<p>It is presented in the lower-right panel of Figure <a href="ChapCaseStudies.html#fig:CaseStudies5">16.1</a>. Indeed, one may see that the two measurements of strength are not independent of each other but tend to produce an increasing linear trend. Hence, it should not be surprising that the relation of each of them with the response produces essentially the same goodness of fit. The computed score gives a slightly improved fit, but still, it basically reflects either of the original explanatory variables.</p>
-<p>In light of this observation, one may want to consider other measures of strength that represents features of the strength not captures by these two variable. Namely, measures that show less joint trend than the two considered.</p>
-<p>Another element that should be examined are the probabilistic assumptions that underly the regression model. We described the regression model only in terms of the functional relation between the explanatory variable and the expectation of the response. In the case of linear regression, for example, this relation was given in terms of a linear equation. However, another part of the model corresponds to the distribution of the measurements about the line of regression. The assumption that led to the computation of the reported <span class="math inline">\(p\)</span>-values is that this distribution is Normal.</p>
-<p>A method that can be used in order to investigate the validity of the Normal assumption is to analyze the residuals from the regression line. Recall that these residuals are computed as the difference between the observed value of the response and its estimated expectation, namely the fitted regression line. The residuals can be computed via the application of the function “<code>residuals</code>” to the fitted regression model.</p>
-<p>Specifically, let us look at the residuals from the regression line that uses the score that is combined from the grip and arm measurements of strength. One may plot a histogram of the residuals:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">1</span>))
+<p>Indeed, the score is highly significant. More important, the R-squared
+coefficient that is associated with the score is <span class="math inline">\(0.5422\)</span>, which
+corresponds to a ratio of the standard deviation that is explained by
+the model of <span class="math inline">\(\sqrt{0.5422} \approx 0.74\)</span>. Thus, almost 3/4 of the
+variability is accounted for by the score, so the score is a reasonable
+mean of guessing what the results of the simulations will be. This guess
+is based only on the results of the simple tests of strength that is
+conducted with the JES device.</p>
+<p>Before putting the final seal on the results let us examine the
+assumptions of the statistical model. First, with respect to the two
+explanatory variables. Does each of them really measure a different
+property or do they actually measure the same phenomena? In order to
+examine this question let us look at the scatter plot that describes the
+relation between the two explanatory variables. This plot is produced
+using the code:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(grip<span class="op">~</span>arm,<span class="dt">data=</span>job)</code></pre>
+<p>It is presented in the lower-right panel of
+Figure <a href="ChapCaseStudies.html#fig:CaseStudies5">16.1</a>. Indeed, one may see that the two
+measurements of strength are not independent of each other but tend to
+produce an increasing linear trend. Hence, it should not be surprising
+that the relation of each of them with the response produces essentially
+the same goodness of fit. The computed score gives a slightly improved
+fit, but still, it basically reflects either of the original explanatory
+variables.</p>
+<p>In light of this observation, one may want to consider other measures of
+strength that represents features of the strength not captures by these
+two variable. Namely, measures that show less joint trend than the two
+considered.</p>
+<p>Another element that should be examined are the probabilistic
+assumptions that underly the regression model. We described the
+regression model only in terms of the functional relation between the
+explanatory variable and the expectation of the response. In the case of
+linear regression, for example, this relation was given in terms of a
+linear equation. However, another part of the model corresponds to the
+distribution of the measurements about the line of regression. The
+assumption that led to the computation of the reported <span class="math inline">\(p\)</span>-values is
+that this distribution is Normal.</p>
+<p>A method that can be used in order to investigate the validity of the
+Normal assumption is to analyze the residuals from the regression line.
+Recall that these residuals are computed as the difference between the
+observed value of the response and its estimated expectation, namely the
+fitted regression line. The residuals can be computed via the
+application of the function “<code>residuals</code>” to the fitted regression
+model.</p>
+<p>Specifically, let us look at the residuals from the regression line that
+uses the score that is combined from the grip and arm measurements of
+strength. One may plot a histogram of the residuals:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">1</span>))
 
 <span class="kw">hist</span>(<span class="kw">residuals</span>(sims.score))
 
 <span class="kw">qqnorm</span>(<span class="kw">residuals</span>(sims.score))
-<span class="kw">qqline</span>(<span class="kw">residuals</span>(sims.score))</code></pre></div>
-<p><img src="statthink_files/figure-html/unnamed-chunk-245-1.png" width="60%" style="display: block; margin: auto;" /></p>
-<p>The produced histogram is represented on the upper panel. The histogram portrays a symmetric distribution that my result from Normally distributed observations. A better method to compare the distribution of the residuals to the Normal distribution is to use the <em>Quantile-Quantile plot</em>. This plot can be found on the lower panel. We do not discuss here the method by which this plot is produced<a href="#fn94" class="footnoteRef" id="fnref94"><sup>94</sup></a>. However, we do say that any deviation of the points from a straight line is indication of violation of the assumption of Normality. In the current case, the points seem to be on a single line, which is consistent with the assumptions of the regression model.</p>
-<p>The next task should be an analysis of the relations between the explanatory variables and the other response “<code>ratings</code>”. In principle one may use the same steps that were presented for the investigation of the relations between the explanatory variables and the response “<code>sims</code>”. But of course, the conclusion may differ. We leave this part of the investigation as an exercise to the students.</p>
+<span class="kw">qqline</span>(<span class="kw">residuals</span>(sims.score))</code></pre>
+<p><img src="statthink_files/figure-html/unnamed-chunk-246-1.png" width="60%" style="display: block; margin: auto;" /></p>
+<p>The produced histogram is represented on the upper panel. The histogram portrays a symmetric
+distribution that my result from Normally distributed observations. A
+better method to compare the distribution of the residuals to the Normal
+distribution is to use the <em>Quantile-Quantile plot</em>. This plot can be
+found on the lower panel. We do not
+discuss here the method by which this plot is produced<a href="#fn94" class="footnote-ref" id="fnref94"><sup>94</sup></a>. However, we
+do say that any deviation of the points from a straight line is
+indication of violation of the assumption of Normality. In the current
+case, the points seem to be on a single line, which is consistent with
+the assumptions of the regression model.</p>
+<p>The next task should be an analysis of the relations between the
+explanatory variables and the other response “<code>ratings</code>”. In principle
+one may use the same steps that were presented for the investigation of
+the relations between the explanatory variables and the response
+“<code>sims</code>”. But of course, the conclusion may differ. We leave this part
+of the investigation as an exercise to the students.</p>
 </div>
 </div>
 <div id="summary-13" class="section level2">
 <h2><span class="header-section-number">16.4</span> Summary</h2>
 <div id="concluding-remarks" class="section level3">
 <h3><span class="header-section-number">16.4.1</span> Concluding Remarks</h3>
-<p>The book included a description of some elements of statistics, element that we thought are simple enough to be explained as part of an introductory course to statistics and are the minimum that is required for any person that is involved in academic activities of any field in which the analysis of data is required. Now, as you finish the book, it is as good time as any to say some words regarding the elements of statistics that are missing from this book.</p>
-<p>One element is more of the same. The statistical models that were presented are as simple as a model can get. A typical application will required more complex models. Each of these models may require specific methods for estimation and testing. The characteristics of inference, e.g. significance or confidence levels, rely on assumptions that the models are assumed to possess. The user should be familiar with computational tools that can be used for the analysis of these more complex models. Familiarity with the probabilistic assumptions is required in order to be able to interpret the computer output, to diagnose possible divergence from the assumptions and to assess the severity of the possible effect of such divergence on the validity of the findings.</p>
-<p>Statistical tools can be used for tasks other than estimation and hypothesis testing. For example, one may use statistics for prediction. In many applications it is important to assess what the values of future observations may be and in what range of values are they likely to occur. Statistical tools such as regression are natural in this context. However, the required task is not testing or estimation the values of parameters, but the prediction of future values of the response.</p>
-<p>A different role of statistics in the design stage. We hinted in that direction when we talked about in Chapter <span class="math display">\[ch:Confidence\]</span> about the selection of a sample size in order to assure a confidence interval with a given accuracy. In most applications, the selection of the sample size emerges in the context of hypothesis testing and the criteria for selection is the minimal power of the test, a minimal probability to detect a true finding. Yet, statistical design is much more than the determination of the sample size. Statistics may have a crucial input in the decision of how to collect the data. With an eye on the requirements for the final analysis, an experienced statistician can make sure that data that is collected is indeed appropriate for that final analysis. Too often is the case where researcher steps into the statistician’s office with data that he or she collected and asks, when it is already too late, for help in the analysis of data that cannot provide a satisfactory answer to the research question the researcher tried to address. It may be said, with some exaggeration, that good statisticians are required for the final analysis only in the case where the initial planning was poor.</p>
-<p>Last, but not least, is the theoretical mathematical theory of statistics. We tried to introduce as little as possible of the relevant mathematics in this course. However, if one seriously intends to learn and understand statistics then one must become familiar with the relevant mathematical theory. Clearly, deep knowledge in the mathematical theory of probability is required. But apart from that, there is a rich and rapidly growing body of research that deals with the mathematical aspects of data analysis. One cannot be a good statistician unless one becomes familiar with the important aspects of this theory.</p>
-<p>I should have started the book with the famous quotation: “Lies, damned lies, and statistics”. Instead, I am using it to end the book. Statistics can be used and can be misused. Learning statistics can give you the tools to tell the difference between the two. My goal in writing the book is achieved if reading it will mark for you the beginning of the process of learning statistics and not the end of the process.</p>
+<p>The book included a description of some elements of statistics, element
+that we thought are simple enough to be explained as part of an
+introductory course to statistics and are the minimum that is required
+for any person that is involved in academic activities of any field in
+which the analysis of data is required. Now, as you finish the book, it
+is as good time as any to say some words regarding the elements of
+statistics that are missing from this book.</p>
+<p>One element is more of the same. The statistical models that were
+presented are as simple as a model can get. A typical application will
+required more complex models. Each of these models may require specific
+methods for estimation and testing. The characteristics of inference,
+e.g. significance or confidence levels, rely on assumptions that the
+models are assumed to possess. The user should be familiar with
+computational tools that can be used for the analysis of these more
+complex models. Familiarity with the probabilistic assumptions is
+required in order to be able to interpret the computer output, to
+diagnose possible divergence from the assumptions and to assess the
+severity of the possible effect of such divergence on the validity of
+the findings.</p>
+<p>Statistical tools can be used for tasks other than estimation and
+hypothesis testing. For example, one may use statistics for prediction.
+In many applications it is important to assess what the values of future
+observations may be and in what range of values are they likely to
+occur. Statistical tools such as regression are natural in this context.
+However, the required task is not testing or estimation the values of
+parameters, but the prediction of future values of the response.</p>
+<p>A different role of statistics in the design stage. We hinted in that
+direction when we talked about in Chapter <span class="math display">\[ch:Confidence\]</span> about the
+selection of a sample size in order to assure a confidence interval with
+a given accuracy. In most applications, the selection of the sample size
+emerges in the context of hypothesis testing and the criteria for
+selection is the minimal power of the test, a minimal probability to
+detect a true finding. Yet, statistical design is much more than the
+determination of the sample size. Statistics may have a crucial input in
+the decision of how to collect the data. With an eye on the requirements
+for the final analysis, an experienced statistician can make sure that
+data that is collected is indeed appropriate for that final analysis.
+Too often is the case where researcher steps into the statistician’s
+office with data that he or she collected and asks, when it is already
+too late, for help in the analysis of data that cannot provide a
+satisfactory answer to the research question the researcher tried to
+address. It may be said, with some exaggeration, that good statisticians
+are required for the final analysis only in the case where the initial
+planning was poor.</p>
+<p>Last, but not least, is the theoretical mathematical theory of
+statistics. We tried to introduce as little as possible of the relevant
+mathematics in this course. However, if one seriously intends to learn
+and understand statistics then one must become familiar with the
+relevant mathematical theory. Clearly, deep knowledge in the
+mathematical theory of probability is required. But apart from that,
+there is a rich and rapidly growing body of research that deals with the
+mathematical aspects of data analysis. One cannot be a good statistician
+unless one becomes familiar with the important aspects of this theory.</p>
+<p>I should have started the book with the famous quotation: “Lies, damned
+lies, and statistics”. Instead, I am using it to end the book.
+Statistics can be used and can be misused. Learning statistics can give
+you the tools to tell the difference between the two. My goal in writing
+the book is achieved if reading it will mark for you the beginning of
+the process of learning statistics and not the end of the process.</p>
 </div>
-<div id="discussion-in-the-forum" class="section level3">
+<div id="discussion-in-the-forum-1" class="section level3">
 <h3><span class="header-section-number">16.4.2</span> Discussion in the Forum</h3>
-<p>In the second part of the book we have learned many subjects. Most of these subjects, especially for those that had no previous exposure to statistics, were unfamiliar. In this forum we would like to ask you to share with us the difficulties that you encountered.</p>
-<p>What was the topic that was most difficult for you to grasp? In your opinion, what was the source of the difficulty?</p>
-<p>When forming your answer to this question we will appreciate if you could elaborate and give details of what the problem was. Pointing to deficiencies in the learning material and confusing explanations will help us improve the presentation for the future editions of this book.</p>
+<p>In the second part of the book we have learned many subjects. Most of
+these subjects, especially for those that had no previous exposure to
+statistics, were unfamiliar. In this forum we would like to ask you to
+share with us the difficulties that you encountered.</p>
+<p>What was the topic that was most difficult for you to grasp? In your
+opinion, what was the source of the difficulty?</p>
+<p>When forming your answer to this question we will appreciate if you
+could elaborate and give details of what the problem was. Pointing to
+deficiencies in the learning material and confusing explanations will
+help us improve the presentation for the future editions of this book.</p>
 
 </div>
 </div>
@@ -738,13 +1119,31 @@ sims.score &lt;-<span class="st"> </span><span class="kw">lm</span>(sims<span cl
 <div class="footnotes">
 <hr />
 <ol start="88">
-<li id="fn88"><p>Hebl, M. and Xu, J. (2001). Weighing the care: Physicians’ reactions to the size of a patient. International Journal of Obesity, 25, 1246-1252.<a href="ChapCaseStudies.html#fnref88">↩</a></p></li>
-<li id="fn89"><p>The file can be found on the internet at <a href="http://pluto.huji.ac.il/~msby/StatThink/Datasets/discriminate.csv" class="uri">http://pluto.huji.ac.il/~msby/StatThink/Datasets/discriminate.csv</a>.<a href="ChapCaseStudies.html#fnref89">↩</a></p></li>
-<li id="fn90"><p>One may propose splinting the response into two groups, with one group being associated with values of “<code>time</code>” strictly <em>larger</em> than 30 minutes and the other with values less or equal to 30. The resulting <span class="math inline">\(p\)</span>-value from the expression “<code>prop.test(table(patient$time&gt;30,patient$weight))</code>” is <span class="math inline">\(0.01276\)</span>. However, the number of subjects in one of the cells of the table is equal only to 2, which is problematic in the context of the Normal approximation that is used by this test.<a href="ChapCaseStudies.html#fnref90">↩</a></p></li>
-<li id="fn91"><p>Blakley, B.A., Qui?ones, M.A., Crawford, M.S., and Jago, I.A. (1994). The validity of isometric strength tests. Personnel Psychology, 47, 247-274.<a href="ChapCaseStudies.html#fnref91">↩</a></p></li>
-<li id="fn92"><p>The file can be found on the internet at <a href="http://pluto.huji.ac.il/~msby/StatThink/Datasets/job.csv" class="uri">http://pluto.huji.ac.il/~msby/StatThink/Datasets/job.csv</a>.<a href="ChapCaseStudies.html#fnref92">↩</a></p></li>
-<li id="fn93"><p>The score is produced by the application of the function “<code>lm</code>” to <em>both</em> variables as explanatory variables. The code expression that can be used is “<code>lm(sims ~ grip + arm, data=job)</code>”.<a href="ChapCaseStudies.html#fnref93">↩</a></p></li>
-<li id="fn94"><p>Generally speaking, the plot is composed of the empirical percentiles of the residuals, plotted against the theoretical percentiles of the standard Normal distribution. The current plot is produced by the expression “<code>qqnorm(residuals(sims.score))</code>”.<a href="ChapCaseStudies.html#fnref94">↩</a></p></li>
+<li id="fn88"><p>Hebl, M. and Xu, J. (2001). Weighing the care: Physicians’
+reactions to the size of a patient. International Journal of
+Obesity, 25, 1246-1252.<a href="ChapCaseStudies.html#fnref88" class="footnote-back">↩</a></p></li>
+<li id="fn89"><p>The file can be found on the internet at
+<a href="http://pluto.huji.ac.il/~msby/StatThink/Datasets/discriminate.csv" class="uri">http://pluto.huji.ac.il/~msby/StatThink/Datasets/discriminate.csv</a>.<a href="ChapCaseStudies.html#fnref89" class="footnote-back">↩</a></p></li>
+<li id="fn90"><p>One may propose splinting the response into two groups, with one
+group being associated with values of “<code>time</code>” strictly <em>larger</em>
+than 30 minutes and the other with values less or equal to 30. The
+resulting <span class="math inline">\(p\)</span>-value from the expression
+“<code>prop.test(table(patient$time&gt;30,patient$weight))</code>” is <span class="math inline">\(0.01276\)</span>.
+However, the number of subjects in one of the cells of the table is
+equal only to 2, which is problematic in the context of the Normal
+approximation that is used by this test.<a href="ChapCaseStudies.html#fnref90" class="footnote-back">↩</a></p></li>
+<li id="fn91"><p>Blakley, B.A., Qui?ones, M.A., Crawford, M.S., and Jago, I.A.
+(1994). The validity of isometric strength tests. Personnel
+Psychology, 47, 247-274.<a href="ChapCaseStudies.html#fnref91" class="footnote-back">↩</a></p></li>
+<li id="fn92"><p>The file can be found on the internet at
+<a href="http://pluto.huji.ac.il/~msby/StatThink/Datasets/job.csv" class="uri">http://pluto.huji.ac.il/~msby/StatThink/Datasets/job.csv</a>.<a href="ChapCaseStudies.html#fnref92" class="footnote-back">↩</a></p></li>
+<li id="fn93"><p>The score is produced by the application of the function “<code>lm</code>” to
+<em>both</em> variables as explanatory variables. The code expression that
+can be used is “<code>lm(sims ~ grip + arm, data=job)</code>”.<a href="ChapCaseStudies.html#fnref93" class="footnote-back">↩</a></p></li>
+<li id="fn94"><p>Generally speaking, the plot is composed of the empirical
+percentiles of the residuals, plotted against the theoretical
+percentiles of the standard Normal distribution. The current plot is
+produced by the expression “<code>qqnorm(residuals(sims.score))</code>”.<a href="ChapCaseStudies.html#fnref94" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>
@@ -771,17 +1170,26 @@ gitbook.start({
 "facebook": false,
 "twitter": true,
 "google": false,
+"linkedin": false,
 "weibo": false,
-"instapper": false,
+"instapaper": false,
 "vk": false,
-"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
 "theme": "white",
 "family": "sans",
 "size": 2
 },
-"download": ["statthink.pdf", "thinkstat.epub", "stathink_datasets.zip"],
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["statthink.pdf"],
 "toc": {
 "collapse": "none"
 }
@@ -794,8 +1202,8 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    var src = "";
-    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(src))
       src = src.replace(/^https?:/, '');
     script.src = src;

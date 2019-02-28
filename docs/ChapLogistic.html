@@ -25,7 +25,7 @@
 <meta name="author" content="Benjamin Yakir">
 
 
-<meta name="date" content="2019-01-17">
+<meta name="date" content="2019-02-28">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -53,7 +53,7 @@
 <style type="text/css">
 a.sourceLine { display: inline-block; line-height: 1.25; }
 a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; position: absolute; }
+a.sourceLine:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 div.sourceCode { margin: 1em 0; }
@@ -66,13 +66,11 @@ code.sourceCode { white-space: pre-wrap; }
 a.sourceLine { text-indent: -1em; padding-left: 1em; }
 }
 pre.numberSource a.sourceLine
-  { position: relative; }
-pre.numberSource a.sourceLine:empty
-  { position: absolute; }
+  { position: relative; left: -4em; }
 pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
-    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all;
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -145,6 +143,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.7" data-path="ChapIntroR.html"><a href="ChapIntroR.html#exercises"><i class="fa fa-check"></i><b>1.7</b> Exercises</a></li>
 <li class="chapter" data-level="1.8" data-path="ChapIntroR.html"><a href="ChapIntroR.html#summary"><i class="fa fa-check"></i><b>1.8</b> Summary</a><ul>
 <li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li><a href="ChapIntroR.html#r-funcs"><code>R</code> functions introduced in this chapter</a></li>
 <li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#discuss-in-the-forum"><i class="fa fa-check"></i>Discuss in the forum</a></li>
 </ul></li>
 </ul></li>
@@ -156,7 +155,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.2.3" data-path="ChapData.html"><a href="ChapData.html#frequency"><i class="fa fa-check"></i><b>2.2.3</b> Frequency</a></li>
 <li class="chapter" data-level="2.2.4" data-path="ChapData.html"><a href="ChapData.html#critical-evaluation"><i class="fa fa-check"></i><b>2.2.4</b> Critical Evaluation</a></li>
 </ul></li>
-<li class="chapter" data-level="2.3" data-path="ChapData.html"><a href="ChapData.html#readingdata"><i class="fa fa-check"></i><b>2.3</b> Reading Data into <code>R</code></a><ul>
+<li class="chapter" data-level="2.3" data-path="ChapData.html"><a href="ChapData.html#readingdata"><i class="fa fa-check"></i><b>2.3</b> Reading External Data into <code>R</code></a><ul>
 <li class="chapter" data-level="2.3.1" data-path="ChapData.html"><a href="ChapData.html#saving-the-file-and-setting-the-working-directory"><i class="fa fa-check"></i><b>2.3.1</b> Saving the File and Setting the Working Directory</a></li>
 <li class="chapter" data-level="2.3.2" data-path="ChapData.html"><a href="ChapData.html#Data_3"><i class="fa fa-check"></i><b>2.3.2</b> Reading a CSV File into <code>R</code></a></li>
 <li class="chapter" data-level="2.3.3" data-path="ChapData.html"><a href="ChapData.html#data-types"><i class="fa fa-check"></i><b>2.3.3</b> Data Types</a></li>
@@ -164,6 +163,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.4" data-path="ChapData.html"><a href="ChapData.html#exercises-1"><i class="fa fa-check"></i><b>2.4</b> Exercises</a></li>
 <li class="chapter" data-level="2.5" data-path="ChapData.html"><a href="ChapData.html#summary-1"><i class="fa fa-check"></i><b>2.5</b> Summary</a><ul>
 <li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li><a href="ChapIntroR.html#r-funcs"><code>R</code> functions introduced in this chapter</a></li>
 <li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#discuss-in-the-forum"><i class="fa fa-check"></i>Discuss in the forum</a></li>
 </ul></li>
 </ul></li>
@@ -524,7 +524,7 @@ and produce statistical inference on the fitted model.</p></li>
 <div id="comparing-sample-proportions" class="section level2">
 <h2><span class="header-section-number">15.2</span> Comparing Sample Proportions</h2>
 <p>In this chapter we deal with a Bernoulli response. Such a response has
-two levels, “<code>TRUE</code>” or “<code>FALSE</code>”<a href="#fn83" class="footnote-ref" id="fnref83"><sup>83</sup></a>, and may emerges as the indicator
+two levels, “<code>TRUE</code>” or “<code>FALSE</code>”<a href="#fn82" class="footnote-ref" id="fnref82"><sup>82</sup></a>, and may emerges as the indicator
 of an event. Else, it may be associated with a factor with two levels
 and correspond to the indication of one of the two levels. Such response
 was considered in Chapters <a href="ChapConfidence.html#ChapConfidence">11</a> and <a href="ChapTesting.html#ChapTesting">12</a> where
@@ -647,7 +647,7 @@ Specifically, let us test the hypothesis that the two probabilities of
 the level “four”, one for diesel cars and one for cars that run on gas,
 are equal to each other.</p>
 <p>The output of the function “<code>table</code>” may serve as the input to the
-function “<code>prop.test</code>”<a href="#fn84" class="footnote-ref" id="fnref84"><sup>84</sup></a>. The Bernoulli response variable should be
+function “<code>prop.test</code>”<a href="#fn83" class="footnote-ref" id="fnref83"><sup>83</sup></a>. The Bernoulli response variable should be
 the second variable in the input to the table whereas the explanatory
 factor is the first variable in the table. When we apply the test to the
 data we get the report:</p>
@@ -657,13 +657,13 @@ data we get the report:</p>
 ##  correction
 ## 
 ## data:  table(cars$fuel.type, cars$num.of.doors)
-## X-squared = 5.50206, df = 1, p-value = 0.018994
+## X-squared = 5.5021, df = 1, p-value = 0.01899
 ## alternative hypothesis: two.sided
 ## 95 percent confidence interval:
-##  0.10135419 0.51763895
+##  0.1013542 0.5176389
 ## sample estimates:
-##     prop 1     prop 2 
-## 0.84210526 0.53260870</code></pre>
+##    prop 1    prop 2 
+## 0.8421053 0.5326087</code></pre>
 <p>The two sample proportions of cars with four doors among diesel and gas
 cars are presented at the bottom of the report and serve as estimates of
 the sub-populations probabilities. Indeed, the relative frequency of
@@ -801,22 +801,22 @@ hypothesis by the use of the function “<code>glm</code>”:</p>
 ##     data = cars)
 ## 
 ## Deviance Residuals: 
-##      Min        1Q    Median        3Q       Max  
-## -2.16459  -1.12916   0.56882   1.02401   1.66729  
+##     Min       1Q   Median       3Q      Max  
+## -2.1646  -1.1292   0.5688   1.0240   1.6673  
 ## 
 ## Coefficients:
-##               Estimate Std. Error z value  Pr(&gt;|z|)    
-## (Intercept) -13.147674   2.586929 -5.0823 3.728e-07 ***
-## length        0.077256   0.014949  5.1681 2.365e-07 ***
+##              Estimate Std. Error z value Pr(&gt;|z|)    
+## (Intercept) -13.14767    2.58693  -5.082 3.73e-07 ***
+## length        0.07726    0.01495   5.168 2.37e-07 ***
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
 ## (Dispersion parameter for binomial family taken to be 1)
 ## 
-##     Null deviance: 278.331  on 202  degrees of freedom
-## Residual deviance: 243.956  on 201  degrees of freedom
+##     Null deviance: 278.33  on 202  degrees of freedom
+## Residual deviance: 243.96  on 201  degrees of freedom
 ##   (2 observations deleted due to missingness)
-## AIC: 247.956
+## AIC: 247.96
 ## 
 ## Number of Fisher Scoring iterations: 3</code></pre>
 <p>Generally, the function “<code>glm</code>” can be used in order to fit regression
@@ -825,7 +825,7 @@ forms. Specifically, when the argument “<code>family=binomial</code>” is use
 the model that is being used in the model of logistic regression. The
 formula that is used in the function involves a response and an
 explanatory variable. The response may be a sequence with logical
-“<code>TRUE</code>” or “<code>FALSE</code>” values as in the example<a href="#fn85" class="footnote-ref" id="fnref85"><sup>85</sup></a>. Alternatively, it
+“<code>TRUE</code>” or “<code>FALSE</code>” values as in the example<a href="#fn84" class="footnote-ref" id="fnref84"><sup>84</sup></a>. Alternatively, it
 may be a sequence with “1” or “0” values, “1” corresponding to the event
 occurring to the subject and “0” corresponding to the event not
 occurring. The argument “<code>data=cars</code>” is used in order to inform the
@@ -849,18 +849,18 @@ confidence intervals for these coefficients by the application of the
 function “<code>confint</code>” to the fitted model:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">confint</span>(fit.doors)</code></pre>
 <pre><code>## Waiting for profiling to be done...</code></pre>
-<pre><code>##                    2.5 %      97.5 %
-## (Intercept) -18.50384373 -8.31808771
-## length        0.04938358  0.10824295</code></pre>
+<pre><code>##                    2.5 %     97.5 %
+## (Intercept) -18.50384373 -8.3180877
+## length        0.04938358  0.1082429</code></pre>
 </div>
 <div id="exercises-10" class="section level2">
 <h2><span class="header-section-number">15.4</span> Exercises</h2>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-229" class="exercise"><strong>Exercise 15.1  </strong></span>This exercise deals with a comparison between
+<p><span id="exr:unnamed-chunk-232" class="exercise"><strong>Exercise 15.1  </strong></span>This exercise deals with a comparison between
 Mediterranean diet and low-fat diet recommended by the American Heart
 Association in the context of risks for illness or death among patients
-that survived a heart attack<a href="#fn86" class="footnote-ref" id="fnref86"><sup>86</sup></a>. This case study is taken from the
+that survived a heart attack<a href="#fn85" class="footnote-ref" id="fnref85"><sup>85</sup></a>. This case study is taken from the
 <a href="http://onlinestatbook.com/rvls.html">Rice Virtual Lab in Statistics</a>.
 More details on this case study can be found in the case study
 “<a href="http://onlinestatbook.com/case_studies_rvls/diet_study/index.html">Mediterranean Diet and
@@ -898,15 +898,15 @@ probabilities of keeping healthy.</li>
 
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-230" class="exercise"><strong>Exercise 15.2  </strong></span>Cushing’s syndrome disorder results from a tumor
+<p><span id="exr:unnamed-chunk-233" class="exercise"><strong>Exercise 15.2  </strong></span>Cushing’s syndrome disorder results from a tumor
 (adenoma) in the pituitary gland that causes the production of high
 levels of cortisol. The symptoms of the syndrome are the consequence of
 the elevated levels of this steroid hormone in the blood. The syndrome
 was first described by Harvey Cushing in 1932.</p>
-<p>The file “<code>coshings.csv&quot;</code> contains information on 27 patients that
-suffer from Cushing’s syndrome<a href="#fn87" class="footnote-ref" id="fnref87"><sup>87</sup></a>. The three variables in the file are
+<p>The file “<code>coshings.csv"</code> contains information on 27 patients that
+suffer from Cushing’s syndrome<a href="#fn86" class="footnote-ref" id="fnref86"><sup>86</sup></a>. The three variables in the file are
 “<code>tetra</code>”, “<code>pregn</code>”, and “<code>type</code>”. The factor “<code>type</code>” describes the
-underlying type of syndrome, coded as “<code>a</code>“, (adenoma),”<code>b</code>&quot; (bilateral
+underlying type of syndrome, coded as “<code>a</code>“, (adenoma),”<code>b</code>" (bilateral
 hyperplasia), “<code>c</code>” (carcinoma) or “<code>u</code>” for unknown. The variable
 “<code>tetra</code>” describe the level of urinary excretion rate (mg/24hr) of
 Tetrahydrocortisone, a type of steroid, and the variable “<code>pregn</code>”
@@ -987,25 +987,25 @@ when the roles of a response and an explanatory variable are reversed.</p>
 </div>
 <div class="footnotes">
 <hr />
-<ol start="83">
-<li id="fn83"><p>The levels are frequently coded as 1 or 0, “success” or “failure”,
-or any other pair of levels.<a href="ChapLogistic.html#fnref83" class="footnote-back">↩</a></p></li>
-<li id="fn84"><p>The function “<code>prop.test</code>” was applied in
+<ol start="82">
+<li id="fn82"><p>The levels are frequently coded as 1 or 0, “success” or “failure”,
+or any other pair of levels.<a href="ChapLogistic.html#fnref82" class="footnote-back">↩</a></p></li>
+<li id="fn83"><p>The function “<code>prop.test</code>” was applied in
 Section <a href="ChapTesting.html#TestFrac">12.4</a> in order to test that the probability of
 an event is equal to a given value (“<code>p = 0.5</code>” by default). The
 input to the function was a pair of numbers: the total number of
 successes and the sample size. In the current application the input
 is a <span class="math inline">\(2 \times 2\)</span> table. When applied to such input the function
 carries out a test of the equality of the probability of the first
-column between the rows of the table.<a href="ChapLogistic.html#fnref84" class="footnote-back">↩</a></p></li>
-<li id="fn85"><p>The response is the output of the expression
+column between the rows of the table.<a href="ChapLogistic.html#fnref83" class="footnote-back">↩</a></p></li>
+<li id="fn84"><p>The response is the output of the expression
 “<code>num.of.doors==four</code>”. This expression produces logical values.
-“<code>TRUE</code>” when the car has 4 doors and “<code>FALSE</code>” when it has 2 doors.<a href="ChapLogistic.html#fnref85" class="footnote-back">↩</a></p></li>
-<li id="fn86"><p>De Lorgeril, M., Salen, P., Martin, J., Monjaud, I., Boucher, P.,
+“<code>TRUE</code>” when the car has 4 doors and “<code>FALSE</code>” when it has 2 doors.<a href="ChapLogistic.html#fnref84" class="footnote-back">↩</a></p></li>
+<li id="fn85"><p>De Lorgeril, M., Salen, P., Martin, J., Monjaud, I., Boucher, P.,
 Mamelle, N. (1998). Mediterranean Dietary pattern in a Randomized
-Trial. Archives of Internal Medicine, 158, 1181-1187.<a href="ChapLogistic.html#fnref86" class="footnote-back">↩</a></p></li>
-<li id="fn87"><p>The source of the data is the data file “<code>Cushings</code>” from the
-package “<code>MASS</code>” in <code>R</code>.<a href="ChapLogistic.html#fnref87" class="footnote-back">↩</a></p></li>
+Trial. Archives of Internal Medicine, 158, 1181-1187.<a href="ChapLogistic.html#fnref85" class="footnote-back">↩</a></p></li>
+<li id="fn86"><p>The source of the data is the data file “<code>Cushings</code>” from the
+package “<code>MASS</code>” in <code>R</code>.<a href="ChapLogistic.html#fnref86" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>

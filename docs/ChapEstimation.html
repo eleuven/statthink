@@ -25,7 +25,7 @@
 <meta name="author" content="Benjamin Yakir">
 
 
-<meta name="date" content="2019-01-17">
+<meta name="date" content="2019-02-28">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -53,7 +53,7 @@
 <style type="text/css">
 a.sourceLine { display: inline-block; line-height: 1.25; }
 a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; position: absolute; }
+a.sourceLine:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 div.sourceCode { margin: 1em 0; }
@@ -66,13 +66,11 @@ code.sourceCode { white-space: pre-wrap; }
 a.sourceLine { text-indent: -1em; padding-left: 1em; }
 }
 pre.numberSource a.sourceLine
-  { position: relative; }
-pre.numberSource a.sourceLine:empty
-  { position: absolute; }
+  { position: relative; left: -4em; }
 pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
-    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all;
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -145,6 +143,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.7" data-path="ChapIntroR.html"><a href="ChapIntroR.html#exercises"><i class="fa fa-check"></i><b>1.7</b> Exercises</a></li>
 <li class="chapter" data-level="1.8" data-path="ChapIntroR.html"><a href="ChapIntroR.html#summary"><i class="fa fa-check"></i><b>1.8</b> Summary</a><ul>
 <li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li><a href="ChapIntroR.html#r-funcs"><code>R</code> functions introduced in this chapter</a></li>
 <li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#discuss-in-the-forum"><i class="fa fa-check"></i>Discuss in the forum</a></li>
 </ul></li>
 </ul></li>
@@ -156,7 +155,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.2.3" data-path="ChapData.html"><a href="ChapData.html#frequency"><i class="fa fa-check"></i><b>2.2.3</b> Frequency</a></li>
 <li class="chapter" data-level="2.2.4" data-path="ChapData.html"><a href="ChapData.html#critical-evaluation"><i class="fa fa-check"></i><b>2.2.4</b> Critical Evaluation</a></li>
 </ul></li>
-<li class="chapter" data-level="2.3" data-path="ChapData.html"><a href="ChapData.html#readingdata"><i class="fa fa-check"></i><b>2.3</b> Reading Data into <code>R</code></a><ul>
+<li class="chapter" data-level="2.3" data-path="ChapData.html"><a href="ChapData.html#readingdata"><i class="fa fa-check"></i><b>2.3</b> Reading External Data into <code>R</code></a><ul>
 <li class="chapter" data-level="2.3.1" data-path="ChapData.html"><a href="ChapData.html#saving-the-file-and-setting-the-working-directory"><i class="fa fa-check"></i><b>2.3.1</b> Saving the File and Setting the Working Directory</a></li>
 <li class="chapter" data-level="2.3.2" data-path="ChapData.html"><a href="ChapData.html#Data_3"><i class="fa fa-check"></i><b>2.3.2</b> Reading a CSV File into <code>R</code></a></li>
 <li class="chapter" data-level="2.3.3" data-path="ChapData.html"><a href="ChapData.html#data-types"><i class="fa fa-check"></i><b>2.3.3</b> Data Types</a></li>
@@ -164,6 +163,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.4" data-path="ChapData.html"><a href="ChapData.html#exercises-1"><i class="fa fa-check"></i><b>2.4</b> Exercises</a></li>
 <li class="chapter" data-level="2.5" data-path="ChapData.html"><a href="ChapData.html#summary-1"><i class="fa fa-check"></i><b>2.5</b> Summary</a><ul>
 <li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li><a href="ChapIntroR.html#r-funcs"><code>R</code> functions introduced in this chapter</a></li>
 <li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#discuss-in-the-forum"><i class="fa fa-check"></i>Discuss in the forum</a></li>
 </ul></li>
 </ul></li>
@@ -567,12 +567,12 @@ sample average produced a missing value. The reason is that the variable
 sequence that contains missing values, the function “<code>mean</code>” produce as
 output a missing value.</p>
 <p>The behavior of the function “<code>mean</code>” at the presence of missing values
-is determined by the argument “<code>na.rm</code>”<a href="#fn34" class="footnote-ref" id="fnref34"><sup>34</sup></a>. If we want to compute the
+is determined by the argument “<code>na.rm</code>”<a href="#fn33" class="footnote-ref" id="fnref33"><sup>33</sup></a>. If we want to compute the
 average of the non-missing values in the sequence we should specify the
 argument “<code>na.rm</code>” as “<code>TRUE</code>”. This can be achieved by the inclusion of
 the expression “<code>na.rm=TRUE</code>” in the arguments of the function:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(cars<span class="op">$</span>price,<span class="dt">na.rm=</span><span class="ot">TRUE</span>)</code></pre>
-<pre><code>## [1] 13207.129</code></pre>
+<pre><code>## [1] 13207.13</code></pre>
 <p>The resulting average price is, approximately, $13,000.</p>
 <div id="the-accuracy-of-the-sample-average" class="section level3">
 <h3><span class="header-section-number">10.3.1</span> The Accuracy of the Sample Average</h3>
@@ -631,7 +631,7 @@ X.bar &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="dv"
   X.bar[i] &lt;-<span class="st"> </span><span class="kw">mean</span>(X)
 }
 <span class="kw">mean</span>(<span class="kw">abs</span>(X.bar <span class="op">-</span><span class="st"> </span><span class="dv">1</span><span class="op">/</span>lam) <span class="op">&lt;=</span><span class="st"> </span><span class="dv">1000</span>)</code></pre>
-<pre><code>## [1] 0.72518</code></pre>
+<pre><code>## [1] 0.72405</code></pre>
 <p>In the last line of the code we compute the probability of being within
 $1,000 of the expected price. Recall that the expected price in the
 Exponential case is the reciprocal of the rate <span class="math inline">\(\lambda\)</span>. In this
@@ -653,7 +653,7 @@ deviation as the sample average:</p>
 <pre class="sourceCode r"><code class="sourceCode r">mu &lt;-<span class="st"> </span><span class="dv">13000</span>
 sig &lt;-<span class="st"> </span><span class="dv">13000</span><span class="op">/</span><span class="kw">sqrt</span>(<span class="dv">201</span>)
 <span class="kw">pnorm</span>(<span class="dv">14000</span>,mu,sig) <span class="op">-</span><span class="st"> </span><span class="kw">pnorm</span>(<span class="dv">12000</span>,mu,sig)</code></pre>
-<pre><code>## [1] 0.72453911</code></pre>
+<pre><code>## [1] 0.7245391</code></pre>
 <p>The probability of falling within the interval <span class="math inline">\([12000, 14000]\)</span> is
 computed as the difference between the cumulative Normal probability at
 14,000 and the cumulative Normal probability at 12,000.</p>
@@ -668,7 +668,7 @@ argument of the function and the standard deviation enters in the third
 argument.</p>
 <p>The Normal approximation of falling in the interval <span class="math inline">\([12000, 14000]\)</span>,
 computed as the difference between the two cumulative probabilities,
-produces 0.7245391 as the probability<a href="#fn35" class="footnote-ref" id="fnref35"><sup>35</sup></a>. Notice that the probability
+produces 0.7245391 as the probability<a href="#fn34" class="footnote-ref" id="fnref34"><sup>34</sup></a>. Notice that the probability
 0.7247 computed in the simulations is in agreement with the Normal
 approximation.</p>
 <p>If we wish to assess the accuracy of the estimator at other values of
@@ -687,7 +687,7 @@ new standard deviation is <span class="math inline">\(12,000/\sqrt{201}\)</span>
 <pre class="sourceCode r"><code class="sourceCode r">mu &lt;-<span class="st"> </span><span class="dv">12000</span>
 sig &lt;-<span class="st"> </span><span class="dv">12000</span><span class="op">/</span><span class="kw">sqrt</span>(<span class="dv">201</span>)
 <span class="kw">pnorm</span>(<span class="dv">13000</span>,mu,sig) <span class="op">-</span><span class="st"> </span><span class="kw">pnorm</span>(<span class="dv">11000</span>,mu,sig)</code></pre>
-<pre><code>## [1] 0.76257755</code></pre>
+<pre><code>## [1] 0.7625775</code></pre>
 <p>This time we get that the probability is, approximately, 0.763.</p>
 <p>The fact that the computed value of the average 13,207.13 belongs to the
 interval <span class="math inline">\([12,000, 14,000]\)</span> that was considered in the first analysis
@@ -793,10 +793,10 @@ mid.range &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class=
   mid.range[i] &lt;-<span class="st"> </span>(<span class="kw">max</span>(X)<span class="op">+</span><span class="kw">min</span>(X))<span class="op">/</span><span class="dv">2</span>
 }
 <span class="kw">var</span>(X.bar)</code></pre>
-<pre><code>## [1] 0.020095848</code></pre>
+<pre><code>## [1] 0.02003947</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">var</span>(mid.range)</code></pre>
-<pre><code>## [1] 0.18479286</code></pre>
-<p>We get that the variance of the sample average<a href="#fn36" class="footnote-ref" id="fnref36"><sup>36</sup></a> is approximately
+<pre><code>## [1] 0.1870101</code></pre>
+<p>We get that the variance of the sample average<a href="#fn35" class="footnote-ref" id="fnref35"><sup>35</sup></a> is approximately
 equal to 0.02. The variance of the mid-range statistic is approximately
 equal to 0.185, more than 9 times as large. We see that the accuracy of
 the sample average is better in this case than the accuracy of the
@@ -815,7 +815,7 @@ observation is <span class="math inline">\(\Var(X) = (5.5 - 0.5)^2/12 = 2.083333
 different from the variance that was used in the Normal case. The
 Uniform distribution, like the Normal distribution, is a symmetric
 distribution about the center of the distribution. Hence, using the
-mid-range statistic as an estimator of the expectation makes sense<a href="#fn37" class="footnote-ref" id="fnref37"><sup>37</sup></a>.</p>
+mid-range statistic as an estimator of the expectation makes sense<a href="#fn36" class="footnote-ref" id="fnref36"><sup>36</sup></a>.</p>
 <p>We re-run the simulations, using the function “<code>runif</code>” for the
 simulation of a sample from the Uniform distribution and the parameters
 of the Uniform distribution instead of the function “<code>rnorm</code>” that was
@@ -830,11 +830,11 @@ mid.range &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class=
   mid.range[i] &lt;-<span class="st"> </span>(<span class="kw">max</span>(X)<span class="op">+</span><span class="kw">min</span>(X))<span class="op">/</span><span class="dv">2</span>
 }
 <span class="kw">var</span>(X.bar)</code></pre>
-<pre><code>## [1] 0.020934873</code></pre>
+<pre><code>## [1] 0.02087122</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">var</span>(mid.range)</code></pre>
-<pre><code>## [1] 0.001224713</code></pre>
+<pre><code>## [1] 0.001209319</code></pre>
 <p>Again, we get that the variance of the sample average is approximately
-equal to 0.02, which is close to the theoretical value<a href="#fn38" class="footnote-ref" id="fnref38"><sup>38</sup></a>. The variance
+equal to 0.02, which is close to the theoretical value<a href="#fn37" class="footnote-ref" id="fnref37"><sup>37</sup></a>. The variance
 of mid-range statistic is approximately equal to 0.0012.</p>
 <p>Observe that in the current comparison between the sample average and
 the mid-range estimator we get that the latter is a clear winner.
@@ -934,9 +934,9 @@ estimators of the variance centered at the value of the parameter they
 are trying to estimate?</p>
 <p>Compute the expectations of the two estimators:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(X.var)</code></pre>
-<pre><code>## [1] 2.999829</code></pre>
+<pre><code>## [1] 2.995744</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>((<span class="dv">19</span><span class="op">/</span><span class="dv">20</span>)<span class="op">*</span>X.var)</code></pre>
-<pre><code>## [1] 2.8498376</code></pre>
+<pre><code>## [1] 2.845957</code></pre>
 <p>Note that 3 is the value of the variance of the measurement that was
 used in the simulation. Observe that the expectation of <span class="math inline">\(S^2\)</span> is
 essentially equal to 3, whereas the expectation of the alternative
@@ -948,7 +948,7 @@ of the alternative estimator is located off that target value.</p>
 of the estimator <span class="math inline">\(S^2\)</span> is always equal to the variance of the
 measurement. This holds true regardless of what is the actual value of
 the variance. On the other hand the expectation of the alternative
-estimator is always off the target value<a href="#fn39" class="footnote-ref" id="fnref39"><sup>39</sup></a>.</p>
+estimator is always off the target value<a href="#fn38" class="footnote-ref" id="fnref38"><sup>38</sup></a>.</p>
 <p>An estimator is called <em>unbiased</em> if its expectation is equal to the
 value of the parameter that it tries to estimate. We get that <span class="math inline">\(S^2\)</span> is
 an unbiased estimator of the variance. Similarly, the sample average is
@@ -958,7 +958,7 @@ the alternative estimator of the variance is a <em>biased</em> estimator.</p>
 measurement and to use its square root as the estimator of the standard
 deviation of the measurement. A justification, which is frequently
 quoted to justify this selection, is the fact that <span class="math inline">\(S^2\)</span> is an unbiased
-estimator of the variance<a href="#fn40" class="footnote-ref" id="fnref40"><sup>40</sup></a>.</p>
+estimator of the variance<a href="#fn39" class="footnote-ref" id="fnref39"><sup>39</sup></a>.</p>
 <p>In the previous section, when comparing two competing estimators of the
 expectation, or main concern was the quantification of the spread of the
 sampling distribution of either estimator about the target value of the
@@ -985,10 +985,10 @@ variable and the expectation.</p>
 <p>Assume now that the goal is to assess the distance between an estimator
 and the parameter it tries to estimate. In order to keep the discussion
 on an abstract level let us use the Greek letter <span class="math inline">\(\theta\)</span> (read: theta)
-to denote this parameter<a href="#fn41" class="footnote-ref" id="fnref41"><sup>41</sup></a>. The estimator is denoted by <span class="math inline">\(\hat \theta\)</span>
+to denote this parameter<a href="#fn40" class="footnote-ref" id="fnref40"><sup>40</sup></a>. The estimator is denoted by <span class="math inline">\(\hat \theta\)</span>
 (read: theta hat). It is a statistic, a formula applied to the data.
 Hence, with respect to the sampling distribution, <span class="math inline">\(\hat \theta\)</span> is a
-random variable<a href="#fn42" class="footnote-ref" id="fnref42"><sup>42</sup></a>. The issue is to measure the distance between the
+random variable<a href="#fn41" class="footnote-ref" id="fnref41"><sup>41</sup></a>. The issue is to measure the distance between the
 random variable <span class="math inline">\(\hat \theta\)</span> and the parameter <span class="math inline">\(\theta\)</span>.</p>
 <p>Motivated by the method that led to the definition of the variance we
 consider the deviations between the estimator and the parameter. The
@@ -1027,16 +1027,16 @@ the mean square error of the alternative estimator <span class="math inline">\([
 that we have computed their expectations and found out that the
 expectation of <span class="math inline">\(S^2\)</span> is essentially equal to 3, the target value of the
 variance. The expectation of the alternative estimator turned out to be
-equal to 2.845630, which is less than the target value<a href="#fn43" class="footnote-ref" id="fnref43"><sup>43</sup></a>. It turns
+equal to 2.845630, which is less than the target value<a href="#fn42" class="footnote-ref" id="fnref42"><sup>42</sup></a>. It turns
 out that the bias of <span class="math inline">\(S^2\)</span> is zero (or essentially zero in the
 simulations) and the bias of the alternative estimator is
 <span class="math inline">\(2.845630 - 3 = -0.15437 \approx -0.15\)</span>.</p>
 <p>In order to compute the mean square errors of both estimators, let us
 compute their variances:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">var</span>(X.var)</code></pre>
-<pre><code>## [1] 0.95287938</code></pre>
+<pre><code>## [1] 0.9484016</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">var</span>((<span class="dv">19</span><span class="op">/</span><span class="dv">20</span>)<span class="op">*</span>X.var)</code></pre>
-<pre><code>## [1] 0.85997364</code></pre>
+<pre><code>## [1] 0.8559324</code></pre>
 <p>Observe that the variance of <span class="math inline">\(S^2\)</span> is essentially equal to 0.936 and the
 variance of the alternative estimator is essentially equal to 0.845.</p>
 <p>The estimator <span class="math inline">\(S^2\)</span> is unbiased. Consequently, the mean square error of
@@ -1119,7 +1119,7 @@ or 1. An observation has the value 1 if the event occurs for that
 observation or, else, the value is 0.</p>
 <p>Notice that <span class="math inline">\(\Expec(X) = 1 \cdot p = p\)</span>. Consequently, the probability
 of the event is equal to the expectation of the Bernoulli
-measurement<a href="#fn44" class="footnote-ref" id="fnref44"><sup>44</sup></a>. It turns out that the parameter one seeks to estimate
+measurement<a href="#fn43" class="footnote-ref" id="fnref43"><sup>43</sup></a>. It turns out that the parameter one seeks to estimate
 is the expectation of a Bernoulli measurement. The estimation is based
 on a sample of size <span class="math inline">\(n\)</span> of Bernoulli observations.</p>
 <p>In Section <a href="ChapEstimation.html#EstimationExp">10.3</a> it was proposed to use the sample
@@ -1145,7 +1145,7 @@ unbiased estimator of <span class="math inline">\(p\)</span> (namely, <span clas
 variance is equal to:</p>
 <p><span class="math display">\[\Var(\hat P) = \Var(X) / n = p(1-p)/n\;,\]</span> where
 the variance of the measurement is obtained from the formula for the
-variance of a <span class="math inline">\(\mathrm{Binomial}(1,p)\)</span> distribution<a href="#fn45" class="footnote-ref" id="fnref45"><sup>45</sup></a>.</p>
+variance of a <span class="math inline">\(\mathrm{Binomial}(1,p)\)</span> distribution<a href="#fn44" class="footnote-ref" id="fnref44"><sup>44</sup></a>.</p>
 <p>The second example of an integer valued random variable that was
 considered in the first part of the book is the
 <span class="math inline">\(\mathrm{Poisson}(\lambda)\)</span> distribution. Recall that <span class="math inline">\(\lambda\)</span> is the
@@ -1180,7 +1180,7 @@ variance <span class="math inline">\(S^2\)</span>.</p>
 <h2><span class="header-section-number">10.6</span> Exercises</h2>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-151" class="exercise"><strong>Exercise 10.1  </strong></span>In Subsection <a href="ChapEstimation.html#ComparingEstimators">10.3.2</a> we compare
+<p><span id="exr:unnamed-chunk-154" class="exercise"><strong>Exercise 10.1  </strong></span>In Subsection <a href="ChapEstimation.html#ComparingEstimators">10.3.2</a> we compare
 the average against the mid-range as estimators of the expectation of
 the measurement. The goal of this exercise is to repeat the analysis,
 but this time compare the average to the median as estimators of the
@@ -1201,7 +1201,7 @@ smaller mean square error?</li>
 
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-152" class="exercise"><strong>Exercise 10.2  </strong></span>The goal in this exercise is to assess estimation of
+<p><span id="exr:unnamed-chunk-155" class="exercise"><strong>Exercise 10.2  </strong></span>The goal in this exercise is to assess estimation of
 a proportion in a population on the basis of the proportion in the
 sample.</p>
 <p>The file “<code>pop2.csv</code>” was introduced in Exercise <a href="ChapSampDist.html#exr:ex1sampdist">7.1</a> of
@@ -1221,7 +1221,7 @@ file “<code>pop2.csv</code>” corresponds to the unobserved population.</p>
 <p>Download both files to your computer and answer the following questions:</p>
 <ol style="list-style-type: decimal">
 <li><p>Compute the proportion in the sample of those with a high level of
-blood pressure<a href="#fn46" class="footnote-ref" id="fnref46"><sup>46</sup></a>.</p></li>
+blood pressure<a href="#fn45" class="footnote-ref" id="fnref45"><sup>45</sup></a>.</p></li>
 <li><p>Compute the proportion in the population of those with a high level
 of blood pressure.</p></li>
 <li><p>Simulate the sampling distribution of the sample proportion and
@@ -1312,43 +1312,43 @@ sensitive to the distribution not being symmetric.</p>
 </div>
 <div class="footnotes">
 <hr />
-<ol start="34">
-<li id="fn34"><p>The name of the argument stands for “NA remove”. If the value of
+<ol start="33">
+<li id="fn33"><p>The name of the argument stands for “NA remove”. If the value of
 the argument is set to “<code>TRUE</code>” then the missing values are removed
 in the computation of the average. Consequently, the average is
 computed for the sub-sequence of non-missing values. The default
 specification of the argument in the definition of the function is
 “<code>na.rm=FALSE</code>”, which implies a missing value for the mean when
-computed on a sequence that contains missing values.<a href="ChapEstimation.html#fnref34" class="footnote-back">↩</a></p></li>
-<li id="fn35"><p>As a matter of fact, the difference is the probability of falling
+computed on a sequence that contains missing values.<a href="ChapEstimation.html#fnref33" class="footnote-back">↩</a></p></li>
+<li id="fn34"><p>As a matter of fact, the difference is the probability of falling
 in the half-open interval <span class="math inline">\((12000,14000]\)</span>. However, for continuous
 distributions the probability of the end-points is zero and they do
-not contribute to the probability of the interval.<a href="ChapEstimation.html#fnref35" class="footnote-back">↩</a></p></li>
-<li id="fn36"><p>As a matter of fact, the variance of the sample average is exactly
+not contribute to the probability of the interval.<a href="ChapEstimation.html#fnref34" class="footnote-back">↩</a></p></li>
+<li id="fn35"><p>As a matter of fact, the variance of the sample average is exactly
 <span class="math inline">\(\Var(X)/100 = 0.02\)</span>. Due to the inaccuracy of the simulation we got
-a slightly different variance.<a href="ChapEstimation.html#fnref36" class="footnote-back">↩</a></p></li>
-<li id="fn37"><p>Observe that the middle range of the <span class="math inline">\(\mathrm{Uniform}(a,b)\)</span>
+a slightly different variance.<a href="ChapEstimation.html#fnref35" class="footnote-back">↩</a></p></li>
+<li id="fn36"><p>Observe that the middle range of the <span class="math inline">\(\mathrm{Uniform}(a,b)\)</span>
 distribution, the middle point between the maximum value of the
 distribution <span class="math inline">\(b\)</span> and the minimal value <span class="math inline">\(a\)</span>, is <span class="math inline">\((a+b)/2\)</span>, which is
-equal to the expectation of the distribution<a href="ChapEstimation.html#fnref37" class="footnote-back">↩</a></p></li>
-<li id="fn38"><p>Actually, the exact value of the variance of the sample average is
+equal to the expectation of the distribution<a href="ChapEstimation.html#fnref36" class="footnote-back">↩</a></p></li>
+<li id="fn37"><p>Actually, the exact value of the variance of the sample average is
 <span class="math inline">\(\Var(X)/100 = 0.02083333\)</span>. The results of the simulation are
-consistent with this theoretical computation.<a href="ChapEstimation.html#fnref38" class="footnote-back">↩</a></p></li>
-<li id="fn39"><p>For the estimator <span class="math inline">\(S^2\)</span> we get that <span class="math inline">\(\Expec(S^2) = \Var(X)\)</span>. On
+consistent with this theoretical computation.<a href="ChapEstimation.html#fnref37" class="footnote-back">↩</a></p></li>
+<li id="fn38"><p>For the estimator <span class="math inline">\(S^2\)</span> we get that <span class="math inline">\(\Expec(S^2) = \Var(X)\)</span>. On
 the other hand, for the alternative estimator we get that
 <span class="math inline">\(\Expec([(n-1)/n]\cdot S^2) = [(n-1)/n]\Var(X) \not = \Var(X)\)</span>. This
 statement holds true also in the cases where the distribution of the
-measurement is not Normal.<a href="ChapEstimation.html#fnref39" class="footnote-back">↩</a></p></li>
-<li id="fn40"><p>As part of your homework assignment you are required to
+measurement is not Normal.<a href="ChapEstimation.html#fnref38" class="footnote-back">↩</a></p></li>
+<li id="fn39"><p>As part of your homework assignment you are required to
 investigate the properties of <span class="math inline">\(S\)</span>, the square root of <span class="math inline">\(S^2\)</span>, as an
 estimator of the standard deviation of the measurement. A conclusion
 of this investigation is that <span class="math inline">\(S\)</span> is a biased estimator of the
-standard deviation.<a href="ChapEstimation.html#fnref40" class="footnote-back">↩</a></p></li>
-<li id="fn41"><p>The letter <span class="math inline">\(\theta\)</span> is frequently used in the statistical
+standard deviation.<a href="ChapEstimation.html#fnref39" class="footnote-back">↩</a></p></li>
+<li id="fn40"><p>The letter <span class="math inline">\(\theta\)</span> is frequently used in the statistical
 literature to denote a parameter of the distribution. In the
 previous section we considered <span class="math inline">\(\theta = \Expec(X)\)</span> and in this
-section we consider <span class="math inline">\(\theta=\Var(X)\)</span>.<a href="ChapEstimation.html#fnref41" class="footnote-back">↩</a></p></li>
-<li id="fn42"><p>Observe that we diverge here slightly from our promise to use
+section we consider <span class="math inline">\(\theta=\Var(X)\)</span>.<a href="ChapEstimation.html#fnref40" class="footnote-back">↩</a></p></li>
+<li id="fn41"><p>Observe that we diverge here slightly from our promise to use
 capital letters to denote random variables. However, denoting the
 parameter by <span class="math inline">\(\theta\)</span> and denoting the estimator of the parameter by
 <span class="math inline">\(\hat \theta\)</span> is standard in the statistical literature. As a matter
@@ -1358,22 +1358,22 @@ this book. The letter with the hat on top will represent the
 estimator and will always be considered as a random variable. For
 Latin letters we will still use capital letters, with or without a
 hat, to represent a random variable and small letter to represent
-evaluation of the random variable for given data.<a href="ChapEstimation.html#fnref42" class="footnote-back">↩</a></p></li>
-<li id="fn43"><p>It can be shown mathematically that
+evaluation of the random variable for given data.<a href="ChapEstimation.html#fnref41" class="footnote-back">↩</a></p></li>
+<li id="fn42"><p>It can be shown mathematically that
 <span class="math inline">\(\Expec([(n-1)/n] S^2) = [(n-1)/n] \Expec(S^2)\)</span>. Consequently, the
 actual value of the expectation of the alternative estimator in the
 current setting is <span class="math inline">\([19/20]\cdot 3 = 2.85\)</span> and the bias is <span class="math inline">\(-0.15\)</span>.
-The results of the simulation are consistent with this fact.<a href="ChapEstimation.html#fnref43" class="footnote-back">↩</a></p></li>
-<li id="fn44"><p>The expectation of <span class="math inline">\(X\sim\mathrm{Binomial}(n,p)\)</span> is
+The results of the simulation are consistent with this fact.<a href="ChapEstimation.html#fnref42" class="footnote-back">↩</a></p></li>
+<li id="fn43"><p>The expectation of <span class="math inline">\(X\sim\mathrm{Binomial}(n,p)\)</span> is
 <span class="math inline">\(\Expec(X)=np\)</span>. In the Bernoulli case <span class="math inline">\(n=1\)</span>. Therefore,
-<span class="math inline">\(\Expec(X) = 1\cdot p = p\)</span>.<a href="ChapEstimation.html#fnref44" class="footnote-back">↩</a></p></li>
-<li id="fn45"><p>The variance of <span class="math inline">\(X\sim\mathrm{Binomial}(n,p)\)</span> is
+<span class="math inline">\(\Expec(X) = 1\cdot p = p\)</span>.<a href="ChapEstimation.html#fnref43" class="footnote-back">↩</a></p></li>
+<li id="fn44"><p>The variance of <span class="math inline">\(X\sim\mathrm{Binomial}(n,p)\)</span> is
 <span class="math inline">\(\Var(X)=np(1-p)\)</span>. In the Bernoulli case <span class="math inline">\(n=1\)</span>. Therefore,
-<span class="math inline">\(\Var(X) = 1\cdot p(1-p) = p(1-p)\)</span>.<a href="ChapEstimation.html#fnref45" class="footnote-back">↩</a></p></li>
-<li id="fn46"><p>Hint: You may use the function summary or you may note that the
+<span class="math inline">\(\Var(X) = 1\cdot p(1-p) = p(1-p)\)</span>.<a href="ChapEstimation.html#fnref44" class="footnote-back">↩</a></p></li>
+<li id="fn45"><p>Hint: You may use the function summary or you may note that the
 expression “<em>variable</em><code>==</code><em>level</em>” produces a sequence with logical
 “<code>TRUE</code>” or “<code>FALSE</code>” entries that identify entries in the sequence
-“<em>variable</em>” that obtain the value “<em>level</em>”.<a href="ChapEstimation.html#fnref46" class="footnote-back">↩</a></p></li>
+“<em>variable</em>” that obtain the value “<em>level</em>”.<a href="ChapEstimation.html#fnref45" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>

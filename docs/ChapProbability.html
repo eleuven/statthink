@@ -25,7 +25,7 @@
 <meta name="author" content="Benjamin Yakir">
 
 
-<meta name="date" content="2019-01-17">
+<meta name="date" content="2019-02-28">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -53,7 +53,7 @@
 <style type="text/css">
 a.sourceLine { display: inline-block; line-height: 1.25; }
 a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; position: absolute; }
+a.sourceLine:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 div.sourceCode { margin: 1em 0; }
@@ -66,13 +66,11 @@ code.sourceCode { white-space: pre-wrap; }
 a.sourceLine { text-indent: -1em; padding-left: 1em; }
 }
 pre.numberSource a.sourceLine
-  { position: relative; }
-pre.numberSource a.sourceLine:empty
-  { position: absolute; }
+  { position: relative; left: -4em; }
 pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
-    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all;
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -145,6 +143,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.7" data-path="ChapIntroR.html"><a href="ChapIntroR.html#exercises"><i class="fa fa-check"></i><b>1.7</b> Exercises</a></li>
 <li class="chapter" data-level="1.8" data-path="ChapIntroR.html"><a href="ChapIntroR.html#summary"><i class="fa fa-check"></i><b>1.8</b> Summary</a><ul>
 <li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li><a href="ChapIntroR.html#r-funcs"><code>R</code> functions introduced in this chapter</a></li>
 <li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#discuss-in-the-forum"><i class="fa fa-check"></i>Discuss in the forum</a></li>
 </ul></li>
 </ul></li>
@@ -156,7 +155,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.2.3" data-path="ChapData.html"><a href="ChapData.html#frequency"><i class="fa fa-check"></i><b>2.2.3</b> Frequency</a></li>
 <li class="chapter" data-level="2.2.4" data-path="ChapData.html"><a href="ChapData.html#critical-evaluation"><i class="fa fa-check"></i><b>2.2.4</b> Critical Evaluation</a></li>
 </ul></li>
-<li class="chapter" data-level="2.3" data-path="ChapData.html"><a href="ChapData.html#readingdata"><i class="fa fa-check"></i><b>2.3</b> Reading Data into <code>R</code></a><ul>
+<li class="chapter" data-level="2.3" data-path="ChapData.html"><a href="ChapData.html#readingdata"><i class="fa fa-check"></i><b>2.3</b> Reading External Data into <code>R</code></a><ul>
 <li class="chapter" data-level="2.3.1" data-path="ChapData.html"><a href="ChapData.html#saving-the-file-and-setting-the-working-directory"><i class="fa fa-check"></i><b>2.3.1</b> Saving the File and Setting the Working Directory</a></li>
 <li class="chapter" data-level="2.3.2" data-path="ChapData.html"><a href="ChapData.html#Data_3"><i class="fa fa-check"></i><b>2.3.2</b> Reading a CSV File into <code>R</code></a></li>
 <li class="chapter" data-level="2.3.3" data-path="ChapData.html"><a href="ChapData.html#data-types"><i class="fa fa-check"></i><b>2.3.3</b> Data Types</a></li>
@@ -164,6 +163,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.4" data-path="ChapData.html"><a href="ChapData.html#exercises-1"><i class="fa fa-check"></i><b>2.4</b> Exercises</a></li>
 <li class="chapter" data-level="2.5" data-path="ChapData.html"><a href="ChapData.html#summary-1"><i class="fa fa-check"></i><b>2.5</b> Summary</a><ul>
 <li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li><a href="ChapIntroR.html#r-funcs"><code>R</code> functions introduced in this chapter</a></li>
 <li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#discuss-in-the-forum"><i class="fa fa-check"></i>Discuss in the forum</a></li>
 </ul></li>
 </ul></li>
@@ -618,13 +618,13 @@ content of the file into a data frame by the name “<code>ex.1</code>” and ap
 function “<code>summary</code>” to the data frame:</p>
 <pre class="sourceCode r"><code class="sourceCode r">ex<span class="fl">.1</span> &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;_data/ex1.csv&quot;</span>)
 <span class="kw">summary</span>(ex<span class="fl">.1</span>)</code></pre>
-<pre><code>##        id              sex         height      
-##  Min.   :1538611   FEMALE:54   Min.   :117.00  
-##  1st Qu.:3339583   MALE  :46   1st Qu.:158.00  
-##  Median :5105620               Median :171.00  
-##  Mean   :5412367               Mean   :170.11  
-##  3rd Qu.:7622236               3rd Qu.:180.25  
-##  Max.   :9878130               Max.   :208.00</code></pre>
+<pre><code>##        id              sex         height     
+##  Min.   :1538611   FEMALE:54   Min.   :117.0  
+##  1st Qu.:3339583   MALE  :46   1st Qu.:158.0  
+##  Median :5105620               Median :171.0  
+##  Mean   :5412367               Mean   :170.1  
+##  3rd Qu.:7622236               3rd Qu.:180.2  
+##  Max.   :9878130               Max.   :208.0</code></pre>
 <p>We saw in the previous chapter that, when applied to a numeric sequence,
 the function “<code>summary</code>” produces the smallest and largest values in the
 sequence, the three quartiles (including the median) and the mean. If
@@ -660,13 +660,13 @@ corresponds to a sample from this city.) Read the population data into
 <code>R</code> and examine it:</p>
 <pre class="sourceCode r"><code class="sourceCode r">pop<span class="fl">.1</span> &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="dt">file=</span><span class="st">&quot;_data/pop1.csv&quot;</span>)
 <span class="kw">summary</span>(pop<span class="fl">.1</span>)</code></pre>
-<pre><code>##        id              sex            height      
-##  Min.   :1000082   FEMALE:48888   Min.   :117.00  
-##  1st Qu.:3254220   MALE  :51112   1st Qu.:162.00  
-##  Median :5502618                  Median :170.00  
-##  Mean   :5502428                  Mean   :170.03  
-##  3rd Qu.:7757518                  3rd Qu.:178.00  
-##  Max.   :9999937                  Max.   :217.00</code></pre>
+<pre><code>##        id              sex            height   
+##  Min.   :1000082   FEMALE:48888   Min.   :117  
+##  1st Qu.:3254220   MALE  :51112   1st Qu.:162  
+##  Median :5502618                  Median :170  
+##  Mean   :5502428                  Mean   :170  
+##  3rd Qu.:7757518                  3rd Qu.:178  
+##  Max.   :9999937                  Max.   :217</code></pre>
 <p>The object “<code>pop.1</code>” is a data frame of the same structure as the data
 frame “<code>ex.1</code>”. It contains three variables: a unique identifier of each
 subject (<code>id</code>), the sex of the subject (<code>sex</code>), and its height
@@ -684,7 +684,7 @@ FIGURE 4.1: Bar Plot of Height
 </div>
 <p>Let us concentrate on the variable “<code>height</code>”. A bar plot of the
 distribution of the heights in the entire population is given in
-Figure <a href="ChapProbability.html#fig:Prob1">4.1</a> <a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a>. Recall that a vertical bar is placed
+Figure <a href="ChapProbability.html#fig:Prob1">4.1</a> <a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a>. Recall that a vertical bar is placed
 above each value of height that appears in the population, with the
 height of the bar representing the frequency of the value in the
 population. One may read out of the graph or obtain from the numerical
@@ -753,7 +753,7 @@ value based on the data we do have from the sample.</p>
 variance is equal to <span class="math inline">\(\sigma^2 =126.1576\)</span>. The standard deviation is
 equal to <span class="math inline">\(\sigma = \sqrt{126.1576} = 11.23199\)</span>. These quantities can be
 computed in this example from the data frame “<code>pop.1</code>” with the aid of
-the functions “<code>var</code>” and “<code>sd</code>”, respectively<a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a>.</p>
+the functions “<code>var</code>” and “<code>sd</code>”, respectively<a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a>.</p>
 </div>
 <div id="random-variables" class="section level2">
 <h2><span class="header-section-number">4.4</span> Random Variables</h2>
@@ -765,14 +765,14 @@ person) and measuring his/her height.</p>
 it as a population. We will apply the function “<code>sample</code>” to this
 sequence:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sample</span>(pop<span class="fl">.1</span><span class="op">$</span>height,<span class="dv">1</span>)</code></pre>
-<pre><code>## [1] 150</code></pre>
+<pre><code>## [1] 177</code></pre>
 <p>The first entry to the function is the given sequence of heights. When
 we set the second argument to 1 then the function selects one of the
 entries of the sequence at random, with each entry having the same
 likelihood of being selected. Specifically, in this example an entry
 that contains the value 162 was selected. Let us run the function again:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sample</span>(pop<span class="fl">.1</span><span class="op">$</span>height,<span class="dv">1</span>)</code></pre>
-<pre><code>## [1] 167</code></pre>
+<pre><code>## [1] 168</code></pre>
 <p>In this instance an entry with a different value was selected. Try to
 run the command several times yourself and see what you get. Would you
 necessarily obtain a different value in each run?</p>
@@ -830,7 +830,7 @@ random person sampled from the population differs from 170 centimeter by
 no more than 10 centimeters. (In other words, that the height is between
 160 and 180 centimeters.) Denote by <span class="math inline">\(X\)</span> the height of that random
 person. We are interested in the probability
-<span class="math inline">\(\Prob(|X -170| \leq 10)\)</span>.<a href="#fn9" class="footnote-ref" id="fnref9"><sup>9</sup></a></p>
+<span class="math inline">\(\Prob(|X -170| \leq 10)\)</span>.<a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a></p>
 <p>The random person can be any of the subjects of the population with
 equal probability. Thus, the sequence of the heights of the 100,000
 subjects represents the distribution of the random variable <span class="math inline">\(X\)</span>:</p>
@@ -1045,7 +1045,7 @@ Table <a href="ChapProbability.html#tab:Probability1">4.1</a>:</p>
 <pre><code>## Expectation = sum(Value*Probability) =  0.85</code></pre>
 <p>In the example of height we get that the expectation is equal to 170.035
 centimeter. Notice that this expectation is equal to <span class="math inline">\(\mu\)</span>, the mean of
-the population<a href="#fn10" class="footnote-ref" id="fnref10"><sup>10</sup></a>. This is no accident. The expectation of a potential
+the population<a href="#fn9" class="footnote-ref" id="fnref9"><sup>9</sup></a>. This is no accident. The expectation of a potential
 measurement of a randomly selected subject from a population is equal to
 the average of the measurement across all subjects.</p>
 <p>The sample variance (<span class="math inline">\(s^2\)</span>) is obtained as the sum of the squared
@@ -1213,7 +1213,7 @@ discussed in Part II of the book.</p>
 </table>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-50" class="exercise"><strong>Exercise 4.1  </strong></span>Table <a href="ChapProbability.html#tab:tab4">4.4</a> presents the
+<p><span id="exr:unnamed-chunk-53" class="exercise"><strong>Exercise 4.1  </strong></span>Table <a href="ChapProbability.html#tab:tab4">4.4</a> presents the
 probabilities of the random variable <span class="math inline">\(Y\)</span>.</p>
 <p>These probabilities are a
 function of the number <span class="math inline">\(p\)</span>, the probability of the value “0”. Answer the
@@ -1232,7 +1232,7 @@ following questions:</p>
 
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-51" class="exercise"><strong>Exercise 4.2  </strong></span>One invests $2 to participate in a game of chance.
+<p><span id="exr:unnamed-chunk-54" class="exercise"><strong>Exercise 4.2  </strong></span>One invests $2 to participate in a game of chance.
 In this game a coin is tossed three times. If all tosses end up “Head”
 then the player wins $10. Otherwise, the player losses the investment.</p>
 <ol style="list-style-type: decimal">
@@ -1324,24 +1324,24 @@ where 2 of the 20 did not pass and 18 did pass, etc.</p>
 </div>
 <div class="footnotes">
 <hr />
-<ol start="7">
-<li id="fn7"><p>Such a bar plot can be produced with the expression
-“<code>plot(table(pop.1$height))</code>”.<a href="ChapProbability.html#fnref7" class="footnote-back">↩</a></p></li>
-<li id="fn8"><p>Observe that the function “<code>var</code>” computes the sample variance.
+<ol start="6">
+<li id="fn6"><p>Such a bar plot can be produced with the expression
+“<code>plot(table(pop.1$height))</code>”.<a href="ChapProbability.html#fnref6" class="footnote-back">↩</a></p></li>
+<li id="fn7"><p>Observe that the function “<code>var</code>” computes the sample variance.
 Consequently, the sum of squares is divided by <span class="math inline">\(N-1\)</span>. We can correct
 that when computing the population variance by multiplying the
 result by <span class="math inline">\(N-1\)</span> and dividing by <span class="math inline">\(N\)</span>. Notice that the difference
 between the two quantities is negligible for a large population.
 Henceforth we will use the functions “<code>var</code>” and “<code>sd</code>” to compute
 the variance and standard deviations of populations without the
-application of the correction.<a href="ChapProbability.html#fnref8" class="footnote-back">↩</a></p></li>
-<li id="fn9"><p>The expression <span class="math inline">\(\{|X -170| \leq 10\}\)</span> reads as “the absolute value
+application of the correction.<a href="ChapProbability.html#fnref7" class="footnote-back">↩</a></p></li>
+<li id="fn8"><p>The expression <span class="math inline">\(\{|X -170| \leq 10\}\)</span> reads as “the absolute value
 of the difference between <span class="math inline">\(X\)</span> and 170 is no more that 10”. In other
 words, <span class="math inline">\(\{-10 \leq X - 170 \leq 10\}\)</span>, which is equivalent to the
 statement that <span class="math inline">\(\{160 \leq X \leq 180\}\)</span>. It follows that
-<span class="math inline">\(\Prob(|X-170|\leq 10) = \Prob(160\leq X \leq 180)\)</span>.<a href="ChapProbability.html#fnref9" class="footnote-back">↩</a></p></li>
-<li id="fn10"><p>The mean of the population can be computed with the expression
-“<code>mean(pop.1$height)</code>”<a href="ChapProbability.html#fnref10" class="footnote-back">↩</a></p></li>
+<span class="math inline">\(\Prob(|X-170|\leq 10) = \Prob(160\leq X \leq 180)\)</span>.<a href="ChapProbability.html#fnref8" class="footnote-back">↩</a></p></li>
+<li id="fn9"><p>The mean of the population can be computed with the expression
+“<code>mean(pop.1$height)</code>”<a href="ChapProbability.html#fnref9" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>

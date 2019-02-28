@@ -25,7 +25,7 @@
 <meta name="author" content="Benjamin Yakir">
 
 
-<meta name="date" content="2019-01-17">
+<meta name="date" content="2019-02-28">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -53,7 +53,7 @@
 <style type="text/css">
 a.sourceLine { display: inline-block; line-height: 1.25; }
 a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; position: absolute; }
+a.sourceLine:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 div.sourceCode { margin: 1em 0; }
@@ -66,13 +66,11 @@ code.sourceCode { white-space: pre-wrap; }
 a.sourceLine { text-indent: -1em; padding-left: 1em; }
 }
 pre.numberSource a.sourceLine
-  { position: relative; }
-pre.numberSource a.sourceLine:empty
-  { position: absolute; }
+  { position: relative; left: -4em; }
 pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
-    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all;
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -145,6 +143,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.7" data-path="ChapIntroR.html"><a href="ChapIntroR.html#exercises"><i class="fa fa-check"></i><b>1.7</b> Exercises</a></li>
 <li class="chapter" data-level="1.8" data-path="ChapIntroR.html"><a href="ChapIntroR.html#summary"><i class="fa fa-check"></i><b>1.8</b> Summary</a><ul>
 <li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li><a href="ChapIntroR.html#r-funcs"><code>R</code> functions introduced in this chapter</a></li>
 <li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#discuss-in-the-forum"><i class="fa fa-check"></i>Discuss in the forum</a></li>
 </ul></li>
 </ul></li>
@@ -156,7 +155,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.2.3" data-path="ChapData.html"><a href="ChapData.html#frequency"><i class="fa fa-check"></i><b>2.2.3</b> Frequency</a></li>
 <li class="chapter" data-level="2.2.4" data-path="ChapData.html"><a href="ChapData.html#critical-evaluation"><i class="fa fa-check"></i><b>2.2.4</b> Critical Evaluation</a></li>
 </ul></li>
-<li class="chapter" data-level="2.3" data-path="ChapData.html"><a href="ChapData.html#readingdata"><i class="fa fa-check"></i><b>2.3</b> Reading Data into <code>R</code></a><ul>
+<li class="chapter" data-level="2.3" data-path="ChapData.html"><a href="ChapData.html#readingdata"><i class="fa fa-check"></i><b>2.3</b> Reading External Data into <code>R</code></a><ul>
 <li class="chapter" data-level="2.3.1" data-path="ChapData.html"><a href="ChapData.html#saving-the-file-and-setting-the-working-directory"><i class="fa fa-check"></i><b>2.3.1</b> Saving the File and Setting the Working Directory</a></li>
 <li class="chapter" data-level="2.3.2" data-path="ChapData.html"><a href="ChapData.html#Data_3"><i class="fa fa-check"></i><b>2.3.2</b> Reading a CSV File into <code>R</code></a></li>
 <li class="chapter" data-level="2.3.3" data-path="ChapData.html"><a href="ChapData.html#data-types"><i class="fa fa-check"></i><b>2.3.3</b> Data Types</a></li>
@@ -164,6 +163,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.4" data-path="ChapData.html"><a href="ChapData.html#exercises-1"><i class="fa fa-check"></i><b>2.4</b> Exercises</a></li>
 <li class="chapter" data-level="2.5" data-path="ChapData.html"><a href="ChapData.html#summary-1"><i class="fa fa-check"></i><b>2.5</b> Summary</a><ul>
 <li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li><a href="ChapIntroR.html#r-funcs"><code>R</code> functions introduced in this chapter</a></li>
 <li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#discuss-in-the-forum"><i class="fa fa-check"></i>Discuss in the forum</a></li>
 </ul></li>
 </ul></li>
@@ -569,7 +569,7 @@ that fall within the interval. For example, consider the box with the
 base between 160 and 170. There is a total of 19 subjects with height
 larger that 160 but no more than 170 (that is,
 <span class="math inline">\(160 &lt; \texttt{height} \leq 170\)</span>). Consequently, the height of that
-box<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a> is 19.</p>
+box<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> is 19.</p>
 <p>The input to the function “<code>hist</code>” should be a sequence of numerical
 values. In principle, one may use the function “<code>c</code>” to produce a
 sequence of data and apply the histogram plotting function to the output
@@ -644,7 +644,7 @@ more than 2.</p>
 <p><span class="math display">\[7.2,\;   8,\;   8.3,\;   9,\;   10,\;   10,\;   11.5\]</span> The middle
 value of the upper half is 9. The number 9 is the third quartile which
 is denoted Q3. Three-fourths of the values are less than 9 and
-one-fourth of the values<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a> are more than 9.</p>
+one-fourth of the values<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a> are more than 9.</p>
 <p><em>Outliers</em> are values that do not fit with the rest of the data and lie
 outside of the normal range. Data points with values that are much too
 large or much too small in comparison to the vast majority of the
@@ -677,18 +677,18 @@ input to the function is a sequence of numerical values and the output
 is a plot. As an example, let us produce the box plot of the 14 data
 points that were used as an illustration:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">boxplot</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="fl">11.5</span>,<span class="dv">6</span>,<span class="fl">7.2</span>,<span class="dv">4</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">10</span>,<span class="fl">6.8</span>,<span class="fl">8.3</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">10</span>,<span class="dv">1</span>))</code></pre>
-<p><img src="statthink_files/figure-html/unnamed-chunk-24-1.png" width="60%" style="display: block; margin: auto;" /></p>
+<p><img src="statthink_files/figure-html/unnamed-chunk-27-1.png" width="60%" style="display: block; margin: auto;" /></p>
 <p>Observe that the end points of the
 whiskers are 1, for the minimal value, and 11.5 for the largest value.
 The end values of the box are 9 for the third quartile and 2 for the
 first quartile. The median 7 is marked inside the box.</p>
 <p>Next, let us examine the box plot for the height data:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">boxplot</span>(ex<span class="fl">.1</span><span class="op">$</span>height)</code></pre>
-<p><img src="statthink_files/figure-html/unnamed-chunk-25-1.png" width="60%" style="display: block; margin: auto;" /></p>
+<p><img src="statthink_files/figure-html/unnamed-chunk-28-1.png" width="60%" style="display: block; margin: auto;" /></p>
 <p>In order to assess the plot let us compute quartiles of the variable:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(ex<span class="fl">.1</span><span class="op">$</span>height)</code></pre>
 <pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##  117.00  158.00  171.00  170.11  180.25  208.00</code></pre>
+##   117.0   158.0   171.0   170.1   180.2   208.0</code></pre>
 <p>The function “<code>summary</code>”, when applied to a numerical sequence, produce
 the minimal and maximal entries, as well the first, second and third
 quartiles (the second is the Median). It also computes the average of
@@ -760,7 +760,7 @@ images of each other.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">median</span>(x)</code></pre>
 <pre><code>## [1] 7</code></pre>
 <p>The mean and the median are each 7 for these data. In a perfectly
-symmetrical distribution, the mean and the median are the same<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a>.</p>
+symmetrical distribution, the mean and the median are the same<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a>.</p>
 <p>The functions “<code>mean</code>” and “<code>median</code>” were used in order to compute the
 mean and median. Both functions expect a numeric sequence as an input
 and produce the appropriate measure of centrality of the sequence as an
@@ -774,7 +774,7 @@ skewed to the left because it is pulled out towards the left.</p>
 <p>Let us compute the mean and the median for this data:</p>
 <pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">6</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">7</span>,<span class="dv">7</span>,<span class="dv">7</span>,<span class="dv">7</span>,<span class="dv">7</span>,<span class="dv">8</span>)
 <span class="kw">mean</span>(x)</code></pre>
-<pre><code>## [1] 6.4166667</code></pre>
+<pre><code>## [1] 6.416667</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">median</span>(x)</code></pre>
 <pre><code>## [1] 7</code></pre>
 <p>(Notice that the original data is replaced by the new data when object
@@ -787,7 +787,7 @@ the bottom of Figure <a href="ChapDescriptiveStat.html#fig:DStat4">3.2</a>. Not
 skewed to the right. Compute the mean and the median:</p>
 <pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">7</span>,<span class="dv">7</span>,<span class="dv">7</span>,<span class="dv">7</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">8</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">10</span>)
 <span class="kw">mean</span>(x)</code></pre>
-<pre><code>## [1] 7.5833333</code></pre>
+<pre><code>## [1] 7.583333</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">median</span>(x)</code></pre>
 <pre><code>## [1] 7</code></pre>
 <p>The median is yet again equal to 7, but this time the mean is greater
@@ -878,7 +878,7 @@ obtained by taking the square root of the variance:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sum</span>((x <span class="op">-</span><span class="st"> </span>x.bar)<span class="op">^</span><span class="dv">2</span>)<span class="op">/</span>(<span class="kw">length</span>(x)<span class="op">-</span><span class="dv">1</span>)</code></pre>
 <pre><code>## [1] 0.5125</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sqrt</span>(<span class="kw">sum</span>((x <span class="op">-</span><span class="st"> </span>x.bar)<span class="op">^</span><span class="dv">2</span>)<span class="op">/</span>(<span class="kw">length</span>(x)<span class="op">-</span><span class="dv">1</span>))</code></pre>
-<pre><code>## [1] 0.71589105</code></pre>
+<pre><code>## [1] 0.7158911</code></pre>
 <p>If the variance is produced as a result of dividing the sum of squares
 by the number of observations minus one then the variance is called the
 <em>sample variance</em>.</p>
@@ -889,7 +889,7 @@ the standard deviation, respectively:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">var</span>(x)</code></pre>
 <pre><code>## [1] 0.5125</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sd</span>(x)</code></pre>
-<pre><code>## [1] 0.71589105</code></pre>
+<pre><code>## [1] 0.7158911</code></pre>
 <p>In the computation of the variance we divide the sum of squared
 deviations by the number of deviations minus one and not by the number
 of deviations. The reason for that stems from the theory of statistical
@@ -925,7 +925,7 @@ the third quartile, the smallest value, and the largest value.</p>
 <h2><span class="header-section-number">3.5</span> Exercises</h2>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-36" class="exercise"><strong>Exercise 3.1  </strong></span>Three sequences of data were saved in 3 <code>R</code>
+<p><span id="exr:unnamed-chunk-39" class="exercise"><strong>Exercise 3.1  </strong></span>Three sequences of data were saved in 3 <code>R</code>
 objects named “<code>x1</code>”, “<code>x2</code>” and “<code>x3</code>”, respectively. The application
 of the function “<code>summary</code>” to each of these objects is presented below:</p>
 <pre><code>&gt; summary(x1)
@@ -963,7 +963,7 @@ FIGURE 3.4: Three Box Plots
 </div>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-38" class="exercise"><strong>Exercise 3.2  </strong></span>The number of toilet facilities in 30 buildings
+<p><span id="exr:unnamed-chunk-41" class="exercise"><strong>Exercise 3.2  </strong></span>The number of toilet facilities in 30 buildings
 were counted. The results are recorded in an <code>R</code> object by the name
 “<code>x</code>”. The frequency table of the data “<code>x</code>” is:</p>
 <pre><code>&gt; table(x)
@@ -1079,20 +1079,20 @@ mean).</p></li>
 </div>
 <div class="footnotes">
 <hr />
-<ol start="4">
-<li id="fn4"><p>In some books an histogram is introduced as a form of a density.
+<ol start="3">
+<li id="fn3"><p>In some books an histogram is introduced as a form of a density.
 In densities the <em>area</em> of the box represents the frequency or the
 relative frequency. In the current example the height would have
 been 19/10 = 1.9 if the area of the box would have represented the
 frequency and it would have been <span class="math inline">\((19/100)/10 = 0.019\)</span> if the area
 of the box would have represented the relative frequency. However,
 in this book we follow the default of <code>R</code> in which the height
-represents the frequency.<a href="ChapDescriptiveStat.html#fnref4" class="footnote-back">↩</a></p></li>
-<li id="fn5"><p>The actual computation in <code>R</code> of the first quartile and the third
+represents the frequency.<a href="ChapDescriptiveStat.html#fnref3" class="footnote-back">↩</a></p></li>
+<li id="fn4"><p>The actual computation in <code>R</code> of the first quartile and the third
 quartile may vary slightly from the description given here,
-depending on the exact structure of the data.<a href="ChapDescriptiveStat.html#fnref5" class="footnote-back">↩</a></p></li>
-<li id="fn6"><p>In the case of a symmetric distribution the vertical line of
-symmetry is located at the mean, which is also equal to the median.<a href="ChapDescriptiveStat.html#fnref6" class="footnote-back">↩</a></p></li>
+depending on the exact structure of the data.<a href="ChapDescriptiveStat.html#fnref4" class="footnote-back">↩</a></p></li>
+<li id="fn5"><p>In the case of a symmetric distribution the vertical line of
+symmetry is located at the mean, which is also equal to the median.<a href="ChapDescriptiveStat.html#fnref5" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>

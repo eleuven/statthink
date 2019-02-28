@@ -25,7 +25,7 @@
 <meta name="author" content="Benjamin Yakir">
 
 
-<meta name="date" content="2019-01-17">
+<meta name="date" content="2019-02-28">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -53,7 +53,7 @@
 <style type="text/css">
 a.sourceLine { display: inline-block; line-height: 1.25; }
 a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; position: absolute; }
+a.sourceLine:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 div.sourceCode { margin: 1em 0; }
@@ -66,13 +66,11 @@ code.sourceCode { white-space: pre-wrap; }
 a.sourceLine { text-indent: -1em; padding-left: 1em; }
 }
 pre.numberSource a.sourceLine
-  { position: relative; }
-pre.numberSource a.sourceLine:empty
-  { position: absolute; }
+  { position: relative; left: -4em; }
 pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
-    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all;
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -145,6 +143,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.7" data-path="ChapIntroR.html"><a href="ChapIntroR.html#exercises"><i class="fa fa-check"></i><b>1.7</b> Exercises</a></li>
 <li class="chapter" data-level="1.8" data-path="ChapIntroR.html"><a href="ChapIntroR.html#summary"><i class="fa fa-check"></i><b>1.8</b> Summary</a><ul>
 <li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li><a href="ChapIntroR.html#r-funcs"><code>R</code> functions introduced in this chapter</a></li>
 <li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#discuss-in-the-forum"><i class="fa fa-check"></i>Discuss in the forum</a></li>
 </ul></li>
 </ul></li>
@@ -156,7 +155,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.2.3" data-path="ChapData.html"><a href="ChapData.html#frequency"><i class="fa fa-check"></i><b>2.2.3</b> Frequency</a></li>
 <li class="chapter" data-level="2.2.4" data-path="ChapData.html"><a href="ChapData.html#critical-evaluation"><i class="fa fa-check"></i><b>2.2.4</b> Critical Evaluation</a></li>
 </ul></li>
-<li class="chapter" data-level="2.3" data-path="ChapData.html"><a href="ChapData.html#readingdata"><i class="fa fa-check"></i><b>2.3</b> Reading Data into <code>R</code></a><ul>
+<li class="chapter" data-level="2.3" data-path="ChapData.html"><a href="ChapData.html#readingdata"><i class="fa fa-check"></i><b>2.3</b> Reading External Data into <code>R</code></a><ul>
 <li class="chapter" data-level="2.3.1" data-path="ChapData.html"><a href="ChapData.html#saving-the-file-and-setting-the-working-directory"><i class="fa fa-check"></i><b>2.3.1</b> Saving the File and Setting the Working Directory</a></li>
 <li class="chapter" data-level="2.3.2" data-path="ChapData.html"><a href="ChapData.html#Data_3"><i class="fa fa-check"></i><b>2.3.2</b> Reading a CSV File into <code>R</code></a></li>
 <li class="chapter" data-level="2.3.3" data-path="ChapData.html"><a href="ChapData.html#data-types"><i class="fa fa-check"></i><b>2.3.3</b> Data Types</a></li>
@@ -164,6 +163,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.4" data-path="ChapData.html"><a href="ChapData.html#exercises-1"><i class="fa fa-check"></i><b>2.4</b> Exercises</a></li>
 <li class="chapter" data-level="2.5" data-path="ChapData.html"><a href="ChapData.html#summary-1"><i class="fa fa-check"></i><b>2.5</b> Summary</a><ul>
 <li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li><a href="ChapIntroR.html#r-funcs"><code>R</code> functions introduced in this chapter</a></li>
 <li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#discuss-in-the-forum"><i class="fa fa-check"></i>Discuss in the forum</a></li>
 </ul></li>
 </ul></li>
@@ -633,14 +633,14 @@ a factor we apply the function “<code>factor</code>” to the sequence. The fu
 “<code>factor</code>” transforms its input into a factor. Specifically, the
 application of this function to a sequence with logical components
 produces a factor with two levels that are given the names “<code>TRUE</code>” and
-“<code>FALSE</code>”<a href="#fn62" class="footnote-ref" id="fnref62"><sup>62</sup></a>.</p>
+“<code>FALSE</code>”<a href="#fn61" class="footnote-ref" id="fnref61"><sup>61</sup></a>.</p>
 <p>We want to examine the relation between the response variable
 “<code>dif.mpg</code>” and the explanatory factor “<code>heavy</code>”. Towards that end we
 produce a plot of the relation with the function “<code>plot</code>” and test for
 the equality of the expectations of the response with the function
 “<code>t.test</code>”. First the plot:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(dif.mpg<span class="op">~</span>heavy)</code></pre>
-<p><img src="statthink_files/figure-html/unnamed-chunk-195-1.png" width="60%" style="display: block; margin: auto;" /></p>
+<p><img src="statthink_files/figure-html/unnamed-chunk-198-1.png" width="60%" style="display: block; margin: auto;" /></p>
 <p>Observe that the figure contains two box plots, one associated with the
 level “<code>FALSE</code>” of the explanatory factor and the other with the level
 “<code>TRUE</code>” of that factor. The box plots describe the distribution of the
@@ -665,13 +665,13 @@ formula “<code>dif.mpg\;\tilde{}\;heavy</code>”:</p>
 ##  Welch Two Sample t-test
 ## 
 ## data:  dif.mpg by heavy
-## t = 2.42552, df = 191.561, p-value = 0.016214
+## t = 2.4255, df = 191.56, p-value = 0.01621
 ## alternative hypothesis: true difference in means is not equal to 0
 ## 95 percent confidence interval:
-##  0.10291504 0.99893152
+##  0.1029150 0.9989315
 ## sample estimates:
 ## mean in group FALSE  mean in group TRUE 
-##           5.8058252           5.2549020</code></pre>
+##            5.805825            5.254902</code></pre>
 <p>The function “<code>t.test</code>”, when applied to a formula that describes the
 relation between a numeric response and a explanatory factor with two
 level, produces a special form of a <span class="math inline">\(t\)</span>-test that is called the <em>Welch
@@ -765,7 +765,7 @@ average, is approximately standard Normal. From this Normal
 approximation we obtained an approximate 0.95 probability for the event</p>
 <p><span class="math display">\[\big\{-1.96 \cdot \sqrt{\Var(X)/n} \leq \bar X - \Expec(X) \leq 1.96 \cdot \sqrt{\Var(X)/n}\big\}\;,\]</span>
 where <span class="math inline">\(1.96 = \mbox{\texttt{qnorm(0.975)}}\)</span> is the 0.975-percentile of
-the standard Normal distribution<a href="#fn63" class="footnote-ref" id="fnref63"><sup>63</sup></a>. Substituting the estimator <span class="math inline">\(S\)</span> for
+the standard Normal distribution<a href="#fn62" class="footnote-ref" id="fnref62"><sup>62</sup></a>. Substituting the estimator <span class="math inline">\(S\)</span> for
 the unknown variance of the measurement and rewriting the event in a
 format that puts the expectation <span class="math inline">\(\Expec(X)\)</span> in the center, between two
 boundaries, produced the confidence interval:</p>
@@ -786,7 +786,7 @@ where <span class="math inline">\(n_a\)</span> is the size of the sub-sample tha
 average <span class="math inline">\(\bar X_a\)</span> and <span class="math inline">\(n_b\)</span> is the size of the sub-sample that produces
 the sample average <span class="math inline">\(\bar X_b\)</span>. Observe that both <span class="math inline">\(\bar X_a\)</span> and
 <span class="math inline">\(\bar X_b\)</span> contribute to the variability of the difference. The total
-variability is the sum of the two contributions<a href="#fn64" class="footnote-ref" id="fnref64"><sup>64</sup></a>. Finally, we use the
+variability is the sum of the two contributions<a href="#fn63" class="footnote-ref" id="fnref63"><sup>63</sup></a>. Finally, we use the
 fact that the variance of the sample average is equal to he variance of
 a single measurement divided by the sample size. This fact is used for
 both averages in order to obtain a representation of the variance of the
@@ -825,11 +825,11 @@ sample sizes, sample averages, and sample variances:</p>
 ## FALSE  TRUE 
 ##   103   102</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">tapply</span>(dif.mpg,heavy,mean)</code></pre>
-<pre><code>##     FALSE      TRUE 
-## 5.8058252 5.2549020</code></pre>
+<pre><code>##    FALSE     TRUE 
+## 5.805825 5.254902</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">tapply</span>(dif.mpg,heavy,var)</code></pre>
-<pre><code>##     FALSE      TRUE 
-## 2.0207500 3.2611143</code></pre>
+<pre><code>##    FALSE     TRUE 
+## 2.020750 3.261114</code></pre>
 <p>Observe that there 103 lighter cars and 102 heavier ones. These counts
 were obtained by the application of the function “<code>table</code>” to the factor
 “<code>heavy</code>”. The lighter cars are associated with the level “<code>FALSE</code>” and
@@ -851,7 +851,7 @@ deviation of the difference in averages is:</p>
 Therefore, the confidence interval for the difference in expectations is</p>
 <p><span class="math display">\[\bar x_a- \bar x_b \pm 1.96 \cdot \sqrt{\frac{s_a^2}{n_a} + \frac{s_b^2}{n_b}} = 0.550923 \pm 1.96 \cdot 0.227135 = [0.1057384,0.9961076]\;,\]</span>
 which is (essentially) the confidence interval that is presented in the
-report<a href="#fn65" class="footnote-ref" id="fnref65"><sup>65</sup></a>.</p>
+report<a href="#fn64" class="footnote-ref" id="fnref64"><sup>64</sup></a>.</p>
 </div>
 <div id="the-t-test-for-two-means" class="section level3">
 <h3><span class="header-section-number">13.3.3</span> The t-Test for Two Means</h3>
@@ -939,11 +939,11 @@ the upper tail:</p>
 <p><span class="math display">\[\Prob( |T| &gt; 2.4255) = 2 \times \Prob( T &gt; 2.4255) =  2 \times \big [1 - \Prob( T \leq  2.4255)\big ]\;.\]</span></p>
 <p>The function “<code>t.test</code>” computes the <span class="math inline">\(p\)</span>-value using the
 <span class="math inline">\(t\)</span>-distribution. For the current data, the number of degrees of freedom
-that are used in this approximation<a href="#fn66" class="footnote-ref" id="fnref66"><sup>66</sup></a> is <code>df</code> = 191.561. When we apply
+that are used in this approximation<a href="#fn65" class="footnote-ref" id="fnref65"><sup>65</sup></a> is <code>df</code> = 191.561. When we apply
 the function “<code>pt</code>” for the computation of the cumulative probability of
 the <span class="math inline">\(t\)</span>-distribution we get:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="dv">2</span><span class="op">*</span>(<span class="dv">1</span><span class="op">-</span><span class="kw">pt</span>(<span class="fl">2.4255</span>,<span class="fl">191.561</span>))</code></pre>
-<pre><code>## [1] 0.016214576</code></pre>
+<pre><code>## [1] 0.01621458</code></pre>
 <p>which (after rounding) is equal to the reported <span class="math inline">\(p\)</span>-value of 0.01621.
 This <span class="math inline">\(p\)</span>-value is less than 0.05, hence the null hypothesis is rejected
 in favor of the alternative hypothesis that assumes an effect of the
@@ -981,16 +981,16 @@ confidence interval for the variance in a single sample. The derivation
 was based on the sample variance <span class="math inline">\(S^2\)</span> that serves as an estimator of
 the population variance <span class="math inline">\(\Var(X)\)</span>. In particular, the distribution of
 the random variable <span class="math inline">\((n-1)S^2/\Var(X)\)</span> was identified as the chi-square
-distribution on <span class="math inline">\(n-1\)</span> degrees of freedom<a href="#fn67" class="footnote-ref" id="fnref67"><sup>67</sup></a>. A confidence interval for
+distribution on <span class="math inline">\(n-1\)</span> degrees of freedom<a href="#fn66" class="footnote-ref" id="fnref66"><sup>66</sup></a>. A confidence interval for
 the variance was obtained as a result of the identification of a central
 region in the chi-square distribution that contains a pre-subscribed
-probability<a href="#fn68" class="footnote-ref" id="fnref68"><sup>68</sup></a>.</p>
+probability<a href="#fn67" class="footnote-ref" id="fnref67"><sup>67</sup></a>.</p>
 <p>In order to construct a confidence interval for the ratio of the
 variances we consider the random variable that is obtained as a ratio of
 the estimators of the variances:</p>
 <p><span class="math display">\[\frac{S_a^2/\Var(X_a)}{S^2_b/\Var(X_b)} \sim F_{(n_a-1,n_b-1)}\;.\]</span>
 The distribution of this random variable is denoted the
-<span class="math inline">\(F\)</span>-distribution<a href="#fn69" class="footnote-ref" id="fnref69"><sup>69</sup></a>. This distribution is characterized by the number
+<span class="math inline">\(F\)</span>-distribution<a href="#fn68" class="footnote-ref" id="fnref68"><sup>68</sup></a>. This distribution is characterized by the number
 of degrees of freedom associated with the estimator of the variance at
 the numerator and by the number of degrees of freedom associated with
 the estimator of the variance at the denominator. The number of degrees
@@ -1054,13 +1054,13 @@ interval:</p>
 ##  F test to compare two variances
 ## 
 ## data:  dif.mpg by heavy
-## F = 0.61965, num df = 102, denom df = 101, p-value = 0.016626
+## F = 0.61965, num df = 102, denom df = 101, p-value = 0.01663
 ## alternative hypothesis: true ratio of variances is not equal to 1
 ## 95 percent confidence interval:
-##  0.41892003 0.91621258
+##  0.4189200 0.9162126
 ## sample estimates:
 ## ratio of variances 
-##         0.61965017</code></pre>
+##          0.6196502</code></pre>
 <p>Consider the report produced by the function. The observed value of the
 test statistic is “<code>F = 0.6197</code>”, and it is associated with the
 <span class="math inline">\(F\)</span>-distribution on “<code>num df = 102</code>” and “<code>denom df = 101</code>” degrees of
@@ -1089,13 +1089,13 @@ test statistic is <span class="math inline">\(f = 0.6196502\)</span>. This value
 Consequently, the probability <span class="math inline">\(\Prob(F &lt; 0.6196502)\)</span> enters into the
 computation of the <span class="math inline">\(p\)</span>-value, which equals twice this probability:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="dv">2</span><span class="op">*</span><span class="kw">pf</span>(<span class="fl">0.6196502</span>,<span class="dv">102</span>,<span class="dv">101</span>)</code></pre>
-<pre><code>## [1] 0.016626121</code></pre>
+<pre><code>## [1] 0.01662612</code></pre>
 <p>Compare this value to the <span class="math inline">\(p\)</span>-value that appears in the report and see
 that, after rounding up, the two are the same.</p>
 <p>For the confidence interval of the ratio compute the percentiles of the
 <span class="math inline">\(F\)</span> distribution:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">qf</span>(<span class="fl">0.025</span>,<span class="dv">102</span>,<span class="dv">101</span>)</code></pre>
-<pre><code>## [1] 0.67631702</code></pre>
+<pre><code>## [1] 0.676317</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">qf</span>(<span class="fl">0.975</span>,<span class="dv">102</span>,<span class="dv">101</span>)</code></pre>
 <pre><code>## [1] 1.479161</code></pre>
 <p>The confidence interval is equal to:</p>
@@ -1107,7 +1107,7 @@ which coincides with the reported interval.</p>
 <h2><span class="header-section-number">13.5</span> Exercises</h2>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-202" class="exercise"><strong>Exercise 13.1  </strong></span>In this exercise we would like to analyze the results
+<p><span id="exr:unnamed-chunk-205" class="exercise"><strong>Exercise 13.1  </strong></span>In this exercise we would like to analyze the results
 of the trial that involves magnets as a treatment for pain. The trial is
 described in Question <span class="math display">\[ex:Inference.1\]</span>. The results of the trial are
 provided in the file “<code>magnets.csv</code>”.</p>
@@ -1139,7 +1139,7 @@ from the application of the device?</li>
 
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-203" class="exercise"><strong>Exercise 13.2  </strong></span>It is assumed, when constructing the <span class="math inline">\(F\)</span>-test for
+<p><span id="exr:unnamed-chunk-206" class="exercise"><strong>Exercise 13.2  </strong></span>It is assumed, when constructing the <span class="math inline">\(F\)</span>-test for
 equality of variances, that the measurements are Normally distributed.
 In this exercise we what to examine the robustness of the test to
 divergence from the assumption. You are required to compute the
@@ -1155,7 +1155,7 @@ group. Use an <span class="math inline">\(F\)</span>-test with a nominal 5% sign
 
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-204" class="exercise"><strong>Exercise 13.3  </strong></span>The sample average in one sub-sample is
+<p><span id="exr:unnamed-chunk-207" class="exercise"><strong>Exercise 13.3  </strong></span>The sample average in one sub-sample is
 <span class="math inline">\(\bar x_a = 124.3\)</span> and the sample standard deviation is <span class="math inline">\(s_a = 13.4\)</span>.
 The sample average in the second sub-sample is <span class="math inline">\(\bar x_b = 80.5\)</span> and the
 sample standard deviation is <span class="math inline">\(s_b = 16.7\)</span>. The size of the first
@@ -1224,20 +1224,20 @@ obtained by face-to-face interviews.</p>
 </div>
 <div class="footnotes">
 <hr />
-<ol start="62">
-<li id="fn62"><p>It should be noted that the redefined sequence “<code>heavy</code>” is no
+<ol start="61">
+<li id="fn61"><p>It should be noted that the redefined sequence “<code>heavy</code>” is no
 longer a sequence with logical components. It cannot be used, for
 example, as an index to another sequence in order to sellect the
-components that are associated with the “<code>TRUE</code>” logical value.<a href="ChapTwoSamp.html#fnref62" class="footnote-back">↩</a></p></li>
-<li id="fn63"><p>In the case where the sample size is small and the observations
+components that are associated with the “<code>TRUE</code>” logical value.<a href="ChapTwoSamp.html#fnref61" class="footnote-back">↩</a></p></li>
+<li id="fn62"><p>In the case where the sample size is small and the observations
 are Normally distributed we used the <span class="math inline">\(t\)</span>-distribution instead. The
 percentile that was used in that case was <code>qt(0.975,n-1)</code>, the 0.975
-percentile of the <span class="math inline">\(t\)</span>-distribution on <span class="math inline">\(n-1\)</span> degrees of freedom.<a href="ChapTwoSamp.html#fnref63" class="footnote-back">↩</a></p></li>
-<li id="fn64"><p>It can be proved mathematically that the variance of a difference
+percentile of the <span class="math inline">\(t\)</span>-distribution on <span class="math inline">\(n-1\)</span> degrees of freedom.<a href="ChapTwoSamp.html#fnref62" class="footnote-back">↩</a></p></li>
+<li id="fn63"><p>It can be proved mathematically that the variance of a difference
 (or a sum) of two independent random variables is the sum of the
 variances. The situation is different when the two random variables
-are correlated.<a href="ChapTwoSamp.html#fnref64" class="footnote-back">↩</a></p></li>
-<li id="fn65"><p>The confidence interval given in the output of the function
+are correlated.<a href="ChapTwoSamp.html#fnref63" class="footnote-back">↩</a></p></li>
+<li id="fn64"><p>The confidence interval given in the output of the function
 “<code>t.test</code>” is <span class="math inline">\([0.1029150, 0.9989315]\)</span>, which is very similar, but
 not identical, to the confidence interval that we computed. The
 discrepancy stems from the selection of the percentile. We used the
@@ -1247,24 +1247,24 @@ function “<code>t.test</code>”, on the other hand, uses the percentile of th
 instead would give <span class="math inline">\(0.550923 \pm 1.972425 \cdot 0.227135\)</span>, which
 coincides with the interval reported by “<code>t.test</code>”. For practical
 applications the difference between the two confidence intervals are
-not negligible.<a href="ChapTwoSamp.html#fnref65" class="footnote-back">↩</a></p></li>
-<li id="fn66"><p>The Weltch <span class="math inline">\(t\)</span>-test for the comparison of two means uses the
+not negligible.<a href="ChapTwoSamp.html#fnref64" class="footnote-back">↩</a></p></li>
+<li id="fn65"><p>The Weltch <span class="math inline">\(t\)</span>-test for the comparison of two means uses the
 <span class="math inline">\(t\)</span>-distribution as an approximation of the null distribution of the
 <span class="math inline">\(T\)</span> test statistic. The number of degrees of freedom is computed by
 the formula:
 <span class="math inline">\(\mbox{\texttt{df}} = (v_a + v_b)^2/\{v_a^2/(n_a-1) + v_b^2/(n_b-1)\}\)</span>,
-where <span class="math inline">\(v_a = s_a^2/n_a\)</span> and <span class="math inline">\(v_b = s_b^2/n_b\)</span>.<a href="ChapTwoSamp.html#fnref66" class="footnote-back">↩</a></p></li>
-<li id="fn67"><p>This statement holds when the distribution of the measurement is
-Normal.<a href="ChapTwoSamp.html#fnref67" class="footnote-back">↩</a></p></li>
-<li id="fn68"><p>Use
+where <span class="math inline">\(v_a = s_a^2/n_a\)</span> and <span class="math inline">\(v_b = s_b^2/n_b\)</span>.<a href="ChapTwoSamp.html#fnref65" class="footnote-back">↩</a></p></li>
+<li id="fn66"><p>This statement holds when the distribution of the measurement is
+Normal.<a href="ChapTwoSamp.html#fnref66" class="footnote-back">↩</a></p></li>
+<li id="fn67"><p>Use
 <span class="math inline">\(\Prob(\mbox{\texttt{qchisq(0.025,n-1)}} \leq (n-1)S^2/\Var(X) \leq \mbox{\texttt{qchisq(0.975,n-1)}}) = 0.95\)</span>
 and rewrite the event in a format that puts the parameter in the
 center. The resulting 95% confidence interval is
-<span class="math inline">\([(n-1)S^2/\mbox{\texttt{qchisq(0.975,n-1)}},(n-1)S^2/\mbox{\texttt{qchisq(0.025,n-1)}}]\)</span>.<a href="ChapTwoSamp.html#fnref68" class="footnote-back">↩</a></p></li>
-<li id="fn69"><p>The <span class="math inline">\(F\)</span> distribution is obtained when the measurement has a Normal
+<span class="math inline">\([(n-1)S^2/\mbox{\texttt{qchisq(0.975,n-1)}},(n-1)S^2/\mbox{\texttt{qchisq(0.025,n-1)}}]\)</span>.<a href="ChapTwoSamp.html#fnref67" class="footnote-back">↩</a></p></li>
+<li id="fn68"><p>The <span class="math inline">\(F\)</span> distribution is obtained when the measurement has a Normal
 distribution. When the distribution of the measurement is not Normal
 then the distribution of the given random variable will not be the
-<span class="math inline">\(F\)</span>-distribution.<a href="ChapTwoSamp.html#fnref69" class="footnote-back">↩</a></p></li>
+<span class="math inline">\(F\)</span>-distribution.<a href="ChapTwoSamp.html#fnref68" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>

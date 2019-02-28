@@ -25,7 +25,7 @@
 <meta name="author" content="Benjamin Yakir">
 
 
-<meta name="date" content="2019-01-17">
+<meta name="date" content="2019-02-28">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -53,7 +53,7 @@
 <style type="text/css">
 a.sourceLine { display: inline-block; line-height: 1.25; }
 a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; position: absolute; }
+a.sourceLine:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 div.sourceCode { margin: 1em 0; }
@@ -66,13 +66,11 @@ code.sourceCode { white-space: pre-wrap; }
 a.sourceLine { text-indent: -1em; padding-left: 1em; }
 }
 pre.numberSource a.sourceLine
-  { position: relative; }
-pre.numberSource a.sourceLine:empty
-  { position: absolute; }
+  { position: relative; left: -4em; }
 pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
-    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all;
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -145,6 +143,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.7" data-path="ChapIntroR.html"><a href="ChapIntroR.html#exercises"><i class="fa fa-check"></i><b>1.7</b> Exercises</a></li>
 <li class="chapter" data-level="1.8" data-path="ChapIntroR.html"><a href="ChapIntroR.html#summary"><i class="fa fa-check"></i><b>1.8</b> Summary</a><ul>
 <li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li><a href="ChapIntroR.html#r-funcs"><code>R</code> functions introduced in this chapter</a></li>
 <li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#discuss-in-the-forum"><i class="fa fa-check"></i>Discuss in the forum</a></li>
 </ul></li>
 </ul></li>
@@ -156,7 +155,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.2.3" data-path="ChapData.html"><a href="ChapData.html#frequency"><i class="fa fa-check"></i><b>2.2.3</b> Frequency</a></li>
 <li class="chapter" data-level="2.2.4" data-path="ChapData.html"><a href="ChapData.html#critical-evaluation"><i class="fa fa-check"></i><b>2.2.4</b> Critical Evaluation</a></li>
 </ul></li>
-<li class="chapter" data-level="2.3" data-path="ChapData.html"><a href="ChapData.html#readingdata"><i class="fa fa-check"></i><b>2.3</b> Reading Data into <code>R</code></a><ul>
+<li class="chapter" data-level="2.3" data-path="ChapData.html"><a href="ChapData.html#readingdata"><i class="fa fa-check"></i><b>2.3</b> Reading External Data into <code>R</code></a><ul>
 <li class="chapter" data-level="2.3.1" data-path="ChapData.html"><a href="ChapData.html#saving-the-file-and-setting-the-working-directory"><i class="fa fa-check"></i><b>2.3.1</b> Saving the File and Setting the Working Directory</a></li>
 <li class="chapter" data-level="2.3.2" data-path="ChapData.html"><a href="ChapData.html#Data_3"><i class="fa fa-check"></i><b>2.3.2</b> Reading a CSV File into <code>R</code></a></li>
 <li class="chapter" data-level="2.3.3" data-path="ChapData.html"><a href="ChapData.html#data-types"><i class="fa fa-check"></i><b>2.3.3</b> Data Types</a></li>
@@ -164,6 +163,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.4" data-path="ChapData.html"><a href="ChapData.html#exercises-1"><i class="fa fa-check"></i><b>2.4</b> Exercises</a></li>
 <li class="chapter" data-level="2.5" data-path="ChapData.html"><a href="ChapData.html#summary-1"><i class="fa fa-check"></i><b>2.5</b> Summary</a><ul>
 <li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li><a href="ChapIntroR.html#r-funcs"><code>R</code> functions introduced in this chapter</a></li>
 <li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#discuss-in-the-forum"><i class="fa fa-check"></i>Discuss in the forum</a></li>
 </ul></li>
 </ul></li>
@@ -524,7 +524,7 @@ data produced by such measurements.</p>
 space of all numbers, negative or positive. We denote the Normal
 distribution via “<span class="math inline">\(X \sim \mathrm{Normal}(\mu, \sigma^2)\)</span>”, where
 <span class="math inline">\(\mu = \Expec(X)\)</span> is the expectation of the random variable and
-<span class="math inline">\(\sigma^2 = \Var(X)\)</span> is it’s variance<a href="#fn17" class="footnote-ref" id="fnref17"><sup>17</sup></a>.</p>
+<span class="math inline">\(\sigma^2 = \Var(X)\)</span> is it’s variance<a href="#fn16" class="footnote-ref" id="fnref16"><sup>16</sup></a>.</p>
 <p>Consider, for example, <span class="math inline">\(X \sim \mathrm{Normal}(2,9)\)</span>. The density of the
 distribution is presented in Figure <a href="ChapNormal.html#fig:Normal1">6.1</a>. Observe that the
 distribution is symmetric about the expectation 2. The random variable
@@ -548,7 +548,7 @@ Figure <a href="ChapNormal.html#fig:Normal1">6.1</a>. This area can be computed
 between the probability <span class="math inline">\(\Prob(X \leq 5)\)</span>, the area to the left of 5,
 and the probability <span class="math inline">\(\Prob(X \leq 0)\)</span>, the area to the left of 0:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pnorm</span>(<span class="dv">5</span>,<span class="dv">2</span>,<span class="dv">3</span>) <span class="op">-</span><span class="st"> </span><span class="kw">pnorm</span>(<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">3</span>)</code></pre>
-<pre><code>## [1] 0.58885221</code></pre>
+<pre><code>## [1] 0.5888522</code></pre>
 <p>The difference is the indicated area that corresponds to the probability
 of being inside the interval, which turns out to be approximately equal
 to 0.589. Notice that the expectation <span class="math inline">\(\mu\)</span> of the Normal distribution
@@ -642,7 +642,7 @@ computation produced the probability 0.5888522. We can repeat the
 computation by the application of the same function to the standardized
 values:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pnorm</span>((<span class="dv">5-2</span>)<span class="op">/</span><span class="dv">3</span>) <span class="op">-</span><span class="st"> </span><span class="kw">pnorm</span>((<span class="dv">0-2</span>)<span class="op">/</span><span class="dv">3</span>)</code></pre>
-<pre><code>## [1] 0.58885221</code></pre>
+<pre><code>## [1] 0.5888522</code></pre>
 <p>The value that is being computed, the area under the graph for the
 standard Normal distribution, is presented in Figure <a href="ChapNormal.html#fig:Normal3">6.3</a>.
 Recall that 3 arguments where specified in the previous application of
@@ -758,9 +758,9 @@ right.</p>
 <p>For the standard Normal the third and first quartiles can be computed
 with the aid of the function “<code>qnorm</code>”:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">qnorm</span>(<span class="fl">0.75</span>)</code></pre>
-<pre><code>## [1] 0.67448975</code></pre>
+<pre><code>## [1] 0.6744898</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">qnorm</span>(<span class="fl">0.25</span>)</code></pre>
-<pre><code>## [1] -0.67448975</code></pre>
+<pre><code>## [1] -0.6744898</code></pre>
 <p>Observe that for the standard Normal distribution one has that 75% of
 the distribution is to the left of the value 0.6744898, which is the
 third quartile of this distribution. Likewise, 25% of the standard
@@ -804,7 +804,7 @@ probability of being above the upper threshold. Consequently, the
 probability of obtaining an outlier is equal to twice the probability of
 being above the upper threshold:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="dv">2</span><span class="op">*</span>(<span class="dv">1</span><span class="op">-</span><span class="kw">pnorm</span>(<span class="fl">2.697959</span>))</code></pre>
-<pre><code>## [1] 0.0069766033</code></pre>
+<pre><code>## [1] 0.006976603</code></pre>
 <p>We get that for the standard Normal distribution the probability of an
 outlier is approximately 0.7%.</p>
 </div>
@@ -856,7 +856,7 @@ Normal cumulative probability, we get:</p>
 <pre class="sourceCode r"><code class="sourceCode r">mu &lt;-<span class="st"> </span><span class="dv">4000</span><span class="op">*</span><span class="fl">0.5</span>
 sig &lt;-<span class="st"> </span><span class="kw">sqrt</span>(<span class="dv">4000</span><span class="op">*</span><span class="fl">0.5</span><span class="op">*</span><span class="fl">0.5</span>)
 <span class="kw">pnorm</span>(<span class="dv">2060</span>,mu,sig) <span class="op">-</span><span class="st"> </span><span class="kw">pnorm</span>(<span class="dv">1939</span>,mu,sig)</code></pre>
-<pre><code>## [1] 0.94424412</code></pre>
+<pre><code>## [1] 0.9442441</code></pre>
 <p>Observe that in this example the Normal approximation of the probability
 (0.9442441) agrees with the Binomial computation of the probability
 (0.9442883) up to 3 significant digits.</p>
@@ -868,9 +868,9 @@ end we can identify the boundaries of the region for the Normal
 distribution with the same expectation and standard deviation as that of
 the target Binomial distribution:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">qnorm</span>(<span class="fl">0.975</span>,mu,sig)</code></pre>
-<pre><code>## [1] 2061.9795</code></pre>
+<pre><code>## [1] 2061.98</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">qnorm</span>(<span class="fl">0.025</span>,mu,sig)</code></pre>
-<pre><code>## [1] 1938.0205</code></pre>
+<pre><code>## [1] 1938.02</code></pre>
 <p>After rounding to the nearest integer we get the interval <span class="math inline">\([1938,2062]\)</span>
 as a proposed central region.</p>
 <p>In order to validate the proposed region we may repeat the computation
@@ -923,9 +923,9 @@ relatively small the approximation may not be so good. Indeed, take
 <span class="math inline">\(\Prob(X \leq 6)\)</span>. Compare the actual probability to the Normal
 approximation:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pbinom</span>(<span class="dv">6</span>,<span class="dv">30</span>,<span class="fl">0.3</span>)</code></pre>
-<pre><code>## [1] 0.15952298</code></pre>
+<pre><code>## [1] 0.159523</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pnorm</span>(<span class="dv">6</span>,<span class="dv">30</span><span class="op">*</span><span class="fl">0.3</span>,<span class="kw">sqrt</span>(<span class="dv">30</span><span class="op">*</span><span class="fl">0.3</span><span class="op">*</span><span class="fl">0.7</span>))</code></pre>
-<pre><code>## [1] 0.11599886</code></pre>
+<pre><code>## [1] 0.1159989</code></pre>
 <p>The Normal approximation, which is equal to 0.1159989, is not too close
 to the actual probability, which is equal to 0.1595230.</p>
 <p>A naïve application of the Normal approximation for the
@@ -946,7 +946,7 @@ probability of the event <span class="math inline">\(\{X \leq 6.5\}\)</span>, wh
 <em>red</em>. The application of this approximation, which is called
 <em>continuity correction</em> produces:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pnorm</span>(<span class="fl">6.5</span>,<span class="dv">30</span><span class="op">*</span><span class="fl">0.3</span>,<span class="kw">sqrt</span>(<span class="dv">30</span><span class="op">*</span><span class="fl">0.3</span><span class="op">*</span><span class="fl">0.7</span>))</code></pre>
-<pre><code>## [1] 0.15961928</code></pre>
+<pre><code>## [1] 0.1596193</code></pre>
 <p>Observe that the corrected approximation is much closer to the target
 probability, which is 0.1595230, and is substantially better that the
 uncorrected approximation which was 0.1159989. Generally, it is
@@ -973,21 +973,21 @@ distribution that has the same expectation as the Binomial. Since in all
 three cases the expectation is equal to 2 we get that the same Poisson
 approximation is used to the three probabilities:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ppois</span>(<span class="dv">3</span>,<span class="dv">2</span>)</code></pre>
-<pre><code>## [1] 0.85712346</code></pre>
+<pre><code>## [1] 0.8571235</code></pre>
 <p>The actual Binomial probability in the first case (<span class="math inline">\(n=20\)</span>, <span class="math inline">\(p=0.1\)</span>) and
 a Normal approximation thereof are:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pbinom</span>(<span class="dv">3</span>,<span class="dv">20</span>,<span class="fl">0.1</span>)</code></pre>
-<pre><code>## [1] 0.86704668</code></pre>
+<pre><code>## [1] 0.8670467</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pnorm</span>(<span class="fl">3.5</span>,<span class="dv">2</span>,<span class="kw">sqrt</span>(<span class="dv">20</span><span class="op">*</span><span class="fl">0.1</span><span class="op">*</span><span class="fl">0.9</span>))</code></pre>
-<pre><code>## [1] 0.86822376</code></pre>
+<pre><code>## [1] 0.8682238</code></pre>
 <p>Observe that the Normal approximation (with a continuity correction) is
 better than the Poisson approximation in this case.</p>
 <p>In the second case (<span class="math inline">\(n=200\)</span>, <span class="math inline">\(p=0.01\)</span>) the actual Binomial probability
 and the Normal approximation of the probability are:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pbinom</span>(<span class="dv">3</span>,<span class="dv">200</span>,<span class="fl">0.01</span>)</code></pre>
-<pre><code>## [1] 0.85803403</code></pre>
+<pre><code>## [1] 0.858034</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pnorm</span>(<span class="fl">3.5</span>,<span class="dv">2</span>,<span class="kw">sqrt</span>(<span class="dv">200</span><span class="op">*</span><span class="fl">0.01</span><span class="op">*</span><span class="fl">0.99</span>))</code></pre>
-<pre><code>## [1] 0.85678899</code></pre>
+<pre><code>## [1] 0.856789</code></pre>
 <p>Observe that the Poisson approximation that produces 0.8571235 is
 slightly closer to the target than the Normal approximation. The greater
 accuracy of the Poisson approximation for the case where <span class="math inline">\(n\)</span> is large
@@ -995,9 +995,9 @@ and <span class="math inline">\(p\)</span> is small is more pronounced in the fi
 <span class="math inline">\(p=0.001\)</span>) where the target probability and the Normal approximation
 are:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pbinom</span>(<span class="dv">3</span>,<span class="dv">2000</span>,<span class="fl">0.001</span>)</code></pre>
-<pre><code>## [1] 0.85721377</code></pre>
+<pre><code>## [1] 0.8572138</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pnorm</span>(<span class="fl">3.5</span>,<span class="dv">2</span>,<span class="kw">sqrt</span>(<span class="dv">2000</span><span class="op">*</span><span class="fl">0.001</span><span class="op">*</span><span class="fl">0.999</span>))</code></pre>
-<pre><code>## [1] 0.85569842</code></pre>
+<pre><code>## [1] 0.8556984</code></pre>
 <p>Compare the actual Binomial probability, which is equal to 0.8572138, to
 the Poisson approximation that produced 0.8571235. The Normal
 approximation, 0.8556984, is slightly off, but is still acceptable.</p>
@@ -1007,7 +1007,7 @@ approximation, 0.8556984, is slightly off, but is still acceptable.</p>
 <h2><span class="header-section-number">6.4</span> Exercises</h2>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-89" class="exercise"><strong>Exercise 6.1  </strong></span>Consider the problem of establishing regulations
+<p><span id="exr:unnamed-chunk-92" class="exercise"><strong>Exercise 6.1  </strong></span>Consider the problem of establishing regulations
 concerning the maximum number of people who can occupy a lift. In
 particular, we would like to assess the probability of exceeding maximal
 weight when 8 people are allowed to use the lift simultaneously and
@@ -1031,7 +1031,7 @@ total weight of 9 people?</li>
 
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-90" class="exercise"><strong>Exercise 6.2  </strong></span>Assume <span class="math inline">\(X \sim \mbox{Binomial}(27,0.32)\)</span>. We are
+<p><span id="exr:unnamed-chunk-93" class="exercise"><strong>Exercise 6.2  </strong></span>Assume <span class="math inline">\(X \sim \mbox{Binomial}(27,0.32)\)</span>. We are
 interested in the probability <span class="math inline">\(\Prob(X &gt; 11)\)</span>.</p>
 <ol style="list-style-type: decimal">
 <li><p>Compute the (exact) value of this probability.</p></li>
@@ -1100,11 +1100,11 @@ reality, IQ tests produce only positive values.</p>
 </div>
 <div class="footnotes">
 <hr />
-<ol start="17">
-<li id="fn17"><p>If <span class="math inline">\(X \sim \mbox{Normal}(\mu,\sigma^2)\)</span> then the density of <span class="math inline">\(X\)</span> is
+<ol start="16">
+<li id="fn16"><p>If <span class="math inline">\(X \sim \mbox{Normal}(\mu,\sigma^2)\)</span> then the density of <span class="math inline">\(X\)</span> is
 given by the formula
 <span class="math inline">\(f(x) = \exp\{-\frac{(x-\mu)^2}{2 \sigma^2}\}/\sqrt{2 \pi \sigma^2}\)</span>,
-for all <span class="math inline">\(x\)</span>.<a href="ChapNormal.html#fnref17" class="footnote-back">↩</a></p></li>
+for all <span class="math inline">\(x\)</span>.<a href="ChapNormal.html#fnref16" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>

@@ -25,7 +25,7 @@
 <meta name="author" content="Benjamin Yakir">
 
 
-<meta name="date" content="2019-01-17">
+<meta name="date" content="2019-02-28">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -53,7 +53,7 @@
 <style type="text/css">
 a.sourceLine { display: inline-block; line-height: 1.25; }
 a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; position: absolute; }
+a.sourceLine:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 div.sourceCode { margin: 1em 0; }
@@ -66,13 +66,11 @@ code.sourceCode { white-space: pre-wrap; }
 a.sourceLine { text-indent: -1em; padding-left: 1em; }
 }
 pre.numberSource a.sourceLine
-  { position: relative; }
-pre.numberSource a.sourceLine:empty
-  { position: absolute; }
+  { position: relative; left: -4em; }
 pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
-    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all;
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -145,6 +143,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.7" data-path="ChapIntroR.html"><a href="ChapIntroR.html#exercises"><i class="fa fa-check"></i><b>1.7</b> Exercises</a></li>
 <li class="chapter" data-level="1.8" data-path="ChapIntroR.html"><a href="ChapIntroR.html#summary"><i class="fa fa-check"></i><b>1.8</b> Summary</a><ul>
 <li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li><a href="ChapIntroR.html#r-funcs"><code>R</code> functions introduced in this chapter</a></li>
 <li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#discuss-in-the-forum"><i class="fa fa-check"></i>Discuss in the forum</a></li>
 </ul></li>
 </ul></li>
@@ -156,7 +155,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.2.3" data-path="ChapData.html"><a href="ChapData.html#frequency"><i class="fa fa-check"></i><b>2.2.3</b> Frequency</a></li>
 <li class="chapter" data-level="2.2.4" data-path="ChapData.html"><a href="ChapData.html#critical-evaluation"><i class="fa fa-check"></i><b>2.2.4</b> Critical Evaluation</a></li>
 </ul></li>
-<li class="chapter" data-level="2.3" data-path="ChapData.html"><a href="ChapData.html#readingdata"><i class="fa fa-check"></i><b>2.3</b> Reading Data into <code>R</code></a><ul>
+<li class="chapter" data-level="2.3" data-path="ChapData.html"><a href="ChapData.html#readingdata"><i class="fa fa-check"></i><b>2.3</b> Reading External Data into <code>R</code></a><ul>
 <li class="chapter" data-level="2.3.1" data-path="ChapData.html"><a href="ChapData.html#saving-the-file-and-setting-the-working-directory"><i class="fa fa-check"></i><b>2.3.1</b> Saving the File and Setting the Working Directory</a></li>
 <li class="chapter" data-level="2.3.2" data-path="ChapData.html"><a href="ChapData.html#Data_3"><i class="fa fa-check"></i><b>2.3.2</b> Reading a CSV File into <code>R</code></a></li>
 <li class="chapter" data-level="2.3.3" data-path="ChapData.html"><a href="ChapData.html#data-types"><i class="fa fa-check"></i><b>2.3.3</b> Data Types</a></li>
@@ -164,6 +163,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.4" data-path="ChapData.html"><a href="ChapData.html#exercises-1"><i class="fa fa-check"></i><b>2.4</b> Exercises</a></li>
 <li class="chapter" data-level="2.5" data-path="ChapData.html"><a href="ChapData.html#summary-1"><i class="fa fa-check"></i><b>2.5</b> Summary</a><ul>
 <li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li><a href="ChapIntroR.html#r-funcs"><code>R</code> functions introduced in this chapter</a></li>
 <li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#discuss-in-the-forum"><i class="fa fa-check"></i>Discuss in the forum</a></li>
 </ul></li>
 </ul></li>
@@ -662,7 +662,7 @@ sig.bar &lt;-<span class="st"> </span><span class="kw">sqrt</span>((b<span class
 mu.bar</code></pre>
 <pre><code>## [1] 3</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r">sig.bar</code></pre>
-<pre><code>## [1] 0.13333333</code></pre>
+<pre><code>## [1] 0.1333333</code></pre>
 <p>After obtaining the expectation and the variance of the sample average
 we can forget about the Uniform distribution and proceed only with the
 <code>R</code> functions that are related to the Normal distribution. By the
@@ -672,22 +672,22 @@ and <span class="math inline">\(\sigma\)</span> = <code>sig.bar</code>.</p>
 <p>In the Question 1.1 we are asked to find the value of the cumulative
 distribution function of the sample average at <span class="math inline">\(x=2\)</span>:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pnorm</span>(<span class="dv">2</span>,mu.bar,sig.bar)</code></pre>
-<pre><code>## [1] 3.1908917e-14</code></pre>
+<pre><code>## [1] 3.190892e-14</code></pre>
 <p>The goal of Question 1.2 is to identify the 90%-percentile of the sample
 average:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">qnorm</span>(<span class="fl">0.9</span>,mu.bar,sig.bar)</code></pre>
-<pre><code>## [1] 3.1708735</code></pre>
+<pre><code>## [1] 3.170874</code></pre>
 <p>The sample average is equal to the total sum divided by the number of
 observations, <span class="math inline">\(n=75\)</span> in this example. The total sum is less than 200 if,
 and only if the average is less than <span class="math inline">\(200/n\)</span>. Therefore, for Question
 1.3:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pnorm</span>(<span class="dv">200</span><span class="op">/</span>n,mu.bar,sig.bar)</code></pre>
-<pre><code>## [1] 0.0062096653</code></pre>
+<pre><code>## [1] 0.006209665</code></pre>
 <p>Finally, if 90% of the distribution of the average is less that 3.170874
 then 90% of the distribution of the total sum is less than
 <span class="math inline">\(3.170874\, n\)</span>. In Question 1.4 we get:</p>
 <pre class="sourceCode r"><code class="sourceCode r">n<span class="op">*</span><span class="kw">qnorm</span>(<span class="fl">0.9</span>,mu.bar,sig.bar)</code></pre>
-<pre><code>## [1] 237.81552</code></pre>
+<pre><code>## [1] 237.8155</code></pre>
 </div>
 <div id="example-2" class="section level3">
 <h3><span class="header-section-number">8.3.2</span> Example 2</h3>
@@ -715,7 +715,7 @@ sig.bar &lt;-<span class="st"> </span><span class="kw">sqrt</span>(sig.X<span cl
 mu.bar</code></pre>
 <pre><code>## [1] 3</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r">sig.bar</code></pre>
-<pre><code>## [1] 0.16329932</code></pre>
+<pre><code>## [1] 0.1632993</code></pre>
 <p>Notice that the expectation of the sample average is the same as before
 but the standard deviation is somewhat larger due to the larger variance
 in the distribution of a single response.</p>
@@ -726,16 +726,16 @@ for the new <span class="math inline">\(\sigma\)</span> = <code>sig.bar</code>.<
 <p>For Question 2.1 we compote that the cumulative distribution function of
 the sample average at <span class="math inline">\(x=2\)</span> is approximately equal:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pnorm</span>(<span class="dv">2</span>,mu.bar,sig.bar)</code></pre>
-<pre><code>## [1] 4.5706492e-10</code></pre>
+<pre><code>## [1] 4.570649e-10</code></pre>
 <p>and the 90%-percentile is:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">qnorm</span>(<span class="fl">0.9</span>,mu.bar,sig.bar)</code></pre>
-<pre><code>## [1] 3.2092765</code></pre>
+<pre><code>## [1] 3.209276</code></pre>
 <p>which produces the answer to Question 2.2.</p>
 <p>Similarly to the solution of Question 1.3 we may conclude that the total
 sum is less than 200 if, and only if the average is less than <span class="math inline">\(200/n\)</span>.
 Therefore, for Question 2.3:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pnorm</span>(<span class="dv">200</span><span class="op">/</span>n,mu.bar,sig.bar)</code></pre>
-<pre><code>## [1] 0.020613417</code></pre>
+<pre><code>## [1] 0.02061342</code></pre>
 <p>Observe that in the current version of the question we have the score is
 integer-valued. Clearly, the sum of scores is also integer valued. Hence
 we may choose to apply the continuity correction for the Normal
@@ -743,14 +743,14 @@ approximation whereby we approximate the probability that the sum is
 less than 200 (i.e. is less than or equal to 199) by the probability
 that a Normal random variable is less than or equal to 199.5.
 Translating this event back to the scale of the average we get the
-approximation<a href="#fn20" class="footnote-ref" id="fnref20"><sup>20</sup></a>:</p>
+approximation<a href="#fn19" class="footnote-ref" id="fnref19"><sup>19</sup></a>:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pnorm</span>(<span class="fl">199.5</span><span class="op">/</span>n,mu.bar,sig.bar)</code></pre>
-<pre><code>## [1] 0.018668208</code></pre>
+<pre><code>## [1] 0.01866821</code></pre>
 <p>Finally, if 90% of the distribution of the average is less that 3.170874
 then 90% of the distribution of the total sum is less than <span class="math inline">\(3.170874 n\)</span>.
 Therefore:</p>
 <pre class="sourceCode r"><code class="sourceCode r">n<span class="op">*</span><span class="kw">qnorm</span>(<span class="fl">0.9</span>,mu.bar,sig.bar)</code></pre>
-<pre><code>## [1] 240.69574</code></pre>
+<pre><code>## [1] 240.6957</code></pre>
 <p>or, after rounding to the nearest integer we get for Question 2.4 the
 answer 241.</p>
 </div>
@@ -784,7 +784,7 @@ sig.bar &lt;-<span class="st"> </span><span class="kw">sqrt</span>(<span class="
 mu.bar</code></pre>
 <pre><code>## [1] 22</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r">sig.bar</code></pre>
-<pre><code>## [1] 2.4596748</code></pre>
+<pre><code>## [1] 2.459675</code></pre>
 <p>Like before, we can forget at this stage about the Exponential
 distribution and refer henceforth to the Normal Distribution. In
 Question 2.1 we are asked to compute the probability above <span class="math inline">\(x=20\)</span>. The
@@ -792,11 +792,11 @@ total probability is 1. Hence, the required probability is the
 difference between 1 and the probability of being less or equal to
 <span class="math inline">\(x=20\)</span>:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="dv">1</span><span class="op">-</span><span class="kw">pnorm</span>(<span class="dv">20</span>,mu.bar,sig.bar)</code></pre>
-<pre><code>## [1] 0.79192412</code></pre>
+<pre><code>## [1] 0.7919241</code></pre>
 <p>The goal in Question 2.2 is to find the 95%-percentile of the sample
 average:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">qnorm</span>(<span class="fl">0.95</span>,mu.bar,sig.bar)</code></pre>
-<pre><code>## [1] 26.045805</code></pre>
+<pre><code>## [1] 26.0458</code></pre>
 </div>
 <div id="example-4" class="section level3">
 <h3><span class="header-section-number">8.3.4</span> Example 4</h3>
@@ -817,7 +817,7 @@ average of 50 cans is below 15.95.</p></li>
 <li><p>Find a threshold with the property that the probability of stopping
 the machine in a given hour is 5% when, in fact, the production
 conditions are normal.</p></li>
-<li><p>Consider the data in the file “<code>QC.csv</code>”<a href="#fn21" class="footnote-ref" id="fnref21"><sup>21</sup></a>. It contains
+<li><p>Consider the data in the file “<code>QC.csv</code>”<a href="#fn20" class="footnote-ref" id="fnref20"><sup>20</sup></a>. It contains
 measurement results of 8 hours. Assume that we apply the threshold
 that was obtained in Question 4.3. At the end of which of the hours
 the filling machine needed re-calibration?</p></li>
@@ -842,32 +842,32 @@ of the probability. Observe that the expectation of the sample average
 is 16.0 ounces and the standard deviation is <span class="math inline">\(0.1/\sqrt{50}\)</span>. The
 distribution of the average is approximately the Normal distribution:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pnorm</span>(<span class="fl">15.95</span>,<span class="dv">16</span>,<span class="fl">0.1</span><span class="op">/</span><span class="kw">sqrt</span>(<span class="dv">50</span>))</code></pre>
-<pre><code>## [1] 0.00020347601</code></pre>
+<pre><code>## [1] 0.000203476</code></pre>
 <p>Hence, we get that the probability of the average being less than 15.95
 ounces is (approximately) 0.0002, which is a solution to Question 4.2.</p>
 <p>In order to solve Question 4.3 we may apply the function “<code>qnorm</code>” in
 order to compute the 5%-percentile of the distribution of the average:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">qnorm</span>(<span class="fl">0.05</span>,<span class="dv">16</span>,<span class="fl">0.1</span><span class="op">/</span><span class="kw">sqrt</span>(<span class="dv">50</span>))</code></pre>
-<pre><code>## [1] 15.976738</code></pre>
+<pre><code>## [1] 15.97674</code></pre>
 <p>Consider the data in the file “<code>QC.csv</code>”. Let us read the data into a
 data frame by the by the name “<code>QC</code>” and apply the function “<code>summary</code>”
 to obtain an overview of the content of the file:</p>
 <pre class="sourceCode r"><code class="sourceCode r">QC &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;_data/QC.csv&quot;</span>)
 <span class="kw">summary</span>(QC)</code></pre>
-<pre><code>##        h1               h2               h3               h4        
-##  Min.   :15.860   Min.   :15.820   Min.   :15.680   Min.   :15.750  
-##  1st Qu.:15.943   1st Qu.:15.932   1st Qu.:15.842   1st Qu.:15.912  
-##  Median :16.025   Median :16.010   Median :15.910   Median :15.995  
-##  Mean   :16.020   Mean   :16.009   Mean   :15.912   Mean   :15.989  
-##  3rd Qu.:16.090   3rd Qu.:16.078   3rd Qu.:15.980   3rd Qu.:16.058  
-##  Max.   :16.220   Max.   :16.220   Max.   :16.110   Max.   :16.310  
-##        h5               h6               h7               h8        
-##  Min.   :15.750   Min.   :15.730   Min.   :15.730   Min.   :15.780  
-##  1st Qu.:15.930   1st Qu.:15.932   1st Qu.:15.943   1st Qu.:15.920  
-##  Median :15.995   Median :15.980   Median :15.990   Median :15.970  
-##  Mean   :15.990   Mean   :15.981   Mean   :15.991   Mean   :15.974  
-##  3rd Qu.:16.050   3rd Qu.:16.058   3rd Qu.:16.055   3rd Qu.:16.040  
-##  Max.   :16.170   Max.   :16.230   Max.   :16.180   Max.   :16.250</code></pre>
+<pre><code>##        h1              h2              h3              h4       
+##  Min.   :15.86   Min.   :15.82   Min.   :15.68   Min.   :15.75  
+##  1st Qu.:15.94   1st Qu.:15.93   1st Qu.:15.84   1st Qu.:15.91  
+##  Median :16.02   Median :16.01   Median :15.91   Median :15.99  
+##  Mean   :16.02   Mean   :16.01   Mean   :15.91   Mean   :15.99  
+##  3rd Qu.:16.09   3rd Qu.:16.08   3rd Qu.:15.98   3rd Qu.:16.06  
+##  Max.   :16.22   Max.   :16.22   Max.   :16.11   Max.   :16.31  
+##        h5              h6              h7              h8       
+##  Min.   :15.75   Min.   :15.73   Min.   :15.73   Min.   :15.78  
+##  1st Qu.:15.93   1st Qu.:15.93   1st Qu.:15.94   1st Qu.:15.92  
+##  Median :15.99   Median :15.98   Median :15.99   Median :15.97  
+##  Mean   :15.99   Mean   :15.98   Mean   :15.99   Mean   :15.97  
+##  3rd Qu.:16.05   3rd Qu.:16.06   3rd Qu.:16.05   3rd Qu.:16.04  
+##  Max.   :16.17   Max.   :16.23   Max.   :16.18   Max.   :16.25</code></pre>
 <p>Observe that the file contains 8 quantitative variables that are given
 the names <code>h1</code>, …, <code>h8</code>. Each of these variables contains the 50
 measurements conducted in the given hour.</p>
@@ -893,7 +893,7 @@ function “<code>boxplot</code>” directly to the data frame “<code>QC</code
 with box plots of all the variables in the data frame plotted side by
 side:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">boxplot</span>(QC)</code></pre>
-<p><img src="statthink_files/figure-html/unnamed-chunk-128-1.png" width="60%" style="display: block; margin: auto;" /></p>
+<p><img src="statthink_files/figure-html/unnamed-chunk-131-1.png" width="60%" style="display: block; margin: auto;" /></p>
 <p>Examining the plots we may see that evidence for the existence of
 outliers can be spotted on the 4th, 6th, 7th, and 8th hours, providing
 an answer to Question 4.5</p>
@@ -962,21 +962,21 @@ and stored in sequence “<code>A</code>” and the statistic proposed by Statis
 B (“<code>max(X.samp)</code>”) is computed and stored in sequence “<code>B</code>”.</p>
 <p>Consider the statistic proposed by Statistician A:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(A)</code></pre>
-<pre><code>## [1] 9.997101</code></pre>
+<pre><code>## [1] 9.998742</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">var</span>(A)</code></pre>
-<pre><code>## [1] 0.33252946</code></pre>
+<pre><code>## [1] 0.3307682</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">var</span>(A) <span class="op">+</span><span class="st"> </span>(<span class="kw">mean</span>(A)<span class="op">-</span><span class="dv">10</span>)<span class="op">^</span><span class="dv">2</span></code></pre>
-<pre><code>## [1] 0.33253787</code></pre>
+<pre><code>## [1] 0.3307697</code></pre>
 <p>The expectation of the statistic is 9.99772 and the variance is
 0.3341673. Consequently, we get that the mean square error is equal to</p>
 <p><span class="math display">\[0.3341673 + (9.99772 - 10)^2 = 0.3341725\;.\]</span></p>
 <p>Next, deal with the statistic proposed by Statistician B:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(B)</code></pre>
-<pre><code>## [1] 9.9005939</code></pre>
+<pre><code>## [1] 9.900123</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">var</span>(B)</code></pre>
-<pre><code>## [1] 0.0096869664</code></pre>
+<pre><code>## [1] 0.009780607</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">var</span>(B) <span class="op">+</span><span class="st"> </span>(<span class="kw">mean</span>(B)<span class="op">-</span><span class="dv">10</span>)<span class="op">^</span><span class="dv">2</span></code></pre>
-<pre><code>## [1] 0.019568547</code></pre>
+<pre><code>## [1] 0.01975596</code></pre>
 <p>The expectation of the statistic is 9.901259 and the variance is
 0.00950006. Consequently, we get that the mean square error is equal to</p>
 <p><span class="math display">\[0.00950006 + (9.901259 - 10)^2 = 0.01924989\;.\]</span> Observe that the mean
@@ -992,22 +992,22 @@ B &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="dv">0</
 }</code></pre>
 <p>Again, considering the statistic proposed by Statistician A we get:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(A)</code></pre>
-<pre><code>## [1] 13.697155</code></pre>
+<pre><code>## [1] 13.70143</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">var</span>(A)</code></pre>
-<pre><code>## [1] 0.6292952</code></pre>
+<pre><code>## [1] 0.6228214</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">var</span>(A) <span class="op">+</span><span class="st"> </span>(<span class="kw">mean</span>(A)<span class="op">-</span><span class="fl">13.7</span>)<span class="op">^</span><span class="dv">2</span></code></pre>
-<pre><code>## [1] 0.6293033</code></pre>
+<pre><code>## [1] 0.6228235</code></pre>
 <p>The expectation of the statistic in this setting is 13.70009 and the
 variance is 0.6264204. Consequently, we get that the mean square error
 is equal to</p>
 <p><span class="math display">\[0.6264204 + (13.70009 - 13.7)^2 = 0.6264204\;.\]</span></p>
 <p>For the statistic proposed by Statistician B we obtain:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(B)</code></pre>
-<pre><code>## [1] 13.563762</code></pre>
+<pre><code>## [1] 13.56485</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">var</span>(B)</code></pre>
-<pre><code>## [1] 0.018239626</code></pre>
+<pre><code>## [1] 0.01798118</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">var</span>(B) <span class="op">+</span><span class="st"> </span>(<span class="kw">mean</span>(B)<span class="op">-</span><span class="fl">13.7</span>)<span class="op">^</span><span class="dv">2</span></code></pre>
-<pre><code>## [1] 0.036800508</code></pre>
+<pre><code>## [1] 0.03624593</code></pre>
 <p>The expectation of the statistic is 13.56467 and the variance is
 0.01787562. Consequently, we get that the mean square error is equal to</p>
 <p><span class="math display">\[0.01787562 + (13.56467 - 13.7)^2 = 0.03618937\;.\]</span> Once more, the mean
@@ -1015,7 +1015,7 @@ square error of the statistic proposed by Statistician B is smaller.</p>
 <p>Considering the fact that the mean square error of the statistic
 proposed by Statistician B is smaller in both cases we may conclude that
 this statistic seems to be better for estimation of <span class="math inline">\(b\)</span> in this setting
-of Uniformly distributed measurements<a href="#fn22" class="footnote-ref" id="fnref22"><sup>22</sup></a>.</p>
+of Uniformly distributed measurements<a href="#fn21" class="footnote-ref" id="fnref21"><sup>21</sup></a>.</p>
 </div>
 <div id="discussion-in-the-forum" class="section level3 unnumbered">
 <h3>Discussion in the Forum</h3>
@@ -1036,15 +1036,15 @@ course.</p>
 </div>
 <div class="footnotes">
 <hr />
-<ol start="20">
-<li id="fn20"><p>As a matter of fact, the continuity correction could have been
+<ol start="19">
+<li id="fn19"><p>As a matter of fact, the continuity correction could have been
 applied in the previous two sections as well, since the sample
-average has a discrete distribution.<a href="overview-and-integration.html#fnref20" class="footnote-back">↩</a></p></li>
-<li id="fn21"><p>URL for the file:
-<a href="http://pluto.huji.ac.il/~msby/StatThink/Datasets/QC.csv" class="uri">http://pluto.huji.ac.il/~msby/StatThink/Datasets/QC.csv</a><a href="overview-and-integration.html#fnref21" class="footnote-back">↩</a></p></li>
-<li id="fn22"><p>As a matter of fact, it can be proved that the statistic proposed
+average has a discrete distribution.<a href="overview-and-integration.html#fnref19" class="footnote-back">↩</a></p></li>
+<li id="fn20"><p>URL for the file:
+<a href="http://pluto.huji.ac.il/~msby/StatThink/Datasets/QC.csv" class="uri">http://pluto.huji.ac.il/~msby/StatThink/Datasets/QC.csv</a><a href="overview-and-integration.html#fnref20" class="footnote-back">↩</a></p></li>
+<li id="fn21"><p>As a matter of fact, it can be proved that the statistic proposed
 by Statistician B has a smaller mean square error than the statistic
-proposed by Statistician A, for <em>any</em> value of <span class="math inline">\(b\)</span><a href="overview-and-integration.html#fnref22" class="footnote-back">↩</a></p></li>
+proposed by Statistician A, for <em>any</em> value of <span class="math inline">\(b\)</span><a href="overview-and-integration.html#fnref21" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>

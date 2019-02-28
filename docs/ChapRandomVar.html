@@ -25,7 +25,7 @@
 <meta name="author" content="Benjamin Yakir">
 
 
-<meta name="date" content="2019-01-17">
+<meta name="date" content="2019-02-28">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -53,7 +53,7 @@
 <style type="text/css">
 a.sourceLine { display: inline-block; line-height: 1.25; }
 a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; position: absolute; }
+a.sourceLine:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 div.sourceCode { margin: 1em 0; }
@@ -66,13 +66,11 @@ code.sourceCode { white-space: pre-wrap; }
 a.sourceLine { text-indent: -1em; padding-left: 1em; }
 }
 pre.numberSource a.sourceLine
-  { position: relative; }
-pre.numberSource a.sourceLine:empty
-  { position: absolute; }
+  { position: relative; left: -4em; }
 pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
-    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all;
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -145,6 +143,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.7" data-path="ChapIntroR.html"><a href="ChapIntroR.html#exercises"><i class="fa fa-check"></i><b>1.7</b> Exercises</a></li>
 <li class="chapter" data-level="1.8" data-path="ChapIntroR.html"><a href="ChapIntroR.html#summary"><i class="fa fa-check"></i><b>1.8</b> Summary</a><ul>
 <li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li><a href="ChapIntroR.html#r-funcs"><code>R</code> functions introduced in this chapter</a></li>
 <li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#discuss-in-the-forum"><i class="fa fa-check"></i>Discuss in the forum</a></li>
 </ul></li>
 </ul></li>
@@ -156,7 +155,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.2.3" data-path="ChapData.html"><a href="ChapData.html#frequency"><i class="fa fa-check"></i><b>2.2.3</b> Frequency</a></li>
 <li class="chapter" data-level="2.2.4" data-path="ChapData.html"><a href="ChapData.html#critical-evaluation"><i class="fa fa-check"></i><b>2.2.4</b> Critical Evaluation</a></li>
 </ul></li>
-<li class="chapter" data-level="2.3" data-path="ChapData.html"><a href="ChapData.html#readingdata"><i class="fa fa-check"></i><b>2.3</b> Reading Data into <code>R</code></a><ul>
+<li class="chapter" data-level="2.3" data-path="ChapData.html"><a href="ChapData.html#readingdata"><i class="fa fa-check"></i><b>2.3</b> Reading External Data into <code>R</code></a><ul>
 <li class="chapter" data-level="2.3.1" data-path="ChapData.html"><a href="ChapData.html#saving-the-file-and-setting-the-working-directory"><i class="fa fa-check"></i><b>2.3.1</b> Saving the File and Setting the Working Directory</a></li>
 <li class="chapter" data-level="2.3.2" data-path="ChapData.html"><a href="ChapData.html#Data_3"><i class="fa fa-check"></i><b>2.3.2</b> Reading a CSV File into <code>R</code></a></li>
 <li class="chapter" data-level="2.3.3" data-path="ChapData.html"><a href="ChapData.html#data-types"><i class="fa fa-check"></i><b>2.3.3</b> Data Types</a></li>
@@ -164,6 +163,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.4" data-path="ChapData.html"><a href="ChapData.html#exercises-1"><i class="fa fa-check"></i><b>2.4</b> Exercises</a></li>
 <li class="chapter" data-level="2.5" data-path="ChapData.html"><a href="ChapData.html#summary-1"><i class="fa fa-check"></i><b>2.5</b> Summary</a><ul>
 <li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li><a href="ChapIntroR.html#r-funcs"><code>R</code> functions introduced in this chapter</a></li>
 <li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#discuss-in-the-forum"><i class="fa fa-check"></i>Discuss in the forum</a></li>
 </ul></li>
 </ul></li>
@@ -586,7 +586,7 @@ and 10 it may be the case that the number of “Heads” that turn up is
 equal to that integer with the other coins turning up “Tail”. Hence, the
 sample space of <span class="math inline">\(X\)</span> is the set of integers <span class="math inline">\(\{0, 1, 2, \ldots, 10\}\)</span>.
 The probability of each outcome may be computed by an appropriate
-mathematical formula that will not be discussed here<a href="#fn11" class="footnote-ref" id="fnref11"><sup>11</sup></a>.</p>
+mathematical formula that will not be discussed here<a href="#fn10" class="footnote-ref" id="fnref10"><sup>10</sup></a>.</p>
 <p>The probabilities of the various possible values of a Binomial random
 variable may be computed with the aid of the <code>R</code> function “<code>dbinom</code>”
 (that uses the mathematical formula for the computation). The input to
@@ -716,15 +716,15 @@ sample space is yet again equal to the set of integers
 different. These probabilities can again be computes with the aid of the
 function “<code>dbinom</code>”:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dbinom</span>(x,<span class="dv">10</span>,<span class="dv">1</span><span class="op">/</span><span class="dv">6</span>)</code></pre>
-<pre><code>##  [1] 1.6150558e-01 3.2301117e-01 2.9071005e-01 1.5504536e-01 5.4265876e-02
-##  [6] 1.3023810e-02 2.1706350e-03 2.4807258e-04 1.8605443e-05 8.2690858e-07
-## [11] 1.6538172e-08</code></pre>
+<pre><code>##  [1] 1.615056e-01 3.230112e-01 2.907100e-01 1.550454e-01 5.426588e-02
+##  [6] 1.302381e-02 2.170635e-03 2.480726e-04 1.860544e-05 8.269086e-07
+## [11] 1.653817e-08</code></pre>
 <p>In this case smaller values of the random variable are assigned higher
 probabilities and larger values are assigned lower probabilities..</p>
 <div class="figure" style="text-align: center"><span id="fig:RVar3"></span>
 <img src="statthink_files/figure-html/RVar3-1.png" alt="The Binomial Distribution for Various Probability of &quot;Success&quot;&quot; $p$" width="60%" />
 <p class="caption">
-FIGURE 5.2: The Binomial Distribution for Various Probability of “Success”&quot; <span class="math inline">\(p\)</span>
+FIGURE 5.2: The Binomial Distribution for Various Probability of “Success”" <span class="math inline">\(p\)</span>
 </p>
 </div>
 <p>In Figure <a href="ChapRandomVar.html#fig:RVar3">5.2</a> the probabilities for
@@ -803,7 +803,7 @@ FIGURE 5.3: The Poisson(2) Distribution
 probability of success in each trial <span class="math inline">\(p\)</span>. The Poisson distribution is
 specified by its expectation, which we denote by <span class="math inline">\(\lambda\)</span>. The
 expression “<span class="math inline">\(X \sim \mathrm{Poisson}(\lambda)\)</span>” states that the random
-variable <span class="math inline">\(X\)</span> has a Poisson distribution<a href="#fn12" class="footnote-ref" id="fnref12"><sup>12</sup></a> with expectation
+variable <span class="math inline">\(X\)</span> has a Poisson distribution<a href="#fn11" class="footnote-ref" id="fnref11"><sup>11</sup></a> with expectation
 <span class="math inline">\(\Expec(X) = \lambda\)</span>. The function “<code>dpois</code>” computes the probability,
 according to the Poisson distribution, of values that are entered as the
 first argument to the function. The expectation of the distribution is
@@ -813,12 +813,12 @@ and the cumulative probabilities of the values between 0 and 10 for the
 <span class="math inline">\(\mathrm{Poisson}(2)\)</span> distribution via:</p>
 <pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="dv">0</span><span class="op">:</span><span class="dv">10</span>
 <span class="kw">dpois</span>(x,<span class="dv">2</span>)</code></pre>
-<pre><code>##  [1] 0.135335283237 0.270670566473 0.270670566473 0.180447044315
-##  [5] 0.090223522158 0.036089408863 0.012029802954 0.003437086558
-##  [9] 0.000859271640 0.000190949253 0.000038189851</code></pre>
+<pre><code>##  [1] 1.353353e-01 2.706706e-01 2.706706e-01 1.804470e-01 9.022352e-02
+##  [6] 3.608941e-02 1.202980e-02 3.437087e-03 8.592716e-04 1.909493e-04
+## [11] 3.818985e-05</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ppois</span>(x,<span class="dv">2</span>)</code></pre>
-<pre><code>##  [1] 0.13533528 0.40600585 0.67667642 0.85712346 0.94734698 0.98343639
-##  [7] 0.99546619 0.99890328 0.99976255 0.99995350 0.99999169</code></pre>
+<pre><code>##  [1] 0.1353353 0.4060058 0.6766764 0.8571235 0.9473470 0.9834364 0.9954662
+##  [8] 0.9989033 0.9997626 0.9999535 0.9999917</code></pre>
 <p>The probability function of the Poisson distribution with <span class="math inline">\(\lambda = 2\)</span>,
 in the range between 0 and 10, is plotted in
 Figure <a href="ChapRandomVar.html#fig:RVar4">5.3</a>. Observe that in this example probabilities
@@ -871,7 +871,7 @@ the distribution of the number of decays is the Poisson distribution.
 Observe that the number of decays in a second is a integer and, in
 principle, it may obtain any integer value larger or equal to zero. The
 event of a radio active decay of an atom is a relatively rare event.
-Therefore, the Poisson model is likely to fit this phenomena<a href="#fn13" class="footnote-ref" id="fnref13"><sup>13</sup></a>.
+Therefore, the Poisson model is likely to fit this phenomena<a href="#fn12" class="footnote-ref" id="fnref12"><sup>12</sup></a>.
 </div>
 
 
@@ -993,7 +993,7 @@ sets the length of the sequence, 1,000 values in this case:</p>
 <pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">0</span>,<span class="dv">10</span>,<span class="dt">length=</span><span class="dv">1000</span>)
 den &lt;-<span class="st"> </span><span class="kw">dunif</span>(x,<span class="dv">3</span>,<span class="dv">7</span>)
 <span class="kw">plot</span>(x,den)</code></pre>
-<p><img src="statthink_files/figure-html/unnamed-chunk-65-1.png" width="60%" style="display: block; margin: auto;" /></p>
+<p><img src="statthink_files/figure-html/unnamed-chunk-68-1.png" width="60%" style="display: block; margin: auto;" /></p>
 <p>The object “<code>den</code>” is a sequence of length 1,000 that contains the
 density of the <span class="math inline">\(\mathrm{Uniform}(3,7)\)</span> evaluated over the values of
 “<code>x</code>”. When we apply the function “<code>plot</code>” to the two sequences we get a
@@ -1017,12 +1017,12 @@ to each other with segments and use smaller points. This may be achieved
 by the addition of the argument “<code>type=l</code>”, with the letter <code>l</code> for
 line, to the plotting function:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(x,den,<span class="dt">type=</span><span class="st">&quot;l&quot;</span>)</code></pre>
-<p><img src="statthink_files/figure-html/unnamed-chunk-66-1.png" width="60%" style="display: block; margin: auto;" /></p>
+<p><img src="statthink_files/figure-html/unnamed-chunk-69-1.png" width="60%" style="display: block; margin: auto;" /></p>
 <p>The cumulative probability of the <span class="math inline">\(\mathrm{Uniform}(3,7)\)</span> is produced by the code:</p>
 <pre class="sourceCode r"><code class="sourceCode r">cdf &lt;-<span class="st"> </span><span class="kw">punif</span>(x,<span class="dv">3</span>,<span class="dv">7</span>)
 <span class="kw">plot</span>(x,cdf,<span class="dt">type=</span><span class="st">&quot;l&quot;</span>)</code></pre>
-<p><img src="statthink_files/figure-html/unnamed-chunk-67-1.png" width="60%" style="display: block; margin: auto;" /></p>
-<p>One can think of the density of the Uniform as an histogram<a href="#fn14" class="footnote-ref" id="fnref14"><sup>14</sup></a>. The
+<p><img src="statthink_files/figure-html/unnamed-chunk-70-1.png" width="60%" style="display: block; margin: auto;" /></p>
+<p>One can think of the density of the Uniform as an histogram<a href="#fn13" class="footnote-ref" id="fnref13"><sup>13</sup></a>. The
 expectation of a Uniform random variable is the middle point of it’s
 histogram. Hence, if <span class="math inline">\(X \sim \mathrm{Uniform}(a,b)\)</span> then:</p>
 <p><span class="math display">\[\Expec(X) = \frac{a+b}{2}\;.\]</span> For the <span class="math inline">\(X \sim \mathrm{Uniform}(3,7)\)</span>
@@ -1094,7 +1094,7 @@ FIGURE 5.6: The Exponential(0.5) Distribution
 </p>
 </div>
 <p>The density of the Exponential distribution can be computed with the aid
-of the function “<code>dexp</code>”<a href="#fn15" class="footnote-ref" id="fnref15"><sup>15</sup></a>. The cumulative probability can be computed
+of the function “<code>dexp</code>”<a href="#fn14" class="footnote-ref" id="fnref14"><sup>14</sup></a>. The cumulative probability can be computed
 with the function “<code>pexp</code>”. For illustration, assume
 <span class="math inline">\(X \sim \mathrm{Exponential}(0.5)\)</span>. Say one is interested in the
 computation of the probability <span class="math inline">\(\Prob(2 &lt; X \leq 6)\)</span> that the random
@@ -1104,7 +1104,7 @@ Figure <a href="ChapRandomVar.html#fig:RVar7">5.6</a>. This area can be compute
 between the probability <span class="math inline">\(\Prob(X \leq 6)\)</span>, the area to the left of 6,
 and the probability <span class="math inline">\(\Prob(X \leq 2)\)</span>, the area to the left of 2:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pexp</span>(<span class="dv">6</span>,<span class="fl">0.5</span>) <span class="op">-</span><span class="st"> </span><span class="kw">pexp</span>(<span class="dv">2</span>,<span class="fl">0.5</span>)</code></pre>
-<pre><code>## [1] 0.31809237</code></pre>
+<pre><code>## [1] 0.3180924</code></pre>
 <p>The difference is the probability of belonging to the interval, namely
 the area marked in the plot.</p>
 <p>The expectation of <span class="math inline">\(X\)</span>, when <span class="math inline">\(X \sim \mathrm{Exponential}(\lambda)\)</span>, is
@@ -1159,7 +1159,7 @@ expectation of the Poisson distribution.
 <h2><span class="header-section-number">5.4</span> Exercises</h2>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-69" class="exercise"><strong>Exercise 5.1  </strong></span>A particular measles vaccine produces a reaction (a
+<p><span id="exr:unnamed-chunk-72" class="exercise"><strong>Exercise 5.1  </strong></span>A particular measles vaccine produces a reaction (a
 fever higher that 102 Fahrenheit) in each vaccinee with probability of
 0.09. A clinic vaccinates 500 people each day.</p>
 <ol style="list-style-type: decimal">
@@ -1182,7 +1182,7 @@ FIGURE 5.8: Bar Plots of the Negative-Binomial Distribution
 </div>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-70" class="exercise"><strong>Exercise 5.2  </strong></span>The Negative-Binomial distribution is yet another
+<p><span id="exr:unnamed-chunk-73" class="exercise"><strong>Exercise 5.2  </strong></span>The Negative-Binomial distribution is yet another
 example of a discrete, integer valued, random variable. The sample space
 of the distribution are all non-negative integers <span class="math inline">\(\{0, 1, 2, \ldots\}\)</span>.
 The fact that a random variable <span class="math inline">\(X\)</span> has this distribution is marked by
@@ -1218,7 +1218,7 @@ Use Figure <a href="ChapRandomVar.html#fig:RVar10">5.8</a> in order to match th
 variable with its associated pair. Do not use numerical computations
 or formulae for the expectation and the variance in the
 Negative-Binomial distribution in order to carry out the
-matching<a href="#fn16" class="footnote-ref" id="fnref16"><sup>16</sup></a>. Use, instead, the structure of the bar-plots.</li>
+matching<a href="#fn15" class="footnote-ref" id="fnref15"><sup>15</sup></a>. Use, instead, the structure of the bar-plots.</li>
 </ol>
 </div>
 
@@ -1316,27 +1316,27 @@ specimens.</p>
 </div>
 <div class="footnotes">
 <hr />
-<ol start="11">
-<li id="fn11"><p>If <span class="math inline">\(X\sim \mathrm{Binomial}(n,p)\)</span> then
+<ol start="10">
+<li id="fn10"><p>If <span class="math inline">\(X\sim \mathrm{Binomial}(n,p)\)</span> then
 <span class="math inline">\(\Prob(X = x) = {n \choose x} p^x (1-p)^{n-x}\)</span>, for
-<span class="math inline">\(x = 0, 1, \ldots, n\)</span>.<a href="ChapRandomVar.html#fnref11" class="footnote-back">↩</a></p></li>
-<li id="fn12"><p>If <span class="math inline">\(X \sim \mathrm{Poisson}(\lambda)\)</span> then
-<span class="math inline">\(\Prob(X=x) = e^{-\lambda}\lambda^x/x!\)</span>, for <span class="math inline">\(x=0,1,2,\ldots\)</span>.<a href="ChapRandomVar.html#fnref12" class="footnote-back">↩</a></p></li>
-<li id="fn13"><p>The number of decays may also be considered in the
+<span class="math inline">\(x = 0, 1, \ldots, n\)</span>.<a href="ChapRandomVar.html#fnref10" class="footnote-back">↩</a></p></li>
+<li id="fn11"><p>If <span class="math inline">\(X \sim \mathrm{Poisson}(\lambda)\)</span> then
+<span class="math inline">\(\Prob(X=x) = e^{-\lambda}\lambda^x/x!\)</span>, for <span class="math inline">\(x=0,1,2,\ldots\)</span>.<a href="ChapRandomVar.html#fnref11" class="footnote-back">↩</a></p></li>
+<li id="fn12"><p>The number of decays may also be considered in the
 <span class="math inline">\(\mathrm{Binomial}(n,p)\)</span> setting. The number <span class="math inline">\(n\)</span> is the total number
 of atoms in the unit mass and <span class="math inline">\(p\)</span> is the probability that an atom
 decays within the given second. However, since <span class="math inline">\(n\)</span> is very large and
 <span class="math inline">\(p\)</span> is very small we get that the Poisson distribution is an
-appropriate model for the count.<a href="ChapRandomVar.html#fnref13" class="footnote-back">↩</a></p></li>
-<li id="fn14"><p>If <span class="math inline">\(X \sim \mathrm{Uniform}(a,b)\)</span> then the density is
+appropriate model for the count.<a href="ChapRandomVar.html#fnref12" class="footnote-back">↩</a></p></li>
+<li id="fn13"><p>If <span class="math inline">\(X \sim \mathrm{Uniform}(a,b)\)</span> then the density is
 <span class="math inline">\(f(x) = 1/(b-a)\)</span>, for <span class="math inline">\(a \leq x \leq b\)</span>, and it is equal to 0 for
-other values of <span class="math inline">\(x\)</span>.<a href="ChapRandomVar.html#fnref14" class="footnote-back">↩</a></p></li>
-<li id="fn15"><p>If <span class="math inline">\(X \sim \mathrm{Exponential}(\lambda)\)</span> then the density
+other values of <span class="math inline">\(x\)</span>.<a href="ChapRandomVar.html#fnref13" class="footnote-back">↩</a></p></li>
+<li id="fn14"><p>If <span class="math inline">\(X \sim \mathrm{Exponential}(\lambda)\)</span> then the density
 is <span class="math inline">\(f(x) =\lambda e^{-\lambda x}\)</span>, for <span class="math inline">\(0 \leq x\)</span>, and it is equal
-to 0 for <span class="math inline">\(x &lt; 0\)</span>.<a href="ChapRandomVar.html#fnref15" class="footnote-back">↩</a></p></li>
-<li id="fn16"><p>It can be shown, or else found on the web, that if
+to 0 for <span class="math inline">\(x &lt; 0\)</span>.<a href="ChapRandomVar.html#fnref14" class="footnote-back">↩</a></p></li>
+<li id="fn15"><p>It can be shown, or else found on the web, that if
 <span class="math inline">\(X\sim \mbox{Negative-Binomial}(r,p)\)</span> then <span class="math inline">\(\Expec(X) = r(1-p)/p\)</span>
-and <span class="math inline">\(\Var(X) = r(1-p)/p^2\)</span>.<a href="ChapRandomVar.html#fnref16" class="footnote-back">↩</a></p></li>
+and <span class="math inline">\(\Var(X) = r(1-p)/p^2\)</span>.<a href="ChapRandomVar.html#fnref15" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>

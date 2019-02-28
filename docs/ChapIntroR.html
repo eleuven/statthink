@@ -25,7 +25,7 @@
 <meta name="author" content="Benjamin Yakir">
 
 
-<meta name="date" content="2019-02-27">
+<meta name="date" content="2019-02-28">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -143,7 +143,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.7" data-path="ChapIntroR.html"><a href="ChapIntroR.html#exercises"><i class="fa fa-check"></i><b>1.7</b> Exercises</a></li>
 <li class="chapter" data-level="1.8" data-path="ChapIntroR.html"><a href="ChapIntroR.html#summary"><i class="fa fa-check"></i><b>1.8</b> Summary</a><ul>
 <li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
-<li><a href="ChapIntroR.html#r-funcs">New <code>R</code> functions</a></li>
+<li><a href="ChapIntroR.html#r-funcs"><code>R</code> functions introduced in this chapter</a></li>
 <li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#discuss-in-the-forum"><i class="fa fa-check"></i>Discuss in the forum</a></li>
 </ul></li>
 </ul></li>
@@ -155,7 +155,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.2.3" data-path="ChapData.html"><a href="ChapData.html#frequency"><i class="fa fa-check"></i><b>2.2.3</b> Frequency</a></li>
 <li class="chapter" data-level="2.2.4" data-path="ChapData.html"><a href="ChapData.html#critical-evaluation"><i class="fa fa-check"></i><b>2.2.4</b> Critical Evaluation</a></li>
 </ul></li>
-<li class="chapter" data-level="2.3" data-path="ChapData.html"><a href="ChapData.html#readingdata"><i class="fa fa-check"></i><b>2.3</b> Reading Data into <code>R</code></a><ul>
+<li class="chapter" data-level="2.3" data-path="ChapData.html"><a href="ChapData.html#readingdata"><i class="fa fa-check"></i><b>2.3</b> Reading External Data into <code>R</code></a><ul>
 <li class="chapter" data-level="2.3.1" data-path="ChapData.html"><a href="ChapData.html#saving-the-file-and-setting-the-working-directory"><i class="fa fa-check"></i><b>2.3.1</b> Saving the File and Setting the Working Directory</a></li>
 <li class="chapter" data-level="2.3.2" data-path="ChapData.html"><a href="ChapData.html#Data_3"><i class="fa fa-check"></i><b>2.3.2</b> Reading a CSV File into <code>R</code></a></li>
 <li class="chapter" data-level="2.3.3" data-path="ChapData.html"><a href="ChapData.html#data-types"><i class="fa fa-check"></i><b>2.3.3</b> Data Types</a></li>
@@ -163,6 +163,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.4" data-path="ChapData.html"><a href="ChapData.html#exercises-1"><i class="fa fa-check"></i><b>2.4</b> Exercises</a></li>
 <li class="chapter" data-level="2.5" data-path="ChapData.html"><a href="ChapData.html#summary-1"><i class="fa fa-check"></i><b>2.5</b> Summary</a><ul>
 <li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li><a href="ChapIntroR.html#r-funcs"><code>R</code> functions introduced in this chapter</a></li>
 <li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#discuss-in-the-forum"><i class="fa fa-check"></i>Discuss in the forum</a></li>
 </ul></li>
 </ul></li>
@@ -552,12 +553,12 @@ FIGURE 1.1: Frequency of Average Time (in Hours) Spent Sleeping per Night
 FIGURE 1.2: The RStudio interface
 </p>
 </div>
-<p>The screenshot in Figure <a href="#fig:fig2"><strong>??</strong></a> shows the RStudio interface. There are four panels. The top-left panel is the editor, the bottom-left panel shows the <code>R-Console</code>. The two right panels show the R-environment, history, file browser, plot panel and help viewer among others.</p>
+<p>The screenshot in Figure <a href="ChapIntroR.html#fig:fig1b">1.2</a> shows the RStudio interface. There are four panels. The top-left panel is the editor, the bottom-left panel shows the <code>R-Console</code>. The two right panels show the R-environment, history, file browser, plot panel and help viewer among others.</p>
 <div id="some-basic-r-commands" class="section level3">
 <h3><span class="header-section-number">1.6.1</span> Some Basic <code>R</code> Commands</h3>
 <p><code>R</code> is an object-oriented programming system. During the session you may create and manipulate objects by the use of functions that are part of the basic installation. You may also use the <code>R</code> programming language. Most of the functions that are part of the system are themselves written in the <code>R</code> language and one may easily write new functions or modify existing functions to suit specific needs.</p>
-<p>Let us start by opening <code>RStudio</code>. It is good practice to have a separate folder for each project where you will store your data and <code>R</code>-code. We have a folder called <code>statthink</code>. When starting a <code>R</code> or <code>RStudio</code>-session it is good practice to set the current working directory to your project directory using the “`setwd’” function for example like this:</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">setwd</span>(<span class="st">&quot;~/stathink&quot;</span>)</code></pre>
+<p>Let us start by opening <code>RStudio</code>. It is good practice to have a separate folder for each project where you will store your data and <code>R</code>-code. We have a folder called <code>IntroStat</code>. When starting a <code>R</code> or <code>RStudio</code>-session it is good practice to set the current working directory to your project directory using the “`setwd’” function for example like this:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">setwd</span>(<span class="st">&quot;~/IntroStat&quot;</span>)</code></pre>
 <p>Now we are ready to run our first <code>R</code>-command. Type in the <code>R-Console</code> panel, immediately after the “<code>&gt;</code>” prompt, the expression “<code>1+2</code>” and then hit the Return key. (Do not include the double quotation in the expression that you type!):</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="dv">1</span> <span class="op">+</span><span class="st"> </span><span class="dv">2</span></code></pre>
 <pre><code>## [1] 3</code></pre>
@@ -646,14 +647,14 @@ X</code></pre>
 </dl>
 </div>
 <div id="r-funcs" class="section level3 unnumbered">
-<h3>New <code>R</code> functions</h3>
+<h3><code>R</code> functions introduced in this chapter</h3>
 <ul>
 <li><p><code>setwd(dir)</code> is used to set the working directory to <code>dir</code>.</p></li>
 <li><p><code>c()</code> is a generic function which combines its arguments.</p></li>
 <li><p><code>save(..., file)</code> writes <code>R</code> objects to the specified file.</p></li>
 <li><p><code>load()</code> reloads datasets written with the function save.</p></li>
 <li><p><code>rm()</code> can be used to remove objects.</p></li>
-<li><p><code>table()</code> constructs a contingency table of counts.</p></li>
+<li><p><code>table()</code> constructs a table of counts of the different values.</p></li>
 <li><p><code>plot()</code> is a generic function for plotting of <code>R</code> objects.</p></li>
 </ul>
 </div>

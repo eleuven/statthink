@@ -25,7 +25,7 @@
 <meta name="author" content="Benjamin Yakir">
 
 
-<meta name="date" content="2019-01-17">
+<meta name="date" content="2019-02-28">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -53,7 +53,7 @@
 <style type="text/css">
 a.sourceLine { display: inline-block; line-height: 1.25; }
 a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; position: absolute; }
+a.sourceLine:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 div.sourceCode { margin: 1em 0; }
@@ -66,13 +66,11 @@ code.sourceCode { white-space: pre-wrap; }
 a.sourceLine { text-indent: -1em; padding-left: 1em; }
 }
 pre.numberSource a.sourceLine
-  { position: relative; }
-pre.numberSource a.sourceLine:empty
-  { position: absolute; }
+  { position: relative; left: -4em; }
 pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
-    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all;
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -145,6 +143,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.7" data-path="ChapIntroR.html"><a href="ChapIntroR.html#exercises"><i class="fa fa-check"></i><b>1.7</b> Exercises</a></li>
 <li class="chapter" data-level="1.8" data-path="ChapIntroR.html"><a href="ChapIntroR.html#summary"><i class="fa fa-check"></i><b>1.8</b> Summary</a><ul>
 <li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li><a href="ChapIntroR.html#r-funcs"><code>R</code> functions introduced in this chapter</a></li>
 <li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#discuss-in-the-forum"><i class="fa fa-check"></i>Discuss in the forum</a></li>
 </ul></li>
 </ul></li>
@@ -156,7 +155,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.2.3" data-path="ChapData.html"><a href="ChapData.html#frequency"><i class="fa fa-check"></i><b>2.2.3</b> Frequency</a></li>
 <li class="chapter" data-level="2.2.4" data-path="ChapData.html"><a href="ChapData.html#critical-evaluation"><i class="fa fa-check"></i><b>2.2.4</b> Critical Evaluation</a></li>
 </ul></li>
-<li class="chapter" data-level="2.3" data-path="ChapData.html"><a href="ChapData.html#readingdata"><i class="fa fa-check"></i><b>2.3</b> Reading Data into <code>R</code></a><ul>
+<li class="chapter" data-level="2.3" data-path="ChapData.html"><a href="ChapData.html#readingdata"><i class="fa fa-check"></i><b>2.3</b> Reading External Data into <code>R</code></a><ul>
 <li class="chapter" data-level="2.3.1" data-path="ChapData.html"><a href="ChapData.html#saving-the-file-and-setting-the-working-directory"><i class="fa fa-check"></i><b>2.3.1</b> Saving the File and Setting the Working Directory</a></li>
 <li class="chapter" data-level="2.3.2" data-path="ChapData.html"><a href="ChapData.html#Data_3"><i class="fa fa-check"></i><b>2.3.2</b> Reading a CSV File into <code>R</code></a></li>
 <li class="chapter" data-level="2.3.3" data-path="ChapData.html"><a href="ChapData.html#data-types"><i class="fa fa-check"></i><b>2.3.3</b> Data Types</a></li>
@@ -164,6 +163,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.4" data-path="ChapData.html"><a href="ChapData.html#exercises-1"><i class="fa fa-check"></i><b>2.4</b> Exercises</a></li>
 <li class="chapter" data-level="2.5" data-path="ChapData.html"><a href="ChapData.html#summary-1"><i class="fa fa-check"></i><b>2.5</b> Summary</a><ul>
 <li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li><a href="ChapIntroR.html#r-funcs"><code>R</code> functions introduced in this chapter</a></li>
 <li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#discuss-in-the-forum"><i class="fa fa-check"></i>Discuss in the forum</a></li>
 </ul></li>
 </ul></li>
@@ -728,7 +728,7 @@ in the figure is the regression line, although the <em>green</em> line is a
 better description of the trend than the <em>blue</em> line. The regression
 line is the best description of the linear trend.</p>
 <p>The <em>red</em> line is a fixed line that is constructed at a level equal to
-the average value<a href="#fn70" class="footnote-ref" id="fnref70"><sup>70</sup></a> of the variable <span class="math inline">\(y\)</span>. This line partly reflects the
+the average value<a href="#fn69" class="footnote-ref" id="fnref69"><sup>69</sup></a> of the variable <span class="math inline">\(y\)</span>. This line partly reflects the
 information in the data. The regression line, which we fit in the next
 section, reflects more of the information by including a description of
 the trend in the data.</p>
@@ -747,12 +747,12 @@ to specify the characteristics of the line. For example, the argument
 “<code>col=</code><em>color.name</em>” may be used in order to change the color of the
 line from its default black color. A plot that is very similar to plot
 in Figure <a href="ChapRegression.html#fig:Regression3">14.3</a> may be produced with the following
-code<a href="#fn71" class="footnote-ref" id="fnref71"><sup>71</sup></a>:</p>
+code<a href="#fn70" class="footnote-ref" id="fnref70"><sup>70</sup></a>:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(y<span class="op">~</span>x)
 <span class="kw">abline</span>(<span class="dv">7</span>,<span class="dv">1</span>,<span class="dt">col=</span><span class="st">&quot;green&quot;</span>)
 <span class="kw">abline</span>(<span class="dv">14</span>,<span class="op">-</span><span class="dv">2</span>,<span class="dt">col=</span><span class="st">&quot;blue&quot;</span>)
 <span class="kw">abline</span>(<span class="kw">mean</span>(y),<span class="dv">0</span>,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>)</code></pre>
-<p><img src="statthink_files/figure-html/unnamed-chunk-205-1.png" width="60%" style="display: block; margin: auto;" /></p>
+<p><img src="statthink_files/figure-html/unnamed-chunk-208-1.png" width="60%" style="display: block; margin: auto;" /></p>
 <p>Initially, the scatter plot is created and the lines are added to the
 plot one after the other. Observe that color of the first line that is
 added is green, it has an intercept of 7 and a slope of 1. The second
@@ -800,7 +800,7 @@ fit</code></pre>
 ## 
 ## Coefficients:
 ## (Intercept)            x  
-##      4.6165       1.4274</code></pre>
+##       4.616        1.427</code></pre>
 <p>When displayed, the output of the function “<code>lm</code>” shows the formula that
 was used by the function and provides the coefficients of the regression
 linear equation. Observe that the intercept of the line is equal to
@@ -860,9 +860,9 @@ sample covariance is the output. Let us demonstrate the computation by
 first applying the given function to the data on fish and then repeating
 the computations without the aid of the function:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cov</span>(y,x)</code></pre>
-<pre><code>## [1] 2.3861111</code></pre>
+<pre><code>## [1] 2.386111</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sum</span>((y<span class="op">-</span><span class="kw">mean</span>(y))<span class="op">*</span>(x<span class="op">-</span><span class="kw">mean</span>(x)))<span class="op">/</span><span class="dv">9</span></code></pre>
-<pre><code>## [1] 2.3861111</code></pre>
+<pre><code>## [1] 2.386111</code></pre>
 <p>In both cases we obtained the same result. Notice that the sum of
 products of deviations in the second expression was divided by 9, which
 is the number of observations, minus 1.</p>
@@ -884,9 +884,9 @@ variables:</p>
 <pre class="sourceCode r"><code class="sourceCode r">b &lt;-<span class="st"> </span><span class="kw">cov</span>(x,y)<span class="op">/</span><span class="kw">var</span>(x)
 a &lt;-<span class="st"> </span><span class="kw">mean</span>(y) <span class="op">-</span><span class="st"> </span>b<span class="op">*</span><span class="kw">mean</span>(x)
 a</code></pre>
-<pre><code>## [1] 4.6164772</code></pre>
+<pre><code>## [1] 4.616477</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r">b</code></pre>
-<pre><code>## [1] 1.4273845</code></pre>
+<pre><code>## [1] 1.427385</code></pre>
 <p>Applying the manual method we obtain, after rounding up, the same
 coefficients that were produced by the application of the function
 “<code>lm</code>” to the data.</p>
@@ -902,7 +902,7 @@ fit.power</code></pre>
 ## 
 ## Coefficients:
 ## (Intercept)  engine.size  
-##     6.64138      0.76949</code></pre>
+##      6.6414       0.7695</code></pre>
 <p>The fitted regression model is stored in an object called “<code>fit.power</code>”.
 The intercept in the current setting is equal to 6.6414 and the slope is
 equal to 0.7695.</p>
@@ -963,7 +963,7 @@ the hypothesis that the slope is equal to zero. This hypothesis
 corresponds to statement that the expected value of the response is
 constant for all values of the explanatory variable. In other words, the
 hypothesis is that the explanatory variable does not affect the
-distribution of the response<a href="#fn72" class="footnote-ref" id="fnref72"><sup>72</sup></a>. One may formulate this null hypothesis
+distribution of the response<a href="#fn71" class="footnote-ref" id="fnref71"><sup>71</sup></a>. One may formulate this null hypothesis
 as <span class="math inline">\(H_0:b = 0\)</span> and test it against the alternative <span class="math inline">\(H_1: b \not= 0\)</span> that
 states that the explanatory variable does affect the distribution of the
 response.</p>
@@ -982,20 +982,20 @@ this object:</p>
 ## lm(formula = horsepower ~ engine.size, data = cars)
 ## 
 ## Residuals:
-##      Min       1Q   Median       3Q      Max 
-## -59.6430 -12.2815  -5.5153  10.2508 125.1530 
+##     Min      1Q  Median      3Q     Max 
+## -59.643 -12.282  -5.515  10.251 125.153 
 ## 
 ## Coefficients:
 ##             Estimate Std. Error t value Pr(&gt;|t|)    
-## (Intercept) 6.641379   5.233181  1.2691   0.2059    
-## engine.size 0.769486   0.039186 19.6369   &lt;2e-16 ***
+## (Intercept)  6.64138    5.23318   1.269    0.206    
+## engine.size  0.76949    0.03919  19.637   &lt;2e-16 ***
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
-## Residual standard error: 23.305 on 201 degrees of freedom
+## Residual standard error: 23.31 on 201 degrees of freedom
 ##   (2 observations deleted due to missingness)
-## Multiple R-squared:  0.65735,    Adjusted R-squared:  0.65565 
-## F-statistic: 385.61 on 1 and 201 DF,  p-value: &lt; 2.22e-16</code></pre>
+## Multiple R-squared:  0.6574, Adjusted R-squared:  0.6556 
+## F-statistic: 385.6 on 1 and 201 DF,  p-value: &lt; 2.2e-16</code></pre>
 <p>The output produced by the application of the function “<code>summary</code>” is
 long and detailed. We will discuss this output in the next section. Here
 we concentrate on the table that goes under the title “<code>Coefficients:</code>”.
@@ -1010,7 +1010,7 @@ is equal (after rounding up) to the slope of the line that was fitted to
 the data in the previous subsection. However, in the context of
 statistical inference this value is the <em>estimate</em> of the slope of the
 population regression coefficient, the realization of the estimator of
-the slope<a href="#fn73" class="footnote-ref" id="fnref73"><sup>73</sup></a>.</p>
+the slope<a href="#fn72" class="footnote-ref" id="fnref72"><sup>72</sup></a>.</p>
 <p>The second value is 0.03919. This is an estimate of the standard
 deviation of the estimator of the slope. The third value is the test
 statistic. This statistic is the ratio between the deviation of the
@@ -1018,14 +1018,14 @@ sample estimate of the parameter (0.76949) from the value of the
 parameter under the null hypothesis (0), divided by the estimated
 standard deviation (0.03919):
 <span class="math inline">\((0.76949 - 0)/0.03919 = 0.76949/0.03919 = 19.63486\)</span>, which is
-essentially the value given in the report<a href="#fn74" class="footnote-ref" id="fnref74"><sup>74</sup></a>.</p>
+essentially the value given in the report<a href="#fn73" class="footnote-ref" id="fnref73"><sup>73</sup></a>.</p>
 <p>The last value is the computed <span class="math inline">\(p\)</span>-value for the test. It can be shown
 that the sampling distribution of the given test statistic, under the
 null distribution which assumes no slope, is asymptotically the standard
 Normal distribution. If the distribution of the response itself is
 Normal then the distribution of the statistic is the <span class="math inline">\(t\)</span>-distribution on
 <span class="math inline">\(n-2\)</span> degrees of freedom. In the current situation this corresponds to
-201 degrees of freedom<a href="#fn75" class="footnote-ref" id="fnref75"><sup>75</sup></a>. The computed <span class="math inline">\(p\)</span>-value is extremely small,
+201 degrees of freedom<a href="#fn74" class="footnote-ref" id="fnref74"><sup>74</sup></a>. The computed <span class="math inline">\(p\)</span>-value is extremely small,
 practically eliminating the possibility that the slope is equal to zero.</p>
 <p>The first row presents information regarding the intercept. The
 estimated intercept is 6.64138 with an estimated standard deviation of
@@ -1050,16 +1050,16 @@ obtained by taking 1.96 standard deviations on each side of the estimate
 of the parameter. Hence, a confidence interval for the slope is
 approximately equal to
 <span class="math inline">\(0.76949 \pm 1.96\times 0.03919 = [0.6926776, 0.8463024]\)</span>. In a similar
-way one may obtain a confidence interval for the slope<a href="#fn76" class="footnote-ref" id="fnref76"><sup>76</sup></a>:
+way one may obtain a confidence interval for the slope<a href="#fn75" class="footnote-ref" id="fnref75"><sup>75</sup></a>:
 <span class="math inline">\(6.64138 \pm 1.96\times 5.23318 = [-3.615653, 16.89841]\)</span>.</p>
 <p>Alternatively, one may compute confidence intervals for the parameters
 of the linear regression model using the function “<code>confint</code>”. The input
 to this function is the fitted model and the output is a confidence
 interval for each of the parameters:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">confint</span>(fit.power)</code></pre>
-<pre><code>##                   2.5 %      97.5 %
-## (Intercept) -3.67759894 16.96035643
-## engine.size  0.69221808  0.84675366</code></pre>
+<pre><code>##                  2.5 %     97.5 %
+## (Intercept) -3.6775989 16.9603564
+## engine.size  0.6922181  0.8467537</code></pre>
 <p>Observe the similarity between the confidence intervals that are
 computed by the function and the crude confidence intervals that were
 produced by us. The small discrepancies that do exist between the
@@ -1093,19 +1093,19 @@ us apply the function “<code>summary</code>” to the fitted model:</p>
 ## lm(formula = y ~ x)
 ## 
 ## Residuals:
-##      Min       1Q   Median       3Q      Max 
-## -3.03971 -2.13878 -0.65589  1.85178  4.05946 
+##     Min      1Q  Median      3Q     Max 
+## -3.0397 -2.1388 -0.6559  1.8518  4.0595 
 ## 
 ## Coefficients:
 ##             Estimate Std. Error t value Pr(&gt;|t|)  
-## (Intercept)   4.6165     2.3653  1.9518  0.08676 .
-## x             1.4274     0.7195  1.9839  0.08255 .
+## (Intercept)   4.6165     2.3653   1.952   0.0868 .
+## x             1.4274     0.7195   1.984   0.0826 .
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
-## Residual standard error: 2.7908 on 8 degrees of freedom
-## Multiple R-squared:  0.32974,    Adjusted R-squared:  0.24596 
-## F-statistic: 3.9357 on 1 and 8 DF,  p-value: 0.082554</code></pre>
+## Residual standard error: 2.791 on 8 degrees of freedom
+## Multiple R-squared:  0.3297, Adjusted R-squared:  0.246 
+## F-statistic: 3.936 on 1 and 8 DF,  p-value: 0.08255</code></pre>
 <p>The given report contains a table with estimates of the regression
 coefficients and information for conducting hypothesis testing. The
 report contains other information that is associated mainly with the
@@ -1113,7 +1113,7 @@ notion of the residuals from regression line. Our current goal is to
 understand what is that other information.</p>
 <p>The residual from regression for each observation is the difference
 between the value of the response for the observation and the estimated
-expectation of the response under the regression model<a href="#fn77" class="footnote-ref" id="fnref77"><sup>77</sup></a>. An
+expectation of the response under the regression model<a href="#fn76" class="footnote-ref" id="fnref76"><sup>76</sup></a>. An
 observation is a pair <span class="math inline">\((x_i,y_i)\)</span>, with <span class="math inline">\(y_i\)</span> being the value of the
 response. The expectation of the response according to the regression
 model is <span class="math inline">\(a + b \cdot x_i\)</span>, where <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> are the coefficients of
@@ -1159,7 +1159,7 @@ residuals:</p>
 ## -2.5849385 -3.0397075  2.1312463  1.0133998</code></pre>
 <p>Indeed, 10 residuals are produced, one for each observation. In
 particular, the residual for the first observation is -1.5397075, which
-is essentially the value that we obtained<a href="#fn78" class="footnote-ref" id="fnref78"><sup>78</sup></a>.</p>
+is essentially the value that we obtained<a href="#fn77" class="footnote-ref" id="fnref77"><sup>77</sup></a>.</p>
 <p>Return to the report produced by the application of the function
 “<code>summary</code>” to the fitted regression model. The first component in the
 report is the formula that identifies the response and the explanatory
@@ -1182,7 +1182,7 @@ minus 2 produces an unbiased estimator of the variance of the response
 about the regression model. Taking the square root of the estimated
 variance produces an estimate of the standard deviation:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sqrt</span>(<span class="kw">sum</span>(<span class="kw">residuals</span>(fit)<span class="op">^</span><span class="dv">2</span>)<span class="op">/</span><span class="dv">8</span>)</code></pre>
-<pre><code>## [1] 2.7907866</code></pre>
+<pre><code>## [1] 2.790787</code></pre>
 <p>The last computation is a manual computation of the estimated standard
 deviation. It involves squaring the residuals and summing the squares.
 This sum is divided by the number of observations minus 2 (<span class="math inline">\(10-2=8\)</span>).
@@ -1234,7 +1234,7 @@ R-squared implies no linear trend in the data.</p>
 <p>Let us compte manually the difference between 1 and the ratio between
 the variance of the residuals and the variance of the response:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="dv">1</span><span class="op">-</span><span class="kw">var</span>(<span class="kw">residuals</span>(fit))<span class="op">/</span><span class="kw">var</span>(y)</code></pre>
-<pre><code>## [1] 0.32974132</code></pre>
+<pre><code>## [1] 0.3297413</code></pre>
 <p>Observe that the computed value of R-squared is the same as the value
 “<code>Multiple R-squared: 0.3297</code>” that is given in the report.</p>
 <p>The report provides another value of R-squared, titled <em>Adjusted
@@ -1247,7 +1247,7 @@ observations minus 2. Indeed, when we re-compute the ratio using the
 unbiased estimate, the sum of squared residuals divided by <span class="math inline">\(10 - 2 = 8\)</span>,
 we get:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="dv">1</span><span class="op">-</span>(<span class="kw">sum</span>(<span class="kw">residuals</span>(fit)<span class="op">^</span><span class="dv">2</span>)<span class="op">/</span><span class="dv">8</span>)<span class="op">/</span><span class="kw">var</span>(y)</code></pre>
-<pre><code>## [1] 0.24595898</code></pre>
+<pre><code>## [1] 0.245959</code></pre>
 <p>The value of this adjusted quantity is equal to the value
 “<code>Adjusted R-squared: 0.246</code>” in the report.</p>
 <p>Which value of R-squared to use is a matter of personal taste. In any
@@ -1257,7 +1257,7 @@ values becomes negligible.</p>
 the regression model. In the current application of linear regression
 this test reduces to a test of the slope being equal to zero, the same
 test that is reported in the second row of the table of
-coefficients<a href="#fn79" class="footnote-ref" id="fnref79"><sup>79</sup></a>. The <span class="math inline">\(F\)</span> statistic is simply the square of the <span class="math inline">\(t\)</span>
+coefficients<a href="#fn78" class="footnote-ref" id="fnref78"><sup>78</sup></a>. The <span class="math inline">\(F\)</span> statistic is simply the square of the <span class="math inline">\(t\)</span>
 value that is given in the second row of the table. The sampling
 distribution of this statistic under the null hypothesis is the
 <span class="math inline">\(F\)</span>-distribution on 1 and <span class="math inline">\(n-2\)</span> degrees of freedom, which is the
@@ -1285,27 +1285,27 @@ car? We may examine this question using linear regression:</p>
 ## lm(formula = horsepower ~ length, data = cars)
 ## 
 ## Residuals:
-##      Min       1Q   Median       3Q      Max 
-## -53.5706 -20.3471  -6.6903  14.4531 180.7167 
+##    Min     1Q Median     3Q    Max 
+## -53.57 -20.35  -6.69  14.45 180.72 
 ## 
 ## Coefficients:
-##               Estimate Std. Error t value  Pr(&gt;|t|)    
-## (Intercept) -205.39710   32.81851 -6.2586 2.303e-09 ***
-## length         1.77963    0.18814  9.4591 &lt; 2.2e-16 ***
+##              Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) -205.3971    32.8185  -6.259  2.3e-09 ***
+## length         1.7796     0.1881   9.459  &lt; 2e-16 ***
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
-## Residual standard error: 33.118 on 201 degrees of freedom
+## Residual standard error: 33.12 on 201 degrees of freedom
 ##   (2 observations deleted due to missingness)
-## Multiple R-squared:  0.30803,    Adjusted R-squared:  0.30459 
-## F-statistic: 89.474 on 1 and 201 DF,  p-value: &lt; 2.22e-16</code></pre>
+## Multiple R-squared:  0.308,  Adjusted R-squared:  0.3046 
+## F-statistic: 89.47 on 1 and 201 DF,  p-value: &lt; 2.2e-16</code></pre>
 <p>We used one expression to fit the regression model to the data and to
 summarize the outcome of the fit.</p>
 <p>A scatter plot of the two variables together with the regression line may be produced
 using the code:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(horsepower <span class="op">~</span><span class="st"> </span>length, <span class="dt">data=</span>cars)
 <span class="kw">abline</span>(<span class="kw">lm</span>(horsepower <span class="op">~</span><span class="st"> </span>length, <span class="dt">data=</span>cars))</code></pre>
-<p><img src="statthink_files/figure-html/unnamed-chunk-218-1.png" width="60%" style="display: block; margin: auto;" /></p>
+<p><img src="statthink_files/figure-html/unnamed-chunk-221-1.png" width="60%" style="display: block; margin: auto;" /></p>
 <p>From the examination of the figure we may see that indeed there is a
 linear trend in the relation between the length and the power of the
 car. Longer cars tend to have more power. Testing the null hypothesis
@@ -1327,7 +1327,7 @@ the engine than the size of car and is a better explanatory variable.</p>
 <h2><span class="header-section-number">14.5</span> Exercises</h2>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-219" class="exercise"><strong>Exercise 14.1  </strong></span>Figure <a href="ChapRegression.html#fig:Regression8">14.7</a> presents 10 points and
+<p><span id="exr:unnamed-chunk-222" class="exercise"><strong>Exercise 14.1  </strong></span>Figure <a href="ChapRegression.html#fig:Regression8">14.7</a> presents 10 points and
 three lines. One of the lines is colored <em>red</em> and one of the points is
 marked as a <em>red triangle</em>. The points in the plot refer to the data
 frame in Table <span class="math display">\[tab:Regression\_2\]</span> and the three lines refer to the
@@ -1418,7 +1418,7 @@ FIGURE 14.7: Lines and Points
 </div>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-220" class="exercise"><strong>Exercise 14.2  </strong></span>Assume a regression model that describes the
+<p><span id="exr:unnamed-chunk-223" class="exercise"><strong>Exercise 14.2  </strong></span>Assume a regression model that describes the
 relation between the expectation of the response and the value of the
 explanatory variable in the form:</p>
 <p><span class="math display">\[\Expec(Y_i) = 2.13 \cdot x_i - 3.60\;.\]</span></p>
@@ -1432,10 +1432,10 @@ What is the expected value of the response of the 3rd observation?</li>
 
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-221" class="exercise"><strong>Exercise 14.3  </strong></span>The file “<code>aids.csv</code>” contains data on the number of
+<p><span id="exr:unnamed-chunk-224" class="exercise"><strong>Exercise 14.3  </strong></span>The file “<code>aids.csv</code>” contains data on the number of
 diagnosed cases of Aids and the number of deaths associated with Aids
 among adults and adolescents in the United States between 1981 and
-2002<a href="#fn80" class="footnote-ref" id="fnref80"><sup>80</sup></a>. The file can be found on the internet at
+2002<a href="#fn79" class="footnote-ref" id="fnref79"><sup>79</sup></a>. The file can be found on the internet at
 <a href="http://pluto.huji.ac.il/~msby/StatThink/Datasets/aids.csv" class="uri">http://pluto.huji.ac.il/~msby/StatThink/Datasets/aids.csv</a>.</p>
 <p>The file contains 3 variables: The variable “<code>year</code>” that tells the
 relevant year, the variable “<code>diagnosed</code>” that reports the number of
@@ -1464,9 +1464,9 @@ data?</li>
 
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-222" class="exercise"><strong>Exercise 14.4  </strong></span>Below are the percents of the U.S. labor force
+<p><span id="exr:unnamed-chunk-225" class="exercise"><strong>Exercise 14.4  </strong></span>Below are the percents of the U.S. labor force
 (excluding self-employed and unemployed) that are members of a labor
-union<a href="#fn81" class="footnote-ref" id="fnref81"><sup>81</sup></a>. We use this data in order to practice the computation of the
+union<a href="#fn80" class="footnote-ref" id="fnref80"><sup>80</sup></a>. We use this data in order to practice the computation of the
 regression coefficients.</p>
 <p><span class="math display">\[tab:Regression\_4\]</span></p>
 <table>
@@ -1520,7 +1520,7 @@ coefficients of the regression model.</li>
 
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-223" class="exercise"><strong>Exercise 14.5  </strong></span>Assume a regression model was fit to some data that
+<p><span id="exr:unnamed-chunk-226" class="exercise"><strong>Exercise 14.5  </strong></span>Assume a regression model was fit to some data that
 describes the relation between the explanatory variable <span class="math inline">\(x\)</span> and the
 response <span class="math inline">\(y\)</span>. Assume that the coefficients of the fitted model are
 <span class="math inline">\(a=2.5\)</span> and <span class="math inline">\(b=-1.13\)</span>, for the intercept and the slope, respectively.
@@ -1537,9 +1537,9 @@ observation?</li>
 
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-224" class="exercise"><strong>Exercise 14.6  </strong></span>In Chapter <a href="ChapTwoSamp.html#ChapTwoSamp">13</a> we analyzed an example
+<p><span id="exr:unnamed-chunk-227" class="exercise"><strong>Exercise 14.6  </strong></span>In Chapter <a href="ChapTwoSamp.html#ChapTwoSamp">13</a> we analyzed an example
 that involved the difference between fuel consumption in highway and
-city driving conditions as the response<a href="#fn82" class="footnote-ref" id="fnref82"><sup>82</sup></a>. The explanatory variable
+city driving conditions as the response<a href="#fn81" class="footnote-ref" id="fnref81"><sup>81</sup></a>. The explanatory variable
 was a factor that was produced by splitting the cars into two weight
 groups. In this exercise we would like to revisit this example. Here we
 use the weight of the car directly as an explanatory variable. We also
@@ -1648,57 +1648,57 @@ the data.</p></li>
 </div>
 <div class="footnotes">
 <hr />
-<ol start="70">
-<li id="fn70"><p>Run the expression “<code>mean(y)</code>” to obtain <span class="math inline">\(\bar y = 8.97\)</span> as the
-value of the sample average.<a href="ChapRegression.html#fnref70" class="footnote-back">↩</a></p></li>
-<li id="fn71"><p>The actual plot in Figure <span class="math display">\[fig:Regression\_3\]</span> is produced by a
+<ol start="69">
+<li id="fn69"><p>Run the expression “<code>mean(y)</code>” to obtain <span class="math inline">\(\bar y = 8.97\)</span> as the
+value of the sample average.<a href="ChapRegression.html#fnref69" class="footnote-back">↩</a></p></li>
+<li id="fn70"><p>The actual plot in Figure <span class="math display">\[fig:Regression\_3\]</span> is produced by a
 slightly modified code. First an empty plot is produced with the
 expression “<code>plot(c(0,5),c(5,15),type=n,xlab=x,ylab=y)</code>” and then
 the points are added with the expression “<code>points(y~x)</code>”. The lines
 are added as in the text. Finally, a legend is added with the
-function “<code>legend</code>”.<a href="ChapRegression.html#fnref71" class="footnote-back">↩</a></p></li>
-<li id="fn72"><p>According to the model of linear regression, the only effect of
+function “<code>legend</code>”.<a href="ChapRegression.html#fnref70" class="footnote-back">↩</a></p></li>
+<li id="fn71"><p>According to the model of linear regression, the only effect of
 the explanatory variable on the distribution of the response is via
 the expectation. If such an effect, according to the null
 hypothesis, is also excluded then the so called explanatory variable
-is not effecting at all the distribution of the response.<a href="ChapRegression.html#fnref72" class="footnote-back">↩</a></p></li>
-<li id="fn73"><p>The estimator of the slope is obtained via the application of the
+is not effecting at all the distribution of the response.<a href="ChapRegression.html#fnref71" class="footnote-back">↩</a></p></li>
+<li id="fn72"><p>The estimator of the slope is obtained via the application of the
 formula for the computation of the slope to the sample:
-<span class="math inline">\(\frac{1}{n-1}\sum_{i=1}^n (Y_i-\bar Y)(X_i - \bar X)/\frac{1}{n-1}\sum_{i=1}^n (X_i - \bar X)^2\)</span>.<a href="ChapRegression.html#fnref73" class="footnote-back">↩</a></p></li>
-<li id="fn74"><p>Our computation involves rounding up errors, hence the small
+<span class="math inline">\(\frac{1}{n-1}\sum_{i=1}^n (Y_i-\bar Y)(X_i - \bar X)/\frac{1}{n-1}\sum_{i=1}^n (X_i - \bar X)^2\)</span>.<a href="ChapRegression.html#fnref72" class="footnote-back">↩</a></p></li>
+<li id="fn73"><p>Our computation involves rounding up errors, hence the small
 discrepancy between the value we computed and the value in the
-report.<a href="ChapRegression.html#fnref74" class="footnote-back">↩</a></p></li>
-<li id="fn75"><p>Notice that the “<code>horsepower</code>” measurement is missing for two
+report.<a href="ChapRegression.html#fnref73" class="footnote-back">↩</a></p></li>
+<li id="fn74"><p>Notice that the “<code>horsepower</code>” measurement is missing for two
 observation. These observations are deleted for the analysis,
 leaving a total of <span class="math inline">\(n=203\)</span> observations. The number of degrees of
-freedom is <span class="math inline">\(n-2 = 203-2=201\)</span>.<a href="ChapRegression.html#fnref75" class="footnote-back">↩</a></p></li>
-<li id="fn76"><p>The warning message that was made in the context of testing
+freedom is <span class="math inline">\(n-2 = 203-2=201\)</span>.<a href="ChapRegression.html#fnref74" class="footnote-back">↩</a></p></li>
+<li id="fn75"><p>The warning message that was made in the context of testing
 hypotheses on the intercept should be applied also to the
 construction of confidence intervals. If the value 0 is not in the
 range of the explanatory variable then one should be careful when
-interpreting a confidence interval for the intercept.<a href="ChapRegression.html#fnref76" class="footnote-back">↩</a></p></li>
-<li id="fn77"><p>The estimated expectation of the response is also called <em>the
-predicted response</em>.<a href="ChapRegression.html#fnref77" class="footnote-back">↩</a></p></li>
-<li id="fn78"><p>The discrepancy between the value that we computed and the value
+interpreting a confidence interval for the intercept.<a href="ChapRegression.html#fnref75" class="footnote-back">↩</a></p></li>
+<li id="fn76"><p>The estimated expectation of the response is also called <em>the
+predicted response</em>.<a href="ChapRegression.html#fnref76" class="footnote-back">↩</a></p></li>
+<li id="fn77"><p>The discrepancy between the value that we computed and the value
 computed by the function results from rounding up errors. We used
 the vales of the coefficients that appear in the report. These
 values are rounded up. The function “<code>residuals</code>” uses the
-coefficients without rounding.<a href="ChapRegression.html#fnref78" class="footnote-back">↩</a></p></li>
-<li id="fn79"><p>In more complex applications of linear regression, applications
+coefficients without rounding.<a href="ChapRegression.html#fnref77" class="footnote-back">↩</a></p></li>
+<li id="fn78"><p>In more complex applications of linear regression, applications
 that are not considered in this book, the test in the last line of
-the report and the tests of coefficients do not coincide.<a href="ChapRegression.html#fnref79" class="footnote-back">↩</a></p></li>
-<li id="fn80"><p>The data is taken from <a href="http://cnx.org/content/m17088/latest/">Table 1</a> in section “Practice
+the report and the tests of coefficients do not coincide.<a href="ChapRegression.html#fnref78" class="footnote-back">↩</a></p></li>
+<li id="fn79"><p>The data is taken from <a href="http://cnx.org/content/m17088/latest/">Table 1</a> in section “Practice
 in Linear Regression” of the online Textbook <a href="http://cnx.org/content/col10522/1.38">“Collaborative
 Statistics” (Connexions. March 22, 2010.
 http://cnx.org/content/col10522/1.38/)</a>
-by Barbara Illowsky and Susan Dean.<a href="ChapRegression.html#fnref80" class="footnote-back">↩</a></p></li>
-<li id="fn81"><p>Taken from <a href="http://cnx.org/content/m17085/latest/">Homework</a>
+by Barbara Illowsky and Susan Dean.<a href="ChapRegression.html#fnref79" class="footnote-back">↩</a></p></li>
+<li id="fn80"><p>Taken from <a href="http://cnx.org/content/m17085/latest/">Homework</a>
 section in the chapter on linear regression of the online Textbook
 <a href="http://cnx.org/content/col10522/1.38">“Collaborative Statistics” (Connexions. March 22, 2010.
 http://cnx.org/content/col10522/1.38/)</a>
-by Barbara Illowsky and Susan Dean.<a href="ChapRegression.html#fnref81" class="footnote-back">↩</a></p></li>
-<li id="fn82"><p>The response was computed using the expression
-“<code>cars$highway.mpg - cars$city.mpg</code>”<a href="ChapRegression.html#fnref82" class="footnote-back">↩</a></p></li>
+by Barbara Illowsky and Susan Dean.<a href="ChapRegression.html#fnref80" class="footnote-back">↩</a></p></li>
+<li id="fn81"><p>The response was computed using the expression
+“<code>cars$highway.mpg - cars$city.mpg</code>”<a href="ChapRegression.html#fnref81" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>

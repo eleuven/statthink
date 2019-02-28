@@ -25,7 +25,7 @@
 <meta name="author" content="Benjamin Yakir">
 
 
-<meta name="date" content="2019-01-17">
+<meta name="date" content="2019-02-28">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -53,7 +53,7 @@
 <style type="text/css">
 a.sourceLine { display: inline-block; line-height: 1.25; }
 a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; position: absolute; }
+a.sourceLine:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 div.sourceCode { margin: 1em 0; }
@@ -66,13 +66,11 @@ code.sourceCode { white-space: pre-wrap; }
 a.sourceLine { text-indent: -1em; padding-left: 1em; }
 }
 pre.numberSource a.sourceLine
-  { position: relative; }
-pre.numberSource a.sourceLine:empty
-  { position: absolute; }
+  { position: relative; left: -4em; }
 pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
-    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all;
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -145,6 +143,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.7" data-path="ChapIntroR.html"><a href="ChapIntroR.html#exercises"><i class="fa fa-check"></i><b>1.7</b> Exercises</a></li>
 <li class="chapter" data-level="1.8" data-path="ChapIntroR.html"><a href="ChapIntroR.html#summary"><i class="fa fa-check"></i><b>1.8</b> Summary</a><ul>
 <li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li><a href="ChapIntroR.html#r-funcs"><code>R</code> functions introduced in this chapter</a></li>
 <li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#discuss-in-the-forum"><i class="fa fa-check"></i>Discuss in the forum</a></li>
 </ul></li>
 </ul></li>
@@ -156,7 +155,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.2.3" data-path="ChapData.html"><a href="ChapData.html#frequency"><i class="fa fa-check"></i><b>2.2.3</b> Frequency</a></li>
 <li class="chapter" data-level="2.2.4" data-path="ChapData.html"><a href="ChapData.html#critical-evaluation"><i class="fa fa-check"></i><b>2.2.4</b> Critical Evaluation</a></li>
 </ul></li>
-<li class="chapter" data-level="2.3" data-path="ChapData.html"><a href="ChapData.html#readingdata"><i class="fa fa-check"></i><b>2.3</b> Reading Data into <code>R</code></a><ul>
+<li class="chapter" data-level="2.3" data-path="ChapData.html"><a href="ChapData.html#readingdata"><i class="fa fa-check"></i><b>2.3</b> Reading External Data into <code>R</code></a><ul>
 <li class="chapter" data-level="2.3.1" data-path="ChapData.html"><a href="ChapData.html#saving-the-file-and-setting-the-working-directory"><i class="fa fa-check"></i><b>2.3.1</b> Saving the File and Setting the Working Directory</a></li>
 <li class="chapter" data-level="2.3.2" data-path="ChapData.html"><a href="ChapData.html#Data_3"><i class="fa fa-check"></i><b>2.3.2</b> Reading a CSV File into <code>R</code></a></li>
 <li class="chapter" data-level="2.3.3" data-path="ChapData.html"><a href="ChapData.html#data-types"><i class="fa fa-check"></i><b>2.3.3</b> Data Types</a></li>
@@ -164,6 +163,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.4" data-path="ChapData.html"><a href="ChapData.html#exercises-1"><i class="fa fa-check"></i><b>2.4</b> Exercises</a></li>
 <li class="chapter" data-level="2.5" data-path="ChapData.html"><a href="ChapData.html#summary-1"><i class="fa fa-check"></i><b>2.5</b> Summary</a><ul>
 <li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li><a href="ChapIntroR.html#r-funcs"><code>R</code> functions introduced in this chapter</a></li>
 <li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#discuss-in-the-forum"><i class="fa fa-check"></i>Discuss in the forum</a></li>
 </ul></li>
 </ul></li>
@@ -608,12 +608,12 @@ in order to sample the heights of 100 subjects:</p>
 <pre class="sourceCode r"><code class="sourceCode r">pop<span class="fl">.1</span> &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;_data/pop1.csv&quot;</span>)
 X.samp &lt;-<span class="st"> </span><span class="kw">sample</span>(pop<span class="fl">.1</span><span class="op">$</span>height,<span class="dv">100</span>)
 X.samp</code></pre>
-<pre><code>##   [1] 184 161 180 180 174 187 182 154 194 176 168 162 157 170 169 180 178
-##  [18] 177 162 178 164 181 177 171 185 153 176 163 171 168 168 176 175 171
-##  [35] 164 168 179 168 178 151 177 168 163 167 164 164 152 149 175 160 169
-##  [52] 163 176 182 163 180 171 147 167 149 182 175 171 153 167 169 174 154
-##  [69] 176 166 168 186 164 187 162 163 154 177 166 172 174 169 169 179 167
-##  [86] 169 159 164 188 171 185 194 153 177 155 164 164 169 171 163</code></pre>
+<pre><code>##   [1] 178 182 183 172 177 161 163 185 143 157 171 182 182 178 157 165 153
+##  [18] 178 164 168 180 166 192 182 172 164 163 182 165 141 157 158 188 168
+##  [35] 161 158 160 162 163 170 171 183 173 160 178 171 159 170 190 179 159
+##  [52] 173 160 174 179 172 176 181 171 186 155 165 175 191 169 179 166 184
+##  [69] 181 166 158 168 165 168 155 185 196 145 153 163 172 163 177 184 165
+##  [86] 156 140 202 162 157 176 176 171 166 185 171 184 173 174 162</code></pre>
 <p>In the first line of code we produce a data frame that contains the
 information on the entire population. In the second line we select a
 sample of size 100 from the population, and in the third line we present
@@ -637,7 +637,7 @@ the sample.</p>
 heights in the population. A reasonable proposal is to use the sample
 average to serve as an estimate:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(X.samp)</code></pre>
-<pre><code>## [1] 169.76</code></pre>
+<pre><code>## [1] 170.19</code></pre>
 <p>In our artificial example we can actually compute the true population
 mean:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(pop<span class="fl">.1</span><span class="op">$</span>height)</code></pre>
@@ -661,12 +661,12 @@ select another sample and compute its average:</p>
 <pre class="sourceCode r"><code class="sourceCode r">X.samp &lt;-<span class="st"> </span><span class="kw">sample</span>(pop<span class="fl">.1</span><span class="op">$</span>height,<span class="dv">100</span>)
 X.bar &lt;-<span class="st"> </span><span class="kw">mean</span>(X.samp)
 X.bar</code></pre>
-<pre><code>## [1] 169.16</code></pre>
+<pre><code>## [1] 169.08</code></pre>
 <p>and do it once more:</p>
 <pre class="sourceCode r"><code class="sourceCode r">X.samp &lt;-<span class="st"> </span><span class="kw">sample</span>(pop<span class="fl">.1</span><span class="op">$</span>height,<span class="dv">100</span>)
 X.bar &lt;-<span class="st"> </span><span class="kw">mean</span>(X.samp)
 X.bar</code></pre>
-<pre><code>## [1] 170.91</code></pre>
+<pre><code>## [1] 170.89</code></pre>
 <p>In each case we got a different value for the sample average. In the
 first of the last two iterations the result was more than 1 centimeter
 away from the population average, which is equal to 170.035, and in the
@@ -713,7 +713,7 @@ above a few examples of the average. Now we would like to simulate
 length of the number of evaluations we seek (100,000) and then write a
 small program that produces each time a new random sample of size 100
 and assigns the value of the average of that sample to the appropriate
-position in the sequence. Do first and explain later<a href="#fn18" class="footnote-ref" id="fnref18"><sup>18</sup></a>:</p>
+position in the sequence. Do first and explain later<a href="#fn17" class="footnote-ref" id="fnref17"><sup>17</sup></a>:</p>
 <pre class="sourceCode r"><code class="sourceCode r">X.bar &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="dv">0</span>,<span class="dv">10</span><span class="op">^</span><span class="dv">5</span>)
 <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">10</span><span class="op">^</span><span class="dv">5</span>) {
   X.samp &lt;-<span class="st"> </span><span class="kw">sample</span>(pop<span class="fl">.1</span><span class="op">$</span>height,<span class="dv">100</span>)
@@ -775,11 +775,11 @@ original measurement:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(pop<span class="fl">.1</span><span class="op">$</span>height)</code></pre>
 <pre><code>## [1] 170.035</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sd</span>(pop<span class="fl">.1</span><span class="op">$</span>height)</code></pre>
-<pre><code>## [1] 11.232047</code></pre>
+<pre><code>## [1] 11.23205</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(X.bar)</code></pre>
-<pre><code>## [1] 170.03988</code></pre>
+<pre><code>## [1] 170.0346</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sd</span>(X.bar)</code></pre>
-<pre><code>## [1] 1.1259946</code></pre>
+<pre><code>## [1] 1.11987</code></pre>
 <p>Observe that the expectation of the population and the expectation of
 the sample average, are practically the same, the standard deviation of
 the sample average is about 10 times smaller than the standard deviation
@@ -790,7 +790,7 @@ approximation of the probability of the sample average falling within 1
 centimeter of the population mean. Let us first compute the relevant
 probability and then explain the details of the computation:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(<span class="kw">abs</span>(X.bar <span class="op">-</span><span class="st"> </span><span class="kw">mean</span>(pop<span class="fl">.1</span><span class="op">$</span>height)) <span class="op">&lt;=</span><span class="st"> </span><span class="dv">1</span>)</code></pre>
-<pre><code>## [1] 0.62483</code></pre>
+<pre><code>## [1] 0.62649</code></pre>
 <p>Hence we get that the probability of the given event is about 62.6%.</p>
 <p>The object “<code>X.bar</code>” is a sequence of length 100,000 that contains the
 simulated sample averages. This sequence represents the distribution of
@@ -810,7 +810,7 @@ supporters was denoted by <span class="math inline">\(p\)</span>. A sample of si
 in order to estimate the size of <span class="math inline">\(p\)</span>. We identified that the
 distribution of <span class="math inline">\(X\)</span>, the number of supporters in the sample, is
 <span class="math inline">\(\mathrm{Binomial}(300,p)\)</span>. This distribution is the sampling
-distribution<a href="#fn19" class="footnote-ref" id="fnref19"><sup>19</sup></a> of <span class="math inline">\(X\)</span>. One may use the proportion in the sample of
+distribution<a href="#fn18" class="footnote-ref" id="fnref18"><sup>18</sup></a> of <span class="math inline">\(X\)</span>. One may use the proportion in the sample of
 supporters, the number of supporters in the sample divided by 300, as an
 estimate to the parameter <span class="math inline">\(p\)</span>. The sampling distribution of this
 quantity, <span class="math inline">\(X/300\)</span>, may be considered in order to assess the discrepancy
@@ -854,9 +854,9 @@ FIGURE 7.2: Distributions of an Average and a Single Binomial(10,0.5)
 </div>
 <p>Examine the sampling distribution of the Binomial average:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(X.bar)</code></pre>
-<pre><code>## [1] 4.9994747</code></pre>
+<pre><code>## [1] 5.000031</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sd</span>(X.bar)</code></pre>
-<pre><code>## [1] 0.19827376</code></pre>
+<pre><code>## [1] 0.198051</code></pre>
 <p>The histogram of the sample average is presented in the lower panel of
 Figure <a href="ChapSampDist.html#fig:SampDist7">7.2</a>. Compare it to the distribution of a single
 Binomial random variable that appears in the upper panel. Notice, once
@@ -906,7 +906,7 @@ the average.</p>
 of the Normal distribution with the same expectation and the same
 standard deviation as the average of the Binomials:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">qnorm</span>(<span class="kw">c</span>(<span class="fl">0.025</span>,<span class="fl">0.975</span>),<span class="kw">mean</span>(X.bar),<span class="kw">sd</span>(X.bar))</code></pre>
-<pre><code>## [1] 4.6108653 5.3880841</code></pre>
+<pre><code>## [1] 4.611859 5.388204</code></pre>
 <p>Observe the similarity between the percentiles of the distribution of
 the average and the percentiles of the Normal distribution. This
 similarity is a reflection of the Normal approximation of the sampling
@@ -968,11 +968,11 @@ distribution of an average of 1000 measurements. The distribution of
 single measurement in each of the examples is <span class="math inline">\(\mathrm{Uniform}(3,7)\)</span>.</p>
 <p>Consider the expectation of sample average for the three sample sizes:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(unif<span class="fl">.10</span>)</code></pre>
-<pre><code>## [1] 5.0003975</code></pre>
+<pre><code>## [1] 5.000141</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(unif<span class="fl">.100</span>)</code></pre>
-<pre><code>## [1] 4.9995767</code></pre>
+<pre><code>## [1] 5.000465</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(unif<span class="fl">.1000</span>)</code></pre>
-<pre><code>## [1] 4.9999472</code></pre>
+<pre><code>## [1] 4.999981</code></pre>
 <p>For all sample size the expectation of the sample average is equal to 5,
 which is the expectation of the <span class="math inline">\(\mathrm{Uniform}(3,7)\)</span> distribution.</p>
 <p>Recall that the variance of the <span class="math inline">\(\mathrm{Uniform}(a,b)\)</span> distribution is
@@ -980,11 +980,11 @@ which is the expectation of the <span class="math inline">\(\mathrm{Uniform}(3,7
 <span class="math inline">\(\Var(X) = (7-3)^2/12 = 16/12 \approx 1.3333\)</span>. The variances of the
 sample averages are:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">var</span>(unif<span class="fl">.10</span>)</code></pre>
-<pre><code>## [1] 0.13327908</code></pre>
+<pre><code>## [1] 0.1329634</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">var</span>(unif<span class="fl">.100</span>)</code></pre>
-<pre><code>## [1] 0.01335441</code></pre>
+<pre><code>## [1] 0.01341528</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">var</span>(unif<span class="fl">.1000</span>)</code></pre>
-<pre><code>## [1] 0.0013266032</code></pre>
+<pre><code>## [1] 0.001338488</code></pre>
 <p>Notice that the variances decrease with the increase of the sample
 sizes. The decrease is according to the formula
 <span class="math inline">\(\Var(\bar X) = \Var(X)/n\)</span>.</p>
@@ -1068,19 +1068,19 @@ expectations of the sample averages are equal to the expectation of the
 measurement and the variances of the sample averages follow the relation
 <span class="math inline">\(\Var(\bar X) = \Var (X)/n\)</span>:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(exp<span class="fl">.10</span>)</code></pre>
-<pre><code>## [1] 1.9999383</code></pre>
+<pre><code>## [1] 1.999011</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(exp<span class="fl">.100</span>)</code></pre>
-<pre><code>## [1] 2.0005219</code></pre>
+<pre><code>## [1] 2.000074</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(exp<span class="fl">.1000</span>)</code></pre>
-<pre><code>## [1] 2.0000078</code></pre>
+<pre><code>## [1] 2.000183</code></pre>
 <p>So the expectations of the sample average are all equal to 2. For the
 variance we get:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">var</span>(exp<span class="fl">.10</span>)</code></pre>
-<pre><code>## [1] 0.40447324</code></pre>
+<pre><code>## [1] 0.3980615</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">var</span>(exp<span class="fl">.100</span>)</code></pre>
-<pre><code>## [1] 0.039919575</code></pre>
+<pre><code>## [1] 0.04012221</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">var</span>(exp<span class="fl">.1000</span>)</code></pre>
-<pre><code>## [1] 0.0039724056</code></pre>
+<pre><code>## [1] 0.004005182</code></pre>
 <p>Which is in agreement with the decrease proposed by the theory,</p>
 <p>However, when one examines the densities of the sample averages in
 Figure @reF(fig:SampDist9) one may see a clear distinction between the
@@ -1183,7 +1183,7 @@ sample average.</li>
 
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-109" class="exercise"><strong>Exercise 7.2  </strong></span>A subatomic particle hits a linear detector at random
+<p><span id="exr:unnamed-chunk-112" class="exercise"><strong>Exercise 7.2  </strong></span>A subatomic particle hits a linear detector at random
 locations. The length of the detector is 10 nm and the hits are
 uniformly distributed. The location of 25 random hits, measured from a
 specified endpoint of the interval, are marked and the average of the
@@ -1276,23 +1276,23 @@ computation. The justification is the Central Limit Theorem.</p>
 </div>
 <div class="footnotes">
 <hr />
-<ol start="18">
-<li id="fn18"><p>Running this simulation, and similar simulations of the same
+<ol start="17">
+<li id="fn17"><p>Running this simulation, and similar simulations of the same
 nature that will be considered in the sequel, demands more of the
 computer’s resources than the examples that were considered up until
 now. Beware that running times may be long and, depending on the
 strength of your computer and your patience, too long. You may save
 time by running less iterations, replacing, say, “<code>10^5</code>” by
 “<code>10^4</code>”. The results of the simulation will be less accurate, but
-will still be meaningful.<a href="ChapSampDist.html#fnref18" class="footnote-back">↩</a></p></li>
-<li id="fn19"><p>Mathematically speaking, the Binomial distribution is only an
+will still be meaningful.<a href="ChapSampDist.html#fnref17" class="footnote-back">↩</a></p></li>
+<li id="fn18"><p>Mathematically speaking, the Binomial distribution is only an
 approximation to the sampling distribution of <span class="math inline">\(X\)</span>. Actually, the
 Binomial is an exact description to the distribution only in the
 case where each subject has the chance be represented in the sample
 more than once. However, only when the size of the sample is
 comparable to the size of the population would the Binomial
 distribution fail to be an adequate approximation to the sampling
-distribution.<a href="ChapSampDist.html#fnref19" class="footnote-back">↩</a></p></li>
+distribution.<a href="ChapSampDist.html#fnref18" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>

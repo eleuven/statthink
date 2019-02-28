@@ -25,7 +25,7 @@
 <meta name="author" content="Benjamin Yakir">
 
 
-<meta name="date" content="2019-01-17">
+<meta name="date" content="2019-02-28">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -53,7 +53,7 @@
 <style type="text/css">
 a.sourceLine { display: inline-block; line-height: 1.25; }
 a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; position: absolute; }
+a.sourceLine:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 div.sourceCode { margin: 1em 0; }
@@ -66,13 +66,11 @@ code.sourceCode { white-space: pre-wrap; }
 a.sourceLine { text-indent: -1em; padding-left: 1em; }
 }
 pre.numberSource a.sourceLine
-  { position: relative; }
-pre.numberSource a.sourceLine:empty
-  { position: absolute; }
+  { position: relative; left: -4em; }
 pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
-    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all;
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -145,6 +143,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.7" data-path="ChapIntroR.html"><a href="ChapIntroR.html#exercises"><i class="fa fa-check"></i><b>1.7</b> Exercises</a></li>
 <li class="chapter" data-level="1.8" data-path="ChapIntroR.html"><a href="ChapIntroR.html#summary"><i class="fa fa-check"></i><b>1.8</b> Summary</a><ul>
 <li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li><a href="ChapIntroR.html#r-funcs"><code>R</code> functions introduced in this chapter</a></li>
 <li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#discuss-in-the-forum"><i class="fa fa-check"></i>Discuss in the forum</a></li>
 </ul></li>
 </ul></li>
@@ -156,7 +155,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.2.3" data-path="ChapData.html"><a href="ChapData.html#frequency"><i class="fa fa-check"></i><b>2.2.3</b> Frequency</a></li>
 <li class="chapter" data-level="2.2.4" data-path="ChapData.html"><a href="ChapData.html#critical-evaluation"><i class="fa fa-check"></i><b>2.2.4</b> Critical Evaluation</a></li>
 </ul></li>
-<li class="chapter" data-level="2.3" data-path="ChapData.html"><a href="ChapData.html#readingdata"><i class="fa fa-check"></i><b>2.3</b> Reading Data into <code>R</code></a><ul>
+<li class="chapter" data-level="2.3" data-path="ChapData.html"><a href="ChapData.html#readingdata"><i class="fa fa-check"></i><b>2.3</b> Reading External Data into <code>R</code></a><ul>
 <li class="chapter" data-level="2.3.1" data-path="ChapData.html"><a href="ChapData.html#saving-the-file-and-setting-the-working-directory"><i class="fa fa-check"></i><b>2.3.1</b> Saving the File and Setting the Working Directory</a></li>
 <li class="chapter" data-level="2.3.2" data-path="ChapData.html"><a href="ChapData.html#Data_3"><i class="fa fa-check"></i><b>2.3.2</b> Reading a CSV File into <code>R</code></a></li>
 <li class="chapter" data-level="2.3.3" data-path="ChapData.html"><a href="ChapData.html#data-types"><i class="fa fa-check"></i><b>2.3.3</b> Data Types</a></li>
@@ -164,6 +163,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.4" data-path="ChapData.html"><a href="ChapData.html#exercises-1"><i class="fa fa-check"></i><b>2.4</b> Exercises</a></li>
 <li class="chapter" data-level="2.5" data-path="ChapData.html"><a href="ChapData.html#summary-1"><i class="fa fa-check"></i><b>2.5</b> Summary</a><ul>
 <li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li><a href="ChapIntroR.html#r-funcs"><code>R</code> functions introduced in this chapter</a></li>
 <li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#discuss-in-the-forum"><i class="fa fa-check"></i>Discuss in the forum</a></li>
 </ul></li>
 </ul></li>
@@ -622,9 +622,9 @@ research question. We will demonstrate different inferential procedures
 using a specific data set with the aim of making the discussion of the
 different procedures more concrete. The same data set will be used for
 all procedures that are presented in
-Chapters <a href="ChapEstimation.html#ChapEstimation">10</a>–<a href="ChapLogistic.html#ChapLogistic">15</a><a href="#fn23" class="footnote-ref" id="fnref23"><sup>23</sup></a>. This data set contains
+Chapters <a href="ChapEstimation.html#ChapEstimation">10</a>–<a href="ChapLogistic.html#ChapLogistic">15</a><a href="#fn22" class="footnote-ref" id="fnref22"><sup>22</sup></a>. This data set contains
 information on various models of cars and is stored in the CVS file
-“<code>cars.csv</code>”<a href="#fn24" class="footnote-ref" id="fnref24"><sup>24</sup></a>. The file can be found on the internet at
+“<code>cars.csv</code>”<a href="#fn23" class="footnote-ref" id="fnref23"><sup>23</sup></a>. The file can be found on the internet at
 <a href="http://pluto.huji.ac.il/~msby/StatThink/Datasets/cars.csv" class="uri">http://pluto.huji.ac.il/~msby/StatThink/Datasets/cars.csv</a>. You are
 advised to download this file to your computer and store it in the
 working directory of <code>R</code>.</p>
@@ -640,30 +640,30 @@ produce a brief summary:</p>
 ##  mitsubishi: 13                             wagon      :25               
 ##  subaru    : 12                                                          
 ##  (Other)   :100                                                          
-##  engine.location   wheel.base          length           width       
-##  front:202       Min.   : 86.600   Min.   :141.10   Min.   :60.300  
-##  rear :  3       1st Qu.: 94.500   1st Qu.:166.30   1st Qu.:64.100  
-##                  Median : 97.000   Median :173.20   Median :65.500  
-##                  Mean   : 98.757   Mean   :174.05   Mean   :65.908  
-##                  3rd Qu.:102.400   3rd Qu.:183.10   3rd Qu.:66.900  
-##                  Max.   :120.900   Max.   :208.10   Max.   :72.300  
-##                                                                     
-##      height        curb.weight      engine.size       horsepower    
-##  Min.   :47.800   Min.   :1488.0   Min.   : 61.00   Min.   : 48.00  
-##  1st Qu.:52.000   1st Qu.:2145.0   1st Qu.: 97.00   1st Qu.: 70.00  
-##  Median :54.100   Median :2414.0   Median :120.00   Median : 95.00  
-##  Mean   :53.725   Mean   :2555.6   Mean   :126.91   Mean   :104.26  
-##  3rd Qu.:55.500   3rd Qu.:2935.0   3rd Qu.:141.00   3rd Qu.:116.00  
-##  Max.   :59.800   Max.   :4066.0   Max.   :326.00   Max.   :288.00  
-##                                                     NA&#39;s   :2       
-##     peak.rpm         city.mpg      highway.mpg         price      
-##  Min.   :4150.0   Min.   :13.00   Min.   :16.000   Min.   : 5118  
-##  1st Qu.:4800.0   1st Qu.:19.00   1st Qu.:25.000   1st Qu.: 7775  
-##  Median :5200.0   Median :24.00   Median :30.000   Median :10295  
-##  Mean   :5125.4   Mean   :25.22   Mean   :30.751   Mean   :13207  
-##  3rd Qu.:5500.0   3rd Qu.:30.00   3rd Qu.:34.000   3rd Qu.:16500  
-##  Max.   :6600.0   Max.   :49.00   Max.   :54.000   Max.   :45400  
-##  NA&#39;s   :2                                         NA&#39;s   :4</code></pre>
+##  engine.location   wheel.base         length          width      
+##  front:202       Min.   : 86.60   Min.   :141.1   Min.   :60.30  
+##  rear :  3       1st Qu.: 94.50   1st Qu.:166.3   1st Qu.:64.10  
+##                  Median : 97.00   Median :173.2   Median :65.50  
+##                  Mean   : 98.76   Mean   :174.0   Mean   :65.91  
+##                  3rd Qu.:102.40   3rd Qu.:183.1   3rd Qu.:66.90  
+##                  Max.   :120.90   Max.   :208.1   Max.   :72.30  
+##                                                                  
+##      height       curb.weight    engine.size      horsepower   
+##  Min.   :47.80   Min.   :1488   Min.   : 61.0   Min.   : 48.0  
+##  1st Qu.:52.00   1st Qu.:2145   1st Qu.: 97.0   1st Qu.: 70.0  
+##  Median :54.10   Median :2414   Median :120.0   Median : 95.0  
+##  Mean   :53.72   Mean   :2556   Mean   :126.9   Mean   :104.3  
+##  3rd Qu.:55.50   3rd Qu.:2935   3rd Qu.:141.0   3rd Qu.:116.0  
+##  Max.   :59.80   Max.   :4066   Max.   :326.0   Max.   :288.0  
+##                                                 NA&#39;s   :2      
+##     peak.rpm       city.mpg      highway.mpg        price      
+##  Min.   :4150   Min.   :13.00   Min.   :16.00   Min.   : 5118  
+##  1st Qu.:4800   1st Qu.:19.00   1st Qu.:25.00   1st Qu.: 7775  
+##  Median :5200   Median :24.00   Median :30.00   Median :10295  
+##  Mean   :5125   Mean   :25.22   Mean   :30.75   Mean   :13207  
+##  3rd Qu.:5500   3rd Qu.:30.00   3rd Qu.:34.00   3rd Qu.:16500  
+##  Max.   :6600   Max.   :49.00   Max.   :54.00   Max.   :45400  
+##  NA&#39;s   :2                                      NA&#39;s   :4</code></pre>
 <p>Observe that the first 6 variables are factors, i.e. they contain
 qualitative data that is associated with categorization or the
 description of an attribute. The last 11 variable are numeric and
@@ -678,7 +678,7 @@ numerical variables have a special category titled “<code>NA’s</code>”. Th
 category describes the number of missing values among the observations.
 For a given variable, the observations for which a value for the
 variable is not recorded, are marked as missing. <code>R</code> uses the symbol
-“<code>NA</code>” to identify a missing value<a href="#fn25" class="footnote-ref" id="fnref25"><sup>25</sup></a>.</p>
+“<code>NA</code>” to identify a missing value<a href="#fn24" class="footnote-ref" id="fnref24"><sup>24</sup></a>.</p>
 <p>Missing observations are a concern in the analysis of statistical data.
 If the relative frequency of missing values is substantial and the
 reason for not obtaining the data for specific observations is related
@@ -1035,7 +1035,7 @@ function of the sample average.</p>
 statistic is necessarily Normal. In many cases it is not, even for a
 large sample size. For example, the minimal value of a sample that is
 generated from the Exponential distribution can be shown to follow the
-Exponential distribution with an appropriate rate<a href="#fn26" class="footnote-ref" id="fnref26"><sup>26</sup></a>, regardless of the
+Exponential distribution with an appropriate rate<a href="#fn25" class="footnote-ref" id="fnref25"><sup>25</sup></a>, regardless of the
 sample size.</p>
 </div>
 <div id="simulations" class="section level3">
@@ -1084,13 +1084,13 @@ of $12,000 for a car) and validate the approximation for that parameter
 value.</p>
 <p>The simulation itself is carried out by the generation of a sample of
 size <span class="math inline">\(n=201\)</span> from the <span class="math inline">\(\mathrm{Exponential}(1/1200)\)</span> distribution using
-the function “<code>rexp</code>” for generating Exponential samples<a href="#fn27" class="footnote-ref" id="fnref27"><sup>27</sup></a>. The
+the function “<code>rexp</code>” for generating Exponential samples<a href="#fn26" class="footnote-ref" id="fnref26"><sup>26</sup></a>. The
 function for computing the average (<code>mean</code>) is applied to each sample
 and the result stored. We repeat this process a large number of times
 (100,000 is the typical number we use) in order to produce an
 approximation of the sampling distribution of the sample average.
 Finally, we check the relative frequency of cases where the simulated
-average is within the given range<a href="#fn28" class="footnote-ref" id="fnref28"><sup>28</sup></a>. This relative frequency is an
+average is within the given range<a href="#fn27" class="footnote-ref" id="fnref27"><sup>27</sup></a>. This relative frequency is an
 approximation of the required probability and may be compared to the
 target value of 0.95.</p>
 <p>Let us run the proposed simulation for the sample size of <span class="math inline">\(n=201\)</span> and
@@ -1103,7 +1103,7 @@ deviation is <span class="math inline">\(0.0705\times 12000\)</span>. Hence:</p>
   X.bar[i] &lt;-<span class="st"> </span><span class="kw">mean</span>(X)
 }
 <span class="kw">mean</span>(<span class="kw">abs</span>(X.bar<span class="dv">-12000</span>) <span class="op">&lt;=</span><span class="st"> </span><span class="fl">1.96</span><span class="op">*</span><span class="fl">0.0705</span><span class="op">*</span><span class="dv">12000</span>)</code></pre>
-<pre><code>## [1] 0.95085</code></pre>
+<pre><code>## [1] 0.94978</code></pre>
 <p>Observe that the simulation produces 0.9496 as the probability of the
 interval. This result is close enough to the target probability of 0.95,
 proposing that the Normal approximation is adequate in this example.</p>
@@ -1128,7 +1128,7 @@ we specify the parameters of the Uniform distribution then we may use
 simulations in order to compute the range.</p>
 <p>As a specific example let the distribution of an observation be
 <span class="math inline">\(\mathrm{Uniform}(3,7)\)</span>. In the simulation we generate a sample of size
-<span class="math inline">\(n=100\)</span> from this distribution<a href="#fn29" class="footnote-ref" id="fnref29"><sup>29</sup></a> and compute the mid-range for the
+<span class="math inline">\(n=100\)</span> from this distribution<a href="#fn28" class="footnote-ref" id="fnref28"><sup>28</sup></a> and compute the mid-range for the
 sample.</p>
 <p>For the computation of the statistic we need to obtain the minimal and
 the maximal values of the sample. The minimal value of a sequence is
@@ -1137,7 +1137,7 @@ sequence and the output is the minimal value of the sequence. Similarly,
 the maximal value is computed with the function “<code>max</code>”. Again, the
 input to the function is a sequence and the output is the maximal value
 in the sequence. The statistic itself is obtained by adding the two
-extreme values to each other and dividing the sum by two<a href="#fn30" class="footnote-ref" id="fnref30"><sup>30</sup></a>.</p>
+extreme values to each other and dividing the sum by two<a href="#fn29" class="footnote-ref" id="fnref29"><sup>29</sup></a>.</p>
 <p>We produce, just as before, a large number of samples and compute the
 value of the statistic to each sample. The distribution of the simulated
 values of the statistic serves as an approximation of the sampling
@@ -1152,12 +1152,12 @@ the statistic can be identified with the aid of the function
 “<code>quantile</code>” that was presented in the first part of the book. The first
 argument to the function is a sequence of values and the second argument
 is a number <span class="math inline">\(p\)</span> between 0 and 1. The output of the function is the
-<span class="math inline">\(p\)</span>-percentile of the sequence<a href="#fn31" class="footnote-ref" id="fnref31"><sup>31</sup></a>. The <span class="math inline">\(p\)</span>-percentile of the simulated
+<span class="math inline">\(p\)</span>-percentile of the sequence<a href="#fn30" class="footnote-ref" id="fnref30"><sup>30</sup></a>. The <span class="math inline">\(p\)</span>-percentile of the simulated
 sequence serves as an approximation of the <span class="math inline">\(p\)</span>-percentile of the
 sampling distribution of the statistic.</p>
 <p>The second argument to the function “<code>quantile</code>” may be a sequence of
 values between 0 and 1. If so, the percentile for each value in the
-second argument is computed<a href="#fn32" class="footnote-ref" id="fnref32"><sup>32</sup></a>.</p>
+second argument is computed<a href="#fn31" class="footnote-ref" id="fnref31"><sup>31</sup></a>.</p>
 <p>Let us carry out the simulation that produces an approximation of the
 central region that contains 95% of the sampling distribution of the
 mid-range statistic for the Uniform distribution:</p>
@@ -1167,8 +1167,8 @@ mid-range statistic for the Uniform distribution:</p>
   mid.range[i] &lt;-<span class="st"> </span>(<span class="kw">max</span>(X)<span class="op">+</span><span class="kw">min</span>(X))<span class="op">/</span><span class="dv">2</span>
 }
 <span class="kw">quantile</span>(mid.range,<span class="kw">c</span>(<span class="fl">0.025</span>,<span class="fl">0.975</span>))</code></pre>
-<pre><code>##      2.5%     97.5% 
-## 4.9413242 5.0587529</code></pre>
+<pre><code>##     2.5%    97.5% 
+## 4.941019 5.058398</code></pre>
 <p>Observe that (approximately) 95% of the sampling distribution of the
 statistic are in the range <span class="math inline">\([4.941680, 5.059004]\)</span>.</p>
 <p>Simulations can be used in order to compute the expectation, the
@@ -1180,9 +1180,9 @@ sequence “<code>mid.range</code>” in order to obtain the expectation and the
 standard deviation of the mid-range statistic of a sample of 100
 observations from the <span class="math inline">\(\mathrm{Uniform}(3,7)\)</span> distribution:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(mid.range)</code></pre>
-<pre><code>## [1] 5.0000258</code></pre>
+<pre><code>## [1] 4.999871</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sd</span>(mid.range)</code></pre>
-<pre><code>## [1] 0.027839354</code></pre>
+<pre><code>## [1] 0.02772162</code></pre>
 <p>The expectation of the statistic is obtained by the application of the
 function “<code>mean</code>” to the sequence. Observe that it is practically equal
 to 5. The standard deviation is obtained by the application of the
@@ -1193,7 +1193,7 @@ function “<code>sd</code>”. Its value is approximately equal to 0.028.</p>
 <h2><span class="header-section-number">9.5</span> Exercises</h2>
 <p>Magnetic fields have been shown to have an effect on living tissue and
 were proposed as a method for treating pain. In the case study presented
-here, Carlos Vallbona and his colleagues<a href="#fn33" class="footnote-ref" id="fnref33"><sup>33</sup></a> sought to answer the
+here, Carlos Vallbona and his colleagues<a href="#fn32" class="footnote-ref" id="fnref32"><sup>32</sup></a> sought to answer the
 question “Can the chronic pain experienced by postpolio patients be
 relieved by magnetic fields applied directly over an identified pain
 trigger point?”</p>
@@ -1213,7 +1213,7 @@ Relief</a>
 that is presented in that site.</p>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-139" class="exercise"><strong>Exercise 9.1  </strong></span>The data for the 50 patients is stored in file
+<p><span id="exr:unnamed-chunk-142" class="exercise"><strong>Exercise 9.1  </strong></span>The data for the 50 patients is stored in file
 “<code>magnets.csv</code>”. The file can be found on the internet at
 <a href="http://pluto.huji.ac.il/~msby/StatThink/Datasets/magnets.csv" class="uri">http://pluto.huji.ac.il/~msby/StatThink/Datasets/magnets.csv</a>. Download
 this file to your computer and store it in the working directory of <code>R</code>.
@@ -1244,7 +1244,7 @@ subsequence?</li>
 
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-140" class="exercise"><strong>Exercise 9.2  </strong></span>In Chapter <a href="ChapTwoSamp.html#ChapTwoSamp">13</a> we will present a
+<p><span id="exr:unnamed-chunk-143" class="exercise"><strong>Exercise 9.2  </strong></span>In Chapter <a href="ChapTwoSamp.html#ChapTwoSamp">13</a> we will present a
 statistical test for testing if there is a difference between the
 patients that received the active magnets and the patients that received
 the inactive placebo in terms of the <em>expected</em> value of the variable
@@ -1345,41 +1345,41 @@ outcome of the trial.</p>
 </div>
 <div class="footnotes">
 <hr />
-<ol start="23">
-<li id="fn23"><p>Other data sets will be used in Chapter <span class="math display">\[ch:CaseStudies\]</span> and in
-the quizzes and assignments.<a href="ChapInference.html#fnref23" class="footnote-back">↩</a></p></li>
-<li id="fn24"><p>The original “Automobiles” data set is accessible at the UCI
+<ol start="22">
+<li id="fn22"><p>Other data sets will be used in Chapter <span class="math display">\[ch:CaseStudies\]</span> and in
+the quizzes and assignments.<a href="ChapInference.html#fnref22" class="footnote-back">↩</a></p></li>
+<li id="fn23"><p>The original “Automobiles” data set is accessible at the UCI
 Machine Learning Repository (<a href="http://archive.ics.uci.edu/ml" class="uri">http://archive.ics.uci.edu/ml</a>). This
 data was assembled by Jeffrey C. Schlimmer, using as source the 1985
 Model Import Car and Truck Specifications, 1985 Ward’s Automotive
 Yearbook. The current file “<code>cars.csv</code>” is based on all 205
 observations of the original data set. We selected 17 of the 26
-variables available in the original source.<a href="ChapInference.html#fnref24" class="footnote-back">↩</a></p></li>
-<li id="fn25"><p>Indeed, if you scan the CSV file directly by opening it with a
-spreadsheet then every now and again you will encounter this symbol.<a href="ChapInference.html#fnref25" class="footnote-back">↩</a></p></li>
-<li id="fn26"><p>If the rate of an Exponential measurement is <span class="math inline">\(\lambda\)</span> then the
-rate of the minimum of <span class="math inline">\(n\)</span> such measurements is <span class="math inline">\(n\lambda\)</span>.<a href="ChapInference.html#fnref26" class="footnote-back">↩</a></p></li>
-<li id="fn27"><p>The expression for generating a sample is “<code>rexp(201,1/12000)</code>”<a href="ChapInference.html#fnref27" class="footnote-back">↩</a></p></li>
-<li id="fn28"><p>In the case where the simulated averages are stored in the
+variables available in the original source.<a href="ChapInference.html#fnref23" class="footnote-back">↩</a></p></li>
+<li id="fn24"><p>Indeed, if you scan the CSV file directly by opening it with a
+spreadsheet then every now and again you will encounter this symbol.<a href="ChapInference.html#fnref24" class="footnote-back">↩</a></p></li>
+<li id="fn25"><p>If the rate of an Exponential measurement is <span class="math inline">\(\lambda\)</span> then the
+rate of the minimum of <span class="math inline">\(n\)</span> such measurements is <span class="math inline">\(n\lambda\)</span>.<a href="ChapInference.html#fnref25" class="footnote-back">↩</a></p></li>
+<li id="fn26"><p>The expression for generating a sample is “<code>rexp(201,1/12000)</code>”<a href="ChapInference.html#fnref26" class="footnote-back">↩</a></p></li>
+<li id="fn27"><p>In the case where the simulated averages are stored in the
 sequence “<code>X.bar</code>” then we may use the expression
 “<code>mean(abs(X.bar - 12000) &lt;= 1.96*0.0705*12000)</code>” in order to
-compute the relative frequency.<a href="ChapInference.html#fnref28" class="footnote-back">↩</a></p></li>
-<li id="fn29"><p>With the expression “<code>runif(100,3,7)</code>”.<a href="ChapInference.html#fnref29" class="footnote-back">↩</a></p></li>
-<li id="fn30"><p>If the sample is stored in an object by the name “<code>X</code>” then one
+compute the relative frequency.<a href="ChapInference.html#fnref27" class="footnote-back">↩</a></p></li>
+<li id="fn28"><p>With the expression “<code>runif(100,3,7)</code>”.<a href="ChapInference.html#fnref28" class="footnote-back">↩</a></p></li>
+<li id="fn29"><p>If the sample is stored in an object by the name “<code>X</code>” then one
 may compute the mid-range statistic with the expression
-“<code>(max(X)+min(X))/2</code>”.<a href="ChapInference.html#fnref30" class="footnote-back">↩</a></p></li>
-<li id="fn31"><p>The <span class="math inline">\(p\)</span>-percentile of a sequence is a number with the property
+“<code>(max(X)+min(X))/2</code>”.<a href="ChapInference.html#fnref29" class="footnote-back">↩</a></p></li>
+<li id="fn30"><p>The <span class="math inline">\(p\)</span>-percentile of a sequence is a number with the property
 that the proportion of entries with values smaller than that number
 is <span class="math inline">\(p\)</span> and the proportion of entries with values larger than the
-number is <span class="math inline">\(1-p\)</span>.<a href="ChapInference.html#fnref31" class="footnote-back">↩</a></p></li>
-<li id="fn32"><p>If the simulated values of the statistic are stored in a sequence
+number is <span class="math inline">\(1-p\)</span>.<a href="ChapInference.html#fnref30" class="footnote-back">↩</a></p></li>
+<li id="fn31"><p>If the simulated values of the statistic are stored in a sequence
 by the name “<code>mid.range</code>” then the 0.025-percentile and the
 0.975-percentile of the sequence can be computed with the expression
-“<code>quantile(mid.range,c(0.025,0.975))</code>”.<a href="ChapInference.html#fnref32" class="footnote-back">↩</a></p></li>
-<li id="fn33"><p>Vallbona, Carlos, Carlton F. Hazlewood, and Gabor Jurida. (1997).
+“<code>quantile(mid.range,c(0.025,0.975))</code>”.<a href="ChapInference.html#fnref31" class="footnote-back">↩</a></p></li>
+<li id="fn32"><p>Vallbona, Carlos, Carlton F. Hazlewood, and Gabor Jurida. (1997).
 Response of pain to static magnetic fields in postpolio patients: A
 double-blind pilot study. Archives of Physical and Rehabilitation
-Medicine 78(11): 1200-1203.<a href="ChapInference.html#fnref33" class="footnote-back">↩</a></p></li>
+Medicine 78(11): 1200-1203.<a href="ChapInference.html#fnref32" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>

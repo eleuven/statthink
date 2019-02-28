@@ -25,7 +25,7 @@
 <meta name="author" content="Benjamin Yakir">
 
 
-<meta name="date" content="2019-01-17">
+<meta name="date" content="2019-02-28">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -53,7 +53,7 @@
 <style type="text/css">
 a.sourceLine { display: inline-block; line-height: 1.25; }
 a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; position: absolute; }
+a.sourceLine:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 div.sourceCode { margin: 1em 0; }
@@ -66,13 +66,11 @@ code.sourceCode { white-space: pre-wrap; }
 a.sourceLine { text-indent: -1em; padding-left: 1em; }
 }
 pre.numberSource a.sourceLine
-  { position: relative; }
-pre.numberSource a.sourceLine:empty
-  { position: absolute; }
+  { position: relative; left: -4em; }
 pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
-    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all;
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -145,6 +143,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.7" data-path="ChapIntroR.html"><a href="ChapIntroR.html#exercises"><i class="fa fa-check"></i><b>1.7</b> Exercises</a></li>
 <li class="chapter" data-level="1.8" data-path="ChapIntroR.html"><a href="ChapIntroR.html#summary"><i class="fa fa-check"></i><b>1.8</b> Summary</a><ul>
 <li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li><a href="ChapIntroR.html#r-funcs"><code>R</code> functions introduced in this chapter</a></li>
 <li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#discuss-in-the-forum"><i class="fa fa-check"></i>Discuss in the forum</a></li>
 </ul></li>
 </ul></li>
@@ -156,7 +155,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.2.3" data-path="ChapData.html"><a href="ChapData.html#frequency"><i class="fa fa-check"></i><b>2.2.3</b> Frequency</a></li>
 <li class="chapter" data-level="2.2.4" data-path="ChapData.html"><a href="ChapData.html#critical-evaluation"><i class="fa fa-check"></i><b>2.2.4</b> Critical Evaluation</a></li>
 </ul></li>
-<li class="chapter" data-level="2.3" data-path="ChapData.html"><a href="ChapData.html#readingdata"><i class="fa fa-check"></i><b>2.3</b> Reading Data into <code>R</code></a><ul>
+<li class="chapter" data-level="2.3" data-path="ChapData.html"><a href="ChapData.html#readingdata"><i class="fa fa-check"></i><b>2.3</b> Reading External Data into <code>R</code></a><ul>
 <li class="chapter" data-level="2.3.1" data-path="ChapData.html"><a href="ChapData.html#saving-the-file-and-setting-the-working-directory"><i class="fa fa-check"></i><b>2.3.1</b> Saving the File and Setting the Working Directory</a></li>
 <li class="chapter" data-level="2.3.2" data-path="ChapData.html"><a href="ChapData.html#Data_3"><i class="fa fa-check"></i><b>2.3.2</b> Reading a CSV File into <code>R</code></a></li>
 <li class="chapter" data-level="2.3.3" data-path="ChapData.html"><a href="ChapData.html#data-types"><i class="fa fa-check"></i><b>2.3.3</b> Data Types</a></li>
@@ -164,6 +163,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.4" data-path="ChapData.html"><a href="ChapData.html#exercises-1"><i class="fa fa-check"></i><b>2.4</b> Exercises</a></li>
 <li class="chapter" data-level="2.5" data-path="ChapData.html"><a href="ChapData.html#summary-1"><i class="fa fa-check"></i><b>2.5</b> Summary</a><ul>
 <li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li><a href="ChapIntroR.html#r-funcs"><code>R</code> functions introduced in this chapter</a></li>
 <li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#discuss-in-the-forum"><i class="fa fa-check"></i>Discuss in the forum</a></li>
 </ul></li>
 </ul></li>
@@ -574,7 +574,7 @@ studies.</p>
 <p>Overweight and obesity is common in many of the developed contrives. In
 some cultures, obese individuals face discrimination in employment,
 education, and relationship contexts. The current research, conducted by
-Mikki Hebl and Jingping Xu<a href="#fn88" class="footnote-ref" id="fnref88"><sup>88</sup></a>, examines physicians’ attitude toward
+Mikki Hebl and Jingping Xu<a href="#fn87" class="footnote-ref" id="fnref87"><sup>87</sup></a>, examines physicians’ attitude toward
 overweight and obese patients in comparison to their attitude toward
 patients who are not overweight.</p>
 <p>The experiment included a total of 122 primary care physicians
@@ -600,18 +600,18 @@ and obese) only the average and overweight conditions will be analyzed.
 Therefore, there are two levels of patient weight (average and
 overweight) and one dependent variable (time spent).</p>
 <p>The data for the given collection of responses from 72 primary care
-physicians is stored in the file “<code>discriminate.csv</code>”<a href="#fn89" class="footnote-ref" id="fnref89"><sup>89</sup></a>. We start by
+physicians is stored in the file “<code>discriminate.csv</code>”<a href="#fn88" class="footnote-ref" id="fnref88"><sup>88</sup></a>. We start by
 reading the content of the file into a data frame by the name
 “<code>patient</code>” and presenting the summary of the variables:</p>
 <pre class="sourceCode r"><code class="sourceCode r">patient &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;_data/discriminate.csv&quot;</span>)
 <span class="kw">summary</span>(patient)</code></pre>
-<pre><code>##     weight        time       
-##  BMI=23:33   Min.   : 5.000  
-##  BMI=30:38   1st Qu.:20.000  
-##              Median :30.000  
-##              Mean   :27.817  
-##              3rd Qu.:30.000  
-##              Max.   :60.000</code></pre>
+<pre><code>##     weight        time      
+##  BMI=23:33   Min.   : 5.00  
+##  BMI=30:38   1st Qu.:20.00  
+##              Median :30.00  
+##              Mean   :27.82  
+##              3rd Qu.:30.00  
+##              Max.   :60.00</code></pre>
 <p>Observe that of the 72 “patients”, 38 are overweight and 33 have an
 average weight. The time spend with the patient, as predicted by
 physicians, is distributed between 5 minutes and 1 hour, with a average
@@ -622,7 +622,7 @@ and one should identify special features of the data. Even in this very
 simple example we may want to have a look at the histogram of the
 variable “<code>time</code>”:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">hist</span>(patient<span class="op">$</span>time)</code></pre>
-<p><img src="statthink_files/figure-html/unnamed-chunk-232-1.png" width="60%" style="display: block; margin: auto;" /></p>
+<p><img src="statthink_files/figure-html/unnamed-chunk-235-1.png" width="60%" style="display: block; margin: auto;" /></p>
 <p>A feature in this plot that catches
 attention is the fact that there is a high concventration of values in
 the interval between 25 and 30. Together with the fact that the median
@@ -646,19 +646,19 @@ this hypothesis is the <span class="math inline">\(t\)</span>-test, which is imp
 <p>First we plot the relation between the response and the explanatory
 variable and then we apply the test:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">boxplot</span>(time<span class="op">~</span>weight,<span class="dt">data=</span>patient)</code></pre>
-<p><img src="statthink_files/figure-html/unnamed-chunk-234-1.png" width="60%" style="display: block; margin: auto;" /></p>
+<p><img src="statthink_files/figure-html/unnamed-chunk-237-1.png" width="60%" style="display: block; margin: auto;" /></p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">t.test</span>(time<span class="op">~</span>weight,<span class="dt">data=</span>patient)</code></pre>
 <pre><code>## 
 ##  Welch Two Sample t-test
 ## 
 ## data:  time by weight
-## t = 2.85161, df = 67.1743, p-value = 0.0057739
+## t = 2.8516, df = 67.174, p-value = 0.005774
 ## alternative hypothesis: true difference in means is not equal to 0
 ## 95 percent confidence interval:
-##   1.9885321 11.2650564
+##   1.988532 11.265056
 ## sample estimates:
 ## mean in group BMI=23 mean in group BMI=30 
-##            31.363636            24.736842</code></pre>
+##             31.36364             24.73684</code></pre>
 <p>Nothing seems problematic in the box plot.
 The two distributions, as they are reflected in the box plots, look
 fairly symmetric.</p>
@@ -682,10 +682,10 @@ that end, one may use the function “<code>var.test</code>”:</p>
 ##  F test to compare two variances
 ## 
 ## data:  time by weight
-## F = 1.04432, num df = 32, denom df = 37, p-value = 0.89306
+## F = 1.0443, num df = 32, denom df = 37, p-value = 0.8931
 ## alternative hypothesis: true ratio of variances is not equal to 1
 ## 95 percent confidence interval:
-##  0.53334055 2.07972695
+##  0.5333405 2.0797269
 ## sample estimates:
 ## ratio of variances 
 ##           1.044316</code></pre>
@@ -734,27 +734,27 @@ response into a factor by setting a level for values larger or equal to
 between the new response and the explanatory variable can be examined
 with the function “<code>prop.test</code>”. We first plot and then test:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="kw">factor</span>(patient<span class="op">$</span>time<span class="op">&gt;=</span><span class="dv">30</span>)<span class="op">~</span>weight,<span class="dt">data=</span>patient)</code></pre>
-<p><img src="statthink_files/figure-html/unnamed-chunk-237-1.png" width="60%" style="display: block; margin: auto;" /></p>
+<p><img src="statthink_files/figure-html/unnamed-chunk-240-1.png" width="60%" style="display: block; margin: auto;" /></p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">prop.test</span>(<span class="kw">table</span>(patient<span class="op">$</span>time<span class="op">&gt;=</span><span class="dv">30</span>,patient<span class="op">$</span>weight))</code></pre>
 <pre><code>## 
 ##  2-sample test for equality of proportions with continuity
 ##  correction
 ## 
 ## data:  table(patient$time &gt;= 30, patient$weight)
-## X-squared = 3.7098, df = 1, p-value = 0.054094
+## X-squared = 3.7098, df = 1, p-value = 0.05409
 ## alternative hypothesis: two.sided
 ## 95 percent confidence interval:
-##  -0.5155087984 -0.0066586892
+##  -0.515508798 -0.006658689
 ## sample estimates:
-##     prop 1     prop 2 
-## 0.31034483 0.57142857</code></pre>
+##    prop 1    prop 2 
+## 0.3103448 0.5714286</code></pre>
 <p>The mosaic plot presents the relation between the explanatory
 variable and the new factor.
 The level “<code>TRUE</code>” is associated with a value of the predicted time
 spent with the patient being 30 minutes or more. The level “<code>FALSE</code>” is
 associated with a prediction of less than 30 minutes.</p>
 <p>The computed <span class="math inline">\(p\)</span>-value is equal to <span class="math inline">\(0.05409\)</span>, that almost reaches the
-significance level of 5%<a href="#fn90" class="footnote-ref" id="fnref90"><sup>90</sup></a>. Notice that the probabilities that are
+significance level of 5%<a href="#fn89" class="footnote-ref" id="fnref89"><sup>89</sup></a>. Notice that the probabilities that are
 being estimated by the function are the probabilities of the level
 “<code>FALSE</code>”. Overall, one may see the outcome of this test as supporting
 evidence for the conclusion of the <span class="math inline">\(t\)</span>-test. However, the <span class="math inline">\(p\)</span>-value
@@ -767,7 +767,7 @@ patients.</p>
 <p>The next case study involves an attempt to develop a measure of physical
 ability that is easy and quick to administer, does not risk injury, and
 is related to how well a person performs the actual job. The current
-example is based on study by Blakely et al. <a href="#fn91" class="footnote-ref" id="fnref91"><sup>91</sup></a>, published in the
+example is based on study by Blakely et al. <a href="#fn90" class="footnote-ref" id="fnref90"><sup>90</sup></a>, published in the
 journal Personnel Psychology.</p>
 <p>There are a number of very important jobs that require, in addition to
 cognitive skills, a significant amount of strength to be able to perform
@@ -795,24 +795,24 @@ summary score of these simulations are given in the variable “<code>sims</code
 Higher values of either measures of performance indicates better
 performance.</p>
 <p>The data for the 4 variables and 147 observations is stored in
-“<code>job.csv</code>”<a href="#fn92" class="footnote-ref" id="fnref92"><sup>92</sup></a>. We start by reading the content of the file into a data
+“<code>job.csv</code>”<a href="#fn91" class="footnote-ref" id="fnref91"><sup>91</sup></a>. We start by reading the content of the file into a data
 frame by the name “<code>job</code>”, presenting a summary of the variables, and
 their histograms:</p>
 <pre class="sourceCode r"><code class="sourceCode r">job &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;_data/job.csv&quot;</span>)
 <span class="kw">summary</span>(job)</code></pre>
-<pre><code>##       grip             arm             ratings           sims         
-##  Min.   : 29.00   Min.   : 19.000   Min.   :21.60   Min.   :-4.17000  
-##  1st Qu.: 94.00   1st Qu.: 64.500   1st Qu.:34.80   1st Qu.:-0.96500  
-##  Median :111.00   Median : 81.500   Median :41.30   Median : 0.16000  
-##  Mean   :110.23   Mean   : 78.752   Mean   :41.01   Mean   : 0.20177  
-##  3rd Qu.:124.50   3rd Qu.: 94.000   3rd Qu.:47.70   3rd Qu.: 1.07000  
-##  Max.   :189.00   Max.   :132.000   Max.   :57.20   Max.   : 5.17000</code></pre>
+<pre><code>##       grip            arm            ratings           sims        
+##  Min.   : 29.0   Min.   : 19.00   Min.   :21.60   Min.   :-4.1700  
+##  1st Qu.: 94.0   1st Qu.: 64.50   1st Qu.:34.80   1st Qu.:-0.9650  
+##  Median :111.0   Median : 81.50   Median :41.30   Median : 0.1600  
+##  Mean   :110.2   Mean   : 78.75   Mean   :41.01   Mean   : 0.2018  
+##  3rd Qu.:124.5   3rd Qu.: 94.00   3rd Qu.:47.70   3rd Qu.: 1.0700  
+##  Max.   :189.0   Max.   :132.00   Max.   :57.20   Max.   : 5.1700</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">2</span>)) <span class="co"># we&#39;ll plot a 2x2 grid</span>
 <span class="kw">hist</span>(job<span class="op">$</span>grip)
 <span class="kw">hist</span>(job<span class="op">$</span>arm)
 <span class="kw">hist</span>(job<span class="op">$</span>ratings)
 <span class="kw">hist</span>(job<span class="op">$</span>sims)</code></pre>
-<p><img src="statthink_files/figure-html/unnamed-chunk-238-1.png" width="60%" style="display: block; margin: auto;" /></p>
+<p><img src="statthink_files/figure-html/unnamed-chunk-241-1.png" width="60%" style="display: block; margin: auto;" /></p>
 <p>All variables are numeric. Examination of the 4 summaries and
 histograms does not produce interest findings. All variables are, more
 or less, symmetric with the distribution of the variable “<code>ratings</code>”
@@ -879,19 +879,19 @@ case where the explanatory variable is “<code>grip</code>”:</p>
 ## lm(formula = sims ~ grip, data = job)
 ## 
 ## Residuals:
-##      Min       1Q   Median       3Q      Max 
-## -2.92954 -0.87084 -0.12195  0.80391  3.34939 
+##     Min      1Q  Median      3Q     Max 
+## -2.9295 -0.8708 -0.1219  0.8039  3.3494 
 ## 
 ## Coefficients:
-##               Estimate Std. Error t value  Pr(&gt;|t|)    
-## (Intercept) -4.8096752  0.5111407 -9.4097 &lt; 2.2e-16 ***
-## grip         0.0454630  0.0045347 10.0257 &lt; 2.2e-16 ***
+##              Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) -4.809675   0.511141   -9.41   &lt;2e-16 ***
+## grip         0.045463   0.004535   10.03   &lt;2e-16 ***
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
-## Residual standard error: 1.2947 on 145 degrees of freedom
-## Multiple R-squared:  0.4094, Adjusted R-squared:  0.40533 
-## F-statistic: 100.51 on 1 and 145 DF,  p-value: &lt; 2.22e-16</code></pre>
+## Residual standard error: 1.295 on 145 degrees of freedom
+## Multiple R-squared:  0.4094, Adjusted R-squared:  0.4053 
+## F-statistic: 100.5 on 1 and 145 DF,  p-value: &lt; 2.2e-16</code></pre>
 <p>Examination of the report reviles a clear statistical significance for
 the effect of the explanatory variable on the distribution of response.
 The value of R-squared, the ration of the variance of the response
@@ -907,19 +907,19 @@ attributed to the measure of the strength of the grip.</p>
 ## lm(formula = sims ~ arm, data = job)
 ## 
 ## Residuals:
-##      Min       1Q   Median       3Q      Max 
-## -3.64667 -0.75022 -0.02852  0.68754  3.07702 
+##     Min      1Q  Median      3Q     Max 
+## -3.6467 -0.7502 -0.0285  0.6875  3.0770 
 ## 
 ## Coefficients:
-##               Estimate Std. Error t value  Pr(&gt;|t|)    
-## (Intercept) -4.0951600  0.3917446 -10.454 &lt; 2.2e-16 ***
-## arm          0.0545630  0.0048059  11.353 &lt; 2.2e-16 ***
+##              Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) -4.095160   0.391745  -10.45   &lt;2e-16 ***
+## arm          0.054563   0.004806   11.35   &lt;2e-16 ***
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
-## Residual standard error: 1.2258 on 145 degrees of freedom
-## Multiple R-squared:  0.47061,    Adjusted R-squared:  0.46696 
-## F-statistic:  128.9 on 1 and 145 DF,  p-value: &lt; 2.22e-16</code></pre>
+## Residual standard error: 1.226 on 145 degrees of freedom
+## Multiple R-squared:  0.4706, Adjusted R-squared:  0.467 
+## F-statistic: 128.9 on 1 and 145 DF,  p-value: &lt; 2.2e-16</code></pre>
 <p>This variable is also statistically significant. The value of R-squared
 is <span class="math inline">\(0.4706\)</span>. The proportion of the standard deviation that is explained
 by the strength of the are is <span class="math inline">\(\sqrt{0.4706} \approx 0.69\)</span>, which is
@@ -931,7 +931,7 @@ the response based on the values of the explanatory variables can be
 obtained by combining the information in both variables. The production
 of such combination is not discussed in this book, though it is similar
 in principle to the methods of linear regression that are presented in
-Chapter <a href="ChapRegression.html#ChapRegression">14</a>. The produced score<a href="#fn93" class="footnote-ref" id="fnref93"><sup>93</sup></a> takes the form:</p>
+Chapter <a href="ChapRegression.html#ChapRegression">14</a>. The produced score<a href="#fn92" class="footnote-ref" id="fnref92"><sup>92</sup></a> takes the form:</p>
 <p><span class="math display">\[\mbox{\texttt{score}} = -5.434 + 0.024\cdot \mbox{\texttt{grip}}+ 0.037\cdot \mbox{\texttt{arm}}\;.\]</span>
 We use this combined score as an explanatory variable. First we form the
 score and plot the relation between it and the response:</p>
@@ -951,19 +951,19 @@ report:</p>
 ## lm(formula = sims ~ score, data = job)
 ## 
 ## Residuals:
-##      Min       1Q   Median       3Q      Max 
-## -3.18897 -0.73905 -0.06983  0.74114  2.86356 
+##     Min      1Q  Median      3Q     Max 
+## -3.1890 -0.7390 -0.0698  0.7411  2.8636 
 ## 
 ## Coefficients:
 ##             Estimate Std. Error t value Pr(&gt;|t|)    
-## (Intercept) 0.074787   0.094521  0.7912   0.4301    
-## score       1.012907   0.077300 13.1036   &lt;2e-16 ***
+## (Intercept)  0.07479    0.09452   0.791     0.43    
+## score        1.01291    0.07730  13.104   &lt;2e-16 ***
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
 ## Residual standard error: 1.14 on 145 degrees of freedom
-## Multiple R-squared:  0.54216,    Adjusted R-squared:   0.539 
-## F-statistic:  171.7 on 1 and 145 DF,  p-value: &lt; 2.22e-16</code></pre>
+## Multiple R-squared:  0.5422, Adjusted R-squared:  0.539 
+## F-statistic: 171.7 on 1 and 145 DF,  p-value: &lt; 2.2e-16</code></pre>
 <p>Indeed, the score is highly significant. More important, the R-squared
 coefficient that is associated with the score is <span class="math inline">\(0.5422\)</span>, which
 corresponds to a ratio of the standard deviation that is explained by
@@ -1017,13 +1017,13 @@ strength. One may plot a histogram of the residuals:</p>
 
 <span class="kw">qqnorm</span>(<span class="kw">residuals</span>(sims.score))
 <span class="kw">qqline</span>(<span class="kw">residuals</span>(sims.score))</code></pre>
-<p><img src="statthink_files/figure-html/unnamed-chunk-246-1.png" width="60%" style="display: block; margin: auto;" /></p>
+<p><img src="statthink_files/figure-html/unnamed-chunk-249-1.png" width="60%" style="display: block; margin: auto;" /></p>
 <p>The produced histogram is represented on the upper panel. The histogram portrays a symmetric
 distribution that my result from Normally distributed observations. A
 better method to compare the distribution of the residuals to the Normal
 distribution is to use the <em>Quantile-Quantile plot</em>. This plot can be
 found on the lower panel. We do not
-discuss here the method by which this plot is produced<a href="#fn94" class="footnote-ref" id="fnref94"><sup>94</sup></a>. However, we
+discuss here the method by which this plot is produced<a href="#fn93" class="footnote-ref" id="fnref93"><sup>93</sup></a>. However, we
 do say that any deviation of the points from a straight line is
 indication of violation of the assumption of Normality. In the current
 case, the points seem to be on a single line, which is consistent with
@@ -1118,32 +1118,32 @@ help us improve the presentation for the future editions of this book.</p>
 </div>
 <div class="footnotes">
 <hr />
-<ol start="88">
-<li id="fn88"><p>Hebl, M. and Xu, J. (2001). Weighing the care: Physicians’
+<ol start="87">
+<li id="fn87"><p>Hebl, M. and Xu, J. (2001). Weighing the care: Physicians’
 reactions to the size of a patient. International Journal of
-Obesity, 25, 1246-1252.<a href="ChapCaseStudies.html#fnref88" class="footnote-back">↩</a></p></li>
-<li id="fn89"><p>The file can be found on the internet at
-<a href="http://pluto.huji.ac.il/~msby/StatThink/Datasets/discriminate.csv" class="uri">http://pluto.huji.ac.il/~msby/StatThink/Datasets/discriminate.csv</a>.<a href="ChapCaseStudies.html#fnref89" class="footnote-back">↩</a></p></li>
-<li id="fn90"><p>One may propose splinting the response into two groups, with one
+Obesity, 25, 1246-1252.<a href="ChapCaseStudies.html#fnref87" class="footnote-back">↩</a></p></li>
+<li id="fn88"><p>The file can be found on the internet at
+<a href="http://pluto.huji.ac.il/~msby/StatThink/Datasets/discriminate.csv" class="uri">http://pluto.huji.ac.il/~msby/StatThink/Datasets/discriminate.csv</a>.<a href="ChapCaseStudies.html#fnref88" class="footnote-back">↩</a></p></li>
+<li id="fn89"><p>One may propose splinting the response into two groups, with one
 group being associated with values of “<code>time</code>” strictly <em>larger</em>
 than 30 minutes and the other with values less or equal to 30. The
 resulting <span class="math inline">\(p\)</span>-value from the expression
 “<code>prop.test(table(patient$time&gt;30,patient$weight))</code>” is <span class="math inline">\(0.01276\)</span>.
 However, the number of subjects in one of the cells of the table is
 equal only to 2, which is problematic in the context of the Normal
-approximation that is used by this test.<a href="ChapCaseStudies.html#fnref90" class="footnote-back">↩</a></p></li>
-<li id="fn91"><p>Blakley, B.A., Qui?ones, M.A., Crawford, M.S., and Jago, I.A.
+approximation that is used by this test.<a href="ChapCaseStudies.html#fnref89" class="footnote-back">↩</a></p></li>
+<li id="fn90"><p>Blakley, B.A., Qui?ones, M.A., Crawford, M.S., and Jago, I.A.
 (1994). The validity of isometric strength tests. Personnel
-Psychology, 47, 247-274.<a href="ChapCaseStudies.html#fnref91" class="footnote-back">↩</a></p></li>
-<li id="fn92"><p>The file can be found on the internet at
-<a href="http://pluto.huji.ac.il/~msby/StatThink/Datasets/job.csv" class="uri">http://pluto.huji.ac.il/~msby/StatThink/Datasets/job.csv</a>.<a href="ChapCaseStudies.html#fnref92" class="footnote-back">↩</a></p></li>
-<li id="fn93"><p>The score is produced by the application of the function “<code>lm</code>” to
+Psychology, 47, 247-274.<a href="ChapCaseStudies.html#fnref90" class="footnote-back">↩</a></p></li>
+<li id="fn91"><p>The file can be found on the internet at
+<a href="http://pluto.huji.ac.il/~msby/StatThink/Datasets/job.csv" class="uri">http://pluto.huji.ac.il/~msby/StatThink/Datasets/job.csv</a>.<a href="ChapCaseStudies.html#fnref91" class="footnote-back">↩</a></p></li>
+<li id="fn92"><p>The score is produced by the application of the function “<code>lm</code>” to
 <em>both</em> variables as explanatory variables. The code expression that
-can be used is “<code>lm(sims ~ grip + arm, data=job)</code>”.<a href="ChapCaseStudies.html#fnref93" class="footnote-back">↩</a></p></li>
-<li id="fn94"><p>Generally speaking, the plot is composed of the empirical
+can be used is “<code>lm(sims ~ grip + arm, data=job)</code>”.<a href="ChapCaseStudies.html#fnref92" class="footnote-back">↩</a></p></li>
+<li id="fn93"><p>Generally speaking, the plot is composed of the empirical
 percentiles of the residuals, plotted against the theoretical
 percentiles of the standard Normal distribution. The current plot is
-produced by the expression “<code>qqnorm(residuals(sims.score))</code>”.<a href="ChapCaseStudies.html#fnref94" class="footnote-back">↩</a></p></li>
+produced by the expression “<code>qqnorm(residuals(sims.score))</code>”.<a href="ChapCaseStudies.html#fnref93" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>

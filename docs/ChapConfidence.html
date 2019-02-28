@@ -25,7 +25,7 @@
 <meta name="author" content="Benjamin Yakir">
 
 
-<meta name="date" content="2019-01-17">
+<meta name="date" content="2019-02-28">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -53,7 +53,7 @@
 <style type="text/css">
 a.sourceLine { display: inline-block; line-height: 1.25; }
 a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; position: absolute; }
+a.sourceLine:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 div.sourceCode { margin: 1em 0; }
@@ -66,13 +66,11 @@ code.sourceCode { white-space: pre-wrap; }
 a.sourceLine { text-indent: -1em; padding-left: 1em; }
 }
 pre.numberSource a.sourceLine
-  { position: relative; }
-pre.numberSource a.sourceLine:empty
-  { position: absolute; }
+  { position: relative; left: -4em; }
 pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
-    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all;
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -145,6 +143,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.7" data-path="ChapIntroR.html"><a href="ChapIntroR.html#exercises"><i class="fa fa-check"></i><b>1.7</b> Exercises</a></li>
 <li class="chapter" data-level="1.8" data-path="ChapIntroR.html"><a href="ChapIntroR.html#summary"><i class="fa fa-check"></i><b>1.8</b> Summary</a><ul>
 <li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li><a href="ChapIntroR.html#r-funcs"><code>R</code> functions introduced in this chapter</a></li>
 <li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#discuss-in-the-forum"><i class="fa fa-check"></i>Discuss in the forum</a></li>
 </ul></li>
 </ul></li>
@@ -156,7 +155,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.2.3" data-path="ChapData.html"><a href="ChapData.html#frequency"><i class="fa fa-check"></i><b>2.2.3</b> Frequency</a></li>
 <li class="chapter" data-level="2.2.4" data-path="ChapData.html"><a href="ChapData.html#critical-evaluation"><i class="fa fa-check"></i><b>2.2.4</b> Critical Evaluation</a></li>
 </ul></li>
-<li class="chapter" data-level="2.3" data-path="ChapData.html"><a href="ChapData.html#readingdata"><i class="fa fa-check"></i><b>2.3</b> Reading Data into <code>R</code></a><ul>
+<li class="chapter" data-level="2.3" data-path="ChapData.html"><a href="ChapData.html#readingdata"><i class="fa fa-check"></i><b>2.3</b> Reading External Data into <code>R</code></a><ul>
 <li class="chapter" data-level="2.3.1" data-path="ChapData.html"><a href="ChapData.html#saving-the-file-and-setting-the-working-directory"><i class="fa fa-check"></i><b>2.3.1</b> Saving the File and Setting the Working Directory</a></li>
 <li class="chapter" data-level="2.3.2" data-path="ChapData.html"><a href="ChapData.html#Data_3"><i class="fa fa-check"></i><b>2.3.2</b> Reading a CSV File into <code>R</code></a></li>
 <li class="chapter" data-level="2.3.3" data-path="ChapData.html"><a href="ChapData.html#data-types"><i class="fa fa-check"></i><b>2.3.3</b> Data Types</a></li>
@@ -164,6 +163,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.4" data-path="ChapData.html"><a href="ChapData.html#exercises-1"><i class="fa fa-check"></i><b>2.4</b> Exercises</a></li>
 <li class="chapter" data-level="2.5" data-path="ChapData.html"><a href="ChapData.html#summary-1"><i class="fa fa-check"></i><b>2.5</b> Summary</a><ul>
 <li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li><a href="ChapIntroR.html#r-funcs"><code>R</code> functions introduced in this chapter</a></li>
 <li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#discuss-in-the-forum"><i class="fa fa-check"></i>Discuss in the forum</a></li>
 </ul></li>
 </ul></li>
@@ -570,9 +570,9 @@ number of non-missing values.</p>
 <p>Let us compute the lower and the upper limits of the confidence interval
 for the expectation of the price:</p>
 <pre class="sourceCode r"><code class="sourceCode r">x.bar <span class="op">-</span><span class="st"> </span><span class="fl">1.96</span><span class="op">*</span>s<span class="op">/</span><span class="kw">sqrt</span>(n)</code></pre>
-<pre><code>## [1] 12108.465</code></pre>
+<pre><code>## [1] 12108.47</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r">x.bar <span class="op">+</span><span class="st"> </span><span class="fl">1.96</span><span class="op">*</span>s<span class="op">/</span><span class="kw">sqrt</span>(n)</code></pre>
-<pre><code>## [1] 14305.793</code></pre>
+<pre><code>## [1] 14305.79</code></pre>
 <p>The lower limit of the confidence interval turns out to be $12,108.47
 and the upper limit is $14,305.79. The confidence interval is the range
 of values between these two numbers.</p>
@@ -600,11 +600,11 @@ interval for this probability are:</p>
 <pre class="sourceCode r"><code class="sourceCode r">n &lt;-<span class="st"> </span><span class="dv">205</span>
 p.hat &lt;-<span class="st"> </span><span class="dv">20</span><span class="op">/</span>n
 p.hat</code></pre>
-<pre><code>## [1] 0.097560976</code></pre>
+<pre><code>## [1] 0.09756098</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r">p.hat <span class="op">-</span><span class="st"> </span><span class="fl">1.96</span><span class="op">*</span><span class="kw">sqrt</span>(p.hat<span class="op">*</span>(<span class="dv">1</span><span class="op">-</span>p.hat)<span class="op">/</span>n)</code></pre>
-<pre><code>## [1] 0.056942264</code></pre>
+<pre><code>## [1] 0.05694226</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r">p.hat <span class="op">+</span><span class="st"> </span><span class="fl">1.96</span><span class="op">*</span><span class="kw">sqrt</span>(p.hat<span class="op">*</span>(<span class="dv">1</span><span class="op">-</span>p.hat)<span class="op">/</span>n)</code></pre>
-<pre><code>## [1] 0.13817969</code></pre>
+<pre><code>## [1] 0.1381797</code></pre>
 <p>The point estimation of the probability is
 <span class="math inline">\(\hat p = 20/205 \approx 0.098\)</span> and the confidence interval, after
 rounding up, is <span class="math inline">\([0.057, 0.138]\)</span>.</p>
@@ -643,7 +643,7 @@ sample average, is no more than 1.96. In other words, the distance
 between the sample average and the expectation is at most 1.96 units of
 standard deviation. One may rewrite this event in a form that puts the
 expectation within an interval that is centered at the sample
-average<a href="#fn47" class="footnote-ref" id="fnref47"><sup>47</sup></a>:</p>
+average<a href="#fn46" class="footnote-ref" id="fnref46"><sup>46</sup></a>:</p>
 <p><span class="math display">\[\begin{aligned}
 \Big\{|\bar X - \Expec(X)| \leq 1.96 \cdot \sqrt{\Var(X)/n} \Big\} \quad \Longleftrightarrow &amp; \\
  \Big\{ \bar X -1.96 \cdot\sqrt{\Var(X)/n} \leq  \Expec(X) &amp;\leq \bar X + 1.96 \cdot \sqrt{\Var(X)/n}\Big\}\;.\end{aligned}\]</span></p>
@@ -658,7 +658,7 @@ confidence interval we seek.</p>
 from the data. In order to overcome this difficulty we recall that the
 unknown variance may nonetheless be estimated from the data:</p>
 <p><span class="math display">\[S^2 \approx \Var(X) \quad \Longrightarrow \quad \sqrt{\Var(X)/n} \approx S/\sqrt{n}\;,\]</span>
-where <span class="math inline">\(S\)</span> is the sample standard deviation<a href="#fn48" class="footnote-ref" id="fnref48"><sup>48</sup></a>.</p>
+where <span class="math inline">\(S\)</span> is the sample standard deviation<a href="#fn47" class="footnote-ref" id="fnref47"><sup>47</sup></a>.</p>
 <p>When the sample size is sufficiently large, so that <span class="math inline">\(S\)</span> is very close to
 the value of the standard deviation of an observation, we obtain that
 the interval <span class="math inline">\(\bar X \pm 1.96 \sqrt{\Var(X)/n}\)</span> and the interval
@@ -685,7 +685,7 @@ S &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="dv">0</
 LCL &lt;-<span class="st"> </span>X.bar <span class="op">-</span><span class="st"> </span><span class="fl">1.96</span><span class="op">*</span>S<span class="op">/</span><span class="kw">sqrt</span>(n)
 UCL &lt;-<span class="st"> </span>X.bar <span class="op">+</span><span class="st"> </span><span class="fl">1.96</span><span class="op">*</span>S<span class="op">/</span><span class="kw">sqrt</span>(n)
 <span class="kw">mean</span>((<span class="dv">13000</span> <span class="op">&gt;=</span><span class="st"> </span>LCL) <span class="op">&amp;</span><span class="st"> </span>(<span class="dv">13000</span> <span class="op">&lt;=</span><span class="st"> </span>UCL))</code></pre>
-<pre><code>## [1] 0.94508</code></pre>
+<pre><code>## [1] 0.94425</code></pre>
 <p>Below we will go over the code and explain the simulation. But, before
 doing so, notice that the actual probability that the confidence
 interval contains the expectation is about 0.945, which is slightly
@@ -814,7 +814,7 @@ P.hat &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="dv"
 LCL &lt;-<span class="st"> </span>P.hat <span class="op">-</span><span class="st"> </span><span class="fl">1.96</span><span class="op">*</span><span class="kw">sqrt</span>(P.hat<span class="op">*</span>(<span class="dv">1</span><span class="op">-</span>P.hat)<span class="op">/</span>n)
 UCL &lt;-<span class="st"> </span>P.hat <span class="op">+</span><span class="st"> </span><span class="fl">1.96</span><span class="op">*</span><span class="kw">sqrt</span>(P.hat<span class="op">*</span>(<span class="dv">1</span><span class="op">-</span>P.hat)<span class="op">/</span>n)
 <span class="kw">mean</span>((p <span class="op">&gt;=</span><span class="st"> </span>LCL) <span class="op">&amp;</span><span class="st"> </span>(p <span class="op">&lt;=</span><span class="st"> </span>UCL))</code></pre>
-<pre><code>## [1] 0.95135</code></pre>
+<pre><code>## [1] 0.95225</code></pre>
 <p>In this simulation we obtained that the actual confidence level is
 approximately 0.951, which is slightly above the nominal confidence
 level of 0.95.</p>
@@ -955,7 +955,7 @@ it contains 95% of the distribution.</p>
 <p>Summarizing the above claims in a single formula produces the statement:</p>
 <p><span class="math display">\[\frac{\bar X - \Expec(X)}{S/\sqrt{n}} \sim t_{(n-1)} \quad \Longrightarrow \quad \Prob \bigg(\bigg|\frac{\bar X - \Expec(X)}{S/\sqrt{n}}\bigg| \leq \mbox{\texttt{qt(0.975,n-1)}} \bigg) = 0.95\;.\]</span>
 Notice that the equation associated with the probability is not an
-approximation but an exact relation<a href="#fn49" class="footnote-ref" id="fnref49"><sup>49</sup></a>. Rewriting the event that is
+approximation but an exact relation<a href="#fn48" class="footnote-ref" id="fnref48"><sup>48</sup></a>. Rewriting the event that is
 described in the probability in the form of a confidence interval,
 produces</p>
 <p><span class="math display">\[\bar X \pm \mbox{\texttt{qt(0.975,n-1)}}\cdot S/ \sqrt{n}\]</span>
@@ -992,11 +992,11 @@ argument. The sub-collections are determined by the levels of the second
 argument.</p>
 <p>Sounds complex but it is straightforward enough to apply:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">tapply</span>(dif.mpg,fuel,mean)</code></pre>
-<pre><code>##    diesel       gas 
-## 4.4500000 5.6486486</code></pre>
+<pre><code>##   diesel      gas 
+## 4.450000 5.648649</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">tapply</span>(dif.mpg,fuel,sd)</code></pre>
-<pre><code>##    diesel       gas 
-## 2.7810449 1.4336070</code></pre>
+<pre><code>##   diesel      gas 
+## 2.781045 1.433607</code></pre>
 <p>Sample averages are computed in the first application of the function
 “<code>tapply</code>”. Observe that an average was computed for cars that run on
 diesel and an average was computed for cars that run on gas. In both
@@ -1011,11 +1011,11 @@ and the point estimates for the standard deviation of the variable are
 s &lt;-<span class="st"> </span><span class="kw">tapply</span>(dif.mpg,fuel,sd)
 n &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">20</span>,<span class="dv">185</span>)
 x.bar <span class="op">-</span><span class="st"> </span><span class="kw">qt</span>(<span class="fl">0.975</span>,n<span class="dv">-1</span>)<span class="op">*</span>s<span class="op">/</span><span class="kw">sqrt</span>(n)</code></pre>
-<pre><code>##    diesel       gas 
-## 3.1484309 5.4406990</code></pre>
+<pre><code>##   diesel      gas 
+## 3.148431 5.440699</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r">x.bar <span class="op">+</span><span class="st"> </span><span class="kw">qt</span>(<span class="fl">0.975</span>,n<span class="dv">-1</span>)<span class="op">*</span>s<span class="op">/</span><span class="kw">sqrt</span>(n)</code></pre>
-<pre><code>##    diesel       gas 
-## 5.7515691 5.8565983</code></pre>
+<pre><code>##   diesel      gas 
+## 5.751569 5.856598</code></pre>
 <p>The objects “<code>x.bar</code>” and “<code>s</code>” contain the sample averages and sample
 standard deviations, respectively. Both are sequences of length two,
 with the first component referring to “<code>diesel</code>” and the second
@@ -1029,7 +1029,7 @@ is <span class="math inline">\([5.440699, 5.856598]\)</span>.</p>
 <p>The 0.975-percentiles of the <span class="math inline">\(t\)</span>-distributions are computed with the
 expressions “<code>qt(0.025,n-1)</code>”:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">qt</span>(<span class="fl">0.975</span>,n<span class="dv">-1</span>)</code></pre>
-<pre><code>## [1] 2.0930241 1.9729405</code></pre>
+<pre><code>## [1] 2.093024 1.972941</code></pre>
 <p>The second argument of the function “<code>qt</code>” is a sequence with two
 components, the number 19 and the number 184. Accordingly, The first
 position in the output of the function is the percentile associated with
@@ -1114,9 +1114,9 @@ probability (making the ratio larger).</p>
 measurement “<code>diff.mpg</code>” for cars that run on diesel and for cars that
 run on gas. Here, the size of the samples is 20 and 185, respectively:</p>
 <pre class="sourceCode r"><code class="sourceCode r">(n<span class="dv">-1</span>)<span class="op">/</span><span class="kw">qchisq</span>(<span class="fl">0.975</span>,n<span class="dv">-1</span>)</code></pre>
-<pre><code>## [1] 0.57834564 0.82342954</code></pre>
+<pre><code>## [1] 0.5783456 0.8234295</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r">(n<span class="dv">-1</span>)<span class="op">/</span><span class="kw">qchisq</span>(<span class="fl">0.025</span>,n<span class="dv">-1</span>)</code></pre>
-<pre><code>## [1] 2.1332695 1.2404776</code></pre>
+<pre><code>## [1] 2.133270 1.240478</code></pre>
 <p>The ratios that are used in the left hand side of the intervals are
 0.5783456 and 0.8234295, respectively. Both ratios are less than one. On
 the other hand, the ratios associated with the other end of the
@@ -1126,14 +1126,14 @@ confidence intervals. Recall that the object “<code>s</code>” contains the s
 standard deviations of the difference in fuel consumption for diesel and
 for gas cars. The object “<code>n</code>” contains the two sample sizes:</p>
 <pre class="sourceCode r"><code class="sourceCode r">s<span class="op">^</span><span class="dv">2</span></code></pre>
-<pre><code>##    diesel       gas 
-## 7.7342105 2.0552291</code></pre>
+<pre><code>##   diesel      gas 
+## 7.734211 2.055229</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r">(n<span class="dv">-1</span>)<span class="op">*</span>s<span class="op">^</span><span class="dv">2</span><span class="op">/</span><span class="kw">qchisq</span>(<span class="fl">0.975</span>,n<span class="dv">-1</span>)</code></pre>
-<pre><code>##    diesel       gas 
-## 4.4730469 1.6923364</code></pre>
+<pre><code>##   diesel      gas 
+## 4.473047 1.692336</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r">(n<span class="dv">-1</span>)<span class="op">*</span>s<span class="op">^</span><span class="dv">2</span><span class="op">/</span><span class="kw">qchisq</span>(<span class="fl">0.025</span>,n<span class="dv">-1</span>)</code></pre>
-<pre><code>##     diesel        gas 
-## 16.4991555  2.5494656</code></pre>
+<pre><code>##    diesel       gas 
+## 16.499155  2.549466</code></pre>
 <p>The variance of the difference in fuel consumption for diesel cars is
 estimated to be 7.734211 with a 95%-confidence interval of
 <span class="math inline">\([4.473047, 16.499155]\)</span> and for cars that use gas the estimated variance
@@ -1159,7 +1159,7 @@ S &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="dv">0</
 <pre class="sourceCode r"><code class="sourceCode r">mu.LCL &lt;-<span class="st"> </span>X.bar <span class="op">-</span><span class="st"> </span><span class="kw">qt</span>(<span class="fl">0.975</span>,n<span class="dv">-1</span>)<span class="op">*</span>S<span class="op">/</span><span class="kw">sqrt</span>(n)
 mu.UCL &lt;-<span class="st"> </span>X.bar <span class="op">+</span><span class="st"> </span><span class="kw">qt</span>(<span class="fl">0.975</span>,n<span class="dv">-1</span>)<span class="op">*</span>S<span class="op">/</span><span class="kw">sqrt</span>(n)
 <span class="kw">mean</span>((mu <span class="op">&gt;=</span><span class="st"> </span>mu.LCL) <span class="op">&amp;</span><span class="st"> </span>(mu <span class="op">&lt;=</span><span class="st"> </span>mu.UCL))</code></pre>
-<pre><code>## [1] 0.94907</code></pre>
+<pre><code>## [1] 0.95009</code></pre>
 <p>The nominal significance level of the confidence interval is 95%, which
 is practically identical to the confidence level that was computed in
 the simulation.</p>
@@ -1169,7 +1169,7 @@ computation of the upper and lower confidence limits:</p>
 <pre class="sourceCode r"><code class="sourceCode r">var.LCL &lt;-<span class="st"> </span>(n<span class="dv">-1</span>)<span class="op">*</span>S<span class="op">^</span><span class="dv">2</span><span class="op">/</span><span class="kw">qchisq</span>(<span class="fl">0.975</span>,n<span class="dv">-1</span>)
 var.UCL &lt;-<span class="st"> </span>(n<span class="dv">-1</span>)<span class="op">*</span>S<span class="op">^</span><span class="dv">2</span><span class="op">/</span><span class="kw">qchisq</span>(<span class="fl">0.025</span>,n<span class="dv">-1</span>)
 <span class="kw">mean</span>((sig<span class="op">^</span><span class="dv">2</span> <span class="op">&gt;=</span><span class="st"> </span>var.LCL) <span class="op">&amp;</span><span class="st"> </span>(sig<span class="op">^</span><span class="dv">2</span> <span class="op">&lt;=</span><span class="st"> </span>var.UCL))</code></pre>
-<pre><code>## [1] 0.94922</code></pre>
+<pre><code>## [1] 0.94959</code></pre>
 <p>Again, we obtain that the nominal confidence level of 95% coincides with
 the confidence level computed in the simulation.</p>
 </div>
@@ -1211,7 +1211,7 @@ large should <span class="math inline">\(n\)</span> be in order to guarantee tha
 0.05?</p>
 <p>The answer to this question depends on the magnitude of
 <span class="math inline">\(\hat P (1-\hat P)\)</span>, which is a random quantity. Luckily, one may
-observe that the maximal value<a href="#fn50" class="footnote-ref" id="fnref50"><sup>50</sup></a> of the quadratic function
+observe that the maximal value<a href="#fn49" class="footnote-ref" id="fnref49"><sup>49</sup></a> of the quadratic function
 <span class="math inline">\(f(p) = p (1-p)\)</span> is 1/4. It follows that</p>
 <p><span class="math display">\[1.96 \cdot \{\hat P (1-\hat P)/n\}^{1/2} \leq 1.96 \cdot \{0.25/n\}^{1/2} = 0.98/\sqrt{n}\;.\]</span>
 Finally,</p>
@@ -1232,11 +1232,11 @@ considered as part of the homework.</p>
 <h2><span class="header-section-number">11.5</span> Exercises</h2>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-169" class="exercise"><strong>Exercise 11.1  </strong></span>This exercise deals with an experiment that was
+<p><span id="exr:unnamed-chunk-172" class="exercise"><strong>Exercise 11.1  </strong></span>This exercise deals with an experiment that was
 conducted among students. The aim of the experiment was to assess the
 effect of rumors and prior reputation of the instructor on the
 evaluation of the instructor by her students. The experiment was
-conducted by Towler and Dipboye<a href="#fn51" class="footnote-ref" id="fnref51"><sup>51</sup></a>. This case study is taken from the
+conducted by Towler and Dipboye<a href="#fn50" class="footnote-ref" id="fnref50"><sup>50</sup></a>. This case study is taken from the
 <a href="http://onlinestatbook.com/rvls.html">Rice Virtual Lab in Statistics</a>.
 More details on this case study can be found in the case study
 “<a href="http://onlinestatbook.com/case_studies_rvls/instructor_reputation/index.html">Instructor Reputation and Teacher
@@ -1278,7 +1278,7 @@ Normal distribution.)</li>
 
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-170" class="exercise"><strong>Exercise 11.2  </strong></span>Twenty observations are used in order to construct a
+<p><span id="exr:unnamed-chunk-173" class="exercise"><strong>Exercise 11.2  </strong></span>Twenty observations are used in order to construct a
 confidence interval for the expectation. In one case, the construction
 is based on the Normal approximation of the sample average and in the
 other case it is constructed under the assumption that the observations
@@ -1297,7 +1297,7 @@ case of a confidence interval with a nominal confidence level of
 
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-171" class="exercise"><strong>Exercise 11.3  </strong></span>Insurance companies are interested in knowing the
+<p><span id="exr:unnamed-chunk-174" class="exercise"><strong>Exercise 11.3  </strong></span>Insurance companies are interested in knowing the
 population percent of drivers who always buckle up before riding in a
 car.</p>
 <ol style="list-style-type: decimal">
@@ -1380,8 +1380,8 @@ level.</p>
 </div>
 <div class="footnotes">
 <hr />
-<ol start="47">
-<li id="fn47"><p>Observe that <span class="math inline">\(|\bar X - \Expec(X)| = |\Expec(X) -\bar X |\)</span> and
+<ol start="46">
+<li id="fn46"><p>Observe that <span class="math inline">\(|\bar X - \Expec(X)| = |\Expec(X) -\bar X |\)</span> and
 therefore
 <span class="math inline">\(\big\{|\bar X - \Expec(X)| \leq 1.96 \cdot \sqrt{\Var(X)/n} \big\} =\big\{| \Expec(X)-\bar X | \leq 1.96 \cdot \sqrt{\Var(X)/n} \big\}\)</span>.
 From the definition of the absolute value we obtain that the last
@@ -1389,17 +1389,17 @@ expression is equal to
 <span class="math inline">\(\big\{-1.96 \cdot \sqrt{\Var(X)/n} \leq \Expec(X)-\bar X \leq 1.96 \cdot \sqrt{\Var(X)/n} \big\}\)</span>.
 Moving the average to the other side of the inequality (for both
 inequalities involved) produces the representation
-<span class="math inline">\(\big\{\bar X-1.96 \cdot \sqrt{\Var(X)/n} \leq \Expec(X)\leq \bar X + 1.96 \cdot \sqrt{\Var(X)/n} \big\}\)</span>.<a href="ChapConfidence.html#fnref47" class="footnote-back">↩</a></p></li>
-<li id="fn48"><p>The sample variance, that serves as the estimator of the variance,
+<span class="math inline">\(\big\{\bar X-1.96 \cdot \sqrt{\Var(X)/n} \leq \Expec(X)\leq \bar X + 1.96 \cdot \sqrt{\Var(X)/n} \big\}\)</span>.<a href="ChapConfidence.html#fnref46" class="footnote-back">↩</a></p></li>
+<li id="fn47"><p>The sample variance, that serves as the estimator of the variance,
 is computed from the sample using the formula:
-<span class="math inline">\(S^2 = \sum_{i=1}^n (X_i-\bar X)^2/(n-1)\)</span>.<a href="ChapConfidence.html#fnref48" class="footnote-back">↩</a></p></li>
-<li id="fn49"><p>When the measurement is Normally distributed.<a href="ChapConfidence.html#fnref49" class="footnote-back">↩</a></p></li>
-<li id="fn50"><p>The derivative is <span class="math inline">\(f&#39;(p) = 1-2p\)</span>. Solving <span class="math inline">\(f&#39;(p)=0\)</span> produces
+<span class="math inline">\(S^2 = \sum_{i=1}^n (X_i-\bar X)^2/(n-1)\)</span>.<a href="ChapConfidence.html#fnref47" class="footnote-back">↩</a></p></li>
+<li id="fn48"><p>When the measurement is Normally distributed.<a href="ChapConfidence.html#fnref48" class="footnote-back">↩</a></p></li>
+<li id="fn49"><p>The derivative is <span class="math inline">\(f&#39;(p) = 1-2p\)</span>. Solving <span class="math inline">\(f&#39;(p)=0\)</span> produces
 <span class="math inline">\(p=1/2\)</span> as the maximizer. Plugging this value in the function gives
-<span class="math inline">\(1/4\)</span> as the maximal value of the function.<a href="ChapConfidence.html#fnref50" class="footnote-back">↩</a></p></li>
-<li id="fn51"><p>Towler, A. and Dipboye, R. L. (1998). The effect of instructor
+<span class="math inline">\(1/4\)</span> as the maximal value of the function.<a href="ChapConfidence.html#fnref49" class="footnote-back">↩</a></p></li>
+<li id="fn50"><p>Towler, A. and Dipboye, R. L. (1998). The effect of instructor
 reputation and need for cognition on student behavior (poster
-presented at American Psychological Society conference, May 1998).<a href="ChapConfidence.html#fnref51" class="footnote-back">↩</a></p></li>
+presented at American Psychological Society conference, May 1998).<a href="ChapConfidence.html#fnref50" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>

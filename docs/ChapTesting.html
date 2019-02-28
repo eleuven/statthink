@@ -25,7 +25,7 @@
 <meta name="author" content="Benjamin Yakir">
 
 
-<meta name="date" content="2019-01-17">
+<meta name="date" content="2019-02-28">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -53,7 +53,7 @@
 <style type="text/css">
 a.sourceLine { display: inline-block; line-height: 1.25; }
 a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; position: absolute; }
+a.sourceLine:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 div.sourceCode { margin: 1em 0; }
@@ -66,13 +66,11 @@ code.sourceCode { white-space: pre-wrap; }
 a.sourceLine { text-indent: -1em; padding-left: 1em; }
 }
 pre.numberSource a.sourceLine
-  { position: relative; }
-pre.numberSource a.sourceLine:empty
-  { position: absolute; }
+  { position: relative; left: -4em; }
 pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
-    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all;
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -145,6 +143,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.7" data-path="ChapIntroR.html"><a href="ChapIntroR.html#exercises"><i class="fa fa-check"></i><b>1.7</b> Exercises</a></li>
 <li class="chapter" data-level="1.8" data-path="ChapIntroR.html"><a href="ChapIntroR.html#summary"><i class="fa fa-check"></i><b>1.8</b> Summary</a><ul>
 <li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li><a href="ChapIntroR.html#r-funcs"><code>R</code> functions introduced in this chapter</a></li>
 <li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#discuss-in-the-forum"><i class="fa fa-check"></i>Discuss in the forum</a></li>
 </ul></li>
 </ul></li>
@@ -156,7 +155,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.2.3" data-path="ChapData.html"><a href="ChapData.html#frequency"><i class="fa fa-check"></i><b>2.2.3</b> Frequency</a></li>
 <li class="chapter" data-level="2.2.4" data-path="ChapData.html"><a href="ChapData.html#critical-evaluation"><i class="fa fa-check"></i><b>2.2.4</b> Critical Evaluation</a></li>
 </ul></li>
-<li class="chapter" data-level="2.3" data-path="ChapData.html"><a href="ChapData.html#readingdata"><i class="fa fa-check"></i><b>2.3</b> Reading Data into <code>R</code></a><ul>
+<li class="chapter" data-level="2.3" data-path="ChapData.html"><a href="ChapData.html#readingdata"><i class="fa fa-check"></i><b>2.3</b> Reading External Data into <code>R</code></a><ul>
 <li class="chapter" data-level="2.3.1" data-path="ChapData.html"><a href="ChapData.html#saving-the-file-and-setting-the-working-directory"><i class="fa fa-check"></i><b>2.3.1</b> Saving the File and Setting the Working Directory</a></li>
 <li class="chapter" data-level="2.3.2" data-path="ChapData.html"><a href="ChapData.html#Data_3"><i class="fa fa-check"></i><b>2.3.2</b> Reading a CSV File into <code>R</code></a></li>
 <li class="chapter" data-level="2.3.3" data-path="ChapData.html"><a href="ChapData.html#data-types"><i class="fa fa-check"></i><b>2.3.3</b> Data Types</a></li>
@@ -164,6 +163,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.4" data-path="ChapData.html"><a href="ChapData.html#exercises-1"><i class="fa fa-check"></i><b>2.4</b> Exercises</a></li>
 <li class="chapter" data-level="2.5" data-path="ChapData.html"><a href="ChapData.html#summary-1"><i class="fa fa-check"></i><b>2.5</b> Summary</a><ul>
 <li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#glossary"><i class="fa fa-check"></i>Glossary</a></li>
+<li><a href="ChapIntroR.html#r-funcs"><code>R</code> functions introduced in this chapter</a></li>
 <li class="chapter" data-level="" data-path="ChapIntroR.html"><a href="ChapIntroR.html#discuss-in-the-forum"><i class="fa fa-check"></i>Discuss in the forum</a></li>
 </ul></li>
 </ul></li>
@@ -532,13 +532,13 @@ question: Do Americans pay today for cars a different price than what
 they used to pay in the 80’s? Has the price of cars changed
 significantly since 1985?</p>
 <p>The average price of a car in the United States in 2009 was
-$27,958<a href="#fn52" class="footnote-ref" id="fnref52"><sup>52</sup></a>. Clearly, this figure is higher than $13,207. However, in
+$27,958<a href="#fn51" class="footnote-ref" id="fnref51"><sup>51</sup></a>. Clearly, this figure is higher than $13,207. However, in
 order to produce a fair answer to the question we have to take into
 account that, due to inflation, the prices of all products went up
 during these years. A more meaningful comparison will involve the
 current prices of cars in terms of 1985 Dollars. Indeed, if we take into
 account inflation then we get that, on the average, the cost of today’s
-cars corresponds to an average price of $13,662 in 1985 values<a href="#fn53" class="footnote-ref" id="fnref53"><sup>53</sup></a>.
+cars corresponds to an average price of $13,662 in 1985 values<a href="#fn52" class="footnote-ref" id="fnref52"><sup>52</sup></a>.
 This price is still higher than the prices in the 1985 but not as much.
 The question we are asking is: “Is the difference between $13,207 and
 $13,662 significant or is it not so?”.</p>
@@ -555,13 +555,13 @@ car in 2009, adjusted for inflation:</p>
 ##  One Sample t-test
 ## 
 ## data:  cars$price
-## t = -0.811482, df = 200, p-value = 0.41805
+## t = -0.81148, df = 200, p-value = 0.4181
 ## alternative hypothesis: true mean is not equal to 13662
 ## 95 percent confidence interval:
-##  12101.797 14312.462
+##  12101.80 14312.46
 ## sample estimates:
 ## mean of x 
-## 13207.129</code></pre>
+##  13207.13</code></pre>
 <p>The data in the file “<code>cars.csv</code>” is read into a data frame that is
 given the name “<code>cars</code>”. Afterwards, the data on prices of car types in
 1985 is entered as the first argument to the function “<code>t.test</code>”. The
@@ -577,7 +577,7 @@ This number, the average of the 201 non-missing values of the variable
 1985. The 95% confidence interval of the expectation, the interval
 <span class="math display">\[12101.80, 14312.46\]</span>, is presented on the 4th line from the bottom.
 This is the confidence interval for the expectation that was computed in
-Subsection <a href="ChapConfidence.html#subsec:CImean">11.2.2</a><a href="#fn54" class="footnote-ref" id="fnref54"><sup>54</sup></a>.</p>
+Subsection <a href="ChapConfidence.html#subsec:CImean">11.2.2</a><a href="#fn53" class="footnote-ref" id="fnref53"><sup>53</sup></a>.</p>
 <p>The information relevant to conducting the statistical test itself is
 given in the upper part of the report. Specifically, it is reported that
 the data in “<code>cars$price</code>” is used in order to carry out the test. Based
@@ -696,7 +696,7 @@ car. In principle, the statistic <span class="math inline">\(T\)</span> measures
 the estimated value of the expectation (<span class="math inline">\(\bar X\)</span>) and the expected value
 under the null hypothesis (<span class="math inline">\(\Expec(X) = 13,662\)</span>). This discrepancy is
 measured in units of the (estimated) standard deviation of the sample
-average<a href="#fn55" class="footnote-ref" id="fnref55"><sup>55</sup></a>.</p>
+average<a href="#fn54" class="footnote-ref" id="fnref54"><sup>54</sup></a>.</p>
 <p>If the null hypothesis <span class="math inline">\(H_0:\Expec(X) = 13,662\)</span> is true then the
 sampling distribution of the sample average <span class="math inline">\(\bar X\)</span> should be
 concentrated about the value 13,662. Values of the sample average much
@@ -745,7 +745,7 @@ exercise, let us recompute directly from the data the value of the <span class="
 statistic:</p>
 <pre class="sourceCode r"><code class="sourceCode r">x.bar &lt;-<span class="st"> </span><span class="kw">mean</span>(cars<span class="op">$</span>price,<span class="dt">na.rm=</span><span class="ot">TRUE</span>)
 x.bar</code></pre>
-<pre><code>## [1] 13207.129</code></pre>
+<pre><code>## [1] 13207.13</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r">s &lt;-<span class="st"> </span><span class="kw">sd</span>(cars<span class="op">$</span>price,<span class="dt">na.rm=</span><span class="ot">TRUE</span>)</code></pre>
 <p>The observed value of the sample average is <span class="math inline">\(\bar x = 13207.13\)</span> and the
 observed value of the sample standard deviation is <span class="math inline">\(s = 7947.066\)</span>. The
@@ -766,7 +766,7 @@ rejection region (which is composed of absolute values larger than the
 threshold). Consequently, we accept the null hypothesis. This null
 hypothesis declares that the expected price of a car was equal to the
 current expected price (after adjusting for the change in Consumer Price
-Index)<a href="#fn56" class="footnote-ref" id="fnref56"><sup>56</sup></a>.</p>
+Index)<a href="#fn55" class="footnote-ref" id="fnref55"><sup>55</sup></a>.</p>
 </div>
 <div id="error-types-and-error-probabilities" class="section level3">
 <h3><span class="header-section-number">12.2.3</span> Error Types and Error Probabilities</h3>
@@ -923,7 +923,7 @@ this equals twice the probability of the upper tail:</p>
 <p><span class="math display">\[\Prob(|T| &gt; 0.8114824) = 2\cdot \Prob(T&gt; 0.8114824) = 2\cdot [1-\Prob(|T| \leq 0.8114824)]\;.\]</span>
 When we compute this probability in <code>R</code> we get:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="dv">2</span><span class="op">*</span>(<span class="dv">1</span><span class="op">-</span><span class="kw">pt</span>(<span class="fl">0.8114824</span>,<span class="dv">200</span>))</code></pre>
-<pre><code>## [1] 0.41805339</code></pre>
+<pre><code>## [1] 0.4180534</code></pre>
 <p>This probability is equal, after rounding up, to the probability
 “<code>p-value = 0.4181</code>” that is reported in the output of the function
 “<code>t.test</code>”.</p>
@@ -962,9 +962,9 @@ this variable:</p>
 <pre class="sourceCode r"><code class="sourceCode r">dif.mpg &lt;-<span class="st"> </span>cars<span class="op">$</span>highway.mpg <span class="op">-</span><span class="st"> </span>cars<span class="op">$</span>city.mpg
 <span class="kw">summary</span>(dif.mpg)</code></pre>
 <pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##  0.0000  5.0000  6.0000  5.5317  7.0000 11.0000</code></pre>
+##   0.000   5.000   6.000   5.532   7.000  11.000</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="kw">table</span>(dif.mpg))</code></pre>
-<p><img src="statthink_files/figure-html/unnamed-chunk-176-1.png" width="60%" style="display: block; margin: auto;" /></p>
+<p><img src="statthink_files/figure-html/unnamed-chunk-179-1.png" width="60%" style="display: block; margin: auto;" /></p>
 <p>In the first expression we created the variable “<code>dif.mpg</code>” that
 contains the difference in miles-per-gallon. The difference is computed
 for each car type between highway driving conditions and urban driving
@@ -1002,7 +1002,7 @@ equal size: One group is composed of the heavier cars and the other
 group is composed of the lighter cars. We will examine the relation
 between the weight of the car and difference in miles per gallon between
 the two driving conditions by testing hypotheses separately for each
-weight group<a href="#fn57" class="footnote-ref" id="fnref57"><sup>57</sup></a>. For each such group we start by testing the two-sided
+weight group<a href="#fn56" class="footnote-ref" id="fnref56"><sup>56</sup></a>. For each such group we start by testing the two-sided
 hypothesis <span class="math inline">\(H_1:\Expec(X) \not = 5.53\)</span>, where <span class="math inline">\(X\)</span> is the difference
 between highway and city miles-per-gallon in cars that belong to the
 given weight group. After carrying the test for the two-sided
@@ -1013,7 +1013,7 @@ one-sided alternatives.</p>
 “<code>cars</code>”. Let us examine the summary of the content of this variable:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(cars<span class="op">$</span>curb.weight)</code></pre>
 <pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##  1488.0  2145.0  2414.0  2555.6  2935.0  4066.0</code></pre>
+##    1488    2145    2414    2556    2935    4066</code></pre>
 <p>Half of the cars in the data frame weigh less than 2,414 lb and half the
 cars weigh more. The average weight of a car is 2,556 lb. Let us take
 2,414 as a threshold and denote cars below this weight as “light” and
@@ -1036,7 +1036,7 @@ weight above 2,414 lb (cars that are associated with the value “<code>TRUE</co
 in the variable “<code>heavy</code>”), and then to all cars with weights not
 exceeding the threshold (cars associated with value “<code>FALSE</code>”). In the
 past we showed that one may address components of a sequence using its
-position in the sequence<a href="#fn58" class="footnote-ref" id="fnref58"><sup>58</sup></a>. Here we demonstrate an alternative
+position in the sequence<a href="#fn57" class="footnote-ref" id="fnref57"><sup>57</sup></a>. Here we demonstrate an alternative
 approach for addressing specific locations by using a sequence with
 logical components.</p>
 <p>In order to illustrate this second approach consider the two sequences:</p>
@@ -1088,10 +1088,10 @@ on the expectation of the variable “<code>dif.mpg</code>” for the heavier ca
 ##  One Sample t-test
 ## 
 ## data:  dif.mpg[heavy]
-## t = -1.53853, df = 101, p-value = 0.12705
+## t = -1.5385, df = 101, p-value = 0.127
 ## alternative hypothesis: true mean is not equal to 5.53
 ## 95 percent confidence interval:
-##  4.9001983 5.6096057
+##  4.900198 5.609606
 ## sample estimates:
 ## mean of x 
 ##  5.254902</code></pre>
@@ -1117,13 +1117,13 @@ subsequence gives:</p>
 ##  One Sample t-test
 ## 
 ## data:  dif.mpg[!heavy]
-## t = 1.96923, df = 102, p-value = 0.051639
+## t = 1.9692, df = 102, p-value = 0.05164
 ## alternative hypothesis: true mean is not equal to 5.53
 ## 95 percent confidence interval:
-##  5.5280018 6.0836487
+##  5.528002 6.083649
 ## sample estimates:
 ## mean of x 
-## 5.8058252</code></pre>
+##  5.805825</code></pre>
 <p>Again, the null hypothesis is not rejected at the 5% significance level
 since a <span class="math inline">\(p\)</span>-value of 0.05164 is still larger than 0.05. However, unlike
 the case for heavier cars where the <span class="math inline">\(p\)</span>-value was undeniably larger than
@@ -1149,12 +1149,12 @@ sample size. The sample sizes, 103 for lighter cars and 102 for heavier
 cars, are almost equal. Therefore, the reason for the difference in the
 values of the <span class="math inline">\(T\)</span> statistics for both weight groups must be differences
 in the sample standard deviations. Indeed, when we compute the sample
-standard deviation for lighter and heavier cars<a href="#fn59" class="footnote-ref" id="fnref59"><sup>59</sup></a> we get that the
+standard deviation for lighter and heavier cars<a href="#fn58" class="footnote-ref" id="fnref58"><sup>58</sup></a> we get that the
 standard deviation for lighter cars (1.421531) is much smaller than the
 standard deviation for heavier cars (1.805856):</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">tapply</span>(dif.mpg,heavy,sd)</code></pre>
-<pre><code>##     FALSE      TRUE 
-## 1.4215309 1.8058556</code></pre>
+<pre><code>##    FALSE     TRUE 
+## 1.421531 1.805856</code></pre>
 <p>The important lesson to learn from this exercise is that simple minded
 notion of significance and statistical significance are not the same. A
 simple minded assessment of the discrepancy from the null hypothesis
@@ -1188,13 +1188,13 @@ two-sided alternative. By changing the value of the argument to
 ##  One Sample t-test
 ## 
 ## data:  dif.mpg[!heavy]
-## t = 1.96923, df = 102, p-value = 0.02582
+## t = 1.9692, df = 102, p-value = 0.02582
 ## alternative hypothesis: true mean is greater than 5.53
 ## 95 percent confidence interval:
-##  5.5733228       Inf
+##  5.573323      Inf
 ## sample estimates:
 ## mean of x 
-## 5.8058252</code></pre>
+##  5.805825</code></pre>
 <p>The value of the test statistic (<code>t = 1.9692</code>) is the same as for the
 test of the two-sided alternative and so is the number of degrees of
 freedom associated with the statistic (<code>df = 102</code>). However, the
@@ -1218,13 +1218,13 @@ of the observed data.</p>
 ##  One Sample t-test
 ## 
 ## data:  dif.mpg[!heavy]
-## t = 1.96923, df = 102, p-value = 0.97418
+## t = 1.9692, df = 102, p-value = 0.9742
 ## alternative hypothesis: true mean is less than 5.53
 ## 95 percent confidence interval:
-##       -Inf 6.0383277
+##      -Inf 6.038328
 ## sample estimates:
 ## mean of x 
-## 5.8058252</code></pre>
+##  5.805825</code></pre>
 <p>The alternative here is determined by the expression
 “<code>alternative=less</code>”. The <span class="math inline">\(p\)</span>-value is equal to 0.9742, which is the
 probability that the test statistic obtains values less than the
@@ -1301,7 +1301,7 @@ of each combination of weight group and the fuel type:</p>
 ##   gas       97   88</code></pre>
 <p>Originally the function “<code>table</code>” was applied to a single factor and
 produced a sequence with the frequencies of each level of the factor. In
-the current application the input to the function are two factors<a href="#fn60" class="footnote-ref" id="fnref60"><sup>60</sup></a>.
+the current application the input to the function are two factors<a href="#fn59" class="footnote-ref" id="fnref59"><sup>59</sup></a>.
 The output is a table of frequencies. Each entry to the table
 corresponds to the frequency of a combination of levels, one from the
 first input factor and the other from the second input factor. In this
@@ -1321,10 +1321,10 @@ current example:</p>
 ##  1-sample proportions test with continuity correction
 ## 
 ## data:  6 out of 20, null probability 0.5
-## X-squared = 2.45, df = 1, p-value = 0.11752
+## X-squared = 2.45, df = 1, p-value = 0.1175
 ## alternative hypothesis: true p is not equal to 0.5
 ## 95 percent confidence interval:
-##  0.12839086 0.54330713
+##  0.1283909 0.5433071
 ## sample estimates:
 ##   p 
 ## 0.3</code></pre>
@@ -1343,7 +1343,7 @@ value in the current example. This default value can be modified by
 replacing the value 0.5 by the appropriate probability.</p>
 <p>The next line presents the information relevant for the test itself. The
 test statistic, which is essentially the square of the <span class="math inline">\(Z\)</span> statistic
-described above<a href="#fn61" class="footnote-ref" id="fnref61"><sup>61</sup></a>, obtains the value 2.45. The sampling distribution
+described above<a href="#fn60" class="footnote-ref" id="fnref60"><sup>60</sup></a>, obtains the value 2.45. The sampling distribution
 of this statistic under the null hypothesis is, approximately, the
 chi-square distribution on 1 degree of freedom. The <span class="math inline">\(p\)</span>-value, which is
 the probability that chi-square distribution on 1 degree of freedom
@@ -1365,10 +1365,10 @@ where <span class="math inline">\(n = 200\)</span> and the number of occurrences
 ##  1-sample proportions test with continuity correction
 ## 
 ## data:  60 out of 200, null probability 0.5
-## X-squared = 31.205, df = 1, p-value = 2.3217e-08
+## X-squared = 31.205, df = 1, p-value = 2.322e-08
 ## alternative hypothesis: true p is not equal to 0.5
 ## 95 percent confidence interval:
-##  0.23844235 0.36938918
+##  0.2384423 0.3693892
 ## sample estimates:
 ##   p 
 ## 0.3</code></pre>
@@ -1390,7 +1390,7 @@ discrepancy increases.</p>
 <h2><span class="header-section-number">12.5</span> Exercises</h2>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-190" class="exercise"><strong>Exercise 12.1  </strong></span>Consider a medical condition that does not have a
+<p><span id="exr:unnamed-chunk-193" class="exercise"><strong>Exercise 12.1  </strong></span>Consider a medical condition that does not have a
 standard treatment. The recommended design of a clinical trial for a new
 treatment to such condition involves using a placebo treatment as a
 control. A placebo treatment is a treatment that externally looks
@@ -1423,7 +1423,7 @@ level of 5%.)</li>
 
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-191" class="exercise"><strong>Exercise 12.2  </strong></span>It is assumed, when constructing the <span class="math inline">\(t\)</span>-test, that the
+<p><span id="exr:unnamed-chunk-194" class="exercise"><strong>Exercise 12.2  </strong></span>It is assumed, when constructing the <span class="math inline">\(t\)</span>-test, that the
 measurements are Normally distributed. In this exercise we examine the
 robustness of the test to divergence from the assumption. You are
 required to compute the significance level of a two-sided <span class="math inline">\(t\)</span>-test of
@@ -1438,7 +1438,7 @@ level.</p>
 
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-192" class="exercise"><strong>Exercise 12.3  </strong></span>Assume that you are interested in testing
+<p><span id="exr:unnamed-chunk-195" class="exercise"><strong>Exercise 12.3  </strong></span>Assume that you are interested in testing
 <span class="math inline">\(H_0:\Expec(X) = 20\)</span> versus <span class="math inline">\(H_1:\Expec(X)\not = 20\)</span> with a significance
 level of 5% using the <span class="math inline">\(t\)</span>-test. Let the sample average, of a sample of
 size <span class="math inline">\(n=55\)</span>, be equal to <span class="math inline">\(\bar x = 22.7\)</span> and the sample standard
@@ -1551,14 +1551,14 @@ significance level of 10%?</p>
 </div>
 <div class="footnotes">
 <hr />
-<ol start="52">
-<li id="fn52"><p>Source:
-“<a href="http://wiki.answers.com/Q/Average_price_of_a_car_in_2009" class="uri">http://wiki.answers.com/Q/Average_price_of_a_car_in_2009</a>”.<a href="ChapTesting.html#fnref52" class="footnote-back">↩</a></p></li>
-<li id="fn53"><p>Source: “<a href="http://www.westegg.com/inflation/" class="uri">http://www.westegg.com/inflation/</a>”. The interpretation
+<ol start="51">
+<li id="fn51"><p>Source:
+“<a href="http://wiki.answers.com/Q/Average_price_of_a_car_in_2009" class="uri">http://wiki.answers.com/Q/Average_price_of_a_car_in_2009</a>”.<a href="ChapTesting.html#fnref51" class="footnote-back">↩</a></p></li>
+<li id="fn52"><p>Source: “<a href="http://www.westegg.com/inflation/" class="uri">http://www.westegg.com/inflation/</a>”. The interpretation
 of adjusting prices to inflation is that our comparison will
 correspond to changes in the price of cars, relative to other items
-that enter into the computation of the Consumer Price Index.<a href="ChapTesting.html#fnref53" class="footnote-back">↩</a></p></li>
-<li id="fn54"><p>As a matter of fact, the confidence interval computed in
+that enter into the computation of the Consumer Price Index.<a href="ChapTesting.html#fnref52" class="footnote-back">↩</a></p></li>
+<li id="fn53"><p>As a matter of fact, the confidence interval computed in
 Subsection <span class="math display">\[subsec:Confidence\_2.1\]</span> is <span class="math display">\[12108.47, 14305.79\]</span>,
 which is not identical to the confidence that appears in the report.
 The reason for the discrepancy is that we used the 0.975-percentile
@@ -1566,45 +1566,45 @@ of the Normal distribution, 1.96, whereas the confidence interval
 computed here uses the 0.975-percentile of the <span class="math inline">\(t\)</span>-distribution on
 201-1=200 degrees of freedom. The latter is equal to 1.971896.
 Nonetheless, for all practical purposes, the two confidence
-intervals are the same.<a href="ChapTesting.html#fnref54" class="footnote-back">↩</a></p></li>
-<li id="fn55"><p>If the variance of the measurement <span class="math inline">\(\Var(X)\)</span> was known one could
+intervals are the same.<a href="ChapTesting.html#fnref53" class="footnote-back">↩</a></p></li>
+<li id="fn54"><p>If the variance of the measurement <span class="math inline">\(\Var(X)\)</span> was known one could
 have use <span class="math inline">\(Z = (\bar X- - 13,662)/\sqrt{\Var{X}/n}\)</span> as a test
 statistic. This statistic corresponds to the discrepancy of the
 sample average from the null expectation in units of its standard
 deviation, i.e. the <span class="math inline">\(z\)</span>-value of the sample average. Since the
 variance of the observation is unknown, we use an estimator of the
-variance (<span class="math inline">\(S^2\)</span>) instead.<a href="ChapTesting.html#fnref55" class="footnote-back">↩</a></p></li>
-<li id="fn56"><p>Previously, we carried out the same test using the <span class="math inline">\(p\)</span>-value. The
+variance (<span class="math inline">\(S^2\)</span>) instead.<a href="ChapTesting.html#fnref54" class="footnote-back">↩</a></p></li>
+<li id="fn55"><p>Previously, we carried out the same test using the <span class="math inline">\(p\)</span>-value. The
 computed <span class="math inline">\(p\)</span>-value in this example is 0.4181. The null hypothesis
 was accepted since this value is larger than 0.05. As a matter of
 fact, the test that uses the <span class="math inline">\(T\)</span> statistic as a test statistic and
 reject the null hypothesis for absolute values larger than
 <code>qt(0.975,n-1)</code> is equivalent to the test that uses the <span class="math inline">\(p\)</span>-value
 and rejects the null hypothesis for <span class="math inline">\(p\)</span>-values less than 0.05. Below
-we discuss the computation of the <span class="math inline">\(p\)</span>-value.<a href="ChapTesting.html#fnref56" class="footnote-back">↩</a></p></li>
-<li id="fn57"><p>In the next chapters we will consider a more direct ways for
+we discuss the computation of the <span class="math inline">\(p\)</span>-value.<a href="ChapTesting.html#fnref55" class="footnote-back">↩</a></p></li>
+<li id="fn56"><p>In the next chapters we will consider a more direct ways for
 comparing the effect of one variable (<code>curb.weight</code> in this example)
 on the distribution of another variable (<code>dif.mpg</code> in this example).
 Here, instead, we investigate the effect indirectly by the
 investigation of hypotheses on the expectation of the variable
-<code>dif.mpg</code> separately for heavier cars and for lighter cars.<a href="ChapTesting.html#fnref57" class="footnote-back">↩</a></p></li>
-<li id="fn58"><p>For example, in Question <span class="math display">\[ex:Inference.1\]</span> we referred to the
+<code>dif.mpg</code> separately for heavier cars and for lighter cars.<a href="ChapTesting.html#fnref56" class="footnote-back">↩</a></p></li>
+<li id="fn57"><p>For example, in Question <span class="math display">\[ex:Inference.1\]</span> we referred to the
 first 29 observations of the sequence “<code>change</code>” using the
 expression “<code>change[1:29]</code>” and to the last 21 observations using
-the expression “<code>change[30:50]</code>”.<a href="ChapTesting.html#fnref58" class="footnote-back">↩</a></p></li>
-<li id="fn59"><p>The function “<code>tapply</code>” applies the function that is given as its
+the expression “<code>change[30:50]</code>”.<a href="ChapTesting.html#fnref57" class="footnote-back">↩</a></p></li>
+<li id="fn58"><p>The function “<code>tapply</code>” applies the function that is given as its
 third argument (the function “<code>sd</code>” in this case) to each subset of
 values of the sequence that is given as its first argument (the
 sequence “<code>dif.mpg</code>” in the current application). The subsets are
 determined by the levels of the second arguments (the sequence
 “<code>heavy</code>” in this case). The output is the sample standard deviation
 of the variable “<code>dif.mpg</code>” for lighter cars (the level “<code>FALSE</code>”)
-and for heavier cars (the level “<code>TRUE</code>”).<a href="ChapTesting.html#fnref59" class="footnote-back">↩</a></p></li>
-<li id="fn60"><p>To be more accurate, the variable “<code>heavy</code>” is not a factor but a
+and for heavier cars (the level “<code>TRUE</code>”).<a href="ChapTesting.html#fnref58" class="footnote-back">↩</a></p></li>
+<li id="fn59"><p>To be more accurate, the variable “<code>heavy</code>” is not a factor but a
 sequence with logical components. Nonetheless, when the function
 “<code>table</code>” is applied to such a sequence it treats it as a factor
-with two levels, “<code>TRUE</code>” and “<code>FALSE</code>”.<a href="ChapTesting.html#fnref60" class="footnote-back">↩</a></p></li>
-<li id="fn61"><p>The test statistic that is computed by default is based on
+with two levels, “<code>TRUE</code>” and “<code>FALSE</code>”.<a href="ChapTesting.html#fnref59" class="footnote-back">↩</a></p></li>
+<li id="fn60"><p>The test statistic that is computed by default is based on
 <em>Yates’ correction for continuity</em>, which is very similar to the
 continuity correction that was used in Chapter <span class="math display">\[ch:Normal\]</span> for the
 Normal approximation of the Binomial distribution. Specifically, the
@@ -1613,7 +1613,7 @@ test statistic to the continuity correction for testing
 <span class="math inline">\([|\hat p - p_0|-0.5/n]^2/[p_0(1-p_0)/n]\)</span>. Compare this statistic
 with the statistic proposed in the text that takes the form
 <span class="math inline">\([\hat p - p_0]^2/[p_0(1-p_0)/n]\)</span>. The latter statistic is used if
-the argument “<code>correct = FALSE</code>” is added to the function.<a href="ChapTesting.html#fnref61" class="footnote-back">↩</a></p></li>
+the argument “<code>correct = FALSE</code>” is added to the function.<a href="ChapTesting.html#fnref60" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>

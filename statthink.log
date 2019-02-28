@@ -1,0 +1,5520 @@
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2018.8.13)  28 FEB 2019 10:53
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**statthink.tex
+(./statthink.tex
+LaTeX2e <2018-04-01> patch level 2
+Babel <3.18> and hyphenation patterns for 22 language(s) loaded.
+(./krantz.cls
+Document Class: krantz 2005/09/16 v1.4f Standard LaTeX document class
+(/usr/local/texlive/2018basic/texmf-dist/tex/latex/base/bk10.clo
+File: bk10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\trimheight=\dimen102
+\trimwidth=\dimen103
+\normaltextheight=\dimen104
+\tempa=\dimen105
+\tempdimen=\dimen106
+\htrim=\dimen107
+\vtrimtop=\dimen108
+\vtrimbot=\dimen109
+\ul@box=\box26
+\ur@box=\box27
+\ll@box=\box28
+\lr@box=\box29
+\@cipboxa=\box30
+\@cipboxb=\box31
+\@ciprulewidth=\dimen110
+\c@part=\count80
+\c@chapter=\count81
+\c@section=\count82
+\c@subsection=\count83
+\c@subsubsection=\count84
+\c@paragraph=\count85
+\c@subparagraph=\count86
+\secwd=\dimen111
+\subsecwd=\dimen112
+\subsubsecwd=\dimen113
+\c@figure=\count87
+\c@table=\count88
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\c@numauthors=\count89
+\section@toc@skip=\skip43
+\SectionTOCWidth=\skip44
+\subsection@toc@skip=\skip45
+\SubSectionTOCWidth=\skip46
+\subsubsection@toc@skip=\skip47
+\SubSubSectionTOCWidth=\skip48
+\paragraph@toc@skip=\skip49
+\ParagraphTOCWidth=\skip50
+\subparagraph@toc@skip=\skip51
+\@AUonebox=\box32
+\@AUtwobox=\box33
+\@AUthreebox=\box34
+\@AUfourbox=\box35
+\@AUaffonebox=\box36
+\@AUafftwobox=\box37
+\@AUaffthreebox=\box38
+\@AUafffourbox=\box39
+\@finalAUboxfromone=\box40
+\@finalAUboxfromtwo=\box41
+\@finalAUboxfromthree=\box42
+\@finalAUboxfromfour=\box43
+\c@chaptocdepth=\count90
+\bibindent=\dimen114
+\tempbox=\box44
+\nomenwidth=\dimen115
+\@tablebox=\box45
+\@tabletitlebox=\box46
+\@tablewidth=\dimen116
+\@tabletitlewidth=\dimen117
+\max@tablewidth=\dimen118
+\tempbox=\box47
+\tempdimen=\dimen119
+\tempbox=\box48
+\notewidth=\dimen120
+\wherebox=\box49
+\wherewidth=\dimen121
+\listtextleftmargin=\skip52
+\listtextleftmarginii=\skip53
+\listtextleftmarginiii=\skip54
+\listtextrightmargin=\skip55
+\listlabelleftskip=\skip56
+\listlabelleftskipii=\skip57
+\listlabelleftskipiii=\skip58
+\abovelistskipi=\skip59
+\belowlistskipi=\skip60
+\abovelistskipii=\skip61
+\belowlistskipii=\skip62
+\abovelistskipiii=\skip63
+\belowlistskipiii=\skip64
+\labelsepi=\skip65
+\labelsepii=\skip66
+\labelsepiii=\skip67
+\itemsepi=\skip68
+\itemsepii=\skip69
+\itemsepiii=\skip70
+\enumdimwd=\dimen122
+\enumdim=\dimen123
+\concolwidth=\dimen124
+\stempbox=\box50
+) (/usr/local/texlive/2018basic/texmf-dist/tex/latex/lm/lmodern.sty
+Package: lmodern 2009/10/30 v1.6 Latin Modern Fonts
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 22.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/lmm/m/it on input line 23.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> OMS/lmsy/m/n on input line 24.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 25.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 26.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/lmm/b/it on input line 27.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/lmsy/b/n on input line 28.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 29.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 31.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 32.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT1/lmr/m/it on input line 33.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> OT1/lmss/bx/n on input line 36.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT1/lmr/bx/it on input line 37.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
+) (/usr/local/texlive/2018basic/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+(/usr/local/texlive/2018basic/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks14
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)) (/usr/local/texlive/2018basic/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2017/09/02 v2.17a AMS math features
+\@mathmargin=\skip71
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2018basic/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+(/usr/local/texlive/2018basic/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks15
+\ex@=\dimen125
+)) (/usr/local/texlive/2018basic/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen126
+) (/usr/local/texlive/2018basic/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count91
+LaTeX Info: Redefining \frac on input line 213.
+\uproot@=\count92
+\leftroot@=\count93
+LaTeX Info: Redefining \overline on input line 375.
+\classnum@=\count94
+\DOTSCASE@=\count95
+LaTeX Info: Redefining \ldots on input line 472.
+LaTeX Info: Redefining \dots on input line 475.
+LaTeX Info: Redefining \cdots on input line 596.
+\Mathstrutbox@=\box51
+\strutbox@=\box52
+\big@size=\dimen127
+LaTeX Font Info:    Redeclaring font encoding OML on input line 712.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
+\macc@depth=\count96
+\c@MaxMatrixCols=\count97
+\dotsspace@=\muskip10
+\c@parentequation=\count98
+\dspbrk@lvl=\count99
+\tag@help=\toks16
+\row@=\count100
+\column@=\count101
+\maxfields@=\count102
+\andhelp@=\toks17
+\eqnshift@=\dimen128
+\alignsep@=\dimen129
+\tagshift@=\dimen130
+\tagwidth@=\dimen131
+\totwidth@=\dimen132
+\lineht@=\dimen133
+\@envbody=\toks18
+\multlinegap=\skip72
+\multlinetaggap=\skip73
+\mathdisplay@stack=\toks19
+LaTeX Info: Redefining \[ on input line 2817.
+LaTeX Info: Redefining \] on input line 2818.
+) (/usr/local/texlive/2018basic/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+) (/usr/local/texlive/2018basic/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+(/usr/local/texlive/2018basic/texmf-dist/tex/latex/unicode-math/unicode-math.st
+y (/usr/local/texlive/2018basic/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2018-08-23 L3 programming layer (loader) 
+(/usr/local/texlive/2018basic/texmf-dist/tex/latex/l3kernel/expl3-code.tex
+Package: expl3 2018-08-23 L3 programming layer (code)
+\c_max_int=\count103
+\l_tmpa_int=\count104
+\l_tmpb_int=\count105
+\g_tmpa_int=\count106
+\g_tmpb_int=\count107
+\g__kernel_prg_map_int=\count108
+\c_log_iow=\count109
+\l_iow_line_count_int=\count110
+\l__iow_line_target_int=\count111
+\l__iow_one_indent_int=\count112
+\l__iow_indent_int=\count113
+\c_zero_dim=\dimen134
+\c_max_dim=\dimen135
+\l_tmpa_dim=\dimen136
+\l_tmpb_dim=\dimen137
+\g_tmpa_dim=\dimen138
+\g_tmpb_dim=\dimen139
+\c_zero_skip=\skip74
+\c_max_skip=\skip75
+\l_tmpa_skip=\skip76
+\l_tmpb_skip=\skip77
+\g_tmpa_skip=\skip78
+\g_tmpb_skip=\skip79
+\c_zero_muskip=\muskip11
+\c_max_muskip=\muskip12
+\l_tmpa_muskip=\muskip13
+\l_tmpb_muskip=\muskip14
+\g_tmpa_muskip=\muskip15
+\g_tmpb_muskip=\muskip16
+\l_keys_choice_int=\count114
+\l__intarray_loop_int=\count115
+\c__intarray_sp_dim=\dimen140
+\g__intarray_font_int=\count116
+\c__fp_leading_shift_int=\count117
+\c__fp_middle_shift_int=\count118
+\c__fp_trailing_shift_int=\count119
+\c__fp_big_leading_shift_int=\count120
+\c__fp_big_middle_shift_int=\count121
+\c__fp_big_trailing_shift_int=\count122
+\c__fp_Bigg_leading_shift_int=\count123
+\c__fp_Bigg_middle_shift_int=\count124
+\c__fp_Bigg_trailing_shift_int=\count125
+\g__fp_array_int=\count126
+\l__fp_array_loop_int=\count127
+\l__sort_length_int=\count128
+\l__sort_min_int=\count129
+\l__sort_top_int=\count130
+\l__sort_max_int=\count131
+\l__sort_true_max_int=\count132
+\l__sort_block_int=\count133
+\l__sort_begin_int=\count134
+\l__sort_end_int=\count135
+\l__sort_A_int=\count136
+\l__sort_B_int=\count137
+\l__sort_C_int=\count138
+\l__tl_analysis_normal_int=\count139
+\l__tl_analysis_index_int=\count140
+\l__tl_analysis_nesting_int=\count141
+\l__tl_analysis_type_int=\count142
+\l__regex_internal_a_int=\count143
+\l__regex_internal_b_int=\count144
+\l__regex_internal_c_int=\count145
+\l__regex_balance_int=\count146
+\l__regex_group_level_int=\count147
+\l__regex_mode_int=\count148
+\c__regex_cs_in_class_mode_int=\count149
+\c__regex_cs_mode_int=\count150
+\l__regex_catcodes_int=\count151
+\l__regex_default_catcodes_int=\count152
+\c__regex_catcode_L_int=\count153
+\c__regex_catcode_O_int=\count154
+\c__regex_catcode_A_int=\count155
+\c__regex_all_catcodes_int=\count156
+\l__regex_show_lines_int=\count157
+\l__regex_min_state_int=\count158
+\l__regex_max_state_int=\count159
+\l__regex_left_state_int=\count160
+\l__regex_right_state_int=\count161
+\l__regex_capturing_group_int=\count162
+\l__regex_min_pos_int=\count163
+\l__regex_max_pos_int=\count164
+\l__regex_curr_pos_int=\count165
+\l__regex_start_pos_int=\count166
+\l__regex_success_pos_int=\count167
+\l__regex_curr_char_int=\count168
+\l__regex_curr_catcode_int=\count169
+\l__regex_last_char_int=\count170
+\l__regex_case_changed_char_int=\count171
+\l__regex_curr_state_int=\count172
+\l__regex_step_int=\count173
+\l__regex_min_active_int=\count174
+\l__regex_max_active_int=\count175
+\l__regex_replacement_csnames_int=\count176
+\l__regex_match_count_int=\count177
+\l__regex_min_submatch_int=\count178
+\l__regex_submatch_int=\count179
+\l__regex_zeroth_submatch_int=\count180
+\g__regex_trace_regex_int=\count181
+\c_empty_box=\box53
+\l_tmpa_box=\box54
+\l_tmpb_box=\box55
+\g_tmpa_box=\box56
+\g_tmpb_box=\box57
+\l__box_top_dim=\dimen141
+\l__box_bottom_dim=\dimen142
+\l__box_left_dim=\dimen143
+\l__box_right_dim=\dimen144
+\l__box_top_new_dim=\dimen145
+\l__box_bottom_new_dim=\dimen146
+\l__box_left_new_dim=\dimen147
+\l__box_right_new_dim=\dimen148
+\l__box_internal_box=\box58
+\l__coffin_internal_box=\box59
+\l__coffin_internal_dim=\dimen149
+\l__coffin_offset_x_dim=\dimen150
+\l__coffin_offset_y_dim=\dimen151
+\l__coffin_x_dim=\dimen152
+\l__coffin_y_dim=\dimen153
+\l__coffin_x_prime_dim=\dimen154
+\l__coffin_y_prime_dim=\dimen155
+\c_empty_coffin=\box60
+\l__coffin_aligned_coffin=\box61
+\l__coffin_aligned_internal_coffin=\box62
+\l_tmpa_coffin=\box63
+\l_tmpb_coffin=\box64
+\l__coffin_display_coffin=\box65
+\l__coffin_display_coord_coffin=\box66
+\l__coffin_display_pole_coffin=\box67
+\l__coffin_display_offset_dim=\dimen156
+\l__coffin_display_x_dim=\dimen157
+\l__coffin_display_y_dim=\dimen158
+\g__file_internal_ior=\read1
+\l__coffin_bounding_shift_dim=\dimen159
+\l__coffin_left_corner_dim=\dimen160
+\l__coffin_right_corner_dim=\dimen161
+\l__coffin_bottom_corner_dim=\dimen162
+\l__coffin_top_corner_dim=\dimen163
+\l__coffin_scaled_total_height_dim=\dimen164
+\l__coffin_scaled_width_dim=\dimen165
+) (/usr/local/texlive/2018basic/texmf-dist/tex/latex/l3kernel/l3xdvipdfmx.def
+File: l3xdvidpfmx.def 2018-08-23 v L3 Experimental driver: xdvipdfmx
+\g__driver_image_int=\count182
+))
+Package: unicode-math 2018/07/29 vv0.8m Unicode maths in XeLaTeX and LuaLaTeX
+
+(/usr/local/texlive/2018basic/texmf-dist/tex/latex/unicode-math/unicode-math-xe
+tex.sty
+Package: unicode-math-xetex 2018/07/29 vv0.8m Unicode maths in XeLaTeX and LuaL
+aTeX
+
+(/usr/local/texlive/2018basic/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+Package: xparse 2018-08-23 L3 Experimental document command parser
+\l__xparse_current_arg_int=\count183
+\g__xparse_grabber_int=\count184
+\l__xparse_m_args_int=\count185
+\l__xparse_mandatory_args_int=\count186
+\l__xparse_v_nesting_int=\count187
+)
+(/usr/local/texlive/2018basic/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e
+.sty
+Package: l3keys2e 2018-08-23 LaTeX2e option processing using LaTeX3 keys
+) (/usr/local/texlive/2018basic/texmf-dist/tex/latex/fontspec/fontspec.sty
+Package: fontspec 2018/07/30 vv2.6h Font selection for XeLaTeX and LuaLaTeX
+(/usr/local/texlive/2018basic/texmf-dist/tex/latex/fontspec/fontspec-xetex.sty
+Package: fontspec-xetex 2018/07/30 vv2.6h Font selection for XeLaTeX and LuaLaT
+eX
+\l__fontspec_script_int=\count188
+\l__fontspec_language_int=\count189
+\l__fontspec_strnum_int=\count190
+\l__fontspec_tmp_int=\count191
+\l__fontspec_em_int=\count192
+\l__fontspec_emdef_int=\count193
+\l__fontspec_strong_int=\count194
+\l__fontspec_strongdef_int=\count195
+\l__fontspec_tmpa_dim=\dimen166
+\l__fontspec_tmpb_dim=\dimen167
+\l__fontspec_tmpc_dim=\dimen168
+(/usr/local/texlive/2018basic/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2017/04/05 v2.0i Standard LaTeX package
+(/usr/local/texlive/2018basic/texmf-dist/tex/latex/base/tuenc.def
+File: tuenc.def 2017/04/05 v2.0i Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding TU on input line 82.
+))
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \fontspec with sig. 'O{}mO{}' on line 561.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setmainfont with sig. 'O{}mO{}' on line 566.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setsansfont with sig. 'O{}mO{}' on line 571.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setmonofont with sig. 'O{}mO{}' on line 576.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setmathrm with sig. 'O{}mO{}' on line 580.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setboldmathrm with sig. 'O{}mO{}' on line 584.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setmathsf with sig. 'O{}mO{}' on line 588.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setmathtt with sig. 'O{}mO{}' on line 592.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setromanfont with sig. 'O{}mO{}' on line 596.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newfontfamily with sig. 'mO{}mO{}' on line 600.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \renewfontfamily with sig. 'mO{}mO{}' on line 604.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setfontfamily with sig. 'mO{}mO{}' on line 608.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newfontface with sig. 'mO{}mO{}' on line 612.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \defaultfontfeatures with sig. 't+om' on line 619.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \addfontfeatures with sig. 'm' on line 623.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \addfontfeature with sig. 'm' on line 627.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newfontfeature with sig. 'mm' on line 631.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newAATfeature with sig. 'mmmm' on line 635.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newopentypefeature with sig. 'mmm' on line 639.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newICUfeature with sig. 'mmm' on line 643.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \aliasfontfeature with sig. 'mm' on line 647.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \aliasfontfeatureoption with sig. 'mmm' on line 651.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newfontscript with sig. 'mm' on line 655.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newfontlanguage with sig. 'mm' on line 659.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \DeclareFontExtensions with sig. 'm' on line 663.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \IfFontFeatureActiveTF with sig. 'mmm' on line 667.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \EncodingCommand with sig. 'mO{}m' on line 3655.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \EncodingAccent with sig. 'mm' on line 3661.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \EncodingSymbol with sig. 'mm' on line 3667.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \EncodingComposite with sig. 'mmm' on line 3673.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \EncodingCompositeCommand with sig. 'mmm' on line 3679.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \DeclareUnicodeEncoding with sig. 'mm' on line 3704.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \UndeclareSymbol with sig. 'm' on line 3710.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \UndeclareAccent with sig. 'm' on line 3716.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \UndeclareCommand with sig. 'm' on line 3722.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \UndeclareComposite with sig. 'mm' on line 3729.
+.................................................
+(/usr/local/texlive/2018basic/texmf-dist/tex/latex/fontspec/fontspec.cfg)
+LaTeX Info: Redefining \itshape on input line 3910.
+LaTeX Info: Redefining \slshape on input line 3915.
+LaTeX Info: Redefining \scshape on input line 3920.
+LaTeX Info: Redefining \upshape on input line 3925.
+LaTeX Info: Redefining \em on input line 3955.
+LaTeX Info: Redefining \emph on input line 3980.
+LaTeX Info: Redefining \- on input line 4034.
+.................................................
+. LaTeX info: "xparse/redefine-command"
+. 
+. Redefining command \oldstylenums with sig. 'm' on line 4129.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \liningnums with sig. 'm' on line 4133.
+.................................................
+)) (/usr/local/texlive/2018basic/texmf-dist/tex/latex/filehook/filehook.sty
+Package: filehook 2011/10/12 v0.5d Hooks for input files
+) (/usr/local/texlive/2018basic/texmf-dist/tex/latex/base/fix-cm.sty
+Package: fix-cm 2015/01/14 v1.1t fixes to LaTeX
+(/usr/local/texlive/2018basic/texmf-dist/tex/latex/base/ts1enc.def
+File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
+))
+\g__um_fam_int=\count196
+\g__um_fonts_used_int=\count197
+\l__um_primecount_int=\count198
+\g__um_primekern_muskip=\muskip17
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \unimathsetup with sig. 'm' on line 285.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setmathfont with sig. 'O{}mO{}' on line 289.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setmathfontface with sig. 'mO{}mO{}' on line 293.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setoperatorfont with sig. 'm' on line 298.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \addnolimits with sig. 'm' on line 303.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \removenolimits with sig. 'm' on line 307.
+.................................................
+
+(/usr/local/texlive/2018basic/texmf-dist/tex/latex/unicode-math/unicode-math-ta
+ble.tex)
+.................................................
+. unicode-math info: "patch-macro"
+. 
+. I'm going to patch macro \subarray.
+.................................................
+.................................................
+. unicode-math info: "patch-macro"
+. 
+. I'm going to patch macro \r@@t.
+.................................................
+.................................................
+. LaTeX info: "xparse/redefine-command"
+. 
+. Redefining command \not with sig. 'm' on line 3909.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \NewNegationCommand with sig. 'mm' on line 3913.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \RenewNegationCommand with sig. 'mm' on line 3917.
+.................................................
+))
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font "Helvetica" does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "set-scale"
+. 
+. Helvetica scale = 0.8272610121836926.
+.................................................
+.................................................
+. fontspec info: "set-scale"
+. 
+. Helvetica scale = 0.8272610121836926.
+.................................................
+.................................................
+. fontspec info: "set-scale"
+. 
+. Helvetica/B scale = 0.8128415497112206.
+.................................................
+.................................................
+. fontspec info: "set-scale"
+. 
+. Helvetica/I scale = 0.8272610121836926.
+.................................................
+.................................................
+. fontspec info: "set-scale"
+. 
+. Helvetica/BI scale = 0.8018076581346035.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Helvetica(0)' created for font 'Helvetica' with options
+. [Scale=MatchLowercase,Ligatures=TeX].
+.  
+.  This font family consists of the following NFSS series/shapes:
+.  
+. - 'normal' (m/n) with NFSS spec.:
+. <->s*[0.8272610121836926]"Helvetica/AAT:mapping=tex-text;"
+. - 'small caps'  (m/sc) with NFSS spec.: 
+. - 'bold' (bx/n) with NFSS spec.:
+. <->s*[0.8128415497112206]"Helvetica/B/AAT:mapping=tex-text;"
+. - 'bold small caps'  (bx/sc) with NFSS spec.: 
+. - 'italic' (m/it) with NFSS spec.:
+. <->s*[0.8272610121836926]"Helvetica/I/AAT:mapping=tex-text;"
+. - 'italic small caps'  (m/itsc) with NFSS spec.: 
+. - 'bold italic' (bx/it) with NFSS spec.:
+. <->s*[0.8018076581346035]"Helvetica/BI/AAT:mapping=tex-text;"
+. - 'bold italic small caps'  (bx/itsc) with NFSS spec.: 
+.................................................
+LaTeX Info: Redefining \sffamily on input line 19.
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font "Helvetica" does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "set-scale"
+. 
+. Helvetica scale = 0.8272610121836926.
+.................................................
+.................................................
+. fontspec info: "set-scale"
+. 
+. Helvetica scale = 0.8272610121836926.
+.................................................
+.................................................
+. fontspec info: "set-scale"
+. 
+. Helvetica/B scale = 0.8128415497112206.
+.................................................
+.................................................
+. fontspec info: "set-scale"
+. 
+. Helvetica/I scale = 0.8272610121836926.
+.................................................
+.................................................
+. fontspec info: "set-scale"
+. 
+. Helvetica/BI scale = 0.8018076581346035.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Helvetica(1)' created for font 'Helvetica' with options
+. [Scale=MatchLowercase].
+.  
+.  This font family consists of the following NFSS series/shapes:
+.  
+. - 'normal' (m/n) with NFSS spec.: <->s*[0.8272610121836926]"Helvetica/AAT"
+. - 'small caps'  (m/sc) with NFSS spec.: 
+. - 'bold' (bx/n) with NFSS spec.: <->s*[0.8128415497112206]"Helvetica/B/AAT"
+. - 'bold small caps'  (bx/sc) with NFSS spec.: 
+. - 'italic' (m/it) with NFSS spec.:
+. <->s*[0.8272610121836926]"Helvetica/I/AAT"
+. - 'italic small caps'  (m/itsc) with NFSS spec.: 
+. - 'bold italic' (bx/it) with NFSS spec.:
+. <->s*[0.8018076581346035]"Helvetica/BI/AAT"
+. - 'bold italic small caps'  (bx/itsc) with NFSS spec.: 
+.................................................
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/lmss/m/n --> TU/Helvetica(1)/m/n on input line 19.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/lmss/bx/n --> TU/Helvetica(1)/bx/n on input line 19
+.
+.................................................
+. fontspec info: "set-scale"
+. 
+. Source Code Pro scale = 0.8979155871610088.
+.................................................
+.................................................
+. fontspec info: "no-font-shape"
+. 
+. Could not resolve font "Source Code Pro/I" (it probably doesn't exist).
+.................................................
+.................................................
+. fontspec info: "set-scale"
+. 
+. Source Code Pro scale = 0.8979155871610088.
+.................................................
+.................................................
+. fontspec info: "set-scale"
+. 
+. Source Code Pro/B scale = 0.8979155871610088.
+.................................................
+.................................................
+. fontspec info: "set-scale"
+. 
+. Source Code Pro/BI scale = 0.8979155871610088.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'SourceCodePro(0)' created for font 'Source Code Pro' with
+. options
+. [Scale=MatchLowercase,WordSpace={1,0,0},HyphenChar=None,PunctuationSpace=Word
+Space,Scale=0.7].
+.  
+.  This font family consists of the following NFSS series/shapes:
+.  
+. - 'normal' (m/n) with NFSS spec.: <->s*[0.7]"Source Code
+. Pro/OT:script=latn;language=DFLT;"
+. - 'small caps'  (m/sc) with NFSS spec.: 
+. and font adjustment code:
+. \fontdimen 2\font =1\fontdimen 2\font \fontdimen 3\font =0\fontdimen 3\font
+. \fontdimen 4\font =0\fontdimen 4\font \fontdimen 7\font =0\fontdimen 2\font
+. \tex_hyphenchar:D \font =-1\scan_stop: 
+. - 'bold' (bx/n) with NFSS spec.: <->s*[0.7]"Source Code
+. Pro/B/OT:script=latn;language=DFLT;"
+. - 'bold small caps'  (bx/sc) with NFSS spec.: 
+. and font adjustment code:
+. \fontdimen 2\font =1\fontdimen 2\font \fontdimen 3\font =0\fontdimen 3\font
+. \fontdimen 4\font =0\fontdimen 4\font \fontdimen 7\font =0\fontdimen 2\font
+. \tex_hyphenchar:D \font =-1\scan_stop: 
+. - 'bold italic' (bx/it) with NFSS spec.: <->s*[0.7]"Source Code
+. Pro/BI/OT:script=latn;language=DFLT;"
+. - 'bold italic small caps'  (bx/itsc) with NFSS spec.: 
+. and font adjustment code:
+. \fontdimen 2\font =1\fontdimen 2\font \fontdimen 3\font =0\fontdimen 3\font
+. \fontdimen 4\font =0\fontdimen 4\font \fontdimen 7\font =0\fontdimen 2\font
+. \tex_hyphenchar:D \font =-1\scan_stop: 
+.................................................
+LaTeX Info: Redefining \ttfamily on input line 20.
+.................................................
+. fontspec info: "set-scale"
+. 
+. Source Code Pro scale = 0.8979155871610088.
+.................................................
+.................................................
+. fontspec info: "no-font-shape"
+. 
+. Could not resolve font "Source Code Pro/I" (it probably doesn't exist).
+.................................................
+.................................................
+. fontspec info: "set-scale"
+. 
+. Source Code Pro scale = 0.8979155871610088.
+.................................................
+.................................................
+. fontspec info: "set-scale"
+. 
+. Source Code Pro/B scale = 0.8979155871610088.
+.................................................
+.................................................
+. fontspec info: "set-scale"
+. 
+. Source Code Pro/BI scale = 0.8979155871610088.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'SourceCodePro(1)' created for font 'Source Code Pro' with
+. options [Scale=MatchLowercase,Scale=0.7].
+.  
+.  This font family consists of the following NFSS series/shapes:
+.  
+. - 'normal' (m/n) with NFSS spec.: <->s*[0.7]"Source Code
+. Pro/OT:script=latn;language=DFLT;"
+. - 'small caps'  (m/sc) with NFSS spec.: 
+. - 'bold' (bx/n) with NFSS spec.: <->s*[0.7]"Source Code
+. Pro/B/OT:script=latn;language=DFLT;"
+. - 'bold small caps'  (bx/sc) with NFSS spec.: 
+. - 'bold italic' (bx/it) with NFSS spec.: <->s*[0.7]"Source Code
+. Pro/BI/OT:script=latn;language=DFLT;"
+. - 'bold italic small caps'  (bx/itsc) with NFSS spec.: 
+.................................................
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/lmtt/m/n --> TU/SourceCodePro(1)/m/n on input line 
+20.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/lmtt/m/n --> TU/SourceCodePro(1)/bx/n on input line
+ 20.
+.................................................
+. fontspec info: "set-scale"
+. 
+. STIX Two Math scale = 0.9112053809055278.
+.................................................
+.................................................
+. fontspec info: "no-font-shape"
+. 
+. Could not resolve font "STIX Two Math/B" (it probably doesn't exist).
+.................................................
+.................................................
+. fontspec info: "set-scale"
+. 
+. STIX Two Math scale = 0.9112053809055278.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'STIXTwoMath(0)' created for font 'STIX Two Math' with options
+. [Scale=MatchLowercase,BoldItalicFont={},ItalicFont={},Script=Math].
+.  
+.  This font family consists of the following NFSS series/shapes:
+.  
+. - 'normal' (m/n) with NFSS spec.: <->s*[0.9112053809055278]"STIX Two
+. Math/OT:script=math;language=DFLT;"
+. - 'small caps'  (m/sc) with NFSS spec.: 
+.................................................
+LaTeX Font Info:    Font shape `TU/STIXTwoMath(0)/m/n' will be
+(Font)              scaled to size 9.11209pt on input line 21.
+.................................................
+. fontspec info: "set-scale"
+. 
+. STIX Two Math scale = 0.9112053809055278.
+.................................................
+.................................................
+. fontspec info: "no-font-shape"
+. 
+. Could not resolve font "STIX Two Math/B" (it probably doesn't exist).
+.................................................
+.................................................
+. fontspec info: "set-scale"
+. 
+. STIX Two Math scale = 0.9112053809055278.
+.................................................
+.................................................
+. fontspec info: "set-scale"
+. 
+. STIX Two Math scale = 0.9112053809055278.
+.................................................
+.................................................
+. fontspec info: "set-scale"
+. 
+. STIX Two Math scale = 0.9112053809055278.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'STIXTwoMath(1)' created for font 'STIX Two Math' with options
+. [Scale=MatchLowercase,BoldItalicFont={},ItalicFont={},Script=Math,SizeFeature
+s={{Size=8.5-},{Size=6-8.5,Font=STIX
+. Two Math,Style=MathScript},{Size=-6,Font=STIX Two
+. Math,Style=MathScriptScript}}].
+.  
+.  This font family consists of the following NFSS series/shapes:
+.  
+. - 'normal' (m/n) with NFSS spec.: <8.5->s*[0.9112053809055278]"STIX Two
+. Math/OT:script=math;language=DFLT;"<6-8.5>s*[0.9112053809055278]"STIX Two
+. Math/OT:script=math;language=DFLT;+ssty=0;"<-6>s*[0.9112053809055278]"STIX
+. Two Math/OT:script=math;language=DFLT;+ssty=1;"
+. - 'small caps'  (m/sc) with NFSS spec.: 
+.................................................
+LaTeX Font Info:    Font shape `TU/STIXTwoMath(1)/m/n' will be
+(Font)              scaled to size 9.11209pt on input line 21.
+LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
+(Font)              `operators' in the math version `normal' on input line 21.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/lmr/m/n --> TU/STIXTwoMath(1)/m/n on input line 21.
+
+LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
+(Font)              `operators' in the math version `bold' on input line 21.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/lmr/bx/n --> TU/STIXTwoMath(1)/bx/n on input line 2
+1.
+.................................................
+. fontspec info: "set-scale"
+. 
+. STIX Two Math scale = 0.9112053809055278.
+.................................................
+.................................................
+. fontspec info: "no-font-shape"
+. 
+. Could not resolve font "STIX Two Math/B" (it probably doesn't exist).
+.................................................
+.................................................
+. fontspec info: "set-scale"
+. 
+. STIX Two Math scale = 0.9112053809055278.
+.................................................
+.................................................
+. fontspec info: "set-scale"
+. 
+. STIX Two Math scale = 0.9112053809055278.
+.................................................
+.................................................
+. fontspec info: "set-scale"
+. 
+. STIX Two Math scale = 0.9112053809055278.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'STIXTwoMath(2)' created for font 'STIX Two Math' with options
+. [Scale=MatchLowercase,BoldItalicFont={},ItalicFont={},Script=Math,SizeFeature
+s={{Size=8.5-},{Size=6-8.5,Font=STIX
+. Two Math,Style=MathScript},{Size=-6,Font=STIX Two
+. Math,Style=MathScriptScript}},Scale=1.00001,FontAdjustment={\fontdimen
+. 8\font =5.83174pt\relax \fontdimen 9\font =5.33057pt\relax \fontdimen
+. 10\font =4.28268pt\relax \fontdimen 11\font =5.83174pt\relax \fontdimen
+. 12\font =5.33057pt\relax \fontdimen 13\font =3.28035pt\relax \fontdimen
+. 14\font =3.28035pt\relax \fontdimen 15\font =2.29625pt\relax \fontdimen
+. 16\font =1.91354pt\relax \fontdimen 17\font =1.91354pt\relax \fontdimen
+. 18\font =2.09578pt\relax \fontdimen 19\font =1.45793pt\relax \fontdimen
+. 22\font =2.35092pt\relax \fontdimen 20\font =0pt\relax \fontdimen 21\font
+. =0pt\relax }].
+.  
+.  This font family consists of the following NFSS series/shapes:
+.  
+. - 'normal' (m/n) with NFSS spec.: <8.5->s*[1.00001]"STIX Two
+. Math/OT:script=math;language=DFLT;"<6-8.5>s*[1.00001]"STIX Two
+. Math/OT:script=math;language=DFLT;+ssty=0;"<-6>s*[1.00001]"STIX Two
+. Math/OT:script=math;language=DFLT;+ssty=1;"
+. - 'small caps'  (m/sc) with NFSS spec.: 
+. and font adjustment code:
+. \fontdimen 8\font =5.83174pt\relax \fontdimen 9\font =5.33057pt\relax
+. \fontdimen 10\font =4.28268pt\relax \fontdimen 11\font =5.83174pt\relax
+. \fontdimen 12\font =5.33057pt\relax \fontdimen 13\font =3.28035pt\relax
+. \fontdimen 14\font =3.28035pt\relax \fontdimen 15\font =2.29625pt\relax
+. \fontdimen 16\font =1.91354pt\relax \fontdimen 17\font =1.91354pt\relax
+. \fontdimen 18\font =2.09578pt\relax \fontdimen 19\font =1.45793pt\relax
+. \fontdimen 22\font =2.35092pt\relax \fontdimen 20\font =0pt\relax \fontdimen
+. 21\font =0pt\relax 
+.................................................
+LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
+(Font)              `symbols' in the math version `normal' on input line 21.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/lmsy/m/n --> TU/STIXTwoMath(2)/m/n on input line 21
+.
+LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
+(Font)              `symbols' in the math version `bold' on input line 21.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/lmsy/b/n --> TU/STIXTwoMath(2)/bx/n on input line 2
+1.
+.................................................
+. fontspec info: "set-scale"
+. 
+. STIX Two Math scale = 0.9112053809055278.
+.................................................
+.................................................
+. fontspec info: "no-font-shape"
+. 
+. Could not resolve font "STIX Two Math/B" (it probably doesn't exist).
+.................................................
+.................................................
+. fontspec info: "set-scale"
+. 
+. STIX Two Math scale = 0.9112053809055278.
+.................................................
+.................................................
+. fontspec info: "set-scale"
+. 
+. STIX Two Math scale = 0.9112053809055278.
+.................................................
+.................................................
+. fontspec info: "set-scale"
+. 
+. STIX Two Math scale = 0.9112053809055278.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'STIXTwoMath(3)' created for font 'STIX Two Math' with options
+. [Scale=MatchLowercase,BoldItalicFont={},ItalicFont={},Script=Math,SizeFeature
+s={{Size=8.5-},{Size=6-8.5,Font=STIX
+. Two Math,Style=MathScript},{Size=-6,Font=STIX Two
+. Math,Style=MathScriptScript}},Scale=0.99999,FontAdjustment={\fontdimen
+. 8\font =0.61963pt\relax \fontdimen 9\font =1.23013pt\relax \fontdimen
+. 10\font =1.23013pt\relax \fontdimen 11\font =2.73363pt\relax \fontdimen
+. 12\font =6.1051pt\relax \fontdimen 13\font =0pt\relax }].
+.  
+.  This font family consists of the following NFSS series/shapes:
+.  
+. - 'normal' (m/n) with NFSS spec.: <8.5->s*[0.99999]"STIX Two
+. Math/OT:script=math;language=DFLT;"<6-8.5>s*[0.99999]"STIX Two
+. Math/OT:script=math;language=DFLT;+ssty=0;"<-6>s*[0.99999]"STIX Two
+. Math/OT:script=math;language=DFLT;+ssty=1;"
+. - 'small caps'  (m/sc) with NFSS spec.: 
+. and font adjustment code:
+. \fontdimen 8\font =0.61963pt\relax \fontdimen 9\font =1.23013pt\relax
+. \fontdimen 10\font =1.23013pt\relax \fontdimen 11\font =2.73363pt\relax
+. \fontdimen 12\font =6.1051pt\relax \fontdimen 13\font =0pt\relax 
+.................................................
+LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
+(Font)              `largesymbols' in the math version `normal' on input line 2
+1.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/lmex/m/n --> TU/STIXTwoMath(3)/m/n on input line 21
+.
+LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
+(Font)              `largesymbols' in the math version `bold' on input line 21.
+
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/lmex/m/n --> TU/STIXTwoMath(3)/bx/n on input line 2
+1.
+(/usr/local/texlive/2018basic/texmf-dist/tex/latex/upquote/upquote.sty
+Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
+tim
+(/usr/local/texlive/2018basic/texmf-dist/tex/latex/base/textcomp.sty
+Package: textcomp 2017/04/05 v2.0i Standard LaTeX package
+Package textcomp Info: Sub-encoding information:
+(textcomp)               5 = only ISO-Adobe without \textcurrency
+(textcomp)               4 = 5 + \texteuro
+(textcomp)               3 = 4 + \textohm
+(textcomp)               2 = 3 + \textestimated + \textcurrency
+(textcomp)               1 = TS1 - \textcircled - \t
+(textcomp)               0 = TS1 (full)
+(textcomp)             Font families with sub-encoding setting implement
+(textcomp)             only a restricted character set as indicated.
+(textcomp)             Family '?' is the default used for unknown fonts.
+(textcomp)             See the documentation for details.
+Package textcomp Info: Setting ? sub-encoding to TS1/1 on input line 79.
+(/usr/local/texlive/2018basic/texmf-dist/tex/latex/base/ts1enc.def
+File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding TS1 on input line 47.
+)
+LaTeX Info: Redefining \oldstylenums on input line 334.
+Package textcomp Info: Setting cmr sub-encoding to TS1/0 on input line 349.
+Package textcomp Info: Setting cmss sub-encoding to TS1/0 on input line 350.
+Package textcomp Info: Setting cmtt sub-encoding to TS1/0 on input line 351.
+Package textcomp Info: Setting cmvtt sub-encoding to TS1/0 on input line 352.
+Package textcomp Info: Setting cmbr sub-encoding to TS1/0 on input line 353.
+Package textcomp Info: Setting cmtl sub-encoding to TS1/0 on input line 354.
+Package textcomp Info: Setting ccr sub-encoding to TS1/0 on input line 355.
+Package textcomp Info: Setting ptm sub-encoding to TS1/4 on input line 356.
+Package textcomp Info: Setting pcr sub-encoding to TS1/4 on input line 357.
+Package textcomp Info: Setting phv sub-encoding to TS1/4 on input line 358.
+Package textcomp Info: Setting ppl sub-encoding to TS1/3 on input line 359.
+Package textcomp Info: Setting pag sub-encoding to TS1/4 on input line 360.
+Package textcomp Info: Setting pbk sub-encoding to TS1/4 on input line 361.
+Package textcomp Info: Setting pnc sub-encoding to TS1/4 on input line 362.
+Package textcomp Info: Setting pzc sub-encoding to TS1/4 on input line 363.
+Package textcomp Info: Setting bch sub-encoding to TS1/4 on input line 364.
+Package textcomp Info: Setting put sub-encoding to TS1/5 on input line 365.
+Package textcomp Info: Setting uag sub-encoding to TS1/5 on input line 366.
+Package textcomp Info: Setting ugq sub-encoding to TS1/5 on input line 367.
+Package textcomp Info: Setting ul8 sub-encoding to TS1/4 on input line 368.
+Package textcomp Info: Setting ul9 sub-encoding to TS1/4 on input line 369.
+Package textcomp Info: Setting augie sub-encoding to TS1/5 on input line 370.
+Package textcomp Info: Setting dayrom sub-encoding to TS1/3 on input line 371.
+Package textcomp Info: Setting dayroms sub-encoding to TS1/3 on input line 372.
+
+Package textcomp Info: Setting pxr sub-encoding to TS1/0 on input line 373.
+Package textcomp Info: Setting pxss sub-encoding to TS1/0 on input line 374.
+Package textcomp Info: Setting pxtt sub-encoding to TS1/0 on input line 375.
+Package textcomp Info: Setting txr sub-encoding to TS1/0 on input line 376.
+Package textcomp Info: Setting txss sub-encoding to TS1/0 on input line 377.
+Package textcomp Info: Setting txtt sub-encoding to TS1/0 on input line 378.
+Package textcomp Info: Setting lmr sub-encoding to TS1/0 on input line 379.
+Package textcomp Info: Setting lmdh sub-encoding to TS1/0 on input line 380.
+Package textcomp Info: Setting lmss sub-encoding to TS1/0 on input line 381.
+Package textcomp Info: Setting lmssq sub-encoding to TS1/0 on input line 382.
+Package textcomp Info: Setting lmvtt sub-encoding to TS1/0 on input line 383.
+Package textcomp Info: Setting lmtt sub-encoding to TS1/0 on input line 384.
+Package textcomp Info: Setting qhv sub-encoding to TS1/0 on input line 385.
+Package textcomp Info: Setting qag sub-encoding to TS1/0 on input line 386.
+Package textcomp Info: Setting qbk sub-encoding to TS1/0 on input line 387.
+Package textcomp Info: Setting qcr sub-encoding to TS1/0 on input line 388.
+Package textcomp Info: Setting qcs sub-encoding to TS1/0 on input line 389.
+Package textcomp Info: Setting qpl sub-encoding to TS1/0 on input line 390.
+Package textcomp Info: Setting qtm sub-encoding to TS1/0 on input line 391.
+Package textcomp Info: Setting qzc sub-encoding to TS1/0 on input line 392.
+Package textcomp Info: Setting qhvc sub-encoding to TS1/0 on input line 393.
+Package textcomp Info: Setting futs sub-encoding to TS1/4 on input line 394.
+Package textcomp Info: Setting futx sub-encoding to TS1/4 on input line 395.
+Package textcomp Info: Setting futj sub-encoding to TS1/4 on input line 396.
+Package textcomp Info: Setting hlh sub-encoding to TS1/3 on input line 397.
+Package textcomp Info: Setting hls sub-encoding to TS1/3 on input line 398.
+Package textcomp Info: Setting hlst sub-encoding to TS1/3 on input line 399.
+Package textcomp Info: Setting hlct sub-encoding to TS1/5 on input line 400.
+Package textcomp Info: Setting hlx sub-encoding to TS1/5 on input line 401.
+Package textcomp Info: Setting hlce sub-encoding to TS1/5 on input line 402.
+Package textcomp Info: Setting hlcn sub-encoding to TS1/5 on input line 403.
+Package textcomp Info: Setting hlcw sub-encoding to TS1/5 on input line 404.
+Package textcomp Info: Setting hlcf sub-encoding to TS1/5 on input line 405.
+Package textcomp Info: Setting pplx sub-encoding to TS1/3 on input line 406.
+Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 407.
+Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 408.
+Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 409.
+)) (/usr/local/texlive/2018basic/texmf-dist/tex/latex/microtype/microtype.sty
+Package: microtype 2018/01/14 v2.7a Micro-typographical refinements (RS)
+(/usr/local/texlive/2018basic/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks20
+)
+\MT@toks=\toks21
+\MT@count=\count199
+LaTeX Info: Redefining \textls on input line 793.
+\MT@outer@kern=\dimen169
+LaTeX Info: Redefining \textmicrotypecontext on input line 1339.
+\MT@listname@count=\count266
+
+(/usr/local/texlive/2018basic/texmf-dist/tex/latex/microtype/microtype-xetex.de
+f
+File: microtype-xetex.def 2018/01/14 v2.7a Definitions specific to xetex (RS)
+LaTeX Info: Redefining \lsstyle on input line 256.
+)
+Package microtype Info: Loading configuration file microtype.cfg.
+(/usr/local/texlive/2018basic/texmf-dist/tex/latex/microtype/microtype.cfg
+File: microtype.cfg 2018/01/14 v2.7a microtype main configuration file (RS)
+)) (/usr/local/texlive/2018basic/texmf-dist/tex/latex/parskip/parskip.sty
+Package: parskip 2001/04/09 non-zero parskip adjustments
+) (/usr/local/texlive/2018basic/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+(/usr/local/texlive/2018basic/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: xetex.def on input line 225.
+(/usr/local/texlive/2018basic/texmf-dist/tex/latex/graphics-def/xetex.def
+File: xetex.def 2017/06/24 v5.0h Graphics/color driver for xetex
+)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+(/usr/local/texlive/2018basic/texmf-dist/tex/latex/graphics/dvipsnam.def
+File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
+) (/usr/local/texlive/2018basic/texmf-dist/tex/latex/xcolor/svgnam.def
+File: svgnam.def 2016/05/11 v2.12 Predefined colors according to SVG 1.1 (UK)
+) (/usr/local/texlive/2018basic/texmf-dist/tex/latex/xcolor/x11nam.def
+File: x11nam.def 2016/05/11 v2.12 Predefined colors according to Unix/X11 (UK)
+)) (/usr/local/texlive/2018basic/texmf-dist/tex/latex/oberdiek/bookmark.sty
+Package: bookmark 2016/05/17 v1.26 PDF bookmarks (HO)
+(/usr/local/texlive/2018basic/texmf-dist/tex/generic/oberdiek/pdfescape.sty
+Package: pdfescape 2016/05/16 v1.14 Implements pdfTeX's escape features (HO)
+(/usr/local/texlive/2018basic/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+) (/usr/local/texlive/2018basic/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2018/09/07 v0.28 Utility functions of pdfTeX for LuaTeX (HO
+)
+(/usr/local/texlive/2018basic/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+) (/usr/local/texlive/2018basic/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2018/09/07 v3.3 Provides the ifpdf switch
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: pdfTeX >= 1.30 not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode not found.
+)) (/usr/local/texlive/2018basic/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+) (/usr/local/texlive/2018basic/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2018/02/06 v6.86b Hypertext links for LaTeX
+
+(/usr/local/texlive/2018basic/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.s
+ty
+Package: hobsub-hyperref 2016/05/16 v1.14 Bundle oberdiek, subset hyperref (HO)
+
+
+(/usr/local/texlive/2018basic/texmf-dist/tex/generic/oberdiek/hobsub-generic.st
+y
+Package: hobsub-generic 2016/05/16 v1.14 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2016/05/16 v1.14 Construct package bundles (HO)
+Package hobsub Info: Skipping package `infwarerr' (already loaded).
+Package hobsub Info: Skipping package `ltxcmds' (already loaded).
+Package hobsub Info: Skipping package `ifluatex' (already loaded).
+Package hobsub Info: Skipping package `ifvtex' (already loaded).
+Package: intcalc 2016/05/16 v1.2 Expandable calculations with integers (HO)
+Package hobsub Info: Skipping package `ifpdf' (already loaded).
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+Package hobsub Info: Skipping package `pdftexcmds' (already loaded).
+Package hobsub Info: Skipping package `pdfescape' (already loaded).
+Package: bigintcalc 2016/05/16 v1.4 Expandable calculations on big integers (HO
+)
+Package: bitset 2016/05/16 v1.2 Handle bit-vector datatype (HO)
+Package: uniquecounter 2016/05/16 v1.3 Provide unlimited unique counter (HO)
+)
+Package hobsub Info: Skipping package `hobsub' (already loaded).
+Package: letltxmacro 2016/05/16 v1.5 Let assignment for LaTeX macros (HO)
+Package: hopatch 2016/05/16 v1.3 Wrapper for package hooks (HO)
+Package: xcolor-patch 2016/05/16 xcolor patch
+Package: atveryend 2016/05/16 v1.9 Hooks at the very end of document (HO)
+Package atveryend Info: \enddocument detected (standard20110627).
+Package: atbegshi 2016/06/09 v1.18 At begin shipout hook (HO)
+Package: refcount 2016/05/16 v3.5 Data extraction from label references (HO)
+Package: hycolor 2016/05/16 v1.8 Color options for hyperref/bookmark (HO)
+) (/usr/local/texlive/2018basic/texmf-dist/tex/latex/oberdiek/auxhook.sty
+Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
+) (/usr/local/texlive/2018basic/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+)
+\@linkdim=\dimen170
+\Hy@linkcounter=\count267
+\Hy@pagecounter=\count268
+(/usr/local/texlive/2018basic/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2018/02/06 v6.86b Hyperref: PDFDocEncoding definition (HO)
+)
+\Hy@SavedSpaceFactor=\count269
+(/usr/local/texlive/2018basic/texmf-dist/tex/latex/latexconfig/hyperref.cfg
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+Package hyperref Info: Option `unicode' set `true' on input line 4383.
+(/usr/local/texlive/2018basic/texmf-dist/tex/latex/hyperref/puenc.def
+File: puenc.def 2018/02/06 v6.86b Hyperref: PDF Unicode definition (HO)
+)
+Package hyperref Info: Hyper figures OFF on input line 4509.
+Package hyperref Info: Link nesting OFF on input line 4514.
+Package hyperref Info: Hyper index ON on input line 4517.
+Package hyperref Info: Plain pages OFF on input line 4524.
+Package hyperref Info: Backreferencing OFF on input line 4529.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4762.
+\c@Hy@tempcnt=\count270
+(/usr/local/texlive/2018basic/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip18
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 5115.
+\XeTeXLinkMargin=\dimen171
+\Fld@menulength=\count271
+\Field@Width=\dimen172
+\Fld@charsize=\dimen173
+Package hyperref Info: Hyper figures OFF on input line 6369.
+Package hyperref Info: Link nesting OFF on input line 6374.
+Package hyperref Info: Hyper index ON on input line 6377.
+Package hyperref Info: backreferencing OFF on input line 6384.
+Package hyperref Info: Link coloring OFF on input line 6389.
+Package hyperref Info: Link coloring with OCG OFF on input line 6394.
+Package hyperref Info: PDF/A mode OFF on input line 6399.
+LaTeX Info: Redefining \ref on input line 6439.
+LaTeX Info: Redefining \pageref on input line 6443.
+\Hy@abspage=\count272
+\c@Item=\count273
+\c@Hfootnote=\count274
+)
+Package hyperref Info: Driver (autodetected): hxetex.
+(/usr/local/texlive/2018basic/texmf-dist/tex/latex/hyperref/hxetex.def
+File: hxetex.def 2018/02/06 v6.86b Hyperref driver for XeTeX
+(/usr/local/texlive/2018basic/texmf-dist/tex/generic/oberdiek/stringenc.sty
+Package: stringenc 2016/05/16 v1.11 Convert strings between diff. encodings (HO
+)
+)
+\pdfm@box=\box68
+\c@Hy@AnnotLevel=\count275
+\HyField@AnnotCount=\count276
+\Fld@listcount=\count277
+\c@bookmark@seq@number=\count278
+(/usr/local/texlive/2018basic/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
+Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+82.
+)
+\Hy@SectionHShift=\skip80
+) (/usr/local/texlive/2018basic/texmf-dist/tex/latex/oberdiek/bkm-dvipdfm.def
+File: bkm-dvipdfm.def 2016/05/17 v1.26 bookmark driver for dvipdfm (HO)
+\BKM@id=\count279
+))
+Package hyperref Info: Option `colorlinks' set `true' on input line 49.
+Package hyperref Info: Option `breaklinks' set `true' on input line 49.
+(/usr/local/texlive/2018basic/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
+Package: fancyvrb 2008/02/07
+
+Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix 
+<2008/02/07> (tvz)
+\FV@CodeLineNo=\count280
+\FV@InFile=\read2
+\FV@TabBox=\box69
+\c@FancyVerbLine=\count281
+\FV@StepNumber=\count282
+\FV@OutFile=\write3
+) (/usr/local/texlive/2018basic/texmf-dist/tex/latex/framed/framed.sty
+Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
+\OuterFrameSep=\skip81
+\fb@frw=\dimen174
+\fb@frh=\dimen175
+\FrameRule=\dimen176
+\FrameSep=\dimen177
+) (/usr/local/texlive/2018basic/texmf-dist/tex/latex/tools/longtable.sty
+Package: longtable 2014/10/28 v4.11 Multi-page Table package (DPC)
+\LTleft=\skip82
+\LTright=\skip83
+\LTpre=\skip84
+\LTpost=\skip85
+\LTchunksize=\count283
+\LTcapwidth=\dimen178
+\LT@head=\box70
+\LT@firsthead=\box71
+\LT@foot=\box72
+\LT@lastfoot=\box73
+\LT@cols=\count284
+\LT@rows=\count285
+\c@LT@tables=\count286
+\c@LT@chunks=\count287
+\LT@p@ftn=\toks22
+) (/usr/local/texlive/2018basic/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2016/04/27 v1.618033 publication quality tables
+\heavyrulewidth=\dimen179
+\lightrulewidth=\dimen180
+\cmidrulewidth=\dimen181
+\belowrulesep=\dimen182
+\belowbottomsep=\dimen183
+\aboverulesep=\dimen184
+\abovetopsep=\dimen185
+\cmidrulesep=\dimen186
+\cmidrulekern=\dimen187
+\defaultaddspace=\dimen188
+\@cmidla=\count288
+\@cmidlb=\count289
+\@aboverulesep=\dimen189
+\@belowrulesep=\dimen190
+\@thisruleclass=\count290
+\@lastruleclass=\count291
+\@thisrulewidth=\dimen191
+) (/usr/local/texlive/2018basic/texmf-dist/tex/latex/mdwtools/footnote.sty
+Package: footnote 1997/01/28 1.13 Save footnotes around boxes
+\fn@notes=\box74
+\fn@width=\dimen192
+) (/usr/local/texlive/2018basic/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
+(/usr/local/texlive/2018basic/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
+(/usr/local/texlive/2018basic/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+) (/usr/local/texlive/2018basic/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: xetex.def on input line 99.
+)
+\Gin@req@height=\dimen193
+\Gin@req@width=\dimen194
+) (/usr/local/texlive/2018basic/texmf-dist/tex/latex/oberdiek/grffile.sty
+Package: grffile 2017/06/30 v1.18 Extended file name support for graphics (HO)
+Package grffile Info: Option `multidot' is set to `true'.
+Package grffile Info: Option `extendedchars' is set to `false'.
+Package grffile Info: Option `space' is set to `true'.
+Package grffile Info: \Gin@ii of package `graphicx' fixed on input line 494.
+) (/usr/local/texlive/2018basic/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2018/05/01 v3.3-147 Customizing captions (AR)
+(/usr/local/texlive/2018basic/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2018/05/27 v1.8a caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 64.
+\captionmargin=\dimen195
+\captionmargin@=\dimen196
+\captionwidth=\dimen197
+\caption@tempdima=\dimen198
+\caption@indent=\dimen199
+\caption@parindent=\dimen256
+\caption@hangindent=\dimen257
+Package caption Info: Unknown document class (or package),
+(caption)             standard defaults will be used.
+)
+
+Package caption Warning: Unsupported document class (or package) detected,
+(caption)                usage of the caption package is not recommended.
+See the caption package documentation for explanation.
+
+Package caption Info: \@makecaption = \long macro:#1#2->\vskip \abovecaptionski
+p \sbox \@tempboxa {#1: #2}\ifdim \wd \@tempboxa >\hsize {\FigCapFont #1} #2\pa
+r \else \global \@minipagefalse {\FigCapFont #1} #2\par \fi \vskip \belowcaptio
+nskip .
+\c@ContinuedFloat=\count292
+Package caption Info: hyperref package is loaded.
+Package caption Info: longtable package is loaded.
+(/usr/local/texlive/2018basic/texmf-dist/tex/latex/caption/ltcaption.sty
+Package: ltcaption 2013/06/09 v1.4-94 longtable captions (AR)
+)) (/usr/local/texlive/2018basic/texmf-dist/tex/latex/base/makeidx.sty
+Package: makeidx 2014/09/29 v1.0m Standard LaTeX package
+)
+\@indexfile=\write4
+\openout4 = `statthink.idx'.
+
+Writing index file statthink.idx
+(/usr/local/texlive/2018basic/texmf-dist/tex/latex/amscls/amsthm.sty
+Package: amsthm 2017/10/31 v2.20.4
+\thm@style=\toks23
+\thm@bodyfont=\toks24
+\thm@headfont=\toks25
+\thm@notefont=\toks26
+\thm@headpunct=\toks27
+\thm@preskip=\skip86
+\thm@postskip=\skip87
+\thm@headsep=\skip88
+\dth@everypar=\toks28
+) (/usr/local/texlive/2018basic/texmf-dist/tex/latex/natbib/natbib.sty
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip89
+\bibsep=\skip90
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count293
+)
+\c@theorem=\count294
+\c@lemma=\count295
+\c@corollary=\count296
+\c@proposition=\count297
+\c@conjecture=\count298
+\c@definition=\count299
+\c@example=\count300
+\c@exercise=\count301
+(./statthink.aux
+
+LaTeX Warning: Label `glossary' multiply defined.
+
+
+LaTeX Warning: Label `r-funcs' multiply defined.
+
+
+LaTeX Warning: Label `discuss-in-the-forum' multiply defined.
+
+
+LaTeX Warning: Label `glossary' multiply defined.
+
+
+LaTeX Warning: Label `discuss-in-the-forum' multiply defined.
+
+
+LaTeX Warning: Label `glossary' multiply defined.
+
+
+LaTeX Warning: Label `glossary' multiply defined.
+
+
+LaTeX Warning: Label `discuss-in-the-forum' multiply defined.
+
+
+LaTeX Warning: Label `summary-of-formulas' multiply defined.
+
+
+LaTeX Warning: Label `glossary' multiply defined.
+
+
+LaTeX Warning: Label `discuss-in-the-forum' multiply defined.
+
+
+LaTeX Warning: Label `glossary' multiply defined.
+
+
+LaTeX Warning: Label `discussion-in-the-forum' multiply defined.
+
+
+LaTeX Warning: Label `summary-of-formulas' multiply defined.
+
+
+LaTeX Warning: Label `discussion-in-the-forum' multiply defined.
+
+
+LaTeX Warning: Label `glossary' multiply defined.
+
+
+LaTeX Warning: Label `discuss-in-the-forum' multiply defined.
+
+
+LaTeX Warning: Label `glossary' multiply defined.
+
+
+LaTeX Warning: Label `discuss-in-the-forum' multiply defined.
+
+
+LaTeX Warning: Label `formulas' multiply defined.
+
+
+LaTeX Warning: Label `glossary' multiply defined.
+
+
+LaTeX Warning: Label `discuss-in-the-forum' multiply defined.
+
+
+LaTeX Warning: Label `glossary' multiply defined.
+
+
+LaTeX Warning: Label `discuss-in-the-forum' multiply defined.
+
+
+LaTeX Warning: Label `formulas' multiply defined.
+
+
+LaTeX Warning: Label `glossary' multiply defined.
+
+
+LaTeX Warning: Label `discuss-in-the-forum' multiply defined.
+
+
+LaTeX Warning: Label `formulas' multiply defined.
+
+
+LaTeX Warning: Label `glossary' multiply defined.
+
+
+LaTeX Warning: Label `discuss-in-the-forum' multiply defined.
+
+
+LaTeX Warning: Label `formulas' multiply defined.
+
+
+LaTeX Warning: Label `glossary' multiply defined.
+
+
+LaTeX Warning: Label `discuss-in-the-forum' multiply defined.
+
+
+LaTeX Warning: Label `formulas' multiply defined.
+
+)
+\openout1 = `statthink.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 225.
+LaTeX Font Info:    ... okay on input line 225.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 225.
+LaTeX Font Info:    ... okay on input line 225.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 225.
+LaTeX Font Info:    ... okay on input line 225.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 225.
+LaTeX Font Info:    ... okay on input line 225.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 225.
+LaTeX Font Info:    ... okay on input line 225.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 225.
+LaTeX Font Info:    ... okay on input line 225.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 225.
+LaTeX Font Info:    ... okay on input line 225.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 225.
+LaTeX Font Info:    ... okay on input line 225.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 225.
+LaTeX Font Info:    ... okay on input line 225.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 225.
+LaTeX Font Info:    ... okay on input line 225.
+LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
+(Font)                  TU/STIXTwoMath(1)/m/n --> TU/lmr/m/n on input line 225.
+
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/lmr/m/it --> TU/lmr/m/it on input line 225.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/lmr/bx/n --> TU/lmr/bx/n on input line 225.
+LaTeX Info: Redefining \microtypecontext on input line 225.
+Package microtype Info: Character protrusion enabled (level 2).
+Package microtype Info: Using protrusion set `basicmath'.
+Package microtype Info: No adjustment of tracking.
+Package microtype Info: No adjustment of spacing.
+Package microtype Info: No adjustment of kerning.
+
+(/usr/local/texlive/2018basic/texmf-dist/tex/latex/microtype/mt-LatinModernRoma
+n.cfg
+File: mt-LatinModernRoman.cfg 2013/03/13 v1.0 microtype config. file: Latin Mod
+ern Roman (RS)
+)
+\AtBeginShipoutBox=\box75
+Package hyperref Info: Link coloring ON on input line 225.
+(/usr/local/texlive/2018basic/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
+
+(/usr/local/texlive/2018basic/texmf-dist/tex/generic/oberdiek/gettitlestring.st
+y
+Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
+)
+\c@section@level=\count302
+)
+LaTeX Info: Redefining \ref on input line 225.
+LaTeX Info: Redefining \pageref on input line 225.
+LaTeX Info: Redefining \nameref on input line 225.
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (336.25pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (336.25pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (336.25pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (336.25pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+ [][][][] 
+ []
+
+[1
+
+
+
+]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (336.25pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (336.25pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (336.25pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (336.25pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+ [][][][] 
+ []
+
+[2]
+Underfull \vbox (badness 10000) detected at line 245
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 245
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 245
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 245
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 245
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 245
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 245
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 245
+[]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 245
+[]
+ []
+
+(./statthink.toc
+LaTeX Font Info:    Font shape `TU/STIXTwoMath(1)/m/n' will be
+(Font)              scaled to size 6.38972pt on input line 6.
+LaTeX Font Info:    Font shape `TU/STIXTwoMath(1)/m/n' will be
+(Font)              scaled to size 5.01622pt on input line 6.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 6.
+(/usr/local/texlive/2018basic/texmf-dist/tex/latex/lm/omllmm.fd
+File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Font shape `TU/STIXTwoMath(2)/m/n' will be
+(Font)              scaled to size 10.00015pt on input line 6.
+LaTeX Font Info:    Font shape `TU/STIXTwoMath(2)/m/n' will be
+(Font)              scaled to size 7.01247pt on input line 6.
+LaTeX Font Info:    Font shape `TU/STIXTwoMath(2)/m/n' will be
+(Font)              scaled to size 5.5051pt on input line 6.
+LaTeX Font Info:    Font shape `TU/STIXTwoMath(3)/m/n' will be
+(Font)              scaled to size 9.99985pt on input line 6.
+LaTeX Font Info:    Font shape `TU/STIXTwoMath(3)/m/n' will be
+(Font)              scaled to size 7.01224pt on input line 6.
+LaTeX Font Info:    Font shape `TU/STIXTwoMath(3)/m/n' will be
+(Font)              scaled to size 5.50493pt on input line 6.
+LaTeX Font Info:    Try loading font information for U+msa on input line 6.
+(/usr/local/texlive/2018basic/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+) (/usr/local/texlive/2018basic/texmf-dist/tex/latex/microtype/mt-msa.cfg
+File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 6.
+(/usr/local/texlive/2018basic/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) (/usr/local/texlive/2018basic/texmf-dist/tex/latex/microtype/mt-msb.cfg
+File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
+)
+LaTeX Font Info:    Font shape `TU/SourceCodePro(0)/m/n' will be
+(Font)              scaled to size 6.99997pt on input line 11.
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+ [][][][] 
+ []
+
+[3
+
+] [4] [5] [6])
+\tf@toc=\write5
+\openout5 = `statthink.toc'.
+
+[7]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (336.25pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (336.25pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (336.25pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (336.25pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+ [][][][] 
+ []
+
+[8
+
+]
+Underfull \vbox (badness 10000) detected at line 247
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 247
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 247
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 247
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 247
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 247
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 247
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 247
+[]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 247
+[]
+ []
+
+
+Package hyperref Warning: bookmark level for unknown fm defaults to 0.
+
+(./statthink.lot)
+\tf@lot=\write6
+\openout6 = `statthink.lot'.
+
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+ [][][][] 
+ []
+
+[9
+
+]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (336.25pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (336.25pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (336.25pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (336.25pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+ [][][][] 
+ []
+
+[10
+
+]
+Underfull \vbox (badness 10000) detected at line 248
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 248
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 248
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 248
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 248
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 248
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 248
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 248
+[]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 248
+[]
+ []
+
+(./statthink.lof
+Underfull \hbox (badness 10000) has occurred while \output is active
+ [][][][] 
+ []
+
+[11
+
+])
+\tf@lof=\write7
+\openout7 = `statthink.lof'.
+
+[12]
+Underfull \vbox (badness 10000) detected at line 250
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 250
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 250
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 250
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 250
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 250
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 250
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 250
+[]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 250
+[]
+ []
+
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+ [][][][] 
+ []
+
+[13
+
+
+]
+LaTeX Font Info:    Font shape `TU/STIXTwoMath(1)/m/n' will be
+(Font)              scaled to size 7.28967pt on input line 330.
+LaTeX Font Info:    Font shape `TU/STIXTwoMath(1)/m/n' will be
+(Font)              scaled to size 5.46725pt on input line 330.
+LaTeX Font Info:    Font shape `TU/STIXTwoMath(1)/m/n' will be
+(Font)              scaled to size 4.55605pt on input line 330.
+LaTeX Font Info:    Font shape `TU/STIXTwoMath(2)/m/n' will be
+(Font)              scaled to size 8.00012pt on input line 330.
+LaTeX Font Info:    Font shape `TU/STIXTwoMath(2)/m/n' will be
+(Font)              scaled to size 6.00009pt on input line 330.
+LaTeX Font Info:    Font shape `TU/STIXTwoMath(2)/m/n' will be
+(Font)              scaled to size 5.00008pt on input line 330.
+LaTeX Font Info:    Font shape `TU/STIXTwoMath(3)/m/n' will be
+(Font)              scaled to size 7.99988pt on input line 330.
+LaTeX Font Info:    Font shape `TU/STIXTwoMath(3)/m/n' will be
+(Font)              scaled to size 5.99991pt on input line 330.
+LaTeX Font Info:    Font shape `TU/STIXTwoMath(3)/m/n' will be
+(Font)              scaled to size 4.99992pt on input line 330.
+LaTeX Font Info:    Font shape `TU/SourceCodePro(0)/m/n' will be
+(Font)              scaled to size 5.59998pt on input line 330.
+[14] [15]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (336.25pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (336.25pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (336.25pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (336.25pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+ [][][][] 
+ []
+
+[16
+
+]
+Underfull \vbox (badness 10000) detected at line 364
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 364
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 364
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 364
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 364
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 364
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 364
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 364
+[]
+ []
+
+Chapter 1.
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+ [][][][] 
+ []
+
+[1
+
+
+]
+File: statthink_files/figure-latex/intror1-1.pdf Graphic file (type pdf)
+<use statthink_files/figure-latex/intror1-1.pdf>
+[2] [3] [4]
+LaTeX Font Info:    Font shape `TU/SourceCodePro(0)/bx/n' will be
+(Font)              scaled to size 8.39996pt on input line 456.
+
+LaTeX Font Warning: Font shape `TU/SourceCodePro(0)/m/it' undefined
+(Font)              using `TU/SourceCodePro(0)/m/n' instead on input line 463.
+
+[5]
+File: _figures/rstudio.png Graphic file (type bmp)
+<_figures/rstudio.png>
+LaTeX Font Info:    Font shape `TU/SourceCodePro(0)/bx/n' will be
+(Font)              scaled to size 7.69997pt on input line 480.
+[6]
+LaTeX Font Info:    Font shape `TU/SourceCodePro(0)/bx/n' will be
+(Font)              scaled to size 6.99997pt on input line 488.
+LaTeX Font Info:    Font shape `TU/SourceCodePro(0)/m/it' will be
+(Font)              scaled to size 6.99997pt on input line 524.
+[7] [8]
+File: statthink_files/figure-latex/unnamed-chunk-11-1.pdf Graphic file (type pd
+f)
+<use statthink_files/figure-latex/unnamed-chunk-11-1.pdf>
+[9]
+Underfull \hbox (badness 10000) detected at line 625
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 627
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 629
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 631
+ [][]
+ []
+
+[10]
+Underfull \hbox (badness 10000) detected at line 643
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 645
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 647
+ [][]
+ []
+
+[11] [12]
+Underfull \vbox (badness 10000) detected at line 699
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 699
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 699
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 699
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 699
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 699
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 699
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 699
+[]
+ []
+
+Chapter 2.
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+ [][][][] 
+ []
+
+[13
+
+
+] [14] [15] [16] [17]
+Underfull \hbox (badness 1221) in paragraph at lines 889--890
+[]\TU/lmr/m/n/10 Improperly displayed graphs and incomplete
+ []
+
+[18]
+File: _figures/Data-change-dir.png Graphic file (type bmp)
+<_figures/Data-change-dir.png>
+[19]
+File: _figures/create-r-script.png Graphic file (type bmp)
+<_figures/create-r-script.png>
+File: _figures/new-r-script.png Graphic file (type bmp)
+<_figures/new-r-script.png>
+[20] [21] [22] [23]
+Underfull \hbox (badness 10000) detected at line 1048
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1050
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1073
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1073
+[][][]
+ []
+
+[24]
+Underfull \hbox (badness 10000) detected at line 1075
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1075
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1077
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1077
+[][][]
+ []
+
+[25] [26]
+Underfull \vbox (badness 10000) detected at line 1138
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 1138
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 1138
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 1138
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 1138
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 1138
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 1138
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 1138
+[]
+ []
+
+Chapter 3.
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+ [][][][] 
+ []
+
+[27
+
+
+]
+File: statthink_files/figure-latex/DStat1-1.pdf Graphic file (type pdf)
+<use statthink_files/figure-latex/DStat1-1.pdf>
+[28] [29] [30] [31]
+File: statthink_files/figure-latex/unnamed-chunk-27-1.pdf Graphic file (type pd
+f)
+<use statthink_files/figure-latex/unnamed-chunk-27-1.pdf>
+File: statthink_files/figure-latex/unnamed-chunk-28-1.pdf Graphic file (type pd
+f)
+<use statthink_files/figure-latex/unnamed-chunk-28-1.pdf>
+[32] [33]
+File: statthink_files/figure-latex/DStat4-1.pdf Graphic file (type pdf)
+<use statthink_files/figure-latex/DStat4-1.pdf>
+[34] [35] [36] [37] [38] [39]
+Underfull \hbox (badness 10000) detected at line 1863
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1866
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1868
+ [][]
+ []
+
+File: statthink_files/figure-latex/DStat9-1.pdf Graphic file (type pdf)
+<use statthink_files/figure-latex/DStat9-1.pdf>
+File: statthink_files/figure-latex/DStat10-1.pdf Graphic file (type pdf)
+<use statthink_files/figure-latex/DStat10-1.pdf>
+[40]
+Underfull \hbox (badness 10000) detected at line 1899
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1901
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1903
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1905
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1907
+ [][]
+ []
+
+[41] [42] [43]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (336.25pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (336.25pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (336.25pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (336.25pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+ [][][][] 
+ []
+
+[44
+
+]
+Underfull \vbox (badness 10000) detected at line 2029
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 2029
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 2029
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 2029
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 2029
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 2029
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 2029
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 2029
+[]
+ []
+
+Chapter 4.
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+ [][][][] 
+ []
+
+[45
+
+] [46] [47] [48]
+File: statthink_files/figure-latex/Prob1-1.pdf Graphic file (type pdf)
+<use statthink_files/figure-latex/Prob1-1.pdf>
+[49] [50] [51] [52] [53] [54] [55] [56] [57] [58] [59]
+Underfull \hbox (badness 10000) detected at line 2893
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 2895
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 2897
+ [][]
+ []
+
+[60]
+Underfull \hbox (badness 10000) detected at line 2899
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 2901
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 2903
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 2905
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 2907
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 2919
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 2921
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 2923
+ [][]
+ []
+
+[61] [62]
+Underfull \vbox (badness 10000) detected at line 3005
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 3005
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 3005
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 3005
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 3005
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 3005
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 3005
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 3005
+[]
+ []
+
+Chapter 5.
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+ [][][][] 
+ []
+
+[63
+
+
+] [64]
+
+Package amsmath Warning: Foreign command \atopwithdelims;
+(amsmath)                \frac or \genfrac should be used instead
+(amsmath)                 on input line 3125.
+
+File: statthink_files/figure-latex/RVar2-1.pdf Graphic file (type pdf)
+<use statthink_files/figure-latex/RVar2-1.pdf>
+[65] [66] [67] [68]
+File: statthink_files/figure-latex/RVar3-1.pdf Graphic file (type pdf)
+<use statthink_files/figure-latex/RVar3-1.pdf>
+[69]
+File: statthink_files/figure-latex/RVar4-1.pdf Graphic file (type pdf)
+<use statthink_files/figure-latex/RVar4-1.pdf>
+[70]
+File: statthink_files/figure-latex/RVar5-1.pdf Graphic file (type pdf)
+<use statthink_files/figure-latex/RVar5-1.pdf>
+[71] [72] [73] [74]
+File: statthink_files/figure-latex/RVar6-1.pdf Graphic file (type pdf)
+<use statthink_files/figure-latex/RVar6-1.pdf>
+[75]
+File: statthink_files/figure-latex/unnamed-chunk-68-1.pdf Graphic file (type pd
+f)
+<use statthink_files/figure-latex/unnamed-chunk-68-1.pdf>
+[76]
+File: statthink_files/figure-latex/unnamed-chunk-69-1.pdf Graphic file (type pd
+f)
+<use statthink_files/figure-latex/unnamed-chunk-69-1.pdf>
+File: statthink_files/figure-latex/unnamed-chunk-70-1.pdf Graphic file (type pd
+f)
+<use statthink_files/figure-latex/unnamed-chunk-70-1.pdf>
+[77]
+File: statthink_files/figure-latex/RVar7-1.pdf Graphic file (type pdf)
+<use statthink_files/figure-latex/RVar7-1.pdf>
+[78]
+File: statthink_files/figure-latex/RVar8-1.pdf Graphic file (type pdf)
+<use statthink_files/figure-latex/RVar8-1.pdf>
+[79] [80]
+Underfull \hbox (badness 10000) detected at line 3954
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 3957
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 3960
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 3963
+ [][]
+ []
+
+File: statthink_files/figure-latex/RVar10-1.pdf Graphic file (type pdf)
+<use statthink_files/figure-latex/RVar10-1.pdf>
+[81]
+Underfull \hbox (badness 10000) detected at line 4002
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 4012
+ [][]
+ []
+
+[82] [83] [84]
+Underfull \vbox (badness 10000) detected at line 4126
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 4126
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 4126
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 4126
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 4126
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 4126
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 4126
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 4126
+[]
+ []
+
+Chapter 6.
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+ [][][][] 
+ []
+
+[85
+
+
+]
+File: statthink_files/figure-latex/Normal1-1.pdf Graphic file (type pdf)
+<use statthink_files/figure-latex/Normal1-1.pdf>
+[86]
+File: statthink_files/figure-latex/Normal2-1.pdf Graphic file (type pdf)
+<use statthink_files/figure-latex/Normal2-1.pdf>
+[87]
+File: statthink_files/figure-latex/Normal3-1.pdf Graphic file (type pdf)
+<use statthink_files/figure-latex/Normal3-1.pdf>
+[88] [89]
+File: statthink_files/figure-latex/Normal4-1.pdf Graphic file (type pdf)
+<use statthink_files/figure-latex/Normal4-1.pdf>
+File: statthink_files/figure-latex/Normal5-1.pdf Graphic file (type pdf)
+<use statthink_files/figure-latex/Normal5-1.pdf>
+[90] [91] [92] [93] [94] [95]
+File: statthink_files/figure-latex/Normal6-1.pdf Graphic file (type pdf)
+<use statthink_files/figure-latex/Normal6-1.pdf>
+[96] [97] [98]
+Underfull \hbox (badness 10000) detected at line 4980
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 4983
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 4986
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 4989
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 5001
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 5003
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 5006
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 5009
+ [][]
+ []
+
+
+Underfull \hbox (badness 4108) in paragraph at lines 5022--5025
+\TU/lmr/m/n/10 used to model a measurement. The distribution is marked with
+ []
+
+[99]
+Underfull \hbox (badness 10000) in paragraph at lines 5033--5036
+[]\TU/lmr/m/n/10 Approximate computations
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5037--5040
+[]\TU/lmr/m/n/10 Approximate computations
+ []
+
+[100]
+Underfull \vbox (badness 10000) detected at line 5067
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 5067
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 5067
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 5067
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 5067
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 5067
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 5067
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 5067
+[]
+ []
+
+Chapter 7.
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+ [][][][] 
+ []
+
+[101
+
+
+] [102] [103] [104] [105] [106]
+File: statthink_files/figure-latex/SampDist6-1.pdf Graphic file (type pdf)
+<use statthink_files/figure-latex/SampDist6-1.pdf>
+[107] [108] [109]
+File: statthink_files/figure-latex/SampDist7-1.pdf Graphic file (type pdf)
+<use statthink_files/figure-latex/SampDist7-1.pdf>
+[110] [111] [112] [113]
+File: statthink_files/figure-latex/SampDist8-1.pdf Graphic file (type pdf)
+<use statthink_files/figure-latex/SampDist8-1.pdf>
+[114] [115]
+File: statthink_files/figure-latex/SampDist9-1.pdf Graphic file (type pdf)
+<use statthink_files/figure-latex/SampDist9-1.pdf>
+[116] [117]
+Underfull \hbox (badness 10000) detected at line 6082
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 6084
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 6086
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 6089
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 6092
+ [][]
+ []
+
+[118]
+Underfull \hbox (badness 10000) detected at line 6095
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 6111
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 6113
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 6115
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 6119
+ [][]
+ []
+
+[119] [120]
+Underfull \vbox (badness 10000) detected at line 6198
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 6198
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 6198
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 6198
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 6198
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 6198
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 6198
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 6198
+[]
+ []
+
+Chapter 8.
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+ [][][][] 
+ []
+
+[121
+
+
+] [122] [123]
+Underfull \hbox (badness 10000) detected at line 6373
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 6373
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 6376
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 6376
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 6379
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 6379
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 6382
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 6382
+[][][]
+ []
+
+[124] [125] [126] [127]
+Underfull \hbox (badness 10000) detected at line 6632
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 6632
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 6635
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 6635
+[][][]
+ []
+
+[128]
+Underfull \hbox (badness 10000) detected at line 6721
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 6721
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 6724
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 6724
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 6727
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 6727
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 6731
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 6731
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 6737
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 6737
+[][][]
+ []
+
+[129] [130]
+File: statthink_files/figure-latex/unnamed-chunk-131-1.pdf Graphic file (type p
+df)
+<use statthink_files/figure-latex/unnamed-chunk-131-1.pdf>
+[131]
+Underfull \hbox (badness 10000) detected at line 6895
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 6895
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 6899
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 6899
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 6904
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 6904
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 6908
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 6908
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 6913
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 6913
+[][][]
+ []
+
+[132] [133] [134] [135]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (336.25pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (336.25pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (336.25pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (336.25pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+ [][][][] 
+ []
+
+[136
+
+]
+Underfull \vbox (badness 10000) detected at line 7137
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 7137
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 7137
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 7137
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 7137
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 7137
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 7137
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 7137
+[]
+ []
+
+Chapter 9.
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+ [][][][] 
+ []
+
+[137
+
+] [138] [139] [140] [141] [142] [143] [144] [145] [146] [147] [148] [149] [150]
+[151] [152]
+Underfull \hbox (badness 10000) detected at line 7997
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 8001
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 8003
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 8012
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 8016
+ [][]
+ []
+
+[153]
+Underfull \hbox (badness 10000) detected at line 8043
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 8052
+ [][]
+ []
+
+[154] [155]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (336.25pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (336.25pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (336.25pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (336.25pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+ [][][][] 
+ []
+
+[156
+
+]
+Underfull \vbox (badness 10000) detected at line 8126
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 8126
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 8126
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 8126
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 8126
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 8126
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 8126
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 8126
+[]
+ []
+
+Chapter 10.
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+ [][][][] 
+ []
+
+[157
+
+] [158] [159] [160] [161] [162] [163] [164] [165] [166] [167] [168] [169] [170]
+[171] [172] [173]
+Underfull \hbox (badness 10000) detected at line 9094
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 9100
+ [][]
+ []
+
+[174]
+Underfull \hbox (badness 10000) detected at line 9134
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 9140
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 9143
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 9146
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 9148
+ [][]
+ []
+
+[175] [176] [177]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (336.25pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (336.25pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (336.25pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (336.25pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+ [][][][] 
+ []
+
+[178
+
+]
+Underfull \vbox (badness 10000) detected at line 9237
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 9237
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 9237
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 9237
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 9237
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 9237
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 9237
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 9237
+[]
+ []
+
+Chapter 11.
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+ [][][][] 
+ []
+
+[179
+
+] [180] [181] [182] [183] [184] [185] [186] [187] [188]
+File: statthink_files/figure-latex/Confidence1-1.pdf Graphic file (type pdf)
+<use statthink_files/figure-latex/Confidence1-1.pdf>
+[189] [190] [191] [192] [193] [194] [195] [196] [197]
+Underfull \hbox (badness 10000) detected at line 10333
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 10336
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 10339
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 10343
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 10348
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 10366
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 10370
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 10374
+ [][]
+ []
+
+[198]
+Underfull \hbox (badness 10000) detected at line 10386
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 10391
+ [][]
+ []
+
+
+Underfull \hbox (badness 1484) in paragraph at lines 10418--10422
+[]\TU/lmr/m/n/10 A distribution associated with the sum of
+ []
+
+[199] [200]
+Underfull \vbox (badness 10000) detected at line 10470
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 10470
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 10470
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 10470
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 10470
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 10470
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 10470
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 10470
+[]
+ []
+
+Chapter 12.
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+ [][][][] 
+ []
+
+[201
+
+
+] [202] [203] [204] [205] [206] [207] [208] [209]
+LaTeX Font Info:    Calculating math sizes for size <11> on input line 10977.
+LaTeX Font Info:    Font shape `TU/STIXTwoMath(1)/m/n' will be
+(Font)              scaled to size 10.0233pt on input line 10977.
+LaTeX Font Info:    Font shape `TU/STIXTwoMath(1)/m/n' will be
+(Font)              scaled to size 7.01627pt on input line 10977.
+LaTeX Font Info:    Font shape `TU/STIXTwoMath(1)/m/n' will be
+(Font)              scaled to size 5.01164pt on input line 10977.
+LaTeX Font Info:    Font shape `TU/STIXTwoMath(2)/m/n' will be
+(Font)              scaled to size 11.00017pt on input line 10977.
+LaTeX Font Info:    Font shape `TU/STIXTwoMath(2)/m/n' will be
+(Font)              scaled to size 7.70007pt on input line 10977.
+LaTeX Font Info:    Font shape `TU/STIXTwoMath(2)/m/n' will be
+(Font)              scaled to size 5.50008pt on input line 10977.
+LaTeX Font Info:    Font shape `TU/STIXTwoMath(3)/m/n' will be
+(Font)              scaled to size 10.99983pt on input line 10977.
+LaTeX Font Info:    Font shape `TU/STIXTwoMath(3)/m/n' will be
+(Font)              scaled to size 7.69984pt on input line 10977.
+LaTeX Font Info:    Font shape `TU/STIXTwoMath(3)/m/n' will be
+(Font)              scaled to size 5.49991pt on input line 10977.
+[210]
+File: statthink_files/figure-latex/unnamed-chunk-179-1.pdf Graphic file (type p
+df)
+<use statthink_files/figure-latex/unnamed-chunk-179-1.pdf>
+[211] [212] [213] [214] [215] [216] [217] [218] [219] [220] [221] [222]
+Underfull \hbox (badness 10000) detected at line 11712
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 11720
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 11723
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 11740
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 11742
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 11756
+ [][]
+ []
+
+[223]
+Underfull \hbox (badness 10000) detected at line 11758
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 11761
+ [][]
+ []
+
+[224] [225]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (336.25pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (336.25pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (336.25pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (336.25pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+ [][][][] 
+ []
+
+[226
+
+]
+Underfull \vbox (badness 10000) detected at line 11865
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 11865
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 11865
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 11865
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 11865
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 11865
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 11865
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 11865
+[]
+ []
+
+Chapter 13.
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+ [][][][] 
+ []
+
+[227
+
+] [228] [229]
+File: statthink_files/figure-latex/unnamed-chunk-198-1.pdf Graphic file (type p
+df)
+<use statthink_files/figure-latex/unnamed-chunk-198-1.pdf>
+[230] [231] [232] [233] [234] [235]
+Underfull \hbox (badness 6910) in paragraph at lines 12355--12355
+[][][]\TU/lmr/m/n/8 The confidence interval given in the output of the function
+ “\TU/SourceCodePro(0)/m/n/8 t.test\TU/lmr/m/n/8 ” is
+ []
+
+[236] [237] [238] [239] [240] [241] [242]
+Underfull \hbox (badness 10000) detected at line 12723
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 12727
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 12731
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 12735
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 12754
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 12756
+ [][]
+ []
+
+[243]
+Underfull \hbox (badness 10000) detected at line 12772
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 12774
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 12777
+ [][]
+ []
+
+[244] [245]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (336.25pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (336.25pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (336.25pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (336.25pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+ [][][][] 
+ []
+
+[246
+
+]
+Underfull \vbox (badness 10000) detected at line 12842
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 12842
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 12842
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 12842
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 12842
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 12842
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 12842
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 12842
+[]
+ []
+
+Chapter 14.
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+ [][][][] 
+ []
+
+[247
+
+] [248]
+File: statthink_files/figure-latex/Regression1-1.pdf Graphic file (type pdf)
+<use statthink_files/figure-latex/Regression1-1.pdf>
+[249]
+File: statthink_files/figure-latex/Regression2-1.pdf Graphic file (type pdf)
+<use statthink_files/figure-latex/Regression2-1.pdf>
+[250]
+File: statthink_files/figure-latex/Regression3-1.pdf Graphic file (type pdf)
+<use statthink_files/figure-latex/Regression3-1.pdf>
+[251] [252]
+File: statthink_files/figure-latex/unnamed-chunk-208-1.pdf Graphic file (type p
+df)
+<use statthink_files/figure-latex/unnamed-chunk-208-1.pdf>
+[253]
+File: statthink_files/figure-latex/Regression4-1.pdf Graphic file (type pdf)
+<use statthink_files/figure-latex/Regression4-1.pdf>
+[254] [255] [256]
+File: statthink_files/figure-latex/Regression5-1.pdf Graphic file (type pdf)
+<use statthink_files/figure-latex/Regression5-1.pdf>
+[257] [258] [259] [260] [261] [262]
+File: statthink_files/figure-latex/Regression6-1.pdf Graphic file (type pdf)
+<use statthink_files/figure-latex/Regression6-1.pdf>
+[263] [264] [265] [266] [267]
+File: statthink_files/figure-latex/unnamed-chunk-221-1.pdf Graphic file (type p
+df)
+<use statthink_files/figure-latex/unnamed-chunk-221-1.pdf>
+
+Underfull \hbox (badness 10000) detected at line 13953
+ [][]
+ []
+
+[268]
+Underfull \hbox (badness 10000) detected at line 13955
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 13957
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 13966
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 13969
+ [][]
+ []
+
+File: statthink_files/figure-latex/Regression8-1.pdf Graphic file (type pdf)
+<use statthink_files/figure-latex/Regression8-1.pdf>
+
+Underfull \hbox (badness 10000) detected at line 14018
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 14021
+ [][]
+ []
+
+
+Underfull \hbox (badness 3803) in paragraph at lines 14034--14034
+[][][]\TU/lmr/m/n/8 The data is taken from Table 1[][][][][] in section “Practi
+ce in Linear Regres-
+ []
+
+[269]
+Underfull \hbox (badness 10000) detected at line 14046
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 14052
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 14056
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 14061
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 14075--14075
+[][][]\TU/lmr/m/n/8 Taken from Homework[][][][][] section in the chapter on lin
+ear regression of
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 14075--14075
+\TU/lmr/m/n/8 the online Textbook “Collaborative Statistics” (Connexions. March
+ 22, 2010.
+ []
+
+[270]
+Underfull \hbox (badness 10000) detected at line 14103
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 14106
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 14109
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 14126
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 14129
+ [][]
+ []
+
+[271]
+Underfull \hbox (badness 10000) detected at line 14148
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 14153
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 14158
+ [][]
+ []
+
+[272] [273]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (336.25pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (336.25pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (336.25pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (336.25pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+ [][][][] 
+ []
+
+[274
+
+]
+Underfull \vbox (badness 10000) detected at line 14256
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 14256
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 14256
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 14256
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 14256
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 14256
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 14256
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 14256
+[]
+ []
+
+Chapter 15.
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+ [][][][] 
+ []
+
+[275
+
+] [276] [277]
+File: statthink_files/figure-latex/Logistic1-1.pdf Graphic file (type pdf)
+<use statthink_files/figure-latex/Logistic1-1.pdf>
+[278] [279] [280]
+File: statthink_files/figure-latex/Logistic2-1.pdf Graphic file (type pdf)
+<use statthink_files/figure-latex/Logistic2-1.pdf>
+File: statthink_files/figure-latex/Logistic3-1.pdf Graphic file (type pdf)
+<use statthink_files/figure-latex/Logistic3-1.pdf>
+[281] [282] [283] [284]
+Underfull \hbox (badness 10000) detected at line 14777
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 14782
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 14787
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 14815
+ [][]
+ []
+
+[285]
+Underfull \hbox (badness 10000) detected at line 14821
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 14826
+ [][]
+ []
+
+[286] [287]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (336.25pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (336.25pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (336.25pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (336.25pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+ [][][][] 
+ []
+
+[288
+
+]
+Underfull \vbox (badness 10000) detected at line 14893
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 14893
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 14893
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 14893
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 14893
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 14893
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 14893
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 14893
+[]
+ []
+
+Chapter 16.
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+ [][][][] 
+ []
+
+[289
+
+] [290] [291]
+File: statthink_files/figure-latex/unnamed-chunk-235-1.pdf Graphic file (type p
+df)
+<use statthink_files/figure-latex/unnamed-chunk-235-1.pdf>
+[292]
+File: statthink_files/figure-latex/unnamed-chunk-237-1.pdf Graphic file (type p
+df)
+<use statthink_files/figure-latex/unnamed-chunk-237-1.pdf>
+[293] [294] [295]
+File: statthink_files/figure-latex/unnamed-chunk-240-1.pdf Graphic file (type p
+df)
+<use statthink_files/figure-latex/unnamed-chunk-240-1.pdf>
+[296] [297]
+File: statthink_files/figure-latex/unnamed-chunk-241-1.pdf Graphic file (type p
+df)
+<use statthink_files/figure-latex/unnamed-chunk-241-1.pdf>
+[298]
+File: statthink_files/figure-latex/CaseStudies5-1.pdf Graphic file (type pdf)
+<use statthink_files/figure-latex/CaseStudies5-1.pdf>
+[299] [300] [301] [302]
+File: statthink_files/figure-latex/unnamed-chunk-249-1.pdf Graphic file (type p
+df)
+<use statthink_files/figure-latex/unnamed-chunk-249-1.pdf>
+[303] [304] [305] [306]
+Underfull \vbox (badness 10000) detected at line 15751
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 15751
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 15751
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 15751
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 15751
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 15751
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 15751
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 15751
+[]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 15751
+[]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 15765
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 15765
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 15767
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 15767
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 15769
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 15769
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 15771
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 15771
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 15805
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 15805
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+ [][][][] 
+ []
+
+[307
+
+
+]
+Underfull \hbox (badness 10000) detected at line 15807
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 15807
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 15809
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 15809
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 15823
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 15823
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 15825
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 15825
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 15836
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 15836
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 15838
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 15838
+[][][]
+ []
+
+[308]
+Underfull \hbox (badness 10000) detected at line 15841
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 15841
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 15855
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 15855
+[][][]
+ []
+
+[309]
+Underfull \hbox (badness 10000) detected at line 15876
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 15876
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 15886
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 15886
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 15903
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 15903
+[][][]
+ []
+
+[310]
+Underfull \hbox (badness 10000) detected at line 15964
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 15964
+[][][]
+ []
+
+[311]
+Underfull \hbox (badness 10000) detected at line 16000
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 16000
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 16044
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 16044
+[][][]
+ []
+
+[312]
+Underfull \hbox (badness 10000) detected at line 16053
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 16053
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 16071
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 16071
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 16084
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 16084
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 16095
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 16095
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 16106
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 16106
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 16117
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 16117
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 16127
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 16127
+[][][]
+ []
+
+[313]
+Underfull \hbox (badness 10000) detected at line 16149
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 16149
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 16165
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 16165
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 16176
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 16176
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 16186
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 16186
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 16190
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 16190
+[][][]
+ []
+
+[314]
+Underfull \hbox (badness 10000) detected at line 16211
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 16211
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 16226
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 16226
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 16240
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 16240
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 16264
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 16264
+[][][]
+ []
+
+[315]
+Underfull \hbox (badness 10000) detected at line 16288
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 16288
+[][][]
+ []
+
+File: statthink_files/figure-latex/unnamed-chunk-262-1.pdf Graphic file (type p
+df)
+<use statthink_files/figure-latex/unnamed-chunk-262-1.pdf>
+File: statthink_files/figure-latex/unnamed-chunk-262-2.pdf Graphic file (type p
+df)
+<use statthink_files/figure-latex/unnamed-chunk-262-2.pdf>
+[316]
+File: statthink_files/figure-latex/unnamed-chunk-262-3.pdf Graphic file (type p
+df)
+<use statthink_files/figure-latex/unnamed-chunk-262-3.pdf>
+
+Underfull \hbox (badness 10000) in paragraph at lines 16321--16326
+[]\TU/lmr/m/n/10 The second plot, the one that corresponds to $[][] []
+ []
+
+
+Underfull \hbox (badness 1158) in paragraph at lines 16321--16326
+[][][][] [][][][]$\TU/lmr/m/n/10 , is associated with Barplot 1. Notice
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 16327--16333
+[]\TU/lmr/m/n/10 The third plot, the one that corresponds to $[][] []
+ []
+
+
+Underfull \hbox (badness 8056) in paragraph at lines 16327--16333
+[][][][] [][][][]$\TU/lmr/m/n/10 , matches Barplot 2. Observe that
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 16333
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 16333
+[][][]
+ []
+
+[317]
+Underfull \hbox (badness 10000) detected at line 16361
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 16361
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 16381
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 16381
+[][][]
+ []
+
+[318]
+Underfull \hbox (badness 10000) detected at line 16401
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 16401
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 16429
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 16429
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 16465
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 16465
+[][][]
+ []
+
+[319]
+Underfull \hbox (badness 10000) detected at line 16482
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 16482
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 16504
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 16504
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 16525
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 16525
+[][][]
+ []
+
+[320]
+Underfull \hbox (badness 10000) detected at line 16556
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 16556
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 16573
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 16573
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 16589
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 16589
+[][][]
+ []
+
+[321]
+Underfull \hbox (badness 10000) detected at line 16624
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 16624
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 16645
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 16645
+[][][]
+ []
+
+[322]
+Underfull \hbox (badness 10000) detected at line 16666
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 16666
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 16695
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 16695
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 16704
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 16704
+[][][]
+ []
+
+[323]
+Underfull \hbox (badness 10000) detected at line 16714
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 16714
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 16736
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 16736
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 16767
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 16767
+[][][]
+ []
+
+[324]
+Underfull \hbox (badness 10000) detected at line 16793
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 16793
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 16798
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 16798
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 16828
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 16828
+[][][]
+ []
+
+[325]
+Underfull \hbox (badness 10000) detected at line 16855
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 16855
+[][][]
+ []
+
+File: statthink_files/figure-latex/unnamed-chunk-282-1.pdf Graphic file (type p
+df)
+<use statthink_files/figure-latex/unnamed-chunk-282-1.pdf>
+File: statthink_files/figure-latex/unnamed-chunk-282-2.pdf Graphic file (type p
+df)
+<use statthink_files/figure-latex/unnamed-chunk-282-2.pdf>
+[326]
+Underfull \hbox (badness 10000) detected at line 16908
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 16908
+[][][]
+ []
+
+[327]
+Underfull \hbox (badness 10000) detected at line 16953
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 16953
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 16990
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 16990
+[][][]
+ []
+
+[328] [329]
+Underfull \hbox (badness 10000) detected at line 17073
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 17073
+[][][]
+ []
+
+[330]
+Underfull \hbox (badness 10000) detected at line 17154
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 17154
+[][][]
+ []
+
+[331]
+Underfull \hbox (badness 10000) detected at line 17219
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 17219
+[][][]
+ []
+
+[332]
+Underfull \hbox (badness 10000) detected at line 17238
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 17238
+[][][]
+ []
+
+
+Overfull \hbox (0.12991pt too wide) in paragraph at lines 17259--17264
+[]\TU/lmr/m/n/10 Observe that the sampling distribution is stored in the object
+ “\TU/SourceCodePro(0)/m/it/10 P.hat\TU/lmr/m/n/10 ”.
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 17271
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 17271
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 17287
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 17287
+[][][]
+ []
+
+[333]
+Underfull \hbox (badness 10000) detected at line 17317
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 17317
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 17343
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 17343
+[][][]
+ []
+
+[334]
+Underfull \hbox (badness 10000) detected at line 17372
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 17372
+[][][]
+ []
+
+File: statthink_files/figure-latex/Confidence2-1.pdf Graphic file (type pdf)
+<use statthink_files/figure-latex/Confidence2-1.pdf>
+
+Underfull \hbox (badness 10000) detected at line 17418
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 17418
+[][][]
+ []
+
+[335]
+Underfull \hbox (badness 10000) detected at line 17451
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 17451
+[][][]
+ []
+
+[336]
+Underfull \hbox (badness 10000) detected at line 17492
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 17492
+[][][]
+ []
+
+[337]
+Underfull \hbox (badness 10000) detected at line 17531
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 17531
+[][][]
+ []
+
+
+Underfull \hbox (badness 1442) in paragraph at lines 17549--17553
+[]\TU/lmr/m/n/10 Based on the assumption we used the percentiles of the $[]$-
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 17553
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 17553
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 17572
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 17572
+[][][]
+ []
+
+[338]
+Underfull \hbox (badness 10000) detected at line 17622
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 17622
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 17630
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 17630
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 17636
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 17636
+[][][]
+ []
+
+[339]
+Underfull \hbox (badness 10000) detected at line 17675
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 17675
+[][][]
+ []
+
+[340]
+Underfull \hbox (badness 10000) detected at line 17708
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 17708
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 17750
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 17750
+[][][]
+ []
+
+[341]
+Underfull \hbox (badness 10000) detected at line 17782
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 17782
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 17798
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 17798
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 17827
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 17827
+[][][]
+ []
+
+[342]
+Underfull \hbox (badness 10000) detected at line 17862
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 17862
+[][][]
+ []
+
+[343]
+Underfull \hbox (badness 10000) detected at line 17893
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 17893
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 17924
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 17924
+[][][]
+ []
+
+[344]
+Underfull \hbox (badness 10000) detected at line 17961
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 17961
+[][][]
+ []
+
+[345]
+Underfull \hbox (badness 10000) detected at line 18005
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 18005
+[][][]
+ []
+
+[346]
+Underfull \hbox (badness 10000) detected at line 18048
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 18048
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 18067
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 18067
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 18100
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 18100
+[][][]
+ []
+
+[347]
+Underfull \hbox (badness 10000) detected at line 18140
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 18140
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 18151
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 18151
+[][][]
+ []
+
+[348]
+Underfull \hbox (badness 10000) detected at line 18167
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 18167
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 18173
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 18173
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 18190
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 18190
+[][][]
+ []
+
+[349]
+Underfull \hbox (badness 10000) in paragraph at lines 18245--18247
+[]\TU/lmr/m/n/10 We get that the confidence interval for the slope is
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 18247
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 18247
+[][][]
+ []
+
+File: statthink_files/figure-latex/unnamed-chunk-325-1.pdf Graphic file (type p
+df)
+<use statthink_files/figure-latex/unnamed-chunk-325-1.pdf>
+[350]
+Underfull \hbox (badness 10000) detected at line 18265
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 18265
+[][][]
+ []
+
+[351]
+Underfull \hbox (badness 2521) in paragraph at lines 18315--18318
+[]\TU/lmr/m/n/10 We get that the 95% confidence interval for the slope is
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 18318
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 18318
+[][][]
+ []
+
+File: statthink_files/figure-latex/unnamed-chunk-328-1.pdf Graphic file (type p
+df)
+<use statthink_files/figure-latex/unnamed-chunk-328-1.pdf>
+[352]
+Underfull \hbox (badness 10000) detected at line 18356
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 18356
+[][][]
+ []
+
+File: statthink_files/figure-latex/unnamed-chunk-329-1.pdf Graphic file (type p
+df)
+<use statthink_files/figure-latex/unnamed-chunk-329-1.pdf>
+
+Underfull \hbox (badness 10000) detected at line 18377
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 18377
+[][][]
+ []
+
+[353]
+Underfull \hbox (badness 10000) detected at line 18440
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 18440
+[][][]
+ []
+
+[354]
+Underfull \hbox (badness 10000) detected at line 18501
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 18501
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 18516
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 18516
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 18533
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 18533
+[][][]
+ []
+
+[355]
+File: statthink_files/figure-latex/unnamed-chunk-334-1.pdf Graphic file (type p
+df)
+<use statthink_files/figure-latex/unnamed-chunk-334-1.pdf>
+[356]
+Underfull \hbox (badness 10000) detected at line 18588
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 18588
+[][][]
+ []
+
+[357]
+File: statthink_files/figure-latex/unnamed-chunk-336-1.pdf Graphic file (type p
+df)
+<use statthink_files/figure-latex/unnamed-chunk-336-1.pdf>
+
+Underfull \hbox (badness 10000) detected at line 18637
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 18637
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 18655
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 18655
+[][][]
+ []
+
+[358]
+File: statthink_files/figure-latex/Logistic4-1.pdf Graphic file (type pdf)
+<use statthink_files/figure-latex/Logistic4-1.pdf>
+
+Underfull \hbox (badness 10000) detected at line 18702
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 18702
+[][][]
+ []
+
+[359]
+Underfull \hbox (badness 10000) detected at line 18752
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 18752
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 18767
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 18767
+[][][]
+ []
+
+File: statthink_files/figure-latex/Logistic5-1.pdf Graphic file (type pdf)
+<use statthink_files/figure-latex/Logistic5-1.pdf>
+[360]
+File: statthink_files/figure-latex/Logistic5-2.pdf Graphic file (type pdf)
+<use statthink_files/figure-latex/Logistic5-2.pdf>
+[361]
+Underfull \hbox (badness 10000) detected at line 18820
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 18820
+[][][]
+ []
+
+[362]
+Underfull \hbox (badness 3646) in paragraph at lines 18884--18888
+[]\TU/lmr/m/n/10 Specifically, the confidence interval for the coefficient that
+
+ []
+
+
+Underfull \hbox (badness 7522) in paragraph at lines 18884--18888
+\TU/lmr/m/n/10 is associated with the explanatory variable is equal to
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 18888
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 18888
+[][][]
+ []
+
+[363]
+No file statthink.bbl.
+[364] (./statthink.ind)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 18969.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 18969.
+(./statthink.aux)
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 18969.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 18969.
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 18969.
+ ) 
+Here is how much of TeX's memory you used:
+ 29599 strings out of 494476
+ 536010 string characters out of 6165662
+ 772615 words of memory out of 5000000
+ 33094 multiletter control sequences out of 15000+600000
+ 541798 words of font info for 122 fonts, out of 8000000 for 9000
+ 319 hyphenation exceptions out of 8191
+ 49i,11n,119p,1086b,795s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+Output written on statthink.pdf (380 pages).

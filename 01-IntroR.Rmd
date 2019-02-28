@@ -88,7 +88,7 @@ In addition to installing `R` we recommend that you also install `RStudio` <htt
 knitr::include_graphics("_figures/rstudio.png")
 ```
 
-The screenshot in Figure \@ref(fig:fig2) shows the RStudio interface. There are four panels. The top-left panel is the editor, the bottom-left panel shows the `R-Console`. The two right panels show the R-environment, history, file browser, plot panel and help viewer among others. 
+The screenshot in Figure \@ref(fig:fig1b) shows the RStudio interface. There are four panels. The top-left panel is the editor, the bottom-left panel shows the `R-Console`. The two right panels show the R-environment, history, file browser, plot panel and help viewer among others. 
 
 ### Some Basic `R` Commands
 

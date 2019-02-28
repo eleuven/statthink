@@ -25,7 +25,7 @@
 <meta name="author" content="Benjamin Yakir">
 
 
-<meta name="date" content="2019-01-16">
+<meta name="date" content="2019-01-17">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -608,12 +608,12 @@ in order to sample the heights of 100 subjects:</p>
 <pre class="sourceCode r"><code class="sourceCode r">pop<span class="fl">.1</span> &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;_data/pop1.csv&quot;</span>)
 X.samp &lt;-<span class="st"> </span><span class="kw">sample</span>(pop<span class="fl">.1</span><span class="op">$</span>height,<span class="dv">100</span>)
 X.samp</code></pre>
-<pre><code>##   [1] 185 182 178 162 153 195 171 158 165 175 164 168 154 170 172 160 170
-##  [18] 181 165 163 162 160 160 172 159 181 155 173 163 159 167 168 181 170
-##  [35] 191 173 157 175 173 167 148 155 196 194 182 156 186 172 188 157 143
-##  [52] 163 154 168 151 183 166 159 180 171 174 168 173 169 156 159 166 160
-##  [69] 176 160 178 156 173 169 161 188 151 156 172 160 165 170 186 173 158
-##  [86] 154 163 143 177 149 172 161 164 156 164 165 165 161 172 140</code></pre>
+<pre><code>##   [1] 184 161 180 180 174 187 182 154 194 176 168 162 157 170 169 180 178
+##  [18] 177 162 178 164 181 177 171 185 153 176 163 171 168 168 176 175 171
+##  [35] 164 168 179 168 178 151 177 168 163 167 164 164 152 149 175 160 169
+##  [52] 163 176 182 163 180 171 147 167 149 182 175 171 153 167 169 174 154
+##  [69] 176 166 168 186 164 187 162 163 154 177 166 172 174 169 169 179 167
+##  [86] 169 159 164 188 171 185 194 153 177 155 164 164 169 171 163</code></pre>
 <p>In the first line of code we produce a data frame that contains the
 information on the entire population. In the second line we select a
 sample of size 100 from the population, and in the third line we present
@@ -637,7 +637,7 @@ the sample.</p>
 heights in the population. A reasonable proposal is to use the sample
 average to serve as an estimate:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(X.samp)</code></pre>
-<pre><code>## [1] 167.12</code></pre>
+<pre><code>## [1] 169.76</code></pre>
 <p>In our artificial example we can actually compute the true population
 mean:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(pop<span class="fl">.1</span><span class="op">$</span>height)</code></pre>
@@ -661,12 +661,12 @@ select another sample and compute its average:</p>
 <pre class="sourceCode r"><code class="sourceCode r">X.samp &lt;-<span class="st"> </span><span class="kw">sample</span>(pop<span class="fl">.1</span><span class="op">$</span>height,<span class="dv">100</span>)
 X.bar &lt;-<span class="st"> </span><span class="kw">mean</span>(X.samp)
 X.bar</code></pre>
-<pre><code>## [1] 169.09</code></pre>
+<pre><code>## [1] 169.16</code></pre>
 <p>and do it once more:</p>
 <pre class="sourceCode r"><code class="sourceCode r">X.samp &lt;-<span class="st"> </span><span class="kw">sample</span>(pop<span class="fl">.1</span><span class="op">$</span>height,<span class="dv">100</span>)
 X.bar &lt;-<span class="st"> </span><span class="kw">mean</span>(X.samp)
 X.bar</code></pre>
-<pre><code>## [1] 170.37</code></pre>
+<pre><code>## [1] 170.91</code></pre>
 <p>In each case we got a different value for the sample average. In the
 first of the last two iterations the result was more than 1 centimeter
 away from the population average, which is equal to 170.035, and in the

@@ -1,20 +1,19 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
 # Exercise Solutions {-}
 
 ## Chapter 1 {-}
 
 ### Exercise 1.1 {-}
 
-1. According to the information in the
-question the polling was conducted among 500 registered voters. The 500
-registered voters corresponds to the sample.
+1. According to the information in the question the polling was conducted among 500 registered voters. The 500 registered voters corresponds to the sample.
 
-2. The percentage, among all registered
-voters of the given party, of those that prefer a male candidate is a
-parameter. This quantity is a characteristic of the population.
+2. The percentage, among all registered voters of the given party, of those that prefer a male candidate is a parameter. This quantity is a characteristic of the population.
 
-3. It is given that 42% of the sample
-prefer a female candidate. This quantity is a numerical characteristic
-of the data, of the sample. Hence, it is a statistic.
+3. It is given that 42% of the sample prefer a female candidate. This quantity is a numerical characteristic of the data, of the sample. Hence, it is a statistic.
 
 4. The voters in the state that are
 registered to the given party is the target population.
@@ -34,79 +33,35 @@ For convenience, one may also create the bar plot of the data using the code:
 plot(table(n.cost))
 ```
 
-1. The number of days in which 5
-costumers where waiting is 3, since the frequency of the value “5" in
-the data is 3. That can be seen from the table by noticing the number
-below value “5" is 3. It can also be seen from the bar plot by observing
-that the hight of the bar above the value “5" is equal to 3.
+1. The number of days in which 5 costumers where waiting is 3, since the frequency of the value “5" in the data is 3. That can be seen from the table by noticing the number below value “5" is 3. It can also be seen from the bar plot by observing that the hight of the bar above the value “5" is equal to 3.
 
-2. The number of waiting costumers that
-occurred the largest number of times is 1. The value “1” occurred 8
-times, more than any other value. Notice that the bar above this value
-is the highest.
+2. The number of waiting costumers that occurred the largest number of times is 1. The value “1” occurred 8 times, more than any other value. Notice that the bar above this value is the highest.
 
-3. The value “0”, which occurred only
-once, occurred the least number of times.
+3. The value “0”, which occurred only once, occurred the least number of times.
 
 ## Chapter 2 {-}
 
 ### Exercise 2.1 {-}
 
-1. The relative frequency of direct hits of
-category 1 is 0.3993. Notice that the cumulative relative frequency of
-category 1 and 2 hits, the sum of the relative frequency of both
-categories, is 0.6630. The relative frequency of category 2 hits is
-0.2637. Consequently, the relative frequency of direct hits of category
-1 is 0.6630 - 0.2637 = 0.3993.
+1. The relative frequency of direct hits of category 1 is 0.3993. Notice that the cumulative relative frequency of category 1 and 2 hits, the sum of the relative frequency of both categories, is 0.6630. The relative frequency of category 2 hits is 0.2637. Consequently, the relative frequency of direct hits of category 1 is 0.6630 - 0.2637 = 0.3993.
 
-2. The relative frequency of direct hits of
-category 4 or more is 0.0769. Observe that the cumulative relative of
-the value “3" is 0.6630 + 0.2601 = 0.9231. This follows from the fact
-that the cumulative relative frequency of the value “2" is 0.6630 and
-the relative frequency of the value “3" is 0.2601. The total cumulative
-relative frequency is 1.0000. The relative frequency of direct hits of
-category 4 or more is the difference between the total cumulative
-relative frequency and cumulative relative frequency of 3 hits: 1.0000 -
-0.9231 = 0.0769.
+2. The relative frequency of direct hits of category 4 or more is 0.0769. Observe that the cumulative relative of the value “3" is 0.6630 + 0.2601 = 0.9231. This follows from the fact
+that the cumulative relative frequency of the value “2" is 0.6630 and the relative frequency of the value “3" is 0.2601. The total cumulative relative frequency is 1.0000. The relative frequency of direct hits of category 4 or more is the difference between the total cumulative relative frequency and cumulative relative frequency of 3 hits: 1.0000 - 0.9231 = 0.0769.
 
 ### Exercise 2.2 {-}
 
-1. The total number of cows that were
-involved in this study is 45. The object “`freq`" contain the table of
-frequency of the cows, divided according to the number of calves that
-they had. The cumulative frequency of all the cows that had 7 calves or
-less, which includes all cows in the study, is reported under the number
-“7" in the output of the expression “`cumsum(freq)`". This number is 45.
+1. The total number of cows that were involved in this study is 45. The object “`freq`" contain the table of frequency of the cows, divided according to the number of calves that they had. The cumulative frequency of all the cows that had 7 calves or less, which includes all cows in the study, is reported under the number “7" in the output of the expression “`cumsum(freq)`". This number is 45.
 
-2. The number of cows that gave birth to a
-total of 4 calves is 10. Indeed, the cumulative frequency of cows that
-gave birth to 4 calves or less is 28. The cumulative frequency of cows
-that gave birth to 3 calves or less is 18. The frequency of cows that
-gave birth to exactly 4 calves is the difference between these two
-numbers: 28 - 18 = 10.
+2. The number of cows that gave birth to a total of 4 calves is 10. Indeed, the cumulative frequency of cows that gave birth to 4 calves or less is 28. The cumulative frequency of cows
+that gave birth to 3 calves or less is 18. The frequency of cows that gave birth to exactly 4 calves is the difference between these two numbers: 28 - 18 = 10.
 
-3. The relative frequency of cows that gave
-birth to at least 4 calves is $27/45 = 0.6$. Notice that the cumulative
-frequency of cows that gave at most 3 calves is 18. The total number of
-cows is 45. Hence, the number of cows with 4 or more calves is the
-difference between these two numbers: 45 - 18 = 27. The relative
-frequency of such cows is the ratio between this number and the total
-number of cows: $27/45 = 0.6$.
+3. The relative frequency of cows that gave birth to at least 4 calves is $27/45 = 0.6$. Notice that the cumulative frequency of cows that gave at most 3 calves is 18. The total number of cows is 45. Hence, the number of cows with 4 or more calves is the difference between these two numbers: 45 - 18 = 27. The relative frequency of such cows is the ratio between this number and the total number of cows: $27/45 = 0.6$.
 
 ## Chapter 3 {-}
 
 ### Exercise 3.1 {-}
 
-1. Consider the data “`x1`".
-From the summary we see that it is distributed in the range between 0
-and slightly below 5. The central 50% of the distribution are located
-between 2.5 and 3.8. The mean and median are approximately equal to each
-other, which suggests an approximately symmetric distribution. Consider
-the histograms in Figure \@ref(fig:DStat9). Histograms 1 and 3
-correspond to a distributions in the appropriate range. However, the
-distribution in Histogram 3 is concentrated in lower values than
-suggested by the given first and third quartiles. Consequently, we match
-the summary of “`x1`" with Histogram 1.
+1. Consider the data “`x1`". From the summary we see that it is distributed in the range between 0 and slightly below 5. The central 50% of the distribution are located between 2.5 and 3.8. The mean and median are approximately equal to each other, which suggests an approximately symmetric distribution. Consider the histograms in Figure \@ref(fig:DStat9). Histograms 1 and 3 correspond to a distributions in the appropriate range. However, the distribution in Histogram 3 is concentrated in lower values than suggested by the given first and third quartiles. Consequently, we match the summary of “`x1`" with Histogram 1.
 
     Consider the data “`x2`". Again, the distribution is in the range
     between 0 and slightly below 5. The central 50% of the distribution are

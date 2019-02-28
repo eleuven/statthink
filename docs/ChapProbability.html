@@ -25,7 +25,7 @@
 <meta name="author" content="Benjamin Yakir">
 
 
-<meta name="date" content="2019-01-16">
+<meta name="date" content="2019-01-17">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -765,14 +765,14 @@ person) and measuring his/her height.</p>
 it as a population. We will apply the function “<code>sample</code>” to this
 sequence:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sample</span>(pop<span class="fl">.1</span><span class="op">$</span>height,<span class="dv">1</span>)</code></pre>
-<pre><code>## [1] 173</code></pre>
+<pre><code>## [1] 150</code></pre>
 <p>The first entry to the function is the given sequence of heights. When
 we set the second argument to 1 then the function selects one of the
 entries of the sequence at random, with each entry having the same
 likelihood of being selected. Specifically, in this example an entry
 that contains the value 162 was selected. Let us run the function again:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sample</span>(pop<span class="fl">.1</span><span class="op">$</span>height,<span class="dv">1</span>)</code></pre>
-<pre><code>## [1] 171</code></pre>
+<pre><code>## [1] 167</code></pre>
 <p>In this instance an entry with a different value was selected. Try to
 run the command several times yourself and see what you get. Would you
 necessarily obtain a different value in each run?</p>

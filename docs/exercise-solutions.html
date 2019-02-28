@@ -25,7 +25,7 @@
 <meta name="author" content="Benjamin Yakir">
 
 
-<meta name="date" content="2019-01-16">
+<meta name="date" content="2019-01-17">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -534,12 +534,7 @@ once, occurred the least number of times.</p></li>
 <div id="exercise-2.1" class="section level3 unnumbered">
 <h3>Exercise 2.1</h3>
 <ol style="list-style-type: decimal">
-<li><p>The relative frequency of direct hits of
-category 1 is 0.3993. Notice that the cumulative relative frequency of
-category 1 and 2 hits, the sum of the relative frequency of both
-categories, is 0.6630. The relative frequency of category 2 hits is
-0.2637. Consequently, the relative frequency of direct hits of category
-1 is 0.6630 - 0.2637 = 0.3993.</p></li>
+<li><p>The relative frequency of direct hits of category 1 is 0.3993. Notice that the cumulative relative frequency of category 1 and 2 hits, the sum of the relative frequency of both categories, is 0.6630. The relative frequency of category 2 hits is 0.2637. Consequently, the relative frequency of direct hits of category 1 is 0.6630 - 0.2637 = 0.3993.</p></li>
 <li><p>The relative frequency of direct hits of
 category 4 or more is 0.0769. Observe that the cumulative relative of
 the value “3” is 0.6630 + 0.2601 = 0.9231. This follows from the fact
@@ -586,7 +581,7 @@ From the summary we see that it is distributed in the range between 0
 and slightly below 5. The central 50% of the distribution are located
 between 2.5 and 3.8. The mean and median are approximately equal to each
 other, which suggests an approximately symmetric distribution. Consider
-the histograms in Figure <a href="ChapDescriptiveStat.html#fig:DStat9">3.3</a>. Histograms 1 and 3
+the histograms in Figure <a href="#fig:DStat9"><strong>??</strong></a>. Histograms 1 and 3
 correspond to a distributions in the appropriate range. However, the
 distribution in Histogram 3 is concentrated in lower values than
 suggested by the given first and third quartiles. Consequently, we match
@@ -603,12 +598,12 @@ Histograms 2.</p>
 information presented by the function “<code>summary</code>”. Following the
 rational of matching the summary with the histograms we may obtain that
 Histogram 1 should be matched with Box-plot 2 in
-Figure <a href="ChapDescriptiveStat.html#fig:DStat10">3.4</a>, Histogram 2 matches Box-plot 3, and
+Figure <a href="#fig:DStat10"><strong>??</strong></a>, Histogram 2 matches Box-plot 3, and
 Histogram 3 matches Box-plot 1. Indeed, it is easier to match the box
 plots with the summaries. However, it is a good idea to practice the
 direct matching of histograms with box plots.</p></li>
 <li><p>The data in “<code>x1</code>” fits
-Box-plot 2 in Figure <a href="ChapDescriptiveStat.html#fig:DStat10">3.4</a>. The value 0.000 is the
+Box-plot 2 in Figure <a href="#fig:DStat10"><strong>??</strong></a>. The value 0.000 is the
 smallest value in the data and it corresponds to the smallest point in
 the box plot. Since this point is below the bottom whisker it follows
 that it is an outlier. More directly, we may note that the
@@ -617,7 +612,7 @@ lower threshold is equal to <span class="math inline">\(2.498 - 1.5 \times 1.342
 is larger that the given value. Consequently, the given value 0.000 is
 an outlier.</p></li>
 <li><p>Observe that the data in
-“<code>x3</code>” fits Box-plot 3 in Figure <a href="ChapDescriptiveStat.html#fig:DStat10">3.4</a>. The vale
+“<code>x3</code>” fits Box-plot 3 in Figure <a href="#fig:DStat10"><strong>??</strong></a>. The vale
 6.414 is the largest value in the data and it corresponds to the
 endpoint of the upper whisker in the box plot and is not an outlier.
 Alternatively, we may note that the inter-quartile range is equal to
@@ -723,7 +718,7 @@ approximately 2.1985 standard deviations above the mean.</p></li>
 <h3>Exercise 4.1</h3>
 <ol style="list-style-type: decimal">
 <li>Consult
-Table <a href="ChapProbability.html#tab:tab4">4.4</a>. The probabilities of the different values
+Table <a href="#tab:tab4"><strong>??</strong></a>. The probabilities of the different values
 of <span class="math inline">\(Y\)</span> are <span class="math inline">\(\{p, 2p, \ldots, 6p\}\)</span>. These probabilities sum to 1,
 consequently</li>
 </ol>
@@ -851,11 +846,11 @@ get:</p>
 following code, which should be run one line at a time:</p>
 <pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="dv">0</span><span class="op">:</span><span class="dv">15</span>
 <span class="kw">plot</span>(x,<span class="kw">dnbinom</span>(x,<span class="dv">2</span>,<span class="fl">0.5</span>),<span class="dt">type=</span><span class="st">&quot;h&quot;</span>)</code></pre>
-<p><img src="statthink_files/figure-html/unnamed-chunk-259-1.png" width="60%" style="display: block; margin: auto;" /></p>
+<p><img src="statthink_files/figure-html/unnamed-chunk-13-1.png" width="60%" style="display: block; margin: auto;" /></p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(x,<span class="kw">dnbinom</span>(x,<span class="dv">4</span>,<span class="fl">0.5</span>),<span class="dt">type=</span><span class="st">&quot;h&quot;</span>)</code></pre>
-<p><img src="statthink_files/figure-html/unnamed-chunk-259-2.png" width="60%" style="display: block; margin: auto;" /></p>
+<p><img src="statthink_files/figure-html/unnamed-chunk-13-2.png" width="60%" style="display: block; margin: auto;" /></p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(x,<span class="kw">dnbinom</span>(x,<span class="dv">8</span>,<span class="fl">0.8</span>),<span class="dt">type=</span><span class="st">&quot;h&quot;</span>)</code></pre>
-<p><img src="statthink_files/figure-html/unnamed-chunk-259-3.png" width="60%" style="display: block; margin: auto;" /></p>
+<p><img src="statthink_files/figure-html/unnamed-chunk-13-3.png" width="60%" style="display: block; margin: auto;" /></p>
 <p>The first plot, that corresponds to
 <span class="math inline">\(X_1 \sim \mbox{Negative-Binomial}(2,0.5)\)</span>, fits Barplot 3. Notice that
 the distribution tends to obtain smaller values and that the probability
@@ -1007,7 +1002,7 @@ represented by the content of the sequence “<code>X.bar</code>”:</p>
   X.bar[i] &lt;-<span class="st"> </span><span class="kw">mean</span>(X.samp)
 }
 <span class="kw">mean</span>(X.bar)</code></pre>
-<pre><code>## [1] 24.98218</code></pre>
+<pre><code>## [1] 24.985327</code></pre>
 <p>Initially, we produce a vector of zeros of the given lenght (100,000).
 In each iteration of the “<code>for</code>” loop a random sample of size 150 is
 selected from the population. The sample average is computed and stored
@@ -1016,13 +1011,13 @@ zeros are replaced by evaluations of the sample average.</p>
 <p>The expectation of the sampling distribution of the sample average is
 computed by the application of the function “<code>mean</code>” to the sequence
 that represents the sampling distribution of the sample average. The
-result for the current is 24.98681, which is vary similar<a href="#fn95" class="footnote-ref" id="fnref95"><sup>95</sup></a> to the
+result for the current is 24.98681, which is vary similar[^3] to the
 population average 24.98446.</p></li>
 <li><p>The standard deviation of the sample
 average under the sampling distribution is computed using the function
 “<code>sd</code>”:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sd</span>(X.bar)</code></pre>
-<pre><code>## [1] 0.34249887</code></pre>
+<pre><code>## [1] 0.34240172</code></pre>
 <p>The resulting standard deviation is 0.3422717. Recall that the standard
 deviation of a single measurement is equal to 4.188511 and that the
 sample size is <span class="math inline">\(n=150\)</span>. The ratio between the standard deviation of the
@@ -1034,7 +1029,7 @@ of the sampling distribution of the sample average can be identified
 with the aid of the function “<code>quantile</code>”:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">quantile</span>(X.bar,<span class="kw">c</span>(<span class="fl">0.1</span>,<span class="fl">0.9</span>))</code></pre>
 <pre><code>##       10%       90% 
-## 24.544154 25.421907</code></pre>
+## 24.547710 25.425014</code></pre>
 <p>The value 24.54972 is the 10%-percentile of the sampling distribution.
 To the left of this value are 10% of the distribution. The value
 25.42629 is the 90%-percentile of the sampling distribution. To the
@@ -1046,7 +1041,7 @@ distribution of the sample average by the Normal distribution with the
 same expectation and standard deviation. The percentiles are computed
 with the function “<code>qnorm</code>”:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">qnorm</span>(<span class="kw">c</span>(<span class="fl">0.1</span>,<span class="fl">0.9</span>),<span class="kw">mean</span>(X.bar),<span class="kw">sd</span>(X.bar))</code></pre>
-<pre><code>## [1] 24.54325 25.42111</code></pre>
+<pre><code>## [1] 24.546522 25.424133</code></pre>
 <p>Observe that we used the expectation and the standard deviation of the
 sample average in the function. The resulting interval is
 <span class="math inline">\([24.54817, 25.42545]\)</span>, which is similar to the interval
@@ -1146,9 +1141,9 @@ patients that were treated with inactive placebo is 1.578124.</p></li>
 <li><p>We apply the function “<code>boxplot</code>”
 to each sub-sequences:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">boxplot</span>(magnets<span class="op">$</span>change[<span class="dv">1</span><span class="op">:</span><span class="dv">29</span>])</code></pre>
-<p><img src="statthink_files/figure-html/unnamed-chunk-279-1.png" width="60%" style="display: block; margin: auto;" /></p>
+<p><img src="statthink_files/figure-html/unnamed-chunk-33-1.png" width="60%" style="display: block; margin: auto;" /></p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">boxplot</span>(magnets<span class="op">$</span>change[<span class="dv">30</span><span class="op">:</span><span class="dv">50</span>])</code></pre>
-<p><img src="statthink_files/figure-html/unnamed-chunk-279-2.png" width="60%" style="display: block; margin: auto;" /></p>
+<p><img src="statthink_files/figure-html/unnamed-chunk-33-2.png" width="60%" style="display: block; margin: auto;" /></p>
 <p>The first box-plot
 corresponds to the sub-sequence of the patients that received
 an active magnet. There are no outliers in this plot. The second box-plot
@@ -1188,7 +1183,7 @@ test.stat &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class=
 }
 <span class="kw">quantile</span>(test.stat,<span class="kw">c</span>(<span class="fl">0.025</span>,<span class="fl">0.975</span>))</code></pre>
 <pre><code>##       2.5%      97.5% 
-## -2.0065446  2.0194322</code></pre>
+## -1.9918131  2.0090307</code></pre>
 <p>Observe that each iteration of the simulation involves the generation of
 two samples. One sample is of size 29 and it is generated from the
 <span class="math inline">\(\mathrm{Normal}(3.5,3^2)\)</span> distribution and the other sample is of size
@@ -1248,9 +1243,9 @@ sample average and the sequence “<code>X.med</code>” represents the sampling
 distribution of the sample median. We apply the function “<code>mean</code>” to
 these sequences in order to obtain the expectations of the estimators:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(X.bar)</code></pre>
-<pre><code>## [1] 2.9994974</code></pre>
+<pre><code>## [1] 3.000486</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(X.med)</code></pre>
-<pre><code>## [1] 2.9991907</code></pre>
+<pre><code>## [1] 3.0005382</code></pre>
 <p>The expectation of the measurement, the parameter of interest is equal
 to 3. Observe that expectations of the estimators are essentially equal
 to the expectation[^13]. Consequently, both estimators are unbiased
@@ -1258,9 +1253,9 @@ estimators of the expectation of the measurement.</p>
 <p>In order to obtain the variances of the estimators we apply the function
 “<code>var</code>” to the sequences that represent their sampling distributions:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">var</span>(X.bar)</code></pre>
-<pre><code>## [1] 0.019953963</code></pre>
+<pre><code>## [1] 0.019973663</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">var</span>(X.med)</code></pre>
-<pre><code>## [1] 0.030652943</code></pre>
+<pre><code>## [1] 0.030919879</code></pre>
 <p>Observe that the variance of the sample average is essentially equal to
 <span class="math inline">\(0.020\)</span> and the variance of the sample median is essentially equal to
 <span class="math inline">\(0.0312\)</span>. The mean square error of an unbiased estimator is equal to its
@@ -1286,14 +1281,14 @@ X.med &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="dv"
 sampling distribution of the estimators we obtain that both estimators
 are essentially unbiased[^14]:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(X.bar)</code></pre>
-<pre><code>## [1] 3.0002512</code></pre>
+<pre><code>## [1] 3.0002541</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(X.med)</code></pre>
-<pre><code>## [1] 3.0001754</code></pre>
+<pre><code>## [1] 3.0003588</code></pre>
 <p>Compute the variances:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">var</span>(X.bar)</code></pre>
-<pre><code>## [1] 0.020851351</code></pre>
+<pre><code>## [1] 0.020845784</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">var</span>(X.med)</code></pre>
-<pre><code>## [1] 0.060990393</code></pre>
+<pre><code>## [1] 0.060797225</code></pre>
 <p>Observe <span class="math inline">\(0.021\)</span> is, essentially, the value of the variance of the sample
 average[^15]. The variance of the sample median is essentially equal to
 0.061. The variance of each of the estimators is equal to it’s mean
@@ -1361,7 +1356,7 @@ order to produce an approximation of the distribution:</p>
   P.hat[i] &lt;-<span class="st"> </span><span class="kw">mean</span>(X <span class="op">==</span><span class="st"> &quot;HIGH&quot;</span>)
 }
 <span class="kw">mean</span>(P.hat)</code></pre>
-<pre><code>## [1] 0.2813024</code></pre>
+<pre><code>## [1] 0.28114987</code></pre>
 <p>Observe that the sampling distribution is stored in the object
 “<code>P.hat</code>”. The function “<code>sample</code>” is used in order to sample 150
 observation from the sequence “<code>pop2$group</code>”. The sample is stored in
@@ -1375,7 +1370,7 @@ the event <span class="math inline">\(p = 0.28126\)</span>.[^18]</p></li>
 <li><p>The application of the function
 “<code>var</code>” to the sequence “<code>P.hat</code>” produces:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">var</span>(P.hat)</code></pre>
-<pre><code>## [1] 0.0013514506</code></pre>
+<pre><code>## [1] 0.0013488593</code></pre>
 <p>Hence, the variance of the estimator is (approximately) equal to
 <span class="math inline">\(0.00135\)</span>.</p></li>
 <li><p>Compute the variance according to
@@ -1438,11 +1433,11 @@ standard deviation is <span class="math inline">\(0.5329833\)</span>.</p>
 description of the lecturer as charismatic is higher on the average than
 the rating given by students that were exposed to a less favorable
 description. The box plots of the ratings for the two conditions are
-presented in Figure <a href="exercise-solutions.html#fig:Confidence2">16.2</a>.</p>
+presented in Figure <a href="exercise-solutions.html#fig:Confidence2">16.1</a>.</p>
 <div class="figure" style="text-align: center"><span id="fig:Confidence2"></span>
 <img src="statthink_files/figure-html/Confidence2-1.png" alt="Box Plots of Ratings" width="60%" />
 <p class="caption">
-FIGURE 16.2: Box Plots of Ratings
+FIGURE 16.1: Box Plots of Ratings
 </p>
 </div></li>
 <li><p>The 99% confidence interval for
@@ -1497,7 +1492,7 @@ percentile in the construction of the confidence interval.</p>
 <pre class="sourceCode r"><code class="sourceCode r">norm.LCL &lt;-<span class="st"> </span>X.bar <span class="op">-</span><span class="st"> </span><span class="kw">qnorm</span>(<span class="fl">0.975</span>)<span class="op">*</span>S<span class="op">/</span><span class="kw">sqrt</span>(n)
 norm.UCL &lt;-<span class="st"> </span>X.bar <span class="op">+</span><span class="st"> </span><span class="kw">qnorm</span>(<span class="fl">0.975</span>)<span class="op">*</span>S<span class="op">/</span><span class="kw">sqrt</span>(n)
 <span class="kw">mean</span>((<span class="dv">4</span> <span class="op">&gt;=</span><span class="st"> </span>norm.LCL) <span class="op">&amp;</span><span class="st"> </span>(<span class="dv">4</span> <span class="op">&lt;=</span><span class="st"> </span>norm.UCL))</code></pre>
-<pre><code>## [1] 0.90468</code></pre>
+<pre><code>## [1] 0.90583</code></pre>
 <p>The expectation of the measurement is equal to 4. This number belongs to
 the confidence interval 90.47% of the times. Consequently, the actual
 confidence level is 90.47%.</p></li>
@@ -1509,7 +1504,7 @@ distribution:</p>
 <pre class="sourceCode r"><code class="sourceCode r">t.LCL &lt;-<span class="st"> </span>X.bar <span class="op">-</span><span class="st"> </span><span class="kw">qt</span>(<span class="fl">0.975</span>,n<span class="dv">-1</span>)<span class="op">*</span>S<span class="op">/</span><span class="kw">sqrt</span>(n)
 t.UCL &lt;-<span class="st"> </span>X.bar <span class="op">+</span><span class="st"> </span><span class="kw">qt</span>(<span class="fl">0.975</span>,n<span class="dv">-1</span>)<span class="op">*</span>S<span class="op">/</span><span class="kw">sqrt</span>(n)
 <span class="kw">mean</span>((<span class="dv">4</span> <span class="op">&gt;=</span><span class="st"> </span>t.LCL) <span class="op">&amp;</span><span class="st"> </span>(<span class="dv">4</span> <span class="op">&lt;=</span><span class="st"> </span>t.UCL))</code></pre>
-<pre><code>## [1] 0.91904</code></pre>
+<pre><code>## [1] 0.92016</code></pre>
 <p>Based on the assumption we used the percentiles of the <span class="math inline">\(t\)</span>-distribution.
 The actual significance level is 91.953% <span class="math inline">\(\approx\)</span> 92%, still short of
 the nominal 95% confidence level.</p></li>
@@ -1619,7 +1614,7 @@ S &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="dv">0</
 }
 T &lt;-<span class="st"> </span>(X.bar <span class="op">-</span><span class="st"> </span><span class="dv">4</span>)<span class="op">/</span>(S<span class="op">/</span><span class="kw">sqrt</span>(n))
 <span class="kw">mean</span>(<span class="kw">abs</span>(T) <span class="op">&gt;</span><span class="st"> </span><span class="kw">qt</span>(<span class="fl">0.975</span>,n<span class="dv">-1</span>))</code></pre>
-<pre><code>## [1] 0.07966</code></pre>
+<pre><code>## [1] 0.0806</code></pre>
 <p>We compute the test statistic “<code>T</code>” from the sample average “<code>X.bar</code>”
 and the sample standard deviation “<code>S</code>”. In the last expression we
 compute the probability that the absolute value of the test statistic is
@@ -1642,7 +1637,7 @@ S &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="dv">0</
 }
 T &lt;-<span class="st"> </span>(X.bar <span class="op">-</span><span class="st"> </span><span class="dv">4</span>)<span class="op">/</span>(S<span class="op">/</span><span class="kw">sqrt</span>(n))
 <span class="kw">mean</span>(<span class="kw">abs</span>(T) <span class="op">&gt;</span><span class="st"> </span><span class="kw">qt</span>(<span class="fl">0.975</span>,n<span class="dv">-1</span>))</code></pre>
-<pre><code>## [1] 0.05143</code></pre>
+<pre><code>## [1] 0.05126</code></pre>
 <p>The actual significance level of the test is <span class="math inline">\(0.05163\)</span>, much closer to
 the nominal significance level of 5%.</p>
 <p>A possible explanation for the difference between the two cases is that
@@ -1799,7 +1794,7 @@ S.b &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="dv">0
 }
 F &lt;-<span class="st"> </span>S.a<span class="op">^</span><span class="dv">2</span><span class="op">/</span>S.b<span class="op">^</span><span class="dv">2</span>
 <span class="kw">mean</span>((F <span class="op">&lt;</span><span class="st"> </span><span class="kw">qf</span>(<span class="fl">0.025</span>,n.a<span class="dv">-1</span>,n.b<span class="dv">-1</span>))<span class="op">|</span>(F <span class="op">&gt;</span><span class="st"> </span><span class="kw">qf</span>(<span class="fl">0.975</span>,n.a<span class="dv">-1</span>,n.b<span class="dv">-1</span>)))</code></pre>
-<pre><code>## [1] 0.05053</code></pre>
+<pre><code>## [1] 0.04953</code></pre>
 <p>We compute the test statistic “<code>F</code>” as the ratio of the two sample
 standard deviations “<code>S.a</code>” and “<code>S.b</code>”. The last expression computes
 the probability that the test statistic is either less than
@@ -1830,7 +1825,7 @@ S.b &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="dv">0
 }
 F &lt;-<span class="st"> </span>S.a<span class="op">^</span><span class="dv">2</span><span class="op">/</span>S.b<span class="op">^</span><span class="dv">2</span>
 <span class="kw">mean</span>((F <span class="op">&lt;</span><span class="st"> </span><span class="kw">qf</span>(<span class="fl">0.025</span>,n.a<span class="dv">-1</span>,n.b<span class="dv">-1</span>))<span class="op">|</span>(F <span class="op">&gt;</span><span class="st"> </span><span class="kw">qf</span>(<span class="fl">0.975</span>,n.a<span class="dv">-1</span>,n.b<span class="dv">-1</span>)))</code></pre>
-<pre><code>## [1] 0.27391</code></pre>
+<pre><code>## [1] 0.27595</code></pre>
 <p>The actual significance level of the test is <span class="math inline">\(0.27596\)</span>, which is much
 higher than the nominal significance level of 5%.</p>
 <p>Through this experiment we may see that the <span class="math inline">\(F\)</span>-test is not robust to
@@ -1989,7 +1984,7 @@ to the plot using the function “<code>abline</code>” with the fitted model a
 input:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(deaths<span class="op">~</span>diagnosed,<span class="dt">data=</span>aids)
 <span class="kw">abline</span>(fit.deaths)</code></pre>
-<p><img src="statthink_files/figure-html/unnamed-chunk-322-1.png" width="60%" style="display: block; margin: auto;" /></p>
+<p><img src="statthink_files/figure-html/unnamed-chunk-76-1.png" width="60%" style="display: block; margin: auto;" /></p>
 <p>Observe that the points are nicely placed very to a line that
 characterizes the linear trend of the regression.</p></li>
 <li><p>We fit a linear regression model
@@ -2031,7 +2026,7 @@ variables is produced by the application of the function “<code>plot</code>”
 the regression line is added with function “<code>abline</code>”:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(diagnosed<span class="op">~</span>year,<span class="dt">data=</span>aids)
 <span class="kw">abline</span>(fit.diagnosed)</code></pre>
-<p><img src="statthink_files/figure-html/unnamed-chunk-325-1.png" width="60%" style="display: block; margin: auto;" /></p>
+<p><img src="statthink_files/figure-html/unnamed-chunk-79-1.png" width="60%" style="display: block; margin: auto;" /></p>
 <p>Observe that the
 points do not follow a linear trend. It seems that the number of
 diagnosed cases increased in an exponential rate during the first years
@@ -2061,7 +2056,7 @@ function “<code>lm</code>”, is added to the plot using the function “<code
 percent &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="fl">35.5</span>,<span class="fl">31.5</span>,<span class="fl">31.4</span>,<span class="fl">27.3</span>,<span class="fl">21.9</span>,<span class="fl">17.5</span>,<span class="fl">15.8</span>)
 <span class="kw">plot</span>(percent<span class="op">~</span>year)
 <span class="kw">abline</span>(<span class="kw">lm</span>(percent<span class="op">~</span>year))</code></pre>
-<p><img src="statthink_files/figure-html/unnamed-chunk-326-1.png" width="60%" style="display: block; margin: auto;" /></p>
+<p><img src="statthink_files/figure-html/unnamed-chunk-80-1.png" width="60%" style="display: block; margin: auto;" /></p>
 <p>Observe that a linear trend is a
 reasonable description of the reduction in the percentage of workers
 that belong to labor unions in the post World War II period.</p></li>
@@ -2168,7 +2163,7 @@ explained by the regression is <span class="math inline">\(\sqrt{0.1066}= 0.3265
 <p>Following our own advice, we plot the data and the regression model:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(dif.mpg <span class="op">~</span><span class="st"> </span>cars<span class="op">$</span>curb.weight)
 <span class="kw">abline</span>(<span class="kw">lm</span>(dif.mpg <span class="op">~</span><span class="st"> </span>cars<span class="op">$</span>curb.weight))</code></pre>
-<p><img src="statthink_files/figure-html/unnamed-chunk-331-1.png" width="60%" style="display: block; margin: auto;" /></p>
+<p><img src="statthink_files/figure-html/unnamed-chunk-85-1.png" width="60%" style="display: block; margin: auto;" /></p>
 <p>One may observe that although there seems
 to be an overall downward trend, there is still allot of variability
 about the line of regression.</p></li>
@@ -2201,7 +2196,7 @@ that is explained by the current regression model is
 <p>Produce the scatter plot with the line of regression:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(dif.mpg <span class="op">~</span><span class="st"> </span>cars<span class="op">$</span>engine.size)
 <span class="kw">abline</span>(<span class="kw">lm</span>(dif.mpg <span class="op">~</span><span class="st"> </span>cars<span class="op">$</span>engine.size))</code></pre>
-<p><img src="statthink_files/figure-html/unnamed-chunk-333-1.png" width="60%" style="display: block; margin: auto;" /></p>
+<p><img src="statthink_files/figure-html/unnamed-chunk-87-1.png" width="60%" style="display: block; margin: auto;" /></p>
 <p>Again, there is variability about the line of regression.</p></li>
 <li><p>Of the two models, the model that
 uses the curb weigh as the explanatory variable explains a larger
@@ -2236,7 +2231,7 @@ this data using a mosaic plot:</p>
 <div class="figure" style="text-align: center"><span id="fig:Logistic4"></span>
 <img src="statthink_files/figure-html/Logistic4-1.png" alt="Health Condition Versus Type of Diet" width="60%" />
 <p class="caption">
-FIGURE 16.3: Health Condition Versus Type of Diet
+FIGURE 16.2: Health Condition Versus Type of Diet
 </p>
 </div>
 <p>Examining this plot one may appreciate the
@@ -2295,14 +2290,14 @@ function “<code>plot</code>” and an histogram with the function “<code>his
 <div class="figure" style="text-align: center"><span id="fig:Logistic5"></span>
 <img src="statthink_files/figure-html/Logistic5-1.png" alt="Health Condition Versus Type of Diet" width="60%" />
 <p class="caption">
-FIGURE 16.4: Health Condition Versus Type of Diet
+FIGURE 16.3: Health Condition Versus Type of Diet
 </p>
 </div>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">hist</span>(cushings<span class="op">$</span>tetra)</code></pre>
 <div class="figure" style="text-align: center"><span id="fig:Logistic5"></span>
 <img src="statthink_files/figure-html/Logistic5-2.png" alt="Health Condition Versus Type of Diet" width="60%" />
 <p class="caption">
-FIGURE 16.4: Health Condition Versus Type of Diet
+FIGURE 16.3: Health Condition Versus Type of Diet
 </p>
 </div>
 <p>The mosaic plot describes the distribution of the 4 levels of the
@@ -2422,423 +2417,6 @@ approach that was used in the second analysis.</p></li>
 
 </div>
 </div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="footnotes">
-<hr />
-<ol start="95">
-<li id="fn95"><p>As a matter of fact, it can be proved that the statistic proposed
-by Statistician B has a smaller mean square error than the statistic
-proposed by Statistician A, for <em>any</em> value of <span class="math inline">\(b\)</span><a href="exercise-solutions.html#fnref95" class="footnote-back">↩</a></p></li>
-</ol>
 </div>
             </section>
 

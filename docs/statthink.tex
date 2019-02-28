@@ -119,10 +119,16 @@
 
 %\setmainfont[UprightFeatures={SmallCapsFont=AlegreyaSC-Regular}]{Alegreya}
 
-\newcommand{\Expec}{{\rm I\kern-.3em E}}
-\newcommand{\Prob}{{\rm I\kern-.3em P}}
-\newcommand{\Var}{{\rm I\kern-.3em V}}
-\newcommand{\Cov}{{\rm I\kern-.3em Cov}}
+%\newcommand{\Expec}{{\rm I\kern-.3em E}}
+%\newcommand{\Prob}{{\rm I\kern-.3em P}}
+%\newcommand{\Var}{{\rm I\kern-.3em V}}
+%\newcommand{\Cov}{{\rm I\kern-.3em Cov}}
+
+\newcommand{\Expec}{\mathbf{E}}
+\newcommand{\Prob}{\mathbf{P}}
+\newcommand{\Var}{\mathbf{V}}
+\newcommand{\Cov}{\mathbf{Cov}}
+
 
 \usepackage{framed,color}
 \definecolor{shadecolor}{RGB}{248,248,248}
@@ -191,7 +197,7 @@
 
 \title{Introduction to Statistical Thinking}
 \author{Benjamin Yakir}
-\date{2019-01-16}
+\date{2019-01-17}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[chapter]
@@ -2859,7 +2865,7 @@ sequence:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 163
+## [1] 175
 \end{verbatim}
 
 The first entry to the function is the given sequence of heights. When
@@ -2875,7 +2881,7 @@ that contains the value 162 was selected. Let us run the function again:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 165
+## [1] 173
 \end{verbatim}
 
 In this instance an entry with a different value was selected. Try to
@@ -5688,12 +5694,12 @@ in order to sample the heights of 100 subjects:
 \end{Shaded}
 
 \begin{verbatim}
-##   [1] 174 183 180 179 194 166 196 184 152 167 156 182 181 168 184 168 153
-##  [18] 178 163 152 160 166 180 190 164 154 194 180 162 192 173 179 175 173
-##  [35] 173 180 150 165 183 173 180 161 157 160 173 162 178 172 170 170 175
-##  [52] 179 171 174 183 169 177 159 158 152 167 177 177 183 171 168 171 157
-##  [69] 163 179 185 185 164 157 177 177 167 181 172 154 196 183 188 177 170
-##  [86] 175 159 171 197 172 151 178 195 184 177 175 169 166 174 161
+##   [1] 172 157 187 158 175 172 147 168 171 174 155 175 177 159 177 180 155
+##  [18] 169 162 187 175 188 190 165 168 210 202 148 166 173 161 171 179 157
+##  [35] 160 178 188 152 180 167 167 183 188 169 169 167 182 161 160 174 167
+##  [52] 177 189 168 160 182 169 169 155 172 163 175 171 184 159 178 192 184
+##  [69] 166 163 176 164 170 177 171 170 173 162 182 167 146 165 151 179 169
+##  [86] 164 177 172 175 181 162 165 173 163 161 164 156 183 171 158
 \end{verbatim}
 
 In the first line of code we produce a data frame that contains the
@@ -5729,7 +5735,7 @@ average to serve as an estimate:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 172.56
+## [1] 170.65
 \end{verbatim}
 
 In our artificial example we can actually compute the true population
@@ -5774,7 +5780,7 @@ select another sample and compute its average:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 172.28
+## [1] 170.43
 \end{verbatim}
 
 and do it once more:
@@ -5788,7 +5794,7 @@ and do it once more:
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 169.5
+## [1] 170.03
 \end{verbatim}
 
 In each case we got a different value for the sample average. In the
